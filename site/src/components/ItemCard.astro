@@ -1,17 +1,18 @@
 ---
 import { AUTHORITY_LABEL, fmtDate } from "../lib/data.js";
-interface Props { item: any; rank?: number }
-const { item, rank } = Astro.props;
+interface Props { item: any; rank?: number; permalink?: boolean }
+const { item, rank, permalink = true } = Astro.props;
 const summarised = item.status === "summarised";
 const date = fmtDate(item.publishedAt || item.fetchedAt);
 ---
-<article class={`card ${summarised ? "" : "card--headline"}`} data-pagefind-body>
-  <div class="card__meta">
+<article class={`card ${summarised ? "" : "card--headline"}`}>
+  <div class="card__meta" data-pagefind-ignore>
     <span class={`badge badge--${item.authority}`}>{AUTHORITY_LABEL[item.authority] ?? item.authority}</span>
     <span class="card__source">{item.sourceName}</span>
     {date && <time datetime={item.publishedAt}>{date}</time>}
     {item.paywalled && <span class="tag" title="Paywalled source: summary based on the freely available standfirst only">Paywalled</span>}
-    {item.classification?.is_consultation && <span class="tag tag--accent">Consultation</span>}
+    {item.classification?.is_consultation && <span class="tag tag--accent">Consultation{item.classification?.closing_date ? ` · closes ${item.classification.closing_date}` : ""}</span>}
+    {permalink && <a class="card__permalink" href={`/items/${item.id}/`} aria-label="Item page">#</a>}
   </div>
   <h3 class="card__title">
     {rank && <span class="card__rank">{rank}</span>}
@@ -21,7 +22,7 @@ const date = fmtDate(item.publishedAt || item.fetchedAt);
     <>
       <p class="card__summary">{item.summary}</p>
       <p class="card__why"><strong>Why it matters:</strong> {item.why_it_matters}</p>
-      <details class="card__grounding">
+      <details class="card__grounding" data-pagefind-ignore>
         <summary>Source quotes</summary>
         <ul>
           {item.quotes.map((q: any) => (

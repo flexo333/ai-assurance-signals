@@ -1,0 +1,27 @@
+---
+import Base from "../../layouts/Base.astro";
+import ItemCard from "../../components/ItemCard.astro";
+import { loadAll, isPublishable, editionLabel, AUTHORITY_LABEL, THEME_LABEL } from "../../lib/data.js";
+export function getStaticPaths() {
+  const { items } = loadAll();
+  return items.filter(isPublishable).map((item: any) => ({ params: { id: item.id }, props: { item } }));
+}
+const { item } = Astro.props;
+const { editionOf } = loadAll();
+const ed = editionOf.get(item.id);
+const title = item.status === "summarised" ? item.headline : item.title;
+---
+<Base title={title} description={item.summary || `${item.sourceName}: ${item.title}`}>
+  <div data-pagefind-body data-pagefind-meta={`title:${title}`}>
+    <span data-pagefind-filter={`authority:${AUTHORITY_LABEL[item.authority]}`}></span>
+    {item.classification?.theme && <span data-pagefind-filter={`theme:${THEME_LABEL[item.classification.theme]}`}></span>}
+    <span data-pagefind-filter={`source:${item.sourceName}`}></span>
+    <span data-pagefind-meta={`date:${(item.publishedAt || item.fetchedAt || "").slice(0, 10)}`}></span>
+    <ItemCard item={item} permalink={false} />
+  </div>
+  <p class="muted small">
+    {ed ? <>Appeared in <a href={`/editions/${ed}/`}>{editionLabel(ed)}</a>. </> : <>Collected but not yet in an edition. </>}
+    {item.provenance?.model && <>Summary by {item.provenance.model.replace("models/", "")}, checked against verbatim source quotes. </>}
+    <a href="/methodology/">How this works</a>.
+  </p>
+</Base>

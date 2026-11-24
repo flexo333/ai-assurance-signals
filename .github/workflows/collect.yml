@@ -35,6 +35,7 @@ on:
 permissions:
   contents: write  # commit data/items
   id-token: write  # assume the ingress infra role to invoke the Lambda
+  pull-requests: write # required by the reusable deploy workflow
 
 concurrency:
   group: collect-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
@@ -48,6 +49,8 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
     defaults:
       run:
         working-directory: pipeline
@@ -111,15 +114,28 @@ jobs:
         run: node process.mjs collected.json --max "$MAX" $DRY
 
       - name: Commit items
+        id: commit
         if: github.event_name != 'pull_request' && github.event.inputs.dry_run != 'true'
         working-directory: .
         run: |
           git add data/items
-          if git diff --cached --quiet; then echo "No new items."; exit 0; fi
+          if git diff --cached --quiet; then echo "No new items."; echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"; exit 0; fi
           git -c user.name="aisignals-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
             commit -q -m "data: collect $(date -u +%Y-%m-%dT%H:%MZ) ($(git diff --cached --name-only | wc -l) items)"
           for i in 1 2 3 4; do
-            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            if git pull -q --rebase origin main && git push -q origin HEAD:main; then
+              echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"; exit 0
+            fi
             sleep $((i * 5))
           done
           exit 1
+
+  # Daily redeploy keeps consultations ("open" is evaluated at build time),
+  # key dates and the search index current between Friday editions.
+  deploy:
+    needs: collect
+    if: github.event_name != 'pull_request' && github.event.inputs.dry_run != 'true'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.collect.outputs.sha }}
+    secrets: inherit

@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import { loadAll, keyDates, fmtDay } from "../lib/data.js";
+const { curatedDates, items } = loadAll();
+const { upcoming, recent } = keyDates(curatedDates, items);
+const groups = [
+  { title: "Upcoming", list: upcoming, empty: "Nothing upcoming." },
+  { title: "Recently commenced", list: recent, empty: null },
+];
+---
+<Base title="Key dates" description="Upcoming AI governance commencement dates, deadlines and milestones.">
+  <h1>Key dates &amp; obligations</h1>
+  <p class="muted">Commencement dates and milestones relevant to AI assurance. Curated entries were verified against the cited source. Entries marked “from an item” were extracted from an official source, and the date appears verbatim in it.</p>
+
+  {groups.map((g) => (g.list.length || g.empty) && (
+    <section>
+      <h2>{g.title}</h2>
+      {g.list.length === 0 ? <p class="muted">{g.empty}</p> : (
+        <ul class="dated">
+          {g.list.map((d: any) => (
+            <li>
+              <span class="dated__date">{fmtDay(d.date)}</span>
+              <strong>{d.title}</strong>
+              <span class="muted small"> · {d.jurisdiction}{d.auto ? " · from an item" : ""}</span>
+              {d.detail && <div>{d.detail}</div>}
+              {d.quote && <div class="muted small">Source: <q>{d.quote}</q></div>}
+              <div class="small"><a href={d.source.url} rel="noopener">{d.source.name}</a></div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  ))}
+</Base>

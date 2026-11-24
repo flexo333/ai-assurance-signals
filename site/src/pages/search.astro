@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Search" description="Search every item in the AI Assurance Signals archive.">
+  <h1>Search</h1>
+  <p class="muted">Search every collected item — filter by authority, theme or source.</p>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <div id="search"></div>
+  <noscript><p>Search needs JavaScript. Browse the <a href="/editions/">archive</a> instead.</p></noscript>
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.PagefindUI) new PagefindUI({ element: "#search", showSubResults: false, showImages: false, resetStyles: false });
+      else document.getElementById("search").textContent = "Search index not available in this build.";
+    });
+  </script>
+</Base>
+<style is:global>
+  #search { --pagefind-ui-primary: var(--accent); --pagefind-ui-text: var(--text); --pagefind-ui-background: var(--surface); --pagefind-ui-border: var(--rule); --pagefind-ui-tag: var(--accent-soft); --pagefind-ui-font: var(--sans); }
+</style>

@@ -11,7 +11,21 @@ These came up while building overnight. Each has the **default I went with**, so
 
 ## Pipeline
 
-5. **Gemini model chain:** `gemini-flash-latest` → `gemini-2.5-flash` → `gemini-flash-lite-latest` → `gemini-2.5-flash-lite`, paced at about 9 requests/min and capped at 60 calls a day. *Default* as listed. Raise the cap if the free tier allows it?
+5. **Gemini model chain:** `gemini-2.5-flash` → `gemini-flash-latest` → `gemini-flash-lite-latest` → `gemini-2.5-flash-lite`, paced at about 9 requests/min and capped at 60 calls a day. *Default* as listed. Raise the cap if the free tier allows it?
 6. **Grounding strictness:** quotes must match the source verbatim (case-sensitive; only whitespace, quote style and dash style are normalised), each 4+ words and 20+ characters, with at least one supporting the summary and one supporting "why it matters". Failing twice means a headline-only card. *Default:* strict. Too strict if more than ~25% of items end up headline-only?
 7. **Source text isn't stored in git** (copyright), only its SHA-256. *Default:* keep it that way. Grounding is checked at ingest time and recorded.
 8. **Backfill from 1 July.** Feeds usually hold only 10–25 recent items, so the back archive will be thin except for high-volume feeds. *Default:* run one backfill with a 150-day window and accept whatever history exists, rather than scraping archives.
+
+## Edition & site
+
+9. **Top Signals:** 3–5 per edition, at most 2 from news, never headline-only, significance ≥3 except to make up the minimum of 3. *Default* as listed. Should official items always outrank news even when the news item is more significant?
+10. **"This week" intro:** generated only from the Top Signals' verified summaries. Every sentence must cite them, and every number must match a cited item, or the intro is dropped. *Default:* on. Prefer no generated prose at all?
+11. **Edition window:** from the previous edition's cutoff to Friday 15:17 Sydney time, based on when items were collected, not their original publish date. *Default* as listed.
+12. **Daily redeploy:** the site redeploys after each daily collect, so search, consultations and key dates stay current, while the edition only changes on Fridays. *Default:* on.
+13. **Key dates:** 7 curated entries, each checked against its source on 2026-11-24 (Privacy Act ADM transparency on 10 Dec 2026, DTA AI policy v2.0, CPS 230, EU AI Act dates after the Digital Omnibus). The EU dates cite a law-firm summary because the Official Journal wasn't reachable. *Default:* include them. Prefer primary sources only? The DTA policy's internal deadlines (use-case register, training) are **not** included because I couldn't verify them.
+14. **Item pages** (`/items/<id>/`) exist for search and permalinks. *Default:* public and indexable by search engines. Make them `noindex`?
+
+## Observed in the first live dry runs
+
+15. `gemini-flash-latest` returned 503 "high demand", so `gemini-2.5-flash` now leads the chain, and a model that returns 503/429 is skipped for the rest of the run.
+16. **UK DSIT:** its feed returns 20 items but 0 fell inside the window, while the source check sees 16 from the last 30 days. Per-source diagnostics are now logged; under investigation.
