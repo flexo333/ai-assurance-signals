@@ -57,6 +57,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
   }
 
   let calls = 0;
+  const modelErrors = [];
   const call = async (retryNote) => {
     const r = await generateWithFallback(ai, {
       ...(chain ? { chain } : {}),
@@ -66,11 +67,12 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
       budget: budget - calls,
     });
     calls += r.attempts ?? 0;
+    modelErrors.push(...(r.errors || []));
     return r;
   };
 
   let res = await call();
-  if (!res.ok) return { calls, record: null, quotaExhausted: !!res.quotaExhausted, error: res.error };
+  if (!res.ok) return { calls, modelErrors, record: null, quotaExhausted: !!res.quotaExhausted, error: res.error };
   let a = res.value;
   const provenance = {
     model: res.model,
@@ -82,7 +84,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
     analysedAt: new Date().toISOString(),
     attempts: 1,
   };
-  if (!a.is_ai_governance) return { calls, record: { ...base, status: "irrelevant", provenance } };
+  if (!a.is_ai_governance) return { calls, modelErrors, record: { ...base, status: "irrelevant", provenance } };
 
   let grounding = verifyQuotes(a.quotes, item.text);
   if (!grounding.grounded && allowRetry && calls < budget) {
@@ -103,6 +105,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
     const dates = groundedDates(a, item.text);
     return {
       calls,
+      modelErrors,
       record: {
         ...base,
         status: "summarised",
@@ -119,6 +122,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
   // Ungrounded generated text (and any dates it claimed) is discarded — never stored or published.
   return {
     calls,
+    modelErrors,
     record: {
       ...base,
       status: "headline-only",

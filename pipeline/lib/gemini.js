@@ -58,9 +58,10 @@ export async function generateWithFallback(ai, {
   let lastErr;
   let allRetryable = true;
   let used = 0;
+  const errors = [];
   for (const model of chain) {
     for (let attempt = 0; attempt < attempts; attempt++) {
-      if (used >= budget) return { ok: false, error: lastErr || new Error("request budget exhausted"), quotaExhausted: false, budgetExhausted: true, attempts: used };
+      if (used >= budget) return { ok: false, error: lastErr || new Error("request budget exhausted"), quotaExhausted: false, budgetExhausted: true, attempts: used, errors };
       used++;
       try {
         const res = await withTimeout(ai.models.generateContent({ model, contents, ...(config ? { config } : {}) }), timeoutMs);
@@ -68,9 +69,10 @@ export async function generateWithFallback(ai, {
         if (!text) throw new Error("empty response");
         const value = parse(text);
         if (value == null) throw new Error("empty response (unparseable payload)");
-        return { ok: true, model, value, attempts: used };
+        return { ok: true, model, value, attempts: used, errors };
       } catch (err) {
         lastErr = err;
+        errors.push({ model, status: err?.status ?? null, message: String(err?.message || err).slice(0, 200) });
         if (!isRetryableModelError(err)) {
           allRetryable = false;
           break;
@@ -79,5 +81,5 @@ export async function generateWithFallback(ai, {
       }
     }
   }
-  return { ok: false, error: lastErr, quotaExhausted: allRetryable, attempts: used };
+  return { ok: false, error: lastErr, quotaExhausted: allRetryable, attempts: used, errors };
 }

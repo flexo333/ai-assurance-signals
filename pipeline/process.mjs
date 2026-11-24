@@ -37,6 +37,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const stats = { collected: collected.items.length, summarised: 0, headlineOnly: 0, irrelevant: 0, skipped: 0, failed: 0, calls: 0 };
 let quotaHit = false;
+const modelErrorCounts = new Map();
 
 for (const item of collected.items) {
   if (stats.calls >= MAX || quotaHit) {
@@ -51,6 +52,10 @@ for (const item of collected.items) {
   if (stats.calls > 0) await sleep(DELAY_MS);
   const res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls });
   stats.calls += res.calls;
+  for (const e of res.modelErrors || []) {
+    const key = `${e.model} ${e.status ?? ""} ${e.message.slice(0, 80)}`;
+    modelErrorCounts.set(key, (modelErrorCounts.get(key) || 0) + 1);
+  }
   if (!res.record) {
     if (res.quotaExhausted) quotaHit = true;
     if (stats.calls >= MAX) {
@@ -84,11 +89,12 @@ const summary = [
   `| ${stats.collected} | ${stats.summarised} | ${stats.headlineOnly} | ${stats.irrelevant} | ${stats.skipped} | ${stats.failed} | ${stats.calls} |`,
   "",
   quotaHit ? "⚠️ Gemini quota exhausted on every model — remaining items will be retried next run." : "",
+  modelErrorCounts.size ? ["**Model errors (count · model status message):**", "", ...[...modelErrorCounts].map(([k, n]) => `- ${n} × ${k}`), ""].join("\n") : "",
   "<details><summary>Per-source collection log</summary>",
   "",
-  "| source | status | feed items | in window | keyword-dropped | collected |",
-  "|---|---|---|---|---|---|",
-  ...(collected.sources || []).map((s) => `| ${s.id} | ${s.status} | ${s.feedItems} | ${s.inWindow} | ${s.keywordDropped} | ${s.collected} |`),
+  "| source | status | feed items | in window | keyword-dropped | collected | skipped known/old/bad-url | first item (date · link) |",
+  "|---|---|---|---|---|---|---|---|",
+  ...(collected.sources || []).map((s) => `| ${s.id} | ${s.status} | ${s.feedItems} | ${s.inWindow} | ${s.keywordDropped} | ${s.collected} | ${s.skipped ? `${s.skipped.known}/${s.skipped.old}/${s.skipped.badUrl}` : ""} | ${s.sample ? `${s.sample.date ?? "undated"} · ${String(s.sample.link).slice(0, 70)}` : ""} |`),
   "",
   "</details>",
 ].join("\n");
