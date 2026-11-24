@@ -1,0 +1,41 @@
+---
+import ItemCard from "./ItemCard.astro";
+import { editionLabel, fmtDate } from "../lib/data.js";
+interface Props { edition: any; itemsById: Map<string, any>; latest?: boolean }
+const { edition, itemsById, latest } = Astro.props;
+const get = (id: string) => itemsById.get(id);
+const top = edition.topSignals.map((t: any) => get(t.id)).filter(Boolean);
+const rankOf = new Map(top.map((it: any, k: number) => [it.id, k + 1]));
+---
+<header class="edition-head">
+  <p class="kicker">{latest ? "Latest edition" : "Edition"} · {editionLabel(edition.id)}</p>
+  <h1>The week in AI assurance and governance</h1>
+  <p class="muted">Published {fmtDate(edition.publishedAt)} · covering items collected {fmtDate(edition.window.from)} – {fmtDate(edition.window.to)}</p>
+</header>
+
+{edition.intro && (
+  <section class="intro" aria-label="This week">
+    <p class="lede">
+      {edition.intro.sentences.map((s: any) => (
+        <>{s.text.replace(/[.!?]$/, "")}<sup>{s.cites.map((id: string, k: number) => <>{k > 0 && ","}<a href={`#item-${id}`}>{rankOf.get(id)}</a></>)}</sup>{s.text.match(/[.!?]$/)?.[0] ?? "."} </>
+      ))}
+    </p>
+  </section>
+)}
+
+{top.length > 0 && (
+  <section aria-labelledby="top">
+    <h2 id="top">Top Signals</h2>
+    {top.map((item: any, k: number) => <div id={`item-${item.id}`}><ItemCard item={item} rank={k + 1} /></div>)}
+  </section>
+)}
+
+{edition.sections.map((sec: any) => (
+  <section aria-labelledby={sec.id}>
+    <h2 id={sec.id}>{sec.title}</h2>
+    {sec.items.map((ref: any) => get(ref.id)).filter(Boolean).map((item: any) => <div id={`item-${item.id}`}><ItemCard item={item} /></div>)}
+    {sec.overflow > 0 && <p class="muted small">{sec.overflow} more in this section — see <a href="/search/">search</a>.</p>}
+  </section>
+))}
+
+{top.length === 0 && edition.sections.length === 0 && <p>No qualifying items were collected this week.</p>}

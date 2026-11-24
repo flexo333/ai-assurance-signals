@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro";
+import { loadAll, AUTHORITY_LABEL } from "../lib/data.js";
+const { sources } = loadAll();
+const active = sources.filter((s: any) => s.status !== "blocked");
+const blocked = sources.filter((s: any) => s.status === "blocked");
+const groups = ["official", "standards", "lab", "research", "news"].map((a) => ({ a, list: active.filter((s: any) => s.authority === a) })).filter((g) => g.list.length);
+---
+<Base title="Sources" description="The allow-list of sources AI Assurance Signals monitors, and the ones it cannot.">
+  <h1>Sources</h1>
+  <p>Content comes <strong>only</strong> from this allow-list — never from open web search. Each item carries its source's authority badge.</p>
+  {groups.map((g) => (
+    <section>
+      <h2><span class={`badge badge--${g.a}`}>{AUTHORITY_LABEL[g.a]}</span></h2>
+      <ul class="plain">
+        {g.list.map((s: any) => <li><a href={s.homepage} rel="noopener">{s.name}</a> <span class="muted small">{s.jurisdiction}{s.paywalled ? " · paywalled (headline and standfirst only)" : ""}</span></li>)}
+      </ul>
+    </section>
+  ))}
+  <section>
+    <h2>Not directly monitored</h2>
+    <p>These sources block automated access (or disallow it in robots.txt). We respect that and don't work around it, so their announcements reach the digest through news coverage instead.</p>
+    <ul class="plain">
+      {blocked.map((s: any) => <li>{s.name} <span class="muted small">— {s.blocked_reason}</span></li>)}
+    </ul>
+  </section>
+</Base>

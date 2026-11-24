@@ -1,0 +1,14 @@
+---
+import Base from "../../layouts/Base.astro";
+import Edition from "../../components/Edition.astro";
+import { loadAll, editionLabel } from "../../lib/data.js";
+export function getStaticPaths() {
+  const { editions } = loadAll();
+  return editions.map((edition: any) => ({ params: { id: edition.id }, props: { edition } }));
+}
+const { edition } = Astro.props;
+const { itemsById } = loadAll();
+---
+<Base title={editionLabel(edition.id)} description={`AI assurance and governance developments, ${editionLabel(edition.id)}.`}>
+  <Edition edition={edition} itemsById={itemsById} />
+</Base>

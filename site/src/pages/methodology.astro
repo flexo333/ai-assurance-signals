@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Methodology" description="How AI Assurance Signals collects, summarises, verifies and ranks items.">
+  <h1>Methodology</h1>
+  <p class="lede">AI Assurance Signals is produced automatically, without human review of each edition. These are the safeguards that make that acceptable — and their limits.</p>
+
+  <h2>1. Sources</h2>
+  <p>Items come only from an <a href="/sources/">allow-list</a> of government bodies, regulators, standards bodies, research institutes, frontier AI labs and news outlets. We fetch feeds daily with an honest user agent, respect robots.txt, and never bypass paywalls or bot protection. Broad sources pass a keyword filter before any AI processing.</p>
+
+  <h2>2. Summaries</h2>
+  <p>For each item, an AI model (Google Gemini) reads the source text and decides whether it is substantively about AI governance or assurance. If it is, the model writes a neutral headline, a 2–4 sentence summary, a one-sentence “why it matters”, and scores the item for significance and Australian relevance.</p>
+
+  <h2>3. Verification against the source</h2>
+  <p>The model must also copy short passages from the source text that support its summary and its “why it matters”. Software then checks that every passage appears <strong>verbatim</strong> in the source. If any quote cannot be found, the model gets one corrective retry; if it fails again, the AI-generated text is discarded and the item appears as a <em>headline-only</em> card linking to the original. You can expand “Source quotes” on any card to see the passages.</p>
+  <p>This catches invented quotes and many fabrications, but it cannot guarantee that a summary is a fair reading of the whole document. Always rely on the original.</p>
+
+  <h2>4. Ranking</h2>
+  <p>Each item's score combines the model's significance rating, the source's authority (official &gt; standards &gt; labs &gt; research &gt; news), Australian relevance and recency. The top 3–5 become <strong>Top Signals</strong> (at most two from news); the rest are grouped into themed sections of up to eight items. The opening paragraph is generated only from the Top Signals' verified summaries, and every sentence must cite them — or it is left out.</p>
+
+  <h2>5. Records</h2>
+  <p>Every item records which model produced it, the prompt version, and a fingerprint of the source text. The full history is public in the <a href="https://github.com/flexo333/ai-assurance-signals">repository</a>.</p>
+
+  <h2>Known gaps</h2>
+  <p>Several Australian government agencies block automated access, so their announcements reach the digest second-hand through news coverage. See <a href="/sources/">Sources</a>.</p>
+</Base>

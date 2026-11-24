@@ -36,7 +36,12 @@ const pageTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
     <header class="masthead">
       <div class="wrap">
         <a class="brand" href="/">AI Assurance <span>Signals</span></a>
-        <span class="tagline">AI assurance &amp; governance · Australia first · weekly</span>
+        <nav aria-label="Main">
+          <a href="/">Latest</a>
+          <a href="/editions/">Archive</a>
+          <a href="/sources/">Sources</a>
+          <a href="/methodology/">Method</a>
+        </nav>
       </div>
     </header>
     <main>
@@ -46,7 +51,8 @@ const pageTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
     </main>
     <footer>
       <div class="wrap">
-        Published every Friday afternoon (AEST/AEDT). Built in the open at{" "}
+        AI assurance &amp; governance · Australia first · published every Friday afternoon (AEST/AEDT).
+        <a href="/about/">About</a> · Built in the open at{" "}
         <a href="https://github.com/flexo333/ai-assurance-signals">github.com/flexo333/ai-assurance-signals</a>.
       </div>
     </footer>
