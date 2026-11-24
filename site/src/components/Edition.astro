@@ -10,7 +10,11 @@ const rankOf = new Map(top.map((it: any, k: number) => [it.id, k + 1]));
 <header class="edition-head">
   <p class="kicker">{latest ? "Latest edition" : "Edition"} · {editionLabel(edition.id)}</p>
   <h1>The week in AI assurance and governance</h1>
-  <p class="muted">Published {fmtDate(edition.publishedAt)} · covering items collected {fmtDate(edition.window.from)} – {fmtDate(edition.window.to)}</p>
+  {edition.backfilled ? (
+    <p class="muted">Backfilled archive edition · items published {fmtDate(edition.window.from)} – {fmtDate(edition.window.to)}. Compiled after the fact from what our sources' feeds still held, so it may be incomplete.</p>
+  ) : (
+    <p class="muted">Published {fmtDate(edition.publishedAt)} · covering {fmtDate(edition.window.from)} – {fmtDate(edition.window.to)}</p>
+  )}
 </header>
 
 {edition.intro && (

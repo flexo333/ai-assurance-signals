@@ -4,7 +4,7 @@
 // be used as an open fetch proxy.
 //
 //   { action: "source-check", sources }               → source-check report
-//   { action: "collect", sources, knownIds, sinceDays } → raw collected items
+//   { action: "collect", sources, knownIds, sinceDays, maxItems } → raw collected items
 
 import { runCheck, USER_AGENT } from "../source-check.mjs";
 import { runCollect } from "../collect.mjs";
@@ -30,7 +30,7 @@ export const handler = async (event) => {
     return { generatedAt, location, egressIp: ip, userAgent: USER_AGENT, results };
   }
   if (action === "collect") {
-    const out = await runCollect({ sources: event.sources, knownIds: event.knownIds, sinceDays: event.sinceDays });
+    const out = await runCollect({ sources: event.sources, knownIds: event.knownIds, sinceDays: event.sinceDays, maxItems: event.maxItems });
     return { generatedAt, location, egressIp: ip, userAgent: USER_AGENT, ...out };
   }
   throw new Error(`unknown action: ${action}`);
