@@ -7,6 +7,7 @@ import {
   discoverFeedLinks,
   parseRobots,
   isAllowed,
+  robotsFromResponse,
 } from "./feed-pure.js";
 
 const RSS = `<?xml version="1.0"?><rss version="2.0"><channel><title>X</title>
@@ -82,4 +83,17 @@ test("robots: grouped user-agents share rules; empty Disallow allows all", () =>
   assert.equal(robots.groups.length, 1);
   assert.equal(isAllowed(robots, "anything", "https://ex.com/x"), true);
   assert.equal(isAllowed(parseRobots(""), "x", "https://ex.com/"), true);
+});
+
+test("robotsFromResponse follows RFC 9309 for 4xx vs 5xx/network failures", () => {
+  const ua = "AIAssuranceSignalsBot/1.0";
+  const url = "https://ex.gov.au/news";
+  assert.equal(isAllowed(robotsFromResponse(200, "User-agent: *\nDisallow: /news"), ua, url), false);
+  assert.equal(robotsFromResponse(404, "<html>").state, "absent");
+  assert.equal(isAllowed(robotsFromResponse(404, ""), ua, url), true);
+  for (const status of [503, 500, 0]) {
+    const r = robotsFromResponse(status, "");
+    assert.equal(r.state, "unreachable");
+    assert.equal(isAllowed(r, ua, url), false);
+  }
 });

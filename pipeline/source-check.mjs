@@ -15,7 +15,7 @@ import {
   parseFeedItems,
   newestItem,
   discoverFeedLinks,
-  parseRobots,
+  robotsFromResponse,
   isAllowed,
 } from "./lib/feed-pure.js";
 import { isAiRelated } from "./lib/keywords.js";
@@ -57,7 +57,7 @@ async function robotsFor(url) {
       origin,
       get(`${origin}/robots.txt`).then((r) => ({
         status: r.status,
-        parsed: parseRobots(r.ok ? r.body : ""),
+        parsed: robotsFromResponse(r.status, r.body),
       })),
     );
   }
@@ -99,10 +99,13 @@ async function checkSource(src) {
     .filter((f) => f.isFeed && f.items > 0)
     .sort((a, b) => (b.newest?.date || "").localeCompare(a.newest?.date || ""));
 
+  // A working feed that robots permits is usable even if the homepage itself
+  // is disallowed (checkFeed applies robots per feed URL).
   let method;
   let status;
-  if (!homeAllowed) [method, status] = ["none", "robots-disallowed"];
-  else if (working.length) [method, status] = [working[0].type === "atom" ? "atom" : "rss", "ok"];
+  if (working.length) [method, status] = [working[0].type === "atom" ? "atom" : "rss", "ok"];
+  else if (robots.parsed.state === "unreachable") [method, status] = ["none", "robots-unreachable"];
+  else if (!homeAllowed) [method, status] = ["none", "robots-disallowed"];
   else if (home?.ok && robots.parsed.sitemaps.length) [method, status] = ["sitemap", "needs-config"];
   else if (home?.ok) [method, status] = ["html-list", "needs-selector"];
   else [method, status] = ["none", home?.status ? `http-${home.status}` : `unreachable:${home?.error || "?"}`];
@@ -115,6 +118,7 @@ async function checkSource(src) {
     paywalled: !!src.paywalled,
     homepage: src.homepage,
     robotsStatus: robots.status,
+    robotsState: robots.parsed.state,
     homeAllowed,
     homeStatus: home?.status ?? null,
     homeError: home?.error,

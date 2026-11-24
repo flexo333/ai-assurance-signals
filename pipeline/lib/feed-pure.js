@@ -138,3 +138,19 @@ export function isAllowed(robots, agent, url) {
   rules.sort((a, b) => b.path.length - a.path.length || Number(b.allow) - Number(a.allow));
   return rules[0].allow;
 }
+
+/**
+ * RFC 9309 §2.3.1: robots rules from an HTTP fetch of /robots.txt.
+ *   2xx                → parse the body
+ *   4xx (incl. 404)    → no restrictions ("unavailable" file)
+ *   5xx / network fail → assume complete disallow ("unreachable"), and retry later
+ */
+export function robotsFromResponse(status, body) {
+  if (status >= 200 && status < 300) return { ...parseRobots(body), state: "ok" };
+  if (status >= 400 && status < 500) return { groups: [], sitemaps: [], state: "absent" };
+  return {
+    groups: [{ agents: ["*"], rules: [{ allow: false, path: "/" }] }],
+    sitemaps: [],
+    state: "unreachable",
+  };
+}
