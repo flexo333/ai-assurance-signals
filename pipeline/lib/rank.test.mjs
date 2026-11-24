@@ -54,6 +54,28 @@ test("buildEdition: top signals capped, ≤2 news, sections capped and exclusive
   assert.equal(new Set(all).size, all.length, "no item appears twice");
 });
 
+test("a low-significance item doesn't stop later qualifying items reaching Top Signals", () => {
+  const items = [
+    mk("a", { classification: { significance: 5, au_relevance: 3, theme: "regulator-guidance" } }),
+    mk("b", { classification: { significance: 5, au_relevance: 3, theme: "regulator-guidance" } }),
+    mk("c", { classification: { significance: 4, au_relevance: 3, theme: "regulator-guidance" } }),
+    // official sig-2 AU item outranks the sig-3 news item on composite score
+    mk("low", { classification: { significance: 2, au_relevance: 3, theme: "regulator-guidance" } }),
+    mk("news3", { authority: "news", classification: { significance: 3, au_relevance: 3, theme: "news-commentary" } }),
+  ];
+  const ed = buildEdition(items, { id: "w", from: "2026-11-20T04:17:00Z", to: "2026-11-27T04:17:00Z" });
+  const top = ed.topSignals.map((t) => t.id);
+  assert.ok(top.includes("news3"));
+  assert.ok(!top.includes("low"));
+});
+
+test("overflow items are kept in 'more', not dropped", () => {
+  const items = Array.from({ length: 11 }, (_, k) => mk(`r${k}`, { classification: { significance: 2, au_relevance: 1, theme: "regulator-guidance" } }));
+  const sec = buildEdition(items, { id: "w", from: "2026-11-20T04:17:00Z", to: "2026-11-27T04:17:00Z" }).sections.find((s) => s.id === "regulator-guidance");
+  assert.equal(sec.items.length + sec.more.length + 3, 11); // 3 went to Top Signals (minimum)
+  assert.equal(sec.overflow, sec.more.length);
+});
+
 test("isoWeekId uses Sydney local date", () => {
   assert.equal(isoWeekId(new Date("2026-11-27T04:17:00Z")), "2026-W48");
   assert.equal(isoWeekId(new Date("2026-12-31T14:00:00Z")), "2026-W53"); // Fri 1 Jan 2027 01:00 AEDT

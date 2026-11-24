@@ -34,7 +34,19 @@ const rankOf = new Map(top.map((it: any, k: number) => [it.id, k + 1]));
   <section aria-labelledby={sec.id}>
     <h2 id={sec.id}>{sec.title}</h2>
     {sec.items.map((ref: any) => get(ref.id)).filter(Boolean).map((item: any) => <div id={`item-${item.id}`}><ItemCard item={item} /></div>)}
-    {sec.overflow > 0 && <p class="muted small">{sec.overflow} more in this section — see <a href="/search/">search</a>.</p>}
+    {sec.more?.length > 0 && (
+      <details class="more">
+        <summary>{sec.more.length} more in {sec.title}</summary>
+        <ul class="plain">
+          {sec.more.map((ref: any) => get(ref.id)).filter(Boolean).map((item: any) => (
+            <li id={`item-${item.id}`}>
+              <a href={item.url} rel="noopener">{item.status === "summarised" ? item.headline : item.title}</a>
+              <span class="muted small"> · {item.sourceName}{item.status !== "summarised" ? " · summary withheld" : ""}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
+    )}
   </section>
 ))}
 

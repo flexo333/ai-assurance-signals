@@ -29,6 +29,9 @@ const splitSentences = (text) =>
     // by whitespace or end of text — so "version 1.1" doesn't split.
     .match(/.+?(?:(?:\s*\[\d+\])+\s*[.!?]|[.!?](?:\s*\[\d+\])*)(?=\s|$)/g) || [];
 
+// Numeric tokens, with trailing sentence punctuation removed ("1.1." → "1.1").
+const numbers = (text) => (String(text).match(/\d[\d,.]*\d|\d/g) || []).map((n) => n.replace(/[.,]+$/, ""));
+
 export function checkIntro(text, items) {
   const sentences = splitSentences(text).map((s) => s.trim()).filter(Boolean);
   if (sentences.length < 2 || sentences.length > 7) return { ok: false, reason: `sentence-count:${sentences.length}` };
@@ -39,8 +42,10 @@ export function checkIntro(text, items) {
     if (cites.some((n) => n < 1 || n > items.length)) return { ok: false, reason: "bad-citation", sentence: s };
     const body = s.replace(/\[\d+\]/g, "");
     const pool = cites.map((n) => `${items[n - 1].headline} ${items[n - 1].summary} ${items[n - 1].why_it_matters}`).join(" ");
-    for (const num of body.match(/\d[\d,.]*\d|\d/g) || []) {
-      if (!pool.includes(num)) return { ok: false, reason: `unsupported-number:${num}`, sentence: s };
+    // Compare whole numeric tokens: "60" must not pass because "600" is cited.
+    const supported = new Set(numbers(pool));
+    for (const num of numbers(body)) {
+      if (!supported.has(num)) return { ok: false, reason: `unsupported-number:${num}`, sentence: s };
     }
     parsed.push({ text: body.replace(/\s+([.!?])/g, "$1").trim(), cites: [...new Set(cites)].map((n) => items[n - 1].id) });
   }

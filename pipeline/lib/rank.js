@@ -66,8 +66,9 @@ export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
     if (top.length >= TOP_MAX) break;
     if (i.status !== "summarised") continue;
     if (i.authority === "news" && news >= TOP_MAX_NEWS) continue;
-    // Below significance 3 only to make up the minimum.
-    if ((i.classification?.significance ?? 0) < 3 && top.length >= TOP_MIN) break;
+    // Below significance 3 only to make up the minimum. Ranking is by composite
+    // score, so later items may still qualify — skip, don't stop.
+    if ((i.classification?.significance ?? 0) < 3 && top.length >= TOP_MIN) continue;
     top.push({ id: i.id, score: s });
     if (i.authority === "news") news++;
   }
@@ -79,6 +80,8 @@ export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
       id: sec.id,
       title: sec.title,
       items: members.slice(0, SECTION_CAP).map(({ i, s }) => ({ id: i.id, score: s })),
+      // Beyond the cap: listed compactly (headline + source) so nothing is hidden.
+      more: members.slice(SECTION_CAP).map(({ i, s }) => ({ id: i.id, score: s })),
       overflow: Math.max(0, members.length - SECTION_CAP),
     };
   }).filter((s) => s.items.length);
