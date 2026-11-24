@@ -1,0 +1,28 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { stripHtml, canonicalUrl, itemId, truncate, decodeEntities } from "./text-pure.js";
+
+test("stripHtml keeps paragraph breaks and decodes entities", () => {
+  assert.equal(stripHtml("<p>AI &amp; privacy</p><p>Second&nbsp;para</p><script>x()</script>"), "AI & privacy\nSecond para");
+  assert.equal(decodeEntities("it&rsquo;s &#8216;x&#x2019;"), "it’s ‘x’");
+});
+
+test("canonicalUrl strips tracking, fragments, www and trailing slash", () => {
+  assert.equal(
+    canonicalUrl("http://www.Example.gov.au/news/item/?utm_source=x&b=2&a=1#top"),
+    "https://example.gov.au/news/item/?a=1&b=2",
+  );
+  assert.equal(canonicalUrl("https://example.com/a/"), "https://example.com/a");
+  assert.equal(canonicalUrl("https://example.com/"), "https://example.com/");
+});
+
+test("itemId is stable across URL noise", () => {
+  const a = itemId("https://www.example.com/post/?utm_medium=rss");
+  assert.equal(a, itemId("http://example.com/post"));
+  assert.match(a, /^[0-9a-f]{16}$/);
+});
+
+test("truncate cuts on a word boundary", () => {
+  assert.equal(truncate("one two three four", 9), "one two …");
+  assert.equal(truncate("short", 10), "short");
+});
