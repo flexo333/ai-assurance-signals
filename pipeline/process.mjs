@@ -66,6 +66,11 @@ for (const item of collected.items) {
   else if (r.status === "headline-only") stats.headlineOnly++;
   else stats.irrelevant++;
   if (!DRY) await saveItem(r);
+  else if (r.status !== "irrelevant") {
+    // Dry runs print what would be stored, for review in the job log.
+    const { id, sourceId, status, headline, title, summary, why_it_matters, quotes, classification, dates_mentioned, reason, grounding, provenance } = r;
+    console.log(JSON.stringify({ id, sourceId, status, headline: headline || title, summary, why_it_matters, quotes, classification, dates_mentioned, reason, grounding, model: provenance?.model, attempts: provenance?.attempts }, null, 2));
+  }
   if (r.status !== "irrelevant") console.log(`${r.status === "summarised" ? "✓" : "◐"} [${r.classification?.significance ?? "-"}] ${r.sourceId}: ${r.headline || r.title}`);
 }
 
