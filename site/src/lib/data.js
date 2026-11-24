@@ -64,7 +64,10 @@ export const THEME_LABEL = {
 
 export const isPublishable = (i) => i.status === "summarised" || i.status === "headline-only";
 
-const todayIso = () => new Date().toISOString().slice(0, 10);
+// Today's calendar date in Sydney (en-CA formats as YYYY-MM-DD). The daily
+// build runs at 19:41 UTC, already the next day in Australia.
+const todayIso = (now = new Date()) =>
+  new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Sydney", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
 
 /** Open consultations (grounded closing date in the future) and recent ones without a stated date. */
 export function consultations(items, today = todayIso()) {
@@ -103,7 +106,7 @@ export function keyDates(curated, items, today = todayIso()) {
       const k = `${d.date}|${d.title.toLowerCase()}`;
       return seen.has(k) ? false : seen.add(k);
     });
-  const yearAgo = new Date(Date.now() - 365 * 864e5).toISOString().slice(0, 10);
+  const yearAgo = todayIso(new Date(Date.now() - 365 * 864e5));
   return {
     upcoming: all.filter((d) => d.date >= today).sort((a, b) => a.date.localeCompare(b.date)),
     recent: all.filter((d) => d.date < today && d.date >= yearAgo).sort((a, b) => b.date.localeCompare(a.date)),
