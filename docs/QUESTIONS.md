@@ -28,4 +28,4 @@ These came up while building overnight. Each has the **default I went with**, so
 ## Observed in the first live dry runs
 
 15. `gemini-flash-latest` returned 503 "high demand", so `gemini-2.5-flash` now leads the chain, and a model that returns 503/429 is skipped for the rest of the run.
-16. **UK DSIT:** its feed returns 20 items but 0 fell inside the window, while the source check sees 16 from the last 30 days. Per-source diagnostics are now logged; under investigation.
+16. **UK DSIT (fixed):** the configured gov.uk search feed works but returns stale items, while the organisation feed found on the homepage is current. The collector now picks the freshest working feed rather than the first one. No action needed.
