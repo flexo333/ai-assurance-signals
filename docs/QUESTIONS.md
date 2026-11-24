@@ -29,3 +29,7 @@ These came up while building overnight. Each has the **default I went with**, so
 
 15. `gemini-flash-latest` returned 503 "high demand", so `gemini-2.5-flash` now leads the chain, and a model that returns 503/429 is skipped for the rest of the run.
 16. **UK DSIT (fixed):** the configured gov.uk search feed works but returns stale items, while the organisation feed found on the homepage is current. The collector now picks the freshest working feed rather than the first one. No action needed.
+
+## Go-live status (2026-11-24 21:15 UTC)
+
+17. **The first scheduled Collect hasn't run yet.** It was due at 19:41 UTC (06:41 AEDT 25 Nov). GitHub often delays or drops a newly added workflow's first scheduled run, and I can't start workflows from my session (dispatch returns 403). **Action:** in GitHub → Actions → *Collect* → *Run workflow*, leave the inputs blank and run it once. That starts the backfill, and the schedule normally takes over from there. If it doesn't run by tomorrow's slot either, the schedule may need a nudge: any push to `main` that touches `.github/workflows/collect.yml` re-registers it.
