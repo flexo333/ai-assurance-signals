@@ -198,21 +198,21 @@ sources:
     name: NSW Ombudsman
     authority: official
     jurisdiction: AU-NSW
-    homepage: https://www.ombo.nsw.gov.au/news-and-publications
+    homepage: https://www.ombo.nsw.gov.au/
     ai_specific: false
 
   - id: vic-dgs
     name: Victorian Government (digital & AI)
     authority: official
     jurisdiction: AU-VIC
-    homepage: https://www.vic.gov.au/artificial-intelligence
-    ai_specific: true
+    homepage: https://www.vic.gov.au/
+    ai_specific: false
 
   - id: ovic
     name: Office of the Victorian Information Commissioner
     authority: official
     jurisdiction: AU-VIC
-    homepage: https://ovic.vic.gov.au/news/
+    homepage: https://ovic.vic.gov.au/
     ai_specific: false
 
   - id: qld-cgcio
@@ -404,7 +404,7 @@ sources:
     name: Singapore IMDA / AI Verify Foundation
     authority: official
     jurisdiction: SG
-    homepage: https://aiverifyfoundation.sg/whats-happening/
+    homepage: https://aiverifyfoundation.sg/
     ai_specific: true
 
   - id: nz-dia

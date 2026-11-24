@@ -16,11 +16,13 @@ on:
     paths:
       - "site/**"
       - "infra/**"
+      - "pipeline/**"
       - ".github/workflows/deploy.yml"
   pull_request:
     paths:
       - "site/**"
       - "infra/**"
+      - "pipeline/**"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
@@ -54,6 +56,17 @@ jobs:
 
       - name: Install Pulumi program deps
         run: pip install -r infra/pulumi/requirements.txt
+
+      # The Sydney fetch Lambda is packaged from pipeline/ (incl. node_modules).
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+
+      - name: Install pipeline deps (Lambda package)
+        working-directory: pipeline
+        run: npm ci --omit=dev
 
       - name: Install Pulumi CLI
         uses: pulumi/actions@v7

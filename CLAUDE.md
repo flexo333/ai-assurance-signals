@@ -14,7 +14,7 @@ Sibling project with shared patterns: `flexo333/yt2txt` (Gemini free tier via `@
 
 - `site/`: Astro (static, `build.format: directory`, `trailingSlash: always`). `src/layouts/Base.astro` holds the masthead, the AI-generated disclaimer banner (keep it on every page) and the footer. `src/styles/global.css` holds the design tokens (minimal, typographic, system font stacks, one navy accent, dark mode via `prefers-color-scheme`, print styles).
 - `sources.yaml`: the allow-list, the only places content can come from.
-- `pipeline/`: Node 22 ESM. `lib/*.js` are pure, dependency-free modules with `*.test.mjs` tests (run `cd pipeline && node --test` with no path arguments). `source-check.mjs` probes every source (robots, feeds, sitemaps) and runs in `.github/workflows/source-check.yml`.
+- `pipeline/`: Node 22 ESM. `lib/*.js` are pure, dependency-free modules with `*.test.mjs` tests (run `cd pipeline && node --test` with no path arguments). `source-check.mjs` probes every source (robots, feeds, sitemaps) and runs in `.github/workflows/source-check.yml`, both on the runner and via the Sydney Lambda (`lambda/source-check-handler.mjs`). `source-check.mjs` is also imported by the Lambda, so it must have no import-time side effects.
 - `infra/pulumi/`: Python Pulumi, static site only, via `flexo333/pulumi-static-site@v0.2.0` with `spa_mode=False` (a CloudFront Function rewrites `/path/` to `/path/index.html`).
 - `.github/workflows/deploy.yml`: the `infra` job (preview on PR, `up` with `upsert` on main) then the `site` job (build; on main also sync to S3 and invalidate CloudFront).
 
@@ -22,6 +22,7 @@ Sibling project with shared patterns: `flexo333/yt2txt` (Gemini free tier via `@
 
 - **The shared ingress stack** `flexo333/flexo333-ingress/prod` (source: `flexo333/my-blog`, `infra/pulumi-ingress/`) owns the `willbright.link` Route53 zone and the GitHub OIDC roles. `infra_role_arn` trusts any branch; `deploy_role_arn` trusts `main` only. Both trust the legacy and the immutable (`owner@id/repo@id`) OIDC `sub` formats.
 - **Every AWS resource name must start with `flexo333-`.** The ingress roles' IAM policies are scoped to that prefix. `__main__.py` enforces it for the bucket.
+- **GitHub-hosted runners are IP-blocked by many `.gov.au` sites** (govCMS/Akamai resets; 403 from OAIC and AHRC). Changing the User-Agent doesn't help, and we don't spoof it. Fetches of Australian government sources go through `flexo333-aisignals-fetch`, a Lambda in ap-southeast-2 packaged from `pipeline/`. `deploy.yml` runs `npm ci` in `pipeline/` before Pulumi so the package includes `node_modules`.
 - The Pulumi stack is `flexo333/prod` in project `flexo333-ai-assurance-signals`, in region `us-east-1` (needed for the CloudFront ACM cert).
 - Repo secret needed: `PULUMI_ACCESS_TOKEN`. From Phase 2 also `GEMINI_API_KEY`.
 

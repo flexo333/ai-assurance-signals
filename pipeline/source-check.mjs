@@ -3,12 +3,17 @@
 // and recommends an ingest method per source.
 //
 // Usage: node source-check.mjs [--only id1,id2] [--out ../data/source-check.json]
+//        node source-check.mjs --from-json result.json   (print a report for a saved run,
+//                                                          e.g. one returned by the Sydney Lambda)
 // Writes JSON (machine-readable) and prints a Markdown report; in Actions the
 // report is also appended to $GITHUB_STEP_SUMMARY.
+//
+// Also imported by lambda/source-check-handler.mjs (runCheck), so it must not
+// do anything at import time.
 
 import { readFile, writeFile, mkdir, appendFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse as parseYaml } from "yaml";
 import {
   feedType,
@@ -26,13 +31,6 @@ const CONCURRENCY = 6;
 const RECENT_DAYS = 30;
 
 const here = dirname(fileURLToPath(import.meta.url));
-const args = process.argv.slice(2);
-const argVal = (name) => {
-  const i = args.indexOf(name);
-  return i >= 0 ? args[i + 1] : undefined;
-};
-const only = argVal("--only")?.split(",");
-const outPath = resolve(here, argVal("--out") || "../data/source-check.json");
 
 async function get(url) {
   const started = Date.now();
@@ -144,10 +142,21 @@ async function pool(items, n, fn) {
   return out;
 }
 
-function report(results) {
+/** Check every source; returns per-source results. Safe to call repeatedly (warm Lambdas). */
+export async function runCheck(sources, { concurrency = CONCURRENCY } = {}) {
+  robotsCache.clear();
+  const ids = new Set();
+  for (const s of sources) {
+    if (ids.has(s.id)) throw new Error(`duplicate source id: ${s.id}`);
+    ids.add(s.id);
+  }
+  return pool(sources, concurrency, checkSource);
+}
+
+export function report(results, { location = "GitHub Actions", generatedAt = new Date().toISOString() } = {}) {
   const by = (s) => results.filter((r) => r.recommended.status === s).length;
   const lines = [
-    `## Source check — ${new Date().toISOString().slice(0, 16)}Z`,
+    `## Source check from ${location} — ${generatedAt.slice(0, 16)}Z`,
     "",
     `${results.length} sources · **${by("ok")} with a working feed** · ${by("needs-config")} sitemap · ${by("needs-selector")} HTML list · ${results.filter((r) => r.recommended.method === "none").length} blocked/unreachable`,
     "",
@@ -164,23 +173,35 @@ function report(results) {
 }
 
 async function main() {
-  const { sources } = parseYaml(await readFile(resolve(here, "../sources.yaml"), "utf8"));
-  const ids = new Set();
-  for (const s of sources) {
-    if (ids.has(s.id)) throw new Error(`duplicate source id: ${s.id}`);
-    ids.add(s.id);
-  }
-  const selected = only ? sources.filter((s) => only.includes(s.id)) : sources;
-  const results = await pool(selected, CONCURRENCY, checkSource);
+  const args = process.argv.slice(2);
+  const argVal = (name) => {
+    const i = args.indexOf(name);
+    return i >= 0 ? args[i + 1] : undefined;
+  };
 
-  await mkdir(dirname(outPath), { recursive: true });
-  await writeFile(outPath, JSON.stringify({ generatedAt: new Date().toISOString(), userAgent: USER_AGENT, results }, null, 2) + "\n");
-  const md = report(results);
+  let md;
+  const fromJson = argVal("--from-json");
+  if (fromJson) {
+    const saved = JSON.parse(await readFile(resolve(fromJson), "utf8"));
+    md = report(saved.results, { location: saved.location, generatedAt: saved.generatedAt });
+  } else {
+    const only = argVal("--only")?.split(",");
+    const outPath = resolve(argVal("--out") || resolve(here, "../data/source-check.json"));
+    const { sources } = parseYaml(await readFile(resolve(here, "../sources.yaml"), "utf8"));
+    const selected = only ? sources.filter((s) => only.includes(s.id)) : sources;
+    const generatedAt = new Date().toISOString();
+    const results = await runCheck(selected);
+    await mkdir(dirname(outPath), { recursive: true });
+    await writeFile(outPath, JSON.stringify({ generatedAt, location: "GitHub Actions", userAgent: USER_AGENT, results }, null, 2) + "\n");
+    md = report(results, { generatedAt });
+  }
   console.log(md);
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, md + "\n");
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

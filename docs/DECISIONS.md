@@ -2,6 +2,9 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-24: Test fetching from AWS Sydney; GitHub runners are IP-blocked by .gov.au
+The first source check from Actions reached 16 of 67 sources. A diagnostic showed the blocking is by IP, not User-Agent. govCMS/Akamai sites (DISR, DTA, AGD, eSafety and others) reset the connection within about 40 ms for every UA. OAIC, AHRC and InnovationAus return 403 for every UA. APH only admits a browser UA. **Decision:** don't spoof the UA. Deploy `flexo333-aisignals-fetch`, a Lambda in ap-southeast-2 that runs the same `pipeline/` code, and compare its source check with the Actions one. It has no Function URL; only the CI infra role can invoke it. **If Sydney works:** only the collector's fetch step moves there. **If not:** fall back to a collector on the home lab (residential AU IP).
+
 ## 2026-11-24: Anonymous site; IAPP and Capital Brief in the allow-list
 **Decision:** no author attribution anywhere on the site. IAPP (news, INTL) and Capital Brief (news, AU, paywalled, so headline-only) are confirmed in `sources.yaml`.
 

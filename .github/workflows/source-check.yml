@@ -2,7 +2,13 @@ name: Source check
 
 # Verifies every source in sources.yaml (robots.txt, reachability, feeds,
 # sitemaps) and recommends an ingest method. Report → job summary + artifact.
-# Runs on PRs touching sources/pipeline, weekly (Mon ~10am AEDT), and on demand.
+#
+# Two vantage points, compared side by side:
+#   check   — from the GitHub-hosted runner (US datacenter IPs)
+#   sydney  — from the flexo333-aisignals-fetch Lambda in ap-southeast-2, which
+#             many .gov.au sites accept when they reject GitHub's IPs. Runs after
+#             each successful Deploy on main, weekly, and on demand (not on PRs:
+#             the Lambda only updates on main).
 
 on:
   pull_request:
@@ -15,6 +21,10 @@ on:
     paths:
       - "sources.yaml"
       - "pipeline/**"
+  workflow_run:
+    workflows: [Deploy]
+    types: [completed]
+    branches: [main]
   schedule:
     - cron: "23 23 * * 0"
   workflow_dispatch:
@@ -25,9 +35,15 @@ on:
 
 permissions:
   contents: read
+  id-token: write # sydney job assumes the ingress infra role via OIDC
+
+env:
+  INGRESS_STACK: flexo333/flexo333-ingress/prod
+  STACK: flexo333/flexo333-ai-assurance-signals/prod
 
 jobs:
   check:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -56,4 +72,77 @@ jobs:
         with:
           name: source-check
           path: pipeline/source-check.json
+          if-no-files-found: ignore
+
+  sydney:
+    if: >-
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+
+      - run: npm ci
+
+      - name: Build Lambda event from sources.yaml
+        env:
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          node --input-type=module -e '
+            import { readFileSync, writeFileSync } from "node:fs";
+            import { parse } from "yaml";
+            const only = process.env.ONLY ? process.env.ONLY.split(",") : null;
+            let { sources } = parse(readFileSync("../sources.yaml", "utf8"));
+            if (only) sources = sources.filter((s) => only.includes(s.id));
+            writeFileSync("event.json", JSON.stringify({ sources }));
+          '
+
+      - name: Install Pulumi CLI
+        uses: pulumi/actions@v7
+
+      - name: Resolve role and function
+        id: cfg
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        run: |
+          pulumi login
+          echo "INFRA_ROLE_ARN=$(pulumi stack output infra_role_arn -s $INGRESS_STACK)" >> "$GITHUB_OUTPUT"
+          echo "FN=$(pulumi stack output fetch_function_name -s $STACK)" >> "$GITHUB_OUTPUT"
+          echo "REGION=$(pulumi stack output fetch_region -s $STACK)" >> "$GITHUB_OUTPUT"
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ steps.cfg.outputs.INFRA_ROLE_ARN }}
+          aws-region: ${{ steps.cfg.outputs.REGION }}
+
+      - name: Invoke Sydney Lambda
+        run: |
+          aws lambda invoke \
+            --function-name "${{ steps.cfg.outputs.FN }}" \
+            --region "${{ steps.cfg.outputs.REGION }}" \
+            --cli-binary-format raw-in-base64-out \
+            --cli-read-timeout 960 \
+            --payload fileb://event.json \
+            source-check-sydney.json > invoke-meta.json
+          cat invoke-meta.json
+          if grep -q FunctionError invoke-meta.json; then cat source-check-sydney.json; exit 1; fi
+
+      - name: Report
+        run: node source-check.mjs --from-json source-check-sydney.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-check-sydney
+          path: pipeline/source-check-sydney.json
           if-no-files-found: ignore
