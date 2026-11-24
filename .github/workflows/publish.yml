@@ -57,7 +57,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FROM: ${{ github.event.inputs.from }}
           NO_INTRO: ${{ github.event.inputs.no_intro == 'true' && '--no-intro' || '' }}
-        run: node edition.mjs ${FROM:+--from "$FROM"} $NO_INTRO
+        # --backfill (re)builds archive editions for past weeks since the archive
+        # start as the collector's backfill drains; regular editions are untouched.
+        run: node edition.mjs --backfill ${FROM:+--from "$FROM"} $NO_INTRO
 
       - name: Commit edition
         id: commit
@@ -66,7 +68,7 @@ jobs:
           git add data/editions
           if ! git diff --cached --quiet; then
             git -c user.name="aisignals-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-              commit -q -m "edition: $(ls -t data/editions | head -1 | sed 's/.json//')"
+              commit -q -m "edition: $(ls data/editions | sort | tail -1 | sed 's/.json//')"
             for i in 1 2 3 4; do
               git pull -q --rebase origin main && git push -q origin HEAD:main && break
               [ "$i" = 4 ] && exit 1

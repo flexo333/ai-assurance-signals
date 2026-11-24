@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Edition from "../components/Edition.astro";
 import { loadAll } from "../lib/data.js";
 const { editions, itemsById } = loadAll();
-const latest = editions[0];
+const latest = editions.find((e: any) => !e.backfilled) || editions[0];
 ---
 <Base>
   {latest ? (

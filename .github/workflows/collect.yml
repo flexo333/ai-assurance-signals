@@ -19,8 +19,8 @@ on:
   workflow_dispatch:
     inputs:
       since_days:
-        description: "Window in days (larger for backfill; feeds hold limited history)"
-        default: "8"
+        description: "Window in days (blank = back to the archive start; feeds hold limited history anyway)"
+        required: false
       max_calls:
         description: "Max Gemini calls this run"
         default: "60"
@@ -70,9 +70,10 @@ jobs:
 
       - name: Build collect event
         env:
-          SINCE: ${{ github.event_name == 'pull_request' && '30' || github.event.inputs.since_days || '8' }}
+          SINCE: ${{ github.event_name == 'pull_request' && '30' || github.event.inputs.since_days }}
+          MAX_ITEMS: ${{ github.event_name == 'pull_request' && '6' || github.event.inputs.max_calls || '60' }}
           ONLY: ${{ github.event_name == 'pull_request' && 'conversation-au,mit-tr,uk-dsit,innovationaus' || github.event.inputs.only }}
-        run: node build-collect-event.mjs --since-days "$SINCE" ${ONLY:+--only "$ONLY"} > event.json
+        run: node build-collect-event.mjs ${SINCE:+--since-days "$SINCE"} --max-items "$MAX_ITEMS" ${ONLY:+--only "$ONLY"} > event.json
 
       - name: Install Pulumi CLI
         uses: pulumi/actions@v7

@@ -2,6 +2,9 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-24: Self-draining backfill; editions bucketed by publish date
+With no stored items, the first run would fetch ~675 articles while Gemini handles about 60 a day, and every old item would land in the first edition. **Decision:** the collector lists candidates cheaply and fetches articles for only the newest `maxItems` (the day's budget). The window always reaches back to `ARCHIVE_START`, which is cheap because feeds are short. Editions are bucketed by publish date, with a 7-day late-arrival grace. `edition.mjs --backfill` (re)builds `backfilled: true` editions for past weeks. **Consequence:** the archive back to 1 July fills itself over the first days and is labelled as backfilled; regular editions are never rewritten.
+
 ## 2026-11-24: Collect in Sydney, analyse in Actions; one Gemini call per item
 **Fetching:** all of it runs in the Sydney Lambda (`action: "collect"`). It reaches everything the GitHub runner does, plus InnovationAus. Feeds are resolved at run time (configured feed, then candidates, then homepage autodiscovery), so no feed URLs need hand-maintaining. **Analysis:** stays in Actions, where `GEMINI_API_KEY` lives. One structured-output call does classification and the summary together, which halves free-tier usage. **Grounding:** if it fails, one corrective retry, then headline-only, with the ungrounded text and dates discarded. **Storage:** items are JSON under `data/items/YYYY/MM/`. Source text is never committed (copyright); only its sha256 is.
 

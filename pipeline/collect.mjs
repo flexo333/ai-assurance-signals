@@ -58,15 +58,15 @@ async function resolveFeed(src) {
   return candidates[0] || null;
 }
 
-async function collectSource(src, { since, known }) {
+// Phase A (cheap): resolve the feed and list fresh candidates — no article fetches.
+async function listSource(src, { since, known }) {
   const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const feed = await resolveFeed(src);
-  if (!feed) return { log: { ...log, status: "no-feed" }, items: [] };
+  if (!feed) return { log: { ...log, status: "no-feed" }, candidates: [] };
   log.feed = feed.url;
-
   const parsed = parseFeedItems(feed.body).filter((i) => i.link && i.title);
   log.feedItems = parsed.length;
-  const fresh = [];
+  const candidates = [];
   for (const i of parsed) {
     let url;
     log.sample ??= { link: i.link, date: i.date, since };
@@ -91,66 +91,77 @@ async function collectSource(src, { since, known }) {
       log.keywordDropped++;
       continue;
     }
-    fresh.push({ ...i, url, id });
-    if (fresh.length >= MAX_ITEMS_PER_SOURCE) break;
+    candidates.push({ ...i, url, id, src });
+    if (candidates.length >= MAX_ITEMS_PER_SOURCE) break;
   }
+  return { log, candidates };
+}
 
-  const items = [];
-  for (const i of fresh) {
-    let text = i.summary || "";
-    let textSource = "feed";
-    let extractMethod = null;
-    if (!src.paywalled && isAllowed((await robotsFor(i.url)).parsed, USER_AGENT, i.url)) {
-      const page = await get(i.url);
-      if (page.ok) {
-        const ex = extractMainText(page.body, page.url);
-        extractMethod = ex.method;
-        if (ex.text && ex.text.length > text.length) {
-          text = ex.text;
-          textSource = "article";
-        }
-      } else {
-        extractMethod = `http-${page.status}`;
+// Phase B: fetch + extract the article for one selected candidate.
+async function fetchCandidate(c) {
+  const src = c.src;
+  let text = c.summary || "";
+  let textSource = "feed";
+  let extractMethod = null;
+  if (!src.paywalled && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
+    const page = await get(c.url);
+    if (page.ok) {
+      const ex = extractMainText(page.body, page.url);
+      extractMethod = ex.method;
+      if (ex.text && ex.text.length > text.length) {
+        text = ex.text;
+        textSource = "article";
       }
+    } else {
+      extractMethod = `http-${page.status}`;
     }
-    text = truncate(text, MAX_TEXT_CHARS);
-    items.push({
-      id: i.id,
-      sourceId: src.id,
-      url: i.url,
-      title: i.title,
-      publishedAt: i.date,
-      feedSummary: i.summary ? truncate(i.summary, 1500) : null,
-      text,
-      textSource,
-      extractMethod,
-      textSha256: sha256(text),
-      fetchedAt: new Date().toISOString(),
-    });
   }
-  log.collected = items.length;
-  return { log, items };
+  text = truncate(text, MAX_TEXT_CHARS);
+  return {
+    id: c.id,
+    sourceId: src.id,
+    url: c.url,
+    title: c.title,
+    publishedAt: c.date,
+    feedSummary: c.summary ? truncate(c.summary, 1500) : null,
+    text,
+    textSource,
+    extractMethod,
+    textSha256: sha256(text),
+    fetchedAt: new Date().toISOString(),
+  };
 }
 
 /**
  * @param sources   active sources: [{ id, homepage, feed?, feeds?, ai_specific, paywalled, ... }]
  * @param knownIds  item ids already stored (skipped)
  * @param sinceDays only items published within this many days (undated items pass)
+ * @param maxItems  fetch articles for at most this many (newest first)
  */
-export async function runCollect({ sources, knownIds = [], sinceDays = 8 }) {
+export async function runCollect({ sources, knownIds = [], sinceDays = 8, maxItems = Infinity }) {
   const known = new Set(knownIds);
   const since = new Date(Date.now() - sinceDays * 864e5).toISOString();
-  const results = await pool(sources.filter((s) => s.status !== "blocked"), CONCURRENCY, (s) => collectSource(s, { since, known }));
+  const listed = await pool(sources.filter((s) => s.status !== "blocked"), CONCURRENCY, (s) => listSource(s, { since, known }));
 
-  let items = results.flatMap((r) => r.items);
-  // Same article via two feeds → keep the first.
+  // Dedupe across feeds, then take the newest first: only as many as the
+  // processor can analyse today (its Gemini budget). The rest stay unknown and
+  // are picked up on later runs — so a backfill drains over a few days while
+  // the current week is always handled first.
   const seen = new Set();
-  items = items.filter((i) => (seen.has(i.id) ? false : seen.add(i.id)));
+  const all = listed
+    .flatMap((l) => l.candidates)
+    .filter((c) => (seen.has(c.id) ? false : seen.add(c.id)))
+    .sort((a, b) => String(b.date || "9999").localeCompare(String(a.date || "9999")));
+  const selected = all.slice(0, maxItems);
+  let items = await pool(selected, CONCURRENCY, fetchCandidate);
 
-  let deferred = 0;
+  let deferred = all.length - selected.length;
   while (items.length && Buffer.byteLength(JSON.stringify(items)) > MAX_RESPONSE_BYTES) {
-    items.pop(); // picked up again on the next run (still unknown, still in window)
+    items.pop();
     deferred++;
   }
-  return { since, items, deferred, sources: results.map((r) => r.log) };
+  const collectedBy = new Map();
+  for (const i of items) collectedBy.set(i.sourceId, (collectedBy.get(i.sourceId) || 0) + 1);
+  for (const l of listed) l.log.collected = collectedBy.get(l.log.id) || 0;
+  return { since, items, deferred, candidates: all.length, sources: listed.map((l) => l.log) };
 }

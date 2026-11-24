@@ -10,7 +10,7 @@ const { editions } = loadAll();
       {editions.map((e: any) => (
         <li>
           <a href={`/editions/${e.id}/`}>{editionLabel(e.id)}</a>
-          <span class="muted"> · published {fmtDate(e.publishedAt)} · {e.topSignals.length + e.sections.reduce((n: number, s: any) => n + s.items.length, 0)} items</span>
+          <span class="muted"> · {e.backfilled ? "backfilled" : `published ${fmtDate(e.publishedAt)}`} · {e.topSignals.length + e.sections.reduce((n: number, s: any) => n + s.items.length + (s.more?.length || 0), 0)} items</span>
         </li>
       ))}
     </ul>

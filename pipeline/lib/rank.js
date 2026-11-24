@@ -46,13 +46,40 @@ export function sectionFor(item) {
   return theme;
 }
 
-/** Items collected in (from, to] and publishable. */
-export function selectWindow(items, { from, to }) {
+const GRACE_MS = 7 * 864e5;
+
+/**
+ * Publishable items for an edition window (from, to].
+ *   current  — published in the window, or collected in it if published at
+ *              most 7 days before it (late arrivals); never collected after `to`
+ *   backfill — published in the window (collected any time, for past weeks)
+ * `exclude` holds ids already placed in other editions.
+ */
+export function selectWindow(items, { from, to, mode = "current", exclude = new Set() }) {
+  const graceFrom = new Date(Date.parse(from) - GRACE_MS).toISOString();
   return items.filter((i) => {
     if (i.status !== "summarised" && i.status !== "headline-only") return false;
-    const t = i.fetchedAt;
-    return t > from && t <= to;
+    if (exclude.has(i.id)) return false;
+    const d = i.publishedAt || i.fetchedAt;
+    if (mode === "backfill") return d > from && d <= to;
+    if (i.fetchedAt > to) return false;
+    const publishedIn = d > from && d <= to;
+    const lateArrival = i.fetchedAt > from && d > graceFrom;
+    return publishedIn || lateArrival;
   });
+}
+
+/** Weekly cutoffs (Fridays 04:17 UTC) after `startIso` and strictly before `beforeIso`. */
+export function weeklyCutoffs(startIso, beforeIso, { weekday = 5, hour = 4, minute = 17 } = {}) {
+  const d = new Date(startIso);
+  d.setUTCHours(hour, minute, 0, 0);
+  while (d.getUTCDay() !== weekday || d.toISOString() <= startIso) d.setUTCDate(d.getUTCDate() + 1);
+  const out = [];
+  while (d.toISOString() < beforeIso) {
+    out.push(d.toISOString());
+    d.setUTCDate(d.getUTCDate() + 7);
+  }
+  return out;
 }
 
 export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
