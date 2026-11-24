@@ -1,0 +1,52 @@
+# Curated key dates & obligations. Each entry verified against the cited
+# source on 2026-11-24. The /key-dates page also adds dates extracted from
+# Official-authority items (only those grounded by a verbatim quote).
+#
+#   date        YYYY-MM-DD
+#   title       short label
+#   detail      one or two sentences, factual
+#   jurisdiction AU-federal | EU | ...
+#   source      { name, url } — primary source where possible
+
+dates:
+  - date: 2025-07-01
+    title: APRA CPS 230 Operational Risk Management commences
+    detail: The prudential standard on operational risk, including management of material service providers, applies to APRA-regulated entities. Additional transition applied to non-significant financial institutions.
+    jurisdiction: AU-federal
+    source: { name: "APRA — CPS 230 Operational Risk Management", url: "https://www.apra.gov.au/operational-risk-management" }
+
+  - date: 2025-12-15
+    title: DTA Policy for the responsible use of AI in government v2.0 takes effect
+    detail: Version 2.0 replaces v1.1 and strengthens AI governance requirements for non-corporate Commonwealth entities (with exceptions for defence and the national intelligence community).
+    jurisdiction: AU-federal
+    source: { name: "digital.gov.au — Policy for the responsible use of AI in government", url: "https://www.digital.gov.au/ai/ai-in-government-policy" }
+
+  - date: 2026-07-01
+    title: CPS 230 backstop for pre-existing service provider contracts; targeted amendments commence
+    detail: CPS 230 applies to pre-existing service provider arrangements from the earlier of contract renewal or 1 July 2026, and APRA's finalised targeted amendments to CPS 230 and CPG 230 take effect.
+    jurisdiction: AU-federal
+    source: { name: "APRA — Final targeted amendments to CPS 230", url: "https://www.apra.gov.au/news-and-publications/apra-finalises-targeted-amendments-to-cps-230-operational-risk-management" }
+
+  - date: 2026-08-02
+    title: EU AI Act transparency obligations (Article 50) apply
+    detail: Transparency duties for certain AI systems kept their original date under the Digital Omnibus on AI.
+    jurisdiction: EU
+    source: { name: "Gibson Dunn — EU AI Act Omnibus agreement", url: "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/" }
+
+  - date: 2026-12-10
+    title: Privacy Act automated decision-making transparency (APP 1.7–1.9) commences
+    detail: APP entities must explain in their privacy policies where computer programs make, or substantially assist, decisions that could significantly affect individuals' rights or interests.
+    jurisdiction: AU-federal
+    source: { name: "OAIC — APP 1.7–1.9 transparency obligation fact sheet", url: "https://www.oaic.gov.au/__data/assets/pdf_file/0021/269013/APP-1.7-1.9-Transparency-Obligation-Fact-Sheet.PDF" }
+
+  - date: 2027-12-02
+    title: EU AI Act high-risk obligations (Annex III) apply
+    detail: Delayed from 2 August 2026 by the Digital Omnibus on AI (Regulation (EU) 2026/1744).
+    jurisdiction: EU
+    source: { name: "Gibson Dunn — EU AI Act Omnibus agreement", url: "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/" }
+
+  - date: 2028-08-02
+    title: EU AI Act obligations for high-risk AI in regulated products (Annex I) apply
+    detail: Delayed from 2 August 2027 by the Digital Omnibus on AI; covers AI embedded in products such as medical devices.
+    jurisdiction: EU
+    source: { name: "Gibson Dunn — EU AI Act Omnibus agreement", url: "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/" }

@@ -210,3 +210,10 @@ code { font-family: var(--mono); font-size: 0.9em; }
 details.more { margin: 0.75rem 0 0.25rem; font-size: 0.9375rem; }
 details.more summary { cursor: pointer; color: var(--accent); }
 details.more ul { margin-top: 0.5rem; }
+
+/* ── Dated lists (consultations, key dates) ─────────────── */
+ul.dated { list-style: none; padding: 0; }
+ul.dated li { padding: 0.75rem 0; border-bottom: 1px solid var(--rule); }
+.dated__date { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; }
+.card__permalink { margin-left: auto; color: var(--muted); text-decoration: none; }
+.card__permalink:hover { color: var(--accent); }

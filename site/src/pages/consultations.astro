@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+import { loadAll, consultations, fmtDay, fmtDate, AUTHORITY_LABEL } from "../lib/data.js";
+const { items } = loadAll();
+const { open, undated, closed } = consultations(items);
+const title = (i: any) => (i.status === "summarised" ? i.headline : i.title);
+---
+<Base title="Open consultations" description="Open AI governance consultations and their closing dates.">
+  <h1>Open consultations</h1>
+  <p class="muted">AI governance consultations found in monitored sources. A closing date is shown only when it is stated verbatim in the source. Always confirm on the consultation page.</p>
+
+  <h2>Open</h2>
+  {open.length === 0 ? <p class="muted">No open consultations with a stated closing date right now.</p> : (
+    <ul class="dated">
+      {open.map((i: any) => (
+        <li>
+          <span class="dated__date">Closes {fmtDay(i.classification.closing_date)}</span>
+          <a href={i.url} rel="noopener">{title(i)}</a>
+          <span class="muted small"> · <span class={`badge badge--${i.authority}`}>{AUTHORITY_LABEL[i.authority]}</span> {i.sourceName}</span>
+          {i.classification.closing_date_quote && <div class="muted small">Source: <q>{i.classification.closing_date_quote}</q></div>}
+        </li>
+      ))}
+    </ul>
+  )}
+
+  {undated.length > 0 && (
+    <>
+      <h2>Closing date not stated</h2>
+      <ul class="dated">
+        {undated.map((i: any) => (
+          <li><span class="dated__date">Published {fmtDate(i.publishedAt)}</span><a href={i.url} rel="noopener">{title(i)}</a> <span class="muted small">· {i.sourceName}</span></li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {closed.length > 0 && (
+    <>
+      <h2>Recently closed</h2>
+      <ul class="dated muted">
+        {closed.map((i: any) => (
+          <li><span class="dated__date">Closed {fmtDay(i.classification.closing_date)}</span><a href={i.url} rel="noopener">{title(i)}</a></li>
+        ))}
+      </ul>
+    </>
+  )}
+  <p class="muted small">Several Australian agencies block automated access, so some consultations will be missing. See <a href="/sources/">Sources</a>.</p>
+</Base>

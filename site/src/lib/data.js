@@ -24,7 +24,14 @@ export function loadAll() {
   const itemsById = new Map(items.map((i) => [i.id, i]));
   const editions = walkJson(join(DATA, "editions")).sort((a, b) => b.id.localeCompare(a.id));
   const { sources } = parse(readFileSync(join(ROOT, "sources.yaml"), "utf8"));
-  cache = { items, itemsById, editions, sources };
+  const keyDatesFile = join(DATA, "key-dates.yaml");
+  const curatedDates = existsSync(keyDatesFile) ? parse(readFileSync(keyDatesFile, "utf8")).dates || [] : [];
+  // Which edition each item appeared in (for item pages).
+  const editionOf = new Map();
+  for (const e of [...editions].reverse()) {
+    for (const ref of [...e.topSignals, ...e.sections.flatMap((s) => [...s.items, ...(s.more || [])])]) editionOf.set(ref.id, e.id);
+  }
+  cache = { items, itemsById, editions, sources, curatedDates, editionOf };
   return cache;
 }
 
@@ -44,3 +51,67 @@ export const editionLabel = (id) => {
   const [y, w] = id.split("-W");
   return `Week ${Number(w)}, ${y}`;
 };
+
+export const THEME_LABEL = {
+  "policy-legislation": "Policy & legislation",
+  "regulator-guidance": "Regulator guidance",
+  "public-sector": "Public sector",
+  "standards-frameworks": "Standards & frameworks",
+  "frontier-labs": "Frontier labs",
+  international: "International",
+  "news-commentary": "News & commentary",
+};
+
+export const isPublishable = (i) => i.status === "summarised" || i.status === "headline-only";
+
+// Today's calendar date in Sydney (en-CA formats as YYYY-MM-DD). The daily
+// build runs at 19:41 UTC, already the next day in Australia.
+const todayIso = (now = new Date()) =>
+  new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Sydney", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
+
+/** Open consultations (grounded closing date in the future) and recent ones without a stated date. */
+export function consultations(items, today = todayIso()) {
+  const c = items.filter((i) => isPublishable(i) && i.classification?.is_consultation);
+  const open = c.filter((i) => i.classification.closing_date && i.classification.closing_date >= today)
+    .sort((a, b) => a.classification.closing_date.localeCompare(b.classification.closing_date));
+  const cutoff = new Date(Date.now() - 60 * 864e5).toISOString();
+  const undated = c.filter((i) => !i.classification.closing_date && (i.publishedAt || i.fetchedAt) >= cutoff)
+    .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
+  const closed = c.filter((i) => i.classification.closing_date && i.classification.closing_date < today)
+    .sort((a, b) => b.classification.closing_date.localeCompare(a.classification.closing_date))
+    .slice(0, 10);
+  return { open, undated, closed };
+}
+
+/**
+ * Key dates: curated entries plus grounded dates from Official-authority items.
+ * Upcoming first; "recently commenced" = within the past 12 months.
+ */
+export function keyDates(curated, items, today = todayIso()) {
+  const fromItems = items
+    .filter((i) => i.status === "summarised" && i.authority === "official")
+    .flatMap((i) => (i.dates_mentioned || []).map((d) => ({
+      date: d.date,
+      title: d.what,
+      detail: i.headline,
+      jurisdiction: i.jurisdiction,
+      source: { name: i.sourceName, url: i.url },
+      quote: d.quote,
+      auto: true,
+    })));
+  const seen = new Set();
+  const all = [...curated.map((d) => ({ ...d, date: String(d.date) })), ...fromItems]
+    .filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d.date))
+    .filter((d) => {
+      const k = `${d.date}|${d.title.toLowerCase()}`;
+      return seen.has(k) ? false : seen.add(k);
+    });
+  const yearAgo = todayIso(new Date(Date.now() - 365 * 864e5));
+  return {
+    upcoming: all.filter((d) => d.date >= today).sort((a, b) => a.date.localeCompare(b.date)),
+    recent: all.filter((d) => d.date < today && d.date >= yearAgo).sort((a, b) => b.date.localeCompare(a.date)),
+  };
+}
+
+const dayFmt = new Intl.DateTimeFormat("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+export const fmtDay = (ymd) => dayFmt.format(new Date(`${ymd}T00:00:00Z`));

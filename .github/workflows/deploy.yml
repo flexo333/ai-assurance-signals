@@ -18,6 +18,7 @@ on:
       - "infra/**"
       - "pipeline/**"
       - "sources.yaml"
+      - "data/key-dates.yaml"
       - ".github/workflows/deploy.yml"
   pull_request:
     paths:

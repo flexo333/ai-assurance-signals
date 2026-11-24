@@ -7,7 +7,7 @@
 // Actions-side processor (summarise + ground + commit). No LLM calls here.
 
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
-import { parseFeedItems, isAllowed, feedType, discoverFeedLinks } from "./lib/feed-pure.js";
+import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem } from "./lib/feed-pure.js";
 import { isAiRelated } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText } from "./lib/extract.js";
@@ -31,31 +31,31 @@ async function pool(items, n, fn) {
   return out;
 }
 
-// First working, robots-permitted feed: configured `feed`, then `feeds`
-// candidates, then <link rel=alternate> autodiscovery on the homepage.
+// The freshest working, robots-permitted feed among the configured `feed`,
+// the `feeds` candidates and <link rel=alternate> autodiscovery on the
+// homepage. "Freshest" (newest dated item), not "first": some configured
+// candidates work but are stale — e.g. a gov.uk search feed returning
+// months-old items while the organisation feed is current.
 async function resolveFeed(src) {
   const tried = new Set();
+  const candidates = [];
   const tryUrl = async (url) => {
-    if (!url || tried.has(url)) return null;
+    if (!url || tried.has(url)) return;
     tried.add(url);
-    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
+    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return;
     const r = await get(url);
-    return r.ok && feedType(r.body) && parseFeedItems(r.body).length ? { url: r.url, body: r.body } : null;
+    if (!r.ok || !feedType(r.body)) return;
+    const items = parseFeedItems(r.body);
+    if (!items.length) return;
+    candidates.push({ url: r.url, body: r.body, newest: newestItem(items)?.date || "" });
   };
-  for (const url of [src.feed, ...(src.feeds || [])]) {
-    const hit = await tryUrl(url);
-    if (hit) return hit;
-  }
+  for (const url of [src.feed, ...(src.feeds || [])]) await tryUrl(url);
   if (src.homepage && isAllowed((await robotsFor(src.homepage)).parsed, USER_AGENT, src.homepage)) {
     const home = await get(src.homepage);
-    if (home.ok) {
-      for (const url of discoverFeedLinks(home.body, home.url)) {
-        const hit = await tryUrl(url);
-        if (hit) return hit;
-      }
-    }
+    if (home.ok) for (const url of discoverFeedLinks(home.body, home.url)) await tryUrl(url);
   }
-  return null;
+  candidates.sort((a, b) => b.newest.localeCompare(a.newest));
+  return candidates[0] || null;
 }
 
 async function collectSource(src, { since, known }) {
