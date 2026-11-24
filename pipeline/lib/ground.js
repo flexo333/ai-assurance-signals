@@ -46,3 +46,31 @@ export function verifyQuotes(quotes, sourceText) {
     checked.length > 0 && checked.every((c) => c.found) && covers("summary") && covers("why_it_matters");
   return { grounded, checked };
 }
+
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+/**
+ * A date is grounded when its evidence quote appears verbatim in the source
+ * AND the quote actually states that date: the year, the day number, and
+ * the month (name, 3-letter abbreviation, or numeric d/m form).
+ * Dates feed the consultations tracker and key-dates timeline, so an
+ * unsupported date is dropped even when the summary itself is grounded.
+ */
+export function verifyDate(isoDate, quote, sourceText) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(isoDate || ""));
+  if (!m) return false;
+  const q = normaliseForMatch(quote);
+  if (q.split(" ").length < 3 || !normaliseForMatch(sourceText).includes(q)) return false;
+  const [, y, mm, dd] = m;
+  const day = String(Number(dd));
+  const month = MONTHS[Number(mm) - 1];
+  const lower = q.toLowerCase();
+  if (!lower.includes(y)) return false;
+  const numericForm = new RegExp(`(^|\\D)0?${day}[/.-]0?${Number(mm)}[/.-]${y}`).test(lower);
+  // Month must be adjacent to the day ("31 January", "6 Feb", "January 31st"),
+  // so the verb "may" can't stand in for May.
+  const mon = `(?:${month}|${month.slice(0, 3)}\\.?)`;
+  const d = `0?${day}(?:st|nd|rd|th)?`;
+  const named = new RegExp(`(^|\\D)${d}\\s+(?:of\\s+)?${mon}(\\W|$)|\\b${mon}\\s+${d}(\\D|$)`).test(lower);
+  return numericForm || named;
+}

@@ -39,9 +39,11 @@ export function withTimeout(promise, ms) {
 }
 
 /**
- * Walk the chain; returns { ok: true, model, text } or { ok: false, error, quotaExhausted }.
- * quotaExhausted = every model failed with a retryable (quota/overload) error,
- * which tells the caller to stop for this run rather than burn through items.
+ * Walk the chain; returns { ok: true, model, value, attempts } or
+ * { ok: false, error, quotaExhausted, budgetExhausted, attempts }.
+ * `attempts` counts every real generateContent request (fallbacks and retries
+ * included); `budget` caps them. quotaExhausted = every model failed with a
+ * retryable (quota/overload) error — the caller should stop for this run.
  */
 export async function generateWithFallback(ai, {
   chain = MODEL_CHAIN,
@@ -51,18 +53,22 @@ export async function generateWithFallback(ai, {
   backoffMs = (attempt) => 4000 * 2 ** attempt,
   timeoutMs = 90_000,
   parse = (text) => text,
+  budget = Infinity,
 } = {}) {
   let lastErr;
   let allRetryable = true;
+  let used = 0;
   for (const model of chain) {
     for (let attempt = 0; attempt < attempts; attempt++) {
+      if (used >= budget) return { ok: false, error: lastErr || new Error("request budget exhausted"), quotaExhausted: false, budgetExhausted: true, attempts: used };
+      used++;
       try {
         const res = await withTimeout(ai.models.generateContent({ model, contents, ...(config ? { config } : {}) }), timeoutMs);
         const text = res?.text;
         if (!text) throw new Error("empty response");
         const value = parse(text);
         if (value == null) throw new Error("empty response (unparseable payload)");
-        return { ok: true, model, value };
+        return { ok: true, model, value, attempts: used };
       } catch (err) {
         lastErr = err;
         if (!isRetryableModelError(err)) {
@@ -73,5 +79,5 @@ export async function generateWithFallback(ai, {
       }
     }
   }
-  return { ok: false, error: lastErr, quotaExhausted: allRetryable };
+  return { ok: false, error: lastErr, quotaExhausted: allRetryable, attempts: used };
 }

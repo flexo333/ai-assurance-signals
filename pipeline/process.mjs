@@ -49,10 +49,14 @@ for (const item of collected.items) {
     continue;
   }
   if (stats.calls > 0) await sleep(DELAY_MS);
-  const res = await analyseItem(ai, { source, item, allowRetry: stats.calls + 1 < MAX, delayMs: DELAY_MS });
+  const res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls });
   stats.calls += res.calls;
   if (!res.record) {
     if (res.quotaExhausted) quotaHit = true;
+    if (stats.calls >= MAX) {
+      stats.skipped++; // budget reached mid-item: retried next run
+      continue;
+    }
     stats.failed++;
     console.error(`✗ ${item.sourceId} ${item.title}: ${res.error?.message || res.error}`);
     continue;

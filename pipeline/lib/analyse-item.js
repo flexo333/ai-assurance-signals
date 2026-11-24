@@ -3,7 +3,7 @@
 // the model call failed and the item should be retried on a later run).
 // `ai` is injected so this is testable with a fake client.
 
-import { verifyQuotes } from "./ground.js";
+import { verifyQuotes, verifyDate } from "./ground.js";
 import { generateWithFallback, sleep } from "./gemini.js";
 import { SYSTEM_PROMPT, ANALYSIS_SCHEMA, PROMPT_VERSION, parseAnalysis, buildUserPrompt } from "./prompt.js";
 
@@ -13,6 +13,15 @@ const CONFIG = {
   responseSchema: ANALYSIS_SCHEMA,
   temperature: 0.2,
 };
+
+// Dates feed the consultations tracker and key-dates timeline, so each must be
+// stated in a verbatim source quote (verifyDate) — otherwise it is dropped,
+// even when the summary itself is grounded.
+const groundedDates = (a, text) => ({
+  closing_date: a.closing_date && verifyDate(a.closing_date, a.closing_date_quote, text) ? a.closing_date : null,
+  closing_date_quote: a.closing_date && verifyDate(a.closing_date, a.closing_date_quote, text) ? a.closing_date_quote : null,
+  dates_mentioned: (a.dates_mentioned || []).filter((d) => verifyDate(d.date, d.quote, text)),
+});
 
 const classificationOf = (a) => ({
   theme: a.theme,
@@ -25,10 +34,12 @@ const classificationOf = (a) => ({
 });
 
 /**
+ * @param budget  max real Gemini requests this item may use (fallbacks/retries count)
  * @returns { record, calls, quotaExhausted, error }
- *   record.status: "summarised" | "headline-only" | "irrelevant"; record null on model failure.
+ *   calls = real generateContent requests made. record.status: "summarised" |
+ *   "headline-only" | "irrelevant"; record null on model failure.
  */
-export async function analyseItem(ai, { source, item, allowRetry = true, delayMs = 0, chain } = {}) {
+export async function analyseItem(ai, { source, item, allowRetry = true, delayMs = 0, chain, budget = Infinity } = {}) {
   const base = {
     id: item.id,
     sourceId: item.sourceId,
@@ -45,10 +56,19 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
     return { calls: 0, record: { ...base, status: "headline-only", reason: "no-source-text", provenance: { textSource: item.textSource, extractMethod: item.extractMethod } } };
   }
 
-  const call = (retryNote) =>
-    generateWithFallback(ai, { ...(chain ? { chain } : {}), contents: buildUserPrompt({ source, item, retryNote }), config: CONFIG, parse: parseAnalysis });
+  let calls = 0;
+  const call = async (retryNote) => {
+    const r = await generateWithFallback(ai, {
+      ...(chain ? { chain } : {}),
+      contents: buildUserPrompt({ source, item, retryNote }),
+      config: CONFIG,
+      parse: parseAnalysis,
+      budget: budget - calls,
+    });
+    calls += r.attempts ?? 0;
+    return r;
+  };
 
-  let calls = 1;
   let res = await call();
   if (!res.ok) return { calls, record: null, quotaExhausted: !!res.quotaExhausted, error: res.error };
   let a = res.value;
@@ -65,10 +85,9 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
   if (!a.is_ai_governance) return { calls, record: { ...base, status: "irrelevant", provenance } };
 
   let grounding = verifyQuotes(a.quotes, item.text);
-  if (!grounding.grounded && allowRetry) {
+  if (!grounding.grounded && allowRetry && calls < budget) {
     const failed = grounding.checked.filter((c) => !c.found).map((c) => `"${c.text.slice(0, 80)}" (${c.reason})`);
     if (delayMs) await sleep(delayMs);
-    calls++;
     provenance.attempts = 2;
     const retry = await call(
       `A previous attempt was rejected because its quotes were not exact copies of the source text: ${failed.join("; ") || "(missing a quote for summary or for why_it_matters)"}. Copy quotes character for character from the source text, with at least one supporting the summary and one supporting why_it_matters.`,
@@ -81,6 +100,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
   }
 
   if (grounding.grounded) {
+    const dates = groundedDates(a, item.text);
     return {
       calls,
       record: {
@@ -90,8 +110,8 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
         summary: a.summary,
         why_it_matters: a.why_it_matters,
         quotes: grounding.checked.map(({ text, supports }) => ({ text, supports })),
-        dates_mentioned: a.dates_mentioned,
-        classification: classificationOf(a),
+        dates_mentioned: dates.dates_mentioned,
+        classification: { ...classificationOf(a), closing_date: dates.closing_date, closing_date_quote: dates.closing_date_quote },
         provenance,
       },
     };

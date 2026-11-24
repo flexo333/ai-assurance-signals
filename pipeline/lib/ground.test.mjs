@@ -55,3 +55,23 @@ test("ungrounded when a field has no supporting quote, or no quotes at all", () 
   assert.equal(verifyQuotes([], SOURCE).grounded, false);
   assert.equal(verifyQuotes(undefined, SOURCE).grounded, false);
 });
+
+import { verifyDate } from "./ground.js";
+
+const CONSULT = "Submissions close on 31 January 2027. The new obligations commence on 10/12/2026 for all entities. Feedback is due by Fri 6 Feb 2027.";
+
+test("verifyDate requires a verbatim quote that states the date", () => {
+  assert.equal(verifyDate("2027-01-31", "Submissions close on 31 January 2027", CONSULT), true);
+  assert.equal(verifyDate("2026-12-10", "obligations commence on 10/12/2026 for all entities", CONSULT), true);
+  assert.equal(verifyDate("2027-02-06", "Feedback is due by Fri 6 Feb 2027", CONSULT), true);
+  // wrong day, wrong year, quote not in source, no quote, bad ISO
+  assert.equal(verifyDate("2027-01-30", "Submissions close on 31 January 2027", CONSULT), false);
+  assert.equal(verifyDate("2026-01-31", "Submissions close on 31 January 2027", CONSULT), false);
+  assert.equal(verifyDate("2027-01-31", "Submissions close on 31 January 2027 at 5pm", CONSULT), false);
+  assert.equal(verifyDate("2027-01-31", "", CONSULT), false);
+  assert.equal(verifyDate("31/01/2027", "Submissions close on 31 January 2027", CONSULT), false);
+  // the verb "may" is not the month May
+  const MAY = "Entities may respond by 5 June 2027 at the latest.";
+  assert.equal(verifyDate("2027-05-05", "Entities may respond by 5 June 2027", MAY), false);
+  assert.equal(verifyDate("2027-06-05", "Entities may respond by 5 June 2027", MAY), true);
+});

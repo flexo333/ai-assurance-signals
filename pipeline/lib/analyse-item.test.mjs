@@ -61,3 +61,49 @@ test("model failure → no record (retried next run), quota flag propagated", as
   assert.equal(r.record, null);
   assert.equal(r.quotaExhausted, true);
 });
+
+test("dates without a verbatim quote stating them are dropped even when the summary is grounded", async () => {
+  const text = `${TEXT} Submissions close on 30 January 2027 and the standard commences on 1 July 2027.`;
+  const ai = fakeAi([
+    reply({
+      quotes: GOOD,
+      is_consultation: true,
+      closing_date: "2027-01-31", // invented (source says 30 January)
+      closing_date_quote: "Submissions close on 30 January 2027",
+      dates_mentioned: [
+        { date: "2027-07-01", what: "Standard commences", quote: "the standard commences on 1 July 2027" },
+        { date: "2027-03-01", what: "Invented milestone", quote: "a milestone in March 2027" },
+      ],
+    }),
+  ]);
+  const r = await analyseItem(ai, { source, item: { ...item, text }, chain: ["m"] });
+  assert.equal(r.record.status, "summarised");
+  assert.equal(r.record.classification.closing_date, null);
+  assert.deepEqual(r.record.dates_mentioned.map((d) => d.date), ["2027-07-01"]);
+
+  const ok = await analyseItem(fakeAi([reply({ quotes: GOOD, closing_date: "2027-01-30", closing_date_quote: "Submissions close on 30 January 2027" })]), { source, item: { ...item, text }, chain: ["m"] });
+  assert.equal(ok.record.classification.closing_date, "2027-01-30");
+});
+
+test("every real request counts against the budget, fallbacks included", async () => {
+  let n = 0;
+  const ai = {
+    models: {
+      generateContent: async ({ model }) => {
+        n++;
+        if (model === "gone") throw Object.assign(new Error("not found"), { status: 404 });
+        return reply({ quotes: GOOD });
+      },
+    },
+  };
+  const r = await analyseItem(ai, { source, item, chain: ["gone", "m"] });
+  assert.equal(r.record.status, "summarised");
+  assert.equal(r.calls, 2);
+  assert.equal(n, 2);
+
+  n = 0;
+  const capped = await analyseItem(ai, { source, item, chain: ["gone", "m"], budget: 1 });
+  assert.equal(capped.record, null);
+  assert.equal(capped.calls, 1);
+  assert.equal(n, 1);
+});

@@ -31,8 +31,8 @@ You will receive ONE item (metadata + source text). Work ONLY from that source t
 - why_it_matters: ONE sentence on the practical implication for organisations assuring or governing AI, with an Australian lens where the text supports it. Do not speculate beyond the text.
 - quotes: 2–3 short passages copied EXACTLY, character for character, from the source text (each 6–40 words). At least one must support the summary (supports: "summary") and at least one must support why_it_matters (supports: "why_it_matters"). Do not paraphrase, merge, trim mid-sentence with ellipses, or fix typos inside quotes.
 - theme, audiences, au_relevance (0 = no Australian connection, 1 = indirect, 2 = relevant to Australian practice, 3 = Australian government/regulator/organisation directly), significance (1 = minor, 3 = notable, 5 = major development) with a short significance_reason.
-- is_consultation: true if it invites public submissions/feedback; closing_date (YYYY-MM-DD) ONLY if the text states it.
-- dates_mentioned: future commencement dates, deadlines or milestones stated in the text.
+- is_consultation: true if it invites public submissions/feedback; closing_date (YYYY-MM-DD) ONLY if the text states it, with closing_date_quote = the exact source passage stating that date.
+- dates_mentioned: future commencement dates, deadlines or milestones stated in the text, each with quote = the exact source passage stating that date. Omit any date you cannot quote.
 
 3. If false, set the text fields to empty strings and arrays to [].
 
@@ -63,19 +63,24 @@ export const ANALYSIS_SCHEMA = {
     significance_reason: { type: "STRING" },
     is_consultation: { type: "BOOLEAN" },
     closing_date: { type: "STRING", description: "YYYY-MM-DD or empty", nullable: true },
+    closing_date_quote: { type: "STRING", description: "Exact source passage stating the closing date, or empty" },
     dates_mentioned: {
       type: "ARRAY",
       items: {
         type: "OBJECT",
-        properties: { date: { type: "STRING" }, what: { type: "STRING" } },
-        required: ["date", "what"],
+        properties: {
+          date: { type: "STRING", description: "YYYY-MM-DD" },
+          what: { type: "STRING" },
+          quote: { type: "STRING", description: "Exact source passage stating this date" },
+        },
+        required: ["date", "what", "quote"],
       },
     },
   },
   required: ["is_ai_governance", "headline", "summary", "why_it_matters", "quotes", "theme", "audiences", "au_relevance", "significance", "is_consultation"],
   propertyOrdering: [
     "is_ai_governance", "headline", "summary", "why_it_matters", "quotes", "theme", "audiences",
-    "au_relevance", "significance", "significance_reason", "is_consultation", "closing_date", "dates_mentioned",
+    "au_relevance", "significance", "significance_reason", "is_consultation", "closing_date", "closing_date_quote", "dates_mentioned",
   ],
 };
 
@@ -108,8 +113,9 @@ export function parseAnalysis(text) {
     significance_reason: str(o.significance_reason),
     is_consultation: o.is_consultation === true,
     closing_date: date(o.closing_date),
+    closing_date_quote: str(o.closing_date_quote),
     dates_mentioned: (Array.isArray(o.dates_mentioned) ? o.dates_mentioned : [])
-      .map((d) => ({ date: str(d?.date), what: str(d?.what) }))
+      .map((d) => ({ date: str(d?.date), what: str(d?.what), quote: str(d?.quote) }))
       .filter((d) => d.date && d.what)
       .slice(0, 6),
   };

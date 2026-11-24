@@ -64,7 +64,7 @@ test("generateWithFallback advances on 404, reports quota exhaustion", async () 
     }),
     { chain: ["a", "b"], attempts: 1, parse: JSON.parse },
   );
-  assert.deepEqual(ok, { ok: true, model: "b", value: { x: 1 } });
+  assert.deepEqual(ok, { ok: true, model: "b", value: { x: 1 }, attempts: 2 });
 
   const exhausted = await generateWithFallback(
     ai(() => {
