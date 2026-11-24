@@ -4,9 +4,11 @@
 
 // Free-tier friendly Flash family, best first. A model that 404s or is
 // retired is non-retryable and the loop simply advances to the next.
+// gemini-2.5-flash leads: in the first live runs gemini-flash-latest
+// (a moving alias to the newest preview) returned 503 "high demand".
 export const MODEL_CHAIN = [
-  "models/gemini-flash-latest",
   "models/gemini-2.5-flash",
+  "models/gemini-flash-latest",
   "models/gemini-flash-lite-latest",
   "models/gemini-2.5-flash-lite",
 ];
@@ -49,7 +51,7 @@ export async function generateWithFallback(ai, {
   chain = MODEL_CHAIN,
   contents,
   config,
-  attempts = 2,
+  attempts = 1, // on overload/quota, moving to the next model beats waiting
   backoffMs = (attempt) => 4000 * 2 ** attempt,
   timeoutMs = 90_000,
   parse = (text) => text,

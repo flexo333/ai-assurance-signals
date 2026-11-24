@@ -17,7 +17,7 @@ import { readFile, appendFile } from "node:fs/promises";
 import { GoogleGenAI } from "@google/genai";
 import { loadSources } from "./lib/sources.js";
 import { saveItem } from "./lib/store.js";
-import { sleep } from "./lib/gemini.js";
+import { sleep, MODEL_CHAIN } from "./lib/gemini.js";
 import { analyseItem } from "./lib/analyse-item.js";
 
 const args = process.argv.slice(2);
@@ -38,6 +38,12 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const stats = { collected: collected.items.length, summarised: 0, headlineOnly: 0, irrelevant: 0, skipped: 0, failed: 0, calls: 0 };
 let quotaHit = false;
 const modelErrorCounts = new Map();
+// Models that returned 503/429 this run are skipped for the rest of it.
+const unhealthy = new Set();
+const chainNow = () => {
+  const healthy = MODEL_CHAIN.filter((m) => !unhealthy.has(m));
+  return healthy.length ? healthy : MODEL_CHAIN;
+};
 
 for (const item of collected.items) {
   if (stats.calls >= MAX || quotaHit) {
@@ -50,9 +56,10 @@ for (const item of collected.items) {
     continue;
   }
   if (stats.calls > 0) await sleep(DELAY_MS);
-  const res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls });
+  const res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls, chain: chainNow() });
   stats.calls += res.calls;
   for (const e of res.modelErrors || []) {
+    if (e.status === 503 || e.status === 429) unhealthy.add(e.model);
     const key = `${e.model} ${e.status ?? ""} ${e.message.slice(0, 80)}`;
     modelErrorCounts.set(key, (modelErrorCounts.get(key) || 0) + 1);
   }
