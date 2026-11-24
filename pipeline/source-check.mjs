@@ -20,47 +20,17 @@ import {
   parseFeedItems,
   newestItem,
   discoverFeedLinks,
-  robotsFromResponse,
   isAllowed,
 } from "./lib/feed-pure.js";
+import { get, robotsFor, clearRobotsCache, USER_AGENT } from "./lib/http.js";
+
+export { USER_AGENT };
 import { isAiRelated } from "./lib/keywords.js";
 
-export const USER_AGENT = "AIAssuranceSignalsBot/1.0 (+https://aisignals.willbright.link/about/)";
-const TIMEOUT_MS = 20_000;
 const CONCURRENCY = 6;
 const RECENT_DAYS = 30;
 
 const here = dirname(fileURLToPath(import.meta.url));
-
-async function get(url) {
-  const started = Date.now();
-  try {
-    const res = await fetch(url, {
-      headers: { "user-agent": USER_AGENT, accept: "*/*" },
-      redirect: "follow",
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-    });
-    const body = await res.text();
-    return { ok: res.ok, status: res.status, url: res.url, body, ms: Date.now() - started };
-  } catch (err) {
-    return { ok: false, status: 0, url, body: "", error: err.cause?.code || err.name || String(err), ms: Date.now() - started };
-  }
-}
-
-const robotsCache = new Map();
-async function robotsFor(url) {
-  const origin = new URL(url).origin;
-  if (!robotsCache.has(origin)) {
-    robotsCache.set(
-      origin,
-      get(`${origin}/robots.txt`).then((r) => ({
-        status: r.status,
-        parsed: robotsFromResponse(r.status, r.body),
-      })),
-    );
-  }
-  return robotsCache.get(origin);
-}
 
 async function checkFeed(url) {
   const robots = await robotsFor(url);
@@ -144,7 +114,7 @@ async function pool(items, n, fn) {
 
 /** Check every source; returns per-source results. Safe to call repeatedly (warm Lambdas). */
 export async function runCheck(sources, { concurrency = CONCURRENCY } = {}) {
-  robotsCache.clear();
+  clearRobotsCache();
   const ids = new Set();
   for (const s of sources) {
     if (ids.has(s.id)) throw new Error(`duplicate source id: ${s.id}`);

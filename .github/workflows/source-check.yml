@@ -104,7 +104,7 @@ jobs:
             const only = process.env.ONLY ? process.env.ONLY.split(",") : null;
             let { sources } = parse(readFileSync("../sources.yaml", "utf8"));
             if (only) sources = sources.filter((s) => only.includes(s.id));
-            writeFileSync("event.json", JSON.stringify({ sources }));
+            writeFileSync("event.json", JSON.stringify({ action: "source-check", sources }));
           '
 
       - name: Install Pulumi CLI

@@ -36,7 +36,7 @@ test("parseFeedItems handles RSS with CDATA and entities", () => {
 
 test("parseFeedItems handles Atom alternate links", () => {
   const [item] = parseFeedItems(ATOM);
-  assert.deepEqual(item, { title: "Policy paper", link: "https://gov.uk/p", date: "2026-11-20T09:00:00.000Z" });
+  assert.deepEqual(item, { title: "Policy paper", link: "https://gov.uk/p", date: "2026-11-20T09:00:00.000Z", summary: null });
 });
 
 test("newestItem ignores undated items", () => {
@@ -96,4 +96,14 @@ test("robotsFromResponse follows RFC 9309 for 4xx vs 5xx/network failures", () =
     assert.equal(r.state, "unreachable");
     assert.equal(isAllowed(r, ua, url), false);
   }
+});
+
+test("parseFeedItems extracts descriptions, unescaping HTML", () => {
+  const rss = `<rss><channel><item><title>T</title><link>https://x/a</link>
+    <description>&lt;p&gt;APRA has written to &lt;b&gt;banks&lt;/b&gt; about AI.&lt;/p&gt;</description></item>
+    <item><title>U</title><link>https://x/b</link><content:encoded><![CDATA[<p>Full <em>content</em> here.</p>]]></content:encoded><description>short</description></item>
+  </channel></rss>`;
+  const [a, b] = parseFeedItems(rss);
+  assert.equal(a.summary, "APRA has written to banks about AI.");
+  assert.equal(b.summary, "Full content here.");
 });

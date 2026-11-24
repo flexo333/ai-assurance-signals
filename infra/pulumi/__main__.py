@@ -76,7 +76,7 @@ fetch_fn = aws.lambda_.Function(
     "fetch",
     name=FETCH_NAME,
     runtime="nodejs22.x",
-    handler="lambda/source-check-handler.handler",
+    handler="lambda/handler.handler",
     role=fetch_role.arn,
     code=pulumi.FileArchive(pipeline_dir),
     timeout=900,

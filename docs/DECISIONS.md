@@ -2,6 +2,12 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-24: Collect in Sydney, analyse in Actions; one Gemini call per item
+**Fetching:** all of it runs in the Sydney Lambda (`action: "collect"`). It reaches everything the GitHub runner does, plus InnovationAus. Feeds are resolved at run time (configured feed, then candidates, then homepage autodiscovery), so no feed URLs need hand-maintaining. **Analysis:** stays in Actions, where `GEMINI_API_KEY` lives. One structured-output call does classification and the summary together, which halves free-tier usage. **Grounding:** if it fails, one corrective retry, then headline-only, with the ungrounded text and dates discarded. **Storage:** items are JSON under `data/items/YYYY/MM/`. Source text is never committed (copyright); only its sha256 is.
+
+## 2026-11-24: Government agencies behind bot protection are covered via news
+A home-IP test showed govCMS/Akamai sites and OAIC reject automated clients even from a residential Australian IP. Only a headless browser would get through, which would circumvent controls the agencies chose. **Decision (owner):** mark them `status: blocked` with reasons, and rely on news coverage. ACCC is blocked from cloud IPs only, but is treated as blocked too.
+
 ## 2026-11-24: Test fetching from AWS Sydney; GitHub runners are IP-blocked by .gov.au
 The first source check from Actions reached 16 of 67 sources. A diagnostic showed the blocking is by IP, not User-Agent. govCMS/Akamai sites (DISR, DTA, AGD, eSafety and others) reset the connection within about 40 ms for every UA. OAIC, AHRC and InnovationAus return 403 for every UA. APH only admits a browser UA. **Decision:** don't spoof the UA. Deploy `flexo333-aisignals-fetch`, a Lambda in ap-southeast-2 that runs the same `pipeline/` code, and compare its source check with the Actions one. It has no Function URL; only the CI infra role can invoke it. **If Sydney works:** only the collector's fetch step moves there. **If not:** fall back to a collector on the home lab (residential AU IP).
 

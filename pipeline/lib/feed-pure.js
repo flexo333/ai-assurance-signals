@@ -1,6 +1,8 @@
 // Pure, dependency-free helpers for feed detection and robots.txt.
 // No network, no npm deps — smoke-tested by feed-pure.test.mjs under `node --test`.
 
+import { stripHtml } from "./text-pure.js";
+
 const decode = (s) =>
   s
     .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
@@ -28,6 +30,14 @@ function tag(block, name) {
   return m ? decode(m[1]) : null;
 }
 
+function rawTag(block, name) {
+  const m = block.match(new RegExp(`<${name}(?:\\s[^>]*)?>([\\s\\S]*?)</${name}>`, "i"));
+  if (!m) return null;
+  const inner = m[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1");
+  // Escaped HTML (&lt;p&gt;) is common in RSS descriptions — unescape before stripping.
+  return /&lt;\/?[a-z]/i.test(inner) ? inner.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&") : inner;
+}
+
 function atomLink(block) {
   const links = [...block.matchAll(/<link\b([^>]*)\/?>/gi)].map((m) => m[1]);
   const pick = links.find((a) => /rel=["']alternate["']/i.test(a)) || links.find((a) => !/rel=/i.test(a)) || links[0];
@@ -50,7 +60,10 @@ export function parseFeedItems(body) {
     const rawDate =
       tag(block, "pubDate") || tag(block, "published") || tag(block, "updated") || tag(block, "dc:date");
     const t = rawDate ? Date.parse(rawDate) : NaN;
-    return { title, link, date: Number.isNaN(t) ? null : new Date(t).toISOString() };
+    const rawSummary =
+      rawTag(block, "content:encoded") || rawTag(block, "description") || rawTag(block, "summary") || rawTag(block, "content");
+    const summary = rawSummary ? stripHtml(rawSummary).slice(0, 4000) : null;
+    return { title, link, date: Number.isNaN(t) ? null : new Date(t).toISOString(), summary };
   });
 }
 

@@ -13,6 +13,10 @@
 #                 checker also autodiscovers <link rel=alternate> and sitemaps)
 #   ai_specific   true → every item is in scope; false → keyword pre-filter first
 #   paywalled     true → headline + standfirst only, never full text
+#   status        active (default) | blocked — blocked sources are listed on the
+#                 /sources page for transparency but never fetched; their news
+#                 reaches the digest through news coverage instead
+#   blocked_reason why (from the Phase 1 source checks, 2026-11-24)
 #
 # Phase 1: `.github/workflows/source-check.yml` verifies every entry and
 # records the working ingest method. Until then nothing here is verified.
@@ -26,6 +30,8 @@ sources:
     homepage: https://www.industry.gov.au/news
     feeds: [https://www.industry.gov.au/news/rss.xml]
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: naic
     name: National AI Centre
@@ -33,6 +39,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.industry.gov.au/national-artificial-intelligence-centre
     ai_specific: true
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: aisi-au
     name: Australian AI Safety Institute
@@ -40,6 +48,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence
     ai_specific: true
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: dta
     name: Digital Transformation Agency
@@ -48,6 +58,8 @@ sources:
     homepage: https://www.dta.gov.au/news
     feeds: [https://www.dta.gov.au/news/rss.xml, https://www.dta.gov.au/rss.xml]
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: digital-gov-au
     name: digital.gov.au (AI in government)
@@ -55,6 +67,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.digital.gov.au/policy/ai
     ai_specific: true
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: agd
     name: Attorney-General's Department
@@ -63,6 +77,8 @@ sources:
     homepage: https://www.ag.gov.au/about-us/media-and-publications/news
     feeds: [https://www.ag.gov.au/rss.xml]
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: treasury
     name: The Treasury
@@ -78,6 +94,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://treasury.gov.au/consultation
     ai_specific: false
+    status: blocked
+    blocked_reason: "robots.txt disallows"
 
   - id: finance
     name: Department of Finance
@@ -85,6 +103,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.finance.gov.au/about-us/news
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: apsc
     name: Australian Public Service Commission
@@ -92,6 +112,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.apsc.gov.au/news-and-events
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: aph
     name: Parliament of Australia (committees & inquiries)
@@ -99,6 +121,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.aph.gov.au/Parliamentary_Business/Committees
     ai_specific: false
+    status: blocked
+    blocked_reason: "403 for non-browser clients"
 
   - id: legislation
     name: Federal Register of Legislation
@@ -123,6 +147,8 @@ sources:
     homepage: https://www.oaic.gov.au/news
     feeds: [https://www.oaic.gov.au/rss]
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (403 for automated clients, incl. residential AU IPs)"
 
   - id: apra
     name: Australian Prudential Regulation Authority
@@ -147,6 +173,8 @@ sources:
     homepage: https://www.accc.gov.au/media/media-releases
     feeds: [https://www.accc.gov.au/rss/media-releases.xml]
     ai_specific: false
+    status: blocked
+    blocked_reason: "cloud IPs blocked (403); reachable from residential IPs only"
 
   - id: esafety
     name: eSafety Commissioner
@@ -155,6 +183,8 @@ sources:
     homepage: https://www.esafety.gov.au/newsroom
     feeds: [https://www.esafety.gov.au/rss.xml]
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: ahrc
     name: Australian Human Rights Commission
@@ -163,6 +193,8 @@ sources:
     homepage: https://humanrights.gov.au/about/news
     feeds: [https://humanrights.gov.au/rss.xml]
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (403 for automated clients from cloud IPs)"
 
   - id: tga
     name: Therapeutic Goods Administration
@@ -170,6 +202,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.tga.gov.au/news
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: acma
     name: Australian Communications and Media Authority
@@ -177,6 +211,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.acma.gov.au/newsroom
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
   - id: ombudsman
     name: Commonwealth Ombudsman
@@ -184,6 +220,8 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.ombudsman.gov.au/news-and-media
     ai_specific: false
+    status: blocked
+    blocked_reason: "bot-protection (403 for automated clients from cloud IPs)"
 
   # ── States & territories (official) ────────────────────────────────────────
   - id: nsw-digital
@@ -339,6 +377,8 @@ sources:
     jurisdiction: INTL
     homepage: https://x.ai/news
     ai_specific: true
+    status: blocked
+    blocked_reason: "403 for automated clients"
 
   - id: fmf
     name: Frontier Model Forum
@@ -392,6 +432,8 @@ sources:
     jurisdiction: INTL
     homepage: https://www.iso.org/committee/6794475.html
     ai_specific: true
+    status: blocked
+    blocked_reason: "403 for automated clients"
 
   - id: coe-ai
     name: Council of Europe (AI convention)
@@ -399,6 +441,8 @@ sources:
     jurisdiction: EU
     homepage: https://www.coe.int/en/web/artificial-intelligence/newsroom
     ai_specific: true
+    status: blocked
+    blocked_reason: "403 for automated clients"
 
   - id: imda-sg
     name: Singapore IMDA / AI Verify Foundation
@@ -517,6 +561,8 @@ sources:
     jurisdiction: INTL
     homepage: https://www.reuters.com/technology/
     ai_specific: false
+    status: blocked
+    blocked_reason: "robots.txt disallows"
 
   - id: euractiv-tech
     name: Euractiv (Technology)
@@ -525,3 +571,5 @@ sources:
     homepage: https://www.euractiv.com/sections/tech/
     feeds: [https://www.euractiv.com/sections/tech/feed/]
     ai_specific: false
+    status: blocked
+    blocked_reason: "403 for automated clients"

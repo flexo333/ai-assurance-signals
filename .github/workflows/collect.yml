@@ -1,0 +1,118 @@
+name: Collect
+
+# Daily: fetch new items from the Sydney Lambda, analyse + ground them with
+# Gemini here, and commit data/items/**. Spread daily so the weekly edition
+# never depends on one run, and to stay inside the Gemini free tier.
+#
+# Needs secrets: PULUMI_ACCESS_TOKEN, GEMINI_API_KEY.
+
+on:
+  schedule:
+    - cron: "41 19 * * *" # 06:41 AEDT / 05:41 AEST
+  workflow_dispatch:
+    inputs:
+      since_days:
+        description: "Window in days (larger for backfill; feeds hold limited history)"
+        default: "8"
+      max_calls:
+        description: "Max Gemini calls this run"
+        default: "60"
+      only:
+        description: "Comma-separated source ids (blank = all active)"
+        required: false
+      dry_run:
+        description: "Analyse but don't write or commit"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write  # commit data/items
+  id-token: write  # assume the ingress infra role to invoke the Lambda
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+env:
+  INGRESS_STACK: flexo333/flexo333-ingress/prod
+  STACK: flexo333/flexo333-ai-assurance-signals/prod
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+
+      - run: npm ci
+
+      - name: Test (pure modules)
+        run: node --test
+
+      - name: Build collect event
+        env:
+          SINCE: ${{ github.event.inputs.since_days || '8' }}
+          ONLY: ${{ github.event.inputs.only }}
+        run: node build-collect-event.mjs --since-days "$SINCE" ${ONLY:+--only "$ONLY"} > event.json
+
+      - name: Install Pulumi CLI
+        uses: pulumi/actions@v7
+
+      - name: Resolve role and function
+        id: cfg
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        run: |
+          pulumi login
+          echo "INFRA_ROLE_ARN=$(pulumi stack output infra_role_arn -s $INGRESS_STACK)" >> "$GITHUB_OUTPUT"
+          echo "FN=$(pulumi stack output fetch_function_name -s $STACK)" >> "$GITHUB_OUTPUT"
+          echo "REGION=$(pulumi stack output fetch_region -s $STACK)" >> "$GITHUB_OUTPUT"
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ steps.cfg.outputs.INFRA_ROLE_ARN }}
+          aws-region: ${{ steps.cfg.outputs.REGION }}
+          role-duration-seconds: 3600
+
+      - name: Collect (Sydney Lambda)
+        run: |
+          aws lambda invoke \
+            --function-name "${{ steps.cfg.outputs.FN }}" \
+            --region "${{ steps.cfg.outputs.REGION }}" \
+            --cli-binary-format raw-in-base64-out \
+            --cli-read-timeout 960 \
+            --payload fileb://event.json \
+            collected.json > invoke-meta.json
+          cat invoke-meta.json
+          if grep -q FunctionError invoke-meta.json; then head -c 4000 collected.json; exit 1; fi
+          node -e 'const c=require("./collected.json"); console.log(`${c.location}: ${c.items.length} items, deferred ${c.deferred}`)'
+
+      - name: Analyse + ground (Gemini)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MAX: ${{ github.event.inputs.max_calls || '60' }}
+          DRY: ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+        run: node process.mjs collected.json --max "$MAX" $DRY
+
+      - name: Commit items
+        if: github.event.inputs.dry_run != 'true'
+        working-directory: .
+        run: |
+          git add data/items
+          if git diff --cached --quiet; then echo "No new items."; exit 0; fi
+          git -c user.name="aisignals-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "data: collect $(date -u +%Y-%m-%dT%H:%MZ) ($(git diff --cached --name-only | wc -l) items)"
+          for i in 1 2 3 4; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
