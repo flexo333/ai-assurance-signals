@@ -2,6 +2,12 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-24: Anonymous site; IAPP and Capital Brief in the allow-list
+**Decision:** no author attribution anywhere on the site. IAPP (news, INTL) and Capital Brief (news, AU, paywalled, so headline-only) are confirmed in `sources.yaml`.
+
+## 2026-11-24: Source verification runs in Actions, not locally
+The cloud dev sandbox can't reach most `.gov.au` hosts. **Decision:** `pipeline/source-check.mjs` runs in GitHub Actions on PRs, weekly and on demand, and publishes its report as the job summary plus a JSON artifact. Its parsing logic lives in pure modules (`pipeline/lib/*`) with `node --test` tests.
+
 ## 2026-11-24: Reuse the shared ingress stack for DNS and CI roles
 The `flexo333-ingress` stack already provides the `willbright.link` zone and GitHub OIDC infra/deploy roles, which trust every `flexo333/*` repo, including the immutable `sub` format that repos created after 2026-07-15 get. **Decision:** reference it with a `StackReference` and the roles, with no changes to the ingress stack. **Consequence:** every AWS resource must be named `flexo333-*`.
 

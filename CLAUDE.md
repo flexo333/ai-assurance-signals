@@ -13,6 +13,8 @@ Sibling project with shared patterns: `flexo333/yt2txt` (Gemini free tier via `@
 ## Layout
 
 - `site/`: Astro (static, `build.format: directory`, `trailingSlash: always`). `src/layouts/Base.astro` holds the masthead, the AI-generated disclaimer banner (keep it on every page) and the footer. `src/styles/global.css` holds the design tokens (minimal, typographic, system font stacks, one navy accent, dark mode via `prefers-color-scheme`, print styles).
+- `sources.yaml`: the allow-list, the only places content can come from.
+- `pipeline/`: Node 22 ESM. `lib/*.js` are pure, dependency-free modules with `*.test.mjs` tests (run `cd pipeline && node --test` with no path arguments). `source-check.mjs` probes every source (robots, feeds, sitemaps) and runs in `.github/workflows/source-check.yml`.
 - `infra/pulumi/`: Python Pulumi, static site only, via `flexo333/pulumi-static-site@v0.2.0` with `spa_mode=False` (a CloudFront Function rewrites `/path/` to `/path/index.html`).
 - `.github/workflows/deploy.yml`: the `infra` job (preview on PR, `up` with `upsert` on main) then the `site` job (build; on main also sync to S3 and invalidate CloudFront).
 
@@ -32,4 +34,5 @@ All local commands run through Docker via `make`, so you don't need Node or Pyth
 - Ingest only from the allow-list in `sources.yaml`. Never from open web search.
 - Every LLM summary must carry verbatim quotes that `ground.js` verifies against the source text. If grounding fails, show a headline-only card. Never publish an ungrounded summary.
 - Every item carries an authority badge: official, standards, lab, research or news.
+- The site is anonymous: no author attribution.
 - Respect robots.txt. Paywalled outlets get headline and standfirst only.

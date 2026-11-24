@@ -1,0 +1,59 @@
+name: Source check
+
+# Verifies every source in sources.yaml (robots.txt, reachability, feeds,
+# sitemaps) and recommends an ingest method. Report → job summary + artifact.
+# Runs on PRs touching sources/pipeline, weekly (Mon ~10am AEDT), and on demand.
+
+on:
+  pull_request:
+    paths:
+      - "sources.yaml"
+      - "pipeline/**"
+      - ".github/workflows/source-check.yml"
+  push:
+    branches: [main]
+    paths:
+      - "sources.yaml"
+      - "pipeline/**"
+  schedule:
+    - cron: "23 23 * * 0"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated source ids (blank = all)"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+
+      - run: npm ci
+
+      - name: Test (pure modules)
+        run: node --test
+
+      - name: Check sources
+        env:
+          ONLY: ${{ github.event.inputs.only }}
+        run: node source-check.mjs ${ONLY:+--only "$ONLY"} --out source-check.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-check
+          path: pipeline/source-check.json
+          if-no-files-found: ignore

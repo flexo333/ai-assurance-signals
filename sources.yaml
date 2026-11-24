@@ -1,0 +1,527 @@
+# AI Assurance Signals — source allow-list.
+#
+# Content may ONLY come from sources listed here (see CLAUDE.md content rules).
+#
+# Fields
+#   id            stable slug, used in item ids and the /sources page
+#   name          display name
+#   authority     official | standards | lab | research | news
+#   jurisdiction  AU-federal | AU-NSW | AU-VIC | AU-QLD | AU-WA | AU-SA | AU-TAS | AU-ACT | AU-NT
+#                 | INTL | EU | UK | US | SG | CA | NZ
+#   homepage      the page the checker fetches for feed autodiscovery
+#   feeds         candidate RSS/Atom URLs (unverified guesses are fine; the
+#                 checker also autodiscovers <link rel=alternate> and sitemaps)
+#   ai_specific   true → every item is in scope; false → keyword pre-filter first
+#   paywalled     true → headline + standfirst only, never full text
+#
+# Phase 1: `.github/workflows/source-check.yml` verifies every entry and
+# records the working ingest method. Until then nothing here is verified.
+
+sources:
+  # ── Federal government & Parliament (official) ─────────────────────────────
+  - id: disr
+    name: Department of Industry, Science and Resources
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.industry.gov.au/news
+    feeds: [https://www.industry.gov.au/news/rss.xml]
+    ai_specific: false
+
+  - id: naic
+    name: National AI Centre
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.industry.gov.au/national-artificial-intelligence-centre
+    ai_specific: true
+
+  - id: aisi-au
+    name: Australian AI Safety Institute
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.industry.gov.au/science-technology-and-innovation/technology/artificial-intelligence
+    ai_specific: true
+
+  - id: dta
+    name: Digital Transformation Agency
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.dta.gov.au/news
+    feeds: [https://www.dta.gov.au/news/rss.xml, https://www.dta.gov.au/rss.xml]
+    ai_specific: false
+
+  - id: digital-gov-au
+    name: digital.gov.au (AI in government)
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.digital.gov.au/policy/ai
+    ai_specific: true
+
+  - id: agd
+    name: Attorney-General's Department
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.ag.gov.au/about-us/media-and-publications/news
+    feeds: [https://www.ag.gov.au/rss.xml]
+    ai_specific: false
+
+  - id: treasury
+    name: The Treasury
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://treasury.gov.au/media-release
+    feeds: [https://treasury.gov.au/rss.xml]
+    ai_specific: false
+
+  - id: treasury-consult
+    name: Treasury consultations
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://treasury.gov.au/consultation
+    ai_specific: false
+
+  - id: finance
+    name: Department of Finance
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.finance.gov.au/about-us/news
+    ai_specific: false
+
+  - id: apsc
+    name: Australian Public Service Commission
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.apsc.gov.au/news-and-events
+    ai_specific: false
+
+  - id: aph
+    name: Parliament of Australia (committees & inquiries)
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.aph.gov.au/Parliamentary_Business/Committees
+    ai_specific: false
+
+  - id: legislation
+    name: Federal Register of Legislation
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.legislation.gov.au/
+    ai_specific: false
+
+  - id: consult-industry
+    name: DISR Consultation Hub
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://consult.industry.gov.au/
+    feeds: [https://consult.industry.gov.au/consultation_finder.rss]
+    ai_specific: false
+
+  # ── Regulators (official) ──────────────────────────────────────────────────
+  - id: oaic
+    name: Office of the Australian Information Commissioner
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.oaic.gov.au/news
+    feeds: [https://www.oaic.gov.au/rss]
+    ai_specific: false
+
+  - id: apra
+    name: Australian Prudential Regulation Authority
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.apra.gov.au/news-and-publications
+    feeds: [https://www.apra.gov.au/rss.xml]
+    ai_specific: false
+
+  - id: asic
+    name: Australian Securities and Investments Commission
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://asic.gov.au/newsroom/
+    feeds: [https://asic.gov.au/newsroom/media-releases/rss/]
+    ai_specific: false
+
+  - id: accc
+    name: Australian Competition and Consumer Commission
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.accc.gov.au/media/media-releases
+    feeds: [https://www.accc.gov.au/rss/media-releases.xml]
+    ai_specific: false
+
+  - id: esafety
+    name: eSafety Commissioner
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.esafety.gov.au/newsroom
+    feeds: [https://www.esafety.gov.au/rss.xml]
+    ai_specific: false
+
+  - id: ahrc
+    name: Australian Human Rights Commission
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://humanrights.gov.au/about/news
+    feeds: [https://humanrights.gov.au/rss.xml]
+    ai_specific: false
+
+  - id: tga
+    name: Therapeutic Goods Administration
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.tga.gov.au/news
+    ai_specific: false
+
+  - id: acma
+    name: Australian Communications and Media Authority
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.acma.gov.au/newsroom
+    ai_specific: false
+
+  - id: ombudsman
+    name: Commonwealth Ombudsman
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.ombudsman.gov.au/news-and-media
+    ai_specific: false
+
+  # ── States & territories (official) ────────────────────────────────────────
+  - id: nsw-digital
+    name: Digital NSW (AI Assurance Framework)
+    authority: official
+    jurisdiction: AU-NSW
+    homepage: https://www.digital.nsw.gov.au/news
+    feeds: [https://www.digital.nsw.gov.au/rss.xml]
+    ai_specific: false
+
+  - id: nsw-ombudsman
+    name: NSW Ombudsman
+    authority: official
+    jurisdiction: AU-NSW
+    homepage: https://www.ombo.nsw.gov.au/news-and-publications
+    ai_specific: false
+
+  - id: vic-dgs
+    name: Victorian Government (digital & AI)
+    authority: official
+    jurisdiction: AU-VIC
+    homepage: https://www.vic.gov.au/artificial-intelligence
+    ai_specific: true
+
+  - id: ovic
+    name: Office of the Victorian Information Commissioner
+    authority: official
+    jurisdiction: AU-VIC
+    homepage: https://ovic.vic.gov.au/news/
+    ai_specific: false
+
+  - id: qld-cgcio
+    name: Queensland Government (AI governance)
+    authority: official
+    jurisdiction: AU-QLD
+    homepage: https://www.forgov.qld.gov.au/information-technology/queensland-government-enterprise-architecture-qgea/qgea-directions-and-guidance/qgea-policies-standards-and-guidelines/use-of-generative-ai-in-queensland-government
+    ai_specific: true
+
+  - id: wa-digital
+    name: WA Office of Digital Government
+    authority: official
+    jurisdiction: AU-WA
+    homepage: https://www.wa.gov.au/organisation/department-of-the-premier-and-cabinet/office-of-digital-government
+    ai_specific: false
+
+  # ── Standards & research (standards / research) ────────────────────────────
+  - id: standards-au
+    name: Standards Australia
+    authority: standards
+    jurisdiction: AU-federal
+    homepage: https://www.standards.org.au/news
+    ai_specific: false
+
+  - id: csiro-data61
+    name: CSIRO Data61 (Responsible AI)
+    authority: research
+    jurisdiction: AU-federal
+    homepage: https://www.csiro.au/en/news
+    feeds: [https://www.csiro.au/en/news/rss]
+    ai_specific: false
+
+  - id: aicd
+    name: Australian Institute of Company Directors
+    authority: research
+    jurisdiction: AU-federal
+    homepage: https://www.aicd.com.au/news-media.html
+    ai_specific: false
+
+  - id: gradient
+    name: Gradient Institute
+    authority: research
+    jurisdiction: AU-federal
+    homepage: https://www.gradientinstitute.org/
+    ai_specific: true
+
+  - id: hti
+    name: Human Technology Institute (UTS)
+    authority: research
+    jurisdiction: AU-federal
+    homepage: https://www.uts.edu.au/human-technology-institute/news
+    ai_specific: true
+
+  - id: adms
+    name: ARC Centre of Excellence for Automated Decision-Making and Society
+    authority: research
+    jurisdiction: AU-federal
+    homepage: https://www.admscentre.org.au/news/
+    ai_specific: true
+
+  - id: tpdc
+    name: Tech Policy Design Institute
+    authority: research
+    jurisdiction: AU-federal
+    homepage: https://techpolicy.au/
+    ai_specific: false
+
+  - id: law-council
+    name: Law Council of Australia
+    authority: research
+    jurisdiction: AU-federal
+    homepage: https://lawcouncil.au/media/media-releases
+    ai_specific: false
+
+  # ── Frontier labs (lab) ────────────────────────────────────────────────────
+  - id: anthropic
+    name: Anthropic
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://www.anthropic.com/news
+    ai_specific: true
+
+  - id: openai
+    name: OpenAI
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://openai.com/news/
+    feeds: [https://openai.com/news/rss.xml]
+    ai_specific: true
+
+  - id: deepmind
+    name: Google DeepMind
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://deepmind.google/discover/blog/
+    feeds: [https://deepmind.google/blog/rss.xml]
+    ai_specific: true
+
+  - id: meta-ai
+    name: Meta AI
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://ai.meta.com/blog/
+    ai_specific: true
+
+  - id: microsoft-rai
+    name: Microsoft On the Issues (Responsible AI)
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://blogs.microsoft.com/on-the-issues/
+    feeds: [https://blogs.microsoft.com/on-the-issues/feed/]
+    ai_specific: false
+
+  - id: mistral
+    name: Mistral AI
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://mistral.ai/news
+    ai_specific: true
+
+  - id: xai
+    name: xAI
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://x.ai/news
+    ai_specific: true
+
+  - id: fmf
+    name: Frontier Model Forum
+    authority: lab
+    jurisdiction: INTL
+    homepage: https://www.frontiermodelforum.org/updates/
+    ai_specific: true
+
+  # ── International (official / standards) ───────────────────────────────────
+  - id: eu-ai-office
+    name: European Commission (AI Office / AI Act)
+    authority: official
+    jurisdiction: EU
+    homepage: https://digital-strategy.ec.europa.eu/en/policies/ai-office
+    ai_specific: true
+
+  - id: uk-aisi
+    name: UK AI Security Institute
+    authority: official
+    jurisdiction: UK
+    homepage: https://www.aisi.gov.uk/
+    feeds: [https://www.gov.uk/search/all.atom?organisations%5B%5D=ai-security-institute]
+    ai_specific: true
+
+  - id: uk-dsit
+    name: UK Department for Science, Innovation and Technology
+    authority: official
+    jurisdiction: UK
+    homepage: https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology
+    feeds: [https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=department-for-science-innovation-and-technology]
+    ai_specific: false
+
+  - id: nist-ai
+    name: NIST (AI)
+    authority: standards
+    jurisdiction: US
+    homepage: https://www.nist.gov/artificial-intelligence
+    feeds: [https://www.nist.gov/news-events/news/rss.xml]
+    ai_specific: false
+
+  - id: oecd-ai
+    name: OECD.AI
+    authority: official
+    jurisdiction: INTL
+    homepage: https://oecd.ai/en/wonk
+    ai_specific: true
+
+  - id: iso-sc42
+    name: ISO/IEC JTC 1/SC 42 (AI standards)
+    authority: standards
+    jurisdiction: INTL
+    homepage: https://www.iso.org/committee/6794475.html
+    ai_specific: true
+
+  - id: coe-ai
+    name: Council of Europe (AI convention)
+    authority: official
+    jurisdiction: EU
+    homepage: https://www.coe.int/en/web/artificial-intelligence/newsroom
+    ai_specific: true
+
+  - id: imda-sg
+    name: Singapore IMDA / AI Verify Foundation
+    authority: official
+    jurisdiction: SG
+    homepage: https://aiverifyfoundation.sg/whats-happening/
+    ai_specific: true
+
+  - id: nz-dia
+    name: New Zealand Government (AI)
+    authority: official
+    jurisdiction: NZ
+    homepage: https://www.digital.govt.nz/news
+    ai_specific: false
+
+  - id: ca-ised
+    name: Canada (AI and Data)
+    authority: official
+    jurisdiction: CA
+    homepage: https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act
+    ai_specific: true
+
+  # ── Australian news (news) ─────────────────────────────────────────────────
+  - id: innovationaus
+    name: InnovationAus
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://www.innovationaus.com/
+    feeds: [https://www.innovationaus.com/feed/]
+    ai_specific: false
+
+  - id: itnews
+    name: iTnews
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://www.itnews.com.au/
+    feeds: [https://www.itnews.com.au/RSS/rss.ashx]
+    ai_specific: false
+
+  - id: mandarin
+    name: The Mandarin
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://www.themandarin.com.au/
+    feeds: [https://www.themandarin.com.au/feed/]
+    ai_specific: false
+
+  - id: itwire
+    name: iTWire
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://itwire.com/
+    feeds: [https://itwire.com/rss.xml]
+    ai_specific: false
+
+  - id: information-age
+    name: Information Age (ACS)
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://ia.acs.org.au/
+    feeds: [https://ia.acs.org.au/rss]
+    ai_specific: false
+
+  - id: abc-tech
+    name: ABC News (Science & Technology)
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://www.abc.net.au/news/science
+    feeds: [https://www.abc.net.au/news/feed/2942460/rss.xml]
+    ai_specific: false
+
+  - id: conversation-au
+    name: The Conversation (AU, AI)
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://theconversation.com/au/topics/artificial-intelligence-ai-90
+    feeds: [https://theconversation.com/au/topics/artificial-intelligence-ai-90/articles.atom]
+    ai_specific: true
+
+  - id: afr
+    name: Australian Financial Review
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://www.afr.com/technology
+    paywalled: true
+    ai_specific: false
+
+  - id: capital-brief
+    name: Capital Brief
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://www.capitalbrief.com/
+    paywalled: true
+    ai_specific: false
+
+  # ── International news (news) ──────────────────────────────────────────────
+  - id: iapp
+    name: IAPP (International Association of Privacy Professionals)
+    authority: news
+    jurisdiction: INTL
+    homepage: https://iapp.org/news/
+    feeds: [https://iapp.org/rss/daily-dashboard/]
+    ai_specific: false
+
+  - id: mit-tr
+    name: MIT Technology Review (AI)
+    authority: news
+    jurisdiction: INTL
+    homepage: https://www.technologyreview.com/topic/artificial-intelligence/
+    feeds: [https://www.technologyreview.com/topic/artificial-intelligence/feed]
+    ai_specific: true
+
+  - id: reuters-tech
+    name: Reuters Technology
+    authority: news
+    jurisdiction: INTL
+    homepage: https://www.reuters.com/technology/
+    ai_specific: false
+
+  - id: euractiv-tech
+    name: Euractiv (Technology)
+    authority: news
+    jurisdiction: EU
+    homepage: https://www.euractiv.com/sections/tech/
+    feeds: [https://www.euractiv.com/sections/tech/feed/]
+    ai_specific: false

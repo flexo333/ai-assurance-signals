@@ -1,0 +1,15 @@
+{
+  "name": "ai-assurance-signals-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "source-check": "node source-check.mjs"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
