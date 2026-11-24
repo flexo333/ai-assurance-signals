@@ -2,6 +2,14 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-24: Owner accepted all 16 overnight defaults (QUESTIONS.md)
+The overnight build raised 16 questions, each with a default already in place. **Decision (owner):** accept every default as built. Specifically:
+- **Sources:** blocked agencies are covered via news, with SES email updates left in the backlog. ACCC is treated as blocked. Phase 2 ingests feed sources only. The sitemap/HTML adapter order is ASIC, Federal Register of Legislation, Standards Australia, Anthropic, UK AISI, OECD.AI, IAPP, Treasury, NSW Digital, CSIRO, AICD. Broad feeds (iTWire, ABC) stay.
+- **Pipeline:** the Gemini chain is `gemini-2.5-flash` → `gemini-flash-latest` → `gemini-flash-lite-latest` → `gemini-2.5-flash-lite`, at ~9 req/min and 60 calls a day. Grounding stays strict. Source text stays out of git. The thin July–October backfill is accepted, with no archive scraping.
+- **Edition and site:** Top Signals rules unchanged, and official items don't automatically outrank more significant news. The "This week" intro is on. The edition window and 7-day grace are unchanged. The site redeploys daily. The 7 key dates stay, including EU dates cited from a law-firm summary. Item pages are public and indexable.
+
+**Follow-ups:** review the ABC feed after two weeks of collection; revisit grounding strictness if more than ~25% of items end up headline-only; raise the daily cap if the free tier allows.
+
 ## 2026-11-24: Self-draining backfill; editions bucketed by publish date
 With no stored items, the first run would fetch ~675 articles while Gemini handles about 60 a day, and every old item would land in the first edition. **Decision:** the collector lists candidates cheaply and fetches articles for only the newest `maxItems` (the day's budget). The window always reaches back to `ARCHIVE_START`, which is cheap because feeds are short. Editions are bucketed by publish date, with a 7-day late-arrival grace. `edition.mjs --backfill` (re)builds `backfilled: true` editions for past weeks. **Consequence:** the archive back to 1 July fills itself over the first days and is labelled as backfilled; regular editions are never rewritten.
 
