@@ -1,0 +1,146 @@
+name: Deploy
+
+# One workflow, two jobs: infra (Pulumi) then site (Astro → S3 → CloudFront).
+# The site job `needs` infra so the very first run creates the bucket and
+# distribution before anything tries to sync into them.
+#
+# Roles come from the shared ingress stack (flexo333/flexo333-ingress/prod,
+# defined in flexo333/my-blog): infra_role_arn trusts any branch (PR previews),
+# deploy_role_arn trusts main only. Both are scoped to `flexo333-*` resources.
+#
+# Required repo secret: PULUMI_ACCESS_TOKEN
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "infra/**"
+      - ".github/workflows/deploy.yml"
+  pull_request:
+    paths:
+      - "site/**"
+      - "infra/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write # pulumi preview comments on PRs
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  INGRESS_STACK: flexo333/flexo333-ingress/prod
+  STACK: flexo333/prod
+
+jobs:
+  infra:
+    name: Infra ${{ github.event_name == 'pull_request' && 'preview' || 'up' }}
+    runs-on: ubuntu-latest
+    outputs:
+      bucket: ${{ steps.pulumi.outputs.bucket }}
+      distribution_id: ${{ steps.pulumi.outputs.distribution_id }}
+      aws_region: ${{ steps.pulumi.outputs.aws_region }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install Pulumi program deps
+        run: pip install -r infra/pulumi/requirements.txt
+
+      - name: Install Pulumi CLI
+        uses: pulumi/actions@v7
+
+      - name: Get infra role from ingress stack
+        id: roles
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        run: |
+          pulumi login
+          echo "INFRA_ROLE_ARN=$(pulumi stack output infra_role_arn -s $INGRESS_STACK)" >> "$GITHUB_OUTPUT"
+          echo "AWS_REGION=$(pulumi stack output aws_region -s $INGRESS_STACK)" >> "$GITHUB_OUTPUT"
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ steps.roles.outputs.INFRA_ROLE_ARN }}
+          aws-region: ${{ steps.roles.outputs.AWS_REGION }}
+
+      - name: Pulumi ${{ github.event_name == 'pull_request' && 'preview' || 'up' }}
+        id: pulumi
+        uses: pulumi/actions@v7
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        with:
+          command: ${{ github.event_name == 'pull_request' && 'preview' || 'up' }}
+          stack-name: ${{ env.STACK }}
+          work-dir: infra/pulumi
+          upsert: true # creates the stack on first run
+          comment-on-pr: true
+
+  site:
+    name: Site ${{ github.event_name == 'pull_request' && 'build' || 'deploy' }}
+    needs: infra
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Pulumi CLI
+        if: github.event_name != 'pull_request'
+        uses: pulumi/actions@v7
+
+      - name: Get deploy role from ingress stack
+        if: github.event_name != 'pull_request'
+        id: roles
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+        run: |
+          pulumi login
+          echo "DEPLOY_ROLE_ARN=$(pulumi stack output deploy_role_arn -s $INGRESS_STACK)" >> "$GITHUB_OUTPUT"
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        if: github.event_name != 'pull_request'
+        with:
+          role-to-assume: ${{ steps.roles.outputs.DEPLOY_ROLE_ARN }}
+          aws-region: ${{ needs.infra.outputs.aws_region }}
+
+      - name: Sync to S3
+        if: github.event_name != 'pull_request'
+        env:
+          BUCKET: ${{ needs.infra.outputs.bucket }}
+        run: |
+          # Astro's content-hashed assets: immutable, cache for a year.
+          aws s3 sync dist/ "s3://$BUCKET" --delete \
+            --cache-control 'public,max-age=31536000,immutable' \
+            --exclude '*' --include '_astro/*'
+          # Everything else (HTML, robots, favicon): must revalidate.
+          aws s3 sync dist/ "s3://$BUCKET" --delete \
+            --cache-control 'no-cache' \
+            --exclude '_astro/*'
+
+      - name: Invalidate CloudFront
+        if: github.event_name != 'pull_request'
+        env:
+          CF_DISTRIBUTION_ID: ${{ needs.infra.outputs.distribution_id }}
+        run: aws cloudfront create-invalidation --distribution-id "$CF_DISTRIBUTION_ID" --paths '/*'

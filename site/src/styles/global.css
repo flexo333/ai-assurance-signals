@@ -1,0 +1,146 @@
+/* AI Assurance Signals — minimal, typographic, print-friendly.
+   System font stacks only: no web-font requests, fast everywhere. */
+
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #1b1d21;
+  --muted: #5d636e;
+  --rule: #e4e1d9;
+  --accent: #1f3a5f;      /* deep navy: the one accent colour */
+  --accent-soft: #e8edf4;
+
+  /* authority badges (used from Phase 3) */
+  --badge-official: #1f3a5f;
+  --badge-standards: #3d5a3a;
+  --badge-lab: #5b3f75;
+  --badge-research: #7a5a1e;
+  --badge-news: #5d636e;
+
+  --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --measure: 42rem;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131518;
+    --surface: #1a1d21;
+    --text: #e8e6e1;
+    --muted: #9aa0aa;
+    --rule: #2c3036;
+    --accent: #9cb8dc;
+    --accent-soft: #1f2a38;
+    --badge-official: #9cb8dc;
+    --badge-standards: #a3c49f;
+    --badge-lab: #c7aee0;
+    --badge-research: #d9b977;
+    --badge-news: #9aa0aa;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2rem, 6vw, 2.75rem); margin: 0 0 0.5rem; }
+h2 { font-size: 1.5rem; margin: 2.5rem 0 0.75rem; }
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+
+p { margin: 0 0 1rem; }
+
+.muted { color: var(--muted); }
+
+/* ── Masthead ───────────────────────────────────────────── */
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.25rem 0;
+}
+.masthead .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+.brand span { color: var(--accent); }
+.tagline { font-size: 0.875rem; color: var(--muted); }
+
+/* ── Disclaimer banner ──────────────────────────────────── */
+.disclaimer {
+  background: var(--accent-soft);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  padding: 0.5rem 0;
+}
+
+main { padding: 3rem 0 4rem; }
+
+.kicker {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.lede {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+ul.plain { padding-left: 1.1rem; }
+ul.plain li { margin-bottom: 0.4rem; }
+
+/* ── Footer ─────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.5rem 0 3rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+@media print {
+  .disclaimer { background: none; border-bottom: 1px solid #ccc; }
+  a { color: inherit; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+}

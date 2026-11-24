@@ -1,0 +1,5 @@
+config:
+  aws:region: us-east-1
+  flexo333-ai-assurance-signals:domainName: aisignals.willbright.link
+  flexo333-ai-assurance-signals:bucketName: flexo333-ai-assurance-signals
+  flexo333-ai-assurance-signals:parentIngressStack: flexo333/flexo333-ingress/prod
