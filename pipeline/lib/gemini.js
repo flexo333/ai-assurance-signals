@@ -4,9 +4,11 @@
 
 // Free-tier friendly Flash family, best first. A model that 404s or is
 // retired is non-retryable and the loop simply advances to the next.
+// gemini-2.5-flash leads: in the first live runs gemini-flash-latest
+// (a moving alias to the newest preview) returned 503 "high demand".
 export const MODEL_CHAIN = [
-  "models/gemini-flash-latest",
   "models/gemini-2.5-flash",
+  "models/gemini-flash-latest",
   "models/gemini-flash-lite-latest",
   "models/gemini-2.5-flash-lite",
 ];
@@ -49,7 +51,7 @@ export async function generateWithFallback(ai, {
   chain = MODEL_CHAIN,
   contents,
   config,
-  attempts = 2,
+  attempts = 1, // on overload/quota, moving to the next model beats waiting
   backoffMs = (attempt) => 4000 * 2 ** attempt,
   timeoutMs = 90_000,
   parse = (text) => text,
@@ -58,9 +60,10 @@ export async function generateWithFallback(ai, {
   let lastErr;
   let allRetryable = true;
   let used = 0;
+  const errors = [];
   for (const model of chain) {
     for (let attempt = 0; attempt < attempts; attempt++) {
-      if (used >= budget) return { ok: false, error: lastErr || new Error("request budget exhausted"), quotaExhausted: false, budgetExhausted: true, attempts: used };
+      if (used >= budget) return { ok: false, error: lastErr || new Error("request budget exhausted"), quotaExhausted: false, budgetExhausted: true, attempts: used, errors };
       used++;
       try {
         const res = await withTimeout(ai.models.generateContent({ model, contents, ...(config ? { config } : {}) }), timeoutMs);
@@ -68,9 +71,10 @@ export async function generateWithFallback(ai, {
         if (!text) throw new Error("empty response");
         const value = parse(text);
         if (value == null) throw new Error("empty response (unparseable payload)");
-        return { ok: true, model, value, attempts: used };
+        return { ok: true, model, value, attempts: used, errors };
       } catch (err) {
         lastErr = err;
+        errors.push({ model, status: err?.status ?? null, message: String(err?.message || err).slice(0, 200) });
         if (!isRetryableModelError(err)) {
           allRetryable = false;
           break;
@@ -79,5 +83,5 @@ export async function generateWithFallback(ai, {
       }
     }
   }
-  return { ok: false, error: lastErr, quotaExhausted: allRetryable, attempts: used };
+  return { ok: false, error: lastErr, quotaExhausted: allRetryable, attempts: used, errors };
 }

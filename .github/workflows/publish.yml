@@ -1,0 +1,83 @@
+name: Publish
+
+# Friday afternoon: build this week's edition from data/items, commit it, then
+# deploy the site (via the reusable deploy workflow — bot commits don't
+# trigger push workflows).
+#
+# Needs secrets: GEMINI_API_KEY (intro paragraph; optional), PULUMI_ACCESS_TOKEN (deploy).
+
+on:
+  schedule:
+    - cron: "17 4 * * 5" # Fri 15:17 AEDT / 14:17 AEST
+  workflow_dispatch:
+    inputs:
+      from:
+        description: "Window start (ISO). Blank = previous edition's end, or 7 days"
+        required: false
+      no_intro:
+        description: "Skip the generated intro paragraph"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  edition:
+    runs-on: ubuntu-latest
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: pipeline/package-lock.json
+
+      - run: npm ci
+
+      - name: Test (pure modules)
+        run: node --test
+
+      - name: Build edition
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FROM: ${{ github.event.inputs.from }}
+          NO_INTRO: ${{ github.event.inputs.no_intro == 'true' && '--no-intro' || '' }}
+        run: node edition.mjs ${FROM:+--from "$FROM"} $NO_INTRO
+
+      - name: Commit edition
+        id: commit
+        working-directory: .
+        run: |
+          git add data/editions
+          if ! git diff --cached --quiet; then
+            git -c user.name="aisignals-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "edition: $(ls -t data/editions | head -1 | sed 's/.json//')"
+            for i in 1 2 3 4; do
+              git pull -q --rebase origin main && git push -q origin HEAD:main && break
+              [ "$i" = 4 ] && exit 1
+              sleep $((i * 5))
+            done
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: edition
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.edition.outputs.sha }}
+    secrets: inherit

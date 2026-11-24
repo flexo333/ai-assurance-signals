@@ -17,7 +17,7 @@ import { readFile, appendFile } from "node:fs/promises";
 import { GoogleGenAI } from "@google/genai";
 import { loadSources } from "./lib/sources.js";
 import { saveItem } from "./lib/store.js";
-import { sleep } from "./lib/gemini.js";
+import { sleep, MODEL_CHAIN } from "./lib/gemini.js";
 import { analyseItem } from "./lib/analyse-item.js";
 
 const args = process.argv.slice(2);
@@ -37,6 +37,13 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const stats = { collected: collected.items.length, summarised: 0, headlineOnly: 0, irrelevant: 0, skipped: 0, failed: 0, calls: 0 };
 let quotaHit = false;
+const modelErrorCounts = new Map();
+// Models that returned 503/429 this run are skipped for the rest of it.
+const unhealthy = new Set();
+const chainNow = () => {
+  const healthy = MODEL_CHAIN.filter((m) => !unhealthy.has(m));
+  return healthy.length ? healthy : MODEL_CHAIN;
+};
 
 for (const item of collected.items) {
   if (stats.calls >= MAX || quotaHit) {
@@ -49,8 +56,13 @@ for (const item of collected.items) {
     continue;
   }
   if (stats.calls > 0) await sleep(DELAY_MS);
-  const res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls });
+  const res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls, chain: chainNow() });
   stats.calls += res.calls;
+  for (const e of res.modelErrors || []) {
+    if (e.status === 503 || e.status === 429) unhealthy.add(e.model);
+    const key = `${e.model} ${e.status ?? ""} ${e.message.slice(0, 80)}`;
+    modelErrorCounts.set(key, (modelErrorCounts.get(key) || 0) + 1);
+  }
   if (!res.record) {
     if (res.quotaExhausted) quotaHit = true;
     if (stats.calls >= MAX) {
@@ -66,6 +78,11 @@ for (const item of collected.items) {
   else if (r.status === "headline-only") stats.headlineOnly++;
   else stats.irrelevant++;
   if (!DRY) await saveItem(r);
+  else if (r.status !== "irrelevant") {
+    // Dry runs print what would be stored, for review in the job log.
+    const { id, sourceId, status, headline, title, summary, why_it_matters, quotes, classification, dates_mentioned, reason, grounding, provenance } = r;
+    console.log(JSON.stringify({ id, sourceId, status, headline: headline || title, summary, why_it_matters, quotes, classification, dates_mentioned, reason, grounding, model: provenance?.model, attempts: provenance?.attempts }, null, 2));
+  }
   if (r.status !== "irrelevant") console.log(`${r.status === "summarised" ? "✓" : "◐"} [${r.classification?.significance ?? "-"}] ${r.sourceId}: ${r.headline || r.title}`);
 }
 
@@ -79,11 +96,12 @@ const summary = [
   `| ${stats.collected} | ${stats.summarised} | ${stats.headlineOnly} | ${stats.irrelevant} | ${stats.skipped} | ${stats.failed} | ${stats.calls} |`,
   "",
   quotaHit ? "⚠️ Gemini quota exhausted on every model — remaining items will be retried next run." : "",
+  modelErrorCounts.size ? ["**Model errors (count · model status message):**", "", ...[...modelErrorCounts].map(([k, n]) => `- ${n} × ${k}`), ""].join("\n") : "",
   "<details><summary>Per-source collection log</summary>",
   "",
-  "| source | status | feed items | in window | keyword-dropped | collected |",
-  "|---|---|---|---|---|---|",
-  ...(collected.sources || []).map((s) => `| ${s.id} | ${s.status} | ${s.feedItems} | ${s.inWindow} | ${s.keywordDropped} | ${s.collected} |`),
+  "| source | status | feed items | in window | keyword-dropped | collected | skipped known/old/bad-url | first item (date · link) |",
+  "|---|---|---|---|---|---|---|---|",
+  ...(collected.sources || []).map((s) => `| ${s.id} | ${s.status} | ${s.feedItems} | ${s.inWindow} | ${s.keywordDropped} | ${s.collected} | ${s.skipped ? `${s.skipped.known}/${s.skipped.old}/${s.skipped.badUrl}` : ""} | ${s.sample ? `${s.sample.date ?? "undated"} · ${String(s.sample.link).slice(0, 70)}` : ""} |`),
   "",
   "</details>",
 ].join("\n");

@@ -59,7 +59,7 @@ async function resolveFeed(src) {
 }
 
 async function collectSource(src, { since, known }) {
-  const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0 };
+  const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const feed = await resolveFeed(src);
   if (!feed) return { log: { ...log, status: "no-feed" }, items: [] };
   log.feed = feed.url;
@@ -69,15 +69,23 @@ async function collectSource(src, { since, known }) {
   const fresh = [];
   for (const i of parsed) {
     let url;
+    log.sample ??= { link: i.link, date: i.date, since };
     try {
       url = canonicalUrl(new URL(i.link, feed.url).toString());
     } catch {
+      log.skipped.badUrl++;
       continue;
     }
     const id = itemId(url);
-    if (known.has(id)) continue;
+    if (known.has(id)) {
+      log.skipped.known++;
+      continue;
+    }
     // Undated items are kept (once) — the known-id set stops them repeating.
-    if (i.date && i.date < since) continue;
+    if (i.date && i.date < since) {
+      log.skipped.old++;
+      continue;
+    }
     log.inWindow++;
     if (!src.ai_specific && !isAiRelated(`${i.title}\n${i.summary || ""}`)) {
       log.keywordDropped++;

@@ -7,6 +7,13 @@ name: Collect
 # Needs secrets: PULUMI_ACCESS_TOKEN, GEMINI_API_KEY.
 
 on:
+  # PRs touching the pipeline get an end-to-end dry run on a few sources
+  # (real Lambda + real Gemini, max 6 calls, nothing written or committed).
+  pull_request:
+    paths:
+      - "pipeline/**"
+      - "sources.yaml"
+      - ".github/workflows/collect.yml"
   schedule:
     - cron: "41 19 * * *" # 06:41 AEDT / 05:41 AEST
   workflow_dispatch:
@@ -30,7 +37,7 @@ permissions:
   id-token: write  # assume the ingress infra role to invoke the Lambda
 
 concurrency:
-  group: collect
+  group: collect-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
   cancel-in-progress: false
 
 env:
@@ -60,8 +67,8 @@ jobs:
 
       - name: Build collect event
         env:
-          SINCE: ${{ github.event.inputs.since_days || '8' }}
-          ONLY: ${{ github.event.inputs.only }}
+          SINCE: ${{ github.event_name == 'pull_request' && '30' || github.event.inputs.since_days || '8' }}
+          ONLY: ${{ github.event_name == 'pull_request' && 'conversation-au,mit-tr,uk-dsit,innovationaus' || github.event.inputs.only }}
         run: node build-collect-event.mjs --since-days "$SINCE" ${ONLY:+--only "$ONLY"} > event.json
 
       - name: Install Pulumi CLI
@@ -99,12 +106,12 @@ jobs:
       - name: Analyse + ground (Gemini)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MAX: ${{ github.event.inputs.max_calls || '60' }}
-          DRY: ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+          MAX: ${{ github.event_name == 'pull_request' && '6' || github.event.inputs.max_calls || '60' }}
+          DRY: ${{ (github.event_name == 'pull_request' || github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
         run: node process.mjs collected.json --max "$MAX" $DRY
 
       - name: Commit items
-        if: github.event.inputs.dry_run != 'true'
+        if: github.event_name != 'pull_request' && github.event.inputs.dry_run != 'true'
         working-directory: .
         run: |
           git add data/items

@@ -1,0 +1,37 @@
+---
+import { AUTHORITY_LABEL, fmtDate } from "../lib/data.js";
+interface Props { item: any; rank?: number }
+const { item, rank } = Astro.props;
+const summarised = item.status === "summarised";
+const date = fmtDate(item.publishedAt || item.fetchedAt);
+---
+<article class={`card ${summarised ? "" : "card--headline"}`} data-pagefind-body>
+  <div class="card__meta">
+    <span class={`badge badge--${item.authority}`}>{AUTHORITY_LABEL[item.authority] ?? item.authority}</span>
+    <span class="card__source">{item.sourceName}</span>
+    {date && <time datetime={item.publishedAt}>{date}</time>}
+    {item.paywalled && <span class="tag" title="Paywalled source: summary based on the freely available standfirst only">Paywalled</span>}
+    {item.classification?.is_consultation && <span class="tag tag--accent">Consultation</span>}
+  </div>
+  <h3 class="card__title">
+    {rank && <span class="card__rank">{rank}</span>}
+    <a href={item.url} rel="noopener">{summarised ? item.headline : item.title}</a>
+  </h3>
+  {summarised ? (
+    <>
+      <p class="card__summary">{item.summary}</p>
+      <p class="card__why"><strong>Why it matters:</strong> {item.why_it_matters}</p>
+      <details class="card__grounding">
+        <summary>Source quotes</summary>
+        <ul>
+          {item.quotes.map((q: any) => (
+            <li><q>{q.text}</q> <span class="muted">supports {q.supports === "why_it_matters" ? "why it matters" : "summary"}</span></li>
+          ))}
+        </ul>
+        <p class="muted small">Every summary is checked against these verbatim quotes from the source. Read the <a href={item.url} rel="noopener">original</a>.</p>
+      </details>
+    </>
+  ) : (
+    <p class="card__summary muted small">Summary withheld: the AI-generated summary could not be verified against the source text. See the original.</p>
+  )}
+</article>

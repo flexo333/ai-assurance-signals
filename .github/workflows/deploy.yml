@@ -17,14 +17,24 @@ on:
       - "site/**"
       - "infra/**"
       - "pipeline/**"
+      - "sources.yaml"
       - ".github/workflows/deploy.yml"
   pull_request:
     paths:
       - "site/**"
       - "infra/**"
       - "pipeline/**"
+      - "sources.yaml"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
+  # Called by publish.yml after it commits a new edition (bot commits don't
+  # trigger push workflows). `ref` makes the build include that commit.
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: false
+        default: ""
 
 permissions:
   id-token: write
@@ -49,6 +59,8 @@ jobs:
       aws_region: ${{ steps.pulumi.outputs.aws_region }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.ref || github.sha }}
 
       - uses: actions/setup-python@v6
         with:
@@ -106,6 +118,8 @@ jobs:
         working-directory: site
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.ref || github.sha }}
 
       - uses: actions/setup-node@v5
         with:
