@@ -1,0 +1,29 @@
+name: Diag network (temporary)
+on: push
+permissions:
+  contents: read
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Runner location
+        run: curl -s -m 10 https://ipinfo.io/json | grep -E '"(ip|city|country|org)"' || true
+      - name: Probe hosts with three User-Agents
+        run: |
+          BOT='AIAssuranceSignalsBot/1.0 (+https://aisignals.willbright.link/about/)'
+          CURL='curl/8.5.0'
+          BROWSER='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+          for u in https://www.industry.gov.au/news https://www.dta.gov.au/news https://www.ag.gov.au/ https://www.esafety.gov.au/ \
+                   https://www.oaic.gov.au/news https://www.accc.gov.au/ https://humanrights.gov.au/ https://www.aph.gov.au/ \
+                   https://www.innovationaus.com/ https://www.apra.gov.au/ https://www.gov.au/ https://www.abc.net.au/news; do
+            line="$u"
+            for ua in "$BOT" "$CURL" "$BROWSER"; do
+              r=$(curl -s -o /dev/null -m 15 -A "$ua" -w '%{http_code}/%{time_total}s' "$u" || echo "ERR")
+              line="$line | $r"
+            done
+            echo "$line"
+          done
+      - name: DNS and TCP to a timing-out host
+        run: |
+          getent hosts www.industry.gov.au || true
+          timeout 10 bash -c 'echo > /dev/tcp/www.industry.gov.au/443' && echo "tcp 443 open" || echo "tcp 443 FAILED"
