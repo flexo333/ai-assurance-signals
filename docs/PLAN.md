@@ -26,6 +26,7 @@
 | Section cap | 8 items per section (the rest stay in archive/search) |
 | Backfill | Archive starts 2026-07-01 (~21 editions) |
 | Design | Minimal & typographic, one navy accent, dark mode, print-friendly |
+| Identity | Anonymous: no author attribution on /about |
 | Infra | Reuse the `flexo333-ingress` stack (zone + OIDC roles); all resources named `flexo333-*` |
 
 ---
@@ -205,7 +206,7 @@ The sandbox network blocked these hosts during planning, so **every URL and feed
 **Frontier labs (Lab):** Anthropic · OpenAI · Google DeepMind · Meta AI · Microsoft (Responsible AI) · Mistral · xAI · Frontier Model Forum
 **International (Official / Standards):** EU AI Office / AI Act service desk · UK AI Security Institute and DSIT · NIST (AI RMF, CAISI) · OECD.AI · ISO/IEC SC 42 · Council of Europe · Singapore IMDA/AI Verify · Canada · NZ
 **Australian news (News):** InnovationAus · ITnews · The Mandarin · iTWire · Information Age (ACS) · ABC News (Technology) · The Conversation (AU) · AFR (headline-only) · Capital Brief (headline-only)
-**International news (News, a short list):** Reuters Tech · MIT Technology Review · IAPP Daily Dashboard · Euractiv (Tech)
+**International news (News, a short list):** IAPP · Reuters Tech · MIT Technology Review · Euractiv (Tech)
 
 ---
 
@@ -239,5 +240,4 @@ The sandbox network blocked these hosts during planning, so **every URL and feed
 
 ## 12. Open questions
 
-1. **News outlets:** add or remove any (e.g. Capital Brief, The Australian, Crikey, IAPP)?
-2. **About the author:** link to you from `/about`, or keep the site anonymous?
+None at present. New questions are raised at each phase check-in.

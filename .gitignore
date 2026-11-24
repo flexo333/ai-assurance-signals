@@ -6,3 +6,7 @@ site/.astro/
 __pycache__/
 *.pyc
 .DS_Store
+pipeline/source-check.json
+pipeline/source-check-sydney.json
+pipeline/event.json
+pipeline/invoke-meta.json
