@@ -1,4 +1,4 @@
-# AI Assurance Signals — Build Plan (v0.1)
+# AI Assurance Signals — Build Plan (v0.2)
 
 **Site:** `aisignals.willbright.link` · **Cadence:** weekly, Friday afternoon (AEST/AEDT) · **Mode:** fully automated, public
 **One-liner:** A weekly, source-grounded digest of AI assurance and governance developments, with Australia first, for risk and compliance professionals, AI practitioners, and executives and boards.
@@ -23,6 +23,10 @@
 | LLM | Gemini free tier via `@google/genai`, reusing the yt2txt patterns |
 | Hosting | AWS (S3 + CloudFront + ACM + Route53) via Pulumi, built by GitHub Actions |
 | v1 extras | Searchable archive · Open consultations tracker · Key dates & obligations timeline |
+| Section cap | 8 items per section (the rest stay in archive/search) |
+| Backfill | Archive starts 2026-07-01 (~21 editions) |
+| Design | Minimal & typographic, one navy accent, dark mode, print-friendly |
+| Infra | Reuse the `flexo333-ingress` stack (zone + OIDC roles); all resources named `flexo333-*` |
 
 ---
 
@@ -233,10 +237,7 @@ The sandbox network blocked these hosts during planning, so **every URL and feed
 
 ---
 
-## 12. Open questions for the next interview round
+## 12. Open questions
 
-1. **Significance threshold:** include every relevant item each week, or cap each section (e.g. 8 items) to keep the edition readable for execs?
-2. **Branding:** any colour, logo or tone preferences? Should there be an "About the author" link to you?
-3. **Backfill:** how far back should the archive start (e.g. from 1 Jan 2026)?
-4. **News outlets:** add or remove any (e.g. Capital Brief, The Australian, Crikey, LinkedIn newsletters)?
-5. **Repo creation:** I couldn't create `flexo333/ai-assurance-signals` from this session. Create it (public, empty) and add it to the session, or authorise me to create it.
+1. **News outlets:** add or remove any (e.g. Capital Brief, The Australian, Crikey, IAPP)?
+2. **About the author:** link to you from `/about`, or keep the site anonymous?

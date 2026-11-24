@@ -1,0 +1,31 @@
+services:
+  node:
+    image: node:22-alpine
+    working_dir: /app/site
+    volumes:
+      - .:/app
+      - site_node_modules:/app/site/node_modules
+    ports:
+      - "4321:4321"
+    env_file:
+      - path: .env
+        required: false
+
+  pulumi:
+    build: ./infra/pulumi
+    working_dir: /infra
+    volumes:
+      - ./infra/pulumi:/infra
+      - pulumi_plugins:/root/.pulumi/plugins
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+      AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN:-}
+      PULUMI_ACCESS_TOKEN: ${PULUMI_ACCESS_TOKEN:-}
+
+volumes:
+  pulumi_plugins:
+  site_node_modules:
