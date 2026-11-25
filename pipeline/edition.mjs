@@ -17,7 +17,7 @@
 import { readdir, readFile, writeFile, mkdir, appendFile } from "node:fs/promises";
 import { join } from "node:path";
 import { loadItems, DATA_DIR } from "./lib/store.js";
-import { buildEdition, selectWindow, isoWeekId, weeklyCutoffs } from "./lib/rank.js";
+import { buildEdition, selectWindow, isoWeekId, weeklyCutoffs, editionItemIds } from "./lib/rank.js";
 import { INTRO_PROMPT, buildIntroInput, checkIntro } from "./lib/intro.js";
 import { generateWithFallback } from "./lib/gemini.js";
 import { ARCHIVE_START } from "./lib/config.js";
@@ -39,8 +39,6 @@ async function readEditions() {
   }
 }
 
-const idsIn = (e) => [...e.topSignals, ...e.sections.flatMap((s) => [...s.items, ...(s.more || [])])].map((r) => r.id);
-
 async function save(edition) {
   await mkdir(EDITIONS_DIR, { recursive: true });
   await writeFile(join(EDITIONS_DIR, `${edition.id}.json`), JSON.stringify(edition, null, 2) + "\n");
@@ -54,7 +52,7 @@ let editions = await readEditions();
 if (args.includes("--backfill")) {
   const regular = editions.filter((e) => !e.backfilled);
   const regularIds = new Set(regular.map((e) => e.id));
-  const placedInRegular = new Set(regular.flatMap(idsIn));
+  const placedInRegular = new Set(regular.flatMap(editionItemIds));
   let built = 0;
   for (const to of weeklyCutoffs(ARCHIVE_START, now.toISOString())) {
     const id = isoWeekId(new Date(to));
@@ -77,7 +75,7 @@ const sameWeek = editions.find((e) => e.id === currentId);
 const prior = editions.filter((e) => e.id < currentId).at(-1);
 const from = val("--from") || (sameWeek && !sameWeek.backfilled ? sameWeek.window.from : null) || prior?.window.to || new Date(now - 7 * 864e5).toISOString();
 const to = now.toISOString();
-const exclude = new Set(editions.filter((e) => e.id !== currentId).flatMap(idsIn));
+const exclude = new Set(editions.filter((e) => e.id !== currentId).flatMap(editionItemIds));
 const candidates = selectWindow(all, { from, to, exclude });
 const edition = buildEdition(candidates, { id: currentId, from, to, now: now.getTime() });
 edition.publishedAt = to;
@@ -102,7 +100,7 @@ const md = [
   `### Edition ${currentId}`,
   "",
   ...report,
-  `Window ${from.slice(0, 16)}Z → ${to.slice(0, 16)}Z · ${edition.counts.candidates} candidates (${edition.counts.summarised} summarised, ${edition.counts.headlineOnly} headline-only)`,
+  `Window ${from.slice(0, 16)}Z → ${to.slice(0, 16)}Z · ${edition.counts.candidates} candidates → ${edition.counts.stories} stories (${edition.counts.summarised} summarised, ${edition.counts.headlineOnly} headline-only)`,
   `Top Signals: ${edition.topSignals.length} · sections: ${edition.sections.map((s) => `${s.title} (${s.items.length}${s.overflow ? `+${s.overflow}` : ""})`).join(", ") || "none"}`,
   `Intro: ${introNote}`,
 ].join("\n");

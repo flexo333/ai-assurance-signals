@@ -1,6 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { loadAll, editionLabel, fmtDate } from "../../lib/data.js";
+import { loadAll, editionLabel, editionItemCount, fmtDate } from "../../lib/data.js";
 const { editions } = loadAll();
 ---
 <Base title="Archive" description="All past editions of AI Assurance Signals.">
@@ -10,7 +10,7 @@ const { editions } = loadAll();
       {editions.map((e: any) => (
         <li>
           <a href={`/editions/${e.id}/`}>{editionLabel(e.id)}</a>
-          <span class="muted"> · {e.backfilled ? "backfilled" : `published ${fmtDate(e.publishedAt)}`} · {e.topSignals.length + e.sections.reduce((n: number, s: any) => n + s.items.length + (s.more?.length || 0), 0)} items</span>
+          <span class="muted"> · {e.backfilled ? "backfilled" : `published ${fmtDate(e.publishedAt)}`} · {editionItemCount(e)} items</span>
         </li>
       ))}
     </ul>

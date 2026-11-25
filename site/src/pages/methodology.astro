@@ -16,7 +16,7 @@ import Base from "../layouts/Base.astro";
   <p>This catches invented quotes and many fabrications, but it cannot guarantee that a summary is a fair reading of the whole document. Always rely on the original.</p>
 
   <h2>4. Ranking</h2>
-  <p>Each item's score combines the model's significance rating, the source's authority (official &gt; standards &gt; labs &gt; research &gt; news), Australian relevance and recency. The top 3–5 become <strong>Top Signals</strong> (at most two from news); the rest are grouped into themed sections of up to eight items. The opening paragraph is generated only from the Top Signals' verified summaries, and every sentence must cite them — or it is left out.</p>
+  <p>Each item's score combines the model's significance rating, the source's authority (official &gt; standards &gt; labs &gt; research &gt; news), Australian relevance and recency. Items from different sources that report the same event (overlapping distinctive headline words and summary text, published within three days of each other) are grouped into one story: the card shows the highest-authority grounded item, with the others listed as "Also covered by", and the story gets a small ranking boost for each extra source. The top 3–5 become <strong>Top Signals</strong> (at most two from news); the rest are grouped into themed sections of up to eight stories. The opening paragraph is generated only from the Top Signals' verified summaries, and every sentence must cite them — or it is left out.</p>
 
   <h2>5. Records</h2>
   <p>Every item records which model produced it, the prompt version, and a fingerprint of the source text. The full history is public in the <a href="https://github.com/flexo333/ai-assurance-signals">repository</a>.</p>
