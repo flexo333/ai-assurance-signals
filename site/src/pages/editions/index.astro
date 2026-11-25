@@ -5,6 +5,7 @@ const { editions } = loadAll();
 ---
 <Base title="Archive" description="All past editions of AI Assurance Signals.">
   <h1>Archive</h1>
+  <p class="muted">Published every Friday afternoon (AEST/AEDT) · <a href="/rss.xml">Subscribe via RSS</a>.</p>
   {editions.length === 0 ? <p class="muted">No editions yet.</p> : (
     <ul class="archive">
       {editions.map((e: any) => (

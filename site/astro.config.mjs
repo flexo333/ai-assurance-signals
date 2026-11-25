@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://aisignals.willbright.link",
@@ -6,4 +7,5 @@ export default defineConfig({
   // index-rewrite function in the pulumi-static-site component.
   trailingSlash: "always",
   build: { format: "directory" },
+  integrations: [sitemap()],
 });
