@@ -31,4 +31,6 @@ export async function loadSources(path = SOURCES_PATH) {
   return sources;
 }
 
-export const activeSources = (sources) => sources.filter((s) => s.status !== "blocked");
+// "pending": listed but not fetched until verified by source-check (#31).
+export const INACTIVE = new Set(["blocked", "pending"]);
+export const activeSources = (sources) => sources.filter((s) => !INACTIVE.has(s.status));

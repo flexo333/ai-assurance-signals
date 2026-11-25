@@ -27,6 +27,9 @@ on:
       only:
         description: "Comma-separated source ids (blank = all active)"
         required: false
+      recheck:
+        description: "Re-analyse up to N earlier 'irrelevant' items under the current prompt (#31)"
+        default: "5"
       dry_run:
         description: "Analyse but don't write or commit"
         type: boolean
@@ -73,7 +76,9 @@ jobs:
           SINCE: ${{ github.event_name == 'pull_request' && '30' || github.event.inputs.since_days }}
           MAX_ITEMS: ${{ github.event_name == 'pull_request' && '6' || github.event.inputs.max_calls || '120' }}
           ONLY: ${{ github.event_name == 'pull_request' && 'conversation-au,mit-tr,uk-dsit,innovationaus' || github.event.inputs.only }}
-        run: node build-collect-event.mjs ${SINCE:+--since-days "$SINCE"} --max-items "$MAX_ITEMS" ${ONLY:+--only "$ONLY"} > event.json
+          # Paced re-check of earlier "irrelevant" items under the current prompt (#31): a few a day.
+          RECHECK: ${{ github.event_name == 'pull_request' && '0' || github.event.inputs.recheck || '5' }}
+        run: node build-collect-event.mjs ${SINCE:+--since-days "$SINCE"} --max-items "$MAX_ITEMS" ${ONLY:+--only "$ONLY"} --recheck "$RECHECK" > event.json
 
       - name: Install Pulumi CLI
         uses: pulumi/actions@v7

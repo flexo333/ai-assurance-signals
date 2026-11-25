@@ -16,7 +16,8 @@
 import { readFile, appendFile } from "node:fs/promises";
 import { GoogleGenAI } from "@google/genai";
 import { loadSources } from "./lib/sources.js";
-import { saveItem, saveSeen } from "./lib/store.js";
+import { saveItem, saveSeen, loadItems } from "./lib/store.js";
+import { PROMPT_VERSION } from "./lib/prompt.js";
 import { sleep, resolveModelChain, ModelHealth, Pacer } from "./lib/gemini.js";
 import { analyseItem } from "./lib/analyse-item.js";
 
@@ -107,6 +108,13 @@ for (const item of collected.items) {
   if (r.status !== "irrelevant") console.log(`${r.status === "summarised" ? "✓" : "◐"} [${r.classification?.significance ?? "-"}] ${r.sourceId}: ${r.headline || r.title}`);
 }
 
+// Re-checks (#31) whose page couldn't be fetched: mark them so the paced
+// re-check moves on. The stored record is otherwise unchanged.
+const recheckFailed = new Set(collected.seeds?.recheckFailed || []);
+if (!DRY && recheckFailed.size) {
+  for (const i of await loadItems()) if (recheckFailed.has(i.id)) await saveItem({ ...i, recheck: { promptVersion: PROMPT_VERSION, failedAt: new Date().toISOString() } });
+}
+
 let seenTotal = null;
 if (!DRY && collected.dropped?.length) seenTotal = await saveSeen(collected.dropped);
 
@@ -121,6 +129,7 @@ const summary = [
   "",
   quotaHit ? "⚠️ No usable Gemini model left this run (quota exhausted / retired) — remaining items will be retried next run." : "",
   `Model chain: ${chain.join(", ")}`,
+  collected.seeds?.requested ? `Seed URLs / re-checks: ${collected.seeds.fetched} of ${collected.seeds.requested} fetched${recheckFailed.size ? ` · ${recheckFailed.size} re-check pages unavailable (marked)` : ""}` : "",
   collected.dropped?.length ? `Sitemap pages checked and set aside (not AI / out of window): ${collected.dropped.length}${seenTotal != null ? ` · seen list now ${seenTotal}` : ""}` : "",
   modelErrorCounts.size ? ["**Model errors (count · model status message):**", "", ...[...modelErrorCounts].map(([k, n]) => `- ${n} × ${k}`), ""].join("\n") : "",
   "<details><summary>Per-source collection log</summary>",

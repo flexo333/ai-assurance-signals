@@ -41,6 +41,7 @@ import { extractPublished, extractTitle } from "./extract.js";
 test("extractPublished reads common date metadata; extractTitle trims site suffix", () => {
   assert.equal(extractPublished(`<head><meta property="article:published_time" content="2026-11-24T15:39:41+11:00"></head>`), "2026-11-24T04:39:41.000Z");
   assert.equal(extractPublished(`<head><meta name="dcterms.date" content="2026-11-20"></head>`), "2026-11-20T00:00:00.000Z");
+  assert.equal(extractPublished(`<span itemprop="datePublished" content="2026-11-18T07:05+11:00">Nov 18 2026 7:05AM</span>`), "2026-11-17T20:05:00.000Z"); // iTnews
   assert.equal(extractPublished(`<script type="application/ld+json">{"@type":"NewsArticle","datePublished":"2026-11-19T09:00:00Z"}</script>`), "2026-11-19T09:00:00.000Z");
   assert.equal(extractPublished(`<body><time datetime="2026-11-18">18 Nov</time></body>`), "2026-11-18T00:00:00.000Z");
   assert.equal(extractPublished(`<body>no date</body>`), null);
@@ -60,4 +61,8 @@ test("labelledDate reads 'Published <date>' pills; mainTextFallback strips chrom
   const text = mainTextFallback(html);
   assert.ok(text.includes("AI-related risks"));
   assert.ok(!text.includes("menu") && !text.includes("Footer"));
+});
+
+test("extractTitle strips zero-width characters (#31)", () => {
+  assert.equal(extractTitle("<title>\u200B\u200BANZ completes major cloud data transformation\u200B  | ANZ</title>"), "ANZ completes major cloud data transformation");
 });

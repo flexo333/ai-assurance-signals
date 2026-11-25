@@ -201,3 +201,58 @@ export function selectSitemapEntries(entries, { include, exclude, since, known =
     .sort((a, b) => String(b.lastmod || "").localeCompare(String(a.lastmod || "")))
     .slice(0, limit);
 }
+
+/**
+ * Listing adapter (#12, #31): article links on an HTML listing page, as
+ * sitemap-style entries ({ loc, lastmod: "" }) in page order, deduplicated.
+ * Fragments are dropped; only http(s) links on the listing's own host are kept.
+ * Use selectSitemapEntries for include/exclude/known filtering.
+ */
+export function extractListingLinks(html, baseUrl) {
+  if (typeof html !== "string") return [];
+  let base;
+  try {
+    base = new URL(baseUrl);
+  } catch {
+    return [];
+  }
+  const out = new Map();
+  for (const [, href] of html.matchAll(/<a\b[^>]*?\bhref=["']([^"'#][^"']*)["']/gi)) {
+    let u;
+    try {
+      u = new URL(decode(href), base);
+    } catch {
+      continue;
+    }
+    if (!/^https?:$/.test(u.protocol) || u.host !== base.host) continue;
+    u.hash = "";
+    const loc = u.toString();
+    if (loc !== base.toString() && !out.has(loc)) out.set(loc, { loc, lastmod: "" });
+  }
+  return [...out.values()];
+}
+
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+/**
+ * Month a URL is filed under (/2026/11/ or /2026/November/), as the first of
+ * that month (ISO), or null. Many newsrooms show no machine-readable date.
+ */
+export function dateFromUrl(url) {
+  const m = String(url).match(/\/(20\d\d)\/(\d\d|[A-Za-z]{3,9})\//);
+  if (!m) return null;
+  const mm = /^\d\d$/.test(m[2]) ? Number(m[2]) : MONTHS.findIndex((n) => n.startsWith(m[2].toLowerCase()) && m[2].length >= 3) + 1;
+  if (!(mm >= 1 && mm <= 12)) return null;
+  return `${m[1]}-${String(mm).padStart(2, "0")}-01T00:00:00.000Z`;
+}
+
+/**
+ * A page date checked against the month in its URL: when the URL names a month
+ * and the page date falls in another one (CMS templates often carry a stale
+ * datePublished), the URL month wins.
+ */
+export function reconcileUrlDate(pageDate, url) {
+  const u = dateFromUrl(url);
+  if (!u) return pageDate || null;
+  return pageDate && pageDate.slice(0, 7) === u.slice(0, 7) ? pageDate : u;
+}
