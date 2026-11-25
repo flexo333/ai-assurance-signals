@@ -9,6 +9,7 @@
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries, extractListingLinks, reconcileUrlDate } from "./lib/feed-pure.js";
 import { parseCitizenSpaceItems, parseCsBody } from "./lib/citizen-space.js";
+import { buildLegislationQueryUrl, parseODataPage, parseLegislationTitles, isLegislationAppShell, DEFAULT_LEGISLATION_API, DEFAULT_COLLECTIONS } from "./lib/legislation.js";
 import { isAiRelated, passesMustMatch } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
@@ -32,39 +33,56 @@ async function pool(items, n, fn) {
   return out;
 }
 
-// The freshest working, robots-permitted feed among the configured `feed`,
-// the `feeds` candidates and <link rel=alternate> autodiscovery on the
-// homepage. "Freshest" (newest dated item), not "first": some configured
-// candidates work but are stale — e.g. a gov.uk search feed returning
-// months-old items while the organisation feed is current.
-async function resolveFeed(src) {
+// The working, robots-permitted feeds to read for a source. Every configured
+// `feed` / `feeds` entry that works is read (a source may split its coverage
+// across feeds, e.g. AFR technology + policy); <link rel=alternate>
+// autodiscovery on the homepage adds its freshest feed only when it is newer
+// than every configured one (or none works), since some configured candidates
+// work but are stale — e.g. a gov.uk search feed returning months-old items
+// while the organisation feed is current. Stale feeds cost nothing extra:
+// their items fall outside the window.
+async function resolveFeeds(src) {
   const tried = new Set();
-  const candidates = [];
-  const tryUrl = async (url) => {
-    if (!url || tried.has(url)) return;
+  const fetchFeed = async (url) => {
+    if (!url || tried.has(url)) return null;
     tried.add(url);
-    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return;
+    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
     const r = await get(url);
-    if (!r.ok || !feedType(r.body)) return;
+    if (!r.ok || !feedType(r.body)) return null;
     const items = parseFeedItems(r.body);
-    if (!items.length) return;
-    candidates.push({ url: r.url, body: r.body, newest: newestItem(items)?.date || "" });
+    if (!items.length) return null;
+    return { url: r.url, body: r.body, newest: newestItem(items)?.date || "" };
   };
-  for (const url of [src.feed, ...(src.feeds || [])]) await tryUrl(url);
+  const configured = [];
+  for (const url of [src.feed, ...(src.feeds || [])]) {
+    const f = await fetchFeed(url);
+    if (f) configured.push(f);
+  }
+  const discovered = [];
   if (src.discover !== false && src.homepage && isAllowed((await robotsFor(src.homepage)).parsed, USER_AGENT, src.homepage)) {
     const home = await get(src.homepage);
-    if (home.ok) for (const url of discoverFeedLinks(home.body, home.url)) await tryUrl(url);
+    if (home.ok) {
+      for (const url of discoverFeedLinks(home.body, home.url)) {
+        const f = await fetchFeed(url);
+        if (f) discovered.push(f);
+      }
+    }
   }
-  candidates.sort((a, b) => b.newest.localeCompare(a.newest));
-  return candidates[0] || null;
+  discovered.sort((a, b) => b.newest.localeCompare(a.newest));
+  const freshestConfigured = configured.reduce((m, f) => (f.newest > m ? f.newest : m), "");
+  const out = [...configured];
+  if (discovered[0] && (!configured.length || discovered[0].newest > freshestConfigured)) out.push(discovered[0]);
+  return out;
 }
 
 const DEFAULT_SITEMAP_PAGES = 25;
+const LEGISLATION_PAGE_SIZE = 100;
+const LEGISLATION_MAX_PAGES = 10;
 
 /**
  * Sitemap adapter (#12) for sources without a usable feed. sources.yaml:
- *   method: sitemap · sitemap: <url> · include / exclude: URL regex strings ·
- *   max_pages: pages to check per run (default 25)
+ *   method: sitemap · sitemap: <url> or [urls] · include / exclude: URL regex
+ *   strings · max_pages: pages to check per run (default 25)
  * Takes the newest unknown URLs (by lastmod), fetches each page (robots-checked),
  * dates it from the page itself (metadata, "Published" label; lastmod as a
  * fallback, since CMSs bump lastmod on edits) and applies the AI keyword check
@@ -73,20 +91,28 @@ const DEFAULT_SITEMAP_PAGES = 25;
  * they're recorded as seen and not re-fetched; the backfill then progresses.
  */
 async function listSitemap(src, { since, known }) {
-  const log = { id: src.id, feed: src.sitemap, method: "sitemap", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const roots = [].concat(src.sitemap || []);
+  const log = { id: src.id, feed: roots[0] || null, method: "sitemap", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const dropped = [];
   const fetchXml = async (url) => {
     if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
     const r = await get(url);
     return r.ok ? parseSitemap(r.body) : null;
   };
-  const root = await fetchXml(src.sitemap);
-  if (!root) return { log: { ...log, status: "sitemap-unavailable" }, candidates: [], dropped };
-  let entries = root.entries;
-  if (root.isIndex) {
-    entries = [];
-    for (const child of root.entries.slice(0, 8)) entries.push(...((await fetchXml(child.loc))?.entries || []));
+  const entries = [];
+  let okCount = 0;
+  for (const rootUrl of roots) {
+    const root = await fetchXml(rootUrl);
+    if (!root) continue;
+    okCount++;
+    if (root.isIndex) {
+      for (const child of root.entries.slice(0, 8)) entries.push(...((await fetchXml(child.loc))?.entries || []));
+    } else {
+      entries.push(...root.entries);
+    }
   }
+  if (!okCount) return { log: { ...log, status: "sitemap-unavailable" }, candidates: [], dropped };
+  if (okCount < roots.length) log.status = `partial (${okCount}/${roots.length} sitemaps)`;
   log.feedItems = entries.length;
   const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf: idOfUrl, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
   return checkPages(src, picked, { since, log, dropped });
@@ -113,19 +139,25 @@ async function listListing(src, { since, known }) {
   const log = { id: src.id, feed: urls[0] || null, method: "listing", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const dropped = [];
   const entries = [];
+  let okCount = 0;
   for (const url of urls) {
     if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) continue;
     const r = await get(url);
-    if (r.ok) entries.push(...extractListingLinks(r.body, r.url));
+    if (r.ok) {
+      okCount++;
+      entries.push(...extractListingLinks(r.body, r.url));
+    }
   }
   if (!entries.length) return { log: { ...log, status: "listing-unavailable" }, candidates: [], dropped };
+  if (okCount < urls.length) log.status = `partial (${okCount}/${urls.length} listings)`;
   log.feedItems = entries.length;
   const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf: idOfUrl, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
   return checkPages(src, picked, { since, log, dropped });
 }
 
 // Fetch each picked page (robots-checked), date it from the page, apply the
-// AI keyword check (non-ai_specific sources) and must_match to the BODY.
+// AI keyword check (non-ai_specific sources) and must_match. Paywalled sources
+// extract the standfirst only (never full body text).
 // Out-of-window and rejected pages go to `dropped` (recorded as seen).
 async function checkPages(src, picked, { since, log, dropped }) {
   const candidates = [];
@@ -135,8 +167,10 @@ async function checkPages(src, picked, { since, log, dropped }) {
     if (!isAllowed((await robotsFor(e.loc)).parsed, USER_AGENT, e.loc)) continue;
     const page = await get(e.loc);
     if (!page.ok) continue; // transient: retried next run
-    const ex = extractMainText(page.body, page.url);
-    const date = reconcileUrlDate(pagePublished(page.body, ex.text) || e.lastmod || null, e.loc);
+    const ex = src.paywalled
+      ? { text: extractStandfirst(page.body), title: null, method: "standfirst" }
+      : extractMainText(page.body, page.url);
+    const date = reconcileUrlDate(pagePublished(page.body, src.paywalled ? "" : ex.text) || e.lastmod || null, e.loc);
     log.sample ??= { link: e.loc, date, since };
     if (date && date < since) {
       log.skipped.old++;
@@ -157,8 +191,100 @@ async function checkPages(src, picked, { since, log, dropped }) {
       date,
       summary: null,
       src,
-      prefetched: { text: ex.text, extractMethod: ex.method },
+      prefetched: { text: ex.text, textSource: src.paywalled ? "standfirst" : "article", extractMethod: ex.method },
     });
+  }
+  return { log, candidates, dropped };
+}
+
+/**
+ * Federal Register of Legislation OData v4 + EPUB XHTML adapter (#12).
+ * Queries OPC's public REST API for newly registered Acts and Legislative
+ * Instruments, then fetches the static Explanatory Statement (or primary text)
+ * XHTML on www.legislation.gov.au (which is otherwise an Angular SPA shell).
+ */
+async function listLegislation(src, { since, known }) {
+  const collections = src.collections || DEFAULT_COLLECTIONS;
+  const apiBase = src.api || DEFAULT_LEGISLATION_API;
+  const firstUrl = buildLegislationQueryUrl({ apiBase, since, top: LEGISLATION_PAGE_SIZE, collections });
+  const log = { id: src.id, feed: firstUrl, method: "legislation", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const dropped = [];
+  if (!isAllowed((await robotsFor(firstUrl)).parsed, USER_AGENT, firstUrl)) {
+    return { log: { ...log, status: "robots-disallowed" }, candidates: [], dropped };
+  }
+  // Page through every title registered in the window (following
+  // @odata.nextLink, else $skip), so a busy week can't push titles past one page.
+  const rows = [];
+  let url = firstUrl;
+  let pages = 0;
+  while (url && pages < LEGISLATION_MAX_PAGES) {
+    const res = await get(url);
+    const page = res.ok ? parseODataPage(res.body) : null;
+    if (!page) {
+      if (!pages) return { log: { ...log, status: "api-unavailable" }, candidates: [], dropped };
+      log.status = `partial (${pages} pages)`;
+      break;
+    }
+    pages++;
+    rows.push(...page.rows);
+    if (page.nextLink) url = new URL(page.nextLink, url).toString();
+    else if (page.rows.length >= LEGISLATION_PAGE_SIZE) url = buildLegislationQueryUrl({ apiBase, since, top: LEGISLATION_PAGE_SIZE, skip: pages * LEGISLATION_PAGE_SIZE, collections });
+    else url = null;
+  }
+  if (url && pages >= LEGISLATION_MAX_PAGES) log.status = `truncated (${pages} pages)`;
+  const picked = parseLegislationTitles(rows, {
+    webBase: src.homepage,
+    collections,
+    include: src.include,
+    exclude: src.exclude,
+    since,
+    known,
+    idOf: idOfUrl,
+    limit: src.max_pages || DEFAULT_SITEMAP_PAGES,
+  });
+  log.feedItems = rows.length;
+
+  const candidates = [];
+  for (const entry of picked) {
+    const id = idOfUrl(entry.url);
+    if (!id) continue;
+    log.sample ??= { link: entry.url, date: entry.date, since };
+    log.inWindow++;
+    let bodyText = "";
+    let answered = false; // the register gave a definitive answer for this title
+    for (const docUrl of entry.docUrls) {
+      if (!isAllowed((await robotsFor(docUrl)).parsed, USER_AGENT, docUrl)) continue;
+      const docRes = await get(docUrl);
+      if (!docRes.ok) continue;
+      answered = true;
+      // The SPA answers unknown routes (e.g. an instrument with no ES) with its
+      // app shell: no document there, so try the next kind.
+      if (isLegislationAppShell(docRes.body)) continue;
+      const ex = extractMainText(docRes.body, docRes.url);
+      if (ex.text) {
+        bodyText = ex.text;
+        break;
+      }
+    }
+    if (!answered) continue; // transient doc failure: retried next run
+    // Keyword check on the title and the document; the model is given the
+    // register's own document text only (nothing synthesised to ground against).
+    const hay = `${entry.title}\n${bodyText}`;
+    if ((!src.ai_specific && !isAiRelated(hay)) || !passesMustMatch(src.must_match, hay)) {
+      log.keywordDropped++;
+      dropped.push(id);
+      continue;
+    }
+    candidates.push({
+      id,
+      url: canonicalUrl(entry.url),
+      title: entry.title,
+      date: entry.date,
+      summary: null,
+      src,
+      prefetched: { text: bodyText, textSource: "article", extractMethod: bodyText ? "legislation-epub" : "legislation-no-document" },
+    });
+    if (candidates.length >= MAX_ITEMS_PER_SOURCE) break;
   }
   return { log, candidates, dropped };
 }
@@ -241,7 +367,7 @@ async function listCitizenSpace(src, { since, known }) {
       date: i.date,
       summary: i.summary,
       src,
-      prefetched: { text: i.text, extractMethod: "citizen-space-v2.4" },
+      prefetched: { text: i.text, textSource: "article", extractMethod: "citizen-space-v2.4" },
     });
     if (candidates.length >= MAX_ITEMS_PER_SOURCE) break;
   }
@@ -253,23 +379,30 @@ async function listSource(src, { since, known }) {
   if (src.method === "sitemap") return listSitemap(src, { since, known });
   if (src.method === "listing") return listListing(src, { since, known });
   if (src.method === "citizen-space") return listCitizenSpace(src, { since, known });
+  if (src.method === "legislation") return listLegislation(src, { since, known });
   const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
-  const feed = await resolveFeed(src);
-  if (!feed) return { log: { ...log, status: "no-feed" }, candidates: [] };
-  log.feed = feed.url;
-  const parsed = parseFeedItems(feed.body).filter((i) => i.link && i.title);
+  const feeds = await resolveFeeds(src);
+  if (!feeds.length) return { log: { ...log, status: "no-feed" }, candidates: [] };
+  log.feed = feeds.map((f) => f.url).join(" + ");
+  const parsed = feeds
+    .flatMap((f) => parseFeedItems(f.body).map((i) => ({ ...i, feedUrl: f.url })))
+    .filter((i) => i.link && i.title)
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
   log.feedItems = parsed.length;
   const candidates = [];
-  for (const i of parsed) {
+  const listedIds = new Set();
+  for (const { feedUrl, ...i } of parsed) {
     let url;
     log.sample ??= { link: i.link, date: i.date, since };
     try {
-      url = canonicalUrl(new URL(i.link, feed.url).toString());
+      url = canonicalUrl(new URL(i.link, feedUrl).toString());
     } catch {
       log.skipped.badUrl++;
       continue;
     }
     const id = itemId(url);
+    if (listedIds.has(id)) continue; // same item in two of the source's feeds
+    listedIds.add(id);
     if (known.has(id)) {
       log.skipped.known++;
       continue;
@@ -302,9 +435,9 @@ async function fetchCandidate(c) {
   let textSource = "feed";
   let extractMethod = null;
   if (c.prefetched) {
-    // Sitemap candidates were already fetched (to check the body for AI).
+    // Sitemap/listing/API candidates were already fetched in Phase A.
     text = c.prefetched.text || "";
-    textSource = "article";
+    textSource = c.prefetched.textSource || "article";
     extractMethod = c.prefetched.extractMethod;
   } else if (src.paywalled && text.length < 120 && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
     // Paywalled: the page's standfirst (meta description) only — never body text.

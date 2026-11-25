@@ -21,8 +21,12 @@ import {
   newestItem,
   discoverFeedLinks,
   isAllowed,
+  parseSitemap,
+  extractListingLinks,
+  selectSitemapEntries,
 } from "./lib/feed-pure.js";
 import { parseCitizenSpaceItems } from "./lib/citizen-space.js";
+import { buildLegislationQueryUrl, parseLegislationTitles, DEFAULT_LEGISLATION_API } from "./lib/legislation.js";
 import { get, robotsFor, clearRobotsCache, USER_AGENT } from "./lib/http.js";
 
 export { USER_AGENT };
@@ -53,6 +57,77 @@ async function checkFeed(url) {
     recent30d: recent.length,
     aiRecent30d: recent.filter((i) => isAiRelated(i.title)).length,
     newest: newest ? { title: newest.title, date: newest.date, link: newest.link } : null,
+  };
+}
+
+// Probe a `method: sitemap | listing` source's configured sitemap(s) or
+// listing page(s) (robots-checked) and count the URLs its include/exclude
+// rules would pick, so a wrong URL or regex shows up as a failure rather than
+// passing on the strength of the homepage alone.
+async function checkPageSource(src) {
+  const isSitemap = src.method === "sitemap";
+  const urls = [].concat((isSitemap ? src.sitemap : src.listing) || []);
+  const entries = [];
+  let okCount = 0;
+  let allowedAny = false;
+  let lastStatus = null;
+  let lastError;
+  const fetchOk = async (url) => {
+    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
+    allowedAny = true;
+    const r = await get(url);
+    lastStatus = r.status;
+    lastError = r.error;
+    return r.ok ? r : null;
+  };
+  for (const url of urls) {
+    const r = await fetchOk(url);
+    if (!r) continue;
+    if (isSitemap) {
+      const root = parseSitemap(r.body);
+      if (!root) continue;
+      okCount++;
+      if (root.isIndex) {
+        for (const child of root.entries.slice(0, 8)) {
+          const c = await fetchOk(child.loc);
+          entries.push(...((c && parseSitemap(c.body)?.entries) || []));
+        }
+      } else entries.push(...root.entries);
+    } else {
+      okCount++;
+      entries.push(...extractListingLinks(r.body, r.url));
+    }
+  }
+  const matching = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, idOf: (u) => u, limit: Infinity });
+  const cutoff = new Date(Date.now() - RECENT_DAYS * 864e5).toISOString();
+  const recent = matching.filter((e) => e.lastmod && e.lastmod >= cutoff);
+  const slug = (loc) => decodeURIComponent(String(loc).split("/").filter(Boolean).pop() || "").replace(/[-_]/g, " ");
+  const kind = isSitemap ? "sitemap" : "listing";
+  const status = !urls.length
+    ? `no-${kind}-configured`
+    : !allowedAny
+      ? "robots-disallowed"
+      : !okCount
+        ? lastStatus ? `${kind}-http-${lastStatus}` : `${kind}-unavailable:${lastError || "?"}`
+        : !matching.length
+          ? "no-matching-urls"
+          : okCount < urls.length
+            ? `partial (${okCount}/${urls.length})`
+            : "ok";
+  return {
+    status,
+    entry: {
+      url: urls[0] || null,
+      allowed: allowedAny,
+      status: lastStatus,
+      error: lastError,
+      isFeed: matching.length > 0,
+      type: kind,
+      items: matching.length,
+      recent30d: isSitemap ? recent.length : matching.length,
+      aiRecent30d: (isSitemap ? recent : matching).filter((e) => isAiRelated(slug(e.loc))).length,
+      newest: matching[0] ? { title: slug(matching[0].loc), date: matching[0].lastmod || null, link: matching[0].loc } : null,
+    },
   };
 }
 
@@ -111,11 +186,65 @@ async function checkSource(src) {
     };
   }
 
+  if (src.method === "legislation") {
+    const cutoff = new Date(Date.now() - RECENT_DAYS * 864e5).toISOString();
+    const apiUrl = buildLegislationQueryUrl({ apiBase: src.api || DEFAULT_LEGISLATION_API, since: cutoff, top: 30 });
+    const robots = await robotsFor(apiUrl);
+    const allowed = isAllowed(robots.parsed, USER_AGENT, apiUrl);
+    const res = allowed ? await get(apiUrl) : null;
+    const items = res?.ok ? parseLegislationTitles(res.body, { webBase: src.homepage, collections: src.collections, include: src.include, exclude: src.exclude, limit: 30 }) : null;
+    const ok = Array.isArray(items);
+    const newest = ok ? newestItem(items) : null;
+    const feedEntry = {
+      url: apiUrl,
+      allowed,
+      status: res?.status ?? null,
+      error: res?.error,
+      isFeed: ok,
+      ...(ok ? {
+        type: "legislation",
+        items: items.length,
+        recent30d: items.length,
+        aiRecent30d: items.filter((i) => isAiRelated(i.title)).length,
+        newest: newest ? { title: newest.title, date: newest.date, link: newest.link } : null,
+      } : {}),
+    };
+    const status = ok
+      ? "ok"
+      : robots.parsed.state === "unreachable"
+        ? "robots-unreachable"
+        : !allowed
+          ? "robots-disallowed"
+          : res?.status
+            ? `http-${res.status}`
+            : `unreachable:${res?.error || "?"}`;
+    return {
+      id: src.id,
+      name: src.name,
+      authority: src.authority,
+      jurisdiction: src.jurisdiction,
+      paywalled: !!src.paywalled,
+      homepage: src.homepage,
+      robotsStatus: robots.status,
+      robotsState: robots.parsed.state,
+      homeAllowed: allowed,
+      homeStatus: res?.status ?? null,
+      homeError: res?.error,
+      discoveredFeeds: [],
+      sitemaps: robots.parsed.sitemaps,
+      feeds: [feedEntry],
+      recommended: { method: ok ? "legislation" : "none", status, feed: ok ? apiUrl : null },
+      checkedAt: new Date().toISOString(),
+    };
+  }
+
   const robots = await robotsFor(src.homepage);
   const homeAllowed = isAllowed(robots.parsed, USER_AGENT, src.homepage);
   const home = homeAllowed ? await get(src.homepage) : null;
-  const discovered = home?.ok ? discoverFeedLinks(home.body, home.url) : [];
-  const candidates = [...new Set([...(src.feeds || []), ...discovered])];
+  const discovered = src.discover !== false && home?.ok ? discoverFeedLinks(home.body, home.url) : [];
+  const candidates = src.method === "sitemap" || src.method === "listing"
+    ? []
+    : [...new Set([...(src.feed ? [src.feed] : []), ...(src.feeds || []), ...discovered])];
   const feeds = [];
   for (const url of candidates) feeds.push(await checkFeed(url));
   const working = feeds
@@ -126,12 +255,17 @@ async function checkSource(src) {
   // is disallowed (checkFeed applies robots per feed URL).
   let method;
   let status;
-  if (working.length) [method, status] = [working[0].type === "atom" ? "atom" : "rss", "ok"];
+  const page = src.method === "sitemap" || src.method === "listing" ? await checkPageSource(src) : null;
+  if (page) feeds.push(page.entry);
+  if (page) [method, status] = [page.entry.isFeed ? src.method : "none", page.status];
+  else if (working.length) [method, status] = [working[0].type === "atom" ? "atom" : "rss", "ok"];
   else if (robots.parsed.state === "unreachable") [method, status] = ["none", "robots-unreachable"];
   else if (!homeAllowed) [method, status] = ["none", "robots-disallowed"];
   else if (home?.ok && robots.parsed.sitemaps.length) [method, status] = ["sitemap", "needs-config"];
   else if (home?.ok) [method, status] = ["html-list", "needs-selector"];
   else [method, status] = ["none", home?.status ? `http-${home.status}` : `unreachable:${home?.error || "?"}`];
+
+  const recFeed = page ? (page.entry.isFeed ? page.entry.url : null) : working[0]?.url || null;
 
   return {
     id: src.id,
@@ -148,7 +282,7 @@ async function checkSource(src) {
     discoveredFeeds: discovered,
     sitemaps: robots.parsed.sitemaps,
     feeds,
-    recommended: { method, status, feed: working[0]?.url || null },
+    recommended: { method, status, feed: recFeed },
     checkedAt: new Date().toISOString(),
   };
 }
@@ -191,7 +325,7 @@ export function report(results, { location = "GitHub Actions", generatedAt = new
   for (const r of results) {
     const f = r.feeds.find((x) => x.url === r.recommended.feed);
     const counts = f ? `${f.items} (${f.recent30d} / ${f.aiRecent30d})` : "—";
-    const newest = f?.newest ? `${f.newest.date?.slice(0, 10)} ${String(f.newest.title).slice(0, 60)}` : "—";
+    const newest = f?.newest ? `${f.newest.date ? f.newest.date.slice(0, 10) : "undated"} ${String(f.newest.title).slice(0, 60)}` : "—";
     lines.push(`| ${r.id}${r.paywalled ? " 🔒" : ""} | ${r.authority} | ${r.recommended.method} | ${r.recommended.status} | ${counts} | ${newest.replace(/\|/g, "/")} |`);
   }
   return lines.join("\n");
