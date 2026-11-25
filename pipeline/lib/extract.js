@@ -62,7 +62,7 @@ export function extractStandfirst(html) {
 /**
  * Publication date from page metadata (ISO string) or null. Checks, in order:
  * article:published_time, dcterms.issued / DC.date.issued / dcterms.date /
- * DC.date, JSON-LD datePublished, then the first <time datetime>.
+ * DC.date, JSON-LD datePublished, microdata datePublished, then the first <time datetime>.
  */
 export function extractPublished(html) {
   try {
@@ -82,6 +82,9 @@ export function extractPublished(html) {
       const m = String(s.textContent || "").match(/"datePublished"\s*:\s*"([^"]+)"/);
       if (m) candidates.push(m[1]);
     }
+    // Microdata (e.g. iTnews: <span itemprop="datePublished" content="…">).
+    const micro = document.querySelector('[itemprop="datePublished"]');
+    candidates.push(micro?.getAttribute("content") || micro?.getAttribute("datetime"));
     candidates.push(document.querySelector("time[datetime]")?.getAttribute("datetime"));
     for (const c of candidates) {
       const iso = parseDateString(c);
@@ -106,7 +109,8 @@ export function extractTitle(html) {
   try {
     const { document } = parseHTML(html);
     const og = document.querySelector('meta[property="og:title"]')?.getAttribute("content");
-    const t = (og || document.querySelector("title")?.textContent || "").trim();
+    // Zero-width characters (e.g. ANZ's titles) stripped.
+    const t = (og || document.querySelector("title")?.textContent || "").replace(/[\u200B-\u200D\uFEFF]/g, "").trim();
     return t.replace(/\s+[|\u2013\u2014-]\s+[^|\u2013\u2014-]{2,60}$/, "").trim() || null;
   } catch {
     return null;

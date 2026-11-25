@@ -20,15 +20,22 @@
 #                 checker also autodiscovers <link rel=alternate> and sitemaps)
 #   ai_specific   true → every item is in scope; false → keyword pre-filter first
 #   paywalled     true → headline + standfirst only, never full text
-#   method        feed (default: configured feed → candidates → autodiscovery) | sitemap
+#   method        feed (default: configured feed → candidates → autodiscovery) | sitemap | listing
+#   discover      false → skip homepage feed autodiscovery (method: feed)
+#   listing       listing page URL(s) whose links are the articles (method: listing;
+#                 include/exclude/max_pages as for sitemaps; dates from the page,
+#                 or the /YYYY/MM/ in the URL)
 #   sitemap       sitemap or sitemap-index URL (method: sitemap)
-#   include       regex a URL must match (method: sitemap)
-#   exclude       regex that rejects a URL, case-insensitive (method: sitemap)
+#   include       regex a URL must match (method: sitemap | listing)
+#   exclude       regex that rejects a URL, case-insensitive (method: sitemap | listing)
+#   hosts         extra hostnames the source publishes on (seed URLs, #31)
 #   max_pages     pages checked per run (method: sitemap, default 25); for
 #                 sitemap sources the AI keyword check runs on the page BODY
-#   status        active (default) | blocked — blocked sources are listed on the
-#                 /sources page for transparency but never fetched; their news
-#                 reaches the digest through news coverage instead
+#   status        active (default) | blocked | pending — blocked sources are listed on
+#                 the /sources page for transparency but never fetched; their news
+#                 reaches the digest through news coverage instead. pending = added
+#                 but not yet verified by source-check: probed by source-check,
+#                 never collected, until switched to active (#31)
 #   blocked_reason why (from the Phase 1 source checks, 2026-11-24)
 #
 # Phase 1: `.github/workflows/source-check.yml` verifies every entry and
@@ -190,6 +197,48 @@ sources:
     max_pages: 30
     ai_specific: false
     sector: financial-services
+
+  # ── Financial regulators (#31) ─────────────────────────────────────────────
+  # RBA: separate feeds per series; homepage autodiscovery is off because the
+  # freshest advertised feed is the FOI disclosure log.
+  - id: rba
+    name: Reserve Bank of Australia (media releases)
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.rba.gov.au/media-releases/
+    feed: https://www.rba.gov.au/rss/rss-cb-media-releases.xml
+    discover: false
+    ai_specific: false
+    sector: financial-services
+
+  - id: rba-speeches
+    name: Reserve Bank of Australia (speeches)
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.rba.gov.au/speeches/
+    feed: https://www.rba.gov.au/rss/rss-cb-speeches.xml
+    discover: false
+    ai_specific: false
+    sector: financial-services
+
+  - id: austrac
+    name: AUSTRAC
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.austrac.gov.au/news-and-media
+    ai_specific: false
+    sector: financial-services
+    status: blocked
+    blocked_reason: "bot-protection (connection reset for automated clients from cloud IPs, 2026-11-25); to re-check from the Sydney Lambda"
+
+  - id: afca
+    name: Australian Financial Complaints Authority
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://www.afca.org.au/news
+    ai_specific: false
+    sector: financial-services
+    status: pending
 
   - id: accc
     name: Australian Competition and Consumer Commission
@@ -490,6 +539,126 @@ sources:
     homepage: https://ised-isde.canada.ca/site/innovation-better-canada/en/artificial-intelligence-and-data-act
     ai_specific: true
 
+  # ── Australian financial institutions & peak bodies (industry, #31) ────────
+  # First-party posts about the institution's own AI work. Newsrooms without
+  # feeds use the listing adapter; `pending` entries are probed by source-check
+  # and switched on once verified.
+  - id: cba
+    name: Commonwealth Bank (Newsroom, Technology & AI)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.commbank.com.au/newsroom.html
+    method: listing
+    listing: https://www.commbank.com.au/newsroom/technology-and-ai.html
+    include: "^https://www\\.commbank\\.com\\.au/articles/newsroom/20\\d\\d/\\d\\d/[^/]+\\.html$"
+    max_pages: 10
+    ai_specific: false
+    sector: financial-services
+
+  - id: anz
+    name: ANZ (Newsroom & Bluenotes)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.anz.com.au/newsroom/
+    method: listing
+    listing: [https://www.anz.com.au/newsroom/, https://www.anz.com.au/bluenotes/]
+    include: "^https://www\\.anz\\.com\\.au/(bluenotes|newsroom/media)/20\\d\\d/[A-Za-z]+/[^/]+/$"
+    exclude: "year-results|half-year|full-coverage|infographic|dividend|scholarship"
+    max_pages: 12
+    ai_specific: false
+    sector: financial-services
+
+  - id: nab
+    name: NAB (News)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.nab.com.au/news
+    hosts: [news.nab.com.au]
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: westpac
+    name: Westpac (Wire)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.westpac.com.au/news/
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: macquarie
+    name: Macquarie Group (News)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.macquarie.com/au/en/about/news.html
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: aba
+    name: Australian Banking Association
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.ausbanking.org.au/news/
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: auspaynet
+    name: Australian Payments Network
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.auspaynet.com.au/insights
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: iag
+    name: IAG (Newsroom)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.iag.com.au/newsroom
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: suncorp
+    name: Suncorp Group (News)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.suncorpgroup.com.au/news
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: qbe
+    name: QBE Insurance (Media)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.qbe.com/media
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: australiansuper
+    name: AustralianSuper (News)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://www.australiansuper.com/about-us/news
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
+  - id: aware-super
+    name: Aware Super (News)
+    authority: industry
+    jurisdiction: AU-federal
+    homepage: https://aware.com.au/news
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
   # ── Australian news (news) ─────────────────────────────────────────────────
   - id: innovationaus
     name: InnovationAus
@@ -555,6 +724,16 @@ sources:
     paywalled: true
     ai_specific: false
 
+  - id: afr-financial-services
+    name: Australian Financial Review (Banking & Finance)
+    authority: news
+    jurisdiction: AU-federal
+    homepage: https://www.afr.com/companies/financial-services
+    paywalled: true
+    ai_specific: false
+    sector: financial-services
+    status: pending
+
   - id: capital-brief
     name: Capital Brief
     authority: news
@@ -598,3 +777,38 @@ sources:
     ai_specific: false
     status: blocked
     blocked_reason: "403 for automated clients"
+
+  # ── Vendor customer stories (vendor, #31) ───────────────────────────────────
+  # Global feeds: `must_match` keeps Gemini quota (#21) for items that name an
+  # Australian FS institution, regulator or Australia itself.
+  - id: aws-fs
+    name: AWS for Financial Services (blog)
+    authority: vendor
+    jurisdiction: INTL
+    homepage: https://aws.amazon.com/blogs/industries/category/industries/financial-services/
+    feeds: [https://aws.amazon.com/blogs/industries/category/industries/financial-services/feed/]
+    ai_specific: false
+    must_match: &au_fs
+      - "\\b(NAB|ANZ|Westpac|Macquarie|Suncorp|IAG|QBE|AMP|Bendigo|BOQ|ASX)\\b"
+      - "\\b(National Australia Bank|Commonwealth Bank|CommBank|AustralianSuper|Aware Super|Australian Retirement Trust|HESTA|Insurance Australia)\\b"
+      - "\\b(APRA|ASIC|AUSTRAC|Reserve Bank of Australia)\\b"
+      - "\\bAustralia(n)?\\b"
+    status: pending
+
+  - id: google-cloud-fs
+    name: Google Cloud blog (Financial Services)
+    authority: vendor
+    jurisdiction: INTL
+    homepage: https://cloud.google.com/blog/topics/financial-services
+    ai_specific: false
+    must_match: *au_fs
+    status: pending
+
+  - id: microsoft-customers
+    name: Microsoft Customer Stories (Financial Services)
+    authority: vendor
+    jurisdiction: INTL
+    homepage: https://www.microsoft.com/en/customers/search?filters=industry%3Abanking-and-capital-markets
+    ai_specific: false
+    must_match: *au_fs
+    status: pending

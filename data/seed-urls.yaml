@@ -1,0 +1,39 @@
+# Landmark pages on allow-listed sources that sit outside rolling feed and
+# sitemap windows (#31). The collector fetches each unknown URL once, through
+# the normal pipeline: robots.txt respected, paywalled sources give the
+# standfirst only, and every summary must pass verbatim-quote grounding.
+#
+# Each entry: url (on the source's homepage host or one of its `hosts`),
+# source (a non-blocked, non-pending id from sources.yaml), published
+# (YYYY-MM-DD, optional: overrides the page's date, for pages without a usable
+# one), note (why it's here; not shown on the site). Unverifiable or unlisted URLs are rejected at
+# build-collect-event time and listed in the job log.
+
+seeds:
+  # ANZ: AI-assisted migration of a 1.7 PB Cloudera Hadoop platform to Amazon EMR
+  # in six months (agentic AI, ~35% less migration effort). First-party release
+  # plus iTnews coverage: the release should lead the story.
+  - url: https://www.anz.com.au/newsroom/media/2026/november/anz-completes-major-cloud-data-transformation-strengthening-data-foundations-to-improve-customer-experiences/
+    source: anz
+    published: 2026-11-17 # the page carries no publish date; per its modified_date and coverage
+    note: ANZ media release, Nov 2026 (verified 2026-11-25)
+  - url: https://www.itnews.com.au/news/anz-uses-ai-to-move-17pb-data-platform-to-aws-630399
+    source: itnews
+    note: iTnews coverage, 18 Nov 2026 (verified 2026-11-25)
+  - url: https://www.anz.com.au/bluenotes/2026/November/ai-in-action-at-anz/
+    source: anz
+    note: "Bluenotes: BEHIND THE NUMBERS: AI in action at ANZ (verified 2026-11-25)"
+
+  # Earlier ANZ AI engineering signals (before the archive start; landmark context).
+  - url: https://www.itnews.com.au/news/seven-percent-of-anz-code-in-past-six-months-generated-by-ai-612947
+    source: itnews
+    note: iTnews, 11 Nov 2024 (verified 2026-11-25)
+  - url: https://www.itnews.com.au/news/anz-taps-generative-ai-for-code-testing-596279
+    source: itnews
+    note: iTnews, 30 May 2023 (verified 2026-11-25)
+
+  # NAB: AI-assisted (Cursor) migration of Assembly mainframe code, ~3x faster
+  # than scoped. The only write-up found is Cursor's own customer story
+  # (cursor.com, not on the allow-list), so no NAB seed yet: add NAB's own post
+  # or iTnews/AFR coverage here once found. The `nab` source is pending
+  # verification, so seeds for it would be rejected until it is active.

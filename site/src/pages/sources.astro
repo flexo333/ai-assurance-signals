@@ -2,7 +2,8 @@
 import Base from "../layouts/Base.astro";
 import { loadAll, AUTHORITY_LABEL, AUTHORITY_ORDER } from "../lib/data.js";
 const { sources } = loadAll();
-const active = sources.filter((s: any) => s.status !== "blocked");
+const active = sources.filter((s: any) => s.status !== "blocked" && s.status !== "pending");
+const pending = sources.filter((s: any) => s.status === "pending");
 const blocked = sources.filter((s: any) => s.status === "blocked");
 const groups = AUTHORITY_ORDER.map((a) => ({ a, list: active.filter((s: any) => s.authority === a) })).filter((g) => g.list.length);
 ---
@@ -18,6 +19,15 @@ const groups = AUTHORITY_ORDER.map((a) => ({ a, list: active.filter((s: any) => 
       </ul>
     </section>
   ))}
+  {pending.length > 0 && (
+    <section>
+      <h2>Being verified</h2>
+      <p>Added to the allow-list but not collected yet: we first check each one's robots.txt, feeds and page structure.</p>
+      <ul class="plain">
+        {pending.map((s: any) => <li><span class={`badge badge--${s.authority}`}>{AUTHORITY_LABEL[s.authority]}</span> {s.name} <span class="muted small">{s.jurisdiction}{s.sector === "financial-services" ? " · FS" : ""}</span></li>)}
+      </ul>
+    </section>
+  )}
   <section>
     <h2>Not directly monitored</h2>
     <p>These sources block automated access (or disallow it in robots.txt). We respect that and don't work around it, so their announcements reach the digest through news coverage instead.</p>

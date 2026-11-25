@@ -137,3 +137,34 @@ test("selectSitemapEntries filters by include/exclude/window/known and sorts new
   });
   assert.deepEqual(got.map((e) => e.loc.split("/").pop()), ["cyber-penalty", "stress-test-ai"]);
 });
+
+test("extractListingLinks: same-host links in page order, deduplicated, no fragments", async () => {
+  const { extractListingLinks, selectSitemapEntries } = await import("./feed-pure.js");
+  const html = `<a href="/articles/newsroom/2026/11/b.html">B</a>
+    <a class="x" href="https://www.commbank.com.au/articles/newsroom/2026/10/a.html#top">A</a>
+    <a href="/articles/newsroom/2026/11/b.html">B again</a>
+    <a href="https://other.example/articles/newsroom/2026/11/c.html">off-site</a>
+    <a href="mailto:x@y">mail</a><a href="#nav">skip</a>`;
+  const links = extractListingLinks(html, "https://www.commbank.com.au/newsroom/technology-and-ai.html");
+  assert.deepEqual(links.map((l) => l.loc), [
+    "https://www.commbank.com.au/articles/newsroom/2026/11/b.html",
+    "https://www.commbank.com.au/articles/newsroom/2026/10/a.html",
+  ]);
+  const picked = selectSitemapEntries(links, { include: "/articles/newsroom/20\\d\\d/", known: new Set(), idOf: (u) => u, limit: 1 });
+  assert.deepEqual(picked.map((l) => l.loc), ["https://www.commbank.com.au/articles/newsroom/2026/11/b.html"]); // page order kept
+});
+
+test("dateFromUrl / reconcileUrlDate (#31)", async () => {
+  const { dateFromUrl, reconcileUrlDate } = await import("./feed-pure.js");
+  assert.equal(dateFromUrl("https://www.commbank.com.au/articles/newsroom/2026/11/x.html"), "2026-11-01T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://www.anz.com.au/bluenotes/2026/November/ai-in-action-at-anz/"), "2026-11-01T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://www.anz.com.au/bluenotes/2026/sept/x/"), "2026-09-01T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://asic.gov.au/news/2026-releases/x/"), null);
+  assert.equal(dateFromUrl("https://x/2026/13/y/"), null);
+  assert.equal(dateFromUrl("https://x/2026/news/y/"), null);
+  const u = "https://www.anz.com.au/bluenotes/2026/November/ai-in-action-at-anz/";
+  assert.equal(reconcileUrlDate("2026-05-01", u), "2026-11-01T00:00:00.000Z"); // stale template date
+  assert.equal(reconcileUrlDate("2026-11-19T00:00:00.000Z", u), "2026-11-19T00:00:00.000Z");
+  assert.equal(reconcileUrlDate(null, u), "2026-11-01T00:00:00.000Z");
+  assert.equal(reconcileUrlDate("2026-05-01", "https://x/no-date/"), "2026-05-01");
+});

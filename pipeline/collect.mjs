@@ -7,7 +7,7 @@
 // Actions-side processor (summarise + ground + commit). No LLM calls here.
 
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
-import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries } from "./lib/feed-pure.js";
+import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries, extractListingLinks, reconcileUrlDate } from "./lib/feed-pure.js";
 import { isAiRelated, passesMustMatch } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
@@ -50,7 +50,7 @@ async function resolveFeed(src) {
     candidates.push({ url: r.url, body: r.body, newest: newestItem(items)?.date || "" });
   };
   for (const url of [src.feed, ...(src.feeds || [])]) await tryUrl(url);
-  if (src.homepage && isAllowed((await robotsFor(src.homepage)).parsed, USER_AGENT, src.homepage)) {
+  if (src.discover !== false && src.homepage && isAllowed((await robotsFor(src.homepage)).parsed, USER_AGENT, src.homepage)) {
     const home = await get(src.homepage);
     if (home.ok) for (const url of discoverFeedLinks(home.body, home.url)) await tryUrl(url);
   }
@@ -87,23 +87,55 @@ async function listSitemap(src, { since, known }) {
     for (const child of root.entries.slice(0, 8)) entries.push(...((await fetchXml(child.loc))?.entries || []));
   }
   log.feedItems = entries.length;
-  const idOf = (u) => {
-    try {
-      return itemId(canonicalUrl(u));
-    } catch {
-      return null;
-    }
-  };
-  const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
+  const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf: idOfUrl, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
+  return checkPages(src, picked, { since, log, dropped });
+}
+
+const idOfUrl = (u) => {
+  try {
+    return itemId(canonicalUrl(u));
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * Listing adapter (#12, #31) for sources whose only index is an HTML listing
+ * page (e.g. a bank newsroom's "Technology and AI" page). sources.yaml:
+ *   method: listing · listing: <url> or [urls] · include / exclude: URL regex
+ *   strings · max_pages (default 25)
+ * Links are taken in page order (listings are newest first); pages are then
+ * checked exactly like sitemap pages.
+ */
+async function listListing(src, { since, known }) {
+  const urls = [].concat(src.listing || []);
+  const log = { id: src.id, feed: urls[0] || null, method: "listing", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const dropped = [];
+  const entries = [];
+  for (const url of urls) {
+    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) continue;
+    const r = await get(url);
+    if (r.ok) entries.push(...extractListingLinks(r.body, r.url));
+  }
+  if (!entries.length) return { log: { ...log, status: "listing-unavailable" }, candidates: [], dropped };
+  log.feedItems = entries.length;
+  const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf: idOfUrl, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
+  return checkPages(src, picked, { since, log, dropped });
+}
+
+// Fetch each picked page (robots-checked), date it from the page, apply the
+// AI keyword check (non-ai_specific sources) and must_match to the BODY.
+// Out-of-window and rejected pages go to `dropped` (recorded as seen).
+async function checkPages(src, picked, { since, log, dropped }) {
   const candidates = [];
   for (const e of picked) {
-    const id = idOf(e.loc);
+    const id = idOfUrl(e.loc);
     if (!id) continue;
     if (!isAllowed((await robotsFor(e.loc)).parsed, USER_AGENT, e.loc)) continue;
     const page = await get(e.loc);
     if (!page.ok) continue; // transient: retried next run
     const ex = extractMainText(page.body, page.url);
-    const date = pagePublished(page.body, ex.text) || e.lastmod;
+    const date = reconcileUrlDate(pagePublished(page.body, ex.text) || e.lastmod || null, e.loc);
     log.sample ??= { link: e.loc, date, since };
     if (date && date < since) {
       log.skipped.old++;
@@ -133,6 +165,7 @@ async function listSitemap(src, { since, known }) {
 // Phase A (cheap): resolve the feed and list fresh candidates — no article fetches.
 async function listSource(src, { since, known }) {
   if (src.method === "sitemap") return listSitemap(src, { since, known });
+  if (src.method === "listing") return listListing(src, { since, known });
   const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const feed = await resolveFeed(src);
   if (!feed) return { log: { ...log, status: "no-feed" }, candidates: [] };
@@ -229,15 +262,62 @@ async function fetchCandidate(c) {
 }
 
 /**
+ * Seed URLs (#31): curated landmark pages on allow-listed sources
+ * (data/seed-urls.yaml), and earlier items picked for re-analysis under a new
+ * prompt (`recheck`). Fetched regardless of the window and keyword filters,
+ * but always robots-checked; paywalled sources still give the standfirst only.
+ * Returns null when the page can't be fetched (retried on a later run).
+ */
+async function fetchSeed(seed, src) {
+  const fetchUrl = String(seed.url).trim();
+  const url = canonicalUrl(fetchUrl);
+  if (!isAllowed((await robotsFor(fetchUrl)).parsed, USER_AGENT, fetchUrl)) return null;
+  const page = await get(fetchUrl);
+  if (!page.ok) return null;
+  let text;
+  let textSource;
+  let extractMethod;
+  const ex = extractMainText(page.body, page.url);
+  if (src.paywalled) {
+    text = extractStandfirst(page.body);
+    textSource = "standfirst";
+    extractMethod = "standfirst";
+  } else {
+    text = ex.text || "";
+    textSource = "article";
+    extractMethod = ex.method;
+  }
+  text = truncate(text, MAX_TEXT_CHARS);
+  return {
+    id: seed.id || itemId(url),
+    sourceId: src.id,
+    url,
+    title: seed.title || extractTitle(page.body) || ex.title || url,
+    // A re-check keeps its stored date exactly (even null), so the record is
+    // replaced in place rather than written to another month's directory.
+    publishedAt: seed.recheck ? (seed.publishedAt ?? null) : seed.publishedAt || reconcileUrlDate(pagePublished(page.body, ex.text), fetchUrl),
+    feedSummary: null,
+    text,
+    textSource,
+    extractMethod,
+    textSha256: sha256(text),
+    fetchedAt: seed.fetchedAt || new Date().toISOString(),
+    seed: seed.recheck ? "recheck" : "seed-url",
+  };
+}
+
+/**
  * @param sources   active sources: [{ id, homepage, feed?, feeds?, ai_specific, paywalled, ... }]
  * @param knownIds  item ids already stored (skipped)
  * @param sinceDays only items published within this many days (undated items pass)
- * @param maxItems  fetch articles for at most this many (newest first)
+ * @param maxItems  fetch articles for at most this many (newest first); seeds count
+ * @param seeds     [{ url, sourceId, id?, title?, publishedAt?, fetchedAt?, recheck? }] (#31),
+ *                  fetched first; already filtered against stored items by the caller
  */
-export async function runCollect({ sources, knownIds = [], sinceDays = 8, maxItems = Infinity }) {
+export async function runCollect({ sources, knownIds = [], sinceDays = 8, maxItems = Infinity, seeds = [] }) {
   const known = new Set(knownIds);
   const since = new Date(Date.now() - sinceDays * 864e5).toISOString();
-  const listed = await pool(sources.filter((s) => s.status !== "blocked"), CONCURRENCY, (s) => listSource(s, { since, known }));
+  const listed = await pool(sources.filter((s) => s.status !== "blocked" && s.status !== "pending"), CONCURRENCY, (s) => listSource(s, { since, known }));
 
   // Dedupe across feeds, then take the newest first: only as many as the
   // processor can analyse today (its Gemini budget). The rest stay unknown and
@@ -248,10 +328,20 @@ export async function runCollect({ sources, knownIds = [], sinceDays = 8, maxIte
     .flatMap((l) => l.candidates)
     .filter((c) => (seen.has(c.id) ? false : seen.add(c.id)))
     .sort((a, b) => String(b.date || "9999").localeCompare(String(a.date || "9999")));
-  const selected = all.slice(0, maxItems);
-  let items = await pool(selected, CONCURRENCY, fetchCandidate);
+  // Seeds go first (they are few and curated), within the same item budget.
+  const srcById = new Map(sources.map((s) => [s.id, s]));
+  const seedList = seeds.filter((sd) => srcById.has(sd.sourceId)).slice(0, maxItems);
+  const seedFetched = await pool(seedList, CONCURRENCY, (sd) => fetchSeed(sd, srcById.get(sd.sourceId)).catch(() => null));
+  const seedItems = seedFetched.filter(Boolean);
+  // Re-checks whose page couldn't be fetched: reported so the processor marks
+  // them and the paced re-check moves on instead of retrying them daily.
+  const recheckFailed = seedList.filter((sd, k) => sd.recheck && !seedFetched[k]).map((sd) => sd.id);
+  const seedIds = new Set(seedItems.map((i) => i.id));
+  const rest = all.filter((c) => !seedIds.has(c.id));
+  const selected = rest.slice(0, Math.max(0, maxItems - seedList.length));
+  let items = [...seedItems, ...(await pool(selected, CONCURRENCY, fetchCandidate))];
 
-  let deferred = all.length - selected.length;
+  let deferred = rest.length - selected.length;
   while (items.length && Buffer.byteLength(JSON.stringify(items)) > MAX_RESPONSE_BYTES) {
     items.pop();
     deferred++;
@@ -261,5 +351,5 @@ export async function runCollect({ sources, knownIds = [], sinceDays = 8, maxIte
   for (const l of listed) l.log.collected = collectedBy.get(l.log.id) || 0;
   // Sitemap pages checked and rejected (not AI / out of window): recorded as seen.
   const dropped = listed.flatMap((l) => l.dropped || []);
-  return { since, items, deferred, candidates: all.length, dropped, sources: listed.map((l) => l.log) };
+  return { since, items, deferred, candidates: all.length, dropped, seeds: { requested: seeds.length, fetched: seedItems.length, recheckFailed }, sources: listed.map((l) => l.log) };
 }

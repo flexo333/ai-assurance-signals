@@ -89,6 +89,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
     extractMethod: item.extractMethod,
     analysedAt: new Date().toISOString(),
     attempts: 1,
+    ...(item.seed ? { via: item.seed } : {}),
   };
   if (!a.is_ai_governance) return { calls, modelErrors, record: { ...base, status: "irrelevant", provenance } };
 
