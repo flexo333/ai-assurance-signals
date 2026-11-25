@@ -74,7 +74,10 @@ export function buildLegislationQueryUrl({ apiBase = DEFAULT_LEGISLATION_API, si
   const edmSince = toODataDateTime(since);
   if (edmSince) clauses.push(`asMadeRegisteredAt ge ${edmSince}`);
   const cols = [].concat(collections || []).filter((c) => SAFE_COLLECTION_RE.test(String(c)));
-  if (cols.length) clauses.push(`(${cols.map((c) => `collection eq '${c}'`).join(" or ")})`);
+  // `in (...)`, not an `or` group: the register's OData parser rejects
+  // `date ge … and (collection eq 'A' or collection eq 'B')` with HTTP 400
+  // ("Could not find a property named 'A'").
+  if (cols.length) clauses.push(`collection in (${cols.map((c) => `'${c}'`).join(",")})`);
   if (clauses.length) params.push(`$filter=${encodeURIComponent(clauses.join(" and "))}`);
   params.push(`$orderby=${encodeURIComponent("asMadeRegisteredAt desc")}`);
   params.push(`$top=${Math.max(1, Math.min(200, Number(top) || 100))}`);

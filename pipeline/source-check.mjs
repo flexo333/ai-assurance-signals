@@ -325,7 +325,7 @@ export function report(results, { location = "GitHub Actions", generatedAt = new
   for (const r of results) {
     const f = r.feeds.find((x) => x.url === r.recommended.feed);
     const counts = f ? `${f.items} (${f.recent30d} / ${f.aiRecent30d})` : "—";
-    const newest = f?.newest ? `${f.newest.date?.slice(0, 10)} ${String(f.newest.title).slice(0, 60)}` : "—";
+    const newest = f?.newest ? `${f.newest.date ? f.newest.date.slice(0, 10) : "undated"} ${String(f.newest.title).slice(0, 60)}` : "—";
     lines.push(`| ${r.id}${r.paywalled ? " 🔒" : ""} | ${r.authority} | ${r.recommended.method} | ${r.recommended.status} | ${counts} | ${newest.replace(/\|/g, "/")} |`);
   }
   return lines.join("\n");
