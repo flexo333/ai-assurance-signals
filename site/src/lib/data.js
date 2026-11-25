@@ -160,15 +160,21 @@ export function fsGroupOf(item) {
 }
 
 /**
- * Publishable FS stories, newest first. Coverage grouped under a lead in an
- * edition stays with its lead ("Also covered by"); an item is shown on its own
- * only if it isn't grouped under another lead.
+ * Publishable FS stories, newest first. A story is shown if ANY of its items
+ * is FS: each FS item resolves to its edition story's lead (which may itself
+ * lack an FS marker, e.g. a grounded news report analysed before prompt v3
+ * leading a headline-only APRA item), and leads are deduplicated. Coverage
+ * stays grouped under the lead ("Also covered by").
  */
 export function financialServicesStories({ items, sources, alsoOf, leadOf, itemsById }) {
   const sectorOf = new Map((sources || []).filter((s) => s.sector).map((s) => [s.id, s.sector]));
-  const fs = items.filter((i) => isPublishable(i) && isFinancialServices(i, sectorOf));
-  return fs
-    .filter((i) => !(leadOf.has(i.id) && itemsById.has(leadOf.get(i.id))))
+  const leads = new Map();
+  for (const i of items) {
+    if (!isPublishable(i) || !isFinancialServices(i, sectorOf)) continue;
+    const lead = itemsById.get(leadOf.get(i.id)) || i;
+    leads.set(lead.id, lead);
+  }
+  return [...leads.values()]
     .map((lead) => ({ lead, also: (alsoOf.get(lead.id) || []).map((id) => itemsById.get(id)).filter(Boolean), group: fsGroupOf(lead) }))
     .sort((a, b) => String(b.lead.publishedAt || b.lead.fetchedAt).localeCompare(String(a.lead.publishedAt || a.lead.fetchedAt)));
 }
