@@ -1,6 +1,10 @@
 # Questions for review
 
-These came up while building overnight. **All 16 were resolved on 2026-11-24: the owner accepted every default**, and they are recorded in `docs/DECISIONS.md`. New questions go in a new section below, each with the default chosen.
+This file is a **historical record**. **Open questions now live in GitHub issues labelled [`question`](https://github.com/flexo333/ai-assurance-signals/issues?q=is%3Aissue+label%3Aquestion), and follow-ups in [`follow-up`](https://github.com/flexo333/ai-assurance-signals/issues?q=is%3Aissue+label%3Afollow-up).**
+
+The 16 overnight questions were resolved on 2026-11-24: the owner accepted every default, and they are recorded in `docs/DECISIONS.md`.
+
+**Status of 17–21 (2026-11-25):** #17 resolved (the first scheduled run happened, and a manual run followed). #18 and #20 are informational and fixed. #19 was superseded by #21, which is open as issue #24. Decision follow-ups are tracked as issues #22 (ABC feed review) and #23 (headline-only rate); the daily cap was raised to 120.
 
 ## Sources
 

@@ -30,9 +30,9 @@ Sibling project with shared patterns: `flexo333/yt2txt` (Gemini free tier via `@
 - The Pulumi stack is `flexo333/prod` in project `flexo333-ai-assurance-signals`, in region `us-east-1` (needed for the CloudFront ACM cert).
 - Repo secrets: `PULUMI_ACCESS_TOKEN`, `GEMINI_API_KEY`.
 
-## Open questions
+## Tracking
 
-Questions for the owner go in `docs/QUESTIONS.md`, each with the default chosen.
+Work items, open questions and follow-ups are **GitHub issues** (labels: `enhancement`, `sources`, `editorial`, `infra`, `follow-up`, `question`). Raise a question as an issue labelled `question` and state the default you chose, so work never blocks. `docs/QUESTIONS.md` and `docs/BACKLOG.md` are historical indexes; decisions still go in `docs/DECISIONS.md`.
 
 ## Commands
 
