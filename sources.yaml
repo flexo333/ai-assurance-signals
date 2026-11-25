@@ -20,14 +20,15 @@
 #                 checker also autodiscovers <link rel=alternate> and sitemaps)
 #   ai_specific   true → every item is in scope; false → keyword pre-filter first
 #   paywalled     true → headline + standfirst only, never full text
-#   method        feed (default: configured feed → candidates → autodiscovery) | sitemap | listing
+#   method        feed (default: configured feed → candidates → autodiscovery)
+#                 | sitemap | listing | citizen-space (Delib Citizen Space /api/2.4 JSON)
 #   discover      false → skip homepage feed autodiscovery (method: feed)
 #   listing       listing page URL(s) whose links are the articles (method: listing;
 #                 include/exclude/max_pages as for sitemaps; dates from the page,
 #                 or the /YYYY/MM/ in the URL)
 #   sitemap       sitemap or sitemap-index URL (method: sitemap)
-#   include       regex a URL must match (method: sitemap | listing)
-#   exclude       regex that rejects a URL, case-insensitive (method: sitemap | listing)
+#   include       regex a URL/title must match (method: sitemap | listing | citizen-space)
+#   exclude       regex that rejects a URL/title, case-insensitive (sitemap | listing | citizen-space)
 #   hosts         extra hostnames the source publishes on (seed URLs, #31)
 #   max_pages     pages checked per run (method: sitemap, default 25); for
 #                 sitemap sources the AI keyword check runs on the page BODY
@@ -100,6 +101,15 @@ sources:
     status: blocked
     blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
 
+  - id: agd-consult
+    name: Attorney-General's Department consultations
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://consultations.ag.gov.au/
+    method: citizen-space
+    ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
+
   - id: treasury
     name: The Treasury
     authority: official
@@ -158,6 +168,29 @@ sources:
     homepage: https://consult.industry.gov.au/
     feeds: [https://consult.industry.gov.au/consultation_finder.rss]
     ai_specific: false
+
+  - id: oia
+    name: Office of Impact Analysis (PM&C)
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://oia.pmc.gov.au/published-impact-analyses-and-reports
+    # Publishes mandatory Regulatory Impact Analyses across portfolios (incl.
+    # DISR, AGD, Communications/eSafety, Treasury, Finance and ACCC).
+    method: sitemap
+    sitemap: https://oia.pmc.gov.au/sitemap.xml
+    include: "^https://oia\\.pmc\\.gov\\.au/published-impact-analyses-and-reports/[^/?#]+$"
+    max_pages: 30
+    ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
+
+  - id: health-consult
+    name: Department of Health and Aged Care consultations
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://consultations.health.gov.au/
+    method: citizen-space
+    ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   # ── Regulators (official) ──────────────────────────────────────────────────
   - id: oaic
@@ -250,6 +283,15 @@ sources:
     status: blocked
     blocked_reason: "cloud IPs blocked (403); reachable from residential IPs only"
 
+  - id: accc-consult
+    name: ACCC consultations
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://consultation.accc.gov.au/
+    method: citizen-space
+    ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
+
   - id: esafety
     name: eSafety Commissioner
     authority: official
@@ -278,6 +320,16 @@ sources:
     ai_specific: false
     status: blocked
     blocked_reason: "bot-protection (govCMS/Akamai resets automated clients, incl. residential AU IPs)"
+
+  - id: tga-consult
+    name: TGA consultations
+    authority: official
+    jurisdiction: AU-federal
+    homepage: https://consultations.tga.gov.au/
+    method: citizen-space
+    exclude: "^(Form|Notification form|Tool|Application to amend):"
+    ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: acma
     name: Australian Communications and Media Authority

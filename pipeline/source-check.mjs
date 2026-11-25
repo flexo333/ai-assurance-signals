@@ -22,6 +22,7 @@ import {
   discoverFeedLinks,
   isAllowed,
 } from "./lib/feed-pure.js";
+import { parseCitizenSpaceItems } from "./lib/citizen-space.js";
 import { get, robotsFor, clearRobotsCache, USER_AGENT } from "./lib/http.js";
 
 export { USER_AGENT };
@@ -56,6 +57,60 @@ async function checkFeed(url) {
 }
 
 async function checkSource(src) {
+  if (src.method === "citizen-space") {
+    const origin = new URL(src.api || src.homepage).origin;
+    const apiUrl = `${origin}/api/2.4/json_search_results?st=open`;
+    const robots = await robotsFor(apiUrl);
+    const allowed = isAllowed(robots.parsed, USER_AGENT, apiUrl);
+    const res = allowed ? await get(apiUrl) : null;
+    const items = res?.ok ? parseCitizenSpaceItems(res.body, { baseUrl: origin, include: src.include, exclude: src.exclude }) : null;
+    const ok = Array.isArray(items);
+    const cutoff = new Date(Date.now() - RECENT_DAYS * 864e5).toISOString();
+    const recent = ok ? items.filter((i) => i.date && i.date >= cutoff) : [];
+    const newest = ok ? newestItem(items) : null;
+    const feedEntry = {
+      url: apiUrl,
+      allowed,
+      status: res?.status ?? null,
+      error: res?.error,
+      isFeed: ok,
+      ...(ok ? {
+        type: "citizen-space",
+        items: items.length,
+        recent30d: recent.length,
+        aiRecent30d: recent.filter((i) => isAiRelated(`${i.title}\n${i.text}`)).length,
+        newest: newest ? { title: newest.title, date: newest.date, link: newest.link } : null,
+      } : {}),
+    };
+    const status = ok
+      ? "ok"
+      : robots.parsed.state === "unreachable"
+        ? "robots-unreachable"
+        : !allowed
+          ? "robots-disallowed"
+          : res?.status
+            ? `http-${res.status}`
+            : `unreachable:${res?.error || "?"}`;
+    return {
+      id: src.id,
+      name: src.name,
+      authority: src.authority,
+      jurisdiction: src.jurisdiction,
+      paywalled: !!src.paywalled,
+      homepage: src.homepage,
+      robotsStatus: robots.status,
+      robotsState: robots.parsed.state,
+      homeAllowed: allowed,
+      homeStatus: res?.status ?? null,
+      homeError: res?.error,
+      discoveredFeeds: [],
+      sitemaps: robots.parsed.sitemaps,
+      feeds: [feedEntry],
+      recommended: { method: ok ? "citizen-space" : "none", status, feed: ok ? apiUrl : null },
+      checkedAt: new Date().toISOString(),
+    };
+  }
+
   const robots = await robotsFor(src.homepage);
   const homeAllowed = isAllowed(robots.parsed, USER_AGENT, src.homepage);
   const home = homeAllowed ? await get(src.homepage) : null;
