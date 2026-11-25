@@ -107,3 +107,33 @@ test("parseFeedItems extracts descriptions, unescaping HTML", () => {
   assert.equal(a.summary, "APRA has written to banks about AI.");
   assert.equal(b.summary, "Full content here.");
 });
+
+import { parseSitemap, selectSitemapEntries } from "./feed-pure.js";
+
+test("parseSitemap handles urlsets and indexes", () => {
+  const idx = parseSitemap(`<?xml version="1.0"?><sitemapindex><sitemap><loc>https://x.gov.au/sitemap.xml?page=1</loc></sitemap><sitemap><loc>https://x.gov.au/sitemap.xml?page=2&amp;a=1</loc></sitemap></sitemapindex>`);
+  assert.equal(idx.isIndex, true);
+  assert.deepEqual(idx.entries.map((e) => e.loc), ["https://x.gov.au/sitemap.xml?page=1", "https://x.gov.au/sitemap.xml?page=2&a=1"]);
+  const set = parseSitemap(`<urlset><url><loc>https://x.gov.au/a</loc><lastmod>2026-11-25T08:55:12+11:00</lastmod></url><url><loc>https://x.gov.au/b</loc></url></urlset>`);
+  assert.equal(set.isIndex, false);
+  assert.deepEqual(set.entries, [{ loc: "https://x.gov.au/a", lastmod: "2026-11-24T21:55:12.000Z" }, { loc: "https://x.gov.au/b", lastmod: null }]);
+});
+
+test("selectSitemapEntries filters by include/exclude/window/known and sorts newest first", () => {
+  const entries = [
+    { loc: "https://apra.gov.au/news-and-publications/stress-test-ai", lastmod: "2026-11-20T00:00:00.000Z" },
+    { loc: "https://apra.gov.au/news-and-publications/quarterly-statistics", lastmod: "2026-11-24T00:00:00.000Z" },
+    { loc: "https://apra.gov.au/news-and-publications/cyber-penalty", lastmod: "2026-11-24T05:00:00.000Z" },
+    { loc: "https://apra.gov.au/industries/banking", lastmod: "2026-11-24T00:00:00.000Z" },
+    { loc: "https://apra.gov.au/news-and-publications/old", lastmod: "2026-01-01T00:00:00.000Z" },
+    { loc: "https://apra.gov.au/news-and-publications/seen", lastmod: "2026-11-23T00:00:00.000Z" },
+  ];
+  const got = selectSitemapEntries(entries, {
+    include: "/news-and-publications/",
+    exclude: "statistics",
+    since: "2026-07-01T00:00:00.000Z",
+    known: new Set(["id:https://apra.gov.au/news-and-publications/seen"]),
+    idOf: (u) => `id:${u}`,
+  });
+  assert.deepEqual(got.map((e) => e.loc.split("/").pop()), ["cyber-penalty", "stress-test-ai"]);
+});

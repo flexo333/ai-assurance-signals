@@ -47,3 +47,29 @@ export async function saveItem(item, dir = ITEMS_DIR) {
   await writeFile(p, JSON.stringify(item, null, 2) + "\n");
   return p;
 }
+
+// Sitemap pages already checked and rejected (not about AI / out of window), so
+// the sitemap adapter doesn't re-fetch them daily. { "<item id>": "<checkedAt>" }.
+export const SEEN_PATH = join(DATA_DIR, "seen", "sitemap.json");
+const SEEN_TTL_DAYS = 200;
+
+export async function loadSeen(path = SEEN_PATH) {
+  try {
+    return JSON.parse(await readFile(path, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+/** Merge newly rejected ids and prune entries older than the TTL. */
+export async function saveSeen(newIds, now = new Date(), path = SEEN_PATH) {
+  const seen = await loadSeen(path);
+  const stamp = now.toISOString();
+  for (const id of newIds) seen[id] ??= stamp;
+  const cutoff = new Date(now - SEEN_TTL_DAYS * 864e5).toISOString();
+  for (const [id, t] of Object.entries(seen)) if (t < cutoff) delete seen[id];
+  await mkdir(dirname(path), { recursive: true });
+  const sorted = Object.fromEntries(Object.entries(seen).sort(([a], [b]) => a.localeCompare(b)));
+  await writeFile(path, JSON.stringify(sorted, null, 1) + "\n");
+  return Object.keys(sorted).length;
+}

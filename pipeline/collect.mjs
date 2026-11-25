@@ -7,10 +7,10 @@
 // Actions-side processor (summarise + ground + commit). No LLM calls here.
 
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
-import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem } from "./lib/feed-pure.js";
+import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries } from "./lib/feed-pure.js";
 import { isAiRelated } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
-import { extractMainText, extractStandfirst } from "./lib/extract.js";
+import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
 
 const MAX_TEXT_CHARS = 20_000;
 const MAX_ITEMS_PER_SOURCE = 15;
@@ -58,8 +58,81 @@ async function resolveFeed(src) {
   return candidates[0] || null;
 }
 
+const DEFAULT_SITEMAP_PAGES = 25;
+
+/**
+ * Sitemap adapter (#12) for sources without a usable feed. sources.yaml:
+ *   method: sitemap · sitemap: <url> · include / exclude: URL regex strings ·
+ *   max_pages: pages to check per run (default 25)
+ * Takes the newest unknown URLs (by lastmod), fetches each page (robots-checked),
+ * dates it from the page itself (metadata, "Published" label; lastmod as a
+ * fallback, since CMSs bump lastmod on edits) and applies the AI keyword check
+ * to the BODY text (official releases often mention AI only in the body).
+ * Pages that are out of window or not about AI are returned in `dropped`, so
+ * they're recorded as seen and not re-fetched; the backfill then progresses.
+ */
+async function listSitemap(src, { since, known }) {
+  const log = { id: src.id, feed: src.sitemap, method: "sitemap", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const dropped = [];
+  const fetchXml = async (url) => {
+    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
+    const r = await get(url);
+    return r.ok ? parseSitemap(r.body) : null;
+  };
+  const root = await fetchXml(src.sitemap);
+  if (!root) return { log: { ...log, status: "sitemap-unavailable" }, candidates: [], dropped };
+  let entries = root.entries;
+  if (root.isIndex) {
+    entries = [];
+    for (const child of root.entries.slice(0, 8)) entries.push(...((await fetchXml(child.loc))?.entries || []));
+  }
+  log.feedItems = entries.length;
+  const idOf = (u) => {
+    try {
+      return itemId(canonicalUrl(u));
+    } catch {
+      return null;
+    }
+  };
+  const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
+  const candidates = [];
+  for (const e of picked) {
+    const id = idOf(e.loc);
+    if (!id) continue;
+    if (!isAllowed((await robotsFor(e.loc)).parsed, USER_AGENT, e.loc)) continue;
+    const page = await get(e.loc);
+    if (!page.ok) continue; // transient: retried next run
+    const ex = extractMainText(page.body, page.url);
+    const date = pagePublished(page.body, ex.text) || e.lastmod;
+    log.sample ??= { link: e.loc, date, since };
+    if (date && date < since) {
+      log.skipped.old++;
+      dropped.push(id);
+      continue;
+    }
+    log.inWindow++;
+    const title = extractTitle(page.body) || ex.title || decodeURIComponent(e.loc.split("/").filter(Boolean).pop() || "").replace(/-/g, " ");
+    if (!src.ai_specific && !isAiRelated(`${title}\n${ex.text}`)) {
+      log.keywordDropped++;
+      dropped.push(id);
+      continue;
+    }
+    candidates.push({
+      id,
+      url: canonicalUrl(page.url || e.loc),
+      title,
+      date,
+      summary: null,
+      src,
+      prefetched: { text: ex.text, extractMethod: ex.method },
+    });
+  }
+  return { log, candidates, dropped };
+}
+
 // Phase A (cheap): resolve the feed and list fresh candidates — no article fetches.
 async function listSource(src, { since, known }) {
+  if (src.method === "sitemap") return listSitemap(src, { since, known });
   const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const feed = await resolveFeed(src);
   if (!feed) return { log: { ...log, status: "no-feed" }, candidates: [] };
@@ -103,7 +176,12 @@ async function fetchCandidate(c) {
   let text = c.summary || "";
   let textSource = "feed";
   let extractMethod = null;
-  if (src.paywalled && text.length < 120 && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
+  if (c.prefetched) {
+    // Sitemap candidates were already fetched (to check the body for AI).
+    text = c.prefetched.text || "";
+    textSource = "article";
+    extractMethod = c.prefetched.extractMethod;
+  } else if (src.paywalled && text.length < 120 && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
     // Paywalled: the page's standfirst (meta description) only — never body text.
     const page = await get(c.url);
     if (page.ok) {
@@ -176,5 +254,7 @@ export async function runCollect({ sources, knownIds = [], sinceDays = 8, maxIte
   const collectedBy = new Map();
   for (const i of items) collectedBy.set(i.sourceId, (collectedBy.get(i.sourceId) || 0) + 1);
   for (const l of listed) l.log.collected = collectedBy.get(l.log.id) || 0;
-  return { since, items, deferred, candidates: all.length, sources: listed.map((l) => l.log) };
+  // Sitemap pages checked and rejected (not AI / out of window): recorded as seen.
+  const dropped = listed.flatMap((l) => l.dropped || []);
+  return { since, items, deferred, candidates: all.length, dropped, sources: listed.map((l) => l.log) };
 }

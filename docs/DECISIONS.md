@@ -2,6 +2,9 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-25: Sitemap adapter with body-text AI check; ASIC and APRA first (#12)
+APRA's RSS feed carries only statistics releases, and ASIC has no feed. Both publish complete sitemaps. Official releases often mention AI only in the body: APRA's System Risk Outlook has 57 mentions and none in its title or URL. **Decision:** `method: sitemap` sources take the newest unknown URLs matching include/exclude patterns, fetch each page, and date it from the page itself (`displayDate`/`dcterms` metadata, a "Published" label, or first visible date, with sitemap `lastmod` only as a fallback, because CMSs bump `lastmod` on edits). The AI keyword check runs on the body text. Rejected pages are stored in `data/seen/sitemap.json` (200-day TTL) so the backfill moves on rather than re-fetching them. Extraction gains a main-text fallback for layouts Readability misses (APRA's Drupal paragraphs).
+
 ## 2026-11-25: Tighter Top Signals: item kind and a significance gate (#13)
 In the Week 48 preview, a product launch (Shirudo) and a lab metrics post reached Top Signals at significance 3. Vendor "predictions" pieces were also scoring 3. **Decision:** the analysis prompt (v2) classifies `item_kind` and caps products, business news and predictions at significance 2 unless they change obligations. Ranking never puts those kinds in Top Signals and down-weights them in sections (×0.5–0.6, commentary ×0.85). Top Signals beyond the minimum of 3 need significance ≥4. **Consequence:** quieter weeks show 3 Top Signals instead of padding to 5. Items analysed before v2 have no `item_kind` and are only affected by the significance gate.
 

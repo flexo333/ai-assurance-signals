@@ -16,7 +16,7 @@
 import { readFile, appendFile } from "node:fs/promises";
 import { GoogleGenAI } from "@google/genai";
 import { loadSources } from "./lib/sources.js";
-import { saveItem } from "./lib/store.js";
+import { saveItem, saveSeen } from "./lib/store.js";
 import { sleep, resolveModelChain, ModelHealth, Pacer } from "./lib/gemini.js";
 import { analyseItem } from "./lib/analyse-item.js";
 
@@ -107,6 +107,9 @@ for (const item of collected.items) {
   if (r.status !== "irrelevant") console.log(`${r.status === "summarised" ? "✓" : "◐"} [${r.classification?.significance ?? "-"}] ${r.sourceId}: ${r.headline || r.title}`);
 }
 
+let seenTotal = null;
+if (!DRY && collected.dropped?.length) seenTotal = await saveSeen(collected.dropped);
+
 const summary = [
   `### Collect + process${DRY ? " (dry run)" : ""}`,
   "",
@@ -118,6 +121,7 @@ const summary = [
   "",
   quotaHit ? "⚠️ No usable Gemini model left this run (quota exhausted / retired) — remaining items will be retried next run." : "",
   `Model chain: ${chain.join(", ")}`,
+  collected.dropped?.length ? `Sitemap pages checked and set aside (not AI / out of window): ${collected.dropped.length}${seenTotal != null ? ` · seen list now ${seenTotal}` : ""}` : "",
   modelErrorCounts.size ? ["**Model errors (count · model status message):**", "", ...[...modelErrorCounts].map(([k, n]) => `- ${n} × ${k}`), ""].join("\n") : "",
   "<details><summary>Per-source collection log</summary>",
   "",

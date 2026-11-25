@@ -6,7 +6,7 @@
 // anything not yet processed is retried (newest first) on later runs.
 
 import { loadSources, activeSources } from "./lib/sources.js";
-import { listItemIds } from "./lib/store.js";
+import { listItemIds, loadSeen } from "./lib/store.js";
 import { ARCHIVE_START } from "./lib/config.js";
 
 const args = process.argv.slice(2);
@@ -17,7 +17,8 @@ const only = val("--only")?.split(",").filter(Boolean);
 
 let sources = activeSources(await loadSources());
 if (only?.length) sources = sources.filter((s) => only.includes(s.id));
-const knownIds = await listItemIds();
+// Known = stored items plus sitemap pages already checked and rejected.
+const knownIds = [...new Set([...(await listItemIds()), ...Object.keys(await loadSeen())])];
 
 process.stdout.write(JSON.stringify({ action: "collect", sinceDays, maxItems, sources, knownIds }));
 console.error(`collect event: ${sources.length} sources, ${knownIds.length} known items, window ${sinceDays}d, max ${maxItems} items`);
