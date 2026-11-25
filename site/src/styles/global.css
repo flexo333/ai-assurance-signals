@@ -217,3 +217,5 @@ ul.dated li { padding: 0.75rem 0; border-bottom: 1px solid var(--rule); }
 .dated__date { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; }
 .card__permalink { margin-left: auto; color: var(--muted); text-decoration: none; }
 .card__permalink:hover { color: var(--accent); }
+.card__also { margin: 0.25rem 0 0.5rem; }
+.card__also a.muted { text-decoration: none; }

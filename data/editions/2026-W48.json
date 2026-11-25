@@ -6,12 +6,17 @@
   },
   "topSignals": [
     {
-      "id": "7396ed9251e0fddc",
-      "score": 3.497
+      "id": "6e1f21ad7bac31cf",
+      "score": 3.956,
+      "also": [
+        "7396ed9251e0fddc",
+        "522c82dd03f8f18f",
+        "e78e7a6c56262dae"
+      ]
     },
     {
-      "id": "6e1f21ad7bac31cf",
-      "score": 3.44
+      "id": "f3cf671205f88aff",
+      "score": 3.418
     },
     {
       "id": "4091a870daa91f99",
@@ -56,20 +61,15 @@
       "title": "News & Commentary",
       "items": [
         {
-          "id": "f3cf671205f88aff",
-          "score": 3.418
-        },
-        {
-          "id": "94290fb1cba9f51c",
-          "score": 2.682
+          "id": "1efd04b1ac913541",
+          "score": 2.77,
+          "also": [
+            "94290fb1cba9f51c"
+          ]
         },
         {
           "id": "065d6dfe401dbfb5",
           "score": 2.66
-        },
-        {
-          "id": "1efd04b1ac913541",
-          "score": 2.638
         },
         {
           "id": "dc1a2b3130912e3f",
@@ -86,16 +86,6 @@
         {
           "id": "7566387532cd7624",
           "score": 2.623
-        }
-      ],
-      "more": [
-        {
-          "id": "e78e7a6c56262dae",
-          "score": 2.554
-        },
-        {
-          "id": "522c82dd03f8f18f",
-          "score": 2.541
         },
         {
           "id": "62590bec623fa775",
@@ -104,7 +94,9 @@
         {
           "id": "ee679b0405238e1b",
           "score": 2.233
-        },
+        }
+      ],
+      "more": [
         {
           "id": "009d3a1dfa554697",
           "score": 2.147
@@ -162,11 +154,12 @@
           "score": 0.784
         }
       ],
-      "overflow": 18
+      "overflow": 14
     }
   ],
   "counts": {
     "candidates": 33,
+    "stories": 29,
     "summarised": 32,
     "headlineOnly": 1
   },

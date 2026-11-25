@@ -17,6 +17,12 @@ function walkJson(dir) {
   });
 }
 
+/** An edition's entries: Top Signals, then each section's items and overflow. */
+export const editionRefs = (e) => [...e.topSignals, ...e.sections.flatMap((s) => [...s.items, ...(s.more || [])])];
+
+/** Number of items an edition places, counting grouped coverage. */
+export const editionItemCount = (e) => editionRefs(e).reduce((n, r) => n + 1 + (r.also?.length || 0), 0);
+
 let cache;
 export function loadAll() {
   if (cache) return cache;
@@ -26,12 +32,21 @@ export function loadAll() {
   const { sources } = parse(readFileSync(join(ROOT, "sources.yaml"), "utf8"));
   const keyDatesFile = join(DATA, "key-dates.yaml");
   const curatedDates = existsSync(keyDatesFile) ? parse(readFileSync(keyDatesFile, "utf8")).dates || [] : [];
-  // Which edition each item appeared in (for item pages).
+  // Which edition each item appeared in, and story groupings (for item pages).
   const editionOf = new Map();
+  const alsoOf = new Map(); // lead id → grouped item ids
+  const leadOf = new Map(); // grouped item id → lead id
   for (const e of [...editions].reverse()) {
-    for (const ref of [...e.topSignals, ...e.sections.flatMap((s) => [...s.items, ...(s.more || [])])]) editionOf.set(ref.id, e.id);
+    for (const ref of editionRefs(e)) {
+      editionOf.set(ref.id, e.id);
+      if (ref.also?.length) alsoOf.set(ref.id, ref.also);
+      for (const id of ref.also || []) {
+        editionOf.set(id, e.id);
+        leadOf.set(id, ref.id);
+      }
+    }
   }
-  cache = { items, itemsById, editions, sources, curatedDates, editionOf };
+  cache = { items, itemsById, editions, sources, curatedDates, editionOf, alsoOf, leadOf };
   return cache;
 }
 

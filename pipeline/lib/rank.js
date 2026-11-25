@@ -1,6 +1,8 @@
 // Edition assembly — pure. Ranking, Top Signals selection and themed sections.
 // Tested by rank.test.mjs.
 
+import { clusterItems, coverageBoost } from "./cluster.js";
+
 export const AUTHORITY_WEIGHT = { official: 1.0, standards: 0.95, lab: 0.85, research: 0.8, news: 0.6 };
 
 export const SECTIONS = [
@@ -82,21 +84,29 @@ export function weeklyCutoffs(startIso, beforeIso, { weekday = 5, hour = 4, minu
   return out;
 }
 
+/**
+ * Assemble an edition. Items reporting the same event are grouped into one
+ * story (see cluster.js): the story ranks and is placed by its lead item, with
+ * the lead's score plus a small boost per extra source, and its other items
+ * are recorded as `also` on the lead's entry. Caps count stories, not items.
+ */
 export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
-  const ranked = items
-    .map((i) => ({ i, s: score(i, now) }))
+  const ref = (st) => ({ id: st.lead.id, score: st.s, ...(st.also.length ? { also: st.also.map((i) => i.id) } : {}) });
+  const ranked = clusterItems(items)
+    .map((st) => ({ ...st, i: st.lead, s: Math.round(score(st.lead, now) * coverageBoost(st) * 1000) / 1000 }))
     .sort((a, b) => b.s - a.s || String(a.i.id).localeCompare(String(b.i.id)));
 
   const top = [];
   let news = 0;
-  for (const { i, s } of ranked) {
+  for (const st of ranked) {
+    const { i } = st;
     if (top.length >= TOP_MAX) break;
     if (i.status !== "summarised") continue;
     if (i.authority === "news" && news >= TOP_MAX_NEWS) continue;
     // Below significance 3 only to make up the minimum. Ranking is by composite
     // score, so later items may still qualify — skip, don't stop.
     if ((i.classification?.significance ?? 0) < 3 && top.length >= TOP_MIN) continue;
-    top.push({ id: i.id, score: s });
+    top.push(ref(st));
     if (i.authority === "news") news++;
   }
   const topIds = new Set(top.map((t) => t.id));
@@ -106,9 +116,9 @@ export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
     return {
       id: sec.id,
       title: sec.title,
-      items: members.slice(0, SECTION_CAP).map(({ i, s }) => ({ id: i.id, score: s })),
+      items: members.slice(0, SECTION_CAP).map(ref),
       // Beyond the cap: listed compactly (headline + source) so nothing is hidden.
-      more: members.slice(SECTION_CAP).map(({ i, s }) => ({ id: i.id, score: s })),
+      more: members.slice(SECTION_CAP).map(ref),
       overflow: Math.max(0, members.length - SECTION_CAP),
     };
   }).filter((s) => s.items.length);
@@ -120,10 +130,16 @@ export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
     sections,
     counts: {
       candidates: items.length,
+      stories: ranked.length,
       summarised: items.filter((i) => i.status === "summarised").length,
       headlineOnly: items.filter((i) => i.status === "headline-only").length,
     },
   };
+}
+
+/** Every item id an edition places, including grouped `also` items. */
+export function editionItemIds(edition) {
+  return [...edition.topSignals, ...edition.sections.flatMap((s) => [...s.items, ...(s.more || [])])].flatMap((r) => [r.id, ...(r.also || [])]);
 }
 
 /** ISO-8601 week id (e.g. "2026-W48") for a date, evaluated in Australia/Sydney. */

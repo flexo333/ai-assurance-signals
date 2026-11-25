@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { score, sectionFor, buildEdition, selectWindow, isoWeekId, weeklyCutoffs, SECTION_CAP } from "./rank.js";
+import { score, sectionFor, buildEdition, selectWindow, isoWeekId, weeklyCutoffs, editionItemIds, SECTION_CAP } from "./rank.js";
 
 const NOW = Date.parse("2026-11-27T04:17:00Z");
 const mk = (id, o = {}) => ({
@@ -98,4 +98,32 @@ test("overflow items are kept in 'more', not dropped", () => {
 test("isoWeekId uses Sydney local date", () => {
   assert.equal(isoWeekId(new Date("2026-11-27T04:17:00Z")), "2026-W48");
   assert.equal(isoWeekId(new Date("2026-12-31T14:00:00Z")), "2026-W53"); // Fri 1 Jan 2027 01:00 AEDT
+});
+
+test("buildEdition groups coverage of one story into a single entry with `also`", () => {
+  const story = (id, sourceId, publishedAt, headline) =>
+    mk(id, {
+      sourceId,
+      authority: "news",
+      publishedAt,
+      title: headline,
+      headline,
+      summary: "The joint select committee tabled 46 recommendations on frontier AI audits.",
+      classification: { significance: 4, au_relevance: 3, theme: "policy-legislation" },
+    });
+  const items = [
+    story("a", "mandarin", "2026-11-24T19:00:00Z", "Parliamentary committee recommends independent audits"),
+    story("b", "innovationaus", "2026-11-24T11:00:00Z", "Joint committee recommends regulatory scrutiny"),
+    mk("o1"),
+    mk("o2"),
+    mk("o3"),
+  ];
+  const ed = buildEdition(items, { id: "w", from: "2026-11-20T04:17:00Z", to: "2026-11-27T04:17:00Z" });
+  const entry = ed.topSignals.find((t) => t.id === "b");
+  assert.deepEqual(entry.also, ["a"]);
+  assert.ok(!editionItemIds(ed).filter((id) => id === "a").slice(1).length, "grouped item placed once");
+  assert.ok(editionItemIds(ed).includes("a"));
+  assert.equal(ed.counts.stories, 4);
+  assert.ok(!ed.topSignals.some((t) => t.id === "a"));
+  assert.ok(!ed.topSignals.find((t) => t.id === "o1").also, "no `also` key on ungrouped entries");
 });

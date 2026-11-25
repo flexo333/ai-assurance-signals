@@ -1,7 +1,7 @@
 ---
 import { AUTHORITY_LABEL, fmtDate } from "../lib/data.js";
-interface Props { item: any; rank?: number; permalink?: boolean }
-const { item, rank, permalink = true } = Astro.props;
+interface Props { item: any; rank?: number; permalink?: boolean; also?: any[] }
+const { item, rank, permalink = true, also = [] } = Astro.props;
 const summarised = item.status === "summarised";
 const date = fmtDate(item.publishedAt || item.fetchedAt);
 ---
@@ -34,5 +34,11 @@ const date = fmtDate(item.publishedAt || item.fetchedAt);
     </>
   ) : (
     <p class="card__summary muted small">Summary withheld: the AI-generated summary could not be verified against the source text. See the original.</p>
+  )}
+  {also.length > 0 && (
+    <p class="card__also small" data-pagefind-ignore>
+      <span class="muted">Also covered by</span>{" "}
+      {also.map((a: any, k: number) => <>{k > 0 && ", "}<a href={a.url} rel="noopener">{a.sourceName}</a> <a class="muted" href={`/items/${a.id}/`} aria-label={`${a.sourceName} item page`}>#</a></>)}
+    </p>
   )}
 </article>
