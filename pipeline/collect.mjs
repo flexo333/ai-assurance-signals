@@ -8,7 +8,7 @@
 
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries } from "./lib/feed-pure.js";
-import { isAiRelated } from "./lib/keywords.js";
+import { isAiRelated, passesMustMatch } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
 
@@ -112,7 +112,7 @@ async function listSitemap(src, { since, known }) {
     }
     log.inWindow++;
     const title = extractTitle(page.body) || ex.title || decodeURIComponent(e.loc.split("/").filter(Boolean).pop() || "").replace(/-/g, " ");
-    if (!src.ai_specific && !isAiRelated(`${title}\n${ex.text}`)) {
+    if ((!src.ai_specific && !isAiRelated(`${title}\n${ex.text}`)) || !passesMustMatch(src.must_match, `${title}\n${ex.text}`)) {
       log.keywordDropped++;
       dropped.push(id);
       continue;
@@ -161,6 +161,11 @@ async function listSource(src, { since, known }) {
     }
     log.inWindow++;
     if (!src.ai_specific && !isAiRelated(`${i.title}\n${i.summary || ""}`)) {
+      log.keywordDropped++;
+      continue;
+    }
+    // Per-source must_match (#31): checked before any article fetch or LLM call.
+    if (!passesMustMatch(src.must_match, `${i.title}\n${i.summary || ""}\n${i.link}`)) {
       log.keywordDropped++;
       continue;
     }

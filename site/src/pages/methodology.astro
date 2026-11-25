@@ -6,19 +6,22 @@ import Base from "../layouts/Base.astro";
   <p class="lede">AI Assurance Signals is produced automatically, without human review of each edition. These are the safeguards that make that acceptable — and their limits.</p>
 
   <h2>1. Sources</h2>
-  <p>Items come only from an <a href="/sources/">allow-list</a> of government bodies, regulators, standards bodies, research institutes, frontier AI labs and news outlets. We fetch feeds daily with an honest user agent, respect robots.txt, and never bypass paywalls or bot protection. Broad sources pass a keyword filter before any AI processing.</p>
+  <p>Items come only from an <a href="/sources/">allow-list</a> of government bodies, regulators, standards bodies, research institutes, frontier AI labs, financial institutions, technology vendors and news outlets. We fetch feeds daily with an honest user agent, respect robots.txt, and never bypass paywalls or bot protection. Broad sources pass a keyword filter before any AI processing.</p>
 
   <h2>2. Summaries</h2>
-  <p>For each item, an AI model (Google Gemini) reads the source text and decides whether it is substantively about AI governance or assurance. If it is, the model writes a neutral headline, a 2–4 sentence summary, a one-sentence “why it matters”, and scores the item for significance and Australian relevance.</p>
+  <p>For each item, an AI model (Google Gemini) reads the source text and decides whether it is in scope: substantively about AI governance or assurance, or a substantive financial-services AI signal (a bank's, insurer's or super fund's production AI deployment or AI-assisted engineering or data-migration case study with operational detail, AI risk controls, an AI incident, or a financial regulator's AI-related move). Generic pilot announcements, sponsorships, earnings mentions and vendor marketing are left out. If it is, the model writes a neutral headline, a 2–4 sentence summary, a one-sentence “why it matters”, and scores the item for significance and Australian relevance.</p>
 
   <h2>3. Verification against the source</h2>
   <p>The model must also copy short passages from the source text that support its summary and its “why it matters”. Software then checks that every passage appears <strong>verbatim</strong> in the source. If any quote cannot be found, the model gets one corrective retry; if it fails again, the AI-generated text is discarded and the item appears as a <em>headline-only</em> card linking to the original. You can expand “Source quotes” on any card to see the passages.</p>
   <p>This catches invented quotes and many fabrications, but it cannot guarantee that a summary is a fair reading of the whole document. Always rely on the original.</p>
 
   <h2>4. Ranking</h2>
-  <p>Each item's score combines the model's significance rating, the source's authority (official &gt; standards &gt; labs &gt; research &gt; news), Australian relevance and recency. Items from different sources that report the same event (overlapping distinctive headline words and summary text, published within three days of each other) are grouped into one story: the card shows the highest-authority grounded item, with the others listed as "Also covered by", and the story gets a small ranking boost for each extra source. The top 3–5 become <strong>Top Signals</strong> (at most two from news); the rest are grouped into themed sections of up to eight stories. The opening paragraph is generated only from the Top Signals' verified summaries, and every sentence must cite them — or it is left out.</p>
+  <p>Each item's score combines the model's significance rating, the source's authority (official &gt; standards &gt; labs &gt; research &gt; industry &gt; news &gt; vendor), Australian relevance and recency. Items from different sources that report the same event (overlapping distinctive headline words and summary text, published within three days of each other) are grouped into one story: the card shows the highest-authority grounded item, with the others listed as "Also covered by", and the story gets a small ranking boost for each extra source. When a bank publishes its own grounded write-up and the press covers it, the bank's post leads the story. The top 3–5 become <strong>Top Signals</strong> (at most two from news; never vendor stories, product launches, business news or predictions); the rest are grouped into themed sections of up to eight stories. The opening paragraph is generated only from the Top Signals' verified summaries, and every sentence must cite them — or it is left out.</p>
 
-  <h2>5. Records</h2>
+  <h2>5. Financial services</h2>
+  <p>In a prudentially regulated sector, production AI deployments and large engineering changes are operational-risk and assurance signals in their own right. Financial-services items — from regulators (APRA, ASIC, RBA, AUSTRAC, AFCA), institutions, vendors and the press — are grouped in each edition's <strong>Financial Services</strong> section and collected on the <a href="/financial-services/">Financial Services tracker</a>. The same grounding rules apply.</p>
+
+  <h2>6. Records</h2>
   <p>Every item records which model produced it, the prompt version, and a fingerprint of the source text. The full history is public in the <a href="https://github.com/flexo333/ai-assurance-signals">repository</a>.</p>
 
   <h2>Known gaps</h2>

@@ -1,19 +1,20 @@
 ---
 import Base from "../layouts/Base.astro";
-import { loadAll, AUTHORITY_LABEL } from "../lib/data.js";
+import { loadAll, AUTHORITY_LABEL, AUTHORITY_ORDER } from "../lib/data.js";
 const { sources } = loadAll();
 const active = sources.filter((s: any) => s.status !== "blocked");
 const blocked = sources.filter((s: any) => s.status === "blocked");
-const groups = ["official", "standards", "lab", "research", "news"].map((a) => ({ a, list: active.filter((s: any) => s.authority === a) })).filter((g) => g.list.length);
+const groups = AUTHORITY_ORDER.map((a) => ({ a, list: active.filter((s: any) => s.authority === a) })).filter((g) => g.list.length);
 ---
 <Base title="Sources" description="The allow-list of sources AI Assurance Signals monitors, and the ones it cannot.">
   <h1>Sources</h1>
   <p>Content comes <strong>only</strong> from this allow-list — never from open web search. Each item carries its source's authority badge.</p>
+  <p class="muted small"><strong>Industry</strong> sources are banks, insurers, super funds and financial-services peak bodies writing about their own AI work. <strong>Vendor</strong> sources are cloud and enterprise vendors' customer stories; they are checked against an extra keyword filter so only Australian financial-services stories are processed, and they never lead an edition or a story. Sources marked <em>FS</em> feed the <a href="/financial-services/">Financial Services</a> tracker.</p>
   {groups.map((g) => (
     <section>
       <h2><span class={`badge badge--${g.a}`}>{AUTHORITY_LABEL[g.a]}</span></h2>
       <ul class="plain">
-        {g.list.map((s: any) => <li><a href={s.homepage} rel="noopener">{s.name}</a> <span class="muted small">{s.jurisdiction}{s.paywalled ? " · paywalled (headline and standfirst only)" : ""}</span></li>)}
+        {g.list.map((s: any) => <li><a href={s.homepage} rel="noopener">{s.name}</a> <span class="muted small">{s.jurisdiction}{s.sector === "financial-services" ? " · FS" : ""}{s.paywalled ? " · paywalled (headline and standfirst only)" : ""}</span></li>)}
       </ul>
     </section>
   ))}
