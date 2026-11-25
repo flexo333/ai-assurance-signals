@@ -56,4 +56,8 @@ test("pickRechecks: old-prompt irrelevant news/industry/FS items, newest first, 
   assert.deepEqual(r.map((x) => x.id), ["a12", "a11"]);
   assert.ok(r.every((x) => x.recheck && x.publishedAt && x.url));
   assert.equal(pickRechecks(items, sources, { limit: 10, promptVersion: 3 }).length, 3);
+  // An undated item keeps an explicit null, so the re-check replaces it in place.
+  const undated = pickRechecks([mk("a18", "itnews", 2, { publishedAt: undefined, fetchedAt: "2026-10-30T00:00:00Z" })], sources, { limit: 1, promptVersion: 3 });
+  assert.equal(undated[0].publishedAt, null);
+  assert.ok("publishedAt" in JSON.parse(JSON.stringify(undated[0])));
 });

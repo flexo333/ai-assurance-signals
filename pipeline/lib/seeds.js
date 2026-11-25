@@ -83,5 +83,5 @@ export function pickRechecks(items, sources, { limit = 0, promptVersion }) {
     })
     .sort((a, b) => String(b.publishedAt || b.fetchedAt).localeCompare(String(a.publishedAt || a.fetchedAt)))
     .slice(0, limit)
-    .map((i) => ({ id: i.id, url: i.url, sourceId: i.sourceId, title: i.title, publishedAt: i.publishedAt, fetchedAt: i.fetchedAt, recheck: true }));
+    .map((i) => ({ id: i.id, url: i.url, sourceId: i.sourceId, title: i.title, publishedAt: i.publishedAt ?? null, fetchedAt: i.fetchedAt, recheck: true }));
 }

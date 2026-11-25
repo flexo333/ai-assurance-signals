@@ -293,7 +293,9 @@ async function fetchSeed(seed, src) {
     sourceId: src.id,
     url,
     title: seed.title || extractTitle(page.body) || ex.title || url,
-    publishedAt: seed.publishedAt || reconcileUrlDate(pagePublished(page.body, ex.text), fetchUrl),
+    // A re-check keeps its stored date exactly (even null), so the record is
+    // replaced in place rather than written to another month's directory.
+    publishedAt: seed.recheck ? (seed.publishedAt ?? null) : seed.publishedAt || reconcileUrlDate(pagePublished(page.body, ex.text), fetchUrl),
     feedSummary: null,
     text,
     textSource,

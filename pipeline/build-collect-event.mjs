@@ -29,7 +29,8 @@ const allSources = await loadSources();
 let sources = activeSources(allSources);
 if (only?.length) sources = sources.filter((s) => only.includes(s.id));
 // Known = stored items plus sitemap pages already checked and rejected.
-const knownIds = [...new Set([...(await listItemIds()), ...Object.keys(await loadSeen())])];
+const storedIds = await listItemIds();
+const knownIds = [...new Set([...storedIds, ...Object.keys(await loadSeen())])];
 
 let seedEntries = [];
 try {
@@ -38,7 +39,9 @@ try {
   if (e.code !== "ENOENT") throw e;
 }
 const inScope = (sd) => !only?.length || only.includes(sd.sourceId);
-const { seeds, rejected } = planSeeds(seedEntries, allSources, new Set(knownIds));
+// Seeds skip only STORED items: a page an adapter rejected earlier (data/seen)
+// is exactly what a curated seed exists to bring in.
+const { seeds, rejected } = planSeeds(seedEntries, allSources, new Set(storedIds));
 for (const r of rejected) console.error(`seed rejected: ${r.url} (${r.reason})`);
 const rechecks = recheck ? pickRechecks(await loadItems(), sources, { limit: recheck, promptVersion: PROMPT_VERSION }) : [];
 const allSeeds = [...seeds, ...rechecks].filter(inScope);
