@@ -78,9 +78,10 @@ test("a low-significance item doesn't stop later qualifying items reaching Top S
     mk("a", { classification: { significance: 5, au_relevance: 3, theme: "regulator-guidance" } }),
     mk("b", { classification: { significance: 5, au_relevance: 3, theme: "regulator-guidance" } }),
     mk("c", { classification: { significance: 4, au_relevance: 3, theme: "regulator-guidance" } }),
-    // official sig-2 AU item outranks the sig-3 news item on composite score
+    // official sig-2 AU item (score 3.0) outranks the sig-4 non-AU news item (2.4) on composite score
     mk("low", { classification: { significance: 2, au_relevance: 3, theme: "regulator-guidance" } }),
-    mk("news3", { authority: "news", classification: { significance: 3, au_relevance: 3, theme: "news-commentary" } }),
+    // significance 4: beyond the minimum, extras need >= 4 (#13)
+    mk("news3", { authority: "news", classification: { significance: 4, au_relevance: 0, theme: "news-commentary" } }),
   ];
   const ed = buildEdition(items, { id: "w", from: "2026-11-20T04:17:00Z", to: "2026-11-27T04:17:00Z" });
   const top = ed.topSignals.map((t) => t.id);
@@ -126,4 +127,31 @@ test("buildEdition groups coverage of one story into a single entry with `also`"
   assert.equal(ed.counts.stories, 4);
   assert.ok(!ed.topSignals.some((t) => t.id === "a"));
   assert.ok(!ed.topSignals.find((t) => t.id === "o1").also, "no `also` key on ungrouped entries");
+});
+
+test("#13: products/business/predictions never reach Top Signals; extras need significance >= 4", () => {
+  const W = { id: "w", from: "2026-11-20T04:17:00Z", to: "2026-11-27T04:17:00Z" };
+  const k = (id, kind, sig, o = {}) => mk(id, { classification: { significance: sig, au_relevance: 3, theme: "regulator-guidance", item_kind: kind }, ...o });
+  const items = [
+    k("reg5", "regulation", 5),
+    k("std4", "standard", 4, { authority: "standards" }),
+    k("prod5", "product", 5, { authority: "lab", jurisdiction: "INTL" }), // high score but a product launch
+    k("guid3", "regulator-guidance", 3), // ranks 4th with sig 3: beyond the minimum, excluded
+    k("pred4", "prediction", 4, { authority: "news" }),
+    k("lab3", "safety-framework", 3, { authority: "lab", jurisdiction: "INTL" }), // sig 3 beyond the minimum: excluded
+    k("pol4", "government-policy", 4, { authority: "research" }),
+  ];
+  const top = buildEdition(items, W).topSignals.map((t) => t.id);
+  assert.ok(!top.includes("prod5") && !top.includes("pred4"));
+  assert.ok(!top.includes("lab3"));
+  assert.deepEqual(new Set(top), new Set(["reg5", "std4", "pol4"]));
+});
+
+test("#13: kind weight lowers products in score; legacy items (no item_kind) unaffected", () => {
+  const base = { classification: { significance: 4, au_relevance: 3, theme: "regulator-guidance" } };
+  const legacy = score(mk("a", base), NOW);
+  const product = score(mk("b", { classification: { ...base.classification, item_kind: "product" } }), NOW);
+  const regulation = score(mk("c", { classification: { ...base.classification, item_kind: "regulation" } }), NOW);
+  assert.equal(regulation, legacy);
+  assert.ok(product < legacy * 0.7);
 });

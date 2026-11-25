@@ -24,6 +24,7 @@ const groundedDates = (a, text) => ({
 });
 
 const classificationOf = (a) => ({
+  item_kind: a.item_kind,
   theme: a.theme,
   audiences: a.audiences,
   au_relevance: a.au_relevance,

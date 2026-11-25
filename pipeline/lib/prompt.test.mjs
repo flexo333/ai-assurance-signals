@@ -23,6 +23,7 @@ test("parseAnalysis normalises and clamps", () => {
   assert.equal(a.headline, "OAIC guidance");
   assert.deepEqual(a.quotes, [{ text: "q", supports: "why_it_matters" }, { text: "r", supports: "summary" }]);
   assert.equal(a.theme, "news-commentary");
+  assert.equal(a.item_kind, "other"); // missing/unknown kind → "other"
   assert.deepEqual(a.audiences, ["boards"]);
   assert.equal(a.au_relevance, 3);
   assert.equal(a.significance, 4);
@@ -36,7 +37,7 @@ test("parseAnalysis rejects malformed payloads", () => {
 });
 
 test("schema requires grounding fields", () => {
-  for (const f of ["quotes", "summary", "why_it_matters", "is_ai_governance"]) assert.ok(ANALYSIS_SCHEMA.required.includes(f));
+  for (const f of ["quotes", "summary", "why_it_matters", "is_ai_governance", "item_kind"]) assert.ok(ANALYSIS_SCHEMA.required.includes(f));
 });
 
 test("buildUserPrompt fences the source text", () => {

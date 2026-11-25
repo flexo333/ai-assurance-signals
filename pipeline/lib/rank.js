@@ -15,12 +15,19 @@ export const SECTIONS = [
   { id: "news-commentary", title: "News & Commentary" },
 ];
 
+// Item kinds that never lead an edition and rank lower within sections (#13).
+// Items analysed before PROMPT_VERSION 2 have no item_kind and weigh 1.0.
+export const NON_SIGNAL_KINDS = new Set(["product", "business", "prediction"]);
+export const KIND_WEIGHT = { product: 0.6, business: 0.5, prediction: 0.5, commentary: 0.85 };
+// Top Signals beyond the minimum need at least this significance (#13).
+export const TOP_EXTRA_MIN_SIGNIFICANCE = 4;
+
 export const SECTION_CAP = 8;
 export const TOP_MIN = 3;
 export const TOP_MAX = 5;
 export const TOP_MAX_NEWS = 2;
 
-/** significance × authority × AU boost × recency (7-day half-life within the window). */
+/** significance × authority × AU boost × recency × grounding × kind weight. */
 export function score(item, now = Date.now()) {
   const c = item.classification || {};
   const sig = c.significance ?? 2;
@@ -30,7 +37,8 @@ export function score(item, now = Date.now()) {
   const ageDays = Number.isFinite(t) ? Math.max(0, (now - t) / 864e5) : 7;
   const recency = 0.5 ** (ageDays / 14);
   const grounded = item.status === "summarised" ? 1 : 0.5;
-  return Math.round(sig * auth * au * recency * grounded * 1000) / 1000;
+  const kind = KIND_WEIGHT[c.item_kind] ?? 1;
+  return Math.round(sig * auth * au * recency * grounded * kind * 1000) / 1000;
 }
 
 /**
@@ -103,9 +111,13 @@ export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
     if (top.length >= TOP_MAX) break;
     if (i.status !== "summarised") continue;
     if (i.authority === "news" && news >= TOP_MAX_NEWS) continue;
-    // Below significance 3 only to make up the minimum. Ranking is by composite
-    // score, so later items may still qualify — skip, don't stop.
-    if ((i.classification?.significance ?? 0) < 3 && top.length >= TOP_MIN) continue;
+    // Products, business news and predictions never lead an edition (#13).
+    if (NON_SIGNAL_KINDS.has(i.classification?.item_kind)) continue;
+    // Significance gates (ranking is by composite score, so later items may still
+    // qualify: skip, don't stop). Up to the minimum, sig >= 3 suffices (lower only
+    // to make up the minimum); beyond it, sig >= TOP_EXTRA_MIN_SIGNIFICANCE.
+    const sig = i.classification?.significance ?? 0;
+    if (top.length >= TOP_MIN && sig < TOP_EXTRA_MIN_SIGNIFICANCE) continue;
     top.push(ref(st));
     if (i.authority === "news") news++;
   }
