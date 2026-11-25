@@ -24,10 +24,12 @@ seeds:
     source: anz
     note: "Bluenotes: BEHIND THE NUMBERS: AI in action at ANZ (verified 2026-11-25)"
 
-  # Earlier ANZ AI engineering signals (before the archive start; landmark context).
+  # ANZ enterprise AI control plane for agent governance (iTnews).
   - url: https://www.itnews.com.au/news/anz-stands-up-an-enterprise-ai-control-plane-630221
     source: itnews
     note: iTnews, 9 Nov 2026 — ANZ enterprise AI control plane for agent governance (verified 2026-11-25)
+
+  # Earlier ANZ AI engineering signals (before the archive start; landmark context).
   - url: https://www.itnews.com.au/news/seven-percent-of-anz-code-in-past-six-months-generated-by-ai-612947
     source: itnews
     note: iTnews, 11 Nov 2024 (verified 2026-11-25)

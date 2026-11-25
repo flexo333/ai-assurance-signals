@@ -6,7 +6,8 @@ import {
   parseODataDate,
   legislationDocUrls,
   parseLegislationTitles,
-  formatLegislationText,
+  parseODataPage,
+  isLegislationAppShell,
 } from "./legislation.js";
 
 const SAMPLE_ODATA = JSON.stringify({
@@ -56,23 +57,49 @@ const SAMPLE_ODATA = JSON.stringify({
   ],
 });
 
-test("toODataDateTime strips Z and milliseconds for FrlEnableQuery", () => {
-  assert.equal(toODataDateTime("2026-11-17T20:30:45.123Z"), "2026-11-17T20:30:45");
+test("toODataDateTime converts to Canberra local time, without Z or milliseconds", () => {
+  // 20:30:45 UTC on 17 Nov = 07:30:45 AEDT on 18 Nov (UTC+11).
+  assert.equal(toODataDateTime("2026-11-17T20:30:45.123Z"), "2026-11-18T07:30:45");
+  // Winter (AEST, UTC+10).
+  assert.equal(toODataDateTime("2026-07-01T00:00:00.000Z"), "2026-07-01T10:00:00");
   assert.equal(toODataDateTime("not-a-date"), null);
   assert.equal(toODataDateTime(null), null);
 });
 
-test("buildLegislationQueryUrl constructs filtered OData query", () => {
-  const u = buildLegislationQueryUrl({ since: "2026-11-01T00:00:00.000Z", top: 50 });
+test("buildLegislationQueryUrl filters by window and collection server-side, with paging", () => {
+  const u = buildLegislationQueryUrl({ since: "2026-10-31T13:00:00.000Z", top: 50 });
   assert.match(u, /^https:\/\/api\.prod\.legislation\.gov\.au\/v1\/Titles\?/);
-  assert.match(u, /\$filter=asMadeRegisteredAt%20ge%202026-11-01T00%3A00%3A00/);
+  const filter = decodeURIComponent(u.match(/\$filter=([^&]+)/)[1]);
+  assert.equal(filter, "asMadeRegisteredAt ge 2026-11-01T00:00:00 and (collection eq 'Act' or collection eq 'LegislativeInstrument')");
   assert.match(u, /\$top=50/);
+  assert.doesNotMatch(u, /\$skip/);
+  assert.match(buildLegislationQueryUrl({ since: "2026-11-01T00:00:00Z", skip: 100 }), /\$skip=100/);
+  // Unsafe collection names never reach the filter.
+  assert.doesNotMatch(buildLegislationQueryUrl({ collections: ["Act' or 1 eq 1 or 'x"] }), /\$filter=/);
 });
 
-test("parseODataDate handles 7-digit fractional seconds without Z", () => {
-  assert.equal(parseODataDate("2026-11-25T15:50:25.5796156"), "2026-11-25T15:50:25.579Z");
-  assert.equal(parseODataDate("2026-11-24T00:00:00"), "2026-11-24T00:00:00.000Z");
+test("parseODataDate reads offset-less timestamps as Canberra time; makingDate as a calendar day", () => {
+  assert.equal(parseODataDate("2026-11-25T15:50:25.5796156"), "2026-11-25T04:50:25.579Z");
+  assert.equal(parseODataDate("2026-07-01T09:00:00"), "2026-06-30T23:00:00.000Z");
+  assert.equal(parseODataDate("2026-11-24T00:00:00", { timeZone: "UTC" }), "2026-11-24T00:00:00.000Z");
+  assert.equal(parseODataDate("2026-11-25T04:50:25Z"), "2026-11-25T04:50:25.000Z");
   assert.equal(parseODataDate(null), null);
+  assert.equal(parseODataDate("garbage"), null);
+});
+
+test("parseODataPage returns rows and nextLink, or null", () => {
+  assert.deepEqual(parseODataPage(JSON.stringify({ value: [{ id: "x" }], "@odata.nextLink": "https://api/v1/Titles?$skip=100" })), {
+    rows: [{ id: "x" }],
+    nextLink: "https://api/v1/Titles?$skip=100",
+  });
+  assert.equal(parseODataPage(JSON.stringify({ value: [] })).nextLink, null);
+  assert.equal(parseODataPage("<html>shell</html>"), null);
+});
+
+test("isLegislationAppShell detects the Angular shell, not EPUB XHTML", () => {
+  assert.equal(isLegislationAppShell('<html><head><base href="/"></head><body><app-root></app-root></body></html>'), true);
+  assert.equal(isLegislationAppShell('<html ng-version="17.3.0"><body></body></html>'), true);
+  assert.equal(isLegislationAppShell('<?xml version="1.0"?><html xmlns="http://www.w3.org/1999/xhtml"><body><p class="Title">EXPLANATORY STATEMENT</p></body></html>'), false);
 });
 
 test("parseLegislationTitles keeps Acts and LegislativeInstruments in window, skipping Gazettes and known IDs", () => {
@@ -106,13 +133,12 @@ test("parseLegislationTitles returns null on invalid JSON or non-OData object", 
   assert.equal(parseLegislationTitles("{}"), null);
 });
 
-test("formatLegislationText includes grounded metadata and body text", () => {
-  const [item] = parseLegislationTitles(SAMPLE_ODATA, { since: "2026-07-01T00:00:00.000Z" });
-  const text = formatLegislationText(item, "EXPLANATORY STATEMENT\nThis instrument prescribes transparency rules.");
-  assert.match(text, /Federal Register of Legislation — Legislative Instrument \(F2026L01561\)/);
-  assert.match(text, /Registered 25 Nov 2026/);
-  assert.match(text, /Made 24 Nov 2026/);
-  assert.match(text, /EXPLANATORY STATEMENT/);
+test("parseLegislationTitles accepts pre-parsed rows and dates registration in Canberra time", () => {
+  const rows = JSON.parse(SAMPLE_ODATA).value;
+  const [item] = parseLegislationTitles(rows, { since: "2026-07-01T00:00:00.000Z" });
+  assert.equal(item.registerId, "F2026L01561");
+  assert.equal(item.date, "2026-11-25T04:50:25.579Z");
+  assert.equal(item.makingDate, "2026-11-24T00:00:00.000Z");
 });
 
 test("legislationDocUrls returns es+text for LegislativeInstrument and text for Act", () => {

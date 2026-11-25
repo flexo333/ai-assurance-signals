@@ -21,6 +21,9 @@ import {
   newestItem,
   discoverFeedLinks,
   isAllowed,
+  parseSitemap,
+  extractListingLinks,
+  selectSitemapEntries,
 } from "./lib/feed-pure.js";
 import { parseCitizenSpaceItems } from "./lib/citizen-space.js";
 import { buildLegislationQueryUrl, parseLegislationTitles, DEFAULT_LEGISLATION_API } from "./lib/legislation.js";
@@ -54,6 +57,77 @@ async function checkFeed(url) {
     recent30d: recent.length,
     aiRecent30d: recent.filter((i) => isAiRelated(i.title)).length,
     newest: newest ? { title: newest.title, date: newest.date, link: newest.link } : null,
+  };
+}
+
+// Probe a `method: sitemap | listing` source's configured sitemap(s) or
+// listing page(s) (robots-checked) and count the URLs its include/exclude
+// rules would pick, so a wrong URL or regex shows up as a failure rather than
+// passing on the strength of the homepage alone.
+async function checkPageSource(src) {
+  const isSitemap = src.method === "sitemap";
+  const urls = [].concat((isSitemap ? src.sitemap : src.listing) || []);
+  const entries = [];
+  let okCount = 0;
+  let allowedAny = false;
+  let lastStatus = null;
+  let lastError;
+  const fetchOk = async (url) => {
+    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
+    allowedAny = true;
+    const r = await get(url);
+    lastStatus = r.status;
+    lastError = r.error;
+    return r.ok ? r : null;
+  };
+  for (const url of urls) {
+    const r = await fetchOk(url);
+    if (!r) continue;
+    if (isSitemap) {
+      const root = parseSitemap(r.body);
+      if (!root) continue;
+      okCount++;
+      if (root.isIndex) {
+        for (const child of root.entries.slice(0, 8)) {
+          const c = await fetchOk(child.loc);
+          entries.push(...((c && parseSitemap(c.body)?.entries) || []));
+        }
+      } else entries.push(...root.entries);
+    } else {
+      okCount++;
+      entries.push(...extractListingLinks(r.body, r.url));
+    }
+  }
+  const matching = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, idOf: (u) => u, limit: Infinity });
+  const cutoff = new Date(Date.now() - RECENT_DAYS * 864e5).toISOString();
+  const recent = matching.filter((e) => e.lastmod && e.lastmod >= cutoff);
+  const slug = (loc) => decodeURIComponent(String(loc).split("/").filter(Boolean).pop() || "").replace(/[-_]/g, " ");
+  const kind = isSitemap ? "sitemap" : "listing";
+  const status = !urls.length
+    ? `no-${kind}-configured`
+    : !allowedAny
+      ? "robots-disallowed"
+      : !okCount
+        ? lastStatus ? `${kind}-http-${lastStatus}` : `${kind}-unavailable:${lastError || "?"}`
+        : !matching.length
+          ? "no-matching-urls"
+          : okCount < urls.length
+            ? `partial (${okCount}/${urls.length})`
+            : "ok";
+  return {
+    status,
+    entry: {
+      url: urls[0] || null,
+      allowed: allowedAny,
+      status: lastStatus,
+      error: lastError,
+      isFeed: matching.length > 0,
+      type: kind,
+      items: matching.length,
+      recent30d: isSitemap ? recent.length : matching.length,
+      aiRecent30d: (isSitemap ? recent : matching).filter((e) => isAiRelated(slug(e.loc))).length,
+      newest: matching[0] ? { title: slug(matching[0].loc), date: matching[0].lastmod || null, link: matching[0].loc } : null,
+    },
   };
 }
 
@@ -181,16 +255,17 @@ async function checkSource(src) {
   // is disallowed (checkFeed applies robots per feed URL).
   let method;
   let status;
-  if (working.length) [method, status] = [working[0].type === "atom" ? "atom" : "rss", "ok"];
+  const page = src.method === "sitemap" || src.method === "listing" ? await checkPageSource(src) : null;
+  if (page) feeds.push(page.entry);
+  if (page) [method, status] = [page.entry.isFeed ? src.method : "none", page.status];
+  else if (working.length) [method, status] = [working[0].type === "atom" ? "atom" : "rss", "ok"];
   else if (robots.parsed.state === "unreachable") [method, status] = ["none", "robots-unreachable"];
   else if (!homeAllowed) [method, status] = ["none", "robots-disallowed"];
-  else if (src.method === "sitemap" && home?.ok) [method, status] = ["sitemap", "ok"];
-  else if (src.method === "listing" && home?.ok) [method, status] = ["listing", "ok"];
   else if (home?.ok && robots.parsed.sitemaps.length) [method, status] = ["sitemap", "needs-config"];
   else if (home?.ok) [method, status] = ["html-list", "needs-selector"];
   else [method, status] = ["none", home?.status ? `http-${home.status}` : `unreachable:${home?.error || "?"}`];
 
-  const recFeed = working[0]?.url || (status === "ok" && (src.method === "sitemap" || src.method === "listing") ? [].concat(src.sitemap || src.listing)[0] || null : null);
+  const recFeed = page ? (page.entry.isFeed ? page.entry.url : null) : working[0]?.url || null;
 
   return {
     id: src.id,

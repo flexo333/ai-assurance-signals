@@ -166,6 +166,8 @@ test("dateFromUrl / reconcileUrlDate (#31)", async () => {
   assert.equal(dateFromUrl("https://www.afr.com/companies/financial-services/story-20261125-p61gew"), "2026-11-25T00:00:00.000Z");
   assert.equal(dateFromUrl("https://asic.gov.au/news/2026-releases/x/"), null);
   assert.equal(dateFromUrl("https://x/2026/13/y/"), null);
+  assert.equal(dateFromUrl("https://x/media-releases/2026/31-february/"), null);
+  assert.equal(dateFromUrl("https://www.afr.com/companies/financial-services/story-20260231-p61gew"), null);
   assert.equal(dateFromUrl("https://x/2026/news/y/"), null);
   const u = "https://www.anz.com.au/bluenotes/2026/November/ai-in-action-at-anz/";
   assert.equal(reconcileUrlDate("2026-05-01", u), "2026-11-01T00:00:00.000Z"); // stale template date

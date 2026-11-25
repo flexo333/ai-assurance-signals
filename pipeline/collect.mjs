@@ -9,7 +9,7 @@
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries, extractListingLinks, reconcileUrlDate } from "./lib/feed-pure.js";
 import { parseCitizenSpaceItems, parseCsBody } from "./lib/citizen-space.js";
-import { buildLegislationQueryUrl, parseLegislationTitles, formatLegislationText, DEFAULT_LEGISLATION_API } from "./lib/legislation.js";
+import { buildLegislationQueryUrl, parseODataPage, parseLegislationTitles, isLegislationAppShell, DEFAULT_LEGISLATION_API, DEFAULT_COLLECTIONS } from "./lib/legislation.js";
 import { isAiRelated, passesMustMatch } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
@@ -33,34 +33,51 @@ async function pool(items, n, fn) {
   return out;
 }
 
-// The freshest working, robots-permitted feed among the configured `feed`,
-// the `feeds` candidates and <link rel=alternate> autodiscovery on the
-// homepage. "Freshest" (newest dated item), not "first": some configured
-// candidates work but are stale — e.g. a gov.uk search feed returning
-// months-old items while the organisation feed is current.
-async function resolveFeed(src) {
+// The working, robots-permitted feeds to read for a source. Every configured
+// `feed` / `feeds` entry that works is read (a source may split its coverage
+// across feeds, e.g. AFR technology + policy); <link rel=alternate>
+// autodiscovery on the homepage adds its freshest feed only when it is newer
+// than every configured one (or none works), since some configured candidates
+// work but are stale — e.g. a gov.uk search feed returning months-old items
+// while the organisation feed is current. Stale feeds cost nothing extra:
+// their items fall outside the window.
+async function resolveFeeds(src) {
   const tried = new Set();
-  const candidates = [];
-  const tryUrl = async (url) => {
-    if (!url || tried.has(url)) return;
+  const fetchFeed = async (url) => {
+    if (!url || tried.has(url)) return null;
     tried.add(url);
-    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return;
+    if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
     const r = await get(url);
-    if (!r.ok || !feedType(r.body)) return;
+    if (!r.ok || !feedType(r.body)) return null;
     const items = parseFeedItems(r.body);
-    if (!items.length) return;
-    candidates.push({ url: r.url, body: r.body, newest: newestItem(items)?.date || "" });
+    if (!items.length) return null;
+    return { url: r.url, body: r.body, newest: newestItem(items)?.date || "" };
   };
-  for (const url of [src.feed, ...(src.feeds || [])]) await tryUrl(url);
+  const configured = [];
+  for (const url of [src.feed, ...(src.feeds || [])]) {
+    const f = await fetchFeed(url);
+    if (f) configured.push(f);
+  }
+  const discovered = [];
   if (src.discover !== false && src.homepage && isAllowed((await robotsFor(src.homepage)).parsed, USER_AGENT, src.homepage)) {
     const home = await get(src.homepage);
-    if (home.ok) for (const url of discoverFeedLinks(home.body, home.url)) await tryUrl(url);
+    if (home.ok) {
+      for (const url of discoverFeedLinks(home.body, home.url)) {
+        const f = await fetchFeed(url);
+        if (f) discovered.push(f);
+      }
+    }
   }
-  candidates.sort((a, b) => b.newest.localeCompare(a.newest));
-  return candidates[0] || null;
+  discovered.sort((a, b) => b.newest.localeCompare(a.newest));
+  const freshestConfigured = configured.reduce((m, f) => (f.newest > m ? f.newest : m), "");
+  const out = [...configured];
+  if (discovered[0] && (!configured.length || discovered[0].newest > freshestConfigured)) out.push(discovered[0]);
+  return out;
 }
 
 const DEFAULT_SITEMAP_PAGES = 25;
+const LEGISLATION_PAGE_SIZE = 100;
+const LEGISLATION_MAX_PAGES = 10;
 
 /**
  * Sitemap adapter (#12) for sources without a usable feed. sources.yaml:
@@ -187,17 +204,37 @@ async function checkPages(src, picked, { since, log, dropped }) {
  * XHTML on www.legislation.gov.au (which is otherwise an Angular SPA shell).
  */
 async function listLegislation(src, { since, known }) {
-  const queryUrl = buildLegislationQueryUrl({ apiBase: src.api || DEFAULT_LEGISLATION_API, since, top: 100 });
-  const log = { id: src.id, feed: queryUrl, method: "legislation", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const collections = src.collections || DEFAULT_COLLECTIONS;
+  const apiBase = src.api || DEFAULT_LEGISLATION_API;
+  const firstUrl = buildLegislationQueryUrl({ apiBase, since, top: LEGISLATION_PAGE_SIZE, collections });
+  const log = { id: src.id, feed: firstUrl, method: "legislation", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const dropped = [];
-  if (!isAllowed((await robotsFor(queryUrl)).parsed, USER_AGENT, queryUrl)) {
+  if (!isAllowed((await robotsFor(firstUrl)).parsed, USER_AGENT, firstUrl)) {
     return { log: { ...log, status: "robots-disallowed" }, candidates: [], dropped };
   }
-  const res = await get(queryUrl);
-  if (!res.ok) return { log: { ...log, status: "api-unavailable" }, candidates: [], dropped };
-  const picked = parseLegislationTitles(res.body, {
+  // Page through every title registered in the window (following
+  // @odata.nextLink, else $skip), so a busy week can't push titles past one page.
+  const rows = [];
+  let url = firstUrl;
+  let pages = 0;
+  while (url && pages < LEGISLATION_MAX_PAGES) {
+    const res = await get(url);
+    const page = res.ok ? parseODataPage(res.body) : null;
+    if (!page) {
+      if (!pages) return { log: { ...log, status: "api-unavailable" }, candidates: [], dropped };
+      log.status = `partial (${pages} pages)`;
+      break;
+    }
+    pages++;
+    rows.push(...page.rows);
+    if (page.nextLink) url = new URL(page.nextLink, url).toString();
+    else if (page.rows.length >= LEGISLATION_PAGE_SIZE) url = buildLegislationQueryUrl({ apiBase, since, top: LEGISLATION_PAGE_SIZE, skip: pages * LEGISLATION_PAGE_SIZE, collections });
+    else url = null;
+  }
+  if (url && pages >= LEGISLATION_MAX_PAGES) log.status = `truncated (${pages} pages)`;
+  const picked = parseLegislationTitles(rows, {
     webBase: src.homepage,
-    collections: src.collections,
+    collections,
     include: src.include,
     exclude: src.exclude,
     since,
@@ -205,8 +242,7 @@ async function listLegislation(src, { since, known }) {
     idOf: idOfUrl,
     limit: src.max_pages || DEFAULT_SITEMAP_PAGES,
   });
-  if (!picked) return { log: { ...log, status: "api-unavailable" }, candidates: [], dropped };
-  log.feedItems = picked.length;
+  log.feedItems = rows.length;
 
   const candidates = [];
   for (const entry of picked) {
@@ -215,21 +251,26 @@ async function listLegislation(src, { since, known }) {
     log.sample ??= { link: entry.url, date: entry.date, since };
     log.inWindow++;
     let bodyText = "";
-    let docFetched = false;
+    let answered = false; // the register gave a definitive answer for this title
     for (const docUrl of entry.docUrls) {
       if (!isAllowed((await robotsFor(docUrl)).parsed, USER_AGENT, docUrl)) continue;
       const docRes = await get(docUrl);
       if (!docRes.ok) continue;
-      docFetched = true;
+      answered = true;
+      // The SPA answers unknown routes (e.g. an instrument with no ES) with its
+      // app shell: no document there, so try the next kind.
+      if (isLegislationAppShell(docRes.body)) continue;
       const ex = extractMainText(docRes.body, docRes.url);
       if (ex.text) {
         bodyText = ex.text;
         break;
       }
     }
-    if (!docFetched && !isAiRelated(entry.title)) continue; // transient doc failure: retry next run
-    const fullText = formatLegislationText(entry, bodyText);
-    if ((!src.ai_specific && !isAiRelated(fullText)) || !passesMustMatch(src.must_match, fullText)) {
+    if (!answered) continue; // transient doc failure: retried next run
+    // Keyword check on the title and the document; the model is given the
+    // register's own document text only (nothing synthesised to ground against).
+    const hay = `${entry.title}\n${bodyText}`;
+    if ((!src.ai_specific && !isAiRelated(hay)) || !passesMustMatch(src.must_match, hay)) {
       log.keywordDropped++;
       dropped.push(id);
       continue;
@@ -241,7 +282,7 @@ async function listLegislation(src, { since, known }) {
       date: entry.date,
       summary: null,
       src,
-      prefetched: { text: fullText, textSource: "article", extractMethod: "legislation-epub" },
+      prefetched: { text: bodyText, textSource: "article", extractMethod: bodyText ? "legislation-epub" : "legislation-no-document" },
     });
     if (candidates.length >= MAX_ITEMS_PER_SOURCE) break;
   }
@@ -340,22 +381,28 @@ async function listSource(src, { since, known }) {
   if (src.method === "citizen-space") return listCitizenSpace(src, { since, known });
   if (src.method === "legislation") return listLegislation(src, { since, known });
   const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
-  const feed = await resolveFeed(src);
-  if (!feed) return { log: { ...log, status: "no-feed" }, candidates: [] };
-  log.feed = feed.url;
-  const parsed = parseFeedItems(feed.body).filter((i) => i.link && i.title);
+  const feeds = await resolveFeeds(src);
+  if (!feeds.length) return { log: { ...log, status: "no-feed" }, candidates: [] };
+  log.feed = feeds.map((f) => f.url).join(" + ");
+  const parsed = feeds
+    .flatMap((f) => parseFeedItems(f.body).map((i) => ({ ...i, feedUrl: f.url })))
+    .filter((i) => i.link && i.title)
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
   log.feedItems = parsed.length;
   const candidates = [];
-  for (const i of parsed) {
+  const listedIds = new Set();
+  for (const { feedUrl, ...i } of parsed) {
     let url;
     log.sample ??= { link: i.link, date: i.date, since };
     try {
-      url = canonicalUrl(new URL(i.link, feed.url).toString());
+      url = canonicalUrl(new URL(i.link, feedUrl).toString());
     } catch {
       log.skipped.badUrl++;
       continue;
     }
     const id = itemId(url);
+    if (listedIds.has(id)) continue; // same item in two of the source's feeds
+    listedIds.add(id);
     if (known.has(id)) {
       log.skipped.known++;
       continue;

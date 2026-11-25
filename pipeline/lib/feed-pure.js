@@ -234,6 +234,12 @@ export function extractListingLinks(html, baseUrl) {
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 
+/** ISO UTC midnight for a real calendar date, else null (no Feb 31 rollover). */
+const isoDay = (y, m, d) => {
+  const t = new Date(Date.UTC(Number(y), Number(m) - 1, Number(d)));
+  return t.getUTCFullYear() === Number(y) && t.getUTCMonth() === Number(m) - 1 && t.getUTCDate() === Number(d) ? t.toISOString() : null;
+};
+
 const monthNum = (tok) =>
   /^\d\d$/.test(tok)
     ? Number(tok)
@@ -248,16 +254,12 @@ export function dateFromUrl(url) {
   const s = String(url);
   const dm = s.match(/\/(20\d\d)\/(\d{1,2})-([A-Za-z]{3,9})\d*(?:\/|$)/);
   if (dm) {
-    const mm = monthNum(dm[3]);
-    const dd = Number(dm[2]);
-    if (mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31) {
-      return `${dm[1]}-${String(mm).padStart(2, "0")}-${String(dd).padStart(2, "0")}T00:00:00.000Z`;
-    }
+    const iso = isoDay(dm[1], monthNum(dm[3]), dm[2]);
+    if (iso) return iso;
   }
   const afr = s.match(/-(20\d\d)(\d\d)(\d\d)-p[a-z0-9]+(?:[/?#]|$)/i);
-  if (afr && Number(afr[2]) >= 1 && Number(afr[2]) <= 12 && Number(afr[3]) >= 1 && Number(afr[3]) <= 31) {
-    return `${afr[1]}-${afr[2]}-${afr[3]}T00:00:00.000Z`;
-  }
+  const afrIso = afr && isoDay(afr[1], afr[2], afr[3]);
+  if (afrIso) return afrIso;
   const ym = s.match(/\/(20\d\d)\/(\d\d|[A-Za-z]{3,9})\//);
   if (ym) {
     const mm = monthNum(ym[2]);

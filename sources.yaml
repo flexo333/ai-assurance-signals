@@ -945,4 +945,11 @@ sources:
     discover: false
     hosts: [azure.microsoft.com]
     ai_specific: false
-    must_match: *au_fs
+    # General Microsoft Cloud / Azure blogs, so a bare "Australia" (e.g. the
+    # Australia East region) isn't enough: an Australian FS institution or
+    # regulator by name, or Australia together with a financial-services term.
+    must_match:
+      - "\\b(NAB|ANZ|Westpac|Macquarie|Suncorp|IAG|QBE|AMP|Bendigo|BOQ|ASX)\\b"
+      - "\\b(National Australia Bank|Commonwealth Bank|CommBank|AustralianSuper|Aware Super|Australian Retirement Trust|HESTA|Insurance Australia)\\b"
+      - "\\b(APRA|ASIC|AUSTRAC|Reserve Bank of Australia)\\b"
+      - "^(?=[\\s\\S]*\\bAustralia(n)?\\b)[\\s\\S]*\\b(banks?|banking|financial services|insurers?|insurance|superannuation|super funds?|payments)\\b"
