@@ -23,11 +23,17 @@ export function extractMainText(html, url) {
       document.querySelector('meta[name="description"]')?.getAttribute("content") ||
       document.querySelector('meta[property="og:description"]')?.getAttribute("content") ||
       "";
+    // Readability mutates the DOM, so take the fallback text first (from a fresh parse).
+    const fallback = mainTextFallback(html);
     const article = new Readability(document, { charThreshold: 200 }).parse();
     const text = article?.textContent ? stripHtml(article.content || "") || article.textContent : "";
     const clean = text.replace(/\n{3,}/g, "\n\n").trim();
     if (clean.length >= MIN_ARTICLE_CHARS) {
       return { text: clean, title: article.title || null, method: "readability" };
+    }
+    // Readability misses some CMS layouts (e.g. APRA's Drupal paragraph fields).
+    if (fallback.length >= MIN_ARTICLE_CHARS) {
+      return { text: fallback, title: article?.title || null, method: "main-text" };
     }
     return { text: meta.trim(), title: article?.title || null, method: meta ? "meta-description" : "none" };
   } catch (err) {
@@ -51,4 +57,110 @@ export function extractStandfirst(html) {
   } catch {
     return "";
   }
+}
+
+/**
+ * Publication date from page metadata (ISO string) or null. Checks, in order:
+ * article:published_time, dcterms.issued / DC.date.issued / dcterms.date /
+ * DC.date, JSON-LD datePublished, then the first <time datetime>.
+ */
+export function extractPublished(html) {
+  try {
+    const { document } = parseHTML(html);
+    const meta = (sel) => document.querySelector(sel)?.getAttribute("content");
+    const candidates = [
+      meta('meta[property="article:published_time"]'),
+      meta('meta[name="displayDate"]'), // ASIC: "25 November 2026"
+      meta('meta[name="dcterms.issued"]'),
+      meta('meta[name="dcterms.date.created"]'), // ASIC: page created = release date
+      meta('meta[name="DC.date.issued"]'),
+      meta('meta[name="dcterms.date"]'),
+      meta('meta[name="DC.date"]'),
+      meta('meta[name="date"]'),
+    ];
+    for (const s of document.querySelectorAll('script[type="application/ld+json"]')) {
+      const m = String(s.textContent || "").match(/"datePublished"\s*:\s*"([^"]+)"/);
+      if (m) candidates.push(m[1]);
+    }
+    candidates.push(document.querySelector("time[datetime]")?.getAttribute("datetime"));
+    for (const c of candidates) {
+      const iso = parseDateString(c);
+      if (iso) return iso;
+    }
+  } catch {
+    /* fall through */
+  }
+  return null;
+}
+
+/** "25 November 2026" (as UTC midnight) or any Date.parse-able string → ISO, else null. */
+export function parseDateString(c) {
+  if (!c) return null;
+  const m = String(c).trim().match(/^(\d{1,2}) ([A-Za-z]+) (\d{4})$/);
+  const t = m ? Date.parse(`${m[1]} ${m[2]} ${m[3]} 00:00:00 UTC`) : Date.parse(c);
+  return Number.isNaN(t) ? null : new Date(t).toISOString();
+}
+
+/** Page title: og:title, then <title> (site suffix after " | " or " - " trimmed). */
+export function extractTitle(html) {
+  try {
+    const { document } = parseHTML(html);
+    const og = document.querySelector('meta[property="og:title"]')?.getAttribute("content");
+    const t = (og || document.querySelector("title")?.textContent || "").trim();
+    return t.replace(/\s+[|\u2013\u2014-]\s+[^|\u2013\u2014-]{2,60}$/, "").trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+const CHROME = "script, style, noscript, template, svg, header, nav, footer, aside, form, iframe, " +
+  '[role="navigation"], [role="banner"], [role="contentinfo"], [aria-hidden="true"], ' +
+  '[class*="menu"], [class*="breadcrumb"], [class*="skip-link"], [class*="cookie"], [class*="share"], [class*="related"]';
+
+/** Main-content text with page chrome removed: main / article / [role=main] / body. */
+export function mainTextFallback(html) {
+  try {
+    const { document } = parseHTML(html);
+    for (const el of [...document.querySelectorAll(CHROME)]) el.remove();
+    const root = document.querySelector("main") || document.querySelector('[role="main"]') || document.querySelector("article") || document.body;
+    if (!root) return "";
+    // Block elements → line breaks, so paragraphs don't run together.
+    for (const el of root.querySelectorAll("p, li, h1, h2, h3, h4, h5, h6, tr, div, section, br")) el.after(document.createTextNode("\n"));
+    return String(root.textContent || "")
+      .replace(/[ \t\u00a0]+/g, " ")
+      .replace(/\s*\n\s*/g, "\n")
+      .replace(/\n{3,}/g, "\n\n")
+      .trim();
+  } catch {
+    return "";
+  }
+}
+
+const MONTHS_RE = "January|February|March|April|May|June|July|August|September|October|November|December";
+
+/** First "D Month YYYY" in the opening of the given text (visible page date), as ISO date. */
+export function firstVisibleDate(text, within = 1500) {
+  const m = String(text || "").slice(0, within).match(new RegExp(`\\b(\\d{1,2}) (${MONTHS_RE}) (20\\d{2})\\b`));
+  if (!m) return null;
+  const t = Date.parse(`${m[1]} ${m[2]} ${m[3]} 00:00:00 UTC`);
+  return Number.isNaN(t) ? null : new Date(t).toISOString();
+}
+
+/**
+ * Date shown next to a "Published" / "Release date" / "Date published" /
+ * "Issued" / "Date" label in the page (e.g. APRA's "Published | 12 November 2026"
+ * pill). Works on raw HTML: tags are flattened to spaces first.
+ */
+export function labelledDate(html) {
+  const text = String(html || "").replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+  const re = new RegExp(`\\b(?:Published|Release date|Date published|Date issued|Issued|Released|Date)\\s*:?\\s*(\\d{1,2}) (${MONTHS_RE}) (20\\d{2})\\b`, "i");
+  const m = text.match(re);
+  if (!m) return null;
+  const t = Date.parse(`${m[1]} ${m[2]} ${m[3]} 00:00:00 UTC`);
+  return Number.isNaN(t) ? null : new Date(t).toISOString();
+}
+
+/** Best publication date: metadata, then a labelled date, then the first visible date in main text. */
+export function pagePublished(html, mainText) {
+  return extractPublished(html) || labelledDate(html) || firstVisibleDate(mainText || mainTextFallback(html));
 }

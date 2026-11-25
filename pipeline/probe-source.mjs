@@ -4,7 +4,8 @@
 // and advertised feeds. Read-only, robots-respecting, honest User-Agent.
 //
 // Usage: node probe-source.mjs <probe-id>...   (probes defined in PROBES below)
-// Runs in .github/workflows/source-check.yml on PRs that touch it.
+// Run it locally (a cloud dev session needs the site's host allowed in its
+// environment, plus NODE_USE_ENV_PROXY=1 so Node's fetch uses the proxy).
 
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { isAllowed, discoverFeedLinks, feedType, parseFeedItems } from "./lib/feed-pure.js";

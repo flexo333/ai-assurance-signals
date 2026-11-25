@@ -62,11 +62,6 @@ jobs:
       - name: Test (pure modules)
         run: node --test
 
-      - name: Probe site structure (PRs only; for configuring adapters, #12)
-        if: github.event_name == 'pull_request'
-        continue-on-error: true
-        run: node probe-source.mjs
-
       - name: Check sources
         env:
           ONLY: ${{ github.event.inputs.only }}

@@ -167,3 +167,37 @@ export function robotsFromResponse(status, body) {
     state: "unreachable",
   };
 }
+
+/**
+ * Parse a sitemap or sitemap index.
+ * @returns { isIndex, entries: [{ loc, lastmod }] } — lastmod as ISO string or null.
+ */
+export function parseSitemap(xml) {
+  const body = String(xml ?? "");
+  const isIndex = /<sitemapindex[\s>]/i.test(body);
+  const entries = [...body.matchAll(/<(?:url|sitemap)>([\s\S]*?)<\/(?:url|sitemap)>/gi)]
+    .map(([, b]) => {
+      const loc = (b.match(/<loc>\s*(?:<!\[CDATA\[)?\s*([^<\s\]]+)/i) || [])[1];
+      const lm = (b.match(/<lastmod>\s*([^<\s]+)\s*<\/lastmod>/i) || [])[1];
+      const t = lm ? Date.parse(lm) : NaN;
+      return loc ? { loc: loc.replace(/&amp;/g, "&"), lastmod: Number.isNaN(t) ? null : new Date(t).toISOString() } : null;
+    })
+    .filter(Boolean);
+  return { isIndex, entries };
+}
+
+/**
+ * Pure: pick sitemap entries for a source.
+ * include/exclude are regex strings matched against the URL; newest lastmod first;
+ * entries with lastmod older than `since` are dropped (undated entries kept).
+ */
+export function selectSitemapEntries(entries, { include, exclude, since, known = new Set(), idOf, limit = 25 }) {
+  const inc = include ? new RegExp(include) : null;
+  const exc = exclude ? new RegExp(exclude, "i") : null;
+  return entries
+    .filter((e) => (!inc || inc.test(e.loc)) && !(exc && exc.test(e.loc)))
+    .filter((e) => !e.lastmod || !since || e.lastmod >= since)
+    .filter((e) => !known.has(idOf(e.loc)))
+    .sort((a, b) => String(b.lastmod || "").localeCompare(String(a.lastmod || "")))
+    .slice(0, limit);
+}

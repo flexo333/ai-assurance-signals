@@ -13,6 +13,12 @@
 #                 checker also autodiscovers <link rel=alternate> and sitemaps)
 #   ai_specific   true → every item is in scope; false → keyword pre-filter first
 #   paywalled     true → headline + standfirst only, never full text
+#   method        feed (default: configured feed → candidates → autodiscovery) | sitemap
+#   sitemap       sitemap or sitemap-index URL (method: sitemap)
+#   include       regex a URL must match (method: sitemap)
+#   exclude       regex that rejects a URL, case-insensitive (method: sitemap)
+#   max_pages     pages checked per run (method: sitemap, default 25); for
+#                 sitemap sources the AI keyword check runs on the page BODY
 #   status        active (default) | blocked — blocked sources are listed on the
 #                 /sources page for transparency but never fetched; their news
 #                 reaches the digest through news coverage instead
@@ -155,7 +161,13 @@ sources:
     authority: official
     jurisdiction: AU-federal
     homepage: https://www.apra.gov.au/news-and-publications
-    feeds: [https://www.apra.gov.au/rss.xml]
+    # The RSS feed carries statistics releases only; media releases, speeches,
+    # the System Risk Outlook etc. come from the sitemap (#12).
+    method: sitemap
+    sitemap: https://www.apra.gov.au/sitemap.xml
+    include: "^https://www\\.apra\\.gov\\.au/news-and-publications/[^/?#]+$"
+    exclude: "statistics|annual-report|/events$|apra-submissions|corporate-plan|archive|covid-19"
+    max_pages: 30
     ai_specific: false
 
   - id: asic
@@ -163,7 +175,11 @@ sources:
     authority: official
     jurisdiction: AU-federal
     homepage: https://asic.gov.au/newsroom/
-    feeds: [https://asic.gov.au/newsroom/media-releases/rss/]
+    # No feed; media releases (filed by year), news items and speeches via the sitemap (#12).
+    method: sitemap
+    sitemap: https://www.asic.gov.au/sitemap.xml
+    include: "/about-asic/news-centre/(find-a-media-release/20\\d\\d-releases|news-items|speeches)/[^/]+/?$"
+    max_pages: 30
     ai_specific: false
 
   - id: accc
