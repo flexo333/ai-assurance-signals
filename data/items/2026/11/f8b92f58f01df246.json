@@ -1,0 +1,52 @@
+{
+  "id": "f8b92f58f01df246",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/security/genetec-introduces-security-center-mcp-connector-to-accelerate-physical-security-operations-in-large-scale-deployments",
+  "title": "Genetec Introduces Security Center MCP Connector To Accelerate Physical Security Operations In Large-Scale Deployments",
+  "publishedAt": "2026-11-19T02:23:47.218Z",
+  "fetchedAt": "2026-11-25T23:34:03.653Z",
+  "status": "summarised",
+  "headline": "Genetec launches Security Center MCP connector for controlled AI assistant integration",
+  "summary": "Genetec has announced the Security Center Model Context Protocol (MCP) connector, enabling enterprise organisations to link AI assistants like Microsoft Copilot, Claude, and ChatGPT to their physical security platform. The tool is designed around predefined, outcome-based skills that restrict AI access, requiring human approval for consequential actions and preventing direct database modifications. It aims to streamline tasks such as configuration deployments, device health checks, and site validation while maintaining operational control.",
+  "why_it_matters": "Organisations deploying enterprise AI assistants into physical security environments can use predefined, permission-controlled connectors to mitigate the risk of unrestricted agent access while automating repetitive configuration workflows.",
+  "quotes": [
+    {
+      "text": "The new Security Center MCP connector gives organisations a controlled way to use their preferred AI assistants with Security Center and streamline everyday system management.",
+      "supports": "summary"
+    },
+    {
+      "text": "Administrators control which Security Center MCP permissions and privileges are made available and whether the assistant can only view information or also take actions.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Vendor product release introducing access-control mechanisms for AI assistants in physical security platforms, but lacks direct regulatory or policy impact.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b5b45702a6510fc63e1265de8214ebfad788836ae5d4452ef0d315d6525f8f40",
+    "textChars": 3970,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:51:51.453Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "390b5ae115e68b04",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/huangs-return-brings-open-weight-ai-debate-to-forefront",
+  "title": "Huang’s return brings open-weight AI debate to forefront",
+  "publishedAt": "2026-11-25T08:26:55.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.913Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "0c85d33d8569ba235a5fe225bf03caa90d2486dd55ee27634d7a372735a5c5b0",
+    "textChars": 670,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:43:31.070Z",
+    "attempts": 1
+  }
+}

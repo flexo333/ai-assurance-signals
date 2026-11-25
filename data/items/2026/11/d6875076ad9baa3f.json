@@ -1,0 +1,23 @@
+{
+  "id": "d6875076ad9baa3f",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/exabeam-named-a-seven-time-leader-in-the-2026-gartner-magic-quadrant-for-siem",
+  "title": "Exabeam Named a Seven-Time Leader in the 2026 Gartner Magic Quadrant for SIEM",
+  "publishedAt": "2026-11-24T20:06:39.662Z",
+  "fetchedAt": "2026-11-25T23:34:01.480Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "a5ce52daca2d29c3bf10ed9503c7a63d66378b0c6080a09cf1f5c78b99fa5ea2",
+    "textChars": 4113,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:43:55.580Z",
+    "attempts": 1
+  }
+}

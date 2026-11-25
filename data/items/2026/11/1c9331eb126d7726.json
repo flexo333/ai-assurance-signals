@@ -1,0 +1,54 @@
+{
+  "id": "1c9331eb126d7726",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/nab-deploys-ai-for-staff-called-ruby-that-is-built-on-anthropic-630151",
+  "title": "NAB deploys AI for staff called 'Ruby' that is built on Anthropic",
+  "publishedAt": "2026-11-05T19:51:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:55.914Z",
+  "status": "summarised",
+  "headline": "NAB deploys Anthropic-backed AI tool 'Ruby' to 40,000 staff",
+  "summary": "National Australia Bank has deployed an internal AI productivity tool named Ruby, built on an Anthropic platform, to over 40,000 employees. The bank has established cross-divisional squads and governance frameworks to progress around 50 additional AI use cases, citing efficiency gains in business loan approvals and change delivery cycles.",
+  "why_it_matters": "Financial institutions scaling internal AI deployments must establish clear governance frameworks, platforms, and operational controls while managing the workforce implications of automation.",
+  "quotes": [
+    {
+      "text": "NAB has deployed an AI tool called Ruby, built on an Anthropic platform, to more than 40,000 staff for personal productivity.",
+      "supports": "summary"
+    },
+    {
+      "text": "Over the last 12 months, NAB has set up our key AI squads and established clear frameworks and foundations to govern and manage AI activities including a single AI platform.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Major Australian bank-scale deployment of foundation model AI to 40,000 staff with structured governance frameworks and measured productivity metrics.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "b5d25621424c870caf802246616796f4eccfb8ab5639e1170a08b05b6f0d047e",
+    "textChars": 3669,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:34:59.671Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

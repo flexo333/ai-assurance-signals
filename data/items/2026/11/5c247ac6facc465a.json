@@ -1,0 +1,24 @@
+{
+  "id": "5c247ac6facc465a",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apra-keeps-macroprudential-policy-settings-steady-heightened-risk-environment",
+  "title": "APRA keeps macroprudential policy settings steady in heightened risk environment",
+  "publishedAt": "2026-11-25T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.918Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "2050162f61d026edcfe9cc332a2f44de3a100c71f5fd9309f694093d34d766ac",
+    "textChars": 4977,
+    "textSource": "article",
+    "extractMethod": "main-text",
+    "analysedAt": "2026-11-25T23:43:41.201Z",
+    "attempts": 1
+  }
+}

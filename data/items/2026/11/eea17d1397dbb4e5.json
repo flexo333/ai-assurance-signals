@@ -1,0 +1,57 @@
+{
+  "id": "eea17d1397dbb4e5",
+  "sourceId": "oecd-ai",
+  "sourceName": "OECD.AI",
+  "authority": "official",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://oecd.ai/en/wonk/governing-with-agentic-ai-when-machines-act-on-governments-behalf",
+  "title": "Governing with agentic AI: when machines act on government’s behalf",
+  "publishedAt": "2026-11-23T14:22:33.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.481Z",
+  "status": "summarised",
+  "headline": "Governing with agentic AI: OECD working group on public sector AI agents",
+  "summary": "An OECD Working Group on Agentic AI in Government has been established under the E-Leaders network to examine how public sector bodies can maintain standards of safe and trustworthy AI as systems gain autonomy. Authored by officials from Australia, Canada, Estonia, Israel, Japan, Korea, the UK and Singapore, the report details potential public sector use cases, governance implications, and international regulatory approaches. It highlights how agentic systems differ from traditional generative AI by breaking down tasks and pursuing complex objectives with minimal supervision.",
+  "why_it_matters": "Australian organisations and public agencies deploying autonomous AI agents must build governance and technical controls into systems from the start rather than relying on broad principles or after-the-fact reviews.",
+  "quotes": [
+    {
+      "text": "Agentic AI raises new questions about how governments can maintain standards of safe, secure and trustworthy AI while machines act on their behalf.",
+      "supports": "summary"
+    },
+    {
+      "text": "That is why governments have a higher duty than the private sector to explain, justify and correct the actions they take.",
+      "supports": "summary"
+    },
+    {
+      "text": "Australia’s addendum to its AI technical standard keeps the standard’s existing criteria and adds agent-specific practices across the AI lifecycle, with an emphasis on human oversight, auditable logs and the ability to halt or roll back an agent’s actions.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Outlines emerging international public sector governance approaches for agentic AI, featuring direct contributions from the Australian Digital Transformation Agency.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "119d3fcf953dc701f68568dfb395166ff6508b11b11a91f602c476066ef2ad00",
+    "textChars": 14196,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:47:52.358Z",
+    "attempts": 1
+  }
+}

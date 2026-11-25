@@ -1,0 +1,57 @@
+{
+  "id": "c10c08f1b073c5af",
+  "sourceId": "oecd-ai",
+  "sourceName": "OECD.AI",
+  "authority": "official",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://oecd.ai/en/wonk/from-dialogue-to-delivery-making-ai-governance-work-in-southeast-asia",
+  "title": "From dialogue to delivery: making AI governance work in Southeast Asia",
+  "publishedAt": "2026-11-19T14:22:33.000Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "OECD and Southeast Asian nations focus on practical AI governance implementation",
+  "summary": "The OECD and Southeast Asian partner countries held dialogues to transition from defining AI principles to practical implementation and policy coordination. Discussions highlighted challenges such as language and cultural relevance, compute capacity constraints, and operationalising risk management frameworks. Regional initiatives are adapting AI systems to local contexts and building capabilities for testing, evaluation, and safety.",
+  "why_it_matters": "Organisations must move beyond high-level principles to operationalise risk management and address local context, testing, and evaluation challenges when deploying AI.",
+  "quotes": [
+    {
+      "text": "The OECD AI Policy Toolkit is a practical resource that helps governments map their AI policy landscape, identify priorities, and draw on concrete international experience to inform policy design and implementation.",
+      "supports": "summary"
+    },
+    {
+      "text": "A clear message emerges from these exchanges: the real challenge is no longer defining principles but making them work in practice.",
+      "supports": "summary"
+    },
+    {
+      "text": "Across these examples, outcomes are shaped less by the technology itself than by how it is embedded, monitored and combined with existing institutional arrangements, governance processes and service delivery systems over time.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Outlines regional international cooperation and practical implementation toolkits for AI governance across Southeast Asia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "71951df896c0fefb4f0bda6ac629ded7b906156fe3f85fd456c490ac1d0446d6",
+    "textChars": 10578,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:49:32.539Z",
+    "attempts": 2
+  }
+}

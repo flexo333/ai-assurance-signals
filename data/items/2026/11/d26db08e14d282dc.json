@@ -1,0 +1,52 @@
+{
+  "id": "d26db08e14d282dc",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/navigating-drop-compliance-after-1-aug",
+  "title": "Navigating DROP compliance after 1 Aug.",
+  "publishedAt": "2026-11-20T19:18:51.530Z",
+  "fetchedAt": "2026-11-25T23:34:01.481Z",
+  "status": "summarised",
+  "headline": "Navigating DROP compliance after 1 Aug.",
+  "summary": "The California Privacy Protection Agency is strictly enforcing data brokers' compliance with consumer data deletion requests via the Delete Request and Opt-Out Platform. Because data brokers use artificial intelligence and machine learning to generate inferences and consumer profiles, simple database deletion is insufficient. The Delete Act requires brokers to delete all personal information, including AI-derived inferences and profiles.",
+  "why_it_matters": "Organisations relying on AI to generate consumer profiles and inferences must ensure deletion mechanisms capture derived data to comply with strict regulatory enforcement.",
+  "quotes": [
+    {
+      "text": "As of 1 Aug., the California Privacy Protection Agency is strictly enforcing data brokers' compliance with consumer data deletion requests submitted through its Delete Request and Opt-Out Platform , implemented under California's \"Delete Act.\"",
+      "supports": "summary"
+    },
+    {
+      "text": "the Delete Act demands that brokers delete all \" personal information ,\" including inferences derived from the data they collect, that is data used \"to create a profile about a consumer reflecting the consumer's preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.\"",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "Highlights regulatory enforcement challenges regarding AI-derived data deletion under California law, offering useful insights for data governance practices.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "974f90c1603c9632dc96e8529861a53c4864dfb0d0ac94b2df20618126c9e01a",
+    "textChars": 1996,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:12.103Z",
+    "attempts": 1
+  }
+}

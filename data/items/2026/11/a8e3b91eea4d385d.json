@@ -1,0 +1,23 @@
+{
+  "id": "a8e3b91eea4d385d",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/putting-innovation-before-ai-20261124-p61ghh",
+  "title": "Putting innovation before AI",
+  "publishedAt": "2026-11-23T22:51:15.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.561Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5e8ee46e31abfbec2e8e824fb1b5b9599cfcd913ee2c3986271730719bad102a",
+    "textChars": 116,
+    "textSource": "feed",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T23:47:32.648Z",
+    "attempts": 1
+  }
+}

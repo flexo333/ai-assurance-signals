@@ -1,0 +1,23 @@
+{
+  "id": "dffe2808e5648eaf",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/sas-named-a-major-player-in-idc-marketscape-for-worldwide-agentic-ai-platforms",
+  "title": "SAS named a major player in IDC MarketScape for worldwide agentic AI platforms",
+  "publishedAt": "2026-11-18T23:05:08.033Z",
+  "fetchedAt": "2026-11-25T23:34:04.072Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "1ca3d21328840d47f4fe499f3fe6f02d15e23e8692feee09bda550bec792fb7a",
+    "textChars": 2940,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:51:58.311Z",
+    "attempts": 1
+  }
+}

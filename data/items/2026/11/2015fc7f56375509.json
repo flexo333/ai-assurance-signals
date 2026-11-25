@@ -1,0 +1,24 @@
+{
+  "id": "2015fc7f56375509",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/update-apras-macroprudential-settings-november-2026",
+  "title": "Update on APRA's Macroprudential Settings – November 2026",
+  "publishedAt": "2026-11-25T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.918Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "4c1b9e6e807029038545cce7d58cb1f35a787f08efc4e0ebd90878e6d27d7fb5",
+    "textChars": 19172,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:43:49.814Z",
+    "attempts": 1
+  }
+}

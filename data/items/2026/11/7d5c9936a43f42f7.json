@@ -1,0 +1,68 @@
+{
+  "id": "7d5c9936a43f42f7",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/enterprise-solutions/microsoft-ships-own-coding-models-with-cyber-rollout-set-for-december",
+  "title": "Microsoft ships own coding models, with cyber rollout set for December",
+  "publishedAt": "2026-11-18T12:18:27.424Z",
+  "fetchedAt": "2026-11-25T23:34:04.135Z",
+  "status": "summarised",
+  "headline": "Microsoft releases new MAI coding models via GitHub Copilot",
+  "summary": "Microsoft has introduced two new proprietary coding models, MAI Code 2 and MAI Code 2 Flash, alongside a cybersecurity model, MAI Cyber 2 Flash. The release expands Microsoft's role into building more underlying intelligence for platforms like GitHub Copilot. However, the deployment introduces complex purchasing, data-location, and governance decisions for enterprise buyers due to promotional pricing timelines, default model-enablement settings, and region-specific inference limitations.",
+  "why_it_matters": "Australian compliance and procurement teams must verify actual AI data residency and control model-enablement settings rather than assuming local repository storage guarantees Australian AI inference.",
+  "quotes": [
+    {
+      "text": "Microsoft has released two new proprietary coding models through GitHub Copilot and outlined a December rollout for its latest cybersecurity model, expanding its role from supplying enterprise AI platforms to building more of the intelligence inside them.",
+      "supports": "summary"
+    },
+    {
+      "text": "Australian repository storage therefore should not be read as a guarantee of Australian AI inference.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "Business and Enterprise administrators can control access through model policies. GitHub says new models are automatically enabled under its default model-enablement setting unless administrators have changed that setting or disabled the model.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-12-18",
+      "what": "Retirement of MAI-Code-1.1-Flash",
+      "quote": "GitHub plans to retire MAI-Code-1.1-Flash on 18 December 2026 ."
+    },
+    {
+      "date": "2027-05-17",
+      "what": "End of promotional Code 2 rates",
+      "quote": "The promotion ends on 17 May 2027, when those rates are scheduled to double."
+    }
+  ],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Introduces new proprietary enterprise coding and security models with important data residency and default-enablement considerations for Australian buyers, but represents a product release rather than a new regulatory or legal obligation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8485deb5853355b45b8bb515c7384963bd5c4fb8eac72f9470f804fc5f71cd4b",
+    "textChars": 7415,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:52:06.227Z",
+    "attempts": 1
+  }
+}

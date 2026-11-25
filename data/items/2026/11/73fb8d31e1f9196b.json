@@ -9,15 +9,52 @@
   "title": "Salesforce Contact Centre now generally available in Australia and New Zealand",
   "publishedAt": "2026-11-25T01:09:08.392Z",
   "fetchedAt": "2026-11-25T03:10:53.944Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "Salesforce Contact Centre launches in ANZ with native AI agents",
+  "summary": "Salesforce has announced the general availability of its Salesforce Contact Centre in Australia and New Zealand, combining voice, digital channels, CRM data, and job-ready AI agents into a single platform. The system features Fin, an AI agent for customer service, alongside governance tools providing IT and service leaders visibility over both AI and human interactions. Local availability began on 24 November 2026 with built-in data residency and regulatory compliance features.",
+  "why_it_matters": "Organisations deploying customer-facing AI agents must unify underlying customer data and maintain transparent oversight of both automated and human workflows to meet operational and regulatory expectations.",
+  "quotes": [
+    {
+      "text": "Salesforce, the world’s #1 CRM, today announced the general availability of Salesforce Contact Centre in Australia and New Zealand, a native contact centre that puts job-ready AI agents, human reps, voice, digital channels and CRM data on one platform, so service teams can move from AI pilots to measurable results.",
+      "supports": "summary"
+    },
+    {
+      "text": "For IT and service leaders, that means one place to build, govern and improve both AI and human service, with full visibility of what each is doing.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-24",
+      "what": "General availability of Salesforce Contact Centre in Australia and New Zealand",
+      "quote": "Salesforce Contact Centre is generally available in Australia and New Zealand from 24 November 2026."
+    }
+  ],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "It represents a commercial product launch of agentic AI tooling in the Australian market with built-in governance and data residency features, rather than a new regulatory mandate.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "3c536f39d957cb38b2e23ea0bc5e45c467d76d74546fccd019b1caf7e11e4bd1",
     "textChars": 6431,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:11:44.496Z",
-    "attempts": 1
+    "analysedAt": "2026-11-25T23:37:22.037Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

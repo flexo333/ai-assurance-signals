@@ -9,15 +9,55 @@
   "title": "CyberAgents Exchange to Recognise Defenders Building Agentic Solutions that Improve AI Security",
   "publishedAt": "2026-11-24T20:22:24.982Z",
   "fetchedAt": "2026-11-25T03:10:55.664Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "Tenable launches awards for open source AI agents improving cyber security",
+  "summary": "Tenable Holdings, Inc. has announced the inaugural CyberAgents Exchange Agentic Cyber Awards. This program aims to recognise the best open source agentic AI components and solutions published on the CyberAgents Exchange. The awards honour security professionals who build and share AI-powered cyber defence tools. Nominations for the awards are open until December 4, 2026.",
+  "why_it_matters": "This initiative highlights the increasing importance of open source AI agents in cyber security, encouraging Australian organisations to explore and contribute to community-driven AI security solutions and frameworks for collective defence.",
+  "quotes": [
+    {
+      "text": "This program recognises the best open source agentic AI components and solutions published on the CyberAgents Exchange , powered by Tenable.",
+      "supports": "summary"
+    },
+    {
+      "text": "Nominations are open now until December 4, 2026, at 11:59 p.m. ET.",
+      "supports": "summary"
+    },
+    {
+      "text": "The CyberAgents Exchange is a vendor-agnostic open source directory of AI agents, skills, MCP servers and playbooks built by defenders, for defenders.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-12-04",
+      "what": "Nominations close",
+      "quote": "Nominations are open now until December 4, 2026, at 11:59 p.m. ET."
+    }
+  ],
+  "classification": {
+    "item_kind": "other",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Vendor-led awards program highlighting open source AI security solutions, relevant for practitioners.",
+    "is_consultation": true,
+    "closing_date": "2026-12-04",
+    "closing_date_quote": "Nominations are open now until December 4, 2026, at 11:59 p.m. ET."
+  },
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
     "sourceSha256": "2f83a897f40d63584ab138c3f35bfc7dc5636175810c9c90f41a76a90e1837dc",
     "textChars": 3706,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:13:01.985Z",
-    "attempts": 1
+    "analysedAt": "2026-11-25T23:37:35.644Z",
+    "attempts": 2,
+    "via": "recheck"
   }
 }

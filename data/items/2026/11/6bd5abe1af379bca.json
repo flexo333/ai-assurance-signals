@@ -1,0 +1,23 @@
+{
+  "id": "6bd5abe1af379bca",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/stop-asking-how-many-jobs-ai-will-kill-says-atlassian-people-officer-20261126-p61fct",
+  "title": "Stop asking how many jobs AI will kill, says Atlassian people officer",
+  "publishedAt": "2026-11-25T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:59.560Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7676baa779e85f49ee8242c52a8ad753132bc1f6c17daf81a767e6df78b34644",
+    "textChars": 153,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:42:18.089Z",
+    "attempts": 1
+  }
+}

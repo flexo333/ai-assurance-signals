@@ -1,0 +1,50 @@
+{
+  "id": "51f2c635047813f0",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/a-view-from-dc-navigating-the-california-and-colorado-admt-rules",
+  "title": "A view from DC: Navigating the California and Colorado ADMT rules",
+  "publishedAt": "2026-11-20T15:10:19.940Z",
+  "fetchedAt": "2026-11-25T23:34:01.481Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "regulation",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "It details major emerging regulatory frameworks for automated decision-making technologies across major US jurisdictions, setting compliance precedents that may influence global practice.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0d61a2e4168b9152864e23268a05c0221c69f0314ac85011552aa8d1d2c449c4",
+    "textChars": 11050,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:17.776Z",
+    "attempts": 2
+  }
+}

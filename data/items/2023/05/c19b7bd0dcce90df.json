@@ -1,0 +1,58 @@
+{
+  "id": "c19b7bd0dcce90df",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/anz-taps-generative-ai-for-code-testing-596279",
+  "title": "ANZ taps generative AI for code testing",
+  "publishedAt": "2023-05-29T20:43:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:56.176Z",
+  "status": "summarised",
+  "headline": "ANZ explores generative AI for software engineering and code testing",
+  "summary": "ANZ Banking Group has formally sanctioned a team to investigate the use of generative AI to assist with software engineering tasks, specifically focusing on improving code testing efficiency. The bank is currently limiting these activities to centrally managed, executive-approved experiments that do not involve private or confidential data. The initiative aims to enhance the reliability and performance of code by automating the creation of test cases.",
+  "why_it_matters": "The bank's approach highlights the necessity of maintaining human oversight and strict internal controls when integrating generative AI into software development lifecycles to manage risks related to reliability and compliance.",
+  "quotes": [
+    {
+      "text": "We’ve formally sanctioned one team in ANZ to explore generative AI for software engineering to improve our testing.",
+      "supports": "summary"
+    },
+    {
+      "text": "He said the team sees the new capability as “an augmentation tool\" and \"not a final arbiter\" of compliance.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "He added its experimentation does not use “any private or confidential data” as “every technology implementation at ANZ is subject to strict controls.”",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Demonstrates a major Australian bank's operational approach to governing generative AI in software engineering, emphasising strict controls and human-in-the-loop validation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7e9fc8ae780e6deca151b4e39442313dffd59b2492be3a16afc770833c6a9e79",
+    "textChars": 2747,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:34:41.333Z",
+    "attempts": 2,
+    "via": "seed-url"
+  }
+}

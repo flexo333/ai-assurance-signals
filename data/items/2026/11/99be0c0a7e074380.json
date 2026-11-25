@@ -1,0 +1,51 @@
+{
+  "id": "99be0c0a7e074380",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/managing-frontier-ai-risk",
+  "title": "Managing frontier AI risk: From training to deployment",
+  "publishedAt": "2026-11-18T06:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:07.321Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Details comprehensive enterprise safety, monitoring, and governance frameworks for frontier AI development across the model lifecycle.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e6da3af8c42e8ea27b69d2ab499c6df4814cea853b71d6a3abef80e97b8a7512",
+    "textChars": 16611,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:52:24.405Z",
+    "attempts": 2
+  }
+}

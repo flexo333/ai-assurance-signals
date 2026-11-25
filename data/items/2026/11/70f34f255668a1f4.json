@@ -1,0 +1,53 @@
+{
+  "id": "70f34f255668a1f4",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/nine-trials-ai-access-to-news-via-mcp-630627",
+  "title": "Nine trials AI access to news via MCP",
+  "publishedAt": "2026-11-25T21:10:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.479Z",
+  "status": "summarised",
+  "headline": "Nine trials authenticated Model Context Protocol server for enterprise AI",
+  "summary": "Australian media company Nine is piloting an authenticated Model Context Protocol server that allows licensed corporate subscribers to integrate its journalism into their enterprise AI tools. The pilot spans several mastheads, including The Australian Financial Review and The Sydney Morning Herald, ahead of a commercial rollout planned for 2027. The approach aims to maintain IP protection, brand attribution, and direct subscriber relationships while feeding real-time context into enterprise AI systems.",
+  "why_it_matters": "Media publishers and Australian enterprises deploying retrieval-augmented generation must navigate licensed data access, intellectual property protection, and provenance controls when connecting internal AI agents to external content sources.",
+  "quotes": [
+    {
+      "text": "Nine is piloting an authenticated Model Context Protocol (MCP) server letting licensed corporate subscribers pull its journalism into enterprise AI tools.",
+      "supports": "summary"
+    },
+    {
+      "text": "The company said this kept its direct relationship with subscribers intact, along with brand attribution, provenance and protection of its intellectual property.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Represents a notable commercial and technical deployment of standard protocol-based enterprise AI data integration by an Australian publisher, though operational risk and governance specifics remain limited.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "092352add1ddbdcd8ba6246e7537ed29dca3745f7f16b18d43b1afbd2b75d2c5",
+    "textChars": 2849,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:41:53.227Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "d0f517318e2900e1",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/economy-markets/nab-global-forward-view--stable-growth-in-an-unstable-world",
+  "title": "NAB November Global Forward View: Stable growth in an unstable world",
+  "publishedAt": "2026-11-24T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.353Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d07901cf46b048a82e3c60c9ad58ca48ebe10693b2c8eaf38e8d981f834ea19a",
+    "textChars": 1062,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:47:31.213Z",
+    "attempts": 1
+  }
+}

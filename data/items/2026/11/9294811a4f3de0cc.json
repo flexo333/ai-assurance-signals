@@ -1,0 +1,53 @@
+{
+  "id": "9294811a4f3de0cc",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems",
+  "title": "AI is straining America’s open records systems",
+  "publishedAt": "2026-11-25T10:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:02.634Z",
+  "status": "summarised",
+  "headline": "AI-driven public records requests strain US government open records systems",
+  "summary": "Venture-backed startups and individuals are using AI tools to draft, scale, and analyze public records requests to harvest government data for sales signals. This surge in volume has overwhelmed understaffed local and federal agencies, prompting some US states to pass legislation allowing agencies to restrict or deny suspected AI-generated requests. Experts warn that these defensive measures risk undermining transparency for journalists, researchers, and citizens.",
+  "why_it_matters": "The influx of AI-generated and automated public records requests demonstrates how generative AI creates administrative bottlenecks in public sector compliance, driving legislative responses that may inadvertently restrict legitimate oversight and transparency.",
+  "quotes": [
+    {
+      "text": "Over the last few years, venture-backed startups have raised upwards of $100 million to collect data from thousands of agencies and turn it into AI-powered “signals” that help businesses sell to governments.",
+      "supports": "summary"
+    },
+    {
+      "text": "As agencies struggle to tell whether they’re dealing with a citizen, a chatbot, or a sales pipeline, some states are passing legislation that makes it easier to deny requests, possibly making public offices less transparent.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "Highlights operational strains and emerging legislative controls surrounding AI usage in public administration, though focused on the United States.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9af1f0191c9fc622d270507fe619e82c1d637014e0318839052666218009751e",
+    "textChars": 12633,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:42:55.998Z",
+    "attempts": 1
+  }
+}

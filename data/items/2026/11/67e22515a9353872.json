@@ -1,0 +1,57 @@
+{
+  "id": "67e22515a9353872",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/mcgrath-unpacks-european-commissions-stance-on-digital-rulebook-updates",
+  "title": "McGrath unpacks European Commission's stance on digital rulebook updates",
+  "publishedAt": "2026-11-19T13:12:08.036Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "EU Commission outlines digital rulebook updates, including limits on AI chatbot interactions",
+  "summary": "The European Commission is working to simplify and harmonise its digital rulebook, aiming to reduce duplication and improve legal certainty without lowering standards. Commissioner Michael McGrath stated that new proposals, such as the Digital Fairness Act and KIDS Act, are designed to close regulatory gaps. The Digital Fairness Act specifically addresses issues like dark patterns, personalised advertising to minors, and limits on AI chatbot interactions. The Digital Omnibus, which includes GDPR amendments, is also progressing towards trilogue negotiations.",
+  "why_it_matters": "Organisations operating internationally or considering future Australian AI regulation should note the EU's proactive approach to regulating AI chatbot interactions and other digital practices, which could influence global standards and local compliance expectations.",
+  "quotes": [
+    {
+      "text": "Simplification for the European Commission does not mean deregulation. It does not mean lowering standards or weakening protections,",
+      "supports": "summary"
+    },
+    {
+      "text": "The proposal tackles the modern issues of dark patterns, personalized advertising to minors, ads created with certain types of sensitive data and limits on AI chatbot interactions.",
+      "supports": "summary"
+    },
+    {
+      "text": "They are part of Europe's competitive advantage. They give businesses the confidence to invest and citizens the confidence to fully participate in the burgeoning digital economy we have.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "The EU's comprehensive digital rulebook updates, including specific provisions for AI chatbot interactions, set a notable precedent for global AI governance and digital regulation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
+    "sourceSha256": "a20a907f0578ce88323c1bccf5a30ee5fcf925bfac5dd679b13860937069e146",
+    "textChars": 5704,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:50:14.229Z",
+    "attempts": 2
+  }
+}

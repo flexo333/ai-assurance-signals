@@ -1,0 +1,23 @@
+{
+  "id": "924c2ba34b8a593a",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/europe-plans-e50b-sovereign-equity-fund-for-quantum-tech",
+  "title": "Europe plans €50b sovereign equity fund for quantum tech",
+  "publishedAt": "2026-11-25T20:21:14.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.353Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "abdfc270d5a9358f0b3ddf5a0b77a83ecb3e5c69197d8c7398ea63dbff53a4e0",
+    "textChars": 3583,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:42:01.200Z",
+    "attempts": 1
+  }
+}

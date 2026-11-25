@@ -1,0 +1,59 @@
+{
+  "id": "c49a43e54696c3c8",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/is-ai-assisted-thinking-devaluing-business-degrees-297066",
+  "title": "Is AI-assisted thinking devaluing business degrees?",
+  "publishedAt": "2026-11-25T16:18:39.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.277Z",
+  "status": "summarised",
+  "headline": "Assessing the Value and Governance of Business Degrees in the Age of AI",
+  "summary": "An analysis of AI in higher education examines how business schools must adapt their teaching, governance, and capability-building frameworks. The author outlines the ABC Framework—accountability, capability, and creativity—developed from an AI summit at ESCP Business School. It argues that while institutions are establishing AI rules and building technical capabilities, updating curricula to foster human judgment and critical thinking remains the slowest area of progress.",
+  "why_it_matters": "Higher education institutions and professional educators must redesign assessments to ensure students exercise genuine human judgment rather than relying on generative AI, preserving the certification value of degrees for employers.",
+  "quotes": [
+    {
+      "text": "I built the ABC Framework to assess the 44 contributions we collected around three things a university has to do at once: governing the AI that it uses, building capability with it and rethinking teaching around human judgement.",
+      "supports": "summary"
+    },
+    {
+      "text": "A degree should remain something an employer can rely on because the reasoning behind it has been shown to be the student's own.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-03-17",
+      "what": "ESCP's first AI in Higher Education Summit in Paris",
+      "quote": "We organised ESCP’s first AI in Higher Education Summit at our Paris campus on March 17-18 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Offers commentary on higher education AI governance and curriculum design, but lacks direct impact on Australian regulatory compliance or institutional mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "bdf5019a033304426ac6c5d360e8018593cfad5a362d76c6f67b40506df95f22",
+    "textChars": 8364,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:42:51.838Z",
+    "attempts": 1
+  }
+}

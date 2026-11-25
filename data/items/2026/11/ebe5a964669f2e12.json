@@ -1,0 +1,24 @@
+{
+  "id": "ebe5a964669f2e12",
+  "sourceId": "afr-financial-services",
+  "sourceName": "Australian Financial Review (Banking & Finance)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": true,
+  "url": "https://afr.com/technology/ai-delivering-value-for-business-that-s-the-floor-not-the-ceiling-20261126-p61eku",
+  "title": "AI delivering value for business. That’s the floor, not the ceiling",
+  "publishedAt": "2026-11-25T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:59.560Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "1784ef1067de0fee4746f4452f519e04534760fc7cfe22f6a894816bf0528b30",
+    "textChars": 107,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T23:42:38.242Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "8b554ed83185b666",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/nvidia-shows-tech-can-t-quit-its-charismatic-founder-addiction-20261124-p61gpd",
+  "title": "We should all be worried about Jensen Huang’s return",
+  "publishedAt": "2026-11-24T02:31:36.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.353Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "230a62924cb8906b22b05b92330938e05f9c4d2d994b0d7f9693c08646f0ccfb",
+    "textChars": 141,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:47:18.962Z",
+    "attempts": 1
+  }
+}

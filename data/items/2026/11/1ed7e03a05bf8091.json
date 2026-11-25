@@ -1,0 +1,23 @@
+{
+  "id": "1ed7e03a05bf8091",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/westlands-advisory-names-fortinet-a-leader-in-ot-cybersecurity-platforms",
+  "title": "Westlands Advisory names Fortinet a leader in OT cybersecurity platforms",
+  "publishedAt": "2026-11-19T21:42:42.770Z",
+  "fetchedAt": "2026-11-25T23:34:02.495Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f4d0678021b069c71e335622cf0f431b76540fa73169d74fda8f14e238589757",
+    "textChars": 8002,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:57.709Z",
+    "attempts": 1
+  }
+}

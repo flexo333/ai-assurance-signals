@@ -1,0 +1,59 @@
+{
+  "id": "9bf57e68590d4f78",
+  "sourceId": "oecd-ai",
+  "sourceName": "OECD.AI",
+  "authority": "official",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://oecd.ai/en/wonk/inside-ai-risk-management-early-insights-from-the-haip-2-0-reporting-framework",
+  "title": "Inside AI risk management: early insights from the HAIP 2.0 reporting framework",
+  "publishedAt": "2026-11-23T14:35:40.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.480Z",
+  "status": "summarised",
+  "headline": "Early insights from the HAIP 2.0 AI risk reporting framework",
+  "summary": "The OECD has analysed 31 reports submitted between June and September 2026 under the Hiroshima AI Process Reporting Framework 2.0. The framework tracks how organisations across the AI value chain identify, manage, and communicate AI risks. Findings show widespread use of impact assessments, international standards like ISO/IEC and NIST, and executive-level governance oversight.",
+  "why_it_matters": "Organisations can benchmark their AI risk management, transparency, and governance practices against international peers participating in the G7-backed reporting framework.",
+  "quotes": [
+    {
+      "text": "The latest submissions to the Hiroshima AI Process (HAIP) Reporting Framework 2.0 offer insights into how the organisations developing and deploying the most advanced AI systems across the AI value chain identify, manage and communicate risks.",
+      "supports": "summary"
+    },
+    {
+      "text": "By making organisations’ approaches to risk management visible and comparable, it shows where practices converge and where they differ, and where gaps remain. Importantly, it allows organisations to learn from one another.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2027-01-15",
+      "what": "Reports submitted by this date will inform a forthcoming OECD analytical report",
+      "quote": "Reports submitted by 15 January 2027 will inform a forthcoming OECD analytical report."
+    }
+  ],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides valuable comparative empirical data on how 31 global organisations translate international AI safety commitments and frameworks into operational practice.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9e351353f142f1b7afc6a05049d86a465e4add8ab549045b8f67d0dd8100a9a7",
+    "textChars": 15204,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:47:47.542Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "0ee177b12835fc77",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/notes-from-the-asia-pacific-region-china-marks-pipls-5th-anniversary-hong-kong-clarifies-ai-requirements",
+  "title": "Notes from the Asia-Pacific region: China marks PIPL's 5th anniversary, Hong Kong clarifies AI requirements",
+  "publishedAt": "2026-11-19T15:43:18.262Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "China and Hong Kong Issue New AI Compliance and Data Transfer Requirements",
+  "summary": "China's Ministry of Industry and Information Technology introduced risk assessment and expert review requirements for AI-agent terminal devices and over-the-air software updates. Meanwhile, Hong Kong's Office of the Privacy Commissioner for Personal Data issued a generative AI framework clarifying that uploading Hong Kong personal data to overseas-hosted models constitutes a cross-border transfer.",
+  "why_it_matters": "Multinational organisations operating in the region must map their generative AI tools by server location, account for strict cross-border transfer rules, and prepare for mandatory expert reviews on post-market software updates.",
+  "quotes": [
+    {
+      "text": "Most significantly, over-the-air upgrades are now subject to expert review.",
+      "supports": "summary"
+    },
+    {
+      "text": "Organizations using Hong Kong as a regional hub or preparing for a Hong Kong listing should map their generative AI tools by server location, update their privacy notices and keep records of AI data flows ready for due diligence.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-11",
+      "what": "Anhui Province branch of the Cyberspace Administration of China issued the Anhui FTZ data export negative list",
+      "quote": "On 11 Nov., the Anhui Province branch of the Cyberspace Administration of China and other provincial authorities jointly issued the Anhui FTZ data export negative list, 2026 edition, and its implementing measures."
+    }
+  ],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Introduces concrete regulatory hurdles and compliance requirements for AI agents, software updates, and cross-border data transfers in major Asian jurisdictions.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "270f6e305cd2b4c086360240497cbcee1fd2faab99da4ec9f1e3ca97a3f3d729",
+    "textChars": 3912,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:49:25.435Z",
+    "attempts": 1
+  }
+}

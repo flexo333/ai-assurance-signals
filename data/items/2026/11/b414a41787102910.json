@@ -1,0 +1,23 @@
+{
+  "id": "b414a41787102910",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/newsletter/ai-rout-drags-nasdaq-into-bear-territory-10795513-7eb8-4c1e-9ab3-83355ff84397",
+  "title": "AI rout drags Nasdaq into bear territory",
+  "publishedAt": "2026-11-25T19:42:36.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.816Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c21a27627733ecbd6a6b5e7c89c23b2806f8b35de4528d174a8fea568ca34b7c",
+    "textChars": 123,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T23:42:02.210Z",
+    "attempts": 1
+  }
+}

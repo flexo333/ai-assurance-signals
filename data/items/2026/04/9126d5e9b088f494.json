@@ -1,0 +1,55 @@
+{
+  "id": "9126d5e9b088f494",
+  "sourceId": "westpac",
+  "sourceName": "Westpac (Wire & Media Releases)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://westpac.com.au/news/in-depth/2026/04/35k-co-pilots-westpac-ceo-hopes-ai-will-build-a-more-ambitious-australia",
+  "title": "35k co-pilots: Westpac CEO hopes AI will build a more ambitious Australia",
+  "publishedAt": "2026-04-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:58.121Z",
+  "status": "summarised",
+  "headline": "Westpac deploys AI co-pilots to 35,000 staff in wide experiment",
+  "summary": "Westpac has provided all 35,000 employees with access to Microsoft Copilot to encourage experimentation and lift productivity. CEO Anthony Miller emphasised that while banking license standards remain high, the tool challenges staff to rethink traditional workflows. The rollout serves as a workplace-wide experiment to drive consistent service and faster outcomes for customers.",
+  "why_it_matters": "For Australian financial institutions, broad internal AI deployments require balancing high regulatory standards with cultural shifts toward experimentation and openness.",
+  "quotes": [
+    {
+      "text": "Westpac has given all 35,000 employees access to Microsoft Copilot, a move CEO Anthony Miller frames as a bet on people rather than software.",
+      "supports": "summary"
+    },
+    {
+      "text": "For a regulated bank, Miller argues the balance is clear. “A banking licence is a privilege. We have to meet a high standard.”",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "A major Australian retail bank deploying a productivity AI tool to its entire 35,000-person workforce, highlighting governance considerations in a regulated institution.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d7d91292175ffa8bf798c74905b08f9852922a2db5fdf775c8d4b0f18108ee10",
+    "textChars": 2097,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:37:11.803Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

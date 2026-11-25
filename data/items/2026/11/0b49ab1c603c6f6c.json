@@ -1,0 +1,57 @@
+{
+  "id": "0b49ab1c603c6f6c",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/instructure-launches-ai-innovation-venture-unveils-new-personalised-study-coach",
+  "title": "Instructure launches AI innovation venture, unveils new personalised study coach",
+  "publishedAt": "2026-11-19T06:03:54.332Z",
+  "fetchedAt": "2026-11-25T23:34:02.773Z",
+  "status": "summarised",
+  "headline": "Instructure launches AI innovation venture and personalised study coach for education",
+  "summary": "Instructure has launched Instructure Foundry, a new venture to accelerate education technology innovation, focusing on AI-powered solutions. Its first initiative, Project Athena, is an AI-powered study coach designed to provide personalised learning support directly connected to Canvas courses. Athena aims to generate quizzes, study guides, and coaching prompts using existing course content, while prioritising student data privacy and responsible AI use.",
+  "why_it_matters": "This initiative highlights the growing need for organisations deploying AI in sensitive contexts like education to embed responsible AI principles, data privacy, and academic integrity considerations directly into product development and deployment.",
+  "quotes": [
+    {
+      "text": "Instructure Foundry will accelerate education technology innovation, with Project Athena its first initiative to deliver personalised AI study support through Canvas",
+      "supports": "summary"
+    },
+    {
+      "text": "Project Athena, an AI-powered study coach being developed to provide students with personalised learning support directly connected to their Canvas courses.",
+      "supports": "summary"
+    },
+    {
+      "text": "Privacy and responsible AI use are central to its development. Athena will access Canvas information through a read-only connection governed by existing student permissions, while student conversations will not be used to train external AI models.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Demonstrates a major education technology provider's approach to embedding responsible AI, data privacy, and academic integrity into new product development for the Australian market.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
+    "sourceSha256": "1938809df48bf0402627cd4290869e6d5883e0f44eb54dc5dc4b5219e6f92509",
+    "textChars": 6710,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:51:13.549Z",
+    "attempts": 1
+  }
+}

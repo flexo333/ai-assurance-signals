@@ -1,0 +1,23 @@
+{
+  "id": "bad69232db551338",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/article/electricians-charged-up-by-ai-centre-wages-6c0b7b58-2a46-4599-addb-5205673c67e3",
+  "title": "Electricians charged up by AI centre wages",
+  "publishedAt": "2026-11-25T21:30:13.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.580Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
+    "sourceSha256": "db01da87f590dcbc2d500eaa7d87cf2c92f44b748d62a01fad2035c887710e4d",
+    "textChars": 153,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T23:41:50.357Z",
+    "attempts": 1
+  }
+}

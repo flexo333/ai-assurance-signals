@@ -1,0 +1,53 @@
+{
+  "id": "a19a6ed24601a023",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/issues-shaping-cybersecurity-in-2027-predictions-from-fortiguard-labs",
+  "title": "Issues shaping cybersecurity in 2027: Predictions from FortiGuard Labs",
+  "publishedAt": "2026-11-18T23:49:39.353Z",
+  "fetchedAt": "2026-11-25T23:34:04.536Z",
+  "status": "summarised",
+  "headline": "FortiGuard Labs report outlines AI security risks for 2027",
+  "summary": "A FortiGuard Labs predictions report examines how organisations integrating AI agents deeper into operations face new risks from hijacked agents and delegated access. The analysis evaluates how attackers exploit adaptive AI systems and criminal services, urging security leaders to scrutinise automated authority. It emphasises practical testing of detection capabilities, workflow disruption, and access revocation for AI systems.",
+  "why_it_matters": "Organisations deploying AI agents must implement stronger controls over delegated authority and permissions to prevent attackers from hijacking legitimate access to business applications and data.",
+  "quotes": [
+    {
+      "text": "As organisations integrate AI more deeply into their operations, they grant agents access to critical resources such as email, internal documents, and business applications.",
+      "supports": "summary"
+    },
+    {
+      "text": "For defenders, these developments call for closer scrutiny of the authority granted to automated systems, along with practical testing of their ability to detect misuse, disrupt compromised workflows, and revoke access.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "prediction",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "This is a vendor prediction opinion piece on general cybersecurity and AI trends rather than a binding standard, regulation, or specific governance mandate.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "149930df9d49a9cea0d3ae565fcb55ed7d274a251458069ffd8c8c0919267c4e",
+    "textChars": 6645,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:51:55.775Z",
+    "attempts": 1
+  }
+}

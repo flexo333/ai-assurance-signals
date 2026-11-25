@@ -1,0 +1,53 @@
+{
+  "id": "17595d469f002cf0",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/uk-lawmakers-question-big-tech-representatives-on-osa-compliance-work",
+  "title": "UK lawmakers question Big Tech representatives on OSA compliance work",
+  "publishedAt": "2026-11-19T18:10:15.165Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "UK lawmakers question Big Tech on Online Safety Act compliance",
+  "summary": "Representatives from Google, Meta, and Roblox testified before the UK House of Lords' Communications and Digital Committee regarding their compliance with the Online Safety Act. Lawmakers questioned the tech firms on proactive child safety measures, risk assessments, and the practical impacts of incoming regulatory duties. The hearing also highlighted Ofcom's report noting that AI chatbots are not yet covered under the act's current scope.",
+  "why_it_matters": "Organisations must navigate evolving platform safety regulations and risk assessment mandates that increasingly dictate product design, age assurance, and content curation practices.",
+  "quotes": [
+    {
+      "text": "With the U.K. Online Safety Act set to fully take force by spring 2027, representatives from three Big Tech firms testified in a 17 Nov. hearing before the House of Lords' Communications and Digital Committee.",
+      "supports": "summary"
+    },
+    {
+      "text": "For Meta, Director of U.K. Public Policy Rebecca Stimson indicated that while the OSA's risk assessment requirements may be among the \"least visible\" aspects of the law, they have \"codified into law a very robust and extensive process of risk management and risk assessment\" for every new product the company seeks to introduce in the U.K.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides insight into major platform regulation and compliance approaches under the UK Online Safety Act, though with indirect application to Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "dca157cd93736ddf4b9dff8ea6314ee6cf97506e29fd6e0916703279a3e324fa",
+    "textChars": 5645,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:49:07.825Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "4169d4f19503b2e2",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/after-the-saaspocalypse-xero-says-ai-is-a-tailwind-not-a-threat-20261126-p61foh",
+  "title": "After the SaaSpocalypse, Xero says AI is a tailwind not a threat",
+  "publishedAt": "2026-11-25T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:59.560Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c691b7e3f978101d0e94f3e5add016588bd16dd3f0a36dc8558eb5ca238f526c",
+    "textChars": 157,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:42:26.102Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "0a29195f7394e8dc",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/insights-ai-forum-20261126-p61gg0",
+  "title": "Insights: AI Forum",
+  "publishedAt": "2026-11-25T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:59.560Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "65a821d015a9ba285245e41c48f291459be0ebc9cc9f69f9d21bc687edf9b7d6",
+    "textChars": 158,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:42:31.620Z",
+    "attempts": 1
+  }
+}

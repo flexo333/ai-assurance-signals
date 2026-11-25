@@ -1,0 +1,56 @@
+{
+  "id": "9817b1d7b68dc473",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-people-news/education/video-interview-atturras-stephen-kowal-and-brett-auton-on-scholarion-going-gold-going-global-and-the-ai-relief-teacher",
+  "title": "Video interview: Atturra's Stephen Kowal and Brett Auton on Scholarion going Gold, going global and the AI relief teacher",
+  "publishedAt": "2026-11-18T07:36:41.740Z",
+  "fetchedAt": "2026-11-25T23:34:04.673Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "practitioners",
+      "risk-compliance",
+      "boards"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Demonstrates practical AI integration and accelerated software development in an Australian enterprise deployment, but represents a commercial product release rather than a major regulatory shift.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "summary"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b104c8485686feb85955c060b8821342870872e5c6e22f3e40f3faeab019c221",
+    "textChars": 16231,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:52:15.130Z",
+    "attempts": 2
+  }
+}

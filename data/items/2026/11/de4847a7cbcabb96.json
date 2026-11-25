@@ -1,0 +1,52 @@
+{
+  "id": "de4847a7cbcabb96",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/research/migrating-api-to-rust",
+  "title": "Migrating our Messages API to Rust",
+  "publishedAt": "2026-11-25T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.918Z",
+  "status": "summarised",
+  "headline": "Anthropic Uses AI Agents to Verify Production API Migration",
+  "summary": "Anthropic shares a case study on migrating its Messages API from Python to Rust using AI agents to generate code and verify parity against live production traffic. The company turned its production API into a verifier by shadowing traffic, checkpointing steps, and fingerprinting differences to address the generator-verifier gap. This approach allowed automated agents to fix bugs in iterative inner, outer, and memory verification loops while protecting user privacy. The resulting Rust API achieved roughly 70 percent lower CPU usage per request and a 20 percent reduction in median time to first token.",
+  "why_it_matters": "Demonstrates an operational engineering workflow where AI agents are deployed to handle complex codebase migrations while maintaining strict parity and validation against live production systems.",
+  "quotes": [
+    {
+      "text": "In this post, we share how we turned the production Messages API itself into a verifier—and how that helped us test the new Rust version on production traffic, find where it differed, and automatically dispatch agents to fix those differences.",
+      "supports": "summary"
+    },
+    {
+      "text": "It’s increasingly feasible to migrate production systems with Claude, either for better performance or security, without taking an API offline or slowing feature development.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides a detailed technical case study from a major frontier lab on using AI agents for large-scale production code migration and automated verification.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "f5713383b644fdc07656e763e41a06cc87b881d54cbd584ade71281358f369da",
+    "textChars": 19997,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:43:52.943Z",
+    "attempts": 1
+  }
+}

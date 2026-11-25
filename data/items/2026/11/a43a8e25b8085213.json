@@ -1,0 +1,53 @@
+{
+  "id": "a43a8e25b8085213",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/global-dpas-our-job-is-to-do-our-job-amid-innovation-driven-digital-landscape",
+  "title": "Global DPAs: 'Our job is to do our job' amid innovation-driven digital landscape",
+  "publishedAt": "2026-11-18T12:17:34.983Z",
+  "fetchedAt": "2026-11-25T23:34:03.755Z",
+  "status": "summarised",
+  "headline": "Global DPAs discuss balancing AI innovation, privacy and regulation",
+  "summary": "At the IAPP Europe Congress 2026, international data protection authorities addressed the balance between digital innovation and regulatory enforcement, highlighting AI matters alongside children's safety and privacy. Regulators from Canada, Australia, Ireland and Singapore discussed rising complaint volumes and proactive enforcement, including the Irish DPC's intervention regarding AI training data on social platform X. The Global Privacy Assembly also adopted forward-looking resolutions addressing privacy-protective agentic AI, AI in education, and privacy-enhancing technologies.",
+  "why_it_matters": "Organisations deploying AI must navigate increasingly active data protection authorities that view regulatory compliance and privacy safeguards as essential enablers of sustainable and trusted AI innovation.",
+  "quotes": [
+    {
+      "text": "Dufresne highlighted the growing complexity of DPAs' workloads, pointing to AI matters, children's online safety, national security and crime prevention.",
+      "supports": "summary"
+    },
+    {
+      "text": "Privacy and innovation are not a zero-sum game. They are mainly reinforcing. Privacy supports innovation, just as innovation can and should be used to support and protect privacy.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides insights into global regulatory expectations and enforcement priorities regarding AI, privacy, and data training from major data protection authorities including the Australian Privacy Commissioner.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "145513de7931b1f30f046b5fc2d5f53516fa659482335eecf6f111a858804dab",
+    "textChars": 5695,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:52:08.069Z",
+    "attempts": 1
+  }
+}

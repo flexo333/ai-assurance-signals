@@ -1,0 +1,64 @@
+{
+  "id": "9450d41a24dad971",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/westpac-reveals-ai-cut-data-warehouse-migration-cost-from-70m-to-35m-630064",
+  "title": "Westpac reveals AI cut data warehouse migration cost from $70m to $35m",
+  "publishedAt": "2026-11-02T02:11:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:57.356Z",
+  "status": "summarised",
+  "headline": "Westpac uses AI to halve St.George data warehouse migration costs to $35m",
+  "summary": "Westpac leveraged AI to accelerate the migration of its legacy St.George data warehouse. This initiative reduced the project cost from a budgeted $70 million to approximately $35 million and completed the migration more than two years ahead of schedule. The project also developed a reusable AI data migration capability for future applications across the bank.",
+  "why_it_matters": "This case study demonstrates a concrete, quantifiable benefit of AI in a critical operational context for a major Australian financial institution, highlighting the need for robust governance and assurance frameworks for such deployments.",
+  "quotes": [
+    {
+      "text": "Westpac says AI-accelerated migration of the legacy St.George data warehouse cut costs from a budgeted $70 million to around $35 million.",
+      "supports": "summary"
+    },
+    {
+      "text": "The team used AI tools to speed up code conversion, testing and documentation.",
+      "supports": "summary"
+    },
+    {
+      "text": "The project produced a reusable AI data migration capability that Westpac expects to apply to other migrations for further benefits.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-09-30",
+      "what": "Full year ended for statutory net profit report",
+      "quote": "Westpac reported a statutory net profit of $6.8 billion for the full year ended September 30 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "A major Australian bank demonstrated significant, quantifiable cost savings and efficiency gains from an AI deployment in a core operational area, creating a reusable capability.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
+    "sourceSha256": "1599a2269de214ffb3e07ea57b83e73974db05f82bbfbaf14d340c681b8b6851",
+    "textChars": 3014,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:37:05.472Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

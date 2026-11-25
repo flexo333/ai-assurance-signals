@@ -1,0 +1,53 @@
+{
+  "id": "6d3e244c1b251321",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/security/semperis-unveils-lightning-platform-to-accelerate-ai-identity-detection-and-response",
+  "title": "Semperis unveils Lightning Platform to accelerate AI identity detection and response",
+  "publishedAt": "2026-11-19T22:36:27.341Z",
+  "fetchedAt": "2026-11-25T23:34:02.715Z",
+  "status": "summarised",
+  "headline": "Semperis launches Lightning identity platform for AI and human threats",
+  "summary": "Semperis has announced the release of Semperis Lightning, a platform designed to provide exposure management, attack-path analysis, and visibility across human, non-human, and agentic AI identities. The launch coincides with Australian organisations managing changing cybersecurity conditions following federal reviews of AI-driven cyber incidents. The platform offers a unified console to monitor identity infrastructures, assess security indicators, and detect suspicious activity across Active Directory, Microsoft Entra ID, and Okta.",
+  "why_it_matters": "Australian organisations adopting AI agents must ensure visibility and control over non-human and agentic identities to secure critical resources against machine-speed attacks.",
+  "quotes": [
+    {
+      "text": "Semperis, the identity-driven cyber resilience and crisis response company, today announced the release of Semperis Lightning, a comprehensive identity resilience and security platform designed to help organisations prevent, detect, respond to, and recover from agentic and conventional identity attacks.",
+      "supports": "summary"
+    },
+    {
+      "text": "With Lightning, organisations can adopt productivity-enhancing AI solutions while reducing risk of AI agents compromising critical resources.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 1,
+    "significance_reason": "This is a vendor product launch providing identity and security tooling for non-human and agentic AI identities, rather than a binding regulatory change or governance standard.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2dbbee46eb60126a786d92632dd38c2e34b96b7a4bf4e84d4baac1caae12923d",
+    "textChars": 3999,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:53.985Z",
+    "attempts": 1
+  }
+}

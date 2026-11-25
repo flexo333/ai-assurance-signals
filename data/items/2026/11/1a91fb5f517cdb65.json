@@ -1,0 +1,52 @@
+{
+  "id": "1a91fb5f517cdb65",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/how-to-track-ai-use-and-meet-gdpr-obligations-effectively",
+  "title": "How to track AI use and meet GDPR obligations effectively",
+  "publishedAt": "2026-11-19T16:32:52.250Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "Tracking AI use and meeting GDPR obligations effectively",
+  "summary": "Organisations must decide whether to track AI use at the tool, category, or individual use-case level to manage personal data risks under the GDPR. A practical middle ground is using predefined AI scenarios to group similar activities and risks under common rules. This approach avoids administrative overburden while ensuring compliance depends on the context and purpose of data processing.",
+  "why_it_matters": "Organisations deploying AI that processes personal data can streamline compliance by structuring governance around predefined AI scenarios rather than individual use cases, balancing administrative burden with regulatory obligations.",
+  "quotes": [
+    {
+      "text": "An AI scenario is a predefined set of AI-supported activities with similar characteristics and risks, governed by common rules.",
+      "supports": "summary"
+    },
+    {
+      "text": "That distinction matters because GDPR obligations depend on the purpose, context and risk of it's use, including the nature of the data processed, rather than on the AI tool itself.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Offers practical compliance commentary on aligning AI tracking with data protection law, relevant for general governance practice.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "0559cccbbb076b44ae02af2615490588c6c6e223b347eae6a61fdf5ff54685f0",
+    "textChars": 1744,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:49:19.950Z",
+    "attempts": 1
+  }
+}

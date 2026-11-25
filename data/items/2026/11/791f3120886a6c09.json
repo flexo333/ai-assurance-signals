@@ -1,0 +1,58 @@
+{
+  "id": "791f3120886a6c09",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/security/new-gitlab-agentic-automations-clear-the-security-backlog-and-do-up-to-twice-the-work-for-the-same-cost",
+  "title": "New GitLab Agentic Automations Clear the Security Backlog and Do Up to Twice the Work For The Same Cost",
+  "publishedAt": "2026-11-20T02:17:14.283Z",
+  "fetchedAt": "2026-11-25T23:34:02.080Z",
+  "status": "summarised",
+  "headline": "GitLab 19.6 adds governance controls, agentic remediation, and scheduled AI automations",
+  "summary": "GitLab Inc. has announced GitLab 19.6, introducing new capabilities for agentic AI remediation, scheduled background automations, and Model Context Protocol (MCP) governance. The release includes audit logging, scoped service accounts for automated tasks, and granular access controls that allow group owners to restrict MCP server tool calls. Additionally, GitLab has adjusted credit usage efficiency for the GitLab Duo Agent Platform, altering how agentic workloads are priced and consumed.",
+  "why_it_matters": "Engineering and compliance teams deploying autonomous AI agents must implement robust access controls, service accounts, and audit trails to maintain visibility and governance over agentic workflows across the software development lifecycle.",
+  "quotes": [
+    {
+      "text": "Each automation runs as a dedicated service account with scoped permissions, so audit events separate agent activity from human activity and record every change.",
+      "supports": "summary"
+    },
+    {
+      "text": "These capabilities help organisations put agents to work across more of the software lifecycle while keeping visibility and control over agent activity and spending.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-19",
+      "what": "The change to GitLab Credit efficiency takes effect for new customers.",
+      "quote": "The change takes effect on November 19, 2026, for new customers."
+    }
+  ],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Introduces specific AI governance and audit controls for software development agents, but is a commercial product release rather than a binding regulatory or legal standard.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "bde8ed2be7c538d6e84b4943feaed823b69830fcc5ae00621e6994f2d65fa82f",
+    "textChars": 7238,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:31.760Z",
+    "attempts": 1
+  }
+}

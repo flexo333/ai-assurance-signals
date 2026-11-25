@@ -1,0 +1,53 @@
+{
+  "id": "9e5f151617e49107",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/ai-solved-the-biggest-maths-problem-of-all-and-created-a-bigger-one-20261124-p61gfq",
+  "title": "AI solved the biggest maths problem of all – and created a bigger one",
+  "publishedAt": "2026-11-24T00:59:09.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.353Z",
+  "status": "summarised",
+  "headline": "Anthropic Claude and the Riemann hypothesis verification challenge",
+  "summary": "Anthropic's Claude AI model reportedly proved the Riemann hypothesis, generating 250,000 pages of output. However, the commentary questions the validity of proofs that cannot be understood or verified by humans.",
+  "why_it_matters": "Organisations deploying AI for complex technical or analytical tasks must grapple with the assurance challenge of verifying machine-generated outputs that exceed human readability.",
+  "quotes": [
+    {
+      "text": "Anthropic’s Claude may have proved the mother of all problems, the Riemann hypothesis, but if no human can understand 250,000 pages of slop, is it actually real?",
+      "supports": "summary"
+    },
+    {
+      "text": "if no human can understand 250,000 pages of slop, is it actually real?",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Highlights a conceptual and assurance dilemma regarding the verification of complex AI-generated outputs.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3810adafa64859487496a156fbd790d31f26362a73ff4988fe003bbaaca1ea63",
+    "textChars": 161,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:47:24.437Z",
+    "attempts": 1
+  }
+}

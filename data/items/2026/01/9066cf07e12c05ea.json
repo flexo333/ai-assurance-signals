@@ -1,0 +1,55 @@
+{
+  "id": "9066cf07e12c05ea",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/technology-ai/the-tools-and-training-transforming-nab-s-workforce-to-become",
+  "title": "The tools and training transforming NAB’s workforce to become “the person with AI”",
+  "publishedAt": "2026-01-07T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:58.854Z",
+  "status": "summarised",
+  "headline": "NAB details software engineering AI tool trials and governance controls",
+  "summary": "National Australia Bank reports on internal trials of AI software development tools including Cursor.ai and Amazon Q Developer across more than 6,000 engineers. The bank highlights productivity gains in legacy code refactoring and prototyping alongside human oversight mechanisms. Leadership emphasises that operationalising these tools requires structured training, AI literacy programs, and maintained human accountability.",
+  "why_it_matters": "Financial institutions scaling developer tooling must maintain traceability and control by design while investing in internal training and literacy rather than deploying tools without supervision.",
+  "quotes": [
+    {
+      "text": "Cursor dramatically accelerates our workflow, without ceding control - what I really like about it is it forces you to clarify your intent",
+      "supports": "summary"
+    },
+    {
+      "text": "You really do need proper training – we know we can't just hand people AI tools and expect to get a great outcome",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Provides concrete operational and risk-management insights from a major Australian bank scaling AI coding assistants across thousands of engineers.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "f8b00d3c578d3e362c0f06ef8a0fa7ea80af6f271b2e892795990a9d47a1d372",
+    "textChars": 5434,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:34:55.601Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

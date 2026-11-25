@@ -1,0 +1,53 @@
+{
+  "id": "e4a23a95622a186b",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/a-view-from-brussels-don-t-plan-for-the-future-define-it",
+  "title": "A view from Brussels: Don't plan for the future, define it",
+  "publishedAt": "2026-11-19T17:27:12.596Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "IAPP Europe Congress reflections highlight EU digital compliance and AI risks",
+  "summary": "Reflecting on the IAPP Europe Congress 2026, discussions centered on managing regulatory overlap across the EU AI Act and other digital rules while addressing practical challenges. Officials highlighted issues such as AI-powered data subject access requests, cybersecurity vulnerabilities, and the use of private data for AI model training. The event emphasized focusing on actionable structures and risk management rather than speculation.",
+  "why_it_matters": "Organisations navigating complex multi-framework environments must structure their compliance and risk operations to address growing regulatory scrutiny over AI model training and data protection.",
+  "quotes": [
+    {
+      "text": "Another area that defies the art of prediction is Brussels' appetite for simplification.",
+      "supports": "summary"
+    },
+    {
+      "text": "Many conversations, thus, pointed to the need for structure.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides general commentary and insights from a major privacy conference regarding EU regulatory overlaps and AI compliance trends.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ac5f29bcb0280b78f58cce13c941729261aab57ee9ba2072ac428d70d543a66e",
+    "textChars": 3001,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:49:10.142Z",
+    "attempts": 1
+  }
+}

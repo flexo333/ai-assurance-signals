@@ -1,0 +1,53 @@
+{
+  "id": "d492dd0f71906ab6",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/video-interview-okta-cmo-shannon-duffy-on-the-sign-up-wall-that-sends-77-of-australians-packing-and-why-ai-agents-are-a-marketers-dream",
+  "title": "Video interview: Okta CMO Shannon Duffy on the sign-up wall that sends 77% of Australians packing, and why AI agents are a marketer's dream",
+  "publishedAt": "2026-11-19T04:51:42.107Z",
+  "fetchedAt": "2026-11-25T23:34:03.995Z",
+  "status": "summarised",
+  "headline": "Okta CMO Shannon Duffy on AI agent identity and commerce security",
+  "summary": "In an interview discussing Okta's 2026 Customer Identity Trends Report, Okta Chief Marketing Officer Shannon Duffy outlines the challenges businesses face with agentic AI and customer identity. The report highlights that only a small minority of organisations give AI agents unique, tightly scoped identities, with many resorting to risky practices like shared service accounts or hardcoded credentials. Duffy stresses that proper governance and visibility are essential for managing AI agents effectively in digital commerce.",
+  "why_it_matters": "Organisations deploying AI agents must implement robust identity controls and runtime authorisation rather than relying on risky shared service accounts or hardcoded credentials.",
+  "quotes": [
+    {
+      "text": "According to the report, only 22.4% of organisations building AI agents give each agent its own identity with tightly scoped, time-limited access.",
+      "supports": "summary"
+    },
+    {
+      "text": "You have to have first visibility into all the agents you have, and then you need to know what they can do.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Provides vendor-reported industry statistics and commentary on AI agent identity practices and risks, relevant to compliance and security practitioners.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8c96053ae9511a20e8c96882bb6a91be62f34abb3ba2d5bfc92b2a0035d863bf",
+    "textChars": 19993,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:51:43.032Z",
+    "attempts": 2
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "79a5a06cee09bd7b",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/innovationaus-activate-2027-unlock-the-agenda",
+  "title": "InnovationAus Activate 2027: Unlock the agenda",
+  "publishedAt": "2026-11-25T08:20:56.000Z",
+  "fetchedAt": "2026-11-25T23:34:03.196Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "add84ecfd2ee18654ff07adb057718c03f355471b9c7d75d81392900b50eb40e",
+    "textChars": 2459,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:43:36.805Z",
+    "attempts": 1
+  }
+}

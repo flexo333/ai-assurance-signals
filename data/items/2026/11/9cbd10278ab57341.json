@@ -1,0 +1,52 @@
+{
+  "id": "9cbd10278ab57341",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/dell-technologies-delivers-the-trusted-data-and-ai-infrastructure-foundation-needed-to-scale-agentic-enterprise-ai",
+  "title": "Dell Technologies Delivers the Trusted Data and AI Infrastructure Foundation Needed to Scale Agentic Enterprise AI",
+  "publishedAt": "2026-11-19T05:47:06.154Z",
+  "fetchedAt": "2026-11-25T23:34:03.755Z",
+  "status": "summarised",
+  "headline": "Dell updates AI Factory with NVIDIA for enterprise data and infrastructure",
+  "summary": "Dell Technologies announced advancements to its Dell AI Factory with NVIDIA portfolio, introducing new data platform capabilities, infrastructure management tools, and validated ecosystem solutions. The updates aim to provide enterprises with governed data context, scalable infrastructure, and lower-risk pathways to deploy agentic AI into production. The release includes storage innovations, intent-based network automation, and expanded validation across AI security, governance, and orchestration tools.",
+  "why_it_matters": "Organisations scaling agentic AI must implement trusted data context, validated infrastructure architectures, and rigorous governance controls to move from proof of concept to production securely.",
+  "quotes": [
+    {
+      "text": "Dell Technologies (NYSE: DELL) announces advancements to the Dell AI Factory with NVIDIA, to help prepare data at scale, manage infrastructure with confidence and deploy validated solutions that work together from day one.",
+      "supports": "summary"
+    },
+    {
+      "text": "It demands trusted data, infrastructure engineered to scale, validated solutions and expertise to bring it all together while maintaining control over access, risk and costs.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "The announcement describes commercial product features and vendor infrastructure offerings rather than new regulatory or compliance mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "242cd5820e509483ad6659fedead0ea8d329af6e6876ce542025fa1a754a84b9",
+    "textChars": 10073,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:51:37.841Z",
+    "attempts": 1
+  }
+}

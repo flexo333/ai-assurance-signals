@@ -1,0 +1,55 @@
+{
+  "id": "024d2db8de557f9d",
+  "sourceId": "anz",
+  "sourceName": "ANZ (Newsroom & Bluenotes)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://anz.com.au/bluenotes/2026/November/ai-in-action-at-anz",
+  "title": "BEHIND THE NUMBERS: AI in action at ANZ",
+  "publishedAt": "2026-11-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:55.195Z",
+  "status": "summarised",
+  "headline": "ANZ outlines enterprise AI deployment and governance control framework",
+  "summary": "ANZ has detailed its strategy for embedding AI across customer relationship management, software engineering, and contact centre operations. The bank is implementing an Enterprise AI Control Plane to provide continuous visibility, governance, and technical oversight of its AI agents and models. Additionally, ANZ is launching an AI Academy to improve staff literacy and ensure responsible technology adoption.",
+  "why_it_matters": "The deployment of an Enterprise AI Control Plane demonstrates a practical approach to managing operational risk in a major financial institution by enforcing defined limits on AI agent activity.",
+  "quotes": [
+    {
+      "text": "As such, we’re implementing an Enterprise AI Control Plane providing continuous visibility, governance and technical control across users, models, agents, tools and platforms.",
+      "supports": "summary"
+    },
+    {
+      "text": "As we increasingly use AI agents, humans must remain in control. This new Control Plane sets defined limits on what agents can do and stops activity where it operates outside those limits.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "The article provides specific operational detail on how a major Australian bank is governing AI at scale through a dedicated control plane and internal upskilling.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d093cc69a0f26ef33311ad27d70b9f9a5f44e9fde53dae1196bf77aca098c5e5",
+    "textChars": 6551,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:34:27.289Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

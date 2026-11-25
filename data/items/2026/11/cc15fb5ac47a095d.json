@@ -1,0 +1,53 @@
+{
+  "id": "cc15fb5ac47a095d",
+  "sourceId": "oecd-ai",
+  "sourceName": "OECD.AI",
+  "authority": "official",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://oecd.ai/en/wonk/putting-agentic-ai-systems-to-work-what-practitioners-reveal-about-deployment-and-governance",
+  "title": "Putting agentic AI systems to work: What practitioners reveal about deployment and governance",
+  "publishedAt": "2026-11-23T14:21:33.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.481Z",
+  "status": "summarised",
+  "headline": "OECD working paper explores deployment and governance of agentic AI",
+  "summary": "An OECD working paper examines how 25 organisations across 11 countries are developing and deploying agentic AI systems in practice. The findings show that while adoption is expanding into workflows like software development and public administration, organisations maintain careful control through human-in-the-loop checkpoints. However, the shift from recommendation to action amplifies governance challenges such as traceability, multi-agent complexity, and cybersecurity.",
+  "why_it_matters": "Organisations deploying agentic AI must adapt existing frameworks like ISO/IEC 42001 and NIST RMF by implementing layered safeguards and dynamic oversight to manage the unique risks of autonomous multi-step actions.",
+  "quotes": [
+    {
+      "text": "Agentic AI in organisations: Early insights from practitioner interviews examines how agentic AI systems are being developed and deployed in real-world contexts.",
+      "supports": "summary"
+    },
+    {
+      "text": "Instead, they are adopting layered approaches that combine calibrated human oversight, domain expertise embedded in system design, and technical controls such as sandbox testing, least-privilege access, continuous monitoring and registries of approved agents.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides valuable empirical insights from 25 international organisations on managing the operational and governance risks of agentic AI.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5fdeee5564f5e1d30090a30d9de0dadce882dbcd6e96539431d0c588443ae0d5",
+    "textChars": 7485,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:47:56.304Z",
+    "attempts": 1
+  }
+}

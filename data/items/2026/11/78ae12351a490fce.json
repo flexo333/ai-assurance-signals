@@ -1,0 +1,23 @@
+{
+  "id": "78ae12351a490fce",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/businesses-racing-ahead-on-ai-but-mind-the-speedbumps-20261126-p61ele",
+  "title": "Businesses racing ahead on AI, but mind the speedbumps",
+  "publishedAt": "2026-11-25T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:59.560Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "16cb35d8a3f66cd3cdd04ea11303324a3f67458cd20477c718c38008146fc353",
+    "textChars": 153,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:42:15.766Z",
+    "attempts": 1
+  }
+}

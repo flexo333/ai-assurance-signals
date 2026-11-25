@@ -1,0 +1,53 @@
+{
+  "id": "a3f85c109a811656",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-research/nearly-60-of-legal-leaders-say-ai-adoption-is-outpacing-governance-diligent-institute-report-finds",
+  "title": "Nearly 60% of Legal Leaders Say AI Adoption is Outpacing Governance, Diligent Institute Report Finds",
+  "publishedAt": "2026-11-19T22:40:38.970Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "Nearly 60% of Legal Leaders Say AI Adoption Outpaces Governance",
+  "summary": "A report by the Diligent Institute and Wilson Sonsini reveals that nearly six in ten legal leaders believe AI adoption is outpacing governance. Furthermore, 41% of respondents lack an established basic AI governance framework, and legal professionals rate their boards' readiness to oversee AI risk at an average of 2.9 out of 5.",
+  "why_it_matters": "Low board readiness and missing governance frameworks highlight an urgent need for organisations to strengthen AI oversight and involve legal and risk teams earlier in AI deployment decisions.",
+  "quotes": [
+    {
+      "text": "Nearly six in 10 legal leaders say AI adoption is outpacing governance. That gap is a risk in itself: as AI spreads across an organisation, it becomes harder to maintain clear visibility into how it is used, what data it touches and who is accountable",
+      "supports": "summary"
+    },
+    {
+      "text": "Boards do not need every director to be an AI expert, but they do need enough fluency to challenge assumptions and ensure oversight keeps pace with adoption.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides benchmark data on corporate board readiness and governance gaps in AI adoption from a major governance institute study.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a80b1a5c7a0d690e79360b0bf3af17901b248efa65e5a2d2be1b16c5fec4c17a",
+    "textChars": 3760,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:48.757Z",
+    "attempts": 1
+  }
+}

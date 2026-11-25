@@ -1,0 +1,23 @@
+{
+  "id": "3c889b9131825928",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/this-australian-ai-founder-is-bucking-the-silicon-valley-exodus-20261125-p61gt9",
+  "title": "This Australian AI founder is bucking the Silicon Valley exodus",
+  "publishedAt": "2026-11-25T09:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.778Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "726995bdec26d8679547caa55a77a57db4ffc22119ae368ca1650388ba54591d",
+    "textChars": 155,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:43:22.145Z",
+    "attempts": 1
+  }
+}

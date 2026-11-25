@@ -1,0 +1,55 @@
+{
+  "id": "7c2d1cb5fe8cc278",
+  "sourceId": "westpac",
+  "sourceName": "Westpac (Wire & Media Releases)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://westpac.com.au/about-westpac/media/media-releases/2026/7-august",
+  "title": "Westpac and Amp Frontier to partner on AI engineering",
+  "publishedAt": "2026-08-07T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:57.679Z",
+  "status": "summarised",
+  "headline": "Westpac partners with Amp Frontier to establish local AI engineering labs",
+  "summary": "Westpac has announced a partnership with AI research lab Amp Frontier Corporation to establish Amp Labs in Australia. The initiative embeds dedicated AI engineers alongside Westpac teams to use AI agents for software engineering and technology delivery. The collaboration forms part of the bank's broader AI strategy to transform its technology build processes.",
+  "why_it_matters": "For Australian financial institutions adopting AI-assisted software engineering, embedding specialized engineering labs directly into operations highlights the growing operational reliance on AI code and agentic tools.",
+  "quotes": [
+    {
+      "text": "Westpac has announced a strategic partnership with Amp Frontier Corporation (Amp), an AI frontier research lab, to build the next generation of AI powered software and deliver better experiences for customers and employees.",
+      "supports": "summary"
+    },
+    {
+      "text": "Software engineering is being reshaped by AI, much like the cloud reshaped technology a generation ago. We're investing in skills, talent and capability that will benefit Westpac and contribute to Australia's growing AI ecosystem",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "A major Australian bank partnering to embed frontier AI engineering agents directly into core software delivery represents a significant operational AI deployment and capability build.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "61c21e356ec056a50587f399d1d58ea60165f686c74ecc0891404555ed912288",
+    "textChars": 2339,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:37:10.064Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

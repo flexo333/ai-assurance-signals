@@ -1,0 +1,50 @@
+{
+  "id": "c0e01762a8a1c092",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/policy/health-and-education/deloitte-banned-from-wa-government-work-over-ai-tarnished-report-20261125-p61h6p",
+  "title": "Deloitte banned from WA government work over AI-tarnished report",
+  "publishedAt": "2026-11-25T09:31:29.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.960Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "enforcement",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "A direct government vendor ban resulting from AI errors sets a strong precedent for accountability in public sector consulting.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "a38b6c975528fe18d1170dd237558d0ef697e0b3323f46d738a506e4b4eccfcd",
+    "textChars": 119,
+    "textSource": "feed",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T23:43:13.013Z",
+    "attempts": 2
+  }
+}

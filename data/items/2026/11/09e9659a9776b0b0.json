@@ -1,0 +1,58 @@
+{
+  "id": "09e9659a9776b0b0",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apra-deputy-chair-therese-mccarthy-hockeys-remarks-cisis-regulators",
+  "title": "APRA Deputy Chair Therese McCarthy Hockey’s remarks to CISI’s The Regulators",
+  "publishedAt": "2026-11-20T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.592Z",
+  "status": "summarised",
+  "headline": "APRA highlights AI operational risks and third-party dependencies",
+  "summary": "The Australian Prudential Regulation Authority highlighted AI and material service provider reliance as key operational risks changing the financial system. In remarks discussing its System Risk Outlook, APRA pointed to recent Microsoft and Copilot outages as near-miss test cases under prudential standard CPS 230. It also noted ongoing collaborative work with ASIC and the Australian Signals Directorate to address cyber risks accelerated by advancing AI capabilities.",
+  "why_it_matters": "Financial institutions must use CPS 230 to test resilience against third-party AI and technology dependencies, as regulators heighten scrutiny on operational risk concentration.",
+  "quotes": [
+    {
+      "text": "The first is that AI and reliance on material service providers are changing the nature and scale of operational risk.",
+      "supports": "summary"
+    },
+    {
+      "text": "The outage provided institutions with a valuable real-world test of the arrangements they have put in place under prudential standard CPS 230 Operational Risk Management .",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "Another initiative has been the work we’ve been doing with ASIC and Australian Signals Directorate to combat the elevated cyber risks accelerated by rapidly advancing AI capabilities.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "APRA's explicit warnings linking AI dependency, third-party concentration and CPS 230 operational risk set direct compliance expectations for all regulated financial entities in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e5f335bd6699be6119cf5dda77c1aba7172b95df68fbe06e46c9264483c65788",
+    "textChars": 7253,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:36.730Z",
+    "attempts": 1
+  }
+}

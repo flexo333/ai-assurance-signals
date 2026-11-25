@@ -1,0 +1,57 @@
+{
+  "id": "014d4c16e79ef7c8",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/voting-rights-for-ai-the-research-behind-an-unsettling-idea-295036",
+  "title": "Voting rights for AI? The research behind an unsettling idea",
+  "publishedAt": "2026-11-25T09:56:12.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.778Z",
+  "status": "summarised",
+  "headline": "Research explores AI consciousness, moral status, and potential political voice",
+  "summary": "A new book and related research examine the philosophical implications of AI models potentially becoming conscious, possessing moral status, or developing moral agency. The discussion disentangles concepts like moral patiency and moral agency, and questions whether AI could eventually have a claim to political voice. It also addresses the challenges this poses for human-AI alignment and the attribution of responsibility for AI actions.",
+  "why_it_matters": "This commentary raises fundamental, long-term questions about AI's moral status and agency, which could significantly influence future regulatory frameworks, responsibility attribution for AI harms, and the need for cautious AI development in Australia and globally.",
+  "quotes": [
+    {
+      "text": "AI researchers are giving increasing attention to the idea of AI models becoming conscious.",
+      "supports": "summary"
+    },
+    {
+      "text": "Philosophers distinguish two capacities relevant to moral status: moral patiency and moral agency.",
+      "supports": "summary"
+    },
+    {
+      "text": "If we cannot answer these questions before we urgently need to, we may need to develop AI more cautiously than we currently are.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Explores fundamental, long-term philosophical and ethical questions about AI consciousness and moral status that could shape future AI governance and societal integration.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
+    "sourceSha256": "792393e9511843b5a1f9289ae4876b5550bb52866b833bfb8a7cfd221b37c6fb",
+    "textChars": 8077,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:43:11.333Z",
+    "attempts": 1
+  }
+}

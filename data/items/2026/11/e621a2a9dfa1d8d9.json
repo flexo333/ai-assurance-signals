@@ -1,0 +1,23 @@
+{
+  "id": "e621a2a9dfa1d8d9",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/news/ipo-close",
+  "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
+  "publishedAt": "2026-11-20T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.592Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9dc40748e6583cd74061f8c04d0734134daff296f01127af0dc918e955cb619b",
+    "textChars": 3475,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:43.368Z",
+    "attempts": 1
+  }
+}

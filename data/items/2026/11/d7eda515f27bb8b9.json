@@ -1,0 +1,23 @@
+{
+  "id": "d7eda515f27bb8b9",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/cannon-brookes-ai-gamble-could-drive-atlassian-s-decade-first-profit-20261124-p61gq4",
+  "title": "Cannon-Brookes’ AI gamble could drive Atlassian’s decade-first profit",
+  "publishedAt": "2026-11-24T06:21:15.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.353Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "afb5591e493c8a9fd57ab78674e6be857ec928ab0e07e990ce6b3b7ec55a1456",
+    "textChars": 167,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:47:15.216Z",
+    "attempts": 1
+  }
+}

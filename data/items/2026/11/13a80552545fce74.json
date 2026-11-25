@@ -1,0 +1,53 @@
+{
+  "id": "13a80552545fce74",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/one-year-on-digital-omnibus-may-face-delays",
+  "title": "One year on, Digital Omnibus may face delays",
+  "publishedAt": "2026-11-19T17:20:39.043Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "EU Digital Omnibus proposals for AI training face legislative delays",
+  "summary": "Discussions at the IAPP Europe Congress 2026 indicate that the European Union's Digital Omnibus reforms, which include provisions affecting AI training and data protection, are likely to miss the February 2027 deadline. Stakeholders highlighted ongoing debates over legitimate-interest provisions for AI model development and trade secret exemptions. Officials noted that resolving divergent views between deregulation advocates and privacy defenders will extend the legislative timeline.",
+  "why_it_matters": "Uncertainty around the legal basis for AI training under European data protection rules risks driving businesses toward non-European providers if clear legal certainty is not established.",
+  "quotes": [
+    {
+      "text": "Google Public Policy Manager Pierre Devoize identified the legitimate-interest provision for AI training as among the most important proposed changes. He suggested that companies need legal certainty for AI model development and warned that uncertainty here could drive European businesses toward non-European AI providers.",
+      "supports": "summary"
+    },
+    {
+      "text": "Google Public Policy Manager Pierre Devoize identified the legitimate-interest provision for AI training as among the most important proposed changes. He suggested that companies need legal certainty for AI model development and warned that uncertainty here could drive European businesses toward non-European AI providers.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Changes to EU data protection laws and legal bases for AI training have global extraterritorial implications for AI developers and compliance teams.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "a848bcbf87066bf8ea11a1295d1d549a78b17ea3d3baf63e6f83f3c2a00db312",
+    "textChars": 4185,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:49:18.376Z",
+    "attempts": 1
+  }
+}

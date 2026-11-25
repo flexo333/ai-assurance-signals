@@ -1,0 +1,54 @@
+{
+  "id": "c0744c0257c7293c",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/anz-stands-up-an-enterprise-ai-control-plane-630221",
+  "title": "ANZ stands up an 'enterprise AI control plane'",
+  "publishedAt": "2026-11-09T08:02:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:57.038Z",
+  "status": "summarised",
+  "headline": "ANZ implements enterprise AI control plane for centralised governance",
+  "summary": "ANZ Banking Group has deployed an enterprise AI control plane to manage its increasing use of AI agents. The system is designed to provide visibility, technical control, and traceability across models, users, and platforms. It aims to enforce defined operational limits on AI agents to ensure human oversight.",
+  "why_it_matters": "The implementation of a centralised control plane represents a significant operational risk management approach for Australian financial institutions seeking to scale AI agents while maintaining governance and traceability.",
+  "quotes": [
+    {
+      "text": "ANZ Banking Group has stood up an ‘enterprise AI control plane’ that is providing centralised governance and control, particularly as the bank starts using more AI agents.",
+      "supports": "summary"
+    },
+    {
+      "text": "Our enterprise control plane will set defined limits on what agents can and do, and stop activity where it operates outside of those limits.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "The deployment of a dedicated AI control plane by a major Australian bank demonstrates a significant shift toward formalised, centralised operational governance for AI agents in a highly regulated sector.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "feb51579464dd835a429d863bdb16ad3f5523a9e0046e2d4ed3daf294e256cd7",
+    "textChars": 3483,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:34:31.950Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

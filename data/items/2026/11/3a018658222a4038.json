@@ -1,0 +1,24 @@
+{
+  "id": "3a018658222a4038",
+  "sourceId": "afr-financial-services",
+  "sourceName": "Australian Financial Review (Banking & Finance)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": true,
+  "url": "https://afr.com/companies/financial-services/the-oligopoly-busters-and-calm-heads-who-defined-australian-business-this-year-20261125-p61glb",
+  "title": "The oligopoly busters and calm heads who defined Australian business this year",
+  "publishedAt": "2026-11-25T09:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.778Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "61074c71afd82ac5dd5dee1029cb0f190c4d8bbbe729fa56f9624be49aa87ca0",
+    "textChars": 170,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T23:43:26.060Z",
+    "attempts": 1
+  }
+}

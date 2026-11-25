@@ -1,0 +1,23 @@
+{
+  "id": "cfb8452e8fab05c6",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/thought-for-the-week-human-beings-not-human-doings-flourishing-in-the-age-of-ai",
+  "title": "Thought for the week: Human beings, not human doings: Flourishing in the age of AI",
+  "publishedAt": "2026-11-23T15:33:27.600Z",
+  "fetchedAt": "2026-11-25T23:34:01.480Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "af0bd1e9328897ab055756ed184c0e2e1a8c5e93c3983b95e30e5906d8ec4ab1",
+    "textChars": 4158,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:47:41.811Z",
+    "attempts": 1
+  }
+}

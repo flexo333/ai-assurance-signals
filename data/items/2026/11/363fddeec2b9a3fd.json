@@ -1,0 +1,23 @@
+{
+  "id": "363fddeec2b9a3fd",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/airtrunk-s-mark-barnaba-worries-about-ai-getting-beyond-human-control-20261124-p61gux",
+  "title": "AirTrunk’s Mark Barnaba worries about AI getting beyond human control",
+  "publishedAt": "2026-11-24T07:13:30.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.353Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c8b4f3ff90945a87108955e1107b038c2964b74f93cbe0aa9a9a37ac3d93b6b7",
+    "textChars": 123,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:47:12.711Z",
+    "attempts": 1
+  }
+}

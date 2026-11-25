@@ -1,0 +1,53 @@
+{
+  "id": "98ce715a3c2f59e5",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/when-nobody-checks-the-work-what-recent-system-outages-mean-for-ai-governance",
+  "title": "When nobody checks the work: What recent system outages mean for AI governance",
+  "publishedAt": "2026-11-23T17:43:37.992Z",
+  "fetchedAt": "2026-11-25T23:34:01.480Z",
+  "status": "summarised",
+  "headline": "System outages highlight risks of AI changing software faster than humans can review",
+  "summary": "Recent major infrastructure outages involving Microsoft and the U.S. Federal Aviation Administration demonstrate how routine changes can cascade through complex systems when safeguards fail. While neither incident was linked to AI, they highlight growing governance concerns that AI tools generate code and changes faster than human reviewers can understand them. These events emphasize that responsible AI development depends as much on human review capacity as on the tools themselves.",
+  "why_it_matters": "Organisations adopting AI for software development and system changes must ensure human review capacity keeps pace to prevent undetected errors from cascading.",
+  "quotes": [
+    {
+      "text": "Over the past year, documented incidents have shown AI tools may generate or apply changes faster than people can check or fully understand them.",
+      "supports": "summary"
+    },
+    {
+      "text": "For privacy and AI governance professionals, responsible use of AI in development is not only about the tools. It is also about whether the human capacity to review their output keeps pace.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "Provides commentary on software engineering risks and human oversight limits relevant to AI development governance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8ad79b134bc8344f3fc093e847e022854560c26c8bce4f87de4a3ab8e118c06e",
+    "textChars": 1798,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:47:38.254Z",
+    "attempts": 1
+  }
+}

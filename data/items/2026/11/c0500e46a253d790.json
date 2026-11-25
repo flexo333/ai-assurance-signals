@@ -1,0 +1,59 @@
+{
+  "id": "c0500e46a253d790",
+  "sourceId": "anz",
+  "sourceName": "ANZ (Newsroom & Bluenotes)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://anz.com.au/newsroom/media/2026/november/anz-completes-major-cloud-data-transformation-strengthening-data-foundations-to-improve-customer-experiences",
+  "title": "ANZ completes major cloud data transformation, strengthening data foundations to improve customer experiences",
+  "publishedAt": "2026-11-17T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:54.978Z",
+  "status": "summarised",
+  "headline": "ANZ completes major cloud data migration using AI-assisted engineering",
+  "summary": "ANZ has migrated its Enterprise Big Data platform to AWS in six months using AI-assisted engineering and agentic AI. The project moved 1.7 petabytes of data supporting payments, business banking and customer remediation. The bank used Amazon Bedrock-powered tools to analyse, convert, test, and optimise workloads, reducing migration effort by 35 per cent.",
+  "why_it_matters": "The deployment demonstrates how a major Australian financial institution is using agentic AI and AI-assisted engineering to accelerate complex legacy data migrations while maintaining security and resilience controls.",
+  "quotes": [
+    {
+      "text": "ANZ has completed the migration of one of its largest data platforms to Amazon Web Services (AWS), establishing a modern, scalable foundation to support the bank's growing use of data, analytics and AI.",
+      "supports": "summary"
+    },
+    {
+      "text": "The transformation moved 1.7 petabytes of data, equivalent to more than 340 million smartphone photos, across 300 million files, 142,000 tables, 4,500 automated data workflows and 4,000 views.",
+      "supports": "summary"
+    },
+    {
+      "text": "It also demonstrates how AI-assisted engineering can accelerate complex delivery while maintaining a disciplined focus on security, resilience and quality.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "A significant production-scale deployment of agentic AI and AI-assisted engineering for core banking infrastructure by a major Australian bank.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "cd3220cd5db2554414003cb4b6f870c226e4796c057b184429915d4ce63c8343",
+    "textChars": 4243,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:34:19.575Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

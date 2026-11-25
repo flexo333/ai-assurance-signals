@@ -1,0 +1,53 @@
+{
+  "id": "4fae191b246968dd",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/anz-uses-ai-to-move-17pb-data-platform-to-aws-630399",
+  "title": "ANZ uses AI to move 1.7PB data platform to AWS",
+  "publishedAt": "2026-11-17T20:05:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:55.554Z",
+  "status": "summarised",
+  "headline": "ANZ uses agentic AI to accelerate large-scale data platform migration to AWS",
+  "summary": "ANZ Bank migrated 1.7 petabytes of data from an on-premises platform to Amazon EMR in six months, completing the project a year ahead of schedule. The bank utilised coding and troubleshooting agents to reduce migration effort by 35 percent and halve defects. The project also involved tokenising 80 terabytes of sensitive customer data to ensure security during the transition.",
+  "why_it_matters": "This deployment demonstrates how agentic AI can be integrated into complex, regulated financial engineering workflows to accelerate delivery while maintaining security and quality standards.",
+  "quotes": [
+    {
+      "text": "ANZ said agentic AI reduced migration effort by an estimated 35 percent and cut defects and rework by about half compared to traditional approaches.",
+      "supports": "summary"
+    },
+    {
+      "text": "The project showed AI-assisted engineering could \"accelerate complex delivery while maintaining a disciplined focus on security, resilience and quality\", group chief information officer Donald Patra said.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "A major production deployment of agentic AI in a critical financial infrastructure migration, demonstrating operational efficiency and risk management controls.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "295897579c089fe3e9e5766b5fde399cbd9b96d7ba93d10c9eec7ecc44ae5de9",
+    "textChars": 3892,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:34:23.318Z",
+    "attempts": 1,
+    "via": "seed-url"
+  }
+}

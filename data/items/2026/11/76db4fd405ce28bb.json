@@ -1,0 +1,23 @@
+{
+  "id": "76db4fd405ce28bb",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/news/anthropic-prices-initial-public-offering",
+  "title": "Anthropic prices initial public offering",
+  "publishedAt": "2026-11-18T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:03.995Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "77e86d5453eab459a5a7012244e7a70e8dbb6c542821be8954944096b4396f1a",
+    "textChars": 1727,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:52:30.362Z",
+    "attempts": 1
+  }
+}

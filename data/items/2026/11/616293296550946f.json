@@ -1,0 +1,57 @@
+{
+  "id": "616293296550946f",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity",
+  "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+  "publishedAt": "2026-11-24T13:07:53.000Z",
+  "fetchedAt": "2026-11-25T23:34:03.458Z",
+  "status": "summarised",
+  "headline": "Google DeepMind launches Mass Spec Skills for Antigravity to interpret mass spectra",
+  "summary": "Google DeepMind has released \"Mass Spec Skills for Google Antigravity,\" an AI tool designed to help scientists interpret tandem mass spectra and identify molecular structures. The tool combines Gemini's chemical reasoning with established mass spectrometry tools and public chemical databases. It can translate mass spectra to molecular structures at scale, providing an auditable report and matching frontier-level retrieval accuracy even with lightweight models. The system aims to automate time-consuming groundwork while keeping chemists in control of scientific judgements.",
+  "why_it_matters": "This demonstrates how AI agents can be built with \"skills\" to integrate with existing domain-specific tools and databases, offering a model for developing auditable and verifiable AI systems in complex scientific or regulated fields.",
+  "quotes": [
+    {
+      "text": "Mass Spec Skills empowers scientists using Google Antigravity to interpret tandem mass spectra, lay out chemical evidence, and match frontier-level retrieval accuracy even with a lightweight model.",
+      "supports": "summary"
+    },
+    {
+      "text": "Antigravity’s Mass Spec Skills pair mass spectrometry tools trusted by the community with transparent agentic reasoning, performing the time-consuming groundwork of spectral interpretation and keeping the chemist in control of decisions requiring scientific judgement.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "From a single prompt, the agent can take an unannotated tandem mass spectrum all the way to a proposed chemical structure and an auditable report",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Demonstrates a model for building auditable and verifiable AI agents by integrating large language models with trusted domain-specific tools and databases.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
+    "sourceSha256": "9938da391fb354533060010c462723b6ae467f8ceb7cf02bb003ec0c2552344e",
+    "textChars": 13840,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:47:08.718Z",
+    "attempts": 1
+  }
+}

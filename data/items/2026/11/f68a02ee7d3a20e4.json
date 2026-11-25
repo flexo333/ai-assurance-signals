@@ -1,0 +1,52 @@
+{
+  "id": "f68a02ee7d3a20e4",
+  "sourceId": "oecd-ai",
+  "sourceName": "OECD.AI",
+  "authority": "official",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://oecd.ai/en/wonk/bridging-frameworks-how-haip-2-0-supports-interoperability-with-the-eu-ai-act",
+  "title": "Bridging frameworks: How HAIP 2.0 supports interoperability with the EU AI Act",
+  "publishedAt": "2026-11-23T14:19:39.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.481Z",
+  "status": "summarised",
+  "headline": "OECD explores interoperability between HAIP 2.0 and EU AI Act",
+  "summary": "The OECD examined how version 2.0 of the Hiroshima AI Process (HAIP) reporting framework interoperates with the EU AI Act and its General-Purpose AI Code of Practice. A mapping exercise by the Centre pour la Sécurité de l’IA found that 80% of HAIP 2.0 questions refer to requirements covered by the EU regime. While the EU framework is binding and confidential in much of its reporting, HAIP 2.0 is voluntary and provides open public transparency through the OECD.AI Policy Observatory.",
+  "why_it_matters": "Organisations that comply with the EU AI Act can reuse their underlying compliance evidence to streamline reporting under the voluntary Hiroshima AI Process framework.",
+  "quotes": [
+    {
+      "text": "In May 2026, the OECD launched version 2.0 of the Hiroshima AI Process (HAIP) reporting framework , on the margins of France’s G7 presidency.",
+      "supports": "summary"
+    },
+    {
+      "text": "information and evidence prepared for EU AI Act compliance can serve as an information base to file a HAIP report, thereby facilitating reporting for EU companies.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides a detailed interoperability analysis between two major international and regional AI governance reporting standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "6bff1537a6d7950386f92765613a96896f5f867fa648696a41f4c5f809ef8d2e",
+    "textChars": 11207,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:05.593Z",
+    "attempts": 1
+  }
+}

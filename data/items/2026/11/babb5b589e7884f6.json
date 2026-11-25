@@ -1,0 +1,53 @@
+{
+  "id": "babb5b589e7884f6",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/rubrik-announces-protection-for-microsoft-azure-cosmos-db",
+  "title": "Rubrik Announces Protection for Microsoft Azure Cosmos DB",
+  "publishedAt": "2026-11-19T05:52:47.584Z",
+  "fetchedAt": "2026-11-25T23:34:03.797Z",
+  "status": "summarised",
+  "headline": "Rubrik announces data protection capabilities for Azure Cosmos DB AI workloads",
+  "summary": "Rubrik has introduced expanded data protection and cyber resilience capabilities for Microsoft Azure Cosmos DB, securing the data layer behind enterprise AI applications. The solution provides immutable, air-gapped backups, precision container-level recovery, and extended compliance retention outside the native Azure identity boundary. This aims to safeguard mission-critical vector databases and memory stores used by scaling AI workloads against operational disruptions or attacks.",
+  "why_it_matters": "Organisations scaling AI workloads on cloud databases must ensure robust, independent, air-gapped backup and compliance retention to maintain operational resilience and meet regulatory audit requirements if production environments are compromised.",
+  "quotes": [
+    {
+      "text": "The expanded Rubrik Cloud Data Protection capabilities protect the data layer behind enterprise AI applications with immutable, application-consistent protection built for scale.",
+      "supports": "summary"
+    },
+    {
+      "text": "Organisations can enforce SLA-driven retention policies to store data for months or years, which surpasses the native thirty-five day limit to meet the requirements for strict regulatory compliance.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Announces vendor product features for backing up AI data layers, which assists with resilience and compliance but does not alter regulatory obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a26e76f44ca4ea28d2eeb7c67d61ee52cb12137a5f2a92577d443cd69a7943d5",
+    "textChars": 3708,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:51:23.921Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "400cca1ab3090531",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/notes-from-the-iapp-canada-who-gets-to-decide-what-is-true-about-you",
+  "title": "Notes from the IAPP Canada: Who gets to decide what is true about you?",
+  "publishedAt": "2026-11-20T12:55:03.056Z",
+  "fetchedAt": "2026-11-25T23:34:01.481Z",
+  "status": "summarised",
+  "headline": "Canada's Bill C-36 and AI automated decision-making transparency",
+  "summary": "An IAPP commentary examines Canada's proposed Bill C-36, which would introduce rights to explanations for automated predictions, recommendations, and decisions impacting individuals. The article highlights the compliance challenges of tracing AI-generated inferences, contrasting Canadian approaches with GDPR case law and Quebec's private-sector privacy statute. It notes that verifying AI outputs remains difficult when models supply no sources or audit trails.",
+  "why_it_matters": "Organisations deploying AI for consequential assessments must design systems that preserve evidence and source data, as mere human rubber-stamping will not satisfy emerging legal requirements to explain and contest automated decisions.",
+  "quotes": [
+    {
+      "text": "Section 63 would give individuals the right to an explanation of an automated prediction, recommendation or decision about them that could have a legal or similarly significant effect.",
+      "supports": "summary"
+    },
+    {
+      "text": "For privacy professionals, answering that question involves designing systems that preserve the evidence behind consequential assessments and providing a reviewer with genuine authority to reconsider them.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides a detailed compliance analysis of automated decision-making and explainability provisions in pending privacy legislation that mirrors global regulatory trends.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d45e16b9277c20313b03b782d5a9980320193ae7fd380a049032634f1c31c028",
+    "textChars": 14439,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:27.605Z",
+    "attempts": 1
+  }
+}

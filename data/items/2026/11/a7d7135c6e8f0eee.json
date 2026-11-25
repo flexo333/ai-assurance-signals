@@ -1,0 +1,61 @@
+{
+  "id": "a7d7135c6e8f0eee",
+  "sourceId": "oecd-ai",
+  "sourceName": "OECD.AI",
+  "authority": "official",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://oecd.ai/en/wonk/haip-transforming-transparency-from-ai-compliance-burden-to-competitive-advantage",
+  "title": "HAIP is transforming transparency from a compliance burden to a competitive advantage",
+  "publishedAt": "2026-11-19T13:28:33.000Z",
+  "fetchedAt": "2026-11-25T23:34:02.392Z",
+  "status": "summarised",
+  "headline": "Salesforce highlights HAIP Reporting Framework benefits for global AI governance",
+  "summary": "Salesforce contributed to the OECD's Hiroshima AI Process (HAIP) Reporting Framework, which aims to provide a common language and global interoperability for AI governance. The company argues that regulatory fragmentation is a significant hurdle to responsible AI adoption, especially with the rise of agentic AI. HAIP helps transform transparency from a compliance burden into a competitive advantage by offering a standardised baseline for comparing compliance processes and acting as a diplomatic bridge for safety commitments across jurisdictions.",
+  "why_it_matters": "The call for globally coherent and interoperable AI governance frameworks, like HAIP, suggests that Australian organisations operating internationally may benefit from aligning with such standards to navigate diverse regulatory landscapes and demonstrate responsible AI use.",
+  "quotes": [
+    {
+      "text": "Salesforce was pleased to be one of the first companies to contribute to the reporting framework developed by the OECD under the Hiroshima AI Process (HAIP)",
+      "supports": "summary"
+    },
+    {
+      "text": "The HAIP Reporting Framework provides a standardised baseline that allows regulators and companies to compare compliance processes across the industry",
+      "supports": "summary"
+    },
+    {
+      "text": "In a fragmented regulatory environment, demonstrating responsible AI use means navigating a different set of voluntary and mandatory rules in every market where it operates",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "A harmonised framework with clear, tiered requirements based on risk level rather than company size would change that calculus entirely",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "The article highlights the practical challenges of regulatory fragmentation for businesses, including financial services, and advocates for international harmonisation through the HAIP framework, which is relevant for organisations navigating global AI governance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 3,
+    "sourceSha256": "c9131bdc52d71cabeaef01ef7a8a8220419f0c881e59d6f6b1b0cb911dd2a0df",
+    "textChars": 8323,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:50:00.242Z",
+    "attempts": 1
+  }
+}

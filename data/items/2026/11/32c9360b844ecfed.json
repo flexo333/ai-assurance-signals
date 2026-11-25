@@ -9,15 +9,45 @@
   "title": "DXC Introduces Frontier Code Assurance, a Managed Code Security Service Built on Claude Mythos",
   "publishedAt": "2026-11-24T23:53:43.993Z",
   "fetchedAt": "2026-11-25T03:10:54.244Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "DXC launches AI-driven code security service using Claude Mythos",
+  "summary": "DXC Technology has launched Frontier Code Assurance, a managed cybersecurity service that uses Anthropic’s Claude Mythos AI model to identify, validate, and remediate software vulnerabilities. The service combines AI-driven vulnerability discovery with human cybersecurity specialists to rank business impact and provide a prioritised remediation roadmap. It builds on an existing partnership announced in June 2026 and is available immediately.",
+  "why_it_matters": "Organisations adopting AI for vulnerability discovery must pair automated model outputs with specialist human oversight to prioritise remediation and maintain auditable evidence for mission-critical software.",
+  "quotes": [
+    {
+      "text": "DXC Technology (NYSE: DXC), a leading enterprise technology and innovation partner, today launched DXC Frontier Code Assurance, a cybersecurity service that uses Anthropic’s Claude Mythos AI model to help enterprises find, validate, and help remediate vulnerabilities in mission-critical software.",
+      "supports": "summary"
+    },
+    {
+      "text": "As AI accelerates the discovery of vulnerabilities, the bottleneck has shifted from finding flaws to prioritising and executing the remediation path. Frontier Code Assurance is built for that challenge.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Vendor product launch introducing an AI-assisted code security and remediation service without specific regulatory or compliance mandate changes.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "001519457a0c74d5db8b6f37fdb547cfe197eee311d524a54f94a5e614850b35",
     "textChars": 2114,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:11:52.028Z",
-    "attempts": 1
+    "analysedAt": "2026-11-25T23:37:26.040Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

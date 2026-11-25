@@ -1,0 +1,23 @@
+{
+  "id": "072fb037fb8ced75",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/five-reasons-why-we-should-still-make-things-with-our-hands-297451",
+  "title": "Five reasons why we should still make things with our hands",
+  "publishedAt": "2026-11-25T16:32:14.000Z",
+  "fetchedAt": "2026-11-25T23:33:59.761Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "16a14a6fadd7dbdee89ce44a7e8b397f2f27e588ad8d8a39c4c899b293f076a5",
+    "textChars": 6736,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:42:42.856Z",
+    "attempts": 1
+  }
+}

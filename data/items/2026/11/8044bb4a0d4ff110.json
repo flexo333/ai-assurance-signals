@@ -1,0 +1,23 @@
+{
+  "id": "8044bb4a0d4ff110",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/the-efficiency-paradox-why-greener-ai-means-more-waste-297191",
+  "title": "The efficiency paradox: why greener AI means more waste",
+  "publishedAt": "2026-11-25T16:29:20.000Z",
+  "fetchedAt": "2026-11-25T23:34:00.095Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0e92d7da8f9d95bd8c54741e40d4e36b7ee73b5eb560ffdcd14eb10064d6ac22",
+    "textChars": 5175,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:42:45.445Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "cf75f32f4505fa1d",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apra-publishes-deputy-chair-therese-mccarthy-hockeys-remarks-cisis-regulators",
+  "title": "APRA publishes Deputy Chair Therese McCarthy Hockey’s remarks to CISI’s The Regulators",
+  "publishedAt": "2026-11-20T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.592Z",
+  "status": "summarised",
+  "headline": "APRA highlights AI use in vulnerability patching and market risks",
+  "summary": "APRA published remarks by Deputy Chair Therese McCarthy Hockey addressing market sensitivities to AI developments and noting that well-prepared firms are using AI to detect and patch system vulnerabilities. The regulator also highlighted broader financial stability concerns, including bond yield risks and non-performing loans.",
+  "why_it_matters": "Financial institutions must note APRA's expectation that well-prepared firms actively use AI for vulnerability detection and risk management while navigating equity market sensitivities to AI developments.",
+  "quotes": [
+    {
+      "text": "Meanwhile equity markets have been sensitive to AI developments. A sharp repricing could raise funding costs and reduce investment values in Australia.",
+      "supports": "summary"
+    },
+    {
+      "text": "Well-prepared firms are reducing risk now. They are using AI to urgently detect and patch system vulnerabilities, mapping sanctions and geopolitical exposures, protecting staff and communications and rehearsing their preparedness to respond to “severe but plausible” scenarios.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "APRA explicitly identifies AI vulnerability patching as a practice of well-prepared firms and notes market sensitivity to AI, signaling supervisory awareness for Australian regulated entities.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "221471d4f39d6921de272a567b6f25516cbb1b9d83ac230bc576341ac279bad9",
+    "textChars": 2459,
+    "textSource": "article",
+    "extractMethod": "main-text",
+    "analysedAt": "2026-11-25T23:48:39.549Z",
+    "attempts": 1
+  }
+}

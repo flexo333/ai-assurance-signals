@@ -1,0 +1,53 @@
+{
+  "id": "855790015bd4dd38",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/the-big-ai-question-business-and-government-still-can-t-answer-20261126-p61fzi",
+  "title": "The big AI question business and government still can’t answer",
+  "publishedAt": "2026-11-25T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:33:59.560Z",
+  "status": "summarised",
+  "headline": "Business and government lack clarity on AI workforce impacts",
+  "summary": "Four years into the artificial intelligence boom, corporate Australia and the federal government still do not know what the technology means for the future. Additionally, they remain uncertain about how many jobs will be lost.",
+  "why_it_matters": "The ongoing uncertainty surrounding workforce impacts highlights the need for Australian organisations to better assess and govern the broader socio-economic risks of their AI deployments.",
+  "quotes": [
+    {
+      "text": "Four years into the AI boom, the government and corporate Australia still have no idea what AI means for the future and how many jobs will be lost.",
+      "supports": "summary"
+    },
+    {
+      "text": "Four years into the AI boom, the government and corporate Australia still have no idea what AI means for the future and how many jobs will be lost.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 1,
+    "significance_reason": "General news commentary highlighting strategic uncertainty without introducing concrete regulatory obligations or operational standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2ea0248e3e3f7f7c1ef7abecee2c4e7f0c1a0da3e8b05d64b0c411da07c2367b",
+    "textChars": 147,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-25T23:42:27.475Z",
+    "attempts": 1
+  }
+}

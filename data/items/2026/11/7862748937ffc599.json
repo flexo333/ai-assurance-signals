@@ -1,0 +1,53 @@
+{
+  "id": "7862748937ffc599",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/research/working-with-ai",
+  "title": "Working with AI",
+  "publishedAt": "2026-11-23T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T23:34:01.481Z",
+  "status": "summarised",
+  "headline": "Anthropic Enterprise Interview Study on AI Deployment and Reorganization",
+  "summary": "Anthropic conducted 66 interviews with 58 enterprise customers to examine how businesses across the economy are adopting AI. The study found that companies mostly capture value by increasing output through accelerated work and improved service quality rather than through cost-cutting. While direct domestic layoffs were rare, many companies reported reducing hiring or cutting external contractors, particularly offshore services. The highest-value implementations required significant organizational restructuring and role redesign rather than simple top-down automation.",
+  "why_it_matters": "Organisations adopting AI must recognize that capturing maximum value requires deliberate workflow reorganization and human-in-the-loop controls rather than just deploying narrow automation tools.",
+  "quotes": [
+    {
+      "text": "To understand businesses’ experiences better, we conducted 66 interviews with 58 of Anthropic’s enterprise customers.",
+      "supports": "summary"
+    },
+    {
+      "text": "The highest-value applications involve wide-reaching organizational change.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides empirical qualitative research on enterprise AI adoption, employment impacts, and organizational restructuring bottlenecks.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2bc5d5fca67b15b4e90bd2290d47993373f6bb32e7344552bb000032142386e3",
+    "textChars": 19998,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T23:48:07.577Z",
+    "attempts": 1
+  }
+}
