@@ -1,0 +1,51 @@
+{
+  "id": "bd97c0e50e7e5eae",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/in-the-age-of-ai-indigenous-ways-of-knowing-remind-us-why-lived-experience-matters-296644",
+  "title": "In the age of AI, Indigenous ways of knowing remind us why lived experience matters",
+  "publishedAt": "2026-11-24T17:04:14.000Z",
+  "fetchedAt": "2026-11-25T03:10:56.101Z",
+  "status": "summarised",
+  "headline": "AI prompts universities to rethink knowledge production and lived experience",
+  "summary": "As artificial intelligence increasingly performs tasks like mathematical discovery and research generation, universities face fundamental questions about human contributions to knowledge. Drawing on Indigenous ways of knowing, academics argue that universities should look beyond regulation and value human lived experience, relationality, and intergenerational knowledge. This perspective suggests that knowledge is deeply connected to relationships and responsibilities rather than being purely processed information.",
+  "why_it_matters": "Organisations governing AI deployment in education and research must recognise that human knowledge involves relational and experiential contexts that technology cannot fully replicate.",
+  "quotes": [
+    {
+      "text": "As AI technologies advance, they can perform tasks once considered the exclusive domain of humans.",
+      "supports": "summary"
+    },
+    {
+      "text": "As AI begins to transform how knowledge is produced, universities have an opportunity to reaffirm the importance of human experience.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Highlights broader philosophical and institutional governance challenges regarding AI's role in knowledge production within higher education.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "a320032bc6dd4ff4d8e2600dd15ce9a1efa443ab268e9e0c7513d19eac1a13a5",
+    "textChars": 7184,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:13:43.112Z",
+    "attempts": 1
+  }
+}

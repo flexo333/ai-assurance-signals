@@ -1,0 +1,51 @@
+{
+  "id": "b2a8541be4f1bf43",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/nintex-releases-k2-5-10-advancing-enterprise-automation-in-complex-governance-environments",
+  "title": "Nintex Releases K2 5.10, Advancing Enterprise Automation in Complex Governance Environments",
+  "publishedAt": "2026-11-24T23:02:52.996Z",
+  "fetchedAt": "2026-11-25T03:10:54.382Z",
+  "status": "summarised",
+  "headline": "Nintex Releases K2 5.10 with Local AI and Governance Features",
+  "summary": "Nintex has announced the release of Nintex Automation K2 5.10, featuring enhancements designed to help organisations automate complex workflows while maintaining control over data, infrastructure, and governance requirements. The platform builds on previously introduced locally hosted AI capabilities, allowing regulated and security-sensitive organisations to apply AI to operational processes. Additionally, the release expands SharePoint integration and updates core platform security and frameworks.",
+  "why_it_matters": "Organisations operating in regulated environments can utilise locally hosted AI capabilities within workflows to maintain control over sensitive data and meet data sovereignty obligations.",
+  "quotes": [
+    {
+      "text": "The latest release also carries forward K2 Intelligence, introduced in K2 5.9.1, which brings locally hosted AI capabilities into K2 workflows, forms, and applications.",
+      "supports": "summary"
+    },
+    {
+      "text": "This gives organisations in regulated and security-sensitive environments a practical way to apply AI to operational processes while maintaining control over how sensitive information is processed.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides a localized AI orchestration capability for regulated environments, though it is vendor product news rather than a regulatory mandate.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "142a4484fc466e4998935a792a683e0b00c31d414ecbca3fdddc3fa9764e3758",
+    "textChars": 4613,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:12:16.933Z",
+    "attempts": 1
+  }
+}

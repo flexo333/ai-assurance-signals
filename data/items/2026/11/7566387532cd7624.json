@@ -1,0 +1,51 @@
+{
+  "id": "7566387532cd7624",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/us-schools-are-moving-away-from-ai-in-google-searches-should-australia-do-the-same-297160",
+  "title": "US schools are moving away from AI in Google searches. Should Australia do the same?",
+  "publishedAt": "2026-11-24T19:10:04.000Z",
+  "fetchedAt": "2026-11-25T03:10:55.918Z",
+  "status": "summarised",
+  "headline": "US school districts weigh moving from Google searches over forced AI integration",
+  "summary": "Major school districts in the United States are considering moving away from Google search engines because Google integrated AI tools that cannot be switched off without banning the search engine entirely. Google announced that search and standalone AI tools like Gemini will be automatically switched off for students from next year unless enabled by administrators. In Australia, state and federal education ministers recently agreed to restrict generative AI use in assessments, but current guidance leaves a gap regarding AI encountered through everyday search engines and applications.",
+  "why_it_matters": "Australian educational authorities face a governance gap because current ministerial restrictions do not address how embedded AI overviews in everyday search engines affect students' digital literacy and assessment integrity.",
+  "quotes": [
+    {
+      "text": "Three major school districts in the United States are contemplating moving away from Google search engines , so students are not forced to use artificial intelligence (AI) in their daily school work.",
+      "supports": "summary"
+    },
+    {
+      "text": "However, the digital detox doesn’t outline any specific standards about students encountering AI through search engines, social media or other applications – leaving a gap in guidance.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Highlights a critical policy and governance gap in Australian schools regarding unavoidable AI integration via standard search engines and educational tools.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "58091a3d27f09abc0135e43bbbb094a8ac65ae8189910a8e8c11976fb70b5108",
+    "textChars": 5230,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:13:26.108Z",
+    "attempts": 1
+  }
+}

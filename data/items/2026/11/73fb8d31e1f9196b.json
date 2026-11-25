@@ -1,0 +1,23 @@
+{
+  "id": "73fb8d31e1f9196b",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/salesforce-contact-centre-now-generally-available-in-australia-and-new-zealand",
+  "title": "Salesforce Contact Centre now generally available in Australia and New Zealand",
+  "publishedAt": "2026-11-25T01:09:08.392Z",
+  "fetchedAt": "2026-11-25T03:10:53.944Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "3c536f39d957cb38b2e23ea0bc5e45c467d76d74546fccd019b1caf7e11e4bd1",
+    "textChars": 6431,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:11:44.496Z",
+    "attempts": 1
+  }
+}

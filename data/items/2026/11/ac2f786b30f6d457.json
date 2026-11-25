@@ -1,0 +1,23 @@
+{
+  "id": "ac2f786b30f6d457",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+  "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+  "publishedAt": "2026-11-24T13:00:00.000Z",
+  "fetchedAt": "2026-11-25T03:10:57.762Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "0f5c41667239528bf989e1c716f1626a27c1c3ddb375022f89a655290431afe1",
+    "textChars": 20001,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:14:21.199Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "38b6a9c33bc385b8",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/24/1148091/raising-the-stakes-for-enterprise-networks-with-ai-modernization",
+  "title": "Raising the stakes for enterprise networks with AI modernization",
+  "publishedAt": "2026-11-24T15:15:16.000Z",
+  "fetchedAt": "2026-11-25T03:10:58.186Z",
+  "status": "summarised",
+  "headline": "Enterprise networks face AI modernization and data sovereignty challenges",
+  "summary": "Agentic AI generates significantly more network traffic than human workers, placing severe strain on enterprise networks. As AI inference shifts to on-premises or near-premises infrastructure due to latency demands, organisations must rethink their network architectures. Additionally, international regulations regarding data sovereignty and sovereign AI are creating complex infrastructure challenges for global enterprises.",
+  "why_it_matters": "Organisations must adapt their network infrastructure and architectural governance to handle intense AI workloads and comply with strict data sovereignty laws.",
+  "quotes": [
+    {
+      "text": "Tasks conducted by AI agents generate an estimated 450% more network traffic than the same tasks done by human workers.",
+      "supports": "summary"
+    },
+    {
+      "text": "Regulators worldwide are passing laws requiring data and AI processing to remain within national borders.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Highlights enterprise infrastructure and regulatory challenges driven by AI workloads and data sovereignty laws.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "0fba53d725c24444a0533ec1e1f86462cc8915f96e4c49cf5bd8ed2af068edd6",
+    "textChars": 3583,
+    "textSource": "feed",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:13:51.428Z",
+    "attempts": 1
+  }
+}

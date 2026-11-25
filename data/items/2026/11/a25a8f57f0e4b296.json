@@ -1,0 +1,50 @@
+{
+  "id": "a25a8f57f0e4b296",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/jensen-huang-nvidia-and-the-risks-that-come-with-boomerang-bosses-297413",
+  "title": "Jensen Huang, Nvidia and the risks that come with ‘boomerang bosses’",
+  "publishedAt": "2026-11-24T14:34:19.000Z",
+  "fetchedAt": "2026-11-25T03:10:56.301Z",
+  "status": "summarised",
+  "headline": "Jensen Huang's return to Nvidia highlights corporate governance and key person risks",
+  "summary": "Following a brief departure due to personal conduct issues, co-founder Jensen Huang has returned as CEO of Nvidia. The high-profile leadership transition exposed Nvidia's heavy dependency on Huang, illustrating severe key person risk for a critical player in the global artificial intelligence sector. While financial markets reacted positively to his reinstatement, academic research on boomerang executives indicates ongoing challenges regarding firm governance and oversight.",
+  "why_it_matters": "Organisations heavily reliant on individual founders or leaders for AI development must manage acute key person risk by strengthening corporate governance and oversight structures.",
+  "quotes": [
+    {
+      "text": "The idea of “key person risk” is the vulnerability from depending heavily on one person whose absence could severely disrupt how a business works.",
+      "supports": "summary"
+    },
+    {
+      "text": "What is likely to be a longer term worry is issues of reputation and governance at the world’s most important chip-maker.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Highlights major governance and key person vulnerabilities at a central AI infrastructure firm, though it is primarily commentary rather than regulatory policy.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "73b7cdc16d391545134552cee4da51ca9761a217f48dfcd645b4211b60ed5d06",
+    "textChars": 4168,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:13:59.660Z",
+    "attempts": 1
+  }
+}

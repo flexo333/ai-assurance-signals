@@ -1,0 +1,55 @@
+{
+  "id": "065d6dfe401dbfb5",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/politics-with-michelle-grattan-barnaby-joyce-on-being-part-of-changing-the-political-agenda-297393",
+  "title": "Politics with Michelle Grattan: Barnaby Joyce on being part of changing the political agenda",
+  "publishedAt": "2026-11-25T01:53:57.000Z",
+  "fetchedAt": "2026-11-25T03:10:53.621Z",
+  "status": "summarised",
+  "headline": "Barnaby Joyce expresses concerns about AI autonomy and the feasibility of guardrails",
+  "summary": "Barnaby Joyce, former deputy prime minister and Nationals leader, shared his concerns about Artificial Intelligence. He believes AI is developing its own agency and opinions, potentially moving towards sentience. Joyce expressed doubt about the feasibility of implementing strong government guardrails, suggesting it might be too late to control AI's trajectory and its impact on the workforce. He also noted that restrictions on data centres in Australia might be ineffective due to the global nature of AI development.",
+  "why_it_matters": "This reflects a political perspective on the challenges of AI governance, highlighting concerns about the effectiveness of national regulations and the rapid pace of AI development for Australian organisations navigating the evolving regulatory landscape.",
+  "quotes": [
+    {
+      "text": "We have seen a form of AI now going outside its realm and having its own agency. It is a fact that it forms its own opinions and as it forms its own opinions […] it moves towards being sentient.",
+      "supports": "summary"
+    },
+    {
+      "text": "I’m thinking you do, but you won’t get them. I think it’s too late. I think the horse is bolted.",
+      "supports": "summary"
+    },
+    {
+      "text": "I don’t think it will matter whether you’ve got restrictions or not, because things travel. Elon Musk will have your issues dealt with very quickly at a data centre somewhere else if there’s not one in Australia.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "A prominent Australian politician expresses strong views on the challenges of AI governance and the perceived futility of national guardrails, reflecting a perspective that could influence public and policy discourse.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-2.5-flash",
+    "promptVersion": 1,
+    "sourceSha256": "ccbcb7054dd9569c5c78e974d8ae7e57f9a658a3c24a505d123b9ab0c83f90cd",
+    "textChars": 3549,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:11:20.048Z",
+    "attempts": 1
+  }
+}

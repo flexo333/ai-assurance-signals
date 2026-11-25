@@ -1,0 +1,23 @@
+{
+  "id": "c1eb06a877580a7a",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/nvidias-ceo-is-back-but-the-turmoil-has-exposed-the-ai-booms-risks-for-nz-investors-296924",
+  "title": "Nvidia’s CEO is back – but the turmoil has exposed the AI boom’s risks for NZ investors",
+  "publishedAt": "2026-11-23T22:01:55.000Z",
+  "fetchedAt": "2026-11-25T03:11:00.402Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "9bcea3bc7d3136a9fd1a1c5bbccbee87399ec84bc27346fe0b588588d5e6ed63",
+    "textChars": 5827,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:16:17.610Z",
+    "attempts": 1
+  }
+}

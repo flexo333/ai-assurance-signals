@@ -1,0 +1,23 @@
+{
+  "id": "0032d80a76d44e1d",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/what-are-ai-chips-and-whats-so-special-about-nvidias-297128",
+  "title": "What are AI chips, and what’s so special about Nvidia’s?",
+  "publishedAt": "2026-11-24T20:08:14.000Z",
+  "fetchedAt": "2026-11-25T03:10:55.379Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "24c33fadf5ea35c62086997461d77a8add32e543555bde95350e00a5a2b6b44d",
+    "textChars": 6250,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:13:09.581Z",
+    "attempts": 1
+  }
+}

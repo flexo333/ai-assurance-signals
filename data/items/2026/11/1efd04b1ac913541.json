@@ -1,0 +1,18 @@
+{
+  "id": "1efd04b1ac913541",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/article/chaotic-response-to-ai-breach-revealed-e196677a-b611-4bb1-8c1d-9f9ba1656792",
+  "title": "Services Australia emails reveal chaotic scramble to assess OpenAI breach",
+  "publishedAt": "2026-11-24T21:57:02.000Z",
+  "fetchedAt": "2026-11-25T03:10:53.944Z",
+  "status": "headline-only",
+  "reason": "no-source-text",
+  "provenance": {
+    "textSource": "feed",
+    "extractMethod": null
+  }
+}

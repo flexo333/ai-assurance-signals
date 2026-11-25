@@ -1,0 +1,23 @@
+{
+  "id": "7e14b56be6744308",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/intentful-dots",
+  "title": "How Intentful uses dots to make more time for growth",
+  "publishedAt": "2026-11-24T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T03:11:02.202Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "6a24556750c99df68a91b72f45a9e676201e7500109b8c98742ca04194494342",
+    "textChars": 5509,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:15:46.344Z",
+    "attempts": 1
+  }
+}

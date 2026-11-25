@@ -1,0 +1,18 @@
+{
+  "id": "522c82dd03f8f18f",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/briefing/committee-suggests-tougher-copyright-labelled-ai-content-5d3910f1-7da0-4738-ba14-e5e3d82a3a0d",
+  "title": "Parliamentary committee suggests tougher copyright, labelled AI content",
+  "publishedAt": "2026-11-24T03:38:00.000Z",
+  "fetchedAt": "2026-11-25T03:10:58.803Z",
+  "status": "headline-only",
+  "reason": "no-source-text",
+  "provenance": {
+    "textSource": "feed",
+    "extractMethod": null
+  }
+}

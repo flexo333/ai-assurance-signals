@@ -1,0 +1,51 @@
+{
+  "id": "ee679b0405238e1b",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/isaca-launches-cobit-7-to-strengthen-information-and-technology-governance",
+  "title": "ISACA launches COBIT 7 to strengthen information and technology governance",
+  "publishedAt": "2026-11-23T22:09:20.447Z",
+  "fetchedAt": "2026-11-25T03:11:00.146Z",
+  "status": "summarised",
+  "headline": "ISACA launches COBIT 7 with new AI risk scenarios",
+  "summary": "ISACA has launched COBIT 7, an updated version of its governance framework that includes new AI risk scenarios, an enhanced assessment model, and streamlined guidance. The framework is designed to help organisations manage emerging risks, align technology decisions with business strategy, and meet regulatory obligations. It is available on an updated digital platform with various tools and resources.",
+  "why_it_matters": "Organisations can use COBIT 7 to establish structured approaches for assessing AI governance arrangements, identifying control gaps, and ensuring accountability as AI becomes embedded in business processes.",
+  "quotes": [
+    {
+      "text": "In response to these challenges, ISACA has launched COBIT 7, an updated version of its globally recognised framework for information and technology (I&T) governance.",
+      "supports": "summary"
+    },
+    {
+      "text": "It helps organisations align technology with business objectives, manage risks and better meet their regulatory obligations.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "The release of COBIT 7 introduces specific AI risk scenarios and governance design factors directly relevant to enterprise risk and compliance management.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "c0bf8c393d6ce8547f720875a79f686c6b6446f567f547da0c499cd3775be656",
+    "textChars": 3848,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:16:09.574Z",
+    "attempts": 1
+  }
+}

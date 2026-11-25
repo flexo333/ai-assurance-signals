@@ -1,0 +1,18 @@
+{
+  "id": "35ec4a2074928fef",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/article/ai-safety-needs-rules-and-power-and-australia-should-be-securing-both-9f2b0662-a8df-4e29-a1bc-28e5ee503f9b",
+  "title": "AI safety needs rules and power, and Australia should be securing both",
+  "publishedAt": "2026-11-24T05:18:00.000Z",
+  "fetchedAt": "2026-11-25T03:10:58.646Z",
+  "status": "headline-only",
+  "reason": "no-source-text",
+  "provenance": {
+    "textSource": "feed",
+    "extractMethod": null
+  }
+}

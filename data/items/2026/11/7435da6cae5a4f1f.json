@@ -1,0 +1,48 @@
+{
+  "id": "7435da6cae5a4f1f",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/cloudera-launches-digital-sovereignty-solution-that-gives-enterprises-control-of-data-and-ai-across-the-entire-lifecycle",
+  "title": "Cloudera Launches Digital Sovereignty Solution that Gives Enterprises Control of Data and AI Across the Entire Lifecycle",
+  "publishedAt": "2026-11-24T23:15:10.689Z",
+  "fetchedAt": "2026-11-25T03:10:54.482Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Introduces a technical architecture tool for managing AI governance and sovereignty in regulated sectors.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "summary"
+    },
+    {
+      "found": true,
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "33aa6c04b896560d76e957caca061172c1162f4c2f5613212dee7c99d5d25620",
+    "textChars": 5129,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:12:00.273Z",
+    "attempts": 2
+  }
+}

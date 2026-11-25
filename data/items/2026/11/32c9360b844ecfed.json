@@ -1,0 +1,23 @@
+{
+  "id": "32c9360b844ecfed",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/dxc-introduces-frontier-code-assurance-a-managed-code-security-service-built-on-claude-mythos",
+  "title": "DXC Introduces Frontier Code Assurance, a Managed Code Security Service Built on Claude Mythos",
+  "publishedAt": "2026-11-24T23:53:43.993Z",
+  "fetchedAt": "2026-11-25T03:10:54.244Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "001519457a0c74d5db8b6f37fdb547cfe197eee311d524a54f94a5e614850b35",
+    "textChars": 2114,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:11:52.028Z",
+    "attempts": 1
+  }
+}

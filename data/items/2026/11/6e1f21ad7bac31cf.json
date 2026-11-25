@@ -1,0 +1,51 @@
+{
+  "id": "6e1f21ad7bac31cf",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/if-we-wait-we-lose-out-committee-lays-out-plan-to-seize-ai-boom",
+  "title": "‘If we wait we lose out’: Committee lays out plan to seize AI boom",
+  "publishedAt": "2026-11-24T11:04:27.000Z",
+  "fetchedAt": "2026-11-25T03:10:59.305Z",
+  "status": "summarised",
+  "headline": "Joint committee recommends regulatory scrutiny and mandatory model sharing for AI firms",
+  "summary": "A joint committee tabled a report with 46 recommendations following a three-month probe into artificial intelligence. The bipartisan report serves as a blueprint for the Albanese government as it finalises Australia's first legislated standards for AI firms. Frontier artificial intelligence firms operating in Australia face a wave of regulatory scrutiny and mandatory sharing of new models with safety and security agencies under the plan.",
+  "why_it_matters": "Organisations operating frontier AI models in Australia must prepare for potential mandatory model sharing with safety and security agencies alongside new legislated standards.",
+  "quotes": [
+    {
+      "text": "Frontier artificial intelligence firms operating in Australia face a wave of regulatory scrutiny and mandatory sharing of new models with safety and security agencies under a plan from a joint committee that probed the tech for the last three months.",
+      "supports": "summary"
+    },
+    {
+      "text": "The bipartisan committee’s highly anticipated report, tabled on Tuesday with 46 recommendations, arrives as a blueprint for the Albanese government as it finalises Australia’s first legislated standards for AI firms",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "A parliamentary joint committee report with 46 recommendations shapes Australia's first legislated AI standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "85b151c6262608131d9138b422292abdc0d0ff3ff8502c2c6414722e2d4258b5",
+    "textChars": 681,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:14:29.286Z",
+    "attempts": 1
+  }
+}

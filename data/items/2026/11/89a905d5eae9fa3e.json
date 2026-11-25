@@ -1,0 +1,23 @@
+{
+  "id": "89a905d5eae9fa3e",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/ifood",
+  "title": "How iFood scales coding agents across 15,000 repositories",
+  "publishedAt": "2026-11-24T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T03:11:01.879Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "3885dd221d90f8059c576b0d338255ae8e6718c317873494fd2b9a6430fd6a63",
+    "textChars": 8840,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:15:53.867Z",
+    "attempts": 1
+  }
+}

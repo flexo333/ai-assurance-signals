@@ -1,0 +1,23 @@
+{
+  "id": "a3c9028eefd69cfd",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+  "title": "Clay helps sales teams win with Codex and ChatGPT",
+  "publishedAt": "2026-11-24T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T03:11:00.763Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "a7d1bab9df751dc3319ee21f1efc3f771d0e4bf9bc332f4358d3760dd3d67bcd",
+    "textChars": 3650,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:16:01.345Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "c5d9d1f4597ce049",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/cyberagents-exchange-to-recognise-defenders-building-agentic-solutions-that-improve-ai-security",
+  "title": "CyberAgents Exchange to Recognise Defenders Building Agentic Solutions that Improve AI Security",
+  "publishedAt": "2026-11-24T20:22:24.982Z",
+  "fetchedAt": "2026-11-25T03:10:55.664Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "2f83a897f40d63584ab138c3f35bfc7dc5636175810c9c90f41a76a90e1837dc",
+    "textChars": 3706,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:13:01.985Z",
+    "attempts": 1
+  }
+}

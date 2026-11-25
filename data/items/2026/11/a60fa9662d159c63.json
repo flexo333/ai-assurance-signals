@@ -1,0 +1,18 @@
+{
+  "id": "a60fa9662d159c63",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/article/adelaides-p3-state-raises-95m-to-rethink-ai-fundamentals-699ad5ae-5f49-43c4-bb53-9bf8fea4a601",
+  "title": "Adelaide’s P3 State raises $9.5m to rethink AI fundamentals",
+  "publishedAt": "2026-11-23T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T03:11:00.943Z",
+  "status": "headline-only",
+  "reason": "no-source-text",
+  "provenance": {
+    "textSource": "feed",
+    "extractMethod": null
+  }
+}

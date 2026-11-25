@@ -1,0 +1,51 @@
+{
+  "id": "7396ed9251e0fddc",
+  "sourceId": "mandarin",
+  "sourceName": "The Mandarin",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://themandarin.com.au/326167-ai-frontier-labs-in-australia-should-get-independent-evaluation-auditing",
+  "title": "AI frontier labs in Australia should get independent evaluation, auditing",
+  "publishedAt": "2026-11-24T19:04:35.000Z",
+  "fetchedAt": "2026-11-25T03:10:59.026Z",
+  "status": "summarised",
+  "headline": "Parliamentary committee recommends independent audits for Australian AI frontier labs",
+  "summary": "A new report by parliament's joint select committee on AI proposes that frontier labs based in Australia should face mandatory incident reporting and independent audits. The 46 recommendations also include making locally based AI infrastructure subject to nationally consistent requirements and adopting planning principles and a licensing framework to enforce standards.",
+  "why_it_matters": "Organisations operating or establishing frontier AI labs and infrastructure in Australia may soon need to prepare for mandatory incident reporting, independent audits, and a new licensing framework.",
+  "quotes": [
+    {
+      "text": "Frontier labs based in Australia may face mandatory incident reporting and independent audits after a review of the opportunities AI offers Australia.",
+      "supports": "summary"
+    },
+    {
+      "text": "The proposal is part of a suite of 46 recommendations that include ideas such as making locally based AI infrastructure subject to nationally consistent requirements, and adopting planning principles and a licensing framework to enforce standards.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "Proposes major national regulatory and governance reforms, including mandatory audits, incident reporting, and licensing frameworks for Australian frontier AI labs.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "249cb0e3c2d0ad80412d2607a93ba005ec4993fe52c3f4596029929aa825ca0f",
+    "textChars": 889,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:13:34.757Z",
+    "attempts": 1
+  }
+}

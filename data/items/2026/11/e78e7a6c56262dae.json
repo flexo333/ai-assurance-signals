@@ -1,0 +1,51 @@
+{
+  "id": "e78e7a6c56262dae",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/cold-comfort-on-copyright-for-australian-creatives-in-new-ai-committee-report-297291",
+  "title": "Cold comfort on copyright for Australian creatives in new AI committee report",
+  "publishedAt": "2026-11-24T06:11:56.000Z",
+  "fetchedAt": "2026-11-25T03:10:58.803Z",
+  "status": "summarised",
+  "headline": "Joint Select Committee on Artificial Intelligence releases report",
+  "summary": "The Joint Select Committee on Artificial Intelligence published a report titled Artificial Intelligence – the Australian way with 46 recommendations. It broadly supports welcoming AI companies to operate in Australia, train large language models on Australian content, and invest in infrastructure. The report includes recommendations on revising copyright law to consider how individual creators receive payment, alongside transparency and penalties for breaches.",
+  "why_it_matters": "Organisations and practitioners must navigate a complex regulatory environment where competing demands for economic gains and frontier AI certainty intersect with proposed copyright changes and Indigenous cultural protections.",
+  "quotes": [
+    {
+      "text": "The report, titled Artificial Intelligence – the Australian way , has 46 recommendations. It broadly supports the Australian government in welcoming AI companies to operate in Australia, train large language models (LLMs) on Australian content and “invest” in infrastructure.",
+      "supports": "summary"
+    },
+    {
+      "text": "But will these frameworks be overruled by competing demands – such as the economic gains or “sovereign capability” highlighted elsewhere in the report?",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "The parliamentary committee report outlines significant policy and copyright recommendations for AI deployment in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "f1a63cc6b7e08f267d5cc512322750d8afd00928479dc1846aa1f7a06fbef16e",
+    "textChars": 7421,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:15:02.177Z",
+    "attempts": 2
+  }
+}

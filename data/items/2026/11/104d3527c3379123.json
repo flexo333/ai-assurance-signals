@@ -1,0 +1,51 @@
+{
+  "id": "104d3527c3379123",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/smart-glasses-at-work-how-wearable-ai-is-changing-the-way-tech-teams-get-things-done",
+  "title": "Smart glasses at work: How wearable AI is changing the way tech teams get things done",
+  "publishedAt": "2026-11-24T22:57:04.602Z",
+  "fetchedAt": "2026-11-25T03:10:55.125Z",
+  "status": "summarised",
+  "headline": "Managing privacy and IT policies for workplace AI smart glasses",
+  "summary": "AI-powered smart glasses are increasingly being trialled for field and technical work to enable hands-free voice commands, real-time translation, and documentation. However, these devices introduce significant privacy and IT policy challenges regarding the capture of sensitive information and cloud processing. Organisations must establish clear rules on recording permissions, data storage, employee consent, and access controls before deployment.",
+  "why_it_matters": "Before allowing smart glasses in the workplace, IT and compliance departments must implement rigorous security safeguards, cloud processing assessments, and clear access controls to manage privacy and confidential data risks.",
+  "quotes": [
+    {
+      "text": "Before allowing smart glasses in the workplace, IT departments need clear answers about recording permissions, data storage, cloud processing, employee consent, and access controls.",
+      "supports": "summary"
+    },
+    {
+      "text": "For regulated environments or businesses handling confidential customer data, consumer smart glasses may not meet existing security requirements without additional safeguards.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Highlights emerging enterprise governance and privacy considerations for deploying wearable AI and smart glasses in technical environments.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "42b2a845775e1a10f6bb489ba141de783b5da195593b7bb40ee771df29869550",
+    "textChars": 10074,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:12:25.399Z",
+    "attempts": 1
+  }
+}

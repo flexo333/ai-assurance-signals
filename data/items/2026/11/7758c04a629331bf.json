@@ -1,0 +1,23 @@
+{
+  "id": "7758c04a629331bf",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+  "title": "Searching for distant planets with Astra",
+  "publishedAt": "2026-11-24T11:00:00.000Z",
+  "fetchedAt": "2026-11-25T03:10:58.646Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "8a9601ac55dee418e393523dc1e906e4bdce2f2acbee415507e9bbaeabc5003c",
+    "textChars": 7531,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:14:36.826Z",
+    "attempts": 1
+  }
+}

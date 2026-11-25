@@ -1,0 +1,23 @@
+{
+  "id": "59c2da54e47da2e7",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/from-solving-to-digesting-how-mathematicians-can-adapt-to-the-dramatic-changes-ai-has-brought-to-their-field-295539",
+  "title": "From solving to ‘digesting’: How mathematicians can adapt to the dramatic changes AI has brought to their field",
+  "publishedAt": "2026-11-24T13:11:24.000Z",
+  "fetchedAt": "2026-11-25T03:10:56.779Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "a70ec098d17977a09c9a4eba9e281ed500040019caa0ebaa0655d3e4aafae5ac",
+    "textChars": 6722,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:14:13.654Z",
+    "attempts": 1
+  }
+}

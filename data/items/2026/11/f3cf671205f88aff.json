@@ -1,0 +1,51 @@
+{
+  "id": "f3cf671205f88aff",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/ripple-effect-around-the-world-digital-duty-of-care-set-to-pass",
+  "title": "‘Ripple effect around the world’: Digital Duty of Care set to pass",
+  "publishedAt": "2026-11-24T08:00:54.000Z",
+  "fetchedAt": "2026-11-25T03:11:00.105Z",
+  "status": "summarised",
+  "headline": "Digital Duty of Care set to pass with AI obligations",
+  "summary": "The federal government has agreed to crossbench demands to toughen the Digital Duty of Care legislation. The upcoming laws will require AI and social media giants to prevent users from experiencing specific harms. Additionally, the legislation provides Australians with the right to sue if they believe the obligation has been breached.",
+  "why_it_matters": "Organisations operating AI and social media platforms in Australia face potential multibillion-dollar fines and direct civil liability under new online safety laws.",
+  "quotes": [
+    {
+      "text": "The legislation, which is expected to pass on Wednesday, will require social media and AI giants to prevent users from experiencing specific harms, and will give Australians the right to sue if they believe the obligation has been breached.",
+      "supports": "summary"
+    },
+    {
+      "text": "Tech companies face multibillion-dollar fines for serious breaches of new online safety laws after the federal government agreed to crossbench demands to toughen the Digital Duty of Care.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "Introduces major federal legislation imposing direct liability and multibillion-dollar fines on AI and tech companies operating in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "54d2a90a143de70c08bf182158da49433d72bf69a299c9489ebbfc3054350422",
+    "textChars": 655,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:14:53.628Z",
+    "attempts": 1
+  }
+}

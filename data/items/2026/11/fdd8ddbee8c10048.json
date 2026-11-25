@@ -1,0 +1,23 @@
+{
+  "id": "fdd8ddbee8c10048",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/sas-named-a-leader-in-idc-marketscape-for-asia-pacific-sovereign-ai-platform",
+  "title": "SAS named a Leader in IDC MarketScape for Asia/Pacific Sovereign AI Platform",
+  "publishedAt": "2026-11-24T01:40:20.771Z",
+  "fetchedAt": "2026-11-25T03:10:59.842Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "369eb5a004c387c954f96d296c56d3938454e956355af1f1983909fafe98a916",
+    "textChars": 5499,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:15:38.712Z",
+    "attempts": 1
+  }
+}

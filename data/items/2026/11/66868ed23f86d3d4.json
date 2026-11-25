@@ -1,0 +1,23 @@
+{
+  "id": "66868ed23f86d3d4",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/state-revenue-office-vic-expands-ai-use-in-its-contact-centre-630485",
+  "title": "State Revenue Office Vic expands AI use in its contact centre",
+  "publishedAt": "2026-11-23T20:37:00.000Z",
+  "fetchedAt": "2026-11-25T03:11:02.926Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "7c67b057db1a1c994abc3bf972e6973a0d6f07237563212bf5f856d9a7b7ad8d",
+    "textChars": 1800,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:16:33.314Z",
+    "attempts": 1
+  }
+}

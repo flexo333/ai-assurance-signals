@@ -1,0 +1,18 @@
+{
+  "id": "dc1a2b3130912e3f",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/article/tech-giants-face-audits-and-disclosure-under-ai-safety-blueprint-146c7871-5b58-4e65-a508-b1b7d0928a39",
+  "title": "Tech giants face audits and disclosure under AI safety blueprint",
+  "publishedAt": "2026-11-24T21:57:02.000Z",
+  "fetchedAt": "2026-11-25T03:10:53.944Z",
+  "status": "headline-only",
+  "reason": "no-source-text",
+  "provenance": {
+    "textSource": "feed",
+    "extractMethod": null
+  }
+}

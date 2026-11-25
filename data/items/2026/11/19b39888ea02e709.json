@@ -1,0 +1,23 @@
+{
+  "id": "19b39888ea02e709",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/trump-had-4-reasons-to-convince-nvidia-to-rehire-jensen-huang-heres-why-it-matters-globally-297377",
+  "title": "Trump had 4 reasons to ‘convince’ Nvidia to rehire Jensen Huang. Here’s why it matters globally",
+  "publishedAt": "2026-11-24T04:57:18.000Z",
+  "fetchedAt": "2026-11-25T03:10:59.683Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "5307a7b7c24f4508404a1aa180a0c28277e9f1bc450c2f5d1958482bc4efac0b",
+    "textChars": 6142,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:15:24.650Z",
+    "attempts": 1
+  }
+}

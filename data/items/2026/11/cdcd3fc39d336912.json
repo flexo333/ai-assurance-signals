@@ -1,0 +1,18 @@
+{
+  "id": "cdcd3fc39d336912",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/briefing/canva-opens-ai-tools-to-developers-in-platform-push-cae13933-6ca2-45c8-afaa-2525e6f61402",
+  "title": "Canva opens AI tools to developers in platform push",
+  "publishedAt": "2026-11-23T18:00:00.000Z",
+  "fetchedAt": "2026-11-25T03:11:00.943Z",
+  "status": "headline-only",
+  "reason": "no-source-text",
+  "provenance": {
+    "textSource": "feed",
+    "extractMethod": null
+  }
+}

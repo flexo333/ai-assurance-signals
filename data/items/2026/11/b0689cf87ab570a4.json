@@ -1,0 +1,50 @@
+{
+  "id": "b0689cf87ab570a4",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-shirudo",
+  "title": "OpenAI and Cisco introduce Shirudo",
+  "publishedAt": "2026-11-23T21:20:00.000Z",
+  "fetchedAt": "2026-11-25T03:11:02.501Z",
+  "status": "summarised",
+  "headline": "OpenAI and Cisco launch Shirudo for runtime AI system protection",
+  "summary": "OpenAI and Cisco have introduced Shirudo, an open-source runtime that uses AI and eBPF technology to help teams protect Linux systems while patches are being developed. The tool allows security teams to test and deploy temporary shields that block vulnerabilities without requiring system restarts. Shirudo features live protection, machine-speed defense, trusted cryptographic deployment, and hardware-backed verification.",
+  "why_it_matters": "Organisations can use Shirudo to deploy hardware-backed verification and temporary AI-generated eBPF shields, providing continuous assurance for critical infrastructure while permanent patches are prepared.",
+  "quotes": [
+    {
+      "text": "OpenAI and Cisco are launching Shirudo, an open-source runtime that helps teams protect Linux systems while they roll out patches.",
+      "supports": "summary"
+    },
+    {
+      "text": "Shirudo uses a Trusted Platform Module (TPM) to support a verifiable record of protections being loaded or removed. Operators can use this evidence to check whether systems meet their security requirements.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "It represents a notable technical collaboration between major tech firms combining frontier AI with operating system security controls.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "2a96a84bd5d11302901cd0593493346d39ecd25b3dc000c5cba87b6f868d1bcd",
+    "textChars": 5564,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:16:25.888Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "a14371888f8bd830",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-people-news/enterprise-staff/2027-trends-and-predictions-commentary",
+  "title": "2027 Trends & Predictions Commentary",
+  "publishedAt": "2026-11-24T20:52:35.908Z",
+  "fetchedAt": "2026-11-25T03:10:54.761Z",
+  "status": "summarised",
+  "headline": "2027 AI security, governance and access control trends in Australia",
+  "summary": "Industry commentary outlines 2027 enterprise predictions regarding AI code generation, data governance, and shifting cybersecurity risks across Australia. Organisations will increasingly rely on AI agents for data engineering and application building while facing new internal threats where AI assistants and legitimate credentials are manipulated by attackers. Executives note that regulatory approaches are evolving, with Australia strengthening oversight of AI-related security risks and organisations demanding tighter control over autonomous AI identities.",
+  "why_it_matters": "Australian organisations deploying autonomous AI agents must establish rigorous identity controls, enforce least-privilege access, and appoint clear human accountability to prevent AI tools from becoming internal security vectors.",
+  "quotes": [
+    {
+      "text": "Singapore has introduced an agentic AI governance framework, while Australia is strengthening oversight of AI-related security risks.",
+      "supports": "summary"
+    },
+    {
+      "text": "Security teams need to know what each agent can access, which actions it can perform and which human is responsible.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Provides forward-looking industry predictions and regulatory observations on AI security risks and agentic governance for Australian enterprises.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "cab93e5d825b20d809f07ce809ff087f0e63d481202419793958ca7e1c7da48f",
+    "textChars": 8585,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T03:12:54.453Z",
+    "attempts": 1
+  }
+}
