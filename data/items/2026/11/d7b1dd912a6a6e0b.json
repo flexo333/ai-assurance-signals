@@ -1,0 +1,23 @@
+{
+  "id": "d7b1dd912a6a6e0b",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/18/1148650/ai-hype-index-ai-is-everywhere",
+  "title": "The AI Hype Index: AI is everywhere",
+  "publishedAt": "2026-11-18T14:42:44.000Z",
+  "fetchedAt": "2026-11-25T08:18:19.876Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "336164cd6bfbc9e0e81ac01a425089a85c7cf2b2c1ca37001bbb46af9c1c0816",
+    "textChars": 918,
+    "textSource": "feed",
+    "extractMethod": "http-403",
+    "analysedAt": "2026-11-25T08:31:35.687Z",
+    "attempts": 1
+  }
+}

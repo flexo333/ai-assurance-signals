@@ -1,0 +1,51 @@
+{
+  "id": "b075ea35851eee57",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/what-ai-regulation-could-learn-from-the-most-hazardous-industries-in-the-world-295475",
+  "title": "What AI regulation could learn from the most hazardous industries in the world",
+  "publishedAt": "2026-11-17T16:25:49.000Z",
+  "fetchedAt": "2026-11-25T08:18:20.182Z",
+  "status": "summarised",
+  "headline": "Applying high-reliability organisational theory to AI safety and governance",
+  "summary": "The article argues that AI governance should move beyond one-off technical testing to adopt frameworks from high-hazard industries like aviation and nuclear energy. It suggests that normal accident theory and high-reliability theory offer models for managing complex, autonomous systems. The author emphasises that building a professional safety culture and robust assurance infrastructure is essential for managing the risks of frontier AI.",
+  "why_it_matters": "For Australian organisations, this highlights that effective AI assurance requires moving beyond static compliance to embedding continuous monitoring, redundancy, and independent oversight into organisational culture.",
+  "quotes": [
+    {
+      "text": "This suggests that AI safety cannot be reduced to a model passing a one-off technical test before deployment. It must span different organisations and transcend international boundaries.",
+      "supports": "summary"
+    },
+    {
+      "text": "The institutional challenge is not simply to produce more AI regulation, but to create the professional safety culture that makes regulation meaningful.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "regulator-guidance",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides a conceptual framework for evolving AI governance from simple compliance to high-reliability safety management.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "7235d14450ded04aec6a76cabe2f72a6710fed96782558dc004819ef3139c641",
+    "textChars": 7824,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:32:45.377Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "682b9154cc535ebc",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/the-sacred-object-in-mathematics-the-riemann-hypothesis-ai-and-a-proof-no-human-can-read-297276",
+  "title": "‘The sacred object in mathematics’: the Riemann hypothesis, AI and a proof no human can read",
+  "publishedAt": "2026-11-23T04:32:09.000Z",
+  "fetchedAt": "2026-11-25T08:18:10.556Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "d5b43d290f4064aab679c747c7d1a48d86e25f2d117dce8fa8d320ef350358a6",
+    "textChars": 5852,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:22:18.791Z",
+    "attempts": 1
+  }
+}

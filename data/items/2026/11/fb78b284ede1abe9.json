@@ -1,0 +1,23 @@
+{
+  "id": "fb78b284ede1abe9",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/vast-data-receives-imda-accreditation-to-scale-ai-adoption",
+  "title": "VAST Data Receives IMDA Accreditation to Scale AI Adoption",
+  "publishedAt": "2026-11-19T23:42:59.451Z",
+  "fetchedAt": "2026-11-25T08:18:14.760Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.6-flash",
+    "promptVersion": 1,
+    "sourceSha256": "2940cc5ff6441c502ad27b2af6b9fb0da587547e509e1df2920884815624eb2d",
+    "textChars": 2847,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:26:45.954Z",
+    "attempts": 1
+  }
+}

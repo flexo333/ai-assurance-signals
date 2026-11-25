@@ -1,0 +1,23 @@
+{
+  "id": "25c22eec3fe797ee",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-industry-news/deals/dxc-collaborates-with-cisco-to-turn-ai-powered-network-insights-into-action-with-dxc-oasis",
+  "title": "DXC Collaborates with Cisco to Turn AI-Powered Network Insights into Action with DXC OASIS",
+  "publishedAt": "2026-11-22T23:59:23.044Z",
+  "fetchedAt": "2026-11-25T08:18:12.300Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "765bc03c1ce7f4073072a6cd5546c7f50168f2aa47524c536d8bec07d429539a",
+    "textChars": 4422,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:31.366Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "009d3a1dfa554697",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/2027-the-year-of-the-great-insurance-stress-test",
+  "title": "2027: The year of the great insurance stress test",
+  "publishedAt": "2026-11-23T03:04:22.525Z",
+  "fetchedAt": "2026-11-25T08:18:12.042Z",
+  "status": "summarised",
+  "headline": "Insurance industry experts forecast 2027 AI governance and risk challenges",
+  "summary": "Industry experts from SAS have identified key challenges for the insurance sector in 2027, including the need for enhanced AI governance and fraud prevention. The analysis suggests that insurers must shift from simple model risk management to documenting human-AI interactions to meet regulatory and legal expectations. Additionally, firms face increasing pressure from global data sovereignty requirements and the need to balance AI-driven cost-cutting with long-term growth strategies.",
+  "why_it_matters": "Australian insurers and financial institutions must prepare to extend their governance frameworks to capture human-AI interaction records to satisfy emerging regulatory and legal transparency requirements.",
+  "quotes": [
+    {
+      "text": "Insurers will extend governance frameworks from the model to the decision. Carriers will start treating the human-AI interaction itself as the artefact that has to be transparent and explainable, because regulators and courts will ask for it.",
+      "supports": "summary"
+    },
+    {
+      "text": "Model risk management can tell you how a model was validated, inventoried and monitored. It cannot tell you what happened in the 40 minutes an underwriter spent with an AI assistant",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "Data sovereignty will reshape financial institutions' technology strategies and investments as policymakers from Brussels to Bangkok push for greater control.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "regulator-guidance",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Highlights a shift in industry expectations regarding the scope of AI governance, moving from model validation to the documentation of human-AI decision-making processes.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "5b0c5ced5e60dc2b1aa6994d1e2525cbfe5ccf37f5ba1cd48c12a0d4f183bd80",
+    "textChars": 7018,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:22.095Z",
+    "attempts": 1
+  }
+}

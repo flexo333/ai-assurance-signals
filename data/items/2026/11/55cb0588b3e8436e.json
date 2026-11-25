@@ -1,0 +1,56 @@
+{
+  "id": "55cb0588b3e8436e",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available",
+  "title": "Gemini 4 Carbon is now available",
+  "publishedAt": "2026-11-10T16:03:47.000Z",
+  "fetchedAt": "2026-11-25T08:18:27.620Z",
+  "status": "summarised",
+  "headline": "Google DeepMind releases Gemini 4 Carbon with enhanced safety and security features",
+  "summary": "Google DeepMind has released Gemini 4 Carbon, a new frontier model designed for complex agentic workflows, cybersecurity, and scientific research. The release includes updated safety mitigations, such as improved robustness against prompt injection and automated cyberattack trajectories. The company has also published a dedicated safety and security report alongside the model's release.",
+  "why_it_matters": "Organisations deploying frontier models must evaluate the efficacy of built-in safety mitigations against evolving risks like agentic misuse and indirect prompt injection, as demonstrated by the model's performance on standardised red-teaming benchmarks.",
+  "quotes": [
+    {
+      "text": "With each new model release, we continue to strengthen our safety and security mitigations, agentic misuse prevention, model alignment, and harm reduction proportionately with model capability.",
+      "supports": "summary"
+    },
+    {
+      "text": "Because Gemini 4 Carbon introduces stronger cyber capabilities we build on Argon’s strong safety and security stack to fortify robustness to misuse and prompt injection.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-10",
+      "what": "Release date of Gemini 4 Carbon",
+      "quote": "Nov 10, 2026"
+    }
+  ],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The release of a new frontier model with specific, benchmarked improvements in cybersecurity and agentic safety provides a reference point for evaluating AI risk management practices.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "03311f3a1b1e06620977770a65e5b10a9f6eb5f39401e3a76e8d5c7d2cb2b973",
+    "textChars": 13394,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:36:21.606Z",
+    "attempts": 1
+  }
+}

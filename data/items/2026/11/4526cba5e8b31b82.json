@@ -1,0 +1,50 @@
+{
+  "id": "4526cba5e8b31b82",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update",
+  "title": "The most misunderstood graph in AI just got a major update",
+  "publishedAt": "2026-11-20T18:15:15.000Z",
+  "fetchedAt": "2026-11-25T08:18:13.753Z",
+  "status": "summarised",
+  "headline": "METR report updates AI performance metrics for verifiable and judgment-based tasks",
+  "summary": "The nonprofit METR has updated its time horizon plot, which tracks AI performance by comparing model capabilities against human-timed tasks. While frontier models continue to double their performance on verifiable tasks like coding every four months, they struggle with tasks requiring human judgment. The updated report incorporates more open-ended tasks to better assess AI's potential in research and development.",
+  "why_it_matters": "Organisations relying on AI for complex research or decision-making must recognise that current performance gains in verifiable tasks do not necessarily translate to high-level judgment, necessitating human oversight for critical evaluation design.",
+  "quotes": [
+    {
+      "text": "frontier AI models are doubling their performance on measurable tasks every four months.",
+      "supports": "summary"
+    },
+    {
+      "text": "Not one of the AI-designed evaluations was good enough for METR employees to consider it useful for their research.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The report provides a critical methodology for benchmarking AI capabilities, which is essential for organisations developing internal AI assurance frameworks.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "177904ae37251136ff1ebe6f17ff01c74a716b659f263767b22fc2d3f26e0ff3",
+    "textChars": 4000,
+    "textSource": "feed",
+    "extractMethod": "http-403",
+    "analysedAt": "2026-11-25T08:25:54.989Z",
+    "attempts": 1
+  }
+}

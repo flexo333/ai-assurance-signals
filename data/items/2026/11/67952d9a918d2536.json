@@ -1,0 +1,54 @@
+{
+  "id": "67952d9a918d2536",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/inside-the-codex-sandbox",
+  "title": "Inside the Codex sandbox",
+  "publishedAt": "2026-11-18T08:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:21.516Z",
+  "status": "summarised",
+  "headline": "OpenAI details sandbox security architecture for Codex agentic harness",
+  "summary": "OpenAI has published technical details regarding the Codex sandbox, a security feature designed to restrict the filesystem and network access of AI agents. The system uses OS-specific mechanisms—Seatbelt on macOS, bubblewrap and seccomp-bpf on Linux, and native Windows facilities—to enforce permission profiles. These profiles allow administrators and users to define granular constraints on agent behaviour, such as read-only access or network blocking, to mitigate risks like data exfiltration or malicious code injection.",
+  "why_it_matters": "Organisations deploying AI agents can use these sandboxing techniques to implement a defense-in-depth strategy, ensuring that agentic tools operate within defined security boundaries that prevent unauthorised system access.",
+  "quotes": [
+    {
+      "text": "we built the Codex sandbox so Codex can work in your existing environment within filesystem and network limits you control.",
+      "supports": "summary"
+    },
+    {
+      "text": "This is why we take a defense in depth approach: the sandbox limits what commands can access, while training and alignment help the model use that access in accordance with the user’s intent.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "Administrators can also supply managed requirements ⁠ (opens in a new window) through requirements.toml to constrain users’ configuration choices.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides a technical blueprint for implementing security controls in agentic AI systems, which is a critical area for enterprise risk management.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "aada983011d609ca72f2aed4c7e0aa4b2d2251c0a99c0d1f3440c6416b6b284d",
+    "textChars": 19998,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:32:36.447Z",
+    "attempts": 1
+  }
+}

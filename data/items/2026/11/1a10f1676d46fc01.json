@@ -1,0 +1,51 @@
+{
+  "id": "1a10f1676d46fc01",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/perplexity-and-intelligence",
+  "title": "Perplexity and Intelligence",
+  "publishedAt": "2026-11-22T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:13.494Z",
+  "status": "summarised",
+  "headline": "Establishing perplexity metrics and shared safety standards for AI",
+  "summary": "An OpenAI publication proposes using perplexity and cross-entropy loss as a shared metric to compare model developers and inform safety standards. The text outlines how tracking pretraining progress through perplexity provides insight into emergent AI capabilities, such as those seen in cybersecurity and mathematics. It argues that frontier developers should establish shared transparency standards, norms for evaluation, and common development limits linked to concrete monitoring milestones.",
+  "why_it_matters": "Organisations governing and assuring AI should monitor proposals for industry-wide pretraining metrics and development limits, as these may form the basis for future shared safety standards and regulatory frameworks.",
+  "quotes": [
+    {
+      "text": "In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards.",
+      "supports": "summary"
+    },
+    {
+      "text": "I believe frontier model developers should jointly endeavour to establish shared norms for how to evaluate such models and red-team safety cases for them by the time they are first used, including shared transparency standards.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Proposes a concrete technical metric (perplexity) and cross-lab transparency standards for tracking frontier AI capability growth and setting development limits.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "819779dbcfa826c566753d529adde4d07ddf5293251690c370ddceed2ef87413",
+    "textChars": 8517,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:25:39.465Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "2925ee4061a00fdf",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/the-us-china-ai-race-is-real-but-trumps-recent-moves-on-super-intelligence-are-unlikely-to-give-america-any-advantage-296219",
+  "title": "The US-China AI race is real – but Trump’s recent moves on ‘super intelligence’ are unlikely to give America any advantage",
+  "publishedAt": "2026-11-19T16:52:11.000Z",
+  "fetchedAt": "2026-11-25T08:18:16.273Z",
+  "status": "summarised",
+  "headline": "US establishes federal super intelligence force to coordinate national AI strategy",
+  "summary": "The US government has established a new task force to coordinate federal efforts in AI, which the administration has rebranded as \"super intelligence.\" Led by senior intelligence and regulatory officials, the body is tasked with reporting on AI risks and opportunities within 120 days. The force aims to address coordination challenges across government agencies and streamline infrastructure and talent acquisition.",
+  "why_it_matters": "The initiative highlights the tension between voluntary industry self-regulation and the need for government-led oversight, serving as a reminder for Australian organisations to monitor how shifting geopolitical AI strategies may impact global standards and supply chains.",
+  "quotes": [
+    {
+      "text": "The force reports to the president and his chief of staff and has 120 days to report on the risks and opportunities AI poses.",
+      "supports": "summary"
+    },
+    {
+      "text": "A voluntary accord with no enforcement mechanism shows where the leverage lies.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The development represents a major shift in US federal AI governance structure and terminology, which influences global policy discourse.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "6b6d074376b22f3efa8e718e1cb1274f7065908c3c57c04fed6aa9e397cc2dd9",
+    "textChars": 5347,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:23.322Z",
+    "attempts": 1
+  }
+}

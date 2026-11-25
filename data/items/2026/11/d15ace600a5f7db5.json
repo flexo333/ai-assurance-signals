@@ -1,0 +1,23 @@
+{
+  "id": "d15ace600a5f7db5",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/dxc-advances-intelligent-insurance-across-australia-and-new-zealand-through-platform-workflow-and-ai-investment",
+  "title": "DXC Advances Intelligent Insurance Across Australia and New Zealand Through Platform, Workflow and AI Investment",
+  "publishedAt": "2026-11-19T23:01:27.433Z",
+  "fetchedAt": "2026-11-25T08:18:14.797Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.6-flash",
+    "promptVersion": 1,
+    "sourceSha256": "85179c2471ebc139f4a45fe7bf60977ed7ed26722dab30ec88dbbc38b5ec03e8",
+    "textChars": 4499,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:27:05.871Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "d336b8094a4e6a45",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/12/1148483/nvidia-chip-tracking",
+  "title": "Nvidia privately confirmed it could track chips to fight smuggling, even as industry publicly questioned feasibility",
+  "publishedAt": "2026-11-12T20:16:24.000Z",
+  "fetchedAt": "2026-11-25T08:18:23.774Z",
+  "status": "summarised",
+  "headline": "Nvidia privately confirmed feasibility of AI chip geotracking",
+  "summary": "Representatives from Nvidia privately told US Representative Bill Foster that implementing anti-smuggling geotracking measures for advanced AI chips is technically possible, contradicting public claims by the Semiconductor Industry Association. The proposed Chip Security Act under consideration would introduce tracking requirements to prevent the smuggling of advanced AI chips to China. Meanwhile, Nvidia's Fleet Intelligence tool already demonstrates the capability to monitor chip performance and indicate their country location.",
+  "why_it_matters": "Proposed US mandates for AI chip geotracking and licensing could significantly impact international supply chain compliance and risk management for organisations deploying advanced hardware.",
+  "quotes": [
+    {
+      "text": "Representatives from Nvidia told Illinois representative Bill Foster that it would be technically possible to implement the anti-smuggling measures called for in the Chip Security Act, Foster told MIT Technology Review in an interview on Thursday, even while an industry group claimed they were “potentially infeasible.”",
+      "supports": "summary"
+    },
+    {
+      "text": "The new rule would require licenses to operate advanced GPUs, and before a GPU could connect, its valid license would need to be verified.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Reveals private acknowledgement from a major hardware vendor regarding the technical feasibility of strict AI chip supply chain tracking.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "0e6f7a6fcfd96b5607eca08406b5ad967b3d24854c85e945a152ae921c5f5ab9",
+    "textChars": 4550,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:19.413Z",
+    "attempts": 1
+  }
+}

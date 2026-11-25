@@ -1,0 +1,51 @@
+{
+  "id": "216c4d6c6fbf9bb8",
+  "sourceId": "uk-dsit",
+  "sourceName": "UK Department for Science, Innovation and Technology",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://gov.uk/government/publications/ai-champions-ai-adoption-plans",
+  "title": "Independent report: AI Champions’ AI Adoption Plans",
+  "publishedAt": "2026-11-16T10:05:24.000Z",
+  "fetchedAt": "2026-11-25T08:18:25.222Z",
+  "status": "summarised",
+  "headline": "UK publishes independent AI Champions AI adoption plans",
+  "summary": "Independent AI Champions have produced adoption plans to accelerate AI use across six key UK economic sectors. The plans identify barriers such as skills gaps, governance uncertainty, data access, and scaling challenges, while taking a pro-worker approach. A plan for the financial services sector is scheduled for publication in the summer.",
+  "why_it_matters": "Organisations must address governance uncertainty and workforce readiness when deploying AI across key industry sectors.",
+  "quotes": [
+    {
+      "text": "Independent AI Champions have developed adoption plans to accelerate AI use across key sectors of the UK economy. Each plan identifies barriers to adoption and sets out practical recommendations for government, industry, and workers.",
+      "supports": "summary"
+    },
+    {
+      "text": "Together they address common challenges including skills gaps, governance uncertainty, data access, and the difficulty of scaling from pilot projects to sustained deployment.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "The report provides sectoral adoption plans addressing governance uncertainty and workforce readiness in the UK.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "7af26db30700151812f080841f24c88d8354ae00686b22595dd9255c028c85d4",
+    "textChars": 1390,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:11.286Z",
+    "attempts": 1
+  }
+}

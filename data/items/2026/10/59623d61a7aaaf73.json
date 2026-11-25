@@ -1,0 +1,50 @@
+{
+  "id": "59623d61a7aaaf73",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai",
+  "title": "Speeding up planning decisions with AI",
+  "publishedAt": "2026-10-30T14:18:30.000Z",
+  "fetchedAt": "2026-11-25T08:18:31.817Z",
+  "status": "summarised",
+  "headline": "Google DeepMind expands AI planning tool pilot for UK local government",
+  "summary": "Google DeepMind is expanding the pilot of PlanAssist, an AI tool designed to automate routine householder planning application assessments for UK local authorities. The tool validates documents, checks against planning policies, and drafts reports, with human officers retaining final decision-making authority. Early pilots in three councils demonstrated a 58% reduction in assessment time, with over 70% of AI-generated reports requiring no edits.",
+  "why_it_matters": "This deployment demonstrates a human-in-the-loop model for public sector AI, where automation is used to streamline administrative workflows while maintaining professional oversight and accountability in regulatory decision-making.",
+  "quotes": [
+    {
+      "text": "PlanAssist - an AI planning tool that handles the heavy lifting of routine applications so officers can focus their expertise where it matters most - is to be made available to an additional 12 local planning authorities across England.",
+      "supports": "summary"
+    },
+    {
+      "text": "Designed to support human judgement, the tool speeds up routine checks while ensuring planning officers retain the final say on every application.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "public-sector",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Illustrates a practical, scaled application of AI in government administrative decision-making with a clear human-in-the-loop governance framework.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "d8addd4c5da26132a95ab591eb3fa4eb10672ca5f1653e5d5080a2b061dc0bb8",
+    "textChars": 3825,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:37:59.002Z",
+    "attempts": 1
+  }
+}

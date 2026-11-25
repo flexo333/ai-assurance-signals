@@ -1,0 +1,23 @@
+{
+  "id": "a54517aa58606c0e",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-people-news/people-moves/kinetic-it-appoints-michael-pratt-to-drive-cloud-modernisation-and-ai-readiness",
+  "title": "Kinetic IT appoints Michael Pratt to drive cloud modernisation and AI readiness",
+  "publishedAt": "2026-11-22T22:30:03.569Z",
+  "fetchedAt": "2026-11-25T08:18:12.741Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "7d99a04ec0cbd055f0ecebdbf62dc537477815c90f5a43db6cf61dfcac900ab0",
+    "textChars": 2450,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:52.742Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "dfc04eb69ad17a83",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/briefing/anthropic-dips-below-ipo-price-as-wall-street-rally-fades-6093335a-5aa8-4e8f-8780-d577bc494647",
+  "title": "Anthropic dips below IPO price as Wall Street rally fades",
+  "publishedAt": "2026-11-24T13:15:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:07.938Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite-preview",
+    "promptVersion": 1,
+    "sourceSha256": "1d59fe369a50ba8522f973aec0ea7bf1e61e5bb57d4cc8301a2da1b10365ac1e",
+    "textChars": 127,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T08:19:24.248Z",
+    "attempts": 1
+  }
+}

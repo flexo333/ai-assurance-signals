@@ -1,0 +1,51 @@
+{
+  "id": "53d809d7420a3923",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/sumitomo-life",
+  "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+  "publishedAt": "2026-11-18T08:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:19.815Z",
+  "status": "summarised",
+  "headline": "Sumitomo Life implements security assessment for ChatGPT Enterprise deployment",
+  "summary": "Japanese insurer Sumitomo Life collaborated with OpenAI to evaluate ChatGPT Enterprise against its internal security standards prior to a company-wide rollout. The assessment focused on managing workspace access, feature permissions, and data privacy policies. The company continues to restrict AI usage based on the sensitivity of information handled and the systems involved.",
+  "why_it_matters": "Financial institutions must conduct rigorous security assessments of third-party AI tools to ensure alignment with internal data governance and risk management frameworks before scaling deployment.",
+  "quotes": [
+    {
+      "text": "Sumitomo Life worked with OpenAI to assess ChatGPT Enterprise against the insurer’s security standards.",
+      "supports": "summary"
+    },
+    {
+      "text": "The insurer continues to decide how employees can use ChatGPT based on the information they handle and the systems they connect to.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides a practical example of how a regulated financial institution manages security and risk governance when adopting enterprise-grade generative AI.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "7eec643707160027a167a960cd20d505e1baeaa9a7c5b357fc6546c9e1f8f95e",
+    "textChars": 5975,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:32:20.241Z",
+    "attempts": 1
+  }
+}

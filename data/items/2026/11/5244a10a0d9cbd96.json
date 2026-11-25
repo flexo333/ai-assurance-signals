@@ -1,0 +1,50 @@
+{
+  "id": "5244a10a0d9cbd96",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/smarter-healthcare-unequal-outcomes-the-risks-of-ai-in-southern-africa-295757",
+  "title": "Smarter healthcare, unequal outcomes? The risks of AI in southern Africa",
+  "publishedAt": "2026-11-17T14:48:54.000Z",
+  "fetchedAt": "2026-11-25T08:18:20.495Z",
+  "status": "summarised",
+  "headline": "Addressing algorithmic bias and data representation in healthcare AI",
+  "summary": "Research into healthcare AI in southern Africa highlights how data gaps and algorithmic assumptions can reinforce health inequalities. The study identifies that under-representation of certain populations in training data and biased classification criteria can lead to unequal healthcare outcomes. It advocates for regular system audits, inclusive design, and local governance to ensure equitable access to care.",
+  "why_it_matters": "For Australian organisations deploying AI in health or social services, this research underscores that technical accuracy does not guarantee equity, necessitating rigorous bias auditing and representative data governance to avoid systemic exclusion.",
+  "quotes": [
+    {
+      "text": "We found that digital health technologies risk reinforcing health inequalities. The problem begins with whose information is collected.",
+      "supports": "summary"
+    },
+    {
+      "text": "We also propose regular audits, transparent decision-making processes, and community participation in design and evaluation.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "regulator-guidance",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides a critical framework for evaluating health AI, relevant to Australian clinical governance and digital health policy.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "98e591fd491051b293ab4086203d6417293128fe1c0919c948b2f00dfdb9d1e7",
+    "textChars": 7981,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:32:59.853Z",
+    "attempts": 1
+  }
+}

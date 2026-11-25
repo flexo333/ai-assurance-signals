@@ -1,0 +1,57 @@
+{
+  "id": "5b69826eead48a96",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen",
+  "title": "Introducing Gemini 4 Hydrogen",
+  "publishedAt": "2026-11-12T18:00:50.000Z",
+  "fetchedAt": "2026-11-25T08:18:25.019Z",
+  "status": "summarised",
+  "headline": "Google releases Gemini 4 Hydrogen with enhanced safety and agentic guardrails",
+  "summary": "Google DeepMind has introduced Gemini 4 Hydrogen, an AI model built for rapid execution across agentic workflows, developer tasks, and consumer applications. The release incorporates safety improvements from the Gemini 4 security stack, aiming to mitigate misalignment, reduce overreach, and improve robustness against prompt injection attacks. It features enhanced reasoning transparency and precise handling of biosecurity risks versus legitimate medical queries.",
+  "why_it_matters": "Risk and compliance professionals should examine how the model's reduced task shortcutting, improved permission boundary adherence, and chain-of-thought legibility can support safer deployment of enterprise agentic workflows.",
+  "quotes": [
+    {
+      "text": "Gemini 4 Hydrogen brings improvements from our latest Gemini 4 safety and security stack to our broadest audience yet, combining built-in training with real-time surface safeguards to help mitigate both misalignment and misuse.",
+      "supports": "summary"
+    },
+    {
+      "text": "When faced with impossible or blocked tasks, it is up to 2x less likely to bypass permission boundaries and achieves a 94% honesty rate on our internal agent honesty evaluation.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-12",
+      "what": "Gemini 4 Hydrogen release date",
+      "quote": "Nov 12, 2026"
+    }
+  ],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Major commercial foundation model release featuring notable advancements in safety stacks, guardrail enforcement, and reasoning transparency for agentic systems.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "9031cf78e462acfceeed80f754cd935b0e8d08c800d8fb7cc4be193431bfa5c5",
+    "textChars": 10588,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:23.960Z",
+    "attempts": 1
+  }
+}

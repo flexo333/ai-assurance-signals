@@ -1,0 +1,55 @@
+{
+  "id": "5a25565ab71a8d06",
+  "sourceId": "mistral",
+  "sourceName": "Mistral AI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://mistral.ai/news/mistral-large-4-oss",
+  "title": "Le Chonk: Built for Coders, Trusted by Defenders.",
+  "publishedAt": "2026-10-29T12:00:07.000Z",
+  "fetchedAt": "2026-11-25T08:18:30.555Z",
+  "status": "summarised",
+  "headline": "Mistral AI releases open-weight Mistral Large 4 model for sovereign AI applications",
+  "summary": "Mistral AI has released the weights for Mistral Large 4, a 1-trillion-parameter multimodal model designed for coding, cybersecurity, and reasoning. The model features built-in guardrails to distinguish between defensive and offensive cybersecurity tasks and is intended for self-hosted deployment to support data sovereignty. It includes specialized reasoning modes and has been evaluated for its ability to identify, reproduce, and patch vulnerabilities.",
+  "why_it_matters": "The release of open-weight models with built-in cybersecurity guardrails provides organisations with a mechanism to maintain data residency and operational control while leveraging frontier-level AI for defensive security and internal development.",
+  "quotes": [
+    {
+      "text": "Trained from scratch on European infrastructure with clear lineage from inception to release, it gives organizations a trusted foundation for Sovereign AI",
+      "supports": "summary"
+    },
+    {
+      "text": "Open-weight cybersecurity models extend that transparency to enterprises and governments that need to host and customize AI under their own control",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "Our model’s built-in guardrails distinguishes between defensive and malicious, offensive cybersecurity tasks.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The release of high-performance open-weight models significantly impacts the landscape for organisations seeking to balance AI capability with strict data sovereignty and security requirements.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "6744be9d588fbcbee10c57187eca0d96da422a8a7046cf138718878b1aaceb97",
+    "textChars": 20001,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:38:23.096Z",
+    "attempts": 1
+  }
+}

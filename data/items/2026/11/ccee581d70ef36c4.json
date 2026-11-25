@@ -1,0 +1,23 @@
+{
+  "id": "ccee581d70ef36c4",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/nine-entertainment-co-sigma-healthcare-and-hambs-show-ai-powered-observability-delivering-real-world-results-across-asia-pacific",
+  "title": "Nine Entertainment Co., Sigma Healthcare, and HAMBS show AI-powered observability delivering real-world results across Asia-Pacific",
+  "publishedAt": "2026-11-23T02:58:13.115Z",
+  "fetchedAt": "2026-11-25T08:18:11.902Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "0a6a1d300220f01bb5a4eeee88c0269c6805d631119f2ff91df34cfe3d9ce098",
+    "textChars": 5128,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:23.311Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "3e75f1a8eddf7791",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/anthropic-hits-us2-trillion-market-value-in-debut-630468",
+  "title": "Anthropic hits US$2 trillion market value in debut",
+  "publishedAt": "2026-11-19T21:16:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:15.653Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "5c5095d5603022139e601609046859ee2e978ea1f6e5d0efd3ad4eca92eaab7d",
+    "textChars": 2400,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:15.834Z",
+    "attempts": 1
+  }
+}

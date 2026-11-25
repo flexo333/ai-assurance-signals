@@ -1,0 +1,23 @@
+{
+  "id": "94c6e331d3e4f631",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/ai-helps-uncover-critical-flaw-in-ubiquitous-internet-software-296930",
+  "title": "AI helps uncover critical flaw in ubiquitous internet software",
+  "publishedAt": "2026-11-18T21:43:47.000Z",
+  "fetchedAt": "2026-11-25T08:18:18.558Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "f94f8455dd5cba97857c07488c178d72e6d4b9d01ec2fc9de04ee47d3e9fa5e3",
+    "textChars": 5472,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:30:44.635Z",
+    "attempts": 1
+  }
+}

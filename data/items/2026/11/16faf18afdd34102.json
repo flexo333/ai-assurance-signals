@@ -1,0 +1,23 @@
+{
+  "id": "16faf18afdd34102",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/why-australian-industrys-next-ai-wave-will-run-on-the-device-not-in-the-data-centre",
+  "title": "Why Australian industry's next AI wave will run on the device, not in the data centre",
+  "publishedAt": "2026-11-20T20:49:37.555Z",
+  "fetchedAt": "2026-11-25T08:18:13.176Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "92114f325657f8e57311e139402cc03aa5eb3b9a0ab068fb06d5184a1495b226",
+    "textChars": 3841,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:25:44.942Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "184d931227f2504d",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/the-silent-consensus",
+  "title": "The Silent Consensus",
+  "publishedAt": "2026-11-18T10:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:19.501Z",
+  "status": "summarised",
+  "headline": "Addressing the risk of human disempowerment in AI development",
+  "summary": "The author argues against the 'silent consensus,' a belief that the forfeiture of human primacy to superintelligent machines is inevitable. The essay advocates for maintaining human accountability and control over AI systems, suggesting that developers and users must ensure AI remains a tool that supports rather than replaces human agency. It calls for technical and institutional frameworks that preserve human authority in governance and commerce.",
+  "why_it_matters": "For Australian organisations, this highlights the necessity of embedding human-in-the-loop accountability and robust auditability into AI deployment strategies to prevent the erosion of institutional oversight.",
+  "quotes": [
+    {
+      "text": "Regardless of the specifics, the common thread that constitutes the silent consensus is the termination of human primacy in the world as we know it.",
+      "supports": "summary"
+    },
+    {
+      "text": "Retaining primacy means retaining accountability for humans and human institutions. That means AI developers should be accountable when they engage in unsafe development practices, but it also means that people and firms using AI should be held accountable when it is their misuse or lack of oversight that causes harm.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The essay provides a high-level philosophical and strategic framework for AI governance from a major frontier lab, influencing how organisations should approach long-term AI safety and accountability.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "ed25b8670ef8ea890f520d3110ddc3f1272b314569c9035a0494c4efa3a4f33e",
+    "textChars": 15197,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:32:11.732Z",
+    "attempts": 1
+  }
+}

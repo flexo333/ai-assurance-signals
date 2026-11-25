@@ -1,0 +1,50 @@
+{
+  "id": "f79225b4bdb7d563",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/i-dont-want-ai-in-my-online-search-what-options-do-i-have",
+  "title": "I don’t want AI in my online search. What options do I have?",
+  "publishedAt": "2026-11-11T06:50:10.000Z",
+  "fetchedAt": "2026-11-25T08:18:29.418Z",
+  "status": "summarised",
+  "headline": "Analysis of AI integration in search engines and user control options",
+  "summary": "The ARC Centre of Excellence for Automated Decision-Making and Society examines the integration of machine learning and generative AI within web search engines. It highlights that while traditional search components rely on machine learning, generative AI features like AI Overviews present specific challenges, including potential inaccuracies and reduced source diversity. The article notes that users currently lack an official setting to disable these generative features.",
+  "why_it_matters": "Understanding the distinction between foundational machine learning and generative AI is critical for organisations assessing the risks of overreliance on AI-generated summaries in information retrieval.",
+  "quotes": [
+    {
+      "text": "All of the components listed above are likely to involve some sort of machine learning and neural networks – that is, AI systems trained to analyse lots of data, learn patterns and make predictions.",
+      "supports": "summary"
+    },
+    {
+      "text": "Overreliance on AI is also a well-known phenomenon in which users may trust an answer without verifying whether it’s correct.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Provides an expert perspective on the technical reality of AI integration in common tools used by Australian professionals.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "1a0826d944ef49abe048c8fdd7e17c70e534bb435d658c11fe0b4e7956bf241c",
+    "textChars": 3517,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:42.480Z",
+    "attempts": 1
+  }
+}

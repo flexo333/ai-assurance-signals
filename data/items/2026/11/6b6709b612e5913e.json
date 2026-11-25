@@ -1,0 +1,56 @@
+{
+  "id": "6b6709b612e5913e",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence",
+  "title": "Gemini Robotics 2.5 accelerates real-world general dexterity",
+  "publishedAt": "2026-11-09T19:51:47.000Z",
+  "fetchedAt": "2026-11-25T08:18:29.336Z",
+  "status": "summarised",
+  "headline": "Google DeepMind releases Gemini Robotics 2.5 with new safety and jailbreak benchmarks",
+  "summary": "Google DeepMind has introduced Gemini Robotics 2.5, a vision-language-action model designed to improve robot dexterity, reliability, and safety in real-world environments. The release includes new safety features such as real-time physical hazard steerability and the ASIMOV-Jailbreak benchmark to test against adversarial prompts. These developments aim to support the deployment of robots in unstructured settings, including industrial production lines.",
+  "why_it_matters": "Organisations deploying embodied AI must now account for emerging safety benchmarks and inference-time reasoning guidance to manage physical risks and adversarial threats in human-centric environments.",
+  "quotes": [
+    {
+      "text": "As robots move into everyday environments, we have improved physical safety steerability and introduced a new benchmark to test against adversarial jailbreaks specific to robotics.",
+      "supports": "summary"
+    },
+    {
+      "text": "Gemini Robotics 2.5 uses inference-time reasoning guidance to steer around physical hazards in real-time. Much like safety classifiers add a protective layer around Gemini’s responses, this guidance allows the robot to navigate complex environments securely.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-10",
+      "what": "Publication date of the announcement",
+      "quote": "November 10, 2026"
+    }
+  ],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The release introduces specific safety benchmarks for embodied AI, setting a new technical standard for managing physical and adversarial risks in robotics.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "17f324143a67b2a4a4442bb765571264f98a95f9040d11413f848044ae6631b4",
+    "textChars": 7590,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:37:00.204Z",
+    "attempts": 1
+  }
+}

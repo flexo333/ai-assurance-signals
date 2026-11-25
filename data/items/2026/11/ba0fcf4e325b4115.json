@@ -1,0 +1,23 @@
+{
+  "id": "ba0fcf4e325b4115",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease",
+  "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
+  "publishedAt": "2026-11-11T15:00:15.000Z",
+  "fetchedAt": "2026-11-25T08:18:25.538Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "8a654ef620474a78ff2a77d5326c80c0cd38a781bc66574c7ba7afb90d83f467",
+    "textChars": 12076,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:36.629Z",
+    "attempts": 1
+  }
+}

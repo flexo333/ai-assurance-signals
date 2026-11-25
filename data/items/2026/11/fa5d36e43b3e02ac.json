@@ -1,0 +1,60 @@
+{
+  "id": "fa5d36e43b3e02ac",
+  "sourceId": "fmf",
+  "sourceName": "Frontier Model Forum",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://frontiermodelforum.org/updates/introducing-the-fmf-jailbreak-rating-framework-for-frontier-cyber-threats",
+  "title": "Introducing the FMF Jailbreak Rating Framework for Frontier Cyber Threats",
+  "publishedAt": "2026-11-05T14:38:26.000Z",
+  "fetchedAt": "2026-11-25T08:18:31.361Z",
+  "status": "summarised",
+  "headline": "Frontier Model Forum releases Jailbreak Rating Framework for cyber threats",
+  "summary": "The Frontier Model Forum has released Version 1.0 of its Jailbreak Rating Framework, which provides a structured methodology for assessing the risk profile of cyber-related model jailbreaks. The framework uses a tiered approach to evaluate capability gain, scope, and ease of deployment to help organizations prioritize security patching. It aims to create a consistent, evidence-based standard for the industry to interpret and respond to AI-related cyber threats.",
+  "why_it_matters": "This framework provides Australian organisations and security teams with a standardised, industry-backed methodology to consistently evaluate and prioritise the severity of AI model jailbreaks, enabling more efficient allocation of security resources.",
+  "quotes": [
+    {
+      "text": "The framework uses a tiered assessment methodology that combines scores across four categories: capability gain, capability scope, ease of deployment, and ease of discovery.",
+      "supports": "summary"
+    },
+    {
+      "text": "This framework provides an important shared approach so that organizations can assess jailbreaks consistently and focus efforts on the highest-risk issues first.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "The Frontier Model Forum’s new framework gives the industry a shared, evidence-based way to rate how serious a cyber bypass is, so teams can focus on what matters most.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-12-21",
+      "what": "Public comment period closing date",
+      "quote": "To that end, we are opening a public comment period through December 21, 2026."
+    }
+  ],
+  "classification": {
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The framework establishes a common industry standard for assessing AI cyber-security risks, which is likely to influence global best practices adopted by Australian organisations.",
+    "is_consultation": true,
+    "closing_date": "2026-12-21",
+    "closing_date_quote": "To that end, we are opening a public comment period through December 21, 2026."
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "44e02245d6b21f396f5cde932ce7774bdf0afaa5c9cc5e37fbf6730fa26c4ddc",
+    "textChars": 5757,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:37:29.988Z",
+    "attempts": 1
+  }
+}

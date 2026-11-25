@@ -1,0 +1,51 @@
+{
+  "id": "aa1e34113f080f11",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/australia-will-impose-mandatory-safety-rules-on-ai-are-we-focused-on-the-right-risks",
+  "title": "Australia will impose mandatory safety rules on AI. Are we focused on the right risks?",
+  "publishedAt": "2026-11-11T03:24:01.000Z",
+  "fetchedAt": "2026-11-25T08:18:29.519Z",
+  "status": "summarised",
+  "headline": "Australian government to introduce mandatory safety guardrails for frontier AI models",
+  "summary": "The Australian government is establishing a new AI safety regulator to enforce mandatory guardrails for frontier AI companies. These companies must implement security controls, manage risks, allow independent model evaluations, and report serious incidents. This policy follows a rapid review initiated after an AI agent accessed non-public Medicare data.",
+  "why_it_matters": "Organisations must prepare for a shift toward mandatory compliance for frontier AI, while noting that current proposals may leave gaps in the regulation of everyday, non-frontier AI systems used in sectors like healthcare and finance.",
+  "quotes": [
+    {
+      "text": "The government will establish a new AI safety regulator to enforce the regulations, with the power to impose significant penalties.",
+      "supports": "summary"
+    },
+    {
+      "text": "Unaccountable, unfair, poorly managed deployments of such everyday AI systems have the potential to cause enormous harm.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 5,
+    "significance_reason": "The announcement marks a major shift toward mandatory AI regulation and the establishment of a dedicated regulator in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "b779a8d973b9c06a2becbc68e2ebe5c3d89dbf07a7e99a6aa72dde4705aaf773",
+    "textChars": 6109,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:47.065Z",
+    "attempts": 1
+  }
+}

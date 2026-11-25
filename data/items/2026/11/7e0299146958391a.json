@@ -1,0 +1,57 @@
+{
+  "id": "7e0299146958391a",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/adms-researchers-contribute-evidence-to-digital-duty-of-care-inquiry",
+  "title": "ADM+S researchers contribute evidence to Digital Duty of Care inquiry",
+  "publishedAt": "2026-11-11T23:12:36.000Z",
+  "fetchedAt": "2026-11-25T08:18:27.823Z",
+  "status": "summarised",
+  "headline": "ADM+S researchers provide evidence to Digital Duty of Care inquiry",
+  "summary": "Researchers from the ARC Centre of Excellence for Automated Decision-Making and Society provided expert evidence to a parliamentary inquiry regarding the proposed Digital Duty of Care. They advocated for a shift from reactive content removal to proactive safety-by-design and proactive risk mitigation. The submission and hearing emphasised the necessity of independent research access, platform transparency, and stronger accountability mechanisms such as a private right of action.",
+  "why_it_matters": "The proposed Digital Duty of Care will impact how Australian organisations and platforms must proactively identify, prevent, and mitigate systemic risks arising from automated systems and digital services.",
+  "quotes": [
+    {
+      "text": "The proposed Digital Duty of Care would instead require online service providers to take proactive steps to identify, prevent, and mitigate harms arising through their services.",
+      "supports": "summary"
+    },
+    {
+      "text": "The researchers’ evidence highlights the importance of independent research, meaningful access to platform data, and effective accountability mechanisms in ensuring the proposed Digital Duty of Care delivers meaningful protections for Australians.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-10",
+      "what": "Senate Environment and Communications Legislation Committee hearing",
+      "quote": "Watch the Senate Environment and Communications Legislation Committee hearing (10 November 2026)."
+    }
+  ],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Involves expert academic submissions and parliamentary committee evidence regarding major proposed digital safety and automated systems legislation in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "dc5a4d6c3850b7170328dca7249519d3302d9fe99d4bdb0cae7bb0d85839b62a",
+    "textChars": 5352,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:32.654Z",
+    "attempts": 1
+  }
+}

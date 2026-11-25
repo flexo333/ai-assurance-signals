@@ -1,0 +1,23 @@
+{
+  "id": "10878202550bbbf9",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+  "title": "Connected intelligence for in-house legal",
+  "publishedAt": "2026-11-23T08:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:10.817Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "0d8f2377d1e38278080cac3dec6f5edc5c67bc235045040f35cd80054f849627",
+    "textChars": 226,
+    "textSource": "feed",
+    "extractMethod": "meta-description",
+    "analysedAt": "2026-11-25T08:21:56.642Z",
+    "attempts": 1
+  }
+}

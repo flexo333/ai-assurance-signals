@@ -1,0 +1,23 @@
+{
+  "id": "694fa83469a0827a",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/how-some-media-shape-regional-australias-hostility-to-renewable-energy",
+  "title": "How some media shape regional Australia’s hostility to renewable energy",
+  "publishedAt": "2026-11-23T06:36:28.000Z",
+  "fetchedAt": "2026-11-25T08:18:14.379Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "92f85048af6b53e08b698818cbb3fcfef421a6144c3ec6971d7aab6b33e3c82d",
+    "textChars": 8117,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:22:11.893Z",
+    "attempts": 1
+  }
+}

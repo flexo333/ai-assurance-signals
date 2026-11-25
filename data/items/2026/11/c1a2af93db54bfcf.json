@@ -1,0 +1,50 @@
+{
+  "id": "c1a2af93db54bfcf",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-medchembench",
+  "title": "Can AI help scientists identify promising drug candidates?",
+  "publishedAt": "2026-11-20T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:15.440Z",
+  "status": "summarised",
+  "headline": "OpenAI releases MedChemBench to evaluate AI reasoning in medicinal chemistry",
+  "summary": "OpenAI has introduced MedChemBench, a benchmark designed to evaluate AI model performance on medicinal chemistry reasoning tasks. The benchmark tests model capabilities across molecular structure reconstruction, scientific reasoning, compound ranking, and property predictions. OpenAI's evaluations showed high performance on structure reconstruction and reasoning, but highlighted ongoing challenges in compound selection and numerical property prediction.",
+  "why_it_matters": "The findings demonstrate that frontier AI models still face significant reliability gaps when predicting complex scientific properties, reinforcing the need for rigorous capability and risk evaluations before deploying AI in high-stakes research environments.",
+  "quotes": [
+    {
+      "text": "MedChemBench measures these abilities through 99 problems drawn from published research.",
+      "supports": "summary"
+    },
+    {
+      "text": "These results do not establish whether models can discover new drugs or improve laboratory decisions.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "Introduces a specialised benchmark from a frontier lab to evaluate domain-specific scientific reasoning capabilities and model limitations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.6-flash",
+    "promptVersion": 1,
+    "sourceSha256": "8d9007ef227769528b6e81131b61a9a530696a15dd1264b1932e68f06260f2a1",
+    "textChars": 7341,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:26:16.894Z",
+    "attempts": 2
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "48ca2f41746ef3d0",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/zahra-stardust-named-among-australias-leading-voices-on-sex-and-consent",
+  "title": "Zahra Stardust named among Australia’s leading voices on sex and consent",
+  "publishedAt": "2026-11-22T21:16:56.000Z",
+  "fetchedAt": "2026-11-25T08:18:16.075Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "8d84bd9cc2f4a66dfc08246e9b839da21526a5659a923a1890c6c8bfc84de6e5",
+    "textChars": 652,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:57.465Z",
+    "attempts": 1
+  }
+}

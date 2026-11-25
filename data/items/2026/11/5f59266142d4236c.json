@@ -1,0 +1,23 @@
+{
+  "id": "5f59266142d4236c",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/choosing-an-ai-assistant-subscription-for-a-small-team",
+  "title": "Choosing an AI assistant subscription for a small team",
+  "publishedAt": "2026-11-22T23:17:14.222Z",
+  "fetchedAt": "2026-11-25T08:18:12.361Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "fd5be5b8c2fd328bd8dae2313effdc28bd25c3a20b19ac589afe47cc0e437a2c",
+    "textChars": 4891,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:43.590Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "7ad44f990f0c53ef",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/combatting-adversarial-distillation",
+  "title": "Combatting adversarial distillation",
+  "publishedAt": "2026-11-20T10:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:14.038Z",
+  "status": "summarised",
+  "headline": "OpenAI reports on strategies to mitigate adversarial model distillation risks",
+  "summary": "OpenAI has detailed its multi-layered approach to preventing adversarial distillation, a process where actors extract a model's capabilities and internal reasoning to train unprotected versions. The company uses a combination of adversarial training, input and output classifiers, and API-level protections to secure chain-of-thought reasoning. These measures are supported by ongoing investigations into coordinated campaigns and the sharing of threat intelligence with industry partners.",
+  "why_it_matters": "Organisations deploying frontier AI models must implement robust safeguards around internal reasoning traces to prevent the unauthorized transfer of sensitive capabilities to less secure systems.",
+  "quotes": [
+    {
+      "text": "Adversarial distillation creates a path for bad actors to reproduce these capabilities without appropriate safeguards.",
+      "supports": "summary"
+    },
+    {
+      "text": "Our cyber distillation results suggest that protecting reasoning traces can limit cyber capability transfer, even when the underlying task is one allowed under our usage policies",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "This report provides a technical blueprint for securing frontier models against capability extraction, which is a critical concern for global AI safety and national security.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "7fc53e85e68810fb262f0d24f31a3bb756727ca679c33e97a506c01a32fc906a",
+    "textChars": 14590,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:26:01.441Z",
+    "attempts": 1
+  }
+}

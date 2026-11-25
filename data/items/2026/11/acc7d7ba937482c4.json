@@ -1,0 +1,50 @@
+{
+  "id": "acc7d7ba937482c4",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/cybersecurity-tops-the-asia-pacific-board-agenda-for-2027-while-only-15-of-leaders-are-very-confident-in-risk-oversight",
+  "title": "Cybersecurity Tops the Asia-Pacific Board Agenda for 2027, While Only 15% of Leaders are Very Confident in Risk Oversight",
+  "publishedAt": "2026-11-19T22:54:18.649Z",
+  "fetchedAt": "2026-11-25T08:18:14.840Z",
+  "status": "summarised",
+  "headline": "Diligent report finds 29% of APAC boards see AI adoption outpacing governance",
+  "summary": "A report by Diligent Institute shows that 29% of surveyed Asia-Pacific governance leaders believe AI adoption is outpacing governance within their organisations. Only 15% of respondents felt very confident in their board's ability to oversee significant risks, citing insufficient time and lack of relevant expertise. Furthermore, 62% of respondents identified digital technology, including AI and data management, as their primary board skills gap.",
+  "why_it_matters": "The findings highlight a critical gap in board-level technical fluency and risk oversight across the region as organisations accelerate AI deployment ahead of formal governance controls.",
+  "quotes": [
+    {
+      "text": "29% of respondents say AI adoption is ahead of governance.",
+      "supports": "summary"
+    },
+    {
+      "text": "Digital technology, including AI and data management, is the most frequently cited board skills gap (62%), more than twice as often as cybersecurity (29%), the second-most cited option.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides empirical survey data on board-level AI governance gaps, skills shortages, and unapproved AI tool usage across the APAC region.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.6-flash",
+    "promptVersion": 1,
+    "sourceSha256": "6e13001b6414f886bf49ef6b321c30dd703e836952e4fb8d70aef80a0b665eb8",
+    "textChars": 4101,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:27:17.107Z",
+    "attempts": 1
+  }
+}

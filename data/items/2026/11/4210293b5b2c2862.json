@@ -1,0 +1,54 @@
+{
+  "id": "4210293b5b2c2862",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/why-ai-enabled-scientific-research-is-a-double-edged-sword-295916",
+  "title": "Why AI-enabled scientific research is a double-edged sword",
+  "publishedAt": "2026-11-19T16:14:24.000Z",
+  "fetchedAt": "2026-11-25T08:18:16.398Z",
+  "status": "summarised",
+  "headline": "Impact of AI on scientific research integrity and peer review processes",
+  "summary": "The rapid integration of AI into scientific research is causing significant disruption to traditional peer review systems and academic publishing. Mathematicians and researchers have expressed concerns that AI-generated outputs often lack conceptual insight and transparency, potentially undermining the quality of scientific inquiry. Academic institutions are now grappling with the challenge of maintaining critical thinking and rigorous standards as AI accelerates the volume of research submissions.",
+  "why_it_matters": "Organisations and research bodies must implement robust human-in-the-loop verification processes to mitigate the risks of opaque or incorrect AI-generated research outputs.",
+  "quotes": [
+    {
+      "text": "Mathematicians who have gone through some of the solutions offered by AI say they are opaque in their reasoning",
+      "supports": "summary"
+    },
+    {
+      "text": "But, as with peer review and maths proofs, humans have to check and interpret these.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "AI is undoubtedly accelerating the process.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "The article highlights systemic risks to research integrity and academic governance, which are critical for Australian universities and research institutions relying on AI tools.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "6e2d530bccfc5fb1c6aa846c39476ce7917bb54c38704948d49f194228b9e35b",
+    "textChars": 6654,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:32.336Z",
+    "attempts": 1
+  }
+}

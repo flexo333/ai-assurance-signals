@@ -1,0 +1,23 @@
+{
+  "id": "454fabd20271b4f0",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-industry-news/strategy/cognizant-joins-qualys-global-mroc-alliance-to-deliver-managed-risk-operations-for-the-frontier-ai-era",
+  "title": "Cognizant Joins Qualys Global mROC Alliance to Deliver Managed Risk Operations for the Frontier AI Era",
+  "publishedAt": "2026-11-19T22:45:15.501Z",
+  "fetchedAt": "2026-11-25T08:18:15.721Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash",
+    "promptVersion": 1,
+    "sourceSha256": "b9b9d04036c7fbcf16baed2891072e812ba509c7cf2afa5af9ca2e01702600ef",
+    "textChars": 4197,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:11.133Z",
+    "attempts": 1
+  }
+}

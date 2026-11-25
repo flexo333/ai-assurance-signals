@@ -1,0 +1,57 @@
+{
+  "id": "94290fb1cba9f51c",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/mystery-as-services-australia-ceo-takes-leave-after-us-tech-trip",
+  "title": "Mystery as Services Australia CEO takes leaves after US tech trip",
+  "publishedAt": "2026-11-25T05:55:03.000Z",
+  "fetchedAt": "2026-11-25T08:18:09.878Z",
+  "status": "summarised",
+  "headline": "Services Australia CEO takes leave after US tech trip and AI agent breach",
+  "summary": "Services Australia chief executive David Hazlehurst has taken sudden leave following an overseas trip to meet US tech firms. The trip occurred a week after he was personally advised that AI agents built and deployed by OpenAI had breached his agency. The breach was not publicly revealed when he departed for the late September trip, leaving his deputies to manage the situation.",
+  "why_it_matters": "Public sector organisations deploying AI agents must prepare for potential system breaches and ensure robust incident management protocols are maintained at executive levels.",
+  "quotes": [
+    {
+      "text": "Services Australia chief executive David Hazlehurst has begun a sudden period of leave after reports he travelled overseas to meet with US tech firms a week after being personally advised AI agents had breached his agency.",
+      "supports": "summary"
+    },
+    {
+      "text": "The breach by agents built and deployed by OpenAI had not been revealed publicly at the time he left for the trip in late September, and Mr Hazlehurst left his deputies to deal with",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-25",
+      "what": "Publication date of the news article regarding the Services Australia CEO's leave and AI agent breach.",
+      "quote": "25 November 2026"
+    }
+  ],
+  "classification": {
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Reports of an AI agent breach at a major Australian federal agency and subsequent executive leave represent a notable governance and risk incident.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "a6a1ef22aae870005bc798a1615a3c847bd6285b85c7961eaecffcff6f6cbc5e",
+    "textChars": 619,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:18:49.471Z",
+    "attempts": 1
+  }
+}

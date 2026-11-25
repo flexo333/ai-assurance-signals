@@ -1,0 +1,51 @@
+{
+  "id": "beb262d896ad1e34",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/was-anthropics-record-us-81-billion-listing-a-vote-of-confidence-in-ai-and-whats-next-297151",
+  "title": "Was Anthropic’s record US$81 billion listing a vote of confidence in AI – and what’s next?",
+  "publishedAt": "2026-11-20T04:53:50.000Z",
+  "fetchedAt": "2026-11-25T08:18:14.635Z",
+  "status": "summarised",
+  "headline": "Anthropic IPO shifts focus from growth to AI safety and governance scrutiny",
+  "summary": "Anthropic has completed the largest initial public offering in history on the Nasdaq stock market, raising US$81 billion and achieving a massive valuation. The public listing brings heightened scrutiny regarding how the company's management will balance commercial returns with AI safety, privacy, and social responsibility. Meanwhile, rival OpenAI has delayed its own public listing until 2027, citing safety concerns.",
+  "why_it_matters": "Public listing introduces intense corporate governance scrutiny, forcing organisations to balance commercial returns against severe AI safety and risk management obligations.",
+  "quotes": [
+    {
+      "text": "Now, there’ll be a renewed focus on corporate governance.",
+      "supports": "summary"
+    },
+    {
+      "text": "investors will now more closely scrutinise how management balances commercial returns with AI safety, privacy and social responsibility.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Anthropic's record-breaking public listing transitions a major frontier AI lab into public markets, increasing scrutiny on corporate governance and AI safety balancing acts.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "66678bf6ee866aa57539857ae95406e582b74b7b84d02df31d1728de6119ffff",
+    "textChars": 5739,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:26:03.429Z",
+    "attempts": 1
+  }
+}

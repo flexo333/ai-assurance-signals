@@ -1,0 +1,51 @@
+{
+  "id": "fd9bebbff7e69286",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/introducing-gemini-4-neon",
+  "title": "Introducing Gemini 4 Neon",
+  "publishedAt": "2026-11-18T21:35:43.000Z",
+  "fetchedAt": "2026-11-25T08:18:23.041Z",
+  "status": "summarised",
+  "headline": "Google DeepMind releases Gemini 4 Neon with enhanced safety and security features",
+  "summary": "Google DeepMind has introduced Gemini 4 Neon, a new model designed for complex software engineering, analytical, and scientific workflows. The model includes specific safety features to mitigate cyber and biosecurity misuse, improve agentic alignment, and protect against indirect prompt injection attacks. It also features refined thinking levels to allow teams to manage intelligence and token usage for production-grade tasks.",
+  "why_it_matters": "The model's focus on reducing fabrication and improving agentic safety, particularly in cyber defence and code hardening, provides organisations with new tools for secure, production-ready AI deployment.",
+  "quotes": [
+    {
+      "text": "Gemini 4 Neon builds on improvements from our Gemini 4 safety and security stack — maintaining Gemini 4 Carbon-level protections against severe misuse and prompt injection while advancing further on model alignment and agentic behavior.",
+      "supports": "summary"
+    },
+    {
+      "text": "As agentic coding scales, generating secure code from the start is critical. Gemini 4 Neon produces more secure code than Carbon across all easy, medium, and hard challenges on AutoBaxBench",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The release introduces new benchmarks for agentic safety and cyber-defence capabilities in a production-ready model.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "6cd9ebb10b49eb4d27b1c0925fdeb25d9997f0aa23f9cbf9c68b547ca3c5bdf4",
+    "textChars": 11543,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:30:50.389Z",
+    "attempts": 1
+  }
+}

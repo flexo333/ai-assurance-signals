@@ -1,0 +1,23 @@
+{
+  "id": "09bb8760c21675e1",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/17/1148203/research-reports",
+  "title": "Research Reports",
+  "publishedAt": "2026-11-17T14:39:46.000Z",
+  "fetchedAt": "2026-11-25T08:18:22.179Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "242034dde8def8c131af5e929e0fc506bbd1cc704e1e321cea3e4c228ff42864",
+    "textChars": 59,
+    "textSource": "feed",
+    "extractMethod": "http-403",
+    "analysedAt": "2026-11-25T08:33:18.186Z",
+    "attempts": 1
+  }
+}

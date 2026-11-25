@@ -1,0 +1,23 @@
+{
+  "id": "b48d68bd92508b83",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/16/1148624/the-open-source-movement-wants-jensen-huang-back",
+  "title": "The open-source movement wants Jensen Huang back",
+  "publishedAt": "2026-11-16T18:38:47.000Z",
+  "fetchedAt": "2026-11-25T08:18:23.219Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "b7a8a7425f269fef3a2ead36bd381c2a6f0b7fb0201ec6ef55b879a4aaf50cfb",
+    "textChars": 4358,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:33:25.788Z",
+    "attempts": 1
+  }
+}

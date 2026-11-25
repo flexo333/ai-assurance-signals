@@ -1,0 +1,23 @@
+{
+  "id": "a890a236270cc5e3",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/learn/deploying-daybreak-red",
+  "title": "Deploying Daybreak Red",
+  "publishedAt": "2026-11-19T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:18.475Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "1668110c8b0aacf22e2d0040e5b9744cce649a3e3274053be89ca56e12daa295",
+    "textChars": 140,
+    "textSource": "feed",
+    "extractMethod": "meta-description",
+    "analysedAt": "2026-11-25T08:29:59.022Z",
+    "attempts": 1
+  }
+}

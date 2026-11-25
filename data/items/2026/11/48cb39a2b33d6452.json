@@ -1,0 +1,23 @@
+{
+  "id": "48cb39a2b33d6452",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-people-news/enterprise-staff/ai-makes-the-humanities-more-important-cisco-innovation-chief-argues",
+  "title": "AI makes the humanities more important, Cisco innovation chief argues",
+  "publishedAt": "2026-11-23T03:50:25.501Z",
+  "fetchedAt": "2026-11-25T08:18:11.321Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "2caf14b9c453e26c0ddebb4afe562fda05f74bdd50ac0ceb58679154e3227e62",
+    "textChars": 6425,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:22:57.149Z",
+    "attempts": 1
+  }
+}

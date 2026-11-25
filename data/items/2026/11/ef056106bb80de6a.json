@@ -1,0 +1,51 @@
+{
+  "id": "ef056106bb80de6a",
+  "sourceId": "mit-tr",
+  "sourceName": "MIT Technology Review (AI)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://technologyreview.com/2026/11/16/1146070/building-ai-that-can-work-across-the-enterprise",
+  "title": "Building AI that can work across the enterprise",
+  "publishedAt": "2026-11-16T13:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:23.154Z",
+  "status": "summarised",
+  "headline": "Integrating AI agents into enterprise operating models and governance frameworks",
+  "summary": "As organisations transition from isolated AI pilots to autonomous workflows, they must integrate AI into their broader enterprise operating models. This shift requires a robust data foundation and a strategic approach to evaluating use cases based on impact, feasibility, and scalability. Effective governance, including clear policies and monitoring, is essential to manage risks as AI agents take on more mission-critical responsibilities.",
+  "why_it_matters": "Organisations must implement structured governance and oversight to prevent the accumulation of risk as they scale AI agents, as the absence of such controls can lead to disruptive audits and operational failures.",
+  "quotes": [
+    {
+      "text": "Organizations moving from isolated pilots toward AI agents and autonomous workflows are confronting a deeper challenge: rethinking how data, business processes, governance, and people fit together",
+      "supports": "summary"
+    },
+    {
+      "text": "The absence of governance doesn’t speed up AI adoption,” Singh says. “It creates a risk backlog” that can ultimately force a more disruptive stop and audit.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Highlights the shift from experimental AI to enterprise-wide deployment, emphasising the necessity of governance frameworks for scaling autonomous systems.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "aa58f0888f17973e14d87af68a3b20487c71cd88bf3ff42855f73f4c9033e175",
+    "textChars": 4000,
+    "textSource": "feed",
+    "extractMethod": "http-403",
+    "analysedAt": "2026-11-25T08:33:36.498Z",
+    "attempts": 1
+  }
+}

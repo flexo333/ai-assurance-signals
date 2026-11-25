@@ -1,0 +1,23 @@
+{
+  "id": "f21afbaf35d8d976",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/nvidias-jensen-huang-is-getting-his-ceo-job-back-but-history-shows-companies-perform-better-when-corporate-boards-take-executive-misbehavior-seriously-281689",
+  "title": "Nvidia’s Jensen Huang is getting his CEO job back, but history shows companies perform better when corporate boards take executive misbehavior seriously",
+  "publishedAt": "2026-11-23T18:31:53.000Z",
+  "fetchedAt": "2026-11-25T08:18:08.699Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "add751885489e5a36d1f1c9ee402c7e6b23f0fc88e9ce961fe08dfc669887a5f",
+    "textChars": 8062,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:21:04.163Z",
+    "attempts": 1
+  }
+}

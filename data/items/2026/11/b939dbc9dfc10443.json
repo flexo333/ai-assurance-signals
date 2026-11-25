@@ -1,0 +1,23 @@
+{
+  "id": "b939dbc9dfc10443",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/nearly-two-thirds-of-remote-first-nations-households-lack-free-to-air-tv-access",
+  "title": "Nearly two thirds of remote First Nations households lack free‑to‑air TV access",
+  "publishedAt": "2026-11-16T01:39:39.000Z",
+  "fetchedAt": "2026-11-25T08:18:26.620Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "4cc260cd3cdebd4e4a4ac89c0df98d94cb76aca7ebdba66fb550083d70568385",
+    "textChars": 5886,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:17.123Z",
+    "attempts": 1
+  }
+}

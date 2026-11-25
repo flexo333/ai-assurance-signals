@@ -1,0 +1,23 @@
+{
+  "id": "23c4f130369cb972",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity",
+  "title": "Agentic cheminformatics with Google Antigravity",
+  "publishedAt": "2026-11-03T17:01:49.000Z",
+  "fetchedAt": "2026-11-25T08:18:32.976Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "dca4e39ec8f4b9e670154a43c0e1b96018adf7942210f28b43a135749609dbed",
+    "textChars": 10293,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:37:52.595Z",
+    "attempts": 1
+  }
+}

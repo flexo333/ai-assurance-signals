@@ -1,0 +1,23 @@
+{
+  "id": "df8d1e4429e90a97",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/digital-media-and-ai-expert-jean-burgess-elected-to-lead-australian-academy-of-the-humanities",
+  "title": "Digital media and AI expert Jean Burgess elected to lead Australian Academy of the Humanities",
+  "publishedAt": "2026-11-18T03:38:07.000Z",
+  "fetchedAt": "2026-11-25T08:18:23.135Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "064010adadbd82efcb73debbe5f79cdde4b892e33c607c95a80a7506baa3430f",
+    "textChars": 1715,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:32:40.118Z",
+    "attempts": 1
+  }
+}

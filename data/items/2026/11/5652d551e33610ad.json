@@ -1,0 +1,51 @@
+{
+  "id": "5652d551e33610ad",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/adms-researcher-appointed-anzsog-academic-fellow-for-2027",
+  "title": "ADM+S researcher appointed ANZSOG Academic Fellow for 2027",
+  "publishedAt": "2026-11-12T04:23:37.000Z",
+  "fetchedAt": "2026-11-25T08:18:25.378Z",
+  "status": "summarised",
+  "headline": "ADM+S researcher appointed ANZSOG Academic Fellow for 2027",
+  "summary": "Dr Bello y Villarino from the ARC Centre of Excellence for Automated Decision-Making and Society has been appointed as an ANZSOG Academic Fellow for 2027. The fellowship will focus on examining the governance, regulation, and procurement of artificial intelligence and automated decision-making systems within the public sector.",
+  "why_it_matters": "Organisations navigating public sector AI deployment should note that incoming academic research will closely examine government procurement and regulation of automated decision-making systems.",
+  "quotes": [
+    {
+      "text": "Dr Bello y Villarino will focus on the governance, regulation and procurement of artificial intelligence and automated decision-making systems in the public sector",
+      "supports": "summary"
+    },
+    {
+      "text": "The 2027 cohort of Academic Fellows will examine a range of pressing policy challenges, including public-sector AI",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Appoints a key Australian researcher to examine public sector AI governance and procurement.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "16d3dca860b2b1b54463ce56d43a3e4c43b6bc635db8ead3a3b1303e7eac497c",
+    "textChars": 982,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:35:27.851Z",
+    "attempts": 1
+  }
+}

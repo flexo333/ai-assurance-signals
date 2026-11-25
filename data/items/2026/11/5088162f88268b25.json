@@ -1,0 +1,51 @@
+{
+  "id": "5088162f88268b25",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/with-ai-blamed-for-mass-layoffs-heres-how-we-can-ensure-workers-get-a-fairer-go-296948",
+  "title": "With AI blamed for mass layoffs, here’s how we can ensure workers get a fairer go",
+  "publishedAt": "2026-11-19T19:05:25.000Z",
+  "fetchedAt": "2026-11-25T08:18:16.139Z",
+  "status": "summarised",
+  "headline": "Australian workplace laws ill-equipped for AI-driven job cuts",
+  "summary": "Recent job cuts across several Australian companies have been linked to AI disruption, prompting concerns that workers bear the costs while shareholders gain the benefits. The federal government recently released a draft voluntary guide encouraging businesses to collaborate with workers on AI implementation. However, analysts argue that voluntary measures and current workplace regulations do not go far enough to protect employees or ensure fair compensation.",
+  "why_it_matters": "Organisations implementing AI in Australia face growing scrutiny regarding workforce impacts, highlighting the need for enforceable worker consultation and fair sharing of productivity gains rather than relying solely on voluntary guides.",
+  "quotes": [
+    {
+      "text": "Recent job cuts at Bunnings , Canva , Atlassian , National Australia Bank and Commonwealth Bank have also been linked to AI disruption and technological change – at least in part.",
+      "supports": "summary"
+    },
+    {
+      "text": "Workers need enforceable rights and be empowered to collectively influence AI-driven workplace change, rather than hoping employers will voluntarily act in their interests.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Highlights critical policy and regulatory gaps in Australia regarding AI-driven workplace restructuring and workforce protection.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "27eb247b53fbd836814e733ad5bdffac907c09bb4e5654da14b3e9c6d9797027",
+    "textChars": 6110,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:17.468Z",
+    "attempts": 1
+  }
+}

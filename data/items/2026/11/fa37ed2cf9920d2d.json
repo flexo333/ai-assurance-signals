@@ -1,0 +1,23 @@
+{
+  "id": "fa37ed2cf9920d2d",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/what-grand-theft-auto-vi-can-teach-us-about-virtual-romance-297021",
+  "title": "What Grand Theft Auto VI can teach us about virtual romance",
+  "publishedAt": "2026-11-23T12:18:36.000Z",
+  "fetchedAt": "2026-11-25T08:18:10.036Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "2c93394544437a97ed03ce747352d65a1a3cd2c261ec30cd8ac4b9afbc99affd",
+    "textChars": 5832,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:21:51.799Z",
+    "attempts": 1
+  }
+}

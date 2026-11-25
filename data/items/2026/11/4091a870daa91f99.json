@@ -1,0 +1,57 @@
+{
+  "id": "4091a870daa91f99",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/adms-recommendations-cited-in-senate-digital-duty-of-care-report",
+  "title": "ADM+S recommendations cited in Senate Digital Duty of Care report",
+  "publishedAt": "2026-11-22T23:35:43.000Z",
+  "fetchedAt": "2026-11-25T08:18:14.515Z",
+  "status": "summarised",
+  "headline": "Senate inquiry report cites ADM+S recommendations on Digital Duty of Care",
+  "summary": "The Senate inquiry into the Online Safety Amendment (Digital Duty of Care) Bill 2026 has released its report following public hearings and submissions. The report acknowledges recommendations from the ADM+S Centre regarding an outcomes-based duty of care for online services. These recommendations include extending protections against serious online harms to adults and enabling independent research into platforms.",
+  "why_it_matters": "The proposed legislation signals a shift toward outcomes-based regulation for digital services, which may require Australian organisations to adopt broader risk management frameworks to address systemic harms beyond specific, narrow risks.",
+  "quotes": [
+    {
+      "text": "The committee’s report acknowledged ADM+S support for an outcomes-based duty requiring online services to take appropriate action to ensure a safe online environment.",
+      "supports": "summary"
+    },
+    {
+      "text": "the Centre argued this approach would be better equipped to address broader, systemic and emerging online harms than previous regulatory approaches focused on narrow, specific risks.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-20",
+      "what": "Report release date",
+      "quote": "Released on Friday 20 November 2026, the report follows an inquiry into the Online Safety Amendment (Digital Duty of Care) Bill 2026"
+    }
+  ],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "The report reflects significant legislative progress on a proposed duty of care framework that would impact how digital services manage systemic risks in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "af84f85ca72d9c395f3724ebdd002ec43da02d0559d42c7bed6dd16768981c11",
+    "textChars": 1604,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:37.069Z",
+    "attempts": 1
+  }
+}

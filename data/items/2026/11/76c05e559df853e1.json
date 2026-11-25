@@ -1,0 +1,50 @@
+{
+  "id": "76c05e559df853e1",
+  "sourceId": "adms",
+  "sourceName": "ARC Centre of Excellence for Automated Decision-Making and Society",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://admscentre.org.au/ai-can-imitate-online-communities-without-understanding-them-researchers-find",
+  "title": "AI can imitate online communities without understanding them, researchers find",
+  "publishedAt": "2026-11-25T03:45:49.000Z",
+  "fetchedAt": "2026-11-25T08:18:12.576Z",
+  "status": "summarised",
+  "headline": "Research examines how language models imitate online community communication styles",
+  "summary": "Researchers from the ARC Centre of Excellence for Automated Decision-Making and Society studied how language models mimic human communication within online communities. The study found that bots can achieve verisimilitude, or a likeness to reality, by generating content that resembles their training data. This allows bots to be accepted as members of online communities, participating in shared jokes and conversations.",
+  "why_it_matters": "Organisations must recognise that AI systems can generate believable, human-like interactions without genuine understanding, which complicates the assessment of AI-generated content in public-facing digital environments.",
+  "quotes": [
+    {
+      "text": "The researchers argue that rather than understanding or communicating in the human sense, language models generate communications that resemble those found in their training data, producing what they describe as verisimilitude , a likeness to reality.",
+      "supports": "summary"
+    },
+    {
+      "text": "The concept shifts attention away from whether AI-generated communications are true or false, human or machine, and towards how they become believable.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides empirical evidence on the risks of AI-generated content mimicking human social dynamics, relevant for organisations managing AI-driven community engagement.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "fe1cf44c2ada6831c55d84bd9ff44a9324e61a5d2f10355fcee17722c029a415",
+    "textChars": 1761,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:18:51.656Z",
+    "attempts": 2
+  }
+}

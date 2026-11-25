@@ -1,0 +1,23 @@
+{
+  "id": "52652d8eacdf04a6",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/the-philosophical-reason-ai-christmas-ads-leave-audiences-feeling-cold-296365",
+  "title": "The philosophical reason AI Christmas ads leave audiences feeling cold",
+  "publishedAt": "2026-11-18T16:02:21.000Z",
+  "fetchedAt": "2026-11-25T08:18:19.242Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "24e6e09b36e4c34911c34041ce7727c09e4462c48a3333a740bf2bac36f27b19",
+    "textChars": 6115,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:31:08.402Z",
+    "attempts": 1
+  }
+}

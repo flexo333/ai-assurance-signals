@@ -1,0 +1,51 @@
+{
+  "id": "c735cbd0f011a586",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/gallery/in-pictures-security-in-the-age-of-shadow-ai-security-centric-roundtable-630450",
+  "title": "In Pictures: Security in the age of shadow AI Security Centric roundtable",
+  "publishedAt": "2026-11-18T23:12:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:18.193Z",
+  "status": "summarised",
+  "headline": "Executive roundtable discusses shadow AI and data governance",
+  "summary": "An iTnews executive roundtable explored the challenges of managing shadow AI within organisations. Delegates discussed strategies for strengthening data governance and establishing secure foundations for AI adoption while meeting regulatory expectations.",
+  "why_it_matters": "Australian organisations must balance the need for business velocity with the requirement to manage shadow AI risks and comply with an evolving regulatory landscape.",
+  "quotes": [
+    {
+      "text": "Delegates discussed how to identify and manage shadow AI, strengthen data governance, and build secure foundations for AI adoption while maintaining business velocity and meeting evolving regulatory expectations.",
+      "supports": "summary"
+    },
+    {
+      "text": "build secure foundations for AI adoption while maintaining business velocity and meeting evolving regulatory expectations.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 1,
+    "significance_reason": "The item reports on industry discussions regarding AI governance challenges rather than a formal policy or regulatory change.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "6899fc8ebccba1a56b208974719a4a812a785535b9ab2f2db26600f267c6f492",
+    "textChars": 470,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:30:38.611Z",
+    "attempts": 1
+  }
+}

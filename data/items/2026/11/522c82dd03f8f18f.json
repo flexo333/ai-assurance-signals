@@ -1,0 +1,51 @@
+{
+  "id": "522c82dd03f8f18f",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/briefing/committee-suggests-tougher-copyright-labelled-ai-content-5d3910f1-7da0-4738-ba14-e5e3d82a3a0d",
+  "title": "Parliamentary committee suggests tougher copyright, labelled AI content",
+  "publishedAt": "2026-11-24T03:38:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:08.062Z",
+  "status": "summarised",
+  "headline": "Parliamentary committee proposes AI model access and content labelling",
+  "summary": "A parliamentary committee has suggested that AI companies should provide Australia's AI regulator and cyber spy agency with early access to all new models. The plan also proposes that AI-generated material could be required to be labelled.",
+  "why_it_matters": "Organisations operating AI in Australia may face new compliance mandates regarding mandatory content labelling and early regulatory access for models.",
+  "quotes": [
+    {
+      "text": "AI companies would need to give Australia’s AI regulator and cyber spy agency early access to all new models and AI-generated material could have to be labelled, under a plan to govern the emerging technology.",
+      "supports": "summary"
+    },
+    {
+      "text": "AI companies would need to give Australia’s AI regulator and cyber spy agency early access to all new models and AI-generated material could have to be labelled, under a plan to govern the emerging technology.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Outlines significant proposed parliamentary oversight and regulatory reporting measures for AI models in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "7ae9ede47536b5fa890d3af22735fcd039364333eda575503975b624fb3f7d11",
+    "textChars": 209,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-25T08:20:59.523Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "5b3afa06c1672984",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/who-gets-to-decide-whether-an-ai-data-centre-has-a-social-licence-to-operate-295729",
+  "title": "Who gets to decide whether an AI data centre has a ‘social licence’ to operate?",
+  "publishedAt": "2026-11-22T12:51:27.000Z",
+  "fetchedAt": "2026-11-25T08:18:12.875Z",
+  "status": "summarised",
+  "headline": "Managing social licence for AI data centre developments",
+  "summary": "Communities are increasingly debating the 'social licence to operate' for AI data centres, focusing on public support and local impact. Unlike formal government permits, this informal relationship requires ongoing acceptance from affected residents. The debate highlights challenges in determining who represents community interests and how to maintain support after a facility becomes operational.",
+  "why_it_matters": "Organisations deploying AI infrastructure must recognise that formal regulatory approval does not guarantee community acceptance, necessitating proactive engagement and accountability mechanisms to maintain their social licence.",
+  "quotes": [
+    {
+      "text": "Having a “social licence to operate” refers to the ongoing acceptance of a project by people affected by it",
+      "supports": "summary"
+    },
+    {
+      "text": "A council’s approval may allow construction to proceed, but it does not guarantee lasting community acceptance. Residents must have opportunities to hold operators accountable",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Highlights the growing intersection of AI infrastructure, community engagement, and social risk management, which are relevant considerations for Australian organisations planning large-scale AI deployments.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "c20e5f53a142d7a1b034cc7c6406533676d243ea4ac0dba3081922f50c4330f5",
+    "textChars": 5991,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:25:37.749Z",
+    "attempts": 1
+  }
+}

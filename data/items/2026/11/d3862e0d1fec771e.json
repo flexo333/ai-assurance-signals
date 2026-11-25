@@ -1,0 +1,23 @@
+{
+  "id": "d3862e0d1fec771e",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/solara-digital-sets-out-growth-plans-with-cyber-resilience-at-the-core",
+  "title": "Solara Digital sets out growth plans with cyber resilience at the core",
+  "publishedAt": "2026-11-19T22:49:24.407Z",
+  "fetchedAt": "2026-11-25T08:18:15.859Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.6-flash",
+    "promptVersion": 1,
+    "sourceSha256": "eb62e143b50dbc67e9d30cd7706b61e6b607115ae55302d0521c15766abae610",
+    "textChars": 4461,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:27:30.077Z",
+    "attempts": 1
+  }
+}

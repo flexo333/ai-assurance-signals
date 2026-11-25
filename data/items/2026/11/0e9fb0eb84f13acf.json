@@ -1,0 +1,50 @@
+{
+  "id": "0e9fb0eb84f13acf",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/introducing-alphaproof-code",
+  "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+  "publishedAt": "2026-11-10T12:02:28.000Z",
+  "fetchedAt": "2026-11-25T08:18:27.156Z",
+  "status": "summarised",
+  "headline": "Google DeepMind uses AI agents to formally verify Signal cryptographic protocol code",
+  "summary": "Google DeepMind has introduced AlphaProof Code, an agentic framework that uses AI to perform formal verification of software code. The system was used to mathematically prove the security properties of the Signal cryptographic protocol, identifying potential vulnerabilities by checking the implementation against security specifications. This process reduced the time required for formal verification from years to four weeks.",
+  "why_it_matters": "This development demonstrates a significant advancement in automated security assurance, offering organisations a method to mathematically verify that critical software implementations meet security requirements, which is essential for managing high-stakes AI and digital infrastructure risks.",
+  "quotes": [
+    {
+      "text": "Formal verification—mathematically proving code runs correctly without flaws—is the highest standard of security assurance; however, it is difficult and often labor-intensive.",
+      "supports": "summary"
+    },
+    {
+      "text": "Achieving this long-standing challenge demonstrates how AI can bring elite security assurance to businesses, governments, and critical infrastructure, helping defend against agent-driven cyber threats.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 4,
+    "significance_reason": "Formal verification is the gold standard for security; automating this process at scale represents a major shift in how critical infrastructure and software security can be assured.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "9b795f8bd78dc9f55a1f22f4eb98281171b57f9be142ee989801ba864a23a507",
+    "textChars": 5447,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:36:39.856Z",
+    "attempts": 1
+  }
+}

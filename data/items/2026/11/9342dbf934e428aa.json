@@ -1,0 +1,51 @@
+{
+  "id": "9342dbf934e428aa",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+  "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+  "publishedAt": "2026-11-19T08:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:16.737Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Demonstrates a practical, large-scale implementation of agentic governance and automated safety testing for production AI systems.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    },
+    {
+      "found": true,
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "db2c54c11058c92dcf2bbaf90b4e486b3df485f4a5841147f16c62f2d5dc11bb",
+    "textChars": 19996,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:41.759Z",
+    "attempts": 2
+  }
+}

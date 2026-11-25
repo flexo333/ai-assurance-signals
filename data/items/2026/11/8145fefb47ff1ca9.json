@@ -1,0 +1,23 @@
+{
+  "id": "8145fefb47ff1ca9",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/hebbia",
+  "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+  "publishedAt": "2026-11-20T00:00:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:15.076Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 1,
+    "sourceSha256": "b87bb4bcb340d7685d5cc21a51c433f3017c66bc6bdb974f298ea4cac4a640b8",
+    "textChars": 4930,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:26:06.869Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "00d568ab8a7ecb1c",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/why-using-a-chatbot-as-your-lawyer-is-a-risky-move-and-ties-up-our-court-system-296255",
+  "title": "Why using a chatbot as your lawyer is a risky move – and ties up our court system",
+  "publishedAt": "2026-11-19T03:21:10.000Z",
+  "fetchedAt": "2026-11-25T08:18:17.062Z",
+  "status": "summarised",
+  "headline": "Australian courts address rise in AI-generated legal filings and misuse",
+  "summary": "Australian courts and tribunals are experiencing a surge in filings from self-represented litigants using generative AI to draft claims and research legal arguments. This trend has led to an increase in problematic submissions, including fabricated case law and inaccurate witness statements. In response, courts are implementing educational guidance and deterrent measures, such as cost orders, to manage the impact on judicial resources.",
+  "why_it_matters": "Organisations and legal practitioners must recognise that courts are actively monitoring and sanctioning the misuse of AI in legal proceedings, highlighting the critical need for rigorous verification and human oversight when deploying AI tools in professional or legal contexts.",
+  "quotes": [
+    {
+      "text": "Most Australian courts have now released guidance about the responsible use of generative AI in legal proceedings",
+      "supports": "summary"
+    },
+    {
+      "text": "Where stronger actions are warranted, courts and tribunals are responding with a range of deterrent options: striking out all or part of a claim or defence",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-09-30",
+      "what": "Data cutoff for the centre’s global database of AI-related cases",
+      "quote": "It contains 295 Australian cases (to September 30 2026) in which a court or tribunal identified problematic use of AI in legal proceedings."
+    },
+    {
+      "date": "2026-10-20",
+      "what": "Effective date of the Fair Work Commission’s guidance on AI use",
+      "quote": "The Fair Work Commission’s guidance, effective from October 20 2026, explains the importance of real legal sources, and even suggests how to prompt AI chatbots more effectively."
+    }
+  ],
+  "classification": {
+    "theme": "regulator-guidance",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "The article highlights a direct regulatory and judicial response to the proliferation of AI-generated content in the Australian legal system, impacting how AI is governed in professional practice.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "133a60153a333417fb8265dfe7f7a3b51c480ff8293ba5625b40b032fa459011",
+    "textChars": 5573,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:51.210Z",
+    "attempts": 1
+  }
+}

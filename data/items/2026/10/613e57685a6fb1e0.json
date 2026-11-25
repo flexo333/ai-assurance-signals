@@ -1,0 +1,23 @@
+{
+  "id": "613e57685a6fb1e0",
+  "sourceId": "uk-dsit",
+  "sourceName": "UK Department for Science, Innovation and Technology",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://gov.uk/government/publications/artificial-intelligence-sector-study-2025",
+  "title": "Research: Artificial Intelligence sector study 2025",
+  "publishedAt": "2026-10-29T16:41:56.000Z",
+  "fetchedAt": "2026-11-25T08:18:31.120Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "c132b982ae88ff087f25e8b645745b273a22bf44c7cfac5b97d735aabd58fdd9",
+    "textChars": 1266,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:38:21.343Z",
+    "attempts": 1
+  }
+}

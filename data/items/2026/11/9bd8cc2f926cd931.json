@@ -1,0 +1,23 @@
+{
+  "id": "9bd8cc2f926cd931",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/ai-has-solved-a-host-of-big-maths-problems-heres-why-this-threatens-the-whole-field-of-mathematics-293982",
+  "title": "AI has solved a host of big maths problems – here’s why this threatens the whole field of mathematics",
+  "publishedAt": "2026-11-23T12:27:56.000Z",
+  "fetchedAt": "2026-11-25T08:18:09.316Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "c891a68aebac33d17e2538d4bcd67493f958fcc79004e092797de16e1a4919c5",
+    "textChars": 7339,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:21:50.908Z",
+    "attempts": 1
+  }
+}

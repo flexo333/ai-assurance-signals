@@ -1,0 +1,23 @@
+{
+  "id": "98ec65996f32bf73",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/news/ai-found-ghostscript-flaw-turned-file-uploads-into-remote-code-execution-630512",
+  "title": "AI-found Ghostscript flaw turned file uploads into remote code execution",
+  "publishedAt": "2026-11-22T20:32:00.000Z",
+  "fetchedAt": "2026-11-25T08:18:13.695Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "d522e458fcf137eab1e35aabb0798831ec7b28bf84d2f1ec67ccb7219c2915ca",
+    "textChars": 4763,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:25:17.885Z",
+    "attempts": 1
+  }
+}

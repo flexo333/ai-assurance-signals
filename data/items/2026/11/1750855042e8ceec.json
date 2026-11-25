@@ -1,0 +1,23 @@
+{
+  "id": "1750855042e8ceec",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips",
+  "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+  "publishedAt": "2026-11-05T17:05:16.000Z",
+  "fetchedAt": "2026-11-25T08:18:28.994Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "75bea8fb9497acda4480657f6f44868d9786035d8ae57d0854d1a24602d14dcd",
+    "textChars": 6686,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:37:00.965Z",
+    "attempts": 1
+  }
+}

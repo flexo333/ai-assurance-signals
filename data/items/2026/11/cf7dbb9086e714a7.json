@@ -1,0 +1,23 @@
+{
+  "id": "cf7dbb9086e714a7",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/nvidia-isnt-the-first-company-to-dump-a-misbehaving-ceo-history-shows-its-in-the-interest-of-corporate-boards-to-act-296800",
+  "title": "Nvidia isn’t the first company to dump a misbehaving CEO – history shows it’s in the interest of corporate boards to act",
+  "publishedAt": "2026-11-19T13:42:38.000Z",
+  "fetchedAt": "2026-11-25T08:18:18.933Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "cd8189b64cfc13845c8dad40cdd5e43a214569241420e37b5b585f6923c668fe",
+    "textChars": 7167,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:29:37.423Z",
+    "attempts": 1
+  }
+}

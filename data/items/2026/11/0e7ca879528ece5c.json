@@ -1,0 +1,23 @@
+{
+  "id": "0e7ca879528ece5c",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/icatalyst-launches-aicatalyst-business-unit-and-appoints-quintin-de-klerk-to-lead-ai-practice",
+  "title": "iCatalyst launches aiCatalyst business unit and appoints Quintin de Klerk to lead AI practice",
+  "publishedAt": "2026-11-22T23:22:47.063Z",
+  "fetchedAt": "2026-11-25T08:18:12.238Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "1739fc93b13f313c0f2f91a25eb3e3fcc29f83425543f850880522d079996155",
+    "textChars": 5357,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:23:39.092Z",
+    "attempts": 1
+  }
+}

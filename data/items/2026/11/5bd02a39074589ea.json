@@ -1,0 +1,51 @@
+{
+  "id": "5bd02a39074589ea",
+  "sourceId": "mistral",
+  "sourceName": "Mistral AI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://mistral.ai/news/build-with-studio",
+  "title": "Le Chonk brings the brains. Studio puts it to work.",
+  "publishedAt": "2026-11-05T12:00:14.000Z",
+  "fetchedAt": "2026-11-25T08:18:28.675Z",
+  "status": "summarised",
+  "headline": "Mistral updates enterprise AI platform with new governance and observability features",
+  "summary": "Mistral AI has updated its enterprise platform, Mistral Studio, to include managed agents, workflows, and enhanced observability tools. The platform allows organisations to deploy AI models in cloud, VPC, or on-premises environments to maintain control over data and system operations. These updates aim to assist enterprises in moving AI projects from pilot stages to production while maintaining security and governance.",
+  "why_it_matters": "The platform's focus on observability, evaluation, and deployment flexibility provides organisations with the necessary infrastructure to maintain sovereign control and auditability over sensitive AI-driven business processes.",
+  "quotes": [
+    {
+      "text": "Today, we’re expanding Studio with managed agents and apps, alongside new capabilities for workflows, enterprise context, agent observability and evaluations.",
+      "supports": "summary"
+    },
+    {
+      "text": "AI creates lasting value only when enterprises can trust it within their operations. Mistral Studio aims to let us decide exactly which systems the agents can access, and brings the observability and evaluation needed to turn a promising PoC into a system they can operate, measure, and rely on.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The update introduces specific governance-focused features like agent observability, evaluation frameworks, and deployment flexibility for enterprise AI.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 1,
+    "sourceSha256": "78a74df85ab65e544ad3e73ea902131712453c5ed9b48c22bc5079cc08dac4f2",
+    "textChars": 10928,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-25T08:37:47.158Z",
+    "attempts": 1
+  }
+}
