@@ -1,0 +1,29 @@
+{
+  "id": "2026-W45",
+  "window": {
+    "from": "2026-10-30T04:17:00.000Z",
+    "to": "2026-11-06T04:17:00.000Z"
+  },
+  "topSignals": [
+    {
+      "id": "fa5d36e43b3e02ac",
+      "score": 2.892
+    },
+    {
+      "id": "5bd02a39074589ea",
+      "score": 2.877
+    },
+    {
+      "id": "59623d61a7aaaf73",
+      "score": 2.148
+    }
+  ],
+  "sections": [],
+  "counts": {
+    "candidates": 3,
+    "summarised": 3,
+    "headlineOnly": 0
+  },
+  "publishedAt": "2026-11-06T04:17:00.000Z",
+  "backfilled": true
+}

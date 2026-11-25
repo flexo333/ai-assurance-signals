@@ -1,0 +1,123 @@
+{
+  "id": "2026-W47",
+  "window": {
+    "from": "2026-11-13T04:17:00.000Z",
+    "to": "2026-11-20T04:17:00.000Z"
+  },
+  "topSignals": [
+    {
+      "id": "b05012a4ce828f7b",
+      "score": 2.903
+    },
+    {
+      "id": "fd9bebbff7e69286",
+      "score": 2.792
+    },
+    {
+      "id": "184d931227f2504d",
+      "score": 2.726
+    },
+    {
+      "id": "67952d9a918d2536",
+      "score": 2.715
+    },
+    {
+      "id": "5088162f88268b25",
+      "score": 2.649
+    }
+  ],
+  "sections": [
+    {
+      "id": "frontier-labs",
+      "title": "Frontier Labs",
+      "items": [
+        {
+          "id": "ca9ca0837de1673f",
+          "score": 1.849
+        },
+        {
+          "id": "53d809d7420a3923",
+          "score": 1.81
+        },
+        {
+          "id": "c1a2af93db54bfcf",
+          "score": 1.685
+        },
+        {
+          "id": "9342dbf934e428aa",
+          "score": 1.427
+        },
+        {
+          "id": "58da586369f33999",
+          "score": 1.358
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "international",
+      "title": "International",
+      "items": [
+        {
+          "id": "216c4d6c6fbf9bb8",
+          "score": 1.66
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "news-commentary",
+      "title": "News & Commentary",
+      "items": [
+        {
+          "id": "00d568ab8a7ecb1c",
+          "score": 2.565
+        },
+        {
+          "id": "acc7d7ba937482c4",
+          "score": 2.374
+        },
+        {
+          "id": "4210293b5b2c2862",
+          "score": 2.341
+        },
+        {
+          "id": "b075ea35851eee57",
+          "score": 2.121
+        },
+        {
+          "id": "5244a10a0d9cbd96",
+          "score": 2.114
+        },
+        {
+          "id": "2925ee4061a00fdf",
+          "score": 2.051
+        },
+        {
+          "id": "4a29e10db937e5ed",
+          "score": 2.017
+        },
+        {
+          "id": "ef056106bb80de6a",
+          "score": 1.169
+        }
+      ],
+      "more": [
+        {
+          "id": "c735cbd0f011a586",
+          "score": 0.753
+        }
+      ],
+      "overflow": 1
+    }
+  ],
+  "counts": {
+    "candidates": 20,
+    "summarised": 18,
+    "headlineOnly": 2
+  },
+  "publishedAt": "2026-11-20T04:17:00.000Z",
+  "backfilled": true
+}

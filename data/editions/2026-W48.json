@@ -1,0 +1,199 @@
+{
+  "id": "2026-W48",
+  "window": {
+    "from": "2026-11-20T04:17:00.000Z",
+    "to": "2026-11-25T09:08:11.895Z"
+  },
+  "topSignals": [
+    {
+      "id": "7396ed9251e0fddc",
+      "score": 3.497
+    },
+    {
+      "id": "6e1f21ad7bac31cf",
+      "score": 3.44
+    },
+    {
+      "id": "4091a870daa91f99",
+      "score": 3.197
+    },
+    {
+      "id": "b0689cf87ab570a4",
+      "score": 2.763
+    },
+    {
+      "id": "1a10f1676d46fc01",
+      "score": 2.516
+    }
+  ],
+  "sections": [
+    {
+      "id": "policy-legislation",
+      "title": "Australian Policy & Legislation",
+      "items": [
+        {
+          "id": "76c05e559df853e1",
+          "score": 2.374
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "frontier-labs",
+      "title": "Frontier Labs",
+      "items": [
+        {
+          "id": "7ad44f990f0c53ef",
+          "score": 2.327
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "news-commentary",
+      "title": "News & Commentary",
+      "items": [
+        {
+          "id": "f3cf671205f88aff",
+          "score": 3.418
+        },
+        {
+          "id": "94290fb1cba9f51c",
+          "score": 2.682
+        },
+        {
+          "id": "065d6dfe401dbfb5",
+          "score": 2.66
+        },
+        {
+          "id": "1efd04b1ac913541",
+          "score": 2.638
+        },
+        {
+          "id": "dc1a2b3130912e3f",
+          "score": 2.638
+        },
+        {
+          "id": "a14371888f8bd830",
+          "score": 2.633
+        },
+        {
+          "id": "954e500a82b92d82",
+          "score": 2.626
+        },
+        {
+          "id": "7566387532cd7624",
+          "score": 2.623
+        }
+      ],
+      "more": [
+        {
+          "id": "e78e7a6c56262dae",
+          "score": 2.554
+        },
+        {
+          "id": "522c82dd03f8f18f",
+          "score": 2.541
+        },
+        {
+          "id": "62590bec623fa775",
+          "score": 2.364
+        },
+        {
+          "id": "ee679b0405238e1b",
+          "score": 2.233
+        },
+        {
+          "id": "009d3a1dfa554697",
+          "score": 2.147
+        },
+        {
+          "id": "a25a8f57f0e4b296",
+          "score": 2.021
+        },
+        {
+          "id": "1cbc6e20db8b79bc",
+          "score": 1.936
+        },
+        {
+          "id": "04184b2c36e667ef",
+          "score": 1.862
+        },
+        {
+          "id": "35ec4a2074928fef",
+          "score": 1.7
+        },
+        {
+          "id": "4526cba5e8b31b82",
+          "score": 1.671
+        },
+        {
+          "id": "beb262d896ad1e34",
+          "score": 1.625
+        },
+        {
+          "id": "8ced38c0e7b3c183",
+          "score": 1.611
+        },
+        {
+          "id": "bd97c0e50e7e5eae",
+          "score": 1.548
+        },
+        {
+          "id": "104d3527c3379123",
+          "score": 1.371
+        },
+        {
+          "id": "b2a8541be4f1bf43",
+          "score": 1.371
+        },
+        {
+          "id": "38b6a9c33bc385b8",
+          "score": 1.349
+        },
+        {
+          "id": "5b3afa06c1672984",
+          "score": 1.216
+        },
+        {
+          "id": "7435da6cae5a4f1f",
+          "score": 0.784
+        }
+      ],
+      "overflow": 18
+    }
+  ],
+  "counts": {
+    "candidates": 33,
+    "summarised": 32,
+    "headlineOnly": 1
+  },
+  "publishedAt": "2026-11-25T09:08:11.895Z",
+  "intro": {
+    "sentences": [
+      {
+        "text": "Organisations operating frontier AI labs and models in Australia face potential mandatory incident reporting, independent audits, model sharing with safety and security agencies, and a new licensing framework under a parliamentary committee's new report.",
+        "cites": [
+          "7396ed9251e0fddc",
+          "6e1f21ad7bac31cf"
+        ]
+      },
+      {
+        "text": "At the same time, a Senate inquiry report on the Digital Duty of Care Bill signals a shift toward outcomes-based regulation that may require broader risk management frameworks.",
+        "cites": [
+          "4091a870daa91f99"
+        ]
+      },
+      {
+        "text": "Additionally, developers and security teams can now utilize new runtime protection tools and proposed industry-wide pretraining metrics to support safety standards and continuous assurance.",
+        "cites": [
+          "b0689cf87ab570a4",
+          "1a10f1676d46fc01"
+        ]
+      }
+    ],
+    "model": "models/gemini-3.5-flash-lite"
+  }
+}

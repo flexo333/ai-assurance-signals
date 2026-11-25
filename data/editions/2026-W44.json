@@ -1,0 +1,34 @@
+{
+  "id": "2026-W44",
+  "window": {
+    "from": "2026-10-23T04:17:00.000Z",
+    "to": "2026-10-30T04:17:00.000Z"
+  },
+  "topSignals": [
+    {
+      "id": "5a25565ab71a8d06",
+      "score": 2.877
+    }
+  ],
+  "sections": [
+    {
+      "id": "frontier-labs",
+      "title": "Frontier Labs",
+      "items": [
+        {
+          "id": "3e32bae570ff21ee",
+          "score": 1.844
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    }
+  ],
+  "counts": {
+    "candidates": 2,
+    "summarised": 1,
+    "headlineOnly": 1
+  },
+  "publishedAt": "2026-10-30T04:17:00.000Z",
+  "backfilled": true
+}
