@@ -26,3 +26,12 @@ test("truncate cuts on a word boundary", () => {
   assert.equal(truncate("one two three four", 9), "one two …");
   assert.equal(truncate("short", 10), "short");
 });
+
+import { extractStandfirst } from "./extract.js";
+
+test("extractStandfirst returns only the meta description, never body text", () => {
+  const html = `<html><head><meta property="og:description" content="The federal government will legislate AI audits &amp; disclosure."></head>
+    <body><p>Paywalled body text that must never be used.</p></body></html>`;
+  assert.equal(extractStandfirst(html), "The federal government will legislate AI audits & disclosure.");
+  assert.equal(extractStandfirst("<html><body><p>Body only</p></body></html>"), "");
+});

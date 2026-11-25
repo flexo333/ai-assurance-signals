@@ -37,7 +37,7 @@ const classificationOf = (a) => ({
  * @param budget  max real Gemini requests this item may use (fallbacks/retries count)
  * @returns { record, calls, quotaExhausted, error }
  *   calls = real generateContent requests made. record.status: "summarised" |
- *   "headline-only" | "irrelevant"; record null on model failure.
+ *   "headline-only" | "irrelevant" | "unvetted" (no source text); record null on model failure.
  */
 export async function analyseItem(ai, { source, item, allowRetry = true, delayMs = 0, chain, budget = Infinity } = {}) {
   const base = {
@@ -52,8 +52,10 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
     publishedAt: item.publishedAt,
     fetchedAt: item.fetchedAt,
   };
+  // No text means no relevance check is possible: store as "unvetted" (so it
+  // isn't re-fetched) but never publish it — not even headline-only.
   if (!item.text || item.text.trim().length < 40) {
-    return { calls: 0, record: { ...base, status: "headline-only", reason: "no-source-text", provenance: { textSource: item.textSource, extractMethod: item.extractMethod } } };
+    return { calls: 0, record: { ...base, status: "unvetted", reason: "no-source-text", provenance: { textSource: item.textSource, extractMethod: item.extractMethod } } };
   }
 
   let calls = 0;

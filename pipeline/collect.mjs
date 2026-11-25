@@ -10,7 +10,7 @@ import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem } from "./lib/feed-pure.js";
 import { isAiRelated } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
-import { extractMainText } from "./lib/extract.js";
+import { extractMainText, extractStandfirst } from "./lib/extract.js";
 
 const MAX_TEXT_CHARS = 20_000;
 const MAX_ITEMS_PER_SOURCE = 15;
@@ -103,7 +103,20 @@ async function fetchCandidate(c) {
   let text = c.summary || "";
   let textSource = "feed";
   let extractMethod = null;
-  if (!src.paywalled && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
+  if (src.paywalled && text.length < 120 && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
+    // Paywalled: the page's standfirst (meta description) only — never body text.
+    const page = await get(c.url);
+    if (page.ok) {
+      const sf = extractStandfirst(page.body);
+      extractMethod = "standfirst";
+      if (sf.length > text.length) {
+        text = sf;
+        textSource = "standfirst";
+      }
+    } else {
+      extractMethod = `http-${page.status}`;
+    }
+  } else if (!src.paywalled && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
     const page = await get(c.url);
     if (page.ok) {
       const ex = extractMainText(page.body, page.url);

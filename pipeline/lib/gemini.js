@@ -2,16 +2,85 @@
 // (backend/summarise/gemini.js + people-pure.js). Takes `ai` as an argument
 // so the loop itself is testable without the SDK or network.
 
-// Free-tier friendly Flash family, best first. A model that 404s or is
-// retired is non-retryable and the loop simply advances to the next.
-// gemini-2.5-flash leads: in the first live runs gemini-flash-latest
-// (a moving alias to the newest preview) returned 503 "high demand".
-export const MODEL_CHAIN = [
+// Preferred Flash-family models, best first. The live chain is discovered at
+// run time (resolveModelChain) so retired models drop out on their own — the
+// first live run hit a 404 on the retired gemini-2.5-flash-lite.
+export const PREFERRED_MODELS = [
   "models/gemini-2.5-flash",
   "models/gemini-flash-latest",
   "models/gemini-flash-lite-latest",
-  "models/gemini-2.5-flash-lite",
 ];
+export const MODEL_CHAIN = PREFERRED_MODELS;
+
+/**
+ * Pure: raw models.list() entries → ordered chain of usable Flash text models.
+ * Preferred models first (when listed), then other Flash models, newest name first.
+ * Free-tier quotas are per model, so a longer chain means more daily capacity.
+ */
+export function orderModels(rawModels, preferred = PREFERRED_MODELS) {
+  const usable = (rawModels || [])
+    .filter((m) => m && typeof m.name === "string" && (m.supportedActions || []).includes("generateContent"))
+    .map((m) => m.name)
+    .filter((n) => {
+      const l = n.toLowerCase();
+      return l.includes("gemini") && l.includes("flash") && !["tts", "image", "audio", "live", "embedding", "thinking"].some((b) => l.includes(b));
+    });
+  const set = new Set(usable);
+  const head = preferred.filter((p) => set.has(p));
+  const rest = usable.filter((n) => !head.includes(n)).sort((a, b) => b.localeCompare(a));
+  return [...head, ...rest].slice(0, 6);
+}
+
+/** Discover the chain via models.list(); falls back to PREFERRED_MODELS on any failure. */
+export async function resolveModelChain(ai) {
+  try {
+    const raw = [];
+    for await (const m of await ai.models.list({})) {
+      raw.push(m);
+      if (raw.length >= 500) break;
+    }
+    const chain = orderModels(raw);
+    return chain.length ? chain : PREFERRED_MODELS;
+  } catch {
+    return PREFERRED_MODELS;
+  }
+}
+
+/**
+ * Per-run model health. Pure apart from the injected clock.
+ *   404 / "not found" / "no longer available" → dead for the run
+ *   429 (quota)                               → exhausted for the run
+ *   503 / overloaded                          → cooling down for `cooldownMs`
+ */
+export class ModelHealth {
+  constructor({ cooldownMs = 120_000, now = () => Date.now() } = {}) {
+    this.dead = new Set();
+    this.exhausted = new Set();
+    this.cooling = new Map();
+    this.cooldownMs = cooldownMs;
+    this.now = now;
+  }
+  record(errors = []) {
+    for (const e of errors) {
+      const msg = String(e.message || "").toLowerCase();
+      if (e.status === 404 || msg.includes("not found") || msg.includes("no longer available")) this.dead.add(e.model);
+      else if (e.status === 429 || msg.includes("quota") || msg.includes("resource_exhausted")) this.exhausted.add(e.model);
+      else if (e.status === 503 || e.status === 500 || msg.includes("high demand") || msg.includes("overloaded")) this.cooling.set(e.model, this.now() + this.cooldownMs);
+    }
+  }
+  available(chain) {
+    const t = this.now();
+    return chain.filter((m) => !this.dead.has(m) && !this.exhausted.has(m) && !((this.cooling.get(m) ?? 0) > t));
+  }
+  /** ms until the next cooling model is usable again, or null if none can recover this run. */
+  nextRecoveryMs(chain) {
+    const t = this.now();
+    const waits = chain
+      .filter((m) => !this.dead.has(m) && !this.exhausted.has(m) && this.cooling.has(m))
+      .map((m) => Math.max(0, this.cooling.get(m) - t));
+    return waits.length ? Math.min(...waits) : null;
+  }
+}
 
 export function isRetryableModelError(err) {
   const status = err?.status ?? err?.response?.status;

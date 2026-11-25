@@ -34,3 +34,21 @@ export function extractMainText(html, url) {
     return { text: "", title: null, method: "error", error: String(err) };
   }
 }
+
+/**
+ * Standfirst only — for paywalled sources. Returns the page's meta/og
+ * description and nothing from the body (headline + standfirst policy).
+ */
+export function extractStandfirst(html) {
+  try {
+    const { document } = parseHTML(html);
+    const meta =
+      document.querySelector('meta[property="og:description"]')?.getAttribute("content") ||
+      document.querySelector('meta[name="description"]')?.getAttribute("content") ||
+      document.querySelector('meta[name="twitter:description"]')?.getAttribute("content") ||
+      "";
+    return stripHtml(meta).trim();
+  } catch {
+    return "";
+  }
+}

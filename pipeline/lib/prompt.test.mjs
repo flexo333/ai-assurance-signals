@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { parseAnalysis, buildUserPrompt, ANALYSIS_SCHEMA } from "./prompt.js";
-import { generateWithFallback, isRetryableModelError } from "./gemini.js";
+import { generateWithFallback, isRetryableModelError, orderModels, ModelHealth } from "./gemini.js";
 
 test("parseAnalysis normalises and clamps", () => {
   const a = parseAnalysis(
@@ -79,4 +79,36 @@ test("generateWithFallback advances on 404, reports quota exhaustion", async () 
   assert.equal(exhausted.ok, false);
   assert.equal(exhausted.quotaExhausted, true);
   assert.equal(isRetryableModelError(notFound), false);
+});
+
+test("orderModels keeps usable Flash text models, preferred first", () => {
+  const raw = [
+    { name: "models/gemini-3-flash", supportedActions: ["generateContent"] },
+    { name: "models/gemini-flash-latest", supportedActions: ["generateContent"] },
+    { name: "models/gemini-2.5-flash", supportedActions: ["generateContent"] },
+    { name: "models/gemini-2.5-flash-preview-tts", supportedActions: ["generateContent"] },
+    { name: "models/gemini-2.5-pro", supportedActions: ["generateContent"] },
+    { name: "models/gemini-embedding-001", supportedActions: ["embedContent"] },
+  ];
+  assert.deepEqual(orderModels(raw), ["models/gemini-2.5-flash", "models/gemini-flash-latest", "models/gemini-3-flash"]);
+  assert.deepEqual(orderModels([]), []);
+});
+
+test("ModelHealth: 404 dead, 429 exhausted, 503 cools down then recovers", () => {
+  let t = 0;
+  const h = new ModelHealth({ cooldownMs: 1000, now: () => t });
+  const chain = ["a", "b", "c", "d"];
+  h.record([
+    { model: "a", status: 429, message: "You exceeded your current quota" },
+    { model: "b", status: 503, message: "high demand" },
+    { model: "c", status: 404, message: "This model is no longer available" },
+  ]);
+  assert.deepEqual(h.available(chain), ["d"]);
+  h.record([{ model: "d", status: 429, message: "quota" }]);
+  assert.deepEqual(h.available(chain), []);
+  assert.equal(h.nextRecoveryMs(chain), 1000);
+  t = 1001;
+  assert.deepEqual(h.available(chain), ["b"]);
+  h.record([{ model: "b", status: 429, message: "quota" }]);
+  assert.equal(h.nextRecoveryMs(chain), null); // nothing can recover this run → stop
 });

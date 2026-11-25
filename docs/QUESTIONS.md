@@ -33,3 +33,9 @@ These came up while building overnight. Each has the **default I went with**, so
 ## Go-live status (2026-11-24 21:15 UTC)
 
 17. **The first scheduled Collect hasn't run yet.** It was due at 19:41 UTC (06:41 AEDT 25 Nov). GitHub often delays or drops a newly added workflow's first scheduled run, and I can't start workflows from my session (dispatch returns 403). **Action:** in GitHub → Actions → *Collect* → *Run workflow*, leave the inputs blank and run it once. That starts the backfill, and the schedule normally takes over from there. If it doesn't run by tomorrow's slot either, the schedule may need a nudge: any push to `main` that touches `.github/workflows/collect.yml` re-registers it.
+
+## First live run (25 Nov, 03:10 UTC)
+
+18. **Result:** 60 items fetched, 40 analysed (16 summarised, 8 headline-only, 16 irrelevant), committed, and the site redeployed. The summaries read well. 65 items are deferred, which is expected because the backfill drains at about 60 a day.
+19. **Fixed: model fallback.** `gemini-2.5-flash` hit its free-tier quota (429), the next two models were overloaded (503), and `gemini-2.5-flash-lite` has been **retired** (404), so 20 items failed. Nothing was lost; they're retried. The chain is now discovered from the API, retired models are dropped, overloaded models cool down, and the run stops cleanly when no model is usable. *Question:* the free-tier daily quota looks like ~40 requests on 2.5-flash. Is that enough, or do you want a paid key for higher volume?
+20. **Fixed: Capital Brief** feed items carry no description, so 7 items were stored with no text and no relevance check. Paywalled sources now use the page's standfirst (meta description only, never body text). Items with no text become `unvetted` and are never published. The 7 were deleted so they get collected again properly.
