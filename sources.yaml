@@ -108,6 +108,7 @@ sources:
     homepage: https://consultations.ag.gov.au/
     method: citizen-space
     ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: treasury
     name: The Treasury
@@ -180,6 +181,7 @@ sources:
     include: "^https://oia\\.pmc\\.gov\\.au/published-impact-analyses-and-reports/[^/?#]+$"
     max_pages: 30
     ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: health-consult
     name: Department of Health and Aged Care consultations
@@ -188,6 +190,7 @@ sources:
     homepage: https://consultations.health.gov.au/
     method: citizen-space
     ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   # ── Regulators (official) ──────────────────────────────────────────────────
   - id: oaic
@@ -287,6 +290,7 @@ sources:
     homepage: https://consultation.accc.gov.au/
     method: citizen-space
     ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: esafety
     name: eSafety Commissioner
@@ -325,6 +329,7 @@ sources:
     method: citizen-space
     exclude: "^(Form|Notification form|Tool|Application to amend):"
     ai_specific: false
+    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: acma
     name: Australian Communications and Media Authority

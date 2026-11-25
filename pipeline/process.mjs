@@ -136,7 +136,7 @@ const summary = [
   "",
   "| source | status | feed items | in window | keyword-dropped | collected | skipped known/old/bad-url | first item (date · link) |",
   "|---|---|---|---|---|---|---|---|",
-  ...(collected.sources || []).map((s) => `| ${s.id} | ${s.status} | ${s.feedItems} | ${s.inWindow} | ${s.keywordDropped} | ${s.collected} | ${s.skipped ? `${s.skipped.known}/${s.skipped.old}/${s.skipped.badUrl}` : ""} | ${s.sample ? `${s.sample.date ?? "undated"} · ${String(s.sample.link).slice(0, 70)}` : ""} |`),
+  ...(collected.sources || []).map((s) => `| ${s.id} | ${s.status} | ${s.feedItems} | ${s.inWindow} | ${s.keywordDropped} | ${s.collected} | ${s.skipped ? `${s.skipped.known}/${s.skipped.old}/${s.skipped.badUrl}${s.skipped.undated ? ` (+${s.skipped.undated} undated)` : ""}` : ""} | ${s.sample ? `${s.sample.date ?? "undated"} · ${String(s.sample.link).slice(0, 70)}` : ""} |`),
   "",
   "</details>",
 ].join("\n");

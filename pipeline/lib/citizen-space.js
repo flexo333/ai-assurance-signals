@@ -77,33 +77,47 @@ export function formatCitizenSpaceText(entry) {
 const IGNORED_ACTIVITY_TYPES = new Set(["basic_form"]);
 
 /**
+ * One `/api/2.4/json_search_results` response body → its array of raw records,
+ * or null when it isn't a JSON array (HTML challenge page, truncated body, …).
+ */
+export function parseCsBody(body) {
+  if (typeof body !== "string" || !body.trim()) return null;
+  try {
+    const parsed = JSON.parse(body);
+    return Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Parse `/api/2.4/json_search_results` JSON body (or an array of JSON bodies,
  * e.g. merging `?st=open` with `?fields=minimal`) into normalised items,
  * newest `startdate` first. Returns null when no valid JSON array is supplied.
+ *
+ * Bodies are in priority order: when several contain the same consultation,
+ * the record from the EARLIEST body wins outright (pass the authoritative
+ * `?st=open` response first), so a stale or sparser archive copy can never
+ * replace an open record's status or dates. Items from any body after the
+ * first are marked `fromArchive: true`.
  */
 export function parseCitizenSpaceItems(bodyOrBodies, { baseUrl, include, exclude } = {}) {
   const bodies = Array.isArray(bodyOrBodies) ? bodyOrBodies : [bodyOrBodies];
   const rawRecords = [];
   let anyValid = false;
-  for (const b of bodies) {
-    if (typeof b !== "string" || !b.trim()) continue;
-    try {
-      const parsed = JSON.parse(b);
-      if (Array.isArray(parsed)) {
-        anyValid = true;
-        rawRecords.push(...parsed);
-      }
-    } catch {
-      /* ignore malformed/truncated response if another succeeded */
-    }
-  }
+  bodies.forEach((b, rank) => {
+    const records = parseCsBody(b);
+    if (!records) return; // malformed/truncated response: use the others
+    anyValid = true;
+    for (const r of records) rawRecords.push({ r, rank });
+  });
   if (!anyValid) return null;
 
   const inc = include ? new RegExp(include) : null;
   const exc = exclude ? new RegExp(exclude, "i") : null;
   const byLink = new Map();
 
-  for (const r of rawRecords) {
+  for (const { r, rank } of rawRecords) {
     if (!r || typeof r !== "object") continue;
     const status = String(r.status || "").toLowerCase();
     if (status === "forthcoming") continue;
@@ -127,14 +141,18 @@ export function parseCitizenSpaceItems(bodyOrBodies, { baseUrl, include, exclude
       activityType: activityType || null,
       summary: overview ? overview.slice(0, 4000) : null,
       text: formatCitizenSpaceText(r),
+      fromArchive: rank > 0,
+      rank,
     };
 
-    // Prefer entries with richer text or open status when merging open + archive responses.
+    // Higher-priority body wins outright; within one body, the richer copy.
     const prev = byLink.get(link);
-    if (!prev || (item.text.length > prev.text.length) || (item.status === "open" && prev.status !== "open")) {
+    if (!prev || rank < prev.rank || (rank === prev.rank && item.text.length > prev.text.length)) {
       byLink.set(link, item);
     }
   }
 
-  return [...byLink.values()].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+  return [...byLink.values()]
+    .map(({ rank, ...item }) => item)
+    .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
 }
