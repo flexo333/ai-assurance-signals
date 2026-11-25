@@ -17,7 +17,7 @@ import { readFile, appendFile } from "node:fs/promises";
 import { GoogleGenAI } from "@google/genai";
 import { loadSources } from "./lib/sources.js";
 import { saveItem } from "./lib/store.js";
-import { sleep, MODEL_CHAIN } from "./lib/gemini.js";
+import { sleep, resolveModelChain, ModelHealth } from "./lib/gemini.js";
 import { analyseItem } from "./lib/analyse-item.js";
 
 const args = process.argv.slice(2);
@@ -35,15 +35,25 @@ const collected = JSON.parse(await readFile(inputPath, "utf8"));
 const sources = new Map((await loadSources()).map((s) => [s.id, s]));
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-const stats = { collected: collected.items.length, summarised: 0, headlineOnly: 0, irrelevant: 0, skipped: 0, failed: 0, calls: 0 };
+const stats = { collected: collected.items.length, summarised: 0, headlineOnly: 0, irrelevant: 0, unvetted: 0, skipped: 0, failed: 0, calls: 0 };
 let quotaHit = false;
 const modelErrorCounts = new Map();
-// Models that returned 503/429 this run are skipped for the rest of it.
-const unhealthy = new Set();
-const chainNow = () => {
-  const healthy = MODEL_CHAIN.filter((m) => !unhealthy.has(m));
-  return healthy.length ? healthy : MODEL_CHAIN;
-};
+// Live chain discovered from the API; per-run health drops retired (404) and
+// quota-exhausted (429) models and cools down overloaded (503) ones.
+const chain = await resolveModelChain(ai);
+const health = new ModelHealth();
+console.log(`Model chain: ${chain.join(", ")}`);
+
+// Available models now, waiting out a 503 cooldown if that's all that's left.
+// Returns [] when nothing can recover this run (all dead/exhausted).
+async function modelsNow() {
+  let avail = health.available(chain);
+  if (avail.length) return avail;
+  const wait = health.nextRecoveryMs(chain);
+  if (wait == null) return [];
+  await sleep(Math.min(wait, 180_000));
+  return health.available(chain);
+}
 
 for (const item of collected.items) {
   if (stats.calls >= MAX || quotaHit) {
@@ -55,27 +65,37 @@ for (const item of collected.items) {
     stats.failed++;
     continue;
   }
-  if (stats.calls > 0) await sleep(DELAY_MS);
-  const res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls, chain: chainNow() });
-  stats.calls += res.calls;
-  for (const e of res.modelErrors || []) {
-    if (e.status === 503 || e.status === 429) unhealthy.add(e.model);
-    const key = `${e.model} ${e.status ?? ""} ${e.message.slice(0, 80)}`;
-    modelErrorCounts.set(key, (modelErrorCounts.get(key) || 0) + 1);
+  let res;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const avail = await modelsNow();
+    if (!avail.length) {
+      quotaHit = true;
+      break;
+    }
+    if (stats.calls > 0) await sleep(DELAY_MS);
+    res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls, chain: avail });
+    stats.calls += res.calls;
+    health.record(res.modelErrors);
+    for (const e of res.modelErrors || []) {
+      const key = `${e.model} ${e.status ?? ""} ${e.message.slice(0, 80)}`;
+      modelErrorCounts.set(key, (modelErrorCounts.get(key) || 0) + 1);
+    }
+    // Retry once only when the failure was the models' (quota/overload/retired), not the item's.
+    if (res.record || !res.modelErrors?.length || stats.calls >= MAX) break;
   }
-  if (!res.record) {
-    if (res.quotaExhausted) quotaHit = true;
-    if (stats.calls >= MAX) {
-      stats.skipped++; // budget reached mid-item: retried next run
+  if (!res?.record) {
+    if (quotaHit || stats.calls >= MAX) {
+      stats.skipped++; // retried next run (item stays unknown)
       continue;
     }
     stats.failed++;
-    console.error(`✗ ${item.sourceId} ${item.title}: ${res.error?.message || res.error}`);
+    console.error(`✗ ${item.sourceId} ${item.title}: ${res?.error?.message || res?.error}`);
     continue;
   }
   const r = res.record;
   if (r.status === "summarised") stats.summarised++;
   else if (r.status === "headline-only") stats.headlineOnly++;
+  else if (r.status === "unvetted") stats.unvetted++;
   else stats.irrelevant++;
   if (!DRY) await saveItem(r);
   else if (r.status !== "irrelevant") {
@@ -91,11 +111,12 @@ const summary = [
   "",
   `Fetched from **${collected.location}** · window since ${collected.since?.slice(0, 10)} · deferred by size cap: ${collected.deferred ?? 0}`,
   "",
-  "| collected | summarised (grounded) | headline-only | irrelevant | not processed (cap/quota) | failed | Gemini calls |",
-  "|---|---|---|---|---|---|---|",
-  `| ${stats.collected} | ${stats.summarised} | ${stats.headlineOnly} | ${stats.irrelevant} | ${stats.skipped} | ${stats.failed} | ${stats.calls} |`,
+  "| collected | summarised (grounded) | headline-only | irrelevant | unvetted (no text) | not processed (cap/quota) | failed | Gemini calls |",
+  "|---|---|---|---|---|---|---|---|",
+  `| ${stats.collected} | ${stats.summarised} | ${stats.headlineOnly} | ${stats.irrelevant} | ${stats.unvetted} | ${stats.skipped} | ${stats.failed} | ${stats.calls} |`,
   "",
-  quotaHit ? "⚠️ Gemini quota exhausted on every model — remaining items will be retried next run." : "",
+  quotaHit ? "⚠️ No usable Gemini model left this run (quota exhausted / retired) — remaining items will be retried next run." : "",
+  `Model chain: ${chain.join(", ")}`,
   modelErrorCounts.size ? ["**Model errors (count · model status message):**", "", ...[...modelErrorCounts].map(([k, n]) => `- ${n} × ${k}`), ""].join("\n") : "",
   "<details><summary>Per-source collection log</summary>",
   "",

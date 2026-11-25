@@ -51,7 +51,7 @@ test("irrelevant and empty-text items", async () => {
   const irrelevant = await analyseItem(fakeAi([{ text: JSON.stringify({ is_ai_governance: false, headline: "", summary: "", why_it_matters: "", quotes: [], theme: "news-commentary", audiences: [], au_relevance: 0, significance: 1, is_consultation: false }) }]), { source, item, chain: ["m"] });
   assert.equal(irrelevant.record.status, "irrelevant");
   const empty = await analyseItem(fakeAi([]), { source, item: { ...item, text: "" }, chain: ["m"] });
-  assert.equal(empty.record.status, "headline-only");
+  assert.equal(empty.record.status, "unvetted"); // never published
   assert.equal(empty.calls, 0);
 });
 
