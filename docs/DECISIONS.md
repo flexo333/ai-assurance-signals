@@ -2,6 +2,14 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-25: Financial Services scope: industry and vendor badges, prompt v3, FS section and tracker (#31)
+In a prudentially regulated sector, a bank's production AI deployment or AI-assisted code and data migration is an operational-risk and assurance signal, even when it isn't framed as governance. Under prompt v2 such posts were classified `irrelevant`, and news coverage of them went to News & Commentary. **Decision:**
+- Two new authorities: `industry` (banks, insurers, super funds and FS peak bodies writing about their own work; weight 0.75, cluster rank between research and news) and `vendor` (cloud and enterprise vendors' customer stories; weight 0.5, ranked last). A bank's own grounded post leads press coverage of it. Vendor stories never lead a story or reach Top Signals.
+- Prompt v3: the gate (still the `is_ai_governance` field, so stored items and code keep working; it now means "in scope") also accepts substantive FS AI signals, and explicitly rejects generic pilots, sponsorships, earnings mentions and vendor marketing. It adds the `deployment` kind (rated 1–5 on operational significance and not a non-signal kind, so significance ≥ 4 can reach Top Signals), the `financial-services` theme and an `is_financial_services` flag, so an APRA guidance item keeps `item_kind: regulator-guidance` but still routes to FS.
+- `sectionFor()` routes FS items (flag, theme, or a source marked `sector: financial-services`) to a new **Financial Services** section before the news fallback. `edition.mjs` copies a source's `sector` onto older items at build time, so APRA and ASIC items route to FS without re-analysis.
+- Optional per-source `must_match` regex list checked before any fetch or Gemini call, so global vendor feeds spend quota (#21) only on items about Australian FS.
+- `/financial-services/` tracker: FS stories newest first, grouped as regulator moves, institution deployments and case studies, and news. Story groups from editions are kept.
+
 ## 2026-11-25: Sitemap adapter with body-text AI check; ASIC and APRA first (#12)
 APRA's RSS feed carries only statistics releases, and ASIC has no feed. Both publish complete sitemaps. Official releases often mention AI only in the body: APRA's System Risk Outlook has 57 mentions and none in its title or URL. **Decision:** `method: sitemap` sources take the newest unknown URLs matching include/exclude patterns, fetch each page, and date it from the page itself (`displayDate`/`dcterms` metadata, a "Published" label, or first visible date, with sitemap `lastmod` only as a fallback, because CMSs bump `lastmod` on edits). The AI keyword check runs on the body text. Rejected pages are stored in `data/seen/sitemap.json` (200-day TTL) so the backfill moves on rather than re-fetching them. Extraction gains a main-text fallback for layouts Readability misses (APRA's Drupal paragraphs).
 

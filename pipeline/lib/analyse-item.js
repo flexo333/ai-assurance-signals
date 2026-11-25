@@ -25,6 +25,7 @@ const groundedDates = (a, text) => ({
 
 const classificationOf = (a) => ({
   item_kind: a.item_kind,
+  is_financial_services: a.is_financial_services,
   theme: a.theme,
   audiences: a.audiences,
   au_relevance: a.au_relevance,
@@ -47,6 +48,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
     sourceName: source.name,
     authority: source.authority,
     jurisdiction: source.jurisdiction,
+    ...(source.sector ? { sector: source.sector } : {}),
     paywalled: !!source.paywalled,
     url: item.url,
     title: item.title,

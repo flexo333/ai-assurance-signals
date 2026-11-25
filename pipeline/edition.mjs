@@ -21,6 +21,7 @@ import { buildEdition, selectWindow, isoWeekId, weeklyCutoffs, editionItemIds } 
 import { INTRO_PROMPT, buildIntroInput, checkIntro } from "./lib/intro.js";
 import { generateWithFallback } from "./lib/gemini.js";
 import { ARCHIVE_START } from "./lib/config.js";
+import { loadSources } from "./lib/sources.js";
 
 const EDITIONS_DIR = join(DATA_DIR, "editions");
 const args = process.argv.slice(2);
@@ -44,7 +45,10 @@ async function save(edition) {
   await writeFile(join(EDITIONS_DIR, `${edition.id}.json`), JSON.stringify(edition, null, 2) + "\n");
 }
 
-const all = await loadItems();
+// Items stored before a source gained `sector` (#31) take it from sources.yaml
+// at build time, so routing to Financial Services doesn't need re-analysis.
+const sectorOf = new Map((await loadSources()).filter((s) => s.sector).map((s) => [s.id, s.sector]));
+const all = (await loadItems()).map((i) => (!i.sector && sectorOf.has(i.sourceId) ? { ...i, sector: sectorOf.get(i.sourceId) } : i));
 const byId = new Map(all.map((i) => [i.id, i]));
 let editions = await readEditions();
 

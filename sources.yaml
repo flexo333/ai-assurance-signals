@@ -5,7 +5,14 @@
 # Fields
 #   id            stable slug, used in item ids and the /sources page
 #   name          display name
-#   authority     official | standards | lab | research | news
+#   authority     official | standards | lab | research | industry | news | vendor
+#                 industry = banks, insurers, super funds, FS peak bodies (own posts);
+#                 vendor = cloud/enterprise vendor customer stories (#31)
+#   sector        financial-services → items route to the Financial Services
+#                 section and /financial-services/ tracker (#31)
+#   must_match    regex string(s), case-insensitive; at least one must match the
+#                 title + feed summary (sitemap: title + body) before the item is
+#                 fetched or sent to Gemini. Protects quota on global feeds (#21, #31)
 #   jurisdiction  AU-federal | AU-NSW | AU-VIC | AU-QLD | AU-WA | AU-SA | AU-TAS | AU-ACT | AU-NT
 #                 | INTL | EU | UK | US | SG | CA | NZ
 #   homepage      the page the checker fetches for feed autodiscovery
@@ -169,6 +176,7 @@ sources:
     exclude: "statistics|annual-report|/events$|apra-submissions|corporate-plan|archive|covid-19"
     max_pages: 30
     ai_specific: false
+    sector: financial-services
 
   - id: asic
     name: Australian Securities and Investments Commission
@@ -181,6 +189,7 @@ sources:
     include: "/about-asic/news-centre/(find-a-media-release/20\\d\\d-releases|news-items|speeches)/[^/]+/?$"
     max_pages: 30
     ai_specific: false
+    sector: financial-services
 
   - id: accc
     name: Australian Competition and Consumer Commission

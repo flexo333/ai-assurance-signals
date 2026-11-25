@@ -3,7 +3,9 @@
 
 import { clusterItems, coverageBoost } from "./cluster.js";
 
-export const AUTHORITY_WEIGHT = { official: 1.0, standards: 0.95, lab: 0.85, research: 0.8, news: 0.6 };
+// industry: banks, insurers, super funds and FS peak bodies; vendor: cloud and
+// enterprise vendors' customer stories (#31).
+export const AUTHORITY_WEIGHT = { official: 1.0, standards: 0.95, lab: 0.85, research: 0.8, industry: 0.75, news: 0.6, vendor: 0.5 };
 
 export const SECTIONS = [
   { id: "policy-legislation", title: "Australian Policy & Legislation" },
@@ -12,6 +14,7 @@ export const SECTIONS = [
   { id: "standards-frameworks", title: "Standards & Frameworks" },
   { id: "frontier-labs", title: "Frontier Labs" },
   { id: "international", title: "International" },
+  { id: "financial-services", title: "Financial Services" },
   { id: "news-commentary", title: "News & Commentary" },
 ];
 
@@ -42,17 +45,29 @@ export function score(item, now = Date.now()) {
 }
 
 /**
- * Where an item lives in the edition. News always goes to News & Commentary;
+ * Financial Services item (#31): flagged by the model, themed so, or from a
+ * source marked `sector: financial-services` in sources.yaml (the record's
+ * `sector`, copied from its source).
+ */
+export function isFinancialServices(item) {
+  const c = item.classification || {};
+  return c.is_financial_services === true || c.theme === "financial-services" || item.sector === "financial-services";
+}
+
+/**
+ * Where an item lives in the edition. Financial Services items (any authority)
+ * go to Financial Services; other news and vendor items to News & Commentary;
  * otherwise the model's theme, except lab items, which go to Frontier Labs, and
  * non-Australian official items, which go to International.
  */
 export function sectionFor(item) {
-  if (item.authority === "news") return "news-commentary";
+  if (isFinancialServices(item)) return "financial-services";
+  if (item.authority === "news" || item.authority === "vendor") return "news-commentary";
   if (item.authority === "lab") return "frontier-labs";
   const theme = item.classification?.theme;
   const isAU = String(item.jurisdiction || "").startsWith("AU");
   if (!isAU && ["policy-legislation", "regulator-guidance", "public-sector"].includes(theme)) return "international";
-  if (theme === "news-commentary" || !SECTIONS.some((s) => s.id === theme)) return isAU ? "policy-legislation" : "international";
+  if (theme === "news-commentary" || theme === "financial-services" || !SECTIONS.some((s) => s.id === theme)) return isAU ? "policy-legislation" : "international";
   return theme;
 }
 
@@ -111,6 +126,8 @@ export function buildEdition(items, { id, from, to, now = Date.parse(to) }) {
     if (top.length >= TOP_MAX) break;
     if (i.status !== "summarised") continue;
     if (i.authority === "news" && news >= TOP_MAX_NEWS) continue;
+    // Vendor-written case studies never lead an edition (#31).
+    if (i.authority === "vendor") continue;
     // Products, business news and predictions never lead an edition (#13).
     if (NON_SIGNAL_KINDS.has(i.classification?.item_kind)) continue;
     // Significance gates (ranking is by composite score, so later items may still

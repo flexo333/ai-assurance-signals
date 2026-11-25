@@ -129,3 +129,27 @@ test("ModelHealth: 404 dead, 429 exhausted, 503 cools down then recovers", () =>
   h.record([{ model: "b", status: 429, message: "quota" }]);
   assert.equal(h.nextRecoveryMs(chain), null); // nothing can recover this run → stop
 });
+
+test("#31: v3 schema carries deployment, financial-services and is_financial_services", async () => {
+  const { PROMPT_VERSION, ITEM_KINDS, THEMES, SYSTEM_PROMPT } = await import("./prompt.js");
+  assert.equal(PROMPT_VERSION, 3);
+  assert.ok(ITEM_KINDS.includes("deployment"));
+  assert.ok(THEMES.includes("financial-services"));
+  assert.equal(ANALYSIS_SCHEMA.properties.is_financial_services.type, "BOOLEAN");
+  assert.ok(ANALYSIS_SCHEMA.required.includes("is_financial_services"));
+  assert.ok(ANALYSIS_SCHEMA.propertyOrdering.includes("is_financial_services"));
+  assert.match(SYSTEM_PROMPT, /Financial Services AI signal/);
+  assert.match(SYSTEM_PROMPT, /trialling Copilot/);
+});
+
+test("#31: parseAnalysis keeps FS flag; theme implies it; missing → false", () => {
+  const base = { is_ai_governance: true, headline: "h", summary: "s", why_it_matters: "w", quotes: [] };
+  const p = (o) => parseAnalysis(JSON.stringify({ ...base, ...o }));
+  const apra = p({ item_kind: "regulator-guidance", theme: "regulator-guidance", is_financial_services: true });
+  assert.equal(apra.item_kind, "regulator-guidance");
+  assert.equal(apra.is_financial_services, true);
+  assert.equal(p({ item_kind: "deployment", theme: "financial-services" }).is_financial_services, true);
+  assert.equal(p({ item_kind: "deployment", theme: "financial-services" }).item_kind, "deployment");
+  assert.equal(p({ theme: "policy-legislation" }).is_financial_services, false);
+  assert.equal(p({ theme: "policy-legislation", is_financial_services: "yes" }).is_financial_services, false);
+});

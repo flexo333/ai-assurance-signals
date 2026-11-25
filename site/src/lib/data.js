@@ -55,8 +55,13 @@ export const AUTHORITY_LABEL = {
   standards: "Standards",
   lab: "Frontier Lab",
   research: "Research",
+  industry: "Industry",
   news: "News",
+  vendor: "Vendor",
 };
+
+/** Badge order (highest authority first), for listings such as /sources/. */
+export const AUTHORITY_ORDER = ["official", "standards", "lab", "research", "industry", "news", "vendor"];
 
 const dateFmt = new Intl.DateTimeFormat("en-AU", { day: "numeric", month: "short", year: "numeric", timeZone: "Australia/Sydney" });
 export const fmtDate = (iso) => (iso ? dateFmt.format(new Date(iso)) : "");
@@ -74,6 +79,7 @@ export const THEME_LABEL = {
   "standards-frameworks": "Standards & frameworks",
   "frontier-labs": "Frontier labs",
   international: "International",
+  "financial-services": "Financial services",
   "news-commentary": "News & commentary",
 };
 
@@ -126,6 +132,45 @@ export function keyDates(curated, items, today = todayIso()) {
     upcoming: all.filter((d) => d.date >= today).sort((a, b) => a.date.localeCompare(b.date)),
     recent: all.filter((d) => d.date < today && d.date >= yearAgo).sort((a, b) => b.date.localeCompare(a.date)),
   };
+}
+
+// ── Financial Services tracker (#31) ─────────────────────────────────────
+// Mirrors pipeline/lib/rank.js isFinancialServices: model flag, FS theme, or a
+// source marked `sector: financial-services` in sources.yaml.
+export function isFinancialServices(item, sectorOf = new Map()) {
+  const c = item.classification || {};
+  return c.is_financial_services === true || c.theme === "financial-services" || (item.sector || sectorOf.get(item.sourceId)) === "financial-services";
+}
+
+const REGULATOR_KINDS = new Set(["legislation", "regulation", "regulator-guidance", "enforcement", "government-policy", "consultation"]);
+const DEPLOYMENT_KINDS = new Set(["deployment", "incident"]);
+
+export const FS_GROUPS = [
+  { id: "regulators", title: "Regulator moves" },
+  { id: "deployments", title: "Institution deployments & case studies" },
+  { id: "news", title: "News & commentary" },
+];
+
+/** Which tracker group an FS story belongs to (by its lead item). */
+export function fsGroupOf(item) {
+  const kind = item.classification?.item_kind;
+  if (item.authority === "official" || REGULATOR_KINDS.has(kind)) return "regulators";
+  if (item.authority === "industry" || item.authority === "vendor" || DEPLOYMENT_KINDS.has(kind)) return "deployments";
+  return "news";
+}
+
+/**
+ * Publishable FS stories, newest first. Coverage grouped under a lead in an
+ * edition stays with its lead ("Also covered by"); an item is shown on its own
+ * only if it isn't grouped under another lead.
+ */
+export function financialServicesStories({ items, sources, alsoOf, leadOf, itemsById }) {
+  const sectorOf = new Map((sources || []).filter((s) => s.sector).map((s) => [s.id, s.sector]));
+  const fs = items.filter((i) => isPublishable(i) && isFinancialServices(i, sectorOf));
+  return fs
+    .filter((i) => !(leadOf.has(i.id) && itemsById.has(leadOf.get(i.id))))
+    .map((lead) => ({ lead, also: (alsoOf.get(lead.id) || []).map((id) => itemsById.get(id)).filter(Boolean), group: fsGroupOf(lead) }))
+    .sort((a, b) => String(b.lead.publishedAt || b.lead.fetchedAt).localeCompare(String(a.lead.publishedAt || a.lead.fetchedAt)));
 }
 
 const dayFmt = new Intl.DateTimeFormat("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });

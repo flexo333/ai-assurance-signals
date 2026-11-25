@@ -7,7 +7,8 @@ import { parse } from "yaml";
 
 const here = dirname(fileURLToPath(import.meta.url));
 export const SOURCES_PATH = resolve(here, "../../sources.yaml");
-const AUTHORITIES = ["official", "standards", "lab", "research", "news"];
+export const AUTHORITIES = ["official", "standards", "lab", "research", "industry", "news", "vendor"];
+export const SECTORS = ["financial-services"];
 
 export async function loadSources(path = SOURCES_PATH) {
   const { sources } = parse(await readFile(path, "utf8"));
@@ -17,6 +18,14 @@ export async function loadSources(path = SOURCES_PATH) {
     ids.add(s.id);
     if (!AUTHORITIES.includes(s.authority)) throw new Error(`${s.id}: bad authority ${s.authority}`);
     if (!s.homepage) throw new Error(`${s.id}: homepage required`);
+    if (s.sector && !SECTORS.includes(s.sector)) throw new Error(`${s.id}: bad sector ${s.sector}`);
+    for (const re of [].concat(s.must_match || [])) {
+      try {
+        new RegExp(re, "i");
+      } catch {
+        throw new Error(`${s.id}: bad must_match regex ${re}`);
+      }
+    }
     s.status ??= "active";
   }
   return sources;

@@ -18,7 +18,9 @@
 // unrelated items share generic summary vocabulary, which the title gate
 // filters out. See docs/DECISIONS.md.
 
-export const AUTHORITY_RANK = { official: 0, standards: 1, lab: 2, research: 3, news: 4 };
+// A first-party industry post (a bank's own write-up) leads press coverage of
+// it; vendor case studies never lead first-party or independent coverage (#31).
+export const AUTHORITY_RANK = { official: 0, standards: 1, lab: 2, research: 3, industry: 4, news: 5, vendor: 6 };
 
 export const SIMILARITY_THRESHOLD = 0.09;
 export const DATE_WINDOW_DAYS = 3;

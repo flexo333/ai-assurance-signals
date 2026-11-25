@@ -114,3 +114,34 @@ test("coverageBoost: +5% per extra source, capped at +15%, same-source duplicate
   assert.equal(coverageBoost({ lead: mandarin, also: [innovationaus, { ...innovationaus, id: "dup" }] }), 1.05);
   assert.equal(coverageBoost({ lead: mandarin, also: [1, 2, 3, 4, 5].map((k) => mk(`s${k}`)) }), 1.15);
 });
+
+test("#31: a bank's own grounded post leads press coverage; vendor stories never lead", () => {
+  const order = (...xs) => xs.sort(compareLead).map((x) => x.id);
+  assert.deepEqual(order(mk("itnews"), mk("afr"), mk("nab", { authority: "industry" })).at(0), "nab");
+  assert.deepEqual(order(mk("aws", { authority: "vendor", classification: { significance: 5 } }), mk("itnews")), ["itnews", "aws"]);
+  assert.deepEqual(order(mk("aws", { authority: "vendor" }), mk("nab", { authority: "industry" })), ["nab", "aws"]);
+  // Grounding still comes first: an ungrounded bank post doesn't lead a grounded news report.
+  assert.deepEqual(order(mk("nab", { authority: "industry", status: "headline-only" }), mk("itnews")), ["itnews", "nab"]);
+  // Official still outranks industry.
+  assert.deepEqual(order(mk("nab", { authority: "industry" }), mk("apra", { authority: "official" })), ["apra", "nab"]);
+});
+
+test("#31: clusterItems puts the NAB post first with press coverage in `also`", () => {
+  const story = (id, authority, publishedAt, title) =>
+    mk(id, {
+      sourceId: id,
+      authority,
+      publishedAt,
+      title,
+      headline: title,
+      summary: "NAB used generative AI to rewrite legacy code and migrate its customer data platform to the cloud.",
+    });
+  const [s, ...rest] = clusterItems([
+    story("itnews", "news", "2026-11-24T02:00:00Z", "NAB uses AI to rewrite legacy code in data platform migration"),
+    story("afr", "news", "2026-11-24T05:00:00Z", "NAB taps AI to rewrite legacy code for migration"),
+    story("nab", "industry", "2026-11-23T22:00:00Z", "How NAB used AI to rewrite legacy code for our data platform migration"),
+  ]);
+  assert.equal(rest.length, 0);
+  assert.equal(s.lead.id, "nab");
+  assert.deepEqual(s.also.map((i) => i.id).sort(), ["afr", "itnews"]);
+});

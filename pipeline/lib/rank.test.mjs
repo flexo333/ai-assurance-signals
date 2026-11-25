@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { score, sectionFor, buildEdition, selectWindow, isoWeekId, weeklyCutoffs, editionItemIds, SECTION_CAP } from "./rank.js";
+import { score, sectionFor, isFinancialServices, AUTHORITY_WEIGHT, buildEdition, selectWindow, isoWeekId, weeklyCutoffs, editionItemIds, SECTION_CAP } from "./rank.js";
 
 const NOW = Date.parse("2026-11-27T04:17:00Z");
 const mk = (id, o = {}) => ({
@@ -154,4 +154,44 @@ test("#13: kind weight lowers products in score; legacy items (no item_kind) una
   const regulation = score(mk("c", { classification: { ...base.classification, item_kind: "regulation" } }), NOW);
   assert.equal(regulation, legacy);
   assert.ok(product < legacy * 0.7);
+});
+
+test("#31: industry and vendor authority weights sit around news", () => {
+  assert.ok(AUTHORITY_WEIGHT.research > AUTHORITY_WEIGHT.industry);
+  assert.ok(AUTHORITY_WEIGHT.industry > AUTHORITY_WEIGHT.news);
+  assert.ok(AUTHORITY_WEIGHT.news > AUTHORITY_WEIGHT.vendor);
+  const s = (authority) => score(mk("x", { authority }), NOW);
+  assert.ok(s("industry") > s("news") && s("news") > s("vendor"));
+});
+
+test("#31: Financial Services routing for every authority, before the news fallback", () => {
+  const fsFlag = { classification: { significance: 3, theme: "regulator-guidance", item_kind: "regulator-guidance", is_financial_services: true } };
+  assert.equal(sectionFor(mk("apra", fsFlag)), "financial-services"); // official FS regulator keeps its kind
+  assert.equal(sectionFor(mk("itnews", { authority: "news", ...fsFlag })), "financial-services");
+  assert.equal(sectionFor(mk("aws", { authority: "vendor", ...fsFlag })), "financial-services");
+  assert.equal(sectionFor(mk("nab", { authority: "industry", classification: { theme: "financial-services" } })), "financial-services");
+  assert.equal(sectionFor(mk("rba", { sector: "financial-services", classification: { theme: "policy-legislation" } })), "financial-services");
+  // Not FS: vendor → News & Commentary; industry without FS → by theme.
+  assert.equal(sectionFor(mk("ms", { authority: "vendor", classification: { theme: "news-commentary" } })), "news-commentary");
+  assert.equal(sectionFor(mk("x", { authority: "industry", classification: { theme: "standards-frameworks" } })), "standards-frameworks");
+  assert.equal(isFinancialServices(mk("y")), false);
+});
+
+test("#31: significant deployments can reach Top Signals; vendor stories never do", () => {
+  const W = { id: "w", from: "2026-11-20T04:17:00Z", to: "2026-11-27T04:17:00Z" };
+  const c = (kind, sig, o = {}) => ({ classification: { significance: sig, au_relevance: 3, theme: "financial-services", is_financial_services: true, item_kind: kind }, ...o });
+  const items = [
+    mk("reg5", c("regulation", 5)),
+    mk("std4", c("standard", 4, { authority: "standards" })),
+    mk("reg4", c("regulator-guidance", 4)),
+    mk("nab", c("deployment", 4, { authority: "industry" })),
+    mk("narrow", c("deployment", 2, { authority: "industry" })),
+    mk("aws", c("deployment", 5, { authority: "vendor" })),
+  ];
+  const ed = buildEdition(items, W);
+  const top = ed.topSignals.map((t) => t.id);
+  assert.ok(top.includes("nab"));
+  assert.ok(!top.includes("narrow") && !top.includes("aws"));
+  const fs = ed.sections.find((s) => s.id === "financial-services");
+  assert.deepEqual(new Set(fs.items.map((r) => r.id)), new Set(["narrow", "aws"]));
 });

@@ -1,0 +1,26 @@
+---
+import Base from "../layouts/Base.astro";
+import ItemCard from "../components/ItemCard.astro";
+import { loadAll, financialServicesStories, FS_GROUPS } from "../lib/data.js";
+const all = loadAll();
+const stories = financialServicesStories(all);
+const groups = FS_GROUPS.map((g) => ({ ...g, list: stories.filter((s: any) => s.group === g.id) }));
+---
+<Base title="Financial Services" description="AI in Australian financial services: regulator moves, institution deployments and case studies, and news, newest first.">
+  <h1>Financial Services</h1>
+  <p class="lede">AI in Australian banking, superannuation, insurance and payments — and what their regulators expect.</p>
+  <p class="muted">In a prudentially regulated sector (APRA CPS 230 and CPS 234, ASIC, AUSTRAC), production AI deployments and large AI-assisted engineering changes are operational-risk and assurance signals. Newest first, across all editions. Coverage of the same story is grouped under the highest-authority grounded source.</p>
+  {stories.length === 0 ? <p class="muted">No financial-services items yet.</p> : (
+    <>
+      <nav class="muted small" aria-label="Groups">
+        {groups.map((g, k) => <>{k > 0 && " · "}<a href={`#${g.id}`}>{g.title}</a> ({g.list.length})</>)}
+      </nav>
+      {groups.filter((g) => g.list.length).map((g) => (
+        <section id={g.id}>
+          <h2>{g.title}</h2>
+          {g.list.map((s: any) => <ItemCard item={s.lead} also={s.also} />)}
+        </section>
+      ))}
+    </>
+  )}
+</Base>
