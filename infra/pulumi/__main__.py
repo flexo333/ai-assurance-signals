@@ -39,8 +39,9 @@ site = StaticSite(
     # Multi-page Astro build: the component's CloudFront Function rewrites
     # /path/ and /path to /path/index.html. No SPA fallback to index.html.
     spa_mode=False,
-    # Australian audience: PriceClass_200 includes Australia/Oceania edges (#15).
-    price_class="PriceClass_200",
+    # Australian audience: only PriceClass_All includes Australia/NZ edges
+    # (PriceClass_200 adds Asia, the Middle East and Africa, but not Oceania) (#15).
+    price_class="PriceClass_All",
     # Astro builds /404.html; serve it (as a 404) for missing paths (#16).
     error_page_path="/404.html",
 )
