@@ -190,6 +190,9 @@ sources:
     include: "^https://oia\\.pmc\\.gov\\.au/published-impact-analyses-and-reports/[^/?#]+$"
     max_pages: 30
     ai_specific: false
+    # Source-check now probes configured sitemaps (#38); activate once the
+    # Sydney run shows this one `ok` with matching URLs.
+    status: pending
 
   - id: health-consult
     name: Department of Health and Aged Care consultations

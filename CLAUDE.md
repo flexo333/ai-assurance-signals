@@ -36,7 +36,7 @@ Work items, open questions and follow-ups are **GitHub issues** (labels: `enhanc
 
 ## Dev sandbox network
 
-Cloud dev sessions for this repo use the **AI Assurance Signals** environment, which allows `asic.gov.au`, `apra.gov.au`, `www.rba.gov.au`, `www.austrac.gov.au`, `news.nab.com.au`, `www.anz.com.au`, `www.commbank.com.au` and `www.itnews.com.au`. Sources not yet verified are `status: pending` (probed by source-check, never collected). Add a host there before testing another source locally. Node's `fetch` needs `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` to go through the proxy. `pipeline/probe-source.mjs` shows a site's sitemaps, listing links and feeds, to help configure adapters.
+Cloud dev sessions for this repo use the **AI Assurance Signals** environment, which allows every host in `sources.yaml` and `data/seed-urls.yaml` (as of 2026-11-25) except these news hosts, which the environments service refused: `www.afr.com`, `www.reuters.com`, `www.technologyreview.com`, `www.euractiv.com`, `theconversation.com`, `itwire.com` and `www.capitalbrief.com`. Some sites still block the sandbox themselves (e.g. OAIC returns 403). Sources not yet verified are `status: pending` (probed by source-check, never collected). When you add a source on a new host, add the host to the environment too. Node's `fetch` needs `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` to go through the proxy. `pipeline/probe-source.mjs` shows a site's sitemaps, listing links and feeds, to help configure adapters.
 
 ## Commands
 
