@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { parseAnalysis, buildUserPrompt, ANALYSIS_SCHEMA } from "./prompt.js";
-import { generateWithFallback, isRetryableModelError, orderModels, ModelHealth } from "./gemini.js";
+import { generateWithFallback, isRetryableModelError, orderModels, ModelHealth, Pacer, rpmFor } from "./gemini.js";
 
 test("parseAnalysis normalises and clamps", () => {
   const a = parseAnalysis(
@@ -81,17 +81,33 @@ test("generateWithFallback advances on 404, reports quota exhaustion", async () 
   assert.equal(isRetryableModelError(notFound), false);
 });
 
-test("orderModels keeps usable Flash text models, preferred first", () => {
+test("orderModels: Flash Lite first (newest), then Flash; zero-quota families excluded", () => {
   const raw = [
-    { name: "models/gemini-3-flash", supportedActions: ["generateContent"] },
-    { name: "models/gemini-flash-latest", supportedActions: ["generateContent"] },
-    { name: "models/gemini-2.5-flash", supportedActions: ["generateContent"] },
-    { name: "models/gemini-2.5-flash-preview-tts", supportedActions: ["generateContent"] },
-    { name: "models/gemini-2.5-pro", supportedActions: ["generateContent"] },
-    { name: "models/gemini-embedding-001", supportedActions: ["embedContent"] },
-  ];
-  assert.deepEqual(orderModels(raw), ["models/gemini-2.5-flash", "models/gemini-flash-latest", "models/gemini-3-flash"]);
+    "models/gemini-2.5-flash", "models/gemini-3.8-flash", "models/gemini-3.6-flash", "models/gemini-3-flash",
+    "models/gemini-3.5-flash-lite", "models/gemini-3.1-flash-lite", "models/gemini-flash-lite-latest", "models/gemini-flash-latest",
+    "models/gemini-omni-1.2-flash", "models/gemini-omni-flash-preview", "models/gemini-3.8-flash-tts",
+    "models/gemini-robotics-er-2-flash-preview", "models/gemini-3.1-flash-image", "models/gemini-3.9-flash-preview",
+  ].map((name) => ({ name, supportedActions: ["generateContent"] }));
+  assert.deepEqual(orderModels(raw), [
+    "models/gemini-3.5-flash-lite", "models/gemini-3.1-flash-lite", "models/gemini-flash-lite-latest",
+    "models/gemini-3.8-flash", "models/gemini-3.6-flash", "models/gemini-3-flash", "models/gemini-2.5-flash",
+    "models/gemini-flash-latest", "models/gemini-3.9-flash-preview",
+  ]);
   assert.deepEqual(orderModels([]), []);
+});
+
+test("Pacer spaces calls per model at its free-tier RPM", async () => {
+  let t = 0;
+  const slept = [];
+  const p = new Pacer({ now: () => t, sleepFn: async (ms) => { slept.push(ms); t += ms; }, headroom: 1 });
+  await p.wait("models/gemini-3.5-flash-lite"); // first call: no wait
+  await p.wait("models/gemini-3.5-flash-lite"); // 15 RPM → 4000 ms
+  await p.wait("models/gemini-3.8-flash"); // different model: no wait
+  t += 1000;
+  await p.wait("models/gemini-3.8-flash"); // 5 RPM → 12000 ms, 1000 already elapsed
+  assert.deepEqual(slept, [4000, 11000]);
+  assert.equal(rpmFor("models/gemini-3.1-flash-lite"), 15);
+  assert.equal(rpmFor("models/gemini-2.5-flash"), 5);
 });
 
 test("ModelHealth: 404 dead, 429 exhausted, 503 cools down then recovers", () => {

@@ -2,33 +2,80 @@
 // (backend/summarise/gemini.js + people-pure.js). Takes `ai` as an argument
 // so the loop itself is testable without the SDK or network.
 
-// Preferred Flash-family models, best first. The live chain is discovered at
-// run time (resolveModelChain) so retired models drop out on their own — the
-// first live run hit a 404 on the retired gemini-2.5-flash-lite.
+// Free-tier reality (AI Studio rate-limit page, Nov 2026):
+//   Flash Lite models (3.5, 3.1) ... 15 RPM, 500 RPD each  ← where the capacity is
+//   Flash models (3.8, 3.6, 3, 2.5, 4 Hydrogen) ... 5 RPM, 20 RPD each
+//   omni / image / TTS / live / robotics ... 0 or unsuitable
+// So the chain leads with Flash Lite (newest first), then Flash as a small
+// fallback. The grounding gate, not the model tier, is the quality guarantee.
+// The first live run lost 20 items to a retired model and a list sorted by name.
 export const PREFERRED_MODELS = [
-  "models/gemini-2.5-flash",
-  "models/gemini-flash-latest",
+  "models/gemini-3.5-flash-lite",
+  "models/gemini-3.1-flash-lite",
   "models/gemini-flash-lite-latest",
+  "models/gemini-3.8-flash",
+  "models/gemini-2.5-flash",
 ];
 export const MODEL_CHAIN = PREFERRED_MODELS;
 
+const EXCLUDE = ["tts", "image", "audio", "live", "embedding", "thinking", "omni", "robotics", "transcribe", "banana", "native", "computer"];
+
+/** Free-tier requests per minute for a model id (used for per-model pacing). */
+export function rpmFor(model) {
+  return /flash-lite/i.test(model) ? 15 : 5;
+}
+
 /**
- * Pure: raw models.list() entries → ordered chain of usable Flash text models.
- * Preferred models first (when listed), then other Flash models, newest name first.
- * Free-tier quotas are per model, so a longer chain means more daily capacity.
+ * Pure: raw models.list() entries → ordered chain of usable text models.
+ * Order: Flash Lite before Flash (500 vs 20 RPD on the free tier), newer
+ * version first, versioned ids before "-latest" aliases, previews last.
  */
-export function orderModels(rawModels, preferred = PREFERRED_MODELS) {
+export function orderModels(rawModels) {
   const usable = (rawModels || [])
     .filter((m) => m && typeof m.name === "string" && (m.supportedActions || []).includes("generateContent"))
     .map((m) => m.name)
     .filter((n) => {
       const l = n.toLowerCase();
-      return l.includes("gemini") && l.includes("flash") && !["tts", "image", "audio", "live", "embedding", "thinking"].some((b) => l.includes(b));
+      return l.includes("gemini") && l.includes("flash") && !EXCLUDE.some((b) => l.includes(b));
     });
-  const set = new Set(usable);
-  const head = preferred.filter((p) => set.has(p));
-  const rest = usable.filter((n) => !head.includes(n)).sort((a, b) => b.localeCompare(a));
-  return [...head, ...rest].slice(0, 6);
+  const key = (n) => {
+    const l = n.toLowerCase();
+    const v = parseFloat((l.match(/gemini-(\d+(?:\.\d+)?)/) || [])[1] || "0");
+    return {
+      tier: l.includes("flash-lite") ? 0 : 1,
+      preview: /preview|exp/.test(l) ? 1 : 0,
+      alias: l.includes("latest") ? 1 : 0,
+      v,
+    };
+  };
+  return [...new Set(usable)]
+    .sort((a, b) => {
+      const ka = key(a);
+      const kb = key(b);
+      return ka.tier - kb.tier || ka.preview - kb.preview || ka.alias - kb.alias || kb.v - ka.v || a.localeCompare(b);
+    })
+    .slice(0, 10);
+}
+
+/** Spaces calls to each model at or below its free-tier RPM. `sleep` and clock injectable for tests. */
+export class Pacer {
+  constructor({ now = () => Date.now(), sleepFn = (ms) => new Promise((r) => setTimeout(r, ms)), headroom = 1.15 } = {}) {
+    this.last = new Map();
+    this.now = now;
+    this.sleep = sleepFn;
+    this.headroom = headroom;
+  }
+  intervalMs(model) {
+    return Math.ceil((60_000 / rpmFor(model)) * this.headroom);
+  }
+  async wait(model) {
+    const prev = this.last.get(model);
+    if (prev != null) {
+      const due = prev + this.intervalMs(model) - this.now();
+      if (due > 0) await this.sleep(due);
+    }
+    this.last.set(model, this.now());
+  }
 }
 
 /** Discover the chain via models.list(); falls back to PREFERRED_MODELS on any failure. */
@@ -125,6 +172,7 @@ export async function generateWithFallback(ai, {
   timeoutMs = 90_000,
   parse = (text) => text,
   budget = Infinity,
+  beforeCall, // async (model) => void — e.g. Pacer.wait
 } = {}) {
   let lastErr;
   let allRetryable = true;
@@ -135,6 +183,7 @@ export async function generateWithFallback(ai, {
       if (used >= budget) return { ok: false, error: lastErr || new Error("request budget exhausted"), quotaExhausted: false, budgetExhausted: true, attempts: used, errors };
       used++;
       try {
+        if (beforeCall) await beforeCall(model);
         const res = await withTimeout(ai.models.generateContent({ model, contents, ...(config ? { config } : {}) }), timeoutMs);
         const text = res?.text;
         if (!text) throw new Error("empty response");

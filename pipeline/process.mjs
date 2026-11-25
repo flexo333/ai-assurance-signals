@@ -17,15 +17,15 @@ import { readFile, appendFile } from "node:fs/promises";
 import { GoogleGenAI } from "@google/genai";
 import { loadSources } from "./lib/sources.js";
 import { saveItem } from "./lib/store.js";
-import { sleep, resolveModelChain, ModelHealth } from "./lib/gemini.js";
+import { sleep, resolveModelChain, ModelHealth, Pacer } from "./lib/gemini.js";
 import { analyseItem } from "./lib/analyse-item.js";
 
 const args = process.argv.slice(2);
 const val = (n, d) => (args.includes(n) ? args[args.indexOf(n) + 1] : d);
 const flagValues = new Set(["--max", "--delay-ms"].map((f) => val(f)).filter(Boolean));
 const inputPath = args.find((a) => !a.startsWith("--") && !flagValues.has(a));
-const MAX = Number(val("--max", 60));
-const DELAY_MS = Number(val("--delay-ms", 6500)); // ~9 RPM: under the Flash free-tier limit
+const MAX = Number(val("--max", 120));
+const DELAY_MS = Number(val("--delay-ms", 0)); // extra spacing; per-model RPM pacing is automatic (Pacer)
 const DRY = args.includes("--dry-run");
 
 if (!inputPath) throw new Error("usage: node process.mjs collected.json");
@@ -42,6 +42,7 @@ const modelErrorCounts = new Map();
 // quota-exhausted (429) models and cools down overloaded (503) ones.
 const chain = await resolveModelChain(ai);
 const health = new ModelHealth();
+const pacer = new Pacer();
 console.log(`Model chain: ${chain.join(", ")}`);
 
 // Available models now, waiting out a 503 cooldown if that's all that's left.
@@ -72,8 +73,8 @@ for (const item of collected.items) {
       quotaHit = true;
       break;
     }
-    if (stats.calls > 0) await sleep(DELAY_MS);
-    res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls, chain: avail });
+    if (stats.calls > 0 && DELAY_MS) await sleep(DELAY_MS);
+    res = await analyseItem(ai, { source, item, delayMs: DELAY_MS, budget: MAX - stats.calls, chain: avail, beforeCall: (m) => pacer.wait(m) });
     stats.calls += res.calls;
     health.record(res.modelErrors);
     for (const e of res.modelErrors || []) {
