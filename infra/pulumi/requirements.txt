@@ -1,3 +1,4 @@
 pulumi>=3.0.0,<4.0.0
 pulumi-aws>=7.16.0,<8.0.0
-pulumi-static-site @ git+https://github.com/flexo333/pulumi-static-site.git@v0.2.0
+# v0.4.0 merge commit (tag pending): price_class, error_page_path, Bucket alias
+pulumi-static-site @ git+https://github.com/flexo333/pulumi-static-site.git@b97b124c109065b0efe56fcbd6eb890525eafd41
