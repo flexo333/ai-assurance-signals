@@ -8,6 +8,7 @@
 
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries, extractListingLinks, reconcileUrlDate } from "./lib/feed-pure.js";
+import { parseCitizenSpaceItems } from "./lib/citizen-space.js";
 import { isAiRelated, passesMustMatch } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
@@ -162,10 +163,79 @@ async function checkPages(src, picked, { since, log, dropped }) {
   return { log, candidates, dropped };
 }
 
+/**
+ * Delib Citizen Space v2.4 public JSON API adapter (#14) for official
+ * consultation hubs (consultations.ag.gov.au, consultation.accc.gov.au,
+ * consultations.tga.gov.au, consultations.health.gov.au) whose parent agency
+ * websites block automated HTTP clients.
+ *
+ * Always fetches `?st=open` (small, fast ~1s) so active consultations never
+ * time out; also attempts `?fields=minimal` to include closed consultations
+ * within the window (e.g. backfill) when the hub responds within timeout.
+ */
+async function listCitizenSpace(src, { since, known }) {
+  const origin = new URL(src.api || src.homepage).origin;
+  const openUrl = `${origin}/api/2.4/json_search_results?st=open`;
+  const archiveUrl = `${origin}/api/2.4/json_search_results?fields=minimal`;
+  const log = { id: src.id, feed: openUrl, method: "citizen-space", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const robots = await robotsFor(openUrl);
+  if (!isAllowed(robots.parsed, USER_AGENT, openUrl)) {
+    return { log: { ...log, status: "robots-disallowed" }, candidates: [] };
+  }
+  const openRes = await get(openUrl);
+  const bodies = [];
+  if (openRes.ok) bodies.push(openRes.body);
+  if (!src.open_only && isAllowed(robots.parsed, USER_AGENT, archiveUrl)) {
+    const archiveRes = await get(archiveUrl);
+    if (archiveRes.ok) bodies.push(archiveRes.body);
+  }
+  const parsed = parseCitizenSpaceItems(bodies, { baseUrl: origin, include: src.include, exclude: src.exclude });
+  if (!parsed) return { log: { ...log, status: "api-unavailable" }, candidates: [] };
+  log.feedItems = parsed.length;
+
+  const candidates = [];
+  for (const i of parsed) {
+    log.sample ??= { link: i.link, date: i.date, since };
+    let url;
+    try {
+      url = canonicalUrl(i.link);
+    } catch {
+      log.skipped.badUrl++;
+      continue;
+    }
+    const id = itemId(url);
+    if (known.has(id)) {
+      log.skipped.known++;
+      continue;
+    }
+    if (i.date && i.date < since) {
+      log.skipped.old++;
+      continue;
+    }
+    log.inWindow++;
+    if ((!src.ai_specific && !isAiRelated(`${i.title}\n${i.text}`)) || !passesMustMatch(src.must_match, `${i.title}\n${i.text}\n${i.link}`)) {
+      log.keywordDropped++;
+      continue;
+    }
+    candidates.push({
+      id,
+      url,
+      title: i.title,
+      date: i.date,
+      summary: i.summary,
+      src,
+      prefetched: { text: i.text, extractMethod: "citizen-space-v2.4" },
+    });
+    if (candidates.length >= MAX_ITEMS_PER_SOURCE) break;
+  }
+  return { log, candidates };
+}
+
 // Phase A (cheap): resolve the feed and list fresh candidates — no article fetches.
 async function listSource(src, { since, known }) {
   if (src.method === "sitemap") return listSitemap(src, { since, known });
   if (src.method === "listing") return listListing(src, { since, known });
+  if (src.method === "citizen-space") return listCitizenSpace(src, { since, known });
   const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const feed = await resolveFeed(src);
   if (!feed) return { log: { ...log, status: "no-feed" }, candidates: [] };
