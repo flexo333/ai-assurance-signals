@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://aisignals.willbright.link/sitemap-index.xml
