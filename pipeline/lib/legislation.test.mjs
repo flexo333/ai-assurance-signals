@@ -70,7 +70,7 @@ test("buildLegislationQueryUrl filters by window and collection server-side, wit
   const u = buildLegislationQueryUrl({ since: "2026-10-31T13:00:00.000Z", top: 50 });
   assert.match(u, /^https:\/\/api\.prod\.legislation\.gov\.au\/v1\/Titles\?/);
   const filter = decodeURIComponent(u.match(/\$filter=([^&]+)/)[1]);
-  assert.equal(filter, "asMadeRegisteredAt ge 2026-11-01T00:00:00 and (collection eq 'Act' or collection eq 'LegislativeInstrument')");
+  assert.equal(filter, "asMadeRegisteredAt ge 2026-11-01T00:00:00 and collection in ('Act','LegislativeInstrument')");
   assert.match(u, /\$top=50/);
   assert.doesNotMatch(u, /\$skip/);
   assert.match(buildLegislationQueryUrl({ since: "2026-11-01T00:00:00Z", skip: 100 }), /\$skip=100/);
