@@ -39,7 +39,7 @@ const classificationOf = (a) => ({
  *   calls = real generateContent requests made. record.status: "summarised" |
  *   "headline-only" | "irrelevant" | "unvetted" (no source text); record null on model failure.
  */
-export async function analyseItem(ai, { source, item, allowRetry = true, delayMs = 0, chain, budget = Infinity } = {}) {
+export async function analyseItem(ai, { source, item, allowRetry = true, delayMs = 0, chain, budget = Infinity, beforeCall } = {}) {
   const base = {
     id: item.id,
     sourceId: item.sourceId,
@@ -67,6 +67,7 @@ export async function analyseItem(ai, { source, item, allowRetry = true, delayMs
       config: CONFIG,
       parse: parseAnalysis,
       budget: budget - calls,
+      beforeCall,
     });
     calls += r.attempts ?? 0;
     modelErrors.push(...(r.errors || []));

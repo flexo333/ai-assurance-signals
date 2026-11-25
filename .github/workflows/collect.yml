@@ -23,7 +23,7 @@ on:
         required: false
       max_calls:
         description: "Max Gemini calls this run"
-        default: "60"
+        default: "120"
       only:
         description: "Comma-separated source ids (blank = all active)"
         required: false
@@ -71,7 +71,7 @@ jobs:
       - name: Build collect event
         env:
           SINCE: ${{ github.event_name == 'pull_request' && '30' || github.event.inputs.since_days }}
-          MAX_ITEMS: ${{ github.event_name == 'pull_request' && '6' || github.event.inputs.max_calls || '60' }}
+          MAX_ITEMS: ${{ github.event_name == 'pull_request' && '6' || github.event.inputs.max_calls || '120' }}
           ONLY: ${{ github.event_name == 'pull_request' && 'conversation-au,mit-tr,uk-dsit,innovationaus' || github.event.inputs.only }}
         run: node build-collect-event.mjs ${SINCE:+--since-days "$SINCE"} --max-items "$MAX_ITEMS" ${ONLY:+--only "$ONLY"} > event.json
 
@@ -110,7 +110,7 @@ jobs:
       - name: Analyse + ground (Gemini)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MAX: ${{ github.event_name == 'pull_request' && '6' || github.event.inputs.max_calls || '60' }}
+          MAX: ${{ github.event_name == 'pull_request' && '6' || github.event.inputs.max_calls || '120' }}
           DRY: ${{ (github.event_name == 'pull_request' || github.event.inputs.dry_run == 'true') && '--dry-run' || '' }}
         run: node process.mjs collected.json --max "$MAX" $DRY
 
