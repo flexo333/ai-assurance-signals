@@ -21,17 +21,17 @@
 #   ai_specific   true → every item is in scope; false → keyword pre-filter first
 #   paywalled     true → headline + standfirst only, never full text
 #   method        feed (default: configured feed → candidates → autodiscovery)
-#                 | sitemap | listing | citizen-space (Delib Citizen Space /api/2.4 JSON)
+#                 | sitemap | listing | citizen-space | legislation
 #   discover      false → skip homepage feed autodiscovery (method: feed)
 #   listing       listing page URL(s) whose links are the articles (method: listing;
 #                 include/exclude/max_pages as for sitemaps; dates from the page,
 #                 or the /YYYY/MM/ in the URL)
-#   sitemap       sitemap or sitemap-index URL (method: sitemap)
-#   include       regex a URL/title must match (method: sitemap | listing | citizen-space)
-#   exclude       regex that rejects a URL/title, case-insensitive (sitemap | listing | citizen-space)
+#   sitemap       sitemap or sitemap-index URL(s) (method: sitemap)
+#   include       regex a URL/title must match (method: sitemap | listing | citizen-space | legislation)
+#   exclude       regex that rejects a URL/title, case-insensitive (sitemap | listing | citizen-space | legislation)
 #   hosts         extra hostnames the source publishes on (seed URLs, #31)
-#   max_pages     pages checked per run (method: sitemap, default 25); for
-#                 sitemap sources the AI keyword check runs on the page BODY
+#   max_pages     pages checked per run (method: sitemap | listing | legislation, default 25);
+#                 for page sources the AI keyword check runs on the page BODY
 #   status        active (default) | blocked | pending — blocked sources are listed on
 #                 the /sources page for transparency but never fetched; their news
 #                 reaches the digest through news coverage instead. pending = added
@@ -108,14 +108,18 @@ sources:
     homepage: https://consultations.ag.gov.au/
     method: citizen-space
     ai_specific: false
-    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: treasury
     name: The Treasury
     authority: official
     jurisdiction: AU-federal
     homepage: https://treasury.gov.au/media-release
-    feeds: [https://treasury.gov.au/rss.xml]
+    # rss.xml is empty and /publication/ is robots-disallowed; media releases
+    # and speeches are robots-permitted HTML listings (#12).
+    method: listing
+    listing: [https://treasury.gov.au/media-release, https://treasury.gov.au/speech]
+    include: "^https://treasury\\.gov\\.au/(media-release|speech)/[^/?#]+$"
+    max_pages: 20
     ai_specific: false
 
   - id: treasury-consult
@@ -159,6 +163,11 @@ sources:
     authority: official
     jurisdiction: AU-federal
     homepage: https://www.legislation.gov.au/
+    # www.legislation.gov.au is an Angular SPA; queries OPC's public OData v4
+    # API for newly registered Acts & Legislative Instruments and reads their
+    # static Explanatory Statement / primary EPUB XHTML (#12).
+    method: legislation
+    max_pages: 25
     ai_specific: false
 
   - id: consult-industry
@@ -181,7 +190,6 @@ sources:
     include: "^https://oia\\.pmc\\.gov\\.au/published-impact-analyses-and-reports/[^/?#]+$"
     max_pages: 30
     ai_specific: false
-    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: health-consult
     name: Department of Health and Aged Care consultations
@@ -190,7 +198,6 @@ sources:
     homepage: https://consultations.health.gov.au/
     method: citizen-space
     ai_specific: false
-    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   # ── Regulators (official) ──────────────────────────────────────────────────
   - id: oaic
@@ -262,7 +269,7 @@ sources:
     ai_specific: false
     sector: financial-services
     status: blocked
-    blocked_reason: "bot-protection (connection reset for automated clients from cloud IPs, 2026-11-25); to re-check from the Sydney Lambda"
+    blocked_reason: "bot-protection (connection reset for automated clients, incl. AWS Sydney)"
 
   - id: afca
     name: Australian Financial Complaints Authority
@@ -271,7 +278,8 @@ sources:
     homepage: https://www.afca.org.au/news
     ai_specific: false
     sector: financial-services
-    status: pending
+    status: blocked
+    blocked_reason: "bot-protection (403 for automated clients, incl. AWS Sydney)"
 
   - id: accc
     name: Australian Competition and Consumer Commission
@@ -290,7 +298,6 @@ sources:
     homepage: https://consultation.accc.gov.au/
     method: citizen-space
     ai_specific: false
-    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: esafety
     name: eSafety Commissioner
@@ -329,7 +336,6 @@ sources:
     method: citizen-space
     exclude: "^(Form|Notification form|Tool|Application to amend):"
     ai_specific: false
-    status: pending  # not yet verified from the Sydney Lambda (source-check)
 
   - id: acma
     name: Australian Communications and Media Authority
@@ -354,8 +360,14 @@ sources:
     name: Digital NSW (AI Assurance Framework)
     authority: official
     jurisdiction: AU-NSW
-    homepage: https://www.digital.nsw.gov.au/news
-    feeds: [https://www.digital.nsw.gov.au/rss.xml]
+    homepage: https://www.nsw.gov.au/nsw-government/digital-nsw
+    hosts: [digital.nsw.gov.au]
+    method: sitemap
+    sitemap:
+      - https://www.nsw.gov.au/sitemaps/resource/sitemap.xml
+      - https://www.nsw.gov.au/sitemaps/page/sitemap.xml
+    include: "^https://www\\.nsw\\.gov\\.au/(nsw-government/digital-nsw/(resource-library|strategy-policy-assurance/artificial-intelligence)(/[^/?#]+)+|departments-and-agencies/(dciths|customer-service|nsw-productivity-and-equality-commission)/(departmental-media-releases|document-library)/[^/?#]+)$"
+    max_pages: 20
     ai_specific: false
 
   - id: nsw-ombudsman
@@ -399,6 +411,10 @@ sources:
     authority: standards
     jurisdiction: AU-federal
     homepage: https://www.standards.org.au/news
+    method: sitemap
+    sitemap: https://www.standards.org.au/sitemap.xml
+    include: "^https://www\\.standards\\.org\\.au/news/[^/?#]+$"
+    max_pages: 25
     ai_specific: false
 
   - id: csiro-data61
@@ -406,7 +422,10 @@ sources:
     authority: research
     jurisdiction: AU-federal
     homepage: https://www.csiro.au/en/news
-    feeds: [https://www.csiro.au/en/news/rss]
+    method: sitemap
+    sitemap: https://www.csiro.au/sitemap.xml
+    include: "^https://www\\.csiro\\.au/en/news/All/(Articles|News)/20\\d\\d/[A-Za-z]+/[^/?#]+$"
+    max_pages: 25
     ai_specific: false
 
   - id: aicd
@@ -414,6 +433,10 @@ sources:
     authority: research
     jurisdiction: AU-federal
     homepage: https://www.aicd.com.au/news-media.html
+    method: sitemap
+    sitemap: https://aicd.com.au/sitemap.xml
+    include: "^https://www\\.aicd\\.com\\.au/(?:content/aicd/)?news-media/(media-releases/202[6-9]|policy-submissions/202[6-9]|research-and-reports)/[^/?#]+\\.html$"
+    max_pages: 25
     ai_specific: false
 
   - id: gradient
@@ -457,6 +480,10 @@ sources:
     authority: lab
     jurisdiction: INTL
     homepage: https://www.anthropic.com/news
+    method: sitemap
+    sitemap: https://www.anthropic.com/sitemap.xml
+    include: "^https://www\\.anthropic\\.com/(news|research)/[^/?#]+$"
+    max_pages: 20
     ai_specific: true
 
   - id: openai
@@ -526,7 +553,11 @@ sources:
     authority: official
     jurisdiction: UK
     homepage: https://www.aisi.gov.uk/
-    feeds: [https://www.gov.uk/search/all.atom?organisations%5B%5D=ai-security-institute]
+    # gov.uk search feeds are robots-disallowed; aisi.gov.uk publishes its own sitemap (#12).
+    method: sitemap
+    sitemap: https://www.aisi.gov.uk/sitemap.xml
+    include: "^https://www\\.aisi\\.gov\\.uk/(blog|research|work)/[^/?#]+$"
+    max_pages: 20
     ai_specific: true
 
   - id: uk-dsit
@@ -550,6 +581,10 @@ sources:
     authority: official
     jurisdiction: INTL
     homepage: https://oecd.ai/en/wonk
+    method: sitemap
+    sitemap: https://oecd.ai/sitemaps/wonk/post-sitemap.xml
+    include: "^https://oecd\\.ai/en/wonk/[^/?#]+$"
+    max_pages: 20
     ai_specific: true
 
   - id: iso-sc42
@@ -626,45 +661,73 @@ sources:
     jurisdiction: AU-federal
     homepage: https://www.nab.com.au/news
     hosts: [news.nab.com.au]
+    method: sitemap
+    sitemap: https://www.nab.com.au/sitemap.xml
+    include: "^https://www\\.nab\\.com\\.au/news/[^/]+/[^/?#]+$"
+    exclude: "/media-hub/|/author/"
+    max_pages: 25
     ai_specific: false
     sector: financial-services
-    status: pending
 
   - id: westpac
-    name: Westpac (Wire)
+    name: Westpac (Wire & Media Releases)
     authority: industry
     jurisdiction: AU-federal
     homepage: https://www.westpac.com.au/news/
+    method: sitemap
+    sitemap:
+      - https://www.westpac.com.au/news/sitemap.xml
+      - https://www.westpac.com.au/sitemap-65.xml
+    include: "^https://www\\.westpac\\.com\\.au/(news/[^/]+/20\\d\\d/\\d\\d|about-westpac/media/media-releases/20\\d\\d)/[^/]+/$"
+    max_pages: 25
     ai_specific: false
     sector: financial-services
-    status: pending
 
   - id: macquarie
     name: Macquarie Group (News)
     authority: industry
     jurisdiction: AU-federal
     homepage: https://www.macquarie.com/au/en/about/news.html
+    method: sitemap
+    sitemap: https://www.macquarie.com/au/en/sitemap.xml
+    include: "^https://www\\.macquarie\\.com/au/en/(about/news/202[6-9]|insights)/[^/?#]+\\.html$"
+    exclude: "/insights/(commodities|energy-and-climate-solutions|industrials|infrastructure|investing|market-commentary|sovereign-resilience|technology-and-services)\\.html$"
+    max_pages: 25
     ai_specific: false
     sector: financial-services
-    status: pending
 
   - id: aba
     name: Australian Banking Association
     authority: industry
     jurisdiction: AU-federal
     homepage: https://www.ausbanking.org.au/news/
+    # Covers media releases (post-sitemap), policy submissions (article-sitemap,
+    # e.g. OAIC ADM & Parliamentary AI inquiry) and industry reports.
+    method: sitemap
+    sitemap:
+      - https://www.ausbanking.org.au/post-sitemap.xml
+      - https://www.ausbanking.org.au/article-sitemap.xml
+      - https://www.ausbanking.org.au/report-sitemap.xml
+    include: "^https://www\\.ausbanking\\.org\\.au/(?:(submission|report)/[^/]+|[^/]+)/$"
+    exclude: "^https://www\\.ausbanking\\.org\\.au/(news|submission|report|priorities|about|for-customers|scam-safe-accord|events|contact|privacy-policy|financial-assistance-hub|fee-free-atm-sites|easy-read-banking-guides|natural-disaster-assistance)/$|interview-on-"
+    max_pages: 25
     ai_specific: false
     sector: financial-services
-    status: pending
 
   - id: auspaynet
     name: Australian Payments Network
     authority: industry
     jurisdiction: AU-federal
-    homepage: https://www.auspaynet.com.au/insights
+    homepage: https://auspaynet.com.au/insights
+    method: listing
+    listing:
+      - https://auspaynet.com.au/insights/media-releases
+      - https://auspaynet.com.au/insights/blog
+      - https://auspaynet.com.au/insights
+    include: "^https://(?:www\\.)?auspaynet\\.com\\.au/insights/(?:[Mm]edia-[Rr]elease|blog|[Pp]ayments-[Mm]onitor|papers)/[^/?#]+$"
+    max_pages: 20
     ai_specific: false
     sector: financial-services
-    status: pending
 
   - id: iag
     name: IAG (Newsroom)
@@ -673,7 +736,8 @@ sources:
     homepage: https://www.iag.com.au/newsroom
     ai_specific: false
     sector: financial-services
-    status: pending
+    status: blocked
+    blocked_reason: "bot-protection (403 for automated clients, incl. AWS Sydney)"
 
   - id: suncorp
     name: Suncorp Group (News)
@@ -682,7 +746,8 @@ sources:
     homepage: https://www.suncorpgroup.com.au/news
     ai_specific: false
     sector: financial-services
-    status: pending
+    status: blocked
+    blocked_reason: "bot-protection (Imperva/Incapsula challenge on article pages)"
 
   - id: qbe
     name: QBE Insurance (Media)
@@ -691,7 +756,8 @@ sources:
     homepage: https://www.qbe.com/media
     ai_specific: false
     sector: financial-services
-    status: pending
+    status: blocked
+    blocked_reason: "bot-protection (403 for automated clients, incl. AWS Sydney)"
 
   - id: australiansuper
     name: AustralianSuper (News)
@@ -700,16 +766,20 @@ sources:
     homepage: https://www.australiansuper.com/about-us/news
     ai_specific: false
     sector: financial-services
-    status: pending
+    status: blocked
+    blocked_reason: "bot-protection (403 for automated clients, incl. AWS Sydney)"
 
   - id: aware-super
     name: Aware Super (News)
     authority: industry
     jurisdiction: AU-federal
-    homepage: https://aware.com.au/news
+    homepage: https://aware.com.au/member/about-us/newsroom
+    method: sitemap
+    sitemap: https://aware.com.au/sitemap.xml
+    include: "^https://aware\\.com\\.au/member/about-us/newsroom/[a-z]+-20\\d\\d/[^/?#]+$"
+    max_pages: 20
     ai_specific: false
     sector: financial-services
-    status: pending
 
   # ── Australian news (news) ─────────────────────────────────────────────────
   - id: innovationaus
@@ -773,6 +843,8 @@ sources:
     authority: news
     jurisdiction: AU-federal
     homepage: https://www.afr.com/technology
+    feeds: [https://www.afr.com/rss/technology.xml, https://www.afr.com/rss/policy.xml]
+    discover: false
     paywalled: true
     ai_specific: false
 
@@ -781,10 +853,13 @@ sources:
     authority: news
     jurisdiction: AU-federal
     homepage: https://www.afr.com/companies/financial-services
+    method: listing
+    listing: https://www.afr.com/companies/financial-services
+    include: "^https://www\\.afr\\.com/companies/financial-services/[^/?#]+-20\\d{6}-p[a-z0-9]+$"
+    max_pages: 20
     paywalled: true
     ai_specific: false
     sector: financial-services
-    status: pending
 
   - id: capital-brief
     name: Capital Brief
@@ -800,7 +875,10 @@ sources:
     authority: news
     jurisdiction: INTL
     homepage: https://iapp.org/news/
-    feeds: [https://iapp.org/rss/daily-dashboard/]
+    method: sitemap
+    sitemap: https://iapp.org/sitemap.xml
+    include: "^https://iapp\\.org/(news/a|resources/article)/[^/?#]+$"
+    max_pages: 25
     ai_specific: false
 
   - id: mit-tr
@@ -845,22 +923,26 @@ sources:
       - "\\b(National Australia Bank|Commonwealth Bank|CommBank|AustralianSuper|Aware Super|Australian Retirement Trust|HESTA|Insurance Australia)\\b"
       - "\\b(APRA|ASIC|AUSTRAC|Reserve Bank of Australia)\\b"
       - "\\bAustralia(n)?\\b"
-    status: pending
 
   - id: google-cloud-fs
     name: Google Cloud blog (Financial Services)
     authority: vendor
     jurisdiction: INTL
     homepage: https://cloud.google.com/blog/topics/financial-services
+    feed: https://cloudblog.withgoogle.com/topics/financial-services/rss/
+    discover: false
     ai_specific: false
     must_match: *au_fs
-    status: pending
 
   - id: microsoft-customers
-    name: Microsoft Customer Stories (Financial Services)
+    name: Microsoft Cloud & Azure (Financial Services)
     authority: vendor
     jurisdiction: INTL
-    homepage: https://www.microsoft.com/en/customers/search?filters=industry%3Abanking-and-capital-markets
+    homepage: https://www.microsoft.com/en-us/microsoft-cloud/blog/financial-services/
+    feeds:
+      - https://www.microsoft.com/en-us/microsoft-cloud/blog/feed/
+      - https://azure.microsoft.com/en-us/blog/feed/
+    discover: false
+    hosts: [azure.microsoft.com]
     ai_specific: false
     must_match: *au_fs
-    status: pending

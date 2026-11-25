@@ -234,16 +234,41 @@ export function extractListingLinks(html, baseUrl) {
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 
+const monthNum = (tok) =>
+  /^\d\d$/.test(tok)
+    ? Number(tok)
+    : MONTHS.findIndex((n) => n.startsWith(tok.toLowerCase()) && tok.length >= 3) + 1;
+
 /**
- * Month a URL is filed under (/2026/11/ or /2026/November/), as the first of
- * that month (ISO), or null. Many newsrooms show no machine-readable date.
+ * Date or month a URL is filed under (/2026/11/, /2026/November/,
+ * /2026/7-august/, /october-2026/, or AFR's -20261125-p61gew), as ISO UTC, or null.
+ * Many newsrooms show no machine-readable date or carry stale template metadata.
  */
 export function dateFromUrl(url) {
-  const m = String(url).match(/\/(20\d\d)\/(\d\d|[A-Za-z]{3,9})\//);
-  if (!m) return null;
-  const mm = /^\d\d$/.test(m[2]) ? Number(m[2]) : MONTHS.findIndex((n) => n.startsWith(m[2].toLowerCase()) && m[2].length >= 3) + 1;
-  if (!(mm >= 1 && mm <= 12)) return null;
-  return `${m[1]}-${String(mm).padStart(2, "0")}-01T00:00:00.000Z`;
+  const s = String(url);
+  const dm = s.match(/\/(20\d\d)\/(\d{1,2})-([A-Za-z]{3,9})\d*(?:\/|$)/);
+  if (dm) {
+    const mm = monthNum(dm[3]);
+    const dd = Number(dm[2]);
+    if (mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31) {
+      return `${dm[1]}-${String(mm).padStart(2, "0")}-${String(dd).padStart(2, "0")}T00:00:00.000Z`;
+    }
+  }
+  const afr = s.match(/-(20\d\d)(\d\d)(\d\d)-p[a-z0-9]+(?:[/?#]|$)/i);
+  if (afr && Number(afr[2]) >= 1 && Number(afr[2]) <= 12 && Number(afr[3]) >= 1 && Number(afr[3]) <= 31) {
+    return `${afr[1]}-${afr[2]}-${afr[3]}T00:00:00.000Z`;
+  }
+  const ym = s.match(/\/(20\d\d)\/(\d\d|[A-Za-z]{3,9})\//);
+  if (ym) {
+    const mm = monthNum(ym[2]);
+    if (mm >= 1 && mm <= 12) return `${ym[1]}-${String(mm).padStart(2, "0")}-01T00:00:00.000Z`;
+  }
+  const my = s.match(/\/([A-Za-z]{3,9})-(20\d\d)(?:\/|$)/);
+  if (my) {
+    const mm = monthNum(my[1]);
+    if (mm >= 1 && mm <= 12) return `${my[2]}-${String(mm).padStart(2, "0")}-01T00:00:00.000Z`;
+  }
+  return null;
 }
 
 /**

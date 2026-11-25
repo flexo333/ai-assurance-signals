@@ -9,6 +9,7 @@
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries, extractListingLinks, reconcileUrlDate } from "./lib/feed-pure.js";
 import { parseCitizenSpaceItems, parseCsBody } from "./lib/citizen-space.js";
+import { buildLegislationQueryUrl, parseLegislationTitles, formatLegislationText, DEFAULT_LEGISLATION_API } from "./lib/legislation.js";
 import { isAiRelated, passesMustMatch } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
@@ -63,8 +64,8 @@ const DEFAULT_SITEMAP_PAGES = 25;
 
 /**
  * Sitemap adapter (#12) for sources without a usable feed. sources.yaml:
- *   method: sitemap · sitemap: <url> · include / exclude: URL regex strings ·
- *   max_pages: pages to check per run (default 25)
+ *   method: sitemap · sitemap: <url> or [urls] · include / exclude: URL regex
+ *   strings · max_pages: pages to check per run (default 25)
  * Takes the newest unknown URLs (by lastmod), fetches each page (robots-checked),
  * dates it from the page itself (metadata, "Published" label; lastmod as a
  * fallback, since CMSs bump lastmod on edits) and applies the AI keyword check
@@ -73,20 +74,28 @@ const DEFAULT_SITEMAP_PAGES = 25;
  * they're recorded as seen and not re-fetched; the backfill then progresses.
  */
 async function listSitemap(src, { since, known }) {
-  const log = { id: src.id, feed: src.sitemap, method: "sitemap", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const roots = [].concat(src.sitemap || []);
+  const log = { id: src.id, feed: roots[0] || null, method: "sitemap", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const dropped = [];
   const fetchXml = async (url) => {
     if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) return null;
     const r = await get(url);
     return r.ok ? parseSitemap(r.body) : null;
   };
-  const root = await fetchXml(src.sitemap);
-  if (!root) return { log: { ...log, status: "sitemap-unavailable" }, candidates: [], dropped };
-  let entries = root.entries;
-  if (root.isIndex) {
-    entries = [];
-    for (const child of root.entries.slice(0, 8)) entries.push(...((await fetchXml(child.loc))?.entries || []));
+  const entries = [];
+  let okCount = 0;
+  for (const rootUrl of roots) {
+    const root = await fetchXml(rootUrl);
+    if (!root) continue;
+    okCount++;
+    if (root.isIndex) {
+      for (const child of root.entries.slice(0, 8)) entries.push(...((await fetchXml(child.loc))?.entries || []));
+    } else {
+      entries.push(...root.entries);
+    }
   }
+  if (!okCount) return { log: { ...log, status: "sitemap-unavailable" }, candidates: [], dropped };
+  if (okCount < roots.length) log.status = `partial (${okCount}/${roots.length} sitemaps)`;
   log.feedItems = entries.length;
   const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf: idOfUrl, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
   return checkPages(src, picked, { since, log, dropped });
@@ -113,19 +122,25 @@ async function listListing(src, { since, known }) {
   const log = { id: src.id, feed: urls[0] || null, method: "listing", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const dropped = [];
   const entries = [];
+  let okCount = 0;
   for (const url of urls) {
     if (!isAllowed((await robotsFor(url)).parsed, USER_AGENT, url)) continue;
     const r = await get(url);
-    if (r.ok) entries.push(...extractListingLinks(r.body, r.url));
+    if (r.ok) {
+      okCount++;
+      entries.push(...extractListingLinks(r.body, r.url));
+    }
   }
   if (!entries.length) return { log: { ...log, status: "listing-unavailable" }, candidates: [], dropped };
+  if (okCount < urls.length) log.status = `partial (${okCount}/${urls.length} listings)`;
   log.feedItems = entries.length;
   const picked = selectSitemapEntries(entries, { include: src.include, exclude: src.exclude, since, known, idOf: idOfUrl, limit: src.max_pages || DEFAULT_SITEMAP_PAGES });
   return checkPages(src, picked, { since, log, dropped });
 }
 
 // Fetch each picked page (robots-checked), date it from the page, apply the
-// AI keyword check (non-ai_specific sources) and must_match to the BODY.
+// AI keyword check (non-ai_specific sources) and must_match. Paywalled sources
+// extract the standfirst only (never full body text).
 // Out-of-window and rejected pages go to `dropped` (recorded as seen).
 async function checkPages(src, picked, { since, log, dropped }) {
   const candidates = [];
@@ -135,8 +150,10 @@ async function checkPages(src, picked, { since, log, dropped }) {
     if (!isAllowed((await robotsFor(e.loc)).parsed, USER_AGENT, e.loc)) continue;
     const page = await get(e.loc);
     if (!page.ok) continue; // transient: retried next run
-    const ex = extractMainText(page.body, page.url);
-    const date = reconcileUrlDate(pagePublished(page.body, ex.text) || e.lastmod || null, e.loc);
+    const ex = src.paywalled
+      ? { text: extractStandfirst(page.body), title: null, method: "standfirst" }
+      : extractMainText(page.body, page.url);
+    const date = reconcileUrlDate(pagePublished(page.body, src.paywalled ? "" : ex.text) || e.lastmod || null, e.loc);
     log.sample ??= { link: e.loc, date, since };
     if (date && date < since) {
       log.skipped.old++;
@@ -157,8 +174,76 @@ async function checkPages(src, picked, { since, log, dropped }) {
       date,
       summary: null,
       src,
-      prefetched: { text: ex.text, extractMethod: ex.method },
+      prefetched: { text: ex.text, textSource: src.paywalled ? "standfirst" : "article", extractMethod: ex.method },
     });
+  }
+  return { log, candidates, dropped };
+}
+
+/**
+ * Federal Register of Legislation OData v4 + EPUB XHTML adapter (#12).
+ * Queries OPC's public REST API for newly registered Acts and Legislative
+ * Instruments, then fetches the static Explanatory Statement (or primary text)
+ * XHTML on www.legislation.gov.au (which is otherwise an Angular SPA shell).
+ */
+async function listLegislation(src, { since, known }) {
+  const queryUrl = buildLegislationQueryUrl({ apiBase: src.api || DEFAULT_LEGISLATION_API, since, top: 100 });
+  const log = { id: src.id, feed: queryUrl, method: "legislation", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const dropped = [];
+  if (!isAllowed((await robotsFor(queryUrl)).parsed, USER_AGENT, queryUrl)) {
+    return { log: { ...log, status: "robots-disallowed" }, candidates: [], dropped };
+  }
+  const res = await get(queryUrl);
+  if (!res.ok) return { log: { ...log, status: "api-unavailable" }, candidates: [], dropped };
+  const picked = parseLegislationTitles(res.body, {
+    webBase: src.homepage,
+    collections: src.collections,
+    include: src.include,
+    exclude: src.exclude,
+    since,
+    known,
+    idOf: idOfUrl,
+    limit: src.max_pages || DEFAULT_SITEMAP_PAGES,
+  });
+  if (!picked) return { log: { ...log, status: "api-unavailable" }, candidates: [], dropped };
+  log.feedItems = picked.length;
+
+  const candidates = [];
+  for (const entry of picked) {
+    const id = idOfUrl(entry.url);
+    if (!id) continue;
+    log.sample ??= { link: entry.url, date: entry.date, since };
+    log.inWindow++;
+    let bodyText = "";
+    let docFetched = false;
+    for (const docUrl of entry.docUrls) {
+      if (!isAllowed((await robotsFor(docUrl)).parsed, USER_AGENT, docUrl)) continue;
+      const docRes = await get(docUrl);
+      if (!docRes.ok) continue;
+      docFetched = true;
+      const ex = extractMainText(docRes.body, docRes.url);
+      if (ex.text) {
+        bodyText = ex.text;
+        break;
+      }
+    }
+    if (!docFetched && !isAiRelated(entry.title)) continue; // transient doc failure: retry next run
+    const fullText = formatLegislationText(entry, bodyText);
+    if ((!src.ai_specific && !isAiRelated(fullText)) || !passesMustMatch(src.must_match, fullText)) {
+      log.keywordDropped++;
+      dropped.push(id);
+      continue;
+    }
+    candidates.push({
+      id,
+      url: canonicalUrl(entry.url),
+      title: entry.title,
+      date: entry.date,
+      summary: null,
+      src,
+      prefetched: { text: fullText, textSource: "article", extractMethod: "legislation-epub" },
+    });
+    if (candidates.length >= MAX_ITEMS_PER_SOURCE) break;
   }
   return { log, candidates, dropped };
 }
@@ -241,7 +326,7 @@ async function listCitizenSpace(src, { since, known }) {
       date: i.date,
       summary: i.summary,
       src,
-      prefetched: { text: i.text, extractMethod: "citizen-space-v2.4" },
+      prefetched: { text: i.text, textSource: "article", extractMethod: "citizen-space-v2.4" },
     });
     if (candidates.length >= MAX_ITEMS_PER_SOURCE) break;
   }
@@ -253,6 +338,7 @@ async function listSource(src, { since, known }) {
   if (src.method === "sitemap") return listSitemap(src, { since, known });
   if (src.method === "listing") return listListing(src, { since, known });
   if (src.method === "citizen-space") return listCitizenSpace(src, { since, known });
+  if (src.method === "legislation") return listLegislation(src, { since, known });
   const log = { id: src.id, feed: null, status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
   const feed = await resolveFeed(src);
   if (!feed) return { log: { ...log, status: "no-feed" }, candidates: [] };
@@ -302,9 +388,9 @@ async function fetchCandidate(c) {
   let textSource = "feed";
   let extractMethod = null;
   if (c.prefetched) {
-    // Sitemap candidates were already fetched (to check the body for AI).
+    // Sitemap/listing/API candidates were already fetched in Phase A.
     text = c.prefetched.text || "";
-    textSource = "article";
+    textSource = c.prefetched.textSource || "article";
     extractMethod = c.prefetched.extractMethod;
   } else if (src.paywalled && text.length < 120 && isAllowed((await robotsFor(c.url)).parsed, USER_AGENT, c.url)) {
     // Paywalled: the page's standfirst (meta description) only — never body text.

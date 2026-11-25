@@ -159,6 +159,11 @@ test("dateFromUrl / reconcileUrlDate (#31)", async () => {
   assert.equal(dateFromUrl("https://www.commbank.com.au/articles/newsroom/2026/11/x.html"), "2026-11-01T00:00:00.000Z");
   assert.equal(dateFromUrl("https://www.anz.com.au/bluenotes/2026/November/ai-in-action-at-anz/"), "2026-11-01T00:00:00.000Z");
   assert.equal(dateFromUrl("https://www.anz.com.au/bluenotes/2026/sept/x/"), "2026-09-01T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://www.westpac.com.au/about-westpac/media/media-releases/2026/7-august/"), "2026-08-07T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://www.westpac.com.au/about-westpac/media/media-releases/2026/17-november1/"), "2026-11-17T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://aware.com.au/member/about-us/newsroom/october-2026/aware-super-puts-data-and-ai-at-the-core/"), "2026-10-01T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://auspaynet.com.au/insights/Payments-Monitor/November-2026"), "2026-11-01T00:00:00.000Z");
+  assert.equal(dateFromUrl("https://www.afr.com/companies/financial-services/story-20261125-p61gew"), "2026-11-25T00:00:00.000Z");
   assert.equal(dateFromUrl("https://asic.gov.au/news/2026-releases/x/"), null);
   assert.equal(dateFromUrl("https://x/2026/13/y/"), null);
   assert.equal(dateFromUrl("https://x/2026/news/y/"), null);

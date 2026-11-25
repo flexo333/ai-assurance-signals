@@ -70,7 +70,9 @@ export function extractPublished(html) {
     const meta = (sel) => document.querySelector(sel)?.getAttribute("content");
     const candidates = [
       meta('meta[property="article:published_time"]'),
+      meta('meta[name="publication-date"]'), // AICD AEM
       meta('meta[name="displayDate"]'), // ASIC: "25 November 2026"
+      meta('meta[name="display-date"]'), // AICD AEM
       meta('meta[name="dcterms.issued"]'),
       meta('meta[name="dcterms.date.created"]'), // ASIC: page created = release date
       meta('meta[name="DC.date.issued"]'),
@@ -99,7 +101,7 @@ export function extractPublished(html) {
 /** "25 November 2026" (as UTC midnight) or any Date.parse-able string → ISO, else null. */
 export function parseDateString(c) {
   if (!c) return null;
-  const m = String(c).trim().match(/^(\d{1,2}) ([A-Za-z]+) (\d{4})$/);
+  const m = String(c).trim().match(/^(\d{1,2}) ([A-Za-z]+),? (\d{4})$/);
   const t = m ? Date.parse(`${m[1]} ${m[2]} ${m[3]} 00:00:00 UTC`) : Date.parse(c);
   return Number.isNaN(t) ? null : new Date(t).toISOString();
 }
@@ -140,13 +142,14 @@ export function mainTextFallback(html) {
   }
 }
 
-const MONTHS_RE = "January|February|March|April|May|June|July|August|September|October|November|December";
+const MONTHS_RE = "January|February|March|April|May|June|July|August|September|Sept|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec";
 
 /** First "D Month YYYY" in the opening of the given text (visible page date), as ISO date. */
 export function firstVisibleDate(text, within = 1500) {
-  const m = String(text || "").slice(0, within).match(new RegExp(`\\b(\\d{1,2}) (${MONTHS_RE}) (20\\d{2})\\b`));
+  const m = String(text || "").slice(0, within).match(new RegExp(`\\b(\\d{1,2}) (${MONTHS_RE}),? (20\\d{2})\\b`));
   if (!m) return null;
-  const t = Date.parse(`${m[1]} ${m[2]} ${m[3]} 00:00:00 UTC`);
+  const normMonth = m[2] === "Sept" ? "Sep" : m[2];
+  const t = Date.parse(`${m[1]} ${normMonth} ${m[3]} 00:00:00 UTC`);
   return Number.isNaN(t) ? null : new Date(t).toISOString();
 }
 
@@ -157,10 +160,11 @@ export function firstVisibleDate(text, within = 1500) {
  */
 export function labelledDate(html) {
   const text = String(html || "").replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
-  const re = new RegExp(`\\b(?:Published|Release date|Date published|Date issued|Issued|Released|Date)\\s*:?\\s*(\\d{1,2}) (${MONTHS_RE}) (20\\d{2})\\b`, "i");
+  const re = new RegExp(`\\b(?:Published|Release date|Date published|Date issued|Issued|Released|Date)\\s*:?\\s*(\\d{1,2}) (${MONTHS_RE}),? (20\\d{2})\\b`, "i");
   const m = text.match(re);
   if (!m) return null;
-  const t = Date.parse(`${m[1]} ${m[2]} ${m[3]} 00:00:00 UTC`);
+  const normMonth = /^sept$/i.test(m[2]) ? "Sep" : m[2];
+  const t = Date.parse(`${m[1]} ${normMonth} ${m[3]} 00:00:00 UTC`);
   return Number.isNaN(t) ? null : new Date(t).toISOString();
 }
 

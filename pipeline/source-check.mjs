@@ -23,6 +23,7 @@ import {
   isAllowed,
 } from "./lib/feed-pure.js";
 import { parseCitizenSpaceItems } from "./lib/citizen-space.js";
+import { buildLegislationQueryUrl, parseLegislationTitles, DEFAULT_LEGISLATION_API } from "./lib/legislation.js";
 import { get, robotsFor, clearRobotsCache, USER_AGENT } from "./lib/http.js";
 
 export { USER_AGENT };
@@ -111,11 +112,65 @@ async function checkSource(src) {
     };
   }
 
+  if (src.method === "legislation") {
+    const cutoff = new Date(Date.now() - RECENT_DAYS * 864e5).toISOString();
+    const apiUrl = buildLegislationQueryUrl({ apiBase: src.api || DEFAULT_LEGISLATION_API, since: cutoff, top: 30 });
+    const robots = await robotsFor(apiUrl);
+    const allowed = isAllowed(robots.parsed, USER_AGENT, apiUrl);
+    const res = allowed ? await get(apiUrl) : null;
+    const items = res?.ok ? parseLegislationTitles(res.body, { webBase: src.homepage, collections: src.collections, include: src.include, exclude: src.exclude, limit: 30 }) : null;
+    const ok = Array.isArray(items);
+    const newest = ok ? newestItem(items) : null;
+    const feedEntry = {
+      url: apiUrl,
+      allowed,
+      status: res?.status ?? null,
+      error: res?.error,
+      isFeed: ok,
+      ...(ok ? {
+        type: "legislation",
+        items: items.length,
+        recent30d: items.length,
+        aiRecent30d: items.filter((i) => isAiRelated(i.title)).length,
+        newest: newest ? { title: newest.title, date: newest.date, link: newest.link } : null,
+      } : {}),
+    };
+    const status = ok
+      ? "ok"
+      : robots.parsed.state === "unreachable"
+        ? "robots-unreachable"
+        : !allowed
+          ? "robots-disallowed"
+          : res?.status
+            ? `http-${res.status}`
+            : `unreachable:${res?.error || "?"}`;
+    return {
+      id: src.id,
+      name: src.name,
+      authority: src.authority,
+      jurisdiction: src.jurisdiction,
+      paywalled: !!src.paywalled,
+      homepage: src.homepage,
+      robotsStatus: robots.status,
+      robotsState: robots.parsed.state,
+      homeAllowed: allowed,
+      homeStatus: res?.status ?? null,
+      homeError: res?.error,
+      discoveredFeeds: [],
+      sitemaps: robots.parsed.sitemaps,
+      feeds: [feedEntry],
+      recommended: { method: ok ? "legislation" : "none", status, feed: ok ? apiUrl : null },
+      checkedAt: new Date().toISOString(),
+    };
+  }
+
   const robots = await robotsFor(src.homepage);
   const homeAllowed = isAllowed(robots.parsed, USER_AGENT, src.homepage);
   const home = homeAllowed ? await get(src.homepage) : null;
-  const discovered = home?.ok ? discoverFeedLinks(home.body, home.url) : [];
-  const candidates = [...new Set([...(src.feeds || []), ...discovered])];
+  const discovered = src.discover !== false && home?.ok ? discoverFeedLinks(home.body, home.url) : [];
+  const candidates = src.method === "sitemap" || src.method === "listing"
+    ? []
+    : [...new Set([...(src.feed ? [src.feed] : []), ...(src.feeds || []), ...discovered])];
   const feeds = [];
   for (const url of candidates) feeds.push(await checkFeed(url));
   const working = feeds
@@ -129,9 +184,13 @@ async function checkSource(src) {
   if (working.length) [method, status] = [working[0].type === "atom" ? "atom" : "rss", "ok"];
   else if (robots.parsed.state === "unreachable") [method, status] = ["none", "robots-unreachable"];
   else if (!homeAllowed) [method, status] = ["none", "robots-disallowed"];
+  else if (src.method === "sitemap" && home?.ok) [method, status] = ["sitemap", "ok"];
+  else if (src.method === "listing" && home?.ok) [method, status] = ["listing", "ok"];
   else if (home?.ok && robots.parsed.sitemaps.length) [method, status] = ["sitemap", "needs-config"];
   else if (home?.ok) [method, status] = ["html-list", "needs-selector"];
   else [method, status] = ["none", home?.status ? `http-${home.status}` : `unreachable:${home?.error || "?"}`];
+
+  const recFeed = working[0]?.url || (status === "ok" && (src.method === "sitemap" || src.method === "listing") ? [].concat(src.sitemap || src.listing)[0] || null : null);
 
   return {
     id: src.id,
@@ -148,7 +207,7 @@ async function checkSource(src) {
     discoveredFeeds: discovered,
     sitemaps: robots.parsed.sitemaps,
     feeds,
-    recommended: { method, status, feed: working[0]?.url || null },
+    recommended: { method, status, feed: recFeed },
     checkedAt: new Date().toISOString(),
   };
 }
