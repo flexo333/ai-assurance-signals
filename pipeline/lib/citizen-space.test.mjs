@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { parseCsDate, cleanCsUrl, formatCitizenSpaceText, parseCitizenSpaceItems } from "./citizen-space.js";
+import { parseCsDate, cleanCsUrl, formatCitizenSpaceText, parseCitizenSpaceItems, parseCsBody } from "./citizen-space.js";
 import { verifyDate } from "./ground.js";
 
 test("parseCsDate parses Citizen Space YYYY/MM/DD and rejects invalid calendar dates", () => {
@@ -122,4 +122,43 @@ test("parseCitizenSpaceItems filters basic_form, applies exclude, dedupes merged
   assert.equal(items[1].status, "closed");
 
   assert.equal(parseCitizenSpaceItems("<!doctype html>"), null);
+});
+
+test("parseCitizenSpaceItems: the open response wins over a longer or stale archive copy (#36 review)", () => {
+  const link = "https://consultations.ag.gov.au/ai/adm-framework/consult_view";
+  const open = JSON.stringify([
+    { status: "open", startdate: "2026/11/10", enddate: "2026/12/20", title: "ADM framework", url: link, overview: "<p>Short AI text.</p>" },
+  ]);
+  const archive = JSON.stringify([
+    // Stale copy: longer overview, status already flipped/missing.
+    { status: "closed", startdate: "2026/11/10", enddate: "2026/12/20", title: "ADM framework", url: link, overview: "<p>A much longer overview of the automated decision-making framework and artificial intelligence.</p>" },
+    { startdate: "2026/09/01", title: "Archive-only consultation", url: "https://consultations.ag.gov.au/ai/old/consult_view" },
+  ]);
+  // Archive listed second; order of records must not matter either way.
+  for (const bodies of [[open, archive], [open, JSON.stringify(JSON.parse(archive).reverse())]]) {
+    const items = parseCitizenSpaceItems(bodies);
+    const adm = items.find((i) => i.title === "ADM framework");
+    assert.equal(adm.status, "open");
+    assert.equal(adm.fromArchive, false);
+    assert.match(adm.text, /^Closes 20 Dec 2026/);
+    assert.equal(items.find((i) => i.title === "Archive-only consultation").fromArchive, true);
+    assert.equal("rank" in adm, false);
+  }
+});
+
+test("parseCitizenSpaceItems keeps undated records as date: null (the collector skips them)", () => {
+  const items = parseCitizenSpaceItems([null, JSON.stringify([{ title: "No dates", url: "https://x.example/a/b" }])]);
+  assert.equal(items.length, 1);
+  assert.equal(items[0].date, null);
+  assert.equal(items[0].fromArchive, true);
+});
+
+test("parseCsBody returns the record array, or null for non-JSON / truncated / non-array bodies", () => {
+  assert.deepEqual(parseCsBody("[]"), []);
+  assert.deepEqual(parseCsBody('[{"a":1}]'), [{ a: 1 }]);
+  assert.equal(parseCsBody("<!doctype html><title>Access denied</title>"), null);
+  assert.equal(parseCsBody('[{"a":1'), null);
+  assert.equal(parseCsBody('{"a":1}'), null);
+  assert.equal(parseCsBody(""), null);
+  assert.equal(parseCsBody(undefined), null);
 });

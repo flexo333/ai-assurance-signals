@@ -8,7 +8,7 @@
 
 import { get, robotsFor, USER_AGENT } from "./lib/http.js";
 import { parseFeedItems, isAllowed, feedType, discoverFeedLinks, newestItem, parseSitemap, selectSitemapEntries, extractListingLinks, reconcileUrlDate } from "./lib/feed-pure.js";
-import { parseCitizenSpaceItems } from "./lib/citizen-space.js";
+import { parseCitizenSpaceItems, parseCsBody } from "./lib/citizen-space.js";
 import { isAiRelated, passesMustMatch } from "./lib/keywords.js";
 import { canonicalUrl, itemId, sha256, truncate } from "./lib/text-pure.js";
 import { extractMainText, extractStandfirst, extractTitle, pagePublished } from "./lib/extract.js";
@@ -177,20 +177,29 @@ async function listCitizenSpace(src, { since, known }) {
   const origin = new URL(src.api || src.homepage).origin;
   const openUrl = `${origin}/api/2.4/json_search_results?st=open`;
   const archiveUrl = `${origin}/api/2.4/json_search_results?fields=minimal`;
-  const log = { id: src.id, feed: openUrl, method: "citizen-space", status: "ok", feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0 }, sample: null };
+  const log = { id: src.id, feed: openUrl, method: "citizen-space", status: "ok", open: null, archive: null, feedItems: 0, inWindow: 0, keywordDropped: 0, collected: 0, skipped: { known: 0, old: 0, badUrl: 0, undated: 0 }, sample: null };
   const robots = await robotsFor(openUrl);
   if (!isAllowed(robots.parsed, USER_AGENT, openUrl)) {
     return { log: { ...log, status: "robots-disallowed" }, candidates: [] };
   }
+  // Each response's outcome is logged, so a failing archive (timeout, WAF page,
+  // truncated JSON) shows in the run summary instead of passing as "ok".
+  const outcome = (res) => (!res.ok ? (res.status ? `http-${res.status}` : `error:${res.error || "?"}`) : parseCsBody(res.body) ? "ok" : "invalid-json");
   const openRes = await get(openUrl);
-  const bodies = [];
-  if (openRes.ok) bodies.push(openRes.body);
-  if (!src.open_only && isAllowed(robots.parsed, USER_AGENT, archiveUrl)) {
+  log.open = outcome(openRes);
+  // The open response goes first: parseCitizenSpaceItems gives it priority.
+  const bodies = [openRes.ok ? openRes.body : null];
+  if (src.open_only) log.archive = "skipped";
+  else if (!isAllowed(robots.parsed, USER_AGENT, archiveUrl)) log.archive = "robots-disallowed";
+  else {
     const archiveRes = await get(archiveUrl);
+    log.archive = outcome(archiveRes);
     if (archiveRes.ok) bodies.push(archiveRes.body);
   }
   const parsed = parseCitizenSpaceItems(bodies, { baseUrl: origin, include: src.include, exclude: src.exclude });
-  if (!parsed) return { log: { ...log, status: "api-unavailable" }, candidates: [] };
+  if (!parsed) return { log: { ...log, status: `api-unavailable (open: ${log.open}, archive: ${log.archive})` }, candidates: [] };
+  if (log.open !== "ok") log.status = `partial (open: ${log.open})`;
+  else if (log.archive !== "ok" && log.archive !== "skipped") log.status = `partial (archive: ${log.archive})`;
   log.feedItems = parsed.length;
 
   const candidates = [];
@@ -208,7 +217,15 @@ async function listCitizenSpace(src, { since, known }) {
       log.skipped.known++;
       continue;
     }
-    if (i.date && i.date < since) {
+    // Every published Citizen Space consultation has a start date. A record
+    // without one (e.g. a sparse `fields=minimal` archive row) can't be placed
+    // in the window and would sort ahead of everything in runCollect, so it's
+    // skipped rather than collected as if new.
+    if (!i.date) {
+      log.skipped.undated++;
+      continue;
+    }
+    if (i.date < since) {
       log.skipped.old++;
       continue;
     }
