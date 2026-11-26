@@ -2,7 +2,12 @@
 // edition shows one card per story. Cheap heuristics, no API calls.
 // Tested by cluster.test.mjs.
 //
-// Two items are the same story when all of these hold:
+// Two items from one source are the same story when their original titles are
+// near-identical (title-word Jaccard >= SAME_SOURCE_TITLE_THRESHOLD, within
+// DATE_WINDOW_DAYS): a source that publishes one release on two pages, e.g.
+// APRA's "Deputy Chair's remarks" and "APRA publishes Deputy Chair's remarks".
+//
+// Otherwise two items are the same story when all of these hold:
 //   - different sources (one outlet's follow-ups stay separate)
 //   - published within DATE_WINDOW_DAYS of each other
 //   - their titles/headlines share at least one distinctive word (not a
@@ -24,6 +29,7 @@ export const AUTHORITY_RANK = { official: 0, standards: 1, lab: 2, research: 3, 
 
 export const SIMILARITY_THRESHOLD = 0.09;
 export const DATE_WINDOW_DAYS = 3;
+export const SAME_SOURCE_TITLE_THRESHOLD = 0.8;
 /** Ranking boost per extra independent source, capped. */
 export const SOURCE_BOOST = 0.05;
 export const SOURCE_BOOST_MAX = 0.15;
@@ -108,12 +114,13 @@ const dateOf = (i) => Date.parse(i.publishedAt || i.fetchedAt);
 const shares = (a, b) => [...a].some((t) => b.has(t));
 
 function features(item) {
-  return { item, toks: tokens(item), title: titleTokens(item), date: dateOf(item) };
+  return { item, toks: tokens(item), title: titleTokens(item), raw: tokenise(item.title || ""), date: dateOf(item) };
 }
 
 function similar(a, b, { threshold = SIMILARITY_THRESHOLD, windowDays = DATE_WINDOW_DAYS } = {}) {
-  if (a.item.sourceId && a.item.sourceId === b.item.sourceId) return false;
   if (Number.isFinite(a.date) && Number.isFinite(b.date) && Math.abs(a.date - b.date) > windowDays * 864e5) return false;
+  // One source, one release on two pages: near-identical original titles.
+  if (a.item.sourceId && a.item.sourceId === b.item.sourceId) return jaccard(a.raw, b.raw) >= SAME_SOURCE_TITLE_THRESHOLD;
   if (!shares(a.title, b.title)) return false;
   return jaccard(a.toks, b.toks) >= threshold;
 }

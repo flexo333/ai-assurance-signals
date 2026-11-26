@@ -5,7 +5,7 @@ import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
 // Pure pipeline module: the edition's sections and how items are placed in them.
-import { SECTIONS, sectionFor } from "../../../pipeline/lib/rank.js";
+import { SECTIONS, sectionFor, regulatorySectionFor } from "../../../pipeline/lib/rank.js";
 
 const ROOT = resolve(process.cwd(), "..");
 const DATA = join(ROOT, "data");
@@ -148,7 +148,7 @@ const REGULATOR_KINDS = new Set(["legislation", "regulation", "regulator-guidanc
 const DEPLOYMENT_KINDS = new Set(["deployment", "incident"]);
 
 export const FS_GROUPS = [
-  { id: "regulators", title: "Regulator moves" },
+  { id: "regulators", title: "Official & policy" },
   { id: "deployments", title: "Institution deployments & case studies" },
   { id: "news", title: "News & commentary" },
 ];
@@ -189,7 +189,11 @@ const sectorMap = (sources) => new Map((sources || []).filter((s) => s.sector).m
  */
 export function financialServicesStories(data) {
   const sectorOf = sectorMap(data.sources);
-  return storiesWhere((i) => isFinancialServices(i, sectorOf), data).map((s) => ({ ...s, group: fsGroupOf(s.lead) }));
+  return storiesWhere((i) => isFinancialServices(i, sectorOf), data)
+    // Regulation comes first (#48): official regulatory stories (APRA, ASIC
+    // guidance) live in their regulatory section, not here.
+    .filter((s) => !regulatorySectionFor(s.lead))
+    .map((s) => ({ ...s, group: fsGroupOf(s.lead) }));
 }
 
 // ── Sections (#46) ───────────────────────────────────────────────────────
@@ -211,11 +215,12 @@ export const SECTION_DESCRIPTION = {
 export const sectionHref = (id) => (id === "financial-services" ? "/financial-services/" : `/sections/${id}/`);
 
 /**
- * The section an item belongs to: the edition's placement rule, with the
- * site's fuller FS check (it also reads the source's sector from sources.yaml).
+ * The section an item belongs to: the edition's placement rule (regulation
+ * first, #48), with the site's fuller FS check (it also reads the source's
+ * sector from sources.yaml).
  */
 export const sectionOf = (item, sectorOf = new Map()) =>
-  isFinancialServices(item, sectorOf) ? "financial-services" : sectionFor(item);
+  regulatorySectionFor(item) ?? (isFinancialServices(item, sectorOf) ? "financial-services" : sectionFor(item));
 
 /**
  * Publishable stories in a section, newest first. A story is placed by its

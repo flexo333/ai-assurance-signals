@@ -75,9 +75,19 @@ test("sameStory: generic overlap without a shared distinctive headline word is n
   assert.ok(!sameStory(sandbox, gemini));
 });
 
-test("sameStory: same source, or more than 3 days apart, never merge", () => {
+test("sameStory: same source with different titles, or more than 3 days apart, never merge", () => {
   assert.ok(!sameStory(mandarin, { ...innovationaus, sourceId: mandarin.sourceId }));
   assert.ok(!sameStory(mandarin, { ...innovationaus, publishedAt: "2026-11-29T00:00:00Z" }));
+});
+
+test("sameStory: one source's release on two pages (near-identical titles) merges", () => {
+  const base = { status: "summarised", authority: "official", sourceId: "apra", publishedAt: "2026-11-20T00:00:00Z", summary: "" };
+  const a = { ...base, id: "a", title: "APRA Deputy Chair Therese McCarthy Hockey’s remarks to CISI’s The Regulators", headline: "APRA highlights AI operational risks and third-party dependencies" };
+  const b = { ...base, id: "b", title: "APRA publishes Deputy Chair Therese McCarthy Hockey’s remarks to CISI’s The Regulators", headline: "APRA highlights AI use in vulnerability patching and market risks" };
+  assert.ok(sameStory(a, b));
+  assert.ok(!sameStory(a, { ...b, publishedAt: "2026-11-27T00:00:00Z" }));
+  // A follow-up from the same source with a related but different title stays apart.
+  assert.ok(!sameStory(a, { ...b, title: "APRA Deputy Chair Therese McCarthy Hockey’s speech to the AFR Banking Summit" }));
 });
 
 test("compareLead: grounded, then authority, then significance, then earliest", () => {
