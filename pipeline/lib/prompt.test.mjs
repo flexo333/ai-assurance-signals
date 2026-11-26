@@ -97,6 +97,11 @@ test("orderModels: Flash Lite first (newest), then Flash; zero-quota families ex
   assert.deepEqual(orderModels([]), []);
 });
 
+test("orderModels drops retired models still advertised by models.list()", () => {
+  const raw = ["models/gemini-3.1-flash-lite", "models/gemini-2.5-flash-lite", "models/gemini-2.5-flash"].map((name) => ({ name, supportedActions: ["generateContent"] }));
+  assert.deepEqual(orderModels(raw), ["models/gemini-3.1-flash-lite", "models/gemini-2.5-flash"]);
+});
+
 test("Pacer spaces calls per model at its free-tier RPM", async () => {
   let t = 0;
   const slept = [];
