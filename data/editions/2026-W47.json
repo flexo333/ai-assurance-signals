@@ -6,31 +6,94 @@
   },
   "topSignals": [
     {
-      "id": "b05012a4ce828f7b",
-      "score": 2.903
+      "id": "09e9659a9776b0b0",
+      "score": 5.947
     },
     {
-      "id": "fd9bebbff7e69286",
-      "score": 2.792
+      "id": "0d020a4322edd640",
+      "score": 4.657
     },
     {
-      "id": "184d931227f2504d",
-      "score": 2.726
+      "id": "d564c93860391ee2",
+      "score": 4.657
     },
     {
-      "id": "67952d9a918d2536",
-      "score": 2.715
-    },
-    {
-      "id": "5088162f88268b25",
-      "score": 2.649
+      "id": "b82b64ef90f76e66",
+      "score": 3.759
     }
   ],
   "sections": [
     {
+      "id": "standards-frameworks",
+      "title": "Standards & Frameworks",
+      "items": [
+        {
+          "id": "0621364dccb49872",
+          "score": 3.492
+        },
+        {
+          "id": "d76142b9b5438b55",
+          "score": 3.492
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
       "id": "frontier-labs",
       "title": "Frontier Labs",
       "items": [
+        {
+          "id": "493d72a7cf8fa0d0",
+          "score": 3.056
+        },
+        {
+          "id": "9f5d12c1ff181023",
+          "score": 3.056
+        },
+        {
+          "id": "d4711e382aca4d65",
+          "score": 3.056
+        },
+        {
+          "id": "21b4758ab52123ac",
+          "score": 2.816,
+          "also": [
+            "b05012a4ce828f7b",
+            "4a4d3f5cda72f9a7",
+            "1fdded62130a4c73",
+            "ef056106bb80de6a",
+            "a19a6ed24601a023"
+          ]
+        },
+        {
+          "id": "8f6af8c44a4a1bfb",
+          "score": 2.769,
+          "also": [
+            "fd9bebbff7e69286"
+          ]
+        },
+        {
+          "id": "184d931227f2504d",
+          "score": 2.726
+        },
+        {
+          "id": "67952d9a918d2536",
+          "score": 2.715
+        },
+        {
+          "id": "9fe6d2ae73e55f52",
+          "score": 2.582,
+          "also": [
+            "ecc49d9c10140910"
+          ]
+        }
+      ],
+      "more": [
+        {
+          "id": "0e7f690aa4ff229b",
+          "score": 2.542
+        },
         {
           "id": "ca9ca0837de1673f",
           "score": 1.849
@@ -40,8 +103,24 @@
           "score": 1.81
         },
         {
+          "id": "68ddb817fe4001c0",
+          "score": 1.781
+        },
+        {
+          "id": "3277cf52dcd23547",
+          "score": 1.695
+        },
+        {
+          "id": "3b3be741a87f5e21",
+          "score": 1.695
+        },
+        {
           "id": "c1a2af93db54bfcf",
           "score": 1.685
+        },
+        {
+          "id": "2d7a5d6b20fff3cd",
+          "score": 1.67
         },
         {
           "id": "9342dbf934e428aa",
@@ -50,18 +129,79 @@
         {
           "id": "58da586369f33999",
           "score": 1.358
+        },
+        {
+          "id": "99be0c0a7e074380",
+          "score": 1.352
+        },
+        {
+          "id": "b43ef08ac3ed4f7a",
+          "score": 1.162
+        },
+        {
+          "id": "dd659f011024f04f",
+          "score": 0.859
+        },
+        {
+          "id": "a35f746f9333e719",
+          "score": 0.806
         }
       ],
-      "more": [],
-      "overflow": 0
+      "overflow": 14
     },
     {
       "id": "international",
       "title": "International",
       "items": [
         {
+          "id": "c10c08f1b073c5af",
+          "score": 3.401
+        },
+        {
           "id": "216c4d6c6fbf9bb8",
           "score": 1.66
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "financial-services",
+      "title": "Financial Services",
+      "items": [
+        {
+          "id": "cf75f32f4505fa1d",
+          "score": 4.46
+        },
+        {
+          "id": "a7d7135c6e8f0eee",
+          "score": 3.298
+        },
+        {
+          "id": "c0500e46a253d790",
+          "score": 3.028,
+          "also": [
+            "4fae191b246968dd"
+          ]
+        },
+        {
+          "id": "0a00866ad4a4b14b",
+          "score": 2.841,
+          "also": [
+            "b075ea35851eee57"
+          ]
+        },
+        {
+          "id": "d492dd0f71906ab6",
+          "score": 1.296
+        },
+        {
+          "id": "21e886491b30cfff",
+          "score": 0.98
+        },
+        {
+          "id": "88493000c790fc01",
+          "score": 0.69
         }
       ],
       "more": [],
@@ -72,6 +212,10 @@
       "title": "News & Commentary",
       "items": [
         {
+          "id": "5088162f88268b25",
+          "score": 2.649
+        },
+        {
           "id": "00d568ab8a7ecb1c",
           "score": 2.565
         },
@@ -80,44 +224,132 @@
           "score": 2.374
         },
         {
+          "id": "a3f85c109a811656",
+          "score": 2.372
+        },
+        {
           "id": "4210293b5b2c2862",
           "score": 2.341
         },
         {
-          "id": "b075ea35851eee57",
-          "score": 2.121
+          "id": "67e22515a9353872",
+          "score": 2.326
+        },
+        {
+          "id": "65615bb84a005a58",
+          "score": 2.155
         },
         {
           "id": "5244a10a0d9cbd96",
           "score": 2.114
+        }
+      ],
+      "more": [
+        {
+          "id": "4a83b8367d372a2b",
+          "score": 2.057
+        },
+        {
+          "id": "13a80552545fce74",
+          "score": 2.053
         },
         {
           "id": "2925ee4061a00fdf",
           "score": 2.051
         },
         {
+          "id": "0ee177b12835fc77",
+          "score": 2.046
+        },
+        {
           "id": "4a29e10db937e5ed",
           "score": 2.017
         },
         {
-          "id": "ef056106bb80de6a",
-          "score": 1.169
-        }
-      ],
-      "more": [
+          "id": "a43a8e25b8085213",
+          "score": 1.878
+        },
+        {
+          "id": "80dff5db976099b0",
+          "score": 1.547
+        },
+        {
+          "id": "61862b2ad09c7fd8",
+          "score": 1.437
+        },
+        {
+          "id": "0b49ab1c603c6f6c",
+          "score": 1.375
+        },
+        {
+          "id": "03f4b87bb41157f3",
+          "score": 1.313
+        },
+        {
+          "id": "17595d469f002cf0",
+          "score": 1.165
+        },
+        {
+          "id": "e4a23a95622a186b",
+          "score": 1.164
+        },
+        {
+          "id": "1a91fb5f517cdb65",
+          "score": 1.162
+        },
+        {
+          "id": "6d0384da4fcfb549",
+          "score": 1.051
+        },
+        {
+          "id": "7d5c9936a43f42f7",
+          "score": 0.884
+        },
+        {
+          "id": "791f3120886a6c09",
+          "score": 0.837
+        },
+        {
+          "id": "9817b1d7b68dc473",
+          "score": 0.821
+        },
+        {
+          "id": "9cbd10278ab57341",
+          "score": 0.802
+        },
+        {
+          "id": "babb5b589e7884f6",
+          "score": 0.802
+        },
+        {
+          "id": "f8b92f58f01df246",
+          "score": 0.796
+        },
         {
           "id": "c735cbd0f011a586",
           "score": 0.753
+        },
+        {
+          "id": "60ead72ff8d18f57",
+          "score": 0.737
+        },
+        {
+          "id": "37e5744bb4301db5",
+          "score": 0.628
+        },
+        {
+          "id": "6d3e244c1b251321",
+          "score": 0.474
         }
       ],
-      "overflow": 1
+      "overflow": 24
     }
   ],
   "counts": {
-    "candidates": 20,
-    "stories": 20,
-    "summarised": 18,
-    "headlineOnly": 2
+    "candidates": 78,
+    "stories": 69,
+    "summarised": 71,
+    "headlineOnly": 7
   },
   "publishedAt": "2026-11-20T04:17:00.000Z",
   "backfilled": true

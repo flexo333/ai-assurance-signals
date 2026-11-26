@@ -18,12 +18,8 @@
       "score": 3.39
     },
     {
-      "id": "5b69826eead48a96",
-      "score": 2.913
-    },
-    {
-      "id": "55cb0588b3e8436e",
-      "score": 2.627
+      "id": "c0744c0257c7293c",
+      "score": 2.976
     }
   ],
   "sections": [
@@ -56,6 +52,14 @@
       "title": "Frontier Labs",
       "items": [
         {
+          "id": "5b69826eead48a96",
+          "score": 2.913
+        },
+        {
+          "id": "55cb0588b3e8436e",
+          "score": 2.627
+        },
+        {
           "id": "6b6709b612e5913e",
           "score": 2.52
         }
@@ -77,9 +81,9 @@
     }
   ],
   "counts": {
-    "candidates": 9,
-    "stories": 9,
-    "summarised": 9,
+    "candidates": 10,
+    "stories": 10,
+    "summarised": 10,
     "headlineOnly": 0
   },
   "publishedAt": "2026-11-13T04:17:00.000Z",

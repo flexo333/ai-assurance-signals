@@ -1,0 +1,22 @@
+{
+  "id": "2026-W32",
+  "window": {
+    "from": "2026-07-31T04:17:00.000Z",
+    "to": "2026-08-07T04:17:00.000Z"
+  },
+  "topSignals": [
+    {
+      "id": "7c2d1cb5fe8cc278",
+      "score": 3.345
+    }
+  ],
+  "sections": [],
+  "counts": {
+    "candidates": 1,
+    "stories": 1,
+    "summarised": 1,
+    "headlineOnly": 0
+  },
+  "publishedAt": "2026-08-07T04:17:00.000Z",
+  "backfilled": true
+}

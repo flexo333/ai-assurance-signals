@@ -6,23 +6,52 @@
   },
   "topSignals": [
     {
+      "id": "024d2db8de557f9d",
+      "score": 3.482
+    },
+    {
+      "id": "9450d41a24dad971",
+      "score": 2.94
+    },
+    {
       "id": "fa5d36e43b3e02ac",
       "score": 2.892
-    },
-    {
-      "id": "5bd02a39074589ea",
-      "score": 2.877
-    },
-    {
-      "id": "59623d61a7aaaf73",
-      "score": 2.148
     }
   ],
-  "sections": [],
+  "sections": [
+    {
+      "id": "frontier-labs",
+      "title": "Frontier Labs",
+      "items": [
+        {
+          "id": "5bd02a39074589ea",
+          "score": 2.877
+        },
+        {
+          "id": "59623d61a7aaaf73",
+          "score": 2.148
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "financial-services",
+      "title": "Financial Services",
+      "items": [
+        {
+          "id": "1c9331eb126d7726",
+          "score": 2.653
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    }
+  ],
   "counts": {
-    "candidates": 3,
-    "stories": 3,
-    "summarised": 3,
+    "candidates": 6,
+    "stories": 6,
+    "summarised": 6,
     "headlineOnly": 0
   },
   "publishedAt": "2026-11-06T04:17:00.000Z",
