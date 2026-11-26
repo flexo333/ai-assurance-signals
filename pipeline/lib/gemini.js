@@ -18,6 +18,11 @@ export const PREFERRED_MODELS = [
 ];
 export const MODEL_CHAIN = PREFERRED_MODELS;
 
+// Retired models that models.list() still advertises with generateContent but
+// that answer 404 "no longer available" (2.5 Flash Lite, Nov 2026). Dropped
+// from the discovered chain so no run wastes a call finding out. Exact ids.
+export const RETIRED_MODELS = new Set(["models/gemini-2.5-flash-lite"]);
+
 const EXCLUDE = ["tts", "image", "audio", "live", "embedding", "thinking", "omni", "robotics", "transcribe", "banana", "native", "computer"];
 
 /** Free-tier requests per minute for a model id (used for per-model pacing). */
@@ -34,6 +39,7 @@ export function orderModels(rawModels) {
   const usable = (rawModels || [])
     .filter((m) => m && typeof m.name === "string" && (m.supportedActions || []).includes("generateContent"))
     .map((m) => m.name)
+    .filter((n) => !RETIRED_MODELS.has(n))
     .filter((n) => {
       const l = n.toLowerCase();
       return l.includes("gemini") && l.includes("flash") && !EXCLUDE.some((b) => l.includes(b));
