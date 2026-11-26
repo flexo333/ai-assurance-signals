@@ -1,0 +1,52 @@
+{
+  "id": "d76142b9b5438b55",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/blog/pretraining-data-filtering-in-open-weight-biological-models",
+  "title": "Pretraining data filtering in open-weight biological models",
+  "publishedAt": "2026-11-17T10:30:35.411Z",
+  "fetchedAt": "2026-11-26T02:26:51.674Z",
+  "status": "summarised",
+  "headline": "UK AISI research on pretraining data filtering for biological AI models",
+  "summary": "The UK AI Security Institute (AISI) investigated whether filtering pretraining data can effectively suppress dual-use capabilities in open-weight protein language models. Findings indicate that while filtering successfully degrades targeted capabilities without impacting general performance, the effect is not a robust safeguard. The suppressed capabilities can be restored at a low cost through fine-tuning, suggesting that data filtering must be combined with other measures like access controls.",
+  "why_it_matters": "Organisations developing or deploying specialised scientific AI models cannot rely on pretraining data filtering alone to mitigate safety risks, as the low cost of capability recovery necessitates additional security layers such as data access controls.",
+  "quotes": [
+    {
+      "text": "Our findings show that data filtering can suppress a targeted capability in protein language models, without significantly impacting adjacent capabilities. However, it does not constitute a robust safeguard on its own",
+      "supports": "summary"
+    },
+    {
+      "text": "A durable approach is therefore likely to require additional measures alongside data filtering, including improved access controls for scientific models, or the biological data required to train them.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides empirical evidence on the limitations of a commonly proposed safety technique for open-weight models, relevant for AI assurance frameworks.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "67f6924f634a184bfe4142383425d4be5a5c22935640d610753178204d65bb53",
+    "textChars": 8970,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:30:17.303Z",
+    "attempts": 1
+  }
+}

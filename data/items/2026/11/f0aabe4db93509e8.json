@@ -1,0 +1,23 @@
+{
+  "id": "f0aabe4db93509e8",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/business-intelligence/ion-cuts-the-computing-storage-and-ai-cost-of-video-edits-by-99-in-aws-funded-proof-of-concept",
+  "title": "ION cuts the computing, storage and AI cost of video edits by 99% in AWS-funded proof of concept",
+  "publishedAt": "2026-11-18T03:22:12.437Z",
+  "fetchedAt": "2026-11-26T02:26:51.209Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c1d8c8ca2e007c32b9530209e80657291051451886b3f7e39834e8a5d758098f",
+    "textChars": 4885,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:28:05.021Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "65615bb84a005a58",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-research/google-threat-intelligence-finds-ai-powered-cyber-attacks-have-crossed-a-significant-threshold",
+  "title": "Google threat intelligence finds AI-powered cyber attacks have crossed a “significant threshold”",
+  "publishedAt": "2026-11-18T00:10:32.621Z",
+  "fetchedAt": "2026-11-26T02:26:51.415Z",
+  "status": "summarised",
+  "headline": "Google Threat Intelligence reports rise in autonomous, AI-powered cyber attacks",
+  "summary": "Google Threat Intelligence Group and Mandiant report that cyber attackers are increasingly using autonomous, multi-agent frameworks to conduct attacks at machine speed. These frameworks automate vulnerability discovery and exploitation, significantly compressing the time required to move from initial access to full system control. The research highlights a shift from human-led prompting to self-directed attack chains that can reverse-engineer security patches without human intervention.",
+  "why_it_matters": "Organisations face an urgent need to accelerate patch management cycles and secure AI-specific infrastructure, such as coding-assistant configurations and API keys, to defend against automated, high-velocity threats.",
+  "quotes": [
+    {
+      "text": "Cyber attackers have moved from experimenting with AI to running autonomous, self-directed attack frameworks that operate at “machine speed,” according to new research from the Google Threat Intelligence Group (GTIG) and Mandiant.",
+      "supports": "summary"
+    },
+    {
+      "text": "Enterprises are going to be under enormous pressure to speed up their patch cycles in the near future, and may even have to make some hard choices to keep up.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "The report identifies a critical shift in the threat landscape that necessitates immediate changes to enterprise security and patch management governance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "925a3a1afc88abfc8b1294a1e440dba13edb0f8ae3c173171e7f0c040721a758",
+    "textChars": 3885,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:28:20.279Z",
+    "attempts": 1
+  }
+}

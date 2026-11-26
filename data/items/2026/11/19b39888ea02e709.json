@@ -9,15 +9,46 @@
   "title": "Trump had 4 reasons to ‘convince’ Nvidia to rehire Jensen Huang. Here’s why it matters globally",
   "publishedAt": "2026-11-24T04:57:18.000Z",
   "fetchedAt": "2026-11-25T03:10:59.683Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "Nvidia reinstates CEO Jensen Huang following US government intervention",
+  "summary": "Nvidia has rehired Jensen Huang as CEO shortly after his resignation, following direct intervention from US President Donald Trump. The company's board cited input from senior levels of the US government as a factor in the decision. The move follows significant market volatility and concerns regarding Nvidia's 'circular financing' arrangements with AI firms and data centre providers.",
+  "why_it_matters": "The reinstatement of a leader who prioritises aggressive AI expansion over safety concerns, supported by government intervention, signals a continued focus on rapid industry growth that may influence global AI investment and data centre development trajectories.",
+  "quotes": [
+    {
+      "text": "The company’s board said its unexpected, unanimous decision came after “input from senior levels of the United States government”.",
+      "supports": "summary"
+    },
+    {
+      "text": "Huang has been the world’s best known salesman of AI. Now that he’s back as CEO, his incentives – like Trump’s – are the same as before his resignation. Hype up AI’s future, shut down criticism of it and keep the circular finance flowing.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "other",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The intervention highlights the entanglement of government policy with AI industry leadership and financing models, which impacts global AI market stability and risk profiles.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "5307a7b7c24f4508404a1aa180a0c28277e9f1bc450c2f5d1958482bc4efac0b",
     "textChars": 6142,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:15:24.650Z",
-    "attempts": 1
+    "analysedAt": "2026-11-26T02:27:27.442Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

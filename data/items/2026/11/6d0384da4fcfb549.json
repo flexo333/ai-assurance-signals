@@ -1,0 +1,53 @@
+{
+  "id": "6d0384da4fcfb549",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/who-is-responsible-when-the-ai-is-wrong-why-legal-duty-does-not-equal-technical-visibility",
+  "title": "Who is responsible when the AI is wrong? Why legal duty does not equal technical visibility",
+  "publishedAt": "2026-11-17T16:16:36.449Z",
+  "fetchedAt": "2026-11-26T02:26:51.674Z",
+  "status": "summarised",
+  "headline": "The gap between legal responsibility and technical visibility in AI systems",
+  "summary": "When AI-assisted decisions are challenged, organizations face a disconnect between who holds legal duty and who possesses the technical evidence to reconstruct how a decision was made. Because AI outcomes emerge from complex supply chains involving multiple vendors, models, and data sources, critical configuration and version records are often missing.",
+  "why_it_matters": "Organizations deploying AI must implement robust vendor management and logging practices to capture model versions, prompts, and configurations, otherwise they cannot meet their accountability obligations when outcomes are contested.",
+  "quotes": [
+    {
+      "text": "The organization that must explain a decision often does not hold the evidence it needs to do so.",
+      "supports": "summary"
+    },
+    {
+      "text": "Without version records and change logs, it can be impossible to say which configuration produced a contested outcome.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Highlights a critical operational and governance challenge regarding accountability and auditability in complex AI supply chains.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0b51bcbea9514e6076e3e8475fd88b629e5842ced4c2629e2f40397b162decb7",
+    "textChars": 1897,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:29:49.004Z",
+    "attempts": 1
+  }
+}

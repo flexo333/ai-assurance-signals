@@ -1,0 +1,53 @@
+{
+  "id": "60ead72ff8d18f57",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/ai-legal-ethics-responsibility-tracker",
+  "title": "AI Legal Ethics and Responsibilities Tracker",
+  "publishedAt": "2026-11-17T13:10:56.402Z",
+  "fetchedAt": "2026-11-26T02:26:51.674Z",
+  "status": "summarised",
+  "headline": "IAPP launches AI Legal Ethics and Responsibilities Tracker",
+  "summary": "The International Association of Privacy Professionals has released a tracker consolidating guidance, orders, and rules from bar associations and courts regarding AI in legal services. The resource documents key recommendations, emerging legal standards, risks, and professional obligations associated with AI use in legal practices and proceedings. It highlights how the duty of competence increasingly extends to the use of artificial intelligence.",
+  "why_it_matters": "Legal and compliance professionals must account for how professional duties of competence now extend to AI adoption as courts and bar associations establish formal rules for AI-generated evidence and practice.",
+  "quotes": [
+    {
+      "text": "The AI Legal Ethics and Responsibilities Tracker consolidates these emerging guidelines, orders and rules, identifying the risks with AI use as well as documenting key recommendations and emerging legal standards and obligations.",
+      "supports": "summary"
+    },
+    {
+      "text": "As the duty of competence may extend to the use of AI, the professional obligations brought about by AI must be addressed.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "It provides a useful jurisdictional reference for legal ethics and AI rules, though it is a tracker resource rather than binding regulation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "698ab1f9a7645383156d769fd4aa3da2212dc00f6e5e7930bc002f9d4c825ae8",
+    "textChars": 1864,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:29:53.922Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "718b13178753e59d",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/cloud/dropbox-launches-protect-in-australia-to-help-businesses-strengthen-content-governance-as-ai-adoption-grows",
+  "title": "Dropbox Launches Protect in Australia to Help Businesses Strengthen Content Governance as AI Adoption Grows",
+  "publishedAt": "2026-11-26T01:33:58.415Z",
+  "fetchedAt": "2026-11-26T02:26:50.654Z",
+  "status": "summarised",
+  "headline": "Dropbox Launches Content Governance Tool for AI Risk Management in Australia",
+  "summary": "Dropbox has launched 'Dropbox Protect' in Australia, a tool designed to provide centralised visibility and control over content access across Dropbox, Google Drive, and Microsoft 365. The platform includes a Content Access Risk Dashboard that specifically identifies content exposure risks relevant to AI assistant rollouts. It aims to help organisations manage permissions and reduce the risk of sensitive information being accessed by AI tools.",
+  "why_it_matters": "As organisations deploy AI assistants, they must ensure that existing cloud permissions do not inadvertently expose sensitive data to these models, making automated access governance tools critical for maintaining security posture.",
+  "quotes": [
+    {
+      "text": "The Australian launch includes a new Content Access Risk Dashboard and AI exposure visibility , helping organisations identify where sensitive content may be overly accessible, prioritise potential risks and take action as they introduce AI assistant rollouts.",
+      "supports": "summary"
+    },
+    {
+      "text": "As AI assistants make information easier to discover and use, these capabilities help organisations strengthen the underlying access controls that govern what content can be surfaced.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "This is a product launch providing specific tooling for AI-related data governance, which assists organisations in managing operational risks associated with AI adoption.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2bf85c8ca706ddd2d1d053981c81fa49ca7443fe02163817b4dc89b66d06a65d",
+    "textChars": 6565,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:27:34.834Z",
+    "attempts": 1
+  }
+}

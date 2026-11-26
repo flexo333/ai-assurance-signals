@@ -1,0 +1,51 @@
+{
+  "id": "3277cf52dcd23547",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/research/claude-black-hole-physics",
+  "title": "Claude Fable 5.2 solves two open problems in the physics of black holes",
+  "publishedAt": "2026-11-17T00:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:52.045Z",
+  "status": "summarised",
+  "headline": "Anthropic reports AI agents solved two open problems in theoretical physics",
+  "summary": "Anthropic researchers used Claude Fable 5.2 to solve two long-standing problems in theoretical physics concerning black holes and quantum gravity. The AI agents operated as a research group, independently calculating complex mathematical proofs and verifying results against known literature. These findings were subsequently verified using Lean, a computerized proof checker.",
+  "why_it_matters": "The use of autonomous AI agents to perform complex, verifiable scientific research demonstrates an emerging capability for AI to contribute to rigorous, high-stakes technical assurance and mathematical proof-checking.",
+  "quotes": [
+    {
+      "text": "Claude did it by running a small research group of copies of itself, in which it worked out almost every piece of the calculation independently and checked its math against known results.",
+      "supports": "summary"
+    },
+    {
+      "text": "In September, the results were formally verified in Lean, a computerized proof checker. Claude then wrote the paper with minimal guidance, and a physicist checked every main result.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Demonstrates advanced autonomous reasoning and formal verification capabilities in AI, relevant to the future of automated assurance and scientific research.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "bb2d47b0042b43509c4efb7f3631e558e6c2344224fb802ab2c49e1c463d2443",
+    "textChars": 19997,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:32:38.445Z",
+    "attempts": 1
+  }
+}

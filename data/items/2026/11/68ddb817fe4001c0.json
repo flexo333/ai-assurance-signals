@@ -1,0 +1,51 @@
+{
+  "id": "68ddb817fe4001c0",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/advancing-chip-design-with-our-models",
+  "title": "Advancing chip design with OpenAI models",
+  "publishedAt": "2026-11-18T00:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:52.806Z",
+  "status": "summarised",
+  "headline": "OpenAI reports AI-assisted chip design improvements in production hardware",
+  "summary": "OpenAI has demonstrated the use of its frontier models to optimize chip design, achieving performance, power, and area (PPA) improvements in its custom Jalapeño chip and AMD hardware. The company utilized its models to rewrite SystemVerilog RTL code, which was subsequently verified using Synopsys electronic design automation tools. These optimizations have been integrated into production design files for future hardware versions.",
+  "why_it_matters": "The integration of AI models into critical hardware engineering workflows requires rigorous verification processes, such as the use of established EDA tools, to ensure that automated code rewrites maintain functional integrity and performance specifications.",
+  "quotes": [
+    {
+      "text": "It used Synopsys tools to verify that each rewrite preserved the block’s behavior and to evaluate the trade-offs in power, performance, and area.",
+      "supports": "summary"
+    },
+    {
+      "text": "To ground model development in trusted evaluators and broaden the design challenges addressed , we’re partnering with Synopsys to train GPT‑Synopsys",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Demonstrates a specific, high-stakes application of AI in hardware engineering with integrated verification controls.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d0589aca257addfe396919ad3dcc810d1dabce2aee079da2ce4256bee22d2447",
+    "textChars": 7320,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:28:49.286Z",
+    "attempts": 2
+  }
+}

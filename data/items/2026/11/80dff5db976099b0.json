@@ -1,0 +1,53 @@
+{
+  "id": "80dff5db976099b0",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/new-data-shows-australia-is-one-of-figma-s-most-collaborative-and-ai-forward-markets-signalling-an-advantage-in-the-ai-era",
+  "title": "New data shows Australia is one of Figma’s most collaborative and AI-forward markets—signalling an advantage in the AI era",
+  "publishedAt": "2026-11-17T02:50:09.103Z",
+  "fetchedAt": "2026-11-26T02:26:52.029Z",
+  "status": "summarised",
+  "headline": "Survey highlights AI quality and oversight risks in Australian organisations",
+  "summary": "A YouGov survey commissioned by Figma reveals that while Australian organisations have increased output volume through generative AI, they face significant challenges regarding quality control and output review. The research indicates that over one in four respondents report their organisation shares AI-generated work with stakeholders without prior verification. This trend persists despite a strong consensus among workers and executives that human judgment is essential for maintaining customer trust.",
+  "why_it_matters": "The findings highlight a critical governance gap in Australian workplaces where the speed of AI adoption is outpacing the implementation of necessary human-in-the-loop verification processes, posing risks to quality and trust.",
+  "quotes": [
+    {
+      "text": "More than one in four respondents (27% of professionals, 28% of senior decision-makers) say their organisation shares AI-generated work with customers and internal stakeholders without checking it first",
+      "supports": "summary"
+    },
+    {
+      "text": "The findings underline that when speed of creation is no longer the constraint, human taste, curation, and critical judgement become the primary competitive moat.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "other",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "The report identifies a widespread operational risk regarding the lack of human verification for AI-generated content in Australian businesses.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "05b9bf0cbbbf0baa2de9c24492303a95f31d0f024e2836641c49e5dceea0386a",
+    "textChars": 4500,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:32:25.181Z",
+    "attempts": 1
+  }
+}

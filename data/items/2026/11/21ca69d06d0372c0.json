@@ -1,0 +1,23 @@
+{
+  "id": "21ca69d06d0372c0",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/exabeam-advances-exabeam-sherpa-into-ai-guided-partner-operating-system",
+  "title": "Exabeam Advances Exabeam Sherpa into AI-Guided Partner Operating System",
+  "publishedAt": "2026-11-18T00:13:47.218Z",
+  "fetchedAt": "2026-11-26T02:26:50.828Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e3775c4ba4adedd6fa03d795d1a4804f4cafa61f2b50ab72b1e6f48c2f5c0df4",
+    "textChars": 4662,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:28:14.571Z",
+    "attempts": 1
+  }
+}

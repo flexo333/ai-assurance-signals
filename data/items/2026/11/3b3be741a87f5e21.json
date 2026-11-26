@@ -1,0 +1,56 @@
+{
+  "id": "3b3be741a87f5e21",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-openai-for-chile",
+  "title": "Introducing OpenAI for Chile",
+  "publishedAt": "2026-11-17T00:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:54.114Z",
+  "status": "summarised",
+  "headline": "OpenAI partners with Chilean government to support public sector AI adoption",
+  "summary": "OpenAI has entered a Memorandum of Understanding with the Chilean Ministry of Science, Technology, Knowledge and Innovation to support responsible AI adoption in public administration. The partnership focuses on AI literacy and upskilling for civil servants, including training on checking outputs and maintaining human oversight. A joint task force will be established to define priorities, workplans, and measures of success for these initiatives.",
+  "why_it_matters": "This partnership highlights a model for government-lab collaboration that prioritises institutional AI literacy and the implementation of safeguards for privacy and human oversight in public sector AI deployment.",
+  "quotes": [
+    {
+      "text": "The partnership will explore technology adoption in the ministry’s administrative processes, including potential support from OpenAI on adopting new models, alongside advice and training for ministry personnel.",
+      "supports": "summary"
+    },
+    {
+      "text": "Activities could include workshops and a train-the-trainer approach, covering effective use of AI tools, checking outputs, protecting sensitive information and maintaining human oversight.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "Activities will be subject to appropriate safeguards for privacy, information security and responsible use.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Demonstrates a framework for public sector AI capacity building and governance, relevant to Australian government agencies exploring similar partnerships.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "649a50f3ebd71cb4b4d109987d2263a5842f143df9864157e5b757a43a41d7d2",
+    "textChars": 3575,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:33:47.733Z",
+    "attempts": 1
+  }
+}

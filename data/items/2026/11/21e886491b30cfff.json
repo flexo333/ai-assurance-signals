@@ -1,0 +1,53 @@
+{
+  "id": "21e886491b30cfff",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+  "title": "More ways to move care forward with ChatGPT for Healthcare",
+  "publishedAt": "2026-11-16T06:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:59.347Z",
+  "status": "summarised",
+  "headline": "OpenAI announces healthcare AI tools with access controls and audit logs",
+  "summary": "OpenAI has introduced new healthcare-focused AI features, including computer-use agents capable of multi-step tasks across clinical software, updated clinical search, and developer configurations. The platform includes access controls, audit logs, and Business Associate Agreements to support HIPAA compliance. Several healthcare organizations, including Cigna Healthcare and CVS Health, are deploying these agents.",
+  "why_it_matters": "Organisations deploying AI agents in clinical and administrative workflows must establish clear controls, audit logs, and human review steps to manage operational and regulatory risks.",
+  "quotes": [
+    {
+      "text": "Today, we’re sharing advances in computer-use agents for healthcare, including more capable, safe, and affordable models for clinical and administrative workflows, and access controls and audit logs for secure deployments.",
+      "supports": "summary"
+    },
+    {
+      "text": "Healthcare organizations can start with a workflow that spans existing applications, set which applications agents can access, and establish clear controls for which steps require human review.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Product launch introducing healthcare-specific AI agent capabilities and controls, relevant for health insurers and providers.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "fefc7782e3c1e4392b2f8564b290b7e8684f8caabb0248b5f80f6fc88dd2d92e",
+    "textChars": 8393,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:34:38.437Z",
+    "attempts": 1
+  }
+}

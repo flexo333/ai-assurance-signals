@@ -1,0 +1,24 @@
+{
+  "id": "1670ed42e35f3526",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/banks-launch-campaign-to-support-australians-facing-financial-hardship",
+  "title": "Banks launch campaign to support Australians facing financial hardship",
+  "publishedAt": "2026-11-16T19:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:52.806Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0842196e067222e38889cfbd74dfba78579cd4046e5a19937fdccc89118022af",
+    "textChars": 1690,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:33:53.730Z",
+    "attempts": 1
+  }
+}

@@ -9,15 +9,46 @@
   "title": "SAS named a Leader in IDC MarketScape for Asia/Pacific Sovereign AI Platform",
   "publishedAt": "2026-11-24T01:40:20.771Z",
   "fetchedAt": "2026-11-25T03:10:59.842Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "SAS positioned as a leader in IDC MarketScape for Asia/Pacific Sovereign AI Platform",
+  "summary": "SAS has been identified as a leader in the IDC MarketScape for Asia/Pacific Sovereign AI Platforms, reflecting a shift in market focus from policy to procurement. The SAS Viya platform provides governance features including model cards, lineage tracking, and explainability to assist organisations in maintaining control over data and models within regional boundaries. The platform supports various deployment architectures and extends governance to external foundation models used in AI agents.",
+  "why_it_matters": "For Australian organisations in regulated sectors, this highlights the increasing importance of selecting AI platforms that embed audit-ready governance and lineage tracking to meet emerging sovereign and regulatory requirements.",
+  "quotes": [
+    {
+      "text": "Governance is designed into the platform rather than added on. It includes unified policy management, automated data discovery and classification, granular access controls, and end-to-end lineage tracking, which, together, give customers audit-ready control over sovereign AI data and models.",
+      "supports": "summary"
+    },
+    {
+      "text": "In these sectors, the company's long analytics heritage and governance capabilities align with buyer requirements shaped by emerging sovereignty and AI regulations across the region.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "other",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "This is a vendor assessment report that highlights industry trends towards sovereign AI procurement and the integration of governance features in AI platforms.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "369eb5a004c387c954f96d296c56d3938454e956355af1f1983909fafe98a916",
     "textChars": 5499,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:15:38.712Z",
-    "attempts": 1
+    "analysedAt": "2026-11-26T02:27:30.879Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

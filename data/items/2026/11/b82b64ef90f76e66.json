@@ -1,0 +1,57 @@
+{
+  "id": "b82b64ef90f76e66",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/revolut",
+  "title": "How Revolut raises ambition without lowering the bar",
+  "publishedAt": "2026-11-16T09:30:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:58.130Z",
+  "status": "summarised",
+  "headline": "Revolut deploys AI agents for financial crime screening and software engineering",
+  "summary": "Revolut has integrated OpenAI models into its operations to automate financial crime investigations and software development tasks. The company uses a FinCrime agent to screen transactions and Codex to assist engineers with code generation and review. These deployments aim to manage increasing transaction volumes and development demands without scaling headcount proportionally.",
+  "why_it_matters": "Revolut’s approach demonstrates that delegating operational tasks to AI requires a robust governance framework where human accountability remains central to code review and security decision-making.",
+  "quotes": [
+    {
+      "text": "That’s why one of Revolut’s largest AI applications is a FinCrime agent powered by OpenAI models.",
+      "supports": "summary"
+    },
+    {
+      "text": "Every developer is responsible for the code they produce, and we don’t blindly trust AI",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "You earn real confidence in AI by making thoughtful decisions upfront and testing as you go.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 4,
+    "significance_reason": "This is a high-scale production deployment of AI in a regulated financial services environment, specifically addressing critical financial crime and security workflows.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ff432367011595796ce833c27cc1b5fec534b35480f88a43fec80c1070cf31c2",
+    "textChars": 10396,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:34:17.372Z",
+    "attempts": 2
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "03f4b87bb41157f3",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-people-news/education/atturras-scholarion-goes-gold-as-a-sydney-lunch-discusses-whether-ai-can-teach",
+  "title": "Atturra's Scholarion goes Gold, as a Sydney lunch discusses whether AI can teach",
+  "publishedAt": "2026-11-17T02:15:11.021Z",
+  "fetchedAt": "2026-11-26T02:26:52.469Z",
+  "status": "summarised",
+  "headline": "Atturra discusses AI governance and student data risks in education sector",
+  "summary": "Atturra has reached a 'Gold' milestone for its Scholarion student information system, which incorporates Microsoft Dynamics 365 and Copilot. During a recent industry discussion, experts debated the role of AI in teaching, the risks of algorithmic bias, and the necessity of robust governance for student data. The discussion highlighted concerns regarding the administrative burden on teachers and the security of sensitive educational information.",
+  "why_it_matters": "Educational institutions and their technology providers are facing increased pressure to implement rigorous AI governance and data security frameworks to protect student information and ensure pedagogical integrity.",
+  "quotes": [
+    {
+      "text": "If ungoverned, AI has the potential to be even more damaging to children's cognitive development and learning than social media has been. If well governed, it will be a boon",
+      "supports": "summary"
+    },
+    {
+      "text": "Boards are now \"much more responsible for the safeguarding of that data,\" Auton said, which is leading schools to ask about their third-party risk and to prefer \"a single place that we manage and in a more trusted set of hands.\"",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-12-10",
+      "what": "Privacy Act requirements for automated decisions",
+      "quote": "From 10 December 2026 , organisations covered by the Privacy Act that use personal information in automated decisions that could significantly affect people's rights or interests must explain that in their privacy policies."
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "The article highlights emerging governance challenges and regulatory expectations for AI in the Australian education sector, including upcoming privacy obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ac96a22a1c8719ed840628092220dad4c50b76cd3bd3dc55c11628031de7d3c0",
+    "textChars": 20000,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:32:30.313Z",
+    "attempts": 1
+  }
+}

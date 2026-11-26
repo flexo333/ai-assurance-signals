@@ -1,0 +1,52 @@
+{
+  "id": "1fdded62130a4c73",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/commvault-links-protected-enterprise-data-to-nvidia-and-databricks-and-teams-with-zscaler-on-ai-security",
+  "title": "Commvault links protected enterprise data to NVIDIA and Databricks and teams with Zscaler on AI security",
+  "publishedAt": "2026-11-16T05:16:43.886Z",
+  "fetchedAt": "2026-11-26T02:26:58.189Z",
+  "status": "summarised",
+  "headline": "Commvault expands AI data governance and security via NVIDIA, Databricks and Zscaler",
+  "summary": "Commvault has announced collaborations with NVIDIA and Databricks to integrate protected enterprise data into AI workflows while retaining governance and context. Additionally, a partnership with Zscaler aims to provide AI visibility, runtime policy enforcement, and recovery capabilities following security incidents.",
+  "why_it_matters": "Organisations must ensure that enterprise data pipelines preserve governance, ownership, and lineage when feeding generative AI models and autonomous agents.",
+  "quotes": [
+    {
+      "text": "Commvault Data Activate is central to the NVIDIA and Databricks initiatives. It is intended to prepare data already managed by Commvault for additional uses while retaining the business context and governance associated with it.",
+      "supports": "summary"
+    },
+    {
+      "text": "The planned solution will carry forward source details, ownership, access permissions and lineage, while preserving retention and recoverability.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Vendor product integrations and partnerships that incorporate governance features into data pipelines for AI, without altering direct legal or regulatory obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0057b66817d46c85c228e54167536e51336ce621785a4d5974f58b114c7871f7",
+    "textChars": 3585,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:34:46.888Z",
+    "attempts": 2
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "0a00866ad4a4b14b",
+  "sourceId": "anz",
+  "sourceName": "ANZ (Newsroom & Bluenotes)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://anz.com.au/bluenotes/2026/November/leading-in-the-new-world-of-risk",
+  "title": "Leading in the new world of risk",
+  "publishedAt": "2026-11-19T00:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:50.191Z",
+  "status": "summarised",
+  "headline": "ANZ Group CRO on AI risk management and governance",
+  "summary": "ANZ Group Chief Risk Officer Christine Palmer outlines the evolving role of risk leadership in the context of AI adoption and increasing cyber threats. The article highlights that while AI offers productivity and analytical benefits, it simultaneously empowers criminals, necessitating a focus on defensive capabilities and human accountability. ANZ emphasises that as AI systems become more autonomous, governance frameworks must ensure that responsibility for system outcomes remains with humans.",
+  "why_it_matters": "For Australian financial institutions, this highlights a shift toward integrating AI risk management into enterprise-wide governance, where human oversight and resilience are prioritised over mere speed of adoption to maintain regulatory and customer trust.",
+  "quotes": [
+    {
+      "text": "Agentic AI raises the stakes further because systems may move beyond generating recommendations to initiating actions or interacting with other systems with varying degrees of autonomy. Accountability for the outcomes of those systems must remain unequivocally human.",
+      "supports": "summary"
+    },
+    {
+      "text": "As businesses begin widespread adoption of AI, governance also needs to adapt. The organisations that succeed won't necessarily be those that adopt AI fastest. It will be those that can make most of the changes this brings while maintaining the trust of customers, boards and regulators.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Provides clear strategic guidance from a major Australian bank's CRO on the governance of agentic AI and the necessity of maintaining human accountability in financial operations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3b16fe569ebf5f621d65e58674b534796b218370052c6ccefd75757e005c857d",
+    "textChars": 7805,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:27:52.676Z",
+    "attempts": 1
+  }
+}

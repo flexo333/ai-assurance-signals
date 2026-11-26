@@ -1,0 +1,57 @@
+{
+  "id": "21b4758ab52123ac",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+  "title": "Advancing computer-use agents for healthcare teams",
+  "publishedAt": "2026-11-16T06:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:58.750Z",
+  "status": "summarised",
+  "headline": "OpenAI announces healthcare computer-use agents with governance and audit controls",
+  "summary": "OpenAI has released new computer-use agent capabilities for healthcare workflows through its API and ChatGPT platforms, accompanied by performance and safety evaluations. The announcement highlights case studies from organisations including CVS Health, Cigna Healthcare, Abridge, and Ambience detailing human-in-the-loop oversight, audit logging, and data security controls. CVS Health noted that its deployment operates under enterprise AI governance policies and keeps data within enterprise-controlled infrastructure.",
+  "why_it_matters": "Organisations deploying high-autonomy AI agents in regulated sectors must implement strict role-based access, audit logging, and human-in-the-loop validation to ensure safety and compliance.",
+  "quotes": [
+    {
+      "text": "Today, we’re sharing new results measuring model performance, safety, and cost in clinical and administrative workflows. We’re also sharing the ways we’re working with leading healthcare organizations like Abridge, Ambience, Cigna Healthcare, and CVS Health to advance and apply computer use, across authorization requests, referrals, discharge planning, and outreach between visits.",
+      "supports": "summary"
+    },
+    {
+      "text": "Data remains within the CVS Health enterprise-controlled infrastructure, governed by their enterprise AI Governance team and established responsible AI policies. Production data is not used to train foundation models.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "ChatGPT for Healthcare provides role-based access controls and audit logs to support oversight. Organizations can build additional review and approval steps into their workflows and configure the applications and environments agents use to limit access to the records and actions needed for each task.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Details production deployments and governance controls of frontier computer-use agents in heavily regulated healthcare environments, illustrating enterprise operational risk management.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f1a42975124b1ec95c72f368a8653d43f739d8771658906bb8a51d0ca9c7f16f",
+    "textChars": 9194,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:34:34.977Z",
+    "attempts": 1
+  }
+}

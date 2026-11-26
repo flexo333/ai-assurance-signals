@@ -1,0 +1,53 @@
+{
+  "id": "37e5744bb4301db5",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/beyondtrust-experts-reveal-top-cybersecurity-predictions-for-2027-and-beyond",
+  "title": "BeyondTrust Experts Reveal Top Cybersecurity Predictions for 2027 and Beyond",
+  "publishedAt": "2026-11-17T23:48:28.287Z",
+  "fetchedAt": "2026-11-26T02:26:51.789Z",
+  "status": "summarised",
+  "headline": "BeyondTrust Cybersecurity Predictions for 2027 and Beyond",
+  "summary": "BeyondTrust has released a forecast identifying emerging risks from autonomous AI agents, including challenges related to over-privileged identities and machine-speed cyberattacks. The report highlights a shift toward increased regulatory and board-level scrutiny, requiring organisations to move from policy-based AI governance to demonstrable control and accountability. It also notes that AI-assisted vulnerability research is expected to accelerate the discovery of security flaws in open-source software.",
+  "why_it_matters": "Organisations must prepare for a shift where regulators and auditors demand verifiable evidence of AI governance controls, moving beyond high-level policy commitments to operational accountability.",
+  "quotes": [
+    {
+      "text": "Growing regulatory and board-level scrutiny will shift AI governance from policies and promises to demonstrable control, oversight, and accountability",
+      "supports": "summary"
+    },
+    {
+      "text": "Regulators, auditors, insurers, and customers will increasingly demand demonstrable evidence of effective AI governance, with organisations facing financial and regulatory consequences when they cannot prove appropriate controls are in place.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "prediction",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides industry-level foresight on the evolution of AI governance and audit expectations, though it is a vendor-led prediction piece.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7272f4575b47480391bc5310c4487cd0678c1adf9139b7ef24c3157ef5185b0a",
+    "textChars": 6155,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:29:32.784Z",
+    "attempts": 1
+  }
+}

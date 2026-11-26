@@ -1,0 +1,52 @@
+{
+  "id": "6d9893896e782387",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/science-news/health/harrison-ai-launches-harrison-rad-2-a-unified-radiology-foundation-model",
+  "title": "Harrison.ai Launches Harrison.Rad 2: A Unified Radiology Foundation Model",
+  "publishedAt": "2026-11-26T01:11:33.705Z",
+  "fetchedAt": "2026-11-26T02:26:50.570Z",
+  "status": "summarised",
+  "headline": "Harrison.ai Releases Harrison.Rad 2 Radiology Foundation Model in Research Preview",
+  "summary": "Harrison.ai has introduced Harrison.Rad 2, a unified foundation model capable of drafting clinical reports for 2D X-ray and 3D CT studies. The model features visual grounding to link written findings to specific image locations and is currently available in a research preview. Additionally, the company launched FrontierOS, an agentic reporting system already deployed in production by a teleradiology practice.",
+  "why_it_matters": "The integration of visual grounding and human-in-the-loop verification features in clinical AI models highlights evolving standards for ensuring radiologist oversight and diagnostic accuracy in automated reporting workflows.",
+  "quotes": [
+    {
+      "text": "Harrison.Rad 2, launched in research preview today, represents a significant leap for radiology AI research and the future of patient care and diagnosis.",
+      "supports": "summary"
+    },
+    {
+      "text": "Rather than simply drafting reports, it introduces visual grounding, linking specific written statements directly to the corresponding location on the image so clinicians can quickly and accurately review findings.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "The release represents a technical advancement in clinical AI with specific features for human-in-the-loop verification, though it is currently in research preview.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f65b06bf3b9407b84e2c871e9185d9bbbb003399046432abdd6c44cd512e5870",
+    "textChars": 4052,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:27:38.617Z",
+    "attempts": 1
+  }
+}

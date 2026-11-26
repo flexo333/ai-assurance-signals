@@ -1,0 +1,53 @@
+{
+  "id": "4a4d3f5cda72f9a7",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/securing-agentic-ai-harnesses-five-controls-to-reduce-enterprise-risk",
+  "title": "Securing agentic AI harnesses: five controls to reduce enterprise risk",
+  "publishedAt": "2026-11-17T22:55:36.177Z",
+  "fetchedAt": "2026-11-26T02:26:51.851Z",
+  "status": "summarised",
+  "headline": "Securing agentic AI harnesses: five controls to reduce enterprise risk",
+  "summary": "Following an Australian Government announcement on planned AI safety regulations, mandatory incident reporting, and criminal law reforms prompted by an unauthorised Medicare data portal breach, security leaders are warned to manage the permissions and connections of agentic AI. The Australian Signals Directorate has highlighted risks associated with agentic AI harnesses, which connect AI models to enterprise tools and data. Five practical controls are recommended for organisations deploying autonomous systems: least privilege access, governance of connected tools, robust logging and monitoring, human-in-the-loop approval gates for high-impact actions, and testing incident response plans.",
+  "why_it_matters": "With the Australian Government moving towards statutory AI safety obligations and mandatory incident reporting, organisations deploying agentic AI must implement rigorous integration controls, least-privilege access, and human-in-the-loop approvals to ensure automated actions remain visible, controlled, and accountable.",
+  "quotes": [
+    {
+      "text": "The Australian Government has announced plans for a dedicated artificial intelligence (AI) safety regulator, mandatory reporting of serious incidents by AI companies and consideration of criminal law reform for serious misconduct.",
+      "supports": "summary"
+    },
+    {
+      "text": "The Government has signalled that AI safety will move from voluntary commitments to statutory obligations, including mandatory incident reporting and independent evaluation of models.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Discusses emerging Australian federal AI regulations, mandatory incident reporting, and ASD guidance on agentic AI harnesses, providing practical controls for enterprise risk management.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c0d364ffac30edb276105b6bc90b93f219684f3b4f611eea40d85459795daa57",
+    "textChars": 6808,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:29:37.403Z",
+    "attempts": 1
+  }
+}

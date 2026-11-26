@@ -1,0 +1,53 @@
+{
+  "id": "9f5d12c1ff181023",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/blog/can-ai-coding-agents-rebuild-biological-ai-tools-from-a-paper",
+  "title": "Can AI coding agents rebuild biological AI tools from a paper?",
+  "publishedAt": "2026-11-17T10:30:35.411Z",
+  "fetchedAt": "2026-11-26T02:26:51.674Z",
+  "status": "summarised",
+  "headline": "UK AISI research shows AI coding agents can reverse-engineer biological AI tools",
+  "summary": "The UK AI Security Institute developed the ReproBAIT evaluation to test whether AI coding agents can reproduce biological AI tools (BAITs) from limited public information and training data. The evaluation found that current coding agents can recreate selected functions of closed-source and open-source BAITs within hours and at low cost, challenging the effectiveness of withholding code alone to manage safety risks. The findings suggest that data governance and controlling access to underlying biological data may be more effective interventions for managing misuse risks than restricting code or publication details.",
+  "why_it_matters": "Organisations relying on code withholding or publication limits to secure dual-use AI models must reassess their risk strategies, as advanced coding agents can reconstruct biological AI tools from public descriptions alone.",
+  "quotes": [
+    {
+      "text": "ReproBAIT tests how well agents can reproduce existing BAITs given the relevant data and limited, publicly available information about their design.",
+      "supports": "summary"
+    },
+    {
+      "text": "Our results indicate that withholding code does not, by itself, assure control over access to a BAIT’s capability, as coding agents can reconstruct selected functions of BAITs from public descriptions alone, when supplied with training data.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides empirical evidence on the limits of code withholding as a security control for dual-use frontier models, informing global AI governance standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "81c499c7f38985233121dddbff2258adcc969be4397d312501958cf90f5035af",
+    "textChars": 9681,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:29:59.962Z",
+    "attempts": 1
+  }
+}

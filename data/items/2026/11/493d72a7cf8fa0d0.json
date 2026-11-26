@@ -1,0 +1,52 @@
+{
+  "id": "493d72a7cf8fa0d0",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/research/reprobait-can-coding-agents-build-their-own-biological-ai-tools",
+  "title": "ReproBAIT: Can coding agents build their own biological AI tools?",
+  "publishedAt": "2026-11-17T10:30:35.411Z",
+  "fetchedAt": "2026-11-26T02:26:51.674Z",
+  "status": "summarised",
+  "headline": "UK AISI evaluation assesses coding agents' ability to reproduce biological AI tools",
+  "summary": "The UK AI Security Institute introduced ReproBAIT, an evaluation framework measuring the capacity of coding agents to design and implement biological AI tools from limited descriptions. Researchers tested agents against tools including ProteinMPNN and RFdiffusion3 within a sandboxed environment. The study found significant reproduction capabilities in some agents and evidence of memorisation from pretraining data.",
+  "why_it_matters": "The findings suggest that public disclosure of technical information about sensitive AI tools may inadvertently enable the reconstruction of those tools, potentially bypassing dual-use access controls.",
+  "quotes": [
+    {
+      "text": "We introduce an evaluation titled ReproBAIT (Reproducing Biological AI Tools), which measures the ability of coding agents to design, implement, and train biological AI tools taken from published research",
+      "supports": "summary"
+    },
+    {
+      "text": "These results suggest that tool developers need to be increasingly cautious when releasing information about the tools publicly; re-creation of the tool based on such information could undermine a tool's commercial value or invalidate dual-use managed access strategies.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides a methodology for assessing dual-use risks in AI coding agents, relevant to organisations managing sensitive intellectual property or dual-use AI systems.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ccbda05b94b8737801c62db827cf394091d9657d3f0c0a60fa56ec384afbb933",
+    "textChars": 2004,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:32:08.342Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "d4711e382aca4d65",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/blog/transect-making-large-scale-agentic-evaluations-easier-to-understand",
+  "title": "Transect: Making large-scale agentic evaluations easier to understand",
+  "publishedAt": "2026-11-17T10:30:35.411Z",
+  "fetchedAt": "2026-11-26T02:26:51.674Z",
+  "status": "summarised",
+  "headline": "UK AISI releases Transect tool for agentic AI evaluation transcripts",
+  "summary": "The UK AI Security Institute has released Transect, an open-source Python package designed to translate complex agentic AI evaluation transcripts into interactive reports. The tool helps reviewers examine agent behaviours, multi-agent collaboration, token use, and automated judgements on a shared timeline. It aims to improve transparency and oversight for long, autonomous AI evaluation runs.",
+  "why_it_matters": "Organisations conducting complex AI safety evaluations can use Transect to inspect model-generated activity labels and multi-agent interactions against underlying transcripts, supporting more robust verification.",
+  "quotes": [
+    {
+      "text": "To address these issues, with the support of Meridian Labs , we are releasing Transect , an open-source Python package built on Inspect Scout . It translates the complexities of an agentic evaluation transcript into one interactive report.",
+      "supports": "summary"
+    },
+    {
+      "text": "Transect links model-generated labels to the transcript and records how they were produced. When an analysis uses repeated judgements or several judge models, reviewers can see where those judgements disagree.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides practical tooling and methodology for evaluating and auditing complex agentic AI systems, aligning with growing international interest in rigorous frontier AI assurance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-flash-lite-latest",
+    "promptVersion": 3,
+    "sourceSha256": "9c4fd289dfaa1fca879acf1bec3163766be0a43ac2e1b42764ee9bdc7ddf753c",
+    "textChars": 8743,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:31:53.930Z",
+    "attempts": 1
+  }
+}

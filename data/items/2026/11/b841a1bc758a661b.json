@@ -1,0 +1,24 @@
+{
+  "id": "b841a1bc758a661b",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/economy-markets/nab-global-forward-view---resilience-to-be-tested",
+  "title": "NAB Global Forward View October",
+  "publishedAt": "2026-11-24T00:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:50.191Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e184e4c44c4bfbf93368138497cd98531dfa746a00148280868754c1e9e94e7f",
+    "textChars": 757,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:27:46.606Z",
+    "attempts": 1
+  }
+}

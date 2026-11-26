@@ -1,0 +1,23 @@
+{
+  "id": "3047d7657748ea76",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+  "title": "Introducing ChatGPT for Sales",
+  "publishedAt": "2026-11-17T08:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:54.532Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b8e5ee50fc47c75ba7e7266ad24e3480642d9c6165c91feac9c34f086164c859",
+    "textChars": 5709,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:32:13.939Z",
+    "attempts": 1
+  }
+}

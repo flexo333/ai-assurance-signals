@@ -11,13 +11,14 @@
   "fetchedAt": "2026-11-25T03:10:58.021Z",
   "status": "irrelevant",
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "c7f8658e73ec1678ea18c336eaac55af03ae5c2630cc1941168580408d1f8a24",
     "textChars": 7932,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:14:44.614Z",
-    "attempts": 1
+    "analysedAt": "2026-11-26T02:27:11.802Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

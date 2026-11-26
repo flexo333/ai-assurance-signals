@@ -1,0 +1,23 @@
+{
+  "id": "feb6924329f0af8a",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/muse-is-now-available-in-australia-the-world-s-first-personal-ai-agent-built-for-everyone",
+  "title": "Muse Is Now Available in Australia: The World’s First Personal AI Agent Built for Everyone",
+  "publishedAt": "2026-11-18T01:54:13.901Z",
+  "fetchedAt": "2026-11-26T02:26:51.674Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "476a61a9fa8861b2e6c647af432a0b2619bd1996ed06079dc8286613c58f45ef",
+    "textChars": 4089,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:28:09.598Z",
+    "attempts": 1
+  }
+}

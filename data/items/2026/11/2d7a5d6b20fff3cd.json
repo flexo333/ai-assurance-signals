@@ -1,0 +1,51 @@
+{
+  "id": "2d7a5d6b20fff3cd",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+  "title": "Broadening access to AI for scientists",
+  "publishedAt": "2026-11-16T17:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:55.248Z",
+  "status": "summarised",
+  "headline": "OpenAI expands ChatGPT for Academic Researchers program",
+  "summary": "OpenAI is expanding its ChatGPT for Academic Researchers program to provide up to 200,000 researchers with access to ChatGPT Plus. The program includes training and ensures that data shared by participants is not used to train OpenAI's models by default. Applications for the next round of 50,000 grants open on November 23.",
+  "why_it_matters": "The program's data privacy commitment—that participant data is not used for model training by default—provides a model for institutional researchers to manage intellectual property and data governance risks when using frontier AI tools.",
+  "quotes": [
+    {
+      "text": "By default, we don’t use data shared through the program to train our models.",
+      "supports": "summary"
+    },
+    {
+      "text": "By default, we don’t use data shared through the program to train our models.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "other",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "The program provides a framework for academic data governance and access to frontier models, though it is not a regulatory or policy development.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9ccc5fca9050810b64f633ba5154198a688210dcbaaa5062487f3742569da465",
+    "textChars": 4958,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:33:58.418Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "a35f746f9333e719",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/research/coordinated-vulnerability-disclosure-timelines",
+  "title": "Updating our coordinated vulnerability disclosure policy timelines",
+  "publishedAt": "2026-11-16T00:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:57.250Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Reflects how frontier AI developers are adapting operational security and disclosure policies to account for AI-accelerated vulnerability discovery speed, though primarily an update to a lab's own policy.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "32c6fd15673bd7c72f81ec0630af631361010f48d1c64446de1d970b163db7d8",
+    "textChars": 3833,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:34:55.704Z",
+    "attempts": 2
+  }
+}

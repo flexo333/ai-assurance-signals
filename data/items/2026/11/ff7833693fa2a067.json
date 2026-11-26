@@ -1,0 +1,23 @@
+{
+  "id": "ff7833693fa2a067",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/lvmh-media-division-partnership",
+  "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+  "publishedAt": "2026-11-16T09:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:56.495Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "fef969d8ab834da3797344c9e30e04f1dc3aa268c024321da7c263b55aaae3ce",
+    "textChars": 3873,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:34:26.900Z",
+    "attempts": 1
+  }
+}

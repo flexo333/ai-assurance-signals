@@ -1,0 +1,53 @@
+{
+  "id": "8f6af8c44a4a1bfb",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+  "title": "Introducing GPT-6.2 Astra and Sol",
+  "publishedAt": "2026-11-17T17:45:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:53.454Z",
+  "status": "summarised",
+  "headline": "OpenAI releases GPT-6.2 Astra and Sol models with safety framework evaluations",
+  "summary": "OpenAI has introduced GPT-6.2 Astra and Sol, two new AI models offering improved performance across complex professional workflows and everyday tasks at lower token costs. Both models meet the Critical threshold for cybersecurity and the High threshold for biological and chemical capabilities under OpenAI's Preparedness Framework. Additionally, GPT-6.2 Astra meets the High threshold for AI Self-improvement, marking its ability to accelerate AI research.",
+  "why_it_matters": "Organisations deploying frontier models must account for heightened cyber, biological, and self-improvement capabilities under safety frameworks when managing deployment risks.",
+  "quotes": [
+    {
+      "text": "Like GPT-6 Astra ⁠ , 6.2 Astra and Sol meet the Critical threshold for cybersecurity under our Preparedness Framework ⁠ .",
+      "supports": "summary"
+    },
+    {
+      "text": "Due to their increased capabilities, we’re launching GPT‑6.2 Astra and Sol with tighter safeguards for higher-risk cybersecurity assistance.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The release of frontier models meeting critical safety thresholds under a major lab's preparedness framework is a notable development for AI governance and risk management.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "559b6e5d941d9d03ea7a1ee6f7623cfcb575147deab4650ec41d0b6a6217dc3a",
+    "textChars": 13266,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:29:41.122Z",
+    "attempts": 2
+  }
+}

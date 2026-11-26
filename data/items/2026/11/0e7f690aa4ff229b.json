@@ -1,0 +1,52 @@
+{
+  "id": "0e7f690aa4ff229b",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+  "title": "Strengthening NATO and allied cyber defenses with AI",
+  "publishedAt": "2026-11-17T00:00:00.000Z",
+  "fetchedAt": "2026-11-26T02:26:55.650Z",
+  "status": "summarised",
+  "headline": "OpenAI provides AI cybersecurity models to NATO and European national agencies",
+  "summary": "OpenAI is providing its 'Daybreak' AI tool to NATO’s Communications and Information Agency and various European national cyber agencies for security operations. The tool assists defenders in reviewing software, investigating suspicious activity, and identifying and testing fixes for vulnerabilities. NATO and other agencies have utilized these models to identify and remediate software vulnerabilities in critical infrastructure.",
+  "why_it_matters": "The integration of frontier AI models into national security and critical infrastructure protection highlights the shift toward AI-augmented vulnerability management, requiring organisations to balance rapid AI-driven discovery with rigorous human oversight and verification processes.",
+  "quotes": [
+    {
+      "text": "Through Daybreak, we’re putting advanced AI into the hands of trusted defenders for authorized security work, from reviewing software and investigating suspicious activity to validating vulnerabilities, and developing and testing fixes.",
+      "supports": "summary"
+    },
+    {
+      "text": "The training put participants alongside AI agents as operators, with an emphasis on maintaining human oversight.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Demonstrates the operational application of frontier AI in critical infrastructure security and vulnerability management at a state-actor level.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "330927010f75d45dcae3f8663cc77256480042393e82ceaee224ab0860498067",
+    "textChars": 5009,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:33:41.762Z",
+    "attempts": 1
+  }
+}

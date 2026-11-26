@@ -1,0 +1,53 @@
+{
+  "id": "4a83b8367d372a2b",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/a-closer-look-at-the-global-rush-toward-youth-social-media-restrictions",
+  "title": "A closer look at the global rush toward youth social media restrictions",
+  "publishedAt": "2026-11-17T01:32:00.988Z",
+  "fetchedAt": "2026-11-26T02:26:52.029Z",
+  "status": "summarised",
+  "headline": "Global regulatory trends in youth AI and social media safety",
+  "summary": "Global policymakers are increasingly implementing regulations to protect children from risks associated with AI chatbots and personalized algorithms. Proposed and enacted frameworks in jurisdictions like the EU, Brazil, and Canada focus on age assurance, safety-by-design, and risk mitigation. These measures often require platforms to implement parental controls, time management tools, and privacy-preserving age verification methods.",
+  "why_it_matters": "Organisations deploying AI services must prepare for evolving international standards that mandate safety-by-design and risk-based age assurance, which are increasingly influencing Australian policy discussions on child safety.",
+  "quotes": [
+    {
+      "text": "The expanded use of personalized algorithms and AI chatbots are among the considerations driving global policymakers' work to protect children across social media platforms.",
+      "supports": "summary"
+    },
+    {
+      "text": "Regulated services operating in Canada would need to assess, mitigate and respond to serious risk of harm arising from the design and operation of their services",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulation",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Highlights a major global shift toward mandatory safety-by-design and age-assurance requirements for AI-enabled platforms.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ee6ba13e25556b4efa2f70173a31166b344dbe16415af0a934134e9335ce8ef1",
+    "textChars": 5039,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-26T02:32:33.670Z",
+    "attempts": 1
+  }
+}
