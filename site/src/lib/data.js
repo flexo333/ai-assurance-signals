@@ -5,7 +5,7 @@ import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
 // Pure pipeline module: the edition's sections and how items are placed in them.
-import { SECTIONS, sectionFor } from "../../../pipeline/lib/rank.js";
+import { SECTIONS, sectionFor, regulatorySectionFor } from "../../../pipeline/lib/rank.js";
 
 const ROOT = resolve(process.cwd(), "..");
 const DATA = join(ROOT, "data");
@@ -211,11 +211,12 @@ export const SECTION_DESCRIPTION = {
 export const sectionHref = (id) => (id === "financial-services" ? "/financial-services/" : `/sections/${id}/`);
 
 /**
- * The section an item belongs to: the edition's placement rule, with the
- * site's fuller FS check (it also reads the source's sector from sources.yaml).
+ * The section an item belongs to: the edition's placement rule (regulation
+ * first, #48), with the site's fuller FS check (it also reads the source's
+ * sector from sources.yaml).
  */
 export const sectionOf = (item, sectorOf = new Map()) =>
-  isFinancialServices(item, sectorOf) ? "financial-services" : sectionFor(item);
+  regulatorySectionFor(item) ?? (isFinancialServices(item, sectorOf) ? "financial-services" : sectionFor(item));
 
 /**
  * Publishable stories in a section, newest first. A story is placed by its

@@ -164,9 +164,24 @@ test("#31: industry and vendor authority weights sit around news", () => {
   assert.ok(s("industry") > s("news") && s("news") > s("vendor"));
 });
 
+test("#48: regulation comes first, before Financial Services", () => {
+  const reg = (item_kind, theme, o = {}) => mk("r", { sector: "financial-services", classification: { item_kind, theme, is_financial_services: true }, ...o });
+  assert.equal(sectionFor(reg("regulator-guidance", "financial-services")), "regulator-guidance");
+  assert.equal(sectionFor(reg("enforcement", "financial-services")), "regulator-guidance");
+  assert.equal(sectionFor(reg("regulation", "financial-services")), "regulator-guidance");
+  assert.equal(sectionFor(reg("legislation", "financial-services")), "policy-legislation");
+  assert.equal(sectionFor(reg("consultation", "regulator-guidance")), "regulator-guidance"); // regulatory theme wins
+  assert.equal(sectionFor(reg("regulator-guidance", "financial-services", { jurisdiction: "UK" })), "international");
+  // Only official items: a bank's or a news outlet's take on regulation stays FS.
+  assert.equal(sectionFor(reg("regulator-guidance", "financial-services", { authority: "industry" })), "financial-services");
+  assert.equal(sectionFor(reg("regulator-guidance", "financial-services", { authority: "news" })), "financial-services");
+});
+
 test("#31: Financial Services routing for every authority, before the news fallback", () => {
   const fsFlag = { classification: { significance: 3, theme: "regulator-guidance", item_kind: "regulator-guidance", is_financial_services: true } };
-  assert.equal(sectionFor(mk("apra", fsFlag)), "financial-services"); // official FS regulator keeps its kind
+  // Regulation first (#48): an FS regulator's guidance goes to Regulator Guidance.
+  assert.equal(sectionFor(mk("apra", fsFlag)), "regulator-guidance");
+  assert.equal(sectionFor(mk("apra-speech", { classification: { item_kind: "commentary", is_financial_services: true } })), "financial-services");
   assert.equal(sectionFor(mk("itnews", { authority: "news", ...fsFlag })), "financial-services");
   assert.equal(sectionFor(mk("aws", { authority: "vendor", ...fsFlag })), "financial-services");
   assert.equal(sectionFor(mk("nab", { authority: "industry", classification: { theme: "financial-services" } })), "financial-services");

@@ -54,19 +54,44 @@ export function isFinancialServices(item) {
   return c.is_financial_services === true || c.theme === "financial-services" || item.sector === "financial-services";
 }
 
+// Official items of these kinds are regulation and go to a regulatory section
+// even when they also concern financial services (#48).
+export const REGULATORY_KINDS = new Set(["legislation", "regulation", "regulator-guidance", "enforcement", "government-policy", "consultation"]);
+const REGULATORY_THEMES = ["policy-legislation", "regulator-guidance", "public-sector"];
+const REGULATOR_KIND_SECTION = { "regulator-guidance": "regulator-guidance", enforcement: "regulator-guidance", regulation: "regulator-guidance" };
+
 /**
- * Where an item lives in the edition. Financial Services items (any authority)
- * go to Financial Services; other news and vendor items to News & Commentary;
- * otherwise the model's theme, except lab items, which go to Frontier Labs, and
- * non-Australian official items, which go to International.
+ * The regulatory section of an official regulatory item (by item_kind), or
+ * null. Australian items: the model's theme if it is regulatory, else by kind
+ * (guidance, enforcement and regulation → Regulator Guidance; legislation,
+ * policy and consultations → Policy & Legislation). Others: International.
+ */
+export function regulatorySectionFor(item) {
+  if (item.authority !== "official" || !REGULATORY_KINDS.has(item.classification?.item_kind)) return null;
+  if (!String(item.jurisdiction || "").startsWith("AU")) return "international";
+  const theme = item.classification.theme;
+  if (REGULATORY_THEMES.includes(theme)) return theme;
+  return REGULATOR_KIND_SECTION[item.classification.item_kind] || "policy-legislation";
+}
+
+/**
+ * Where an item lives in the edition. Regulation comes first: official
+ * regulatory items go to their regulatory section, even financial-services
+ * regulators' (they still appear on the Financial Services page). Then other
+ * Financial Services items (any authority) go to Financial Services; other
+ * news and vendor items to News & Commentary; otherwise the model's theme,
+ * except lab items, which go to Frontier Labs, and non-Australian official
+ * items, which go to International.
  */
 export function sectionFor(item) {
+  const regulatory = regulatorySectionFor(item);
+  if (regulatory) return regulatory;
   if (isFinancialServices(item)) return "financial-services";
   if (item.authority === "news" || item.authority === "vendor") return "news-commentary";
   if (item.authority === "lab") return "frontier-labs";
   const theme = item.classification?.theme;
   const isAU = String(item.jurisdiction || "").startsWith("AU");
-  if (!isAU && ["policy-legislation", "regulator-guidance", "public-sector"].includes(theme)) return "international";
+  if (!isAU && REGULATORY_THEMES.includes(theme)) return "international";
   if (theme === "news-commentary" || theme === "financial-services" || !SECTIONS.some((s) => s.id === theme)) return isAU ? "policy-legislation" : "international";
   return theme;
 }
