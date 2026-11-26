@@ -148,7 +148,7 @@ const REGULATOR_KINDS = new Set(["legislation", "regulation", "regulator-guidanc
 const DEPLOYMENT_KINDS = new Set(["deployment", "incident"]);
 
 export const FS_GROUPS = [
-  { id: "regulators", title: "Regulator moves" },
+  { id: "regulators", title: "Official & policy" },
   { id: "deployments", title: "Institution deployments & case studies" },
   { id: "news", title: "News & commentary" },
 ];
@@ -189,7 +189,11 @@ const sectorMap = (sources) => new Map((sources || []).filter((s) => s.sector).m
  */
 export function financialServicesStories(data) {
   const sectorOf = sectorMap(data.sources);
-  return storiesWhere((i) => isFinancialServices(i, sectorOf), data).map((s) => ({ ...s, group: fsGroupOf(s.lead) }));
+  return storiesWhere((i) => isFinancialServices(i, sectorOf), data)
+    // Regulation comes first (#48): official regulatory stories (APRA, ASIC
+    // guidance) live in their regulatory section, not here.
+    .filter((s) => !regulatorySectionFor(s.lead))
+    .map((s) => ({ ...s, group: fsGroupOf(s.lead) }));
 }
 
 // ── Sections (#46) ───────────────────────────────────────────────────────
