@@ -4,6 +4,8 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { parse } from "yaml";
+// Pure pipeline module: the edition's sections and how items are placed in them.
+import { SECTIONS, sectionFor } from "../../../pipeline/lib/rank.js";
 
 const ROOT = resolve(process.cwd(), "..");
 const DATA = join(ROOT, "data");
@@ -160,23 +162,70 @@ export function fsGroupOf(item) {
 }
 
 /**
+ * Publishable stories (lead + grouped coverage), newest first, whose items
+ * match `pred`. Each matching item resolves to its edition story's lead, and
+ * leads are deduplicated, so coverage stays grouped ("Also covered by").
+ */
+function storiesWhere(pred, { items, alsoOf, leadOf, itemsById }) {
+  const leads = new Map();
+  for (const i of items) {
+    if (!isPublishable(i) || !pred(i)) continue;
+    const lead = itemsById.get(leadOf.get(i.id)) || i;
+    leads.set(lead.id, lead);
+  }
+  return [...leads.values()]
+    .map((lead) => ({ lead, also: (alsoOf.get(lead.id) || []).map((id) => itemsById.get(id)).filter(Boolean) }))
+    .sort((a, b) => String(b.lead.publishedAt || b.lead.fetchedAt).localeCompare(String(a.lead.publishedAt || a.lead.fetchedAt)));
+}
+
+const sectorMap = (sources) => new Map((sources || []).filter((s) => s.sector).map((s) => [s.id, s.sector]));
+
+/**
  * Publishable FS stories, newest first. A story is shown if ANY of its items
  * is FS: each FS item resolves to its edition story's lead (which may itself
  * lack an FS marker, e.g. a grounded news report analysed before prompt v3
  * leading a headline-only APRA item), and leads are deduplicated. Coverage
  * stays grouped under the lead ("Also covered by").
  */
-export function financialServicesStories({ items, sources, alsoOf, leadOf, itemsById }) {
-  const sectorOf = new Map((sources || []).filter((s) => s.sector).map((s) => [s.id, s.sector]));
-  const leads = new Map();
-  for (const i of items) {
-    if (!isPublishable(i) || !isFinancialServices(i, sectorOf)) continue;
-    const lead = itemsById.get(leadOf.get(i.id)) || i;
-    leads.set(lead.id, lead);
-  }
-  return [...leads.values()]
-    .map((lead) => ({ lead, also: (alsoOf.get(lead.id) || []).map((id) => itemsById.get(id)).filter(Boolean), group: fsGroupOf(lead) }))
-    .sort((a, b) => String(b.lead.publishedAt || b.lead.fetchedAt).localeCompare(String(a.lead.publishedAt || a.lead.fetchedAt)));
+export function financialServicesStories(data) {
+  const sectorOf = sectorMap(data.sources);
+  return storiesWhere((i) => isFinancialServices(i, sectorOf), data).map((s) => ({ ...s, group: fsGroupOf(s.lead) }));
+}
+
+// ── Sections (#46) ───────────────────────────────────────────────────────
+// The edition's sections (pipeline/lib/rank.js), each with its own page.
+// Financial Services keeps its tracker page at /financial-services/.
+export { SECTIONS };
+
+export const SECTION_DESCRIPTION = {
+  "policy-legislation": "Australian Government AI policy, legislation, parliamentary inquiries and consultations.",
+  "regulator-guidance": "Guidance, expectations and enforcement from Australian regulators on the use of AI.",
+  "public-sector": "How Australian governments and agencies adopt, govern and assure AI.",
+  "standards-frameworks": "AI standards, management systems, assurance frameworks and safety evaluations.",
+  "frontier-labs": "Safety, policy and governance publications from frontier AI developers.",
+  international: "AI law, policy and regulation outside Australia.",
+  "financial-services": "AI in Australian banking, superannuation, insurance and payments.",
+  "news-commentary": "Reporting and analysis from news outlets, and vendor case studies.",
+};
+
+export const sectionHref = (id) => (id === "financial-services" ? "/financial-services/" : `/sections/${id}/`);
+
+/**
+ * The section an item belongs to: the edition's placement rule, with the
+ * site's fuller FS check (it also reads the source's sector from sources.yaml).
+ */
+export const sectionOf = (item, sectorOf = new Map()) =>
+  isFinancialServices(item, sectorOf) ? "financial-services" : sectionFor(item);
+
+/**
+ * Publishable stories in a section, newest first. A story is placed by its
+ * lead item (as editions place it), so Top Signals and this week's
+ * not-yet-published items appear too.
+ */
+export function sectionStories(sectionId, data) {
+  const sectorOf = sectorMap(data.sources);
+  const isLead = (i) => !data.leadOf.has(i.id);
+  return storiesWhere((i) => isLead(i) && sectionOf(i, sectorOf) === sectionId, data);
 }
 
 const dayFmt = new Intl.DateTimeFormat("en-AU", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });

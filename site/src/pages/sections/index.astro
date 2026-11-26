@@ -1,0 +1,21 @@
+---
+import Base from "../../layouts/Base.astro";
+import { loadAll, sectionStories, financialServicesStories, SECTIONS, SECTION_DESCRIPTION, sectionHref } from "../../lib/data.js";
+const all = loadAll();
+const sections = SECTIONS.map((s) => ({
+  ...s,
+  count: (s.id === "financial-services" ? financialServicesStories(all) : sectionStories(s.id, all)).length,
+}));
+---
+<Base title="Sections" description="Browse AI assurance and governance stories by section, across all editions.">
+  <h1>Sections</h1>
+  <p class="lede">Every edition is organised into the same sections. Browse one across all editions.</p>
+  <ul class="archive">
+    {sections.map((s) => (
+      <li>
+        <a href={sectionHref(s.id)}>{s.title}</a> <span class="muted small">· {s.count} {s.count === 1 ? "story" : "stories"}</span>
+        <br /><span class="muted small">{SECTION_DESCRIPTION[s.id]}</span>
+      </li>
+    ))}
+  </ul>
+</Base>
