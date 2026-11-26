@@ -1,6 +1,6 @@
 ---
 import ItemCard from "./ItemCard.astro";
-import { editionLabel, fmtDate } from "../lib/data.js";
+import { editionLabel, fmtDate, sectionHref } from "../lib/data.js";
 interface Props { edition: any; itemsById: Map<string, any>; latest?: boolean }
 const { edition, itemsById, latest } = Astro.props;
 const get = (id: string) => itemsById.get(id);
@@ -40,7 +40,7 @@ const citesOf = (s: any) => [...new Map(s.cites.map((id: string) => rankOf.get(i
 
 {edition.sections.map((sec: any) => (
   <section aria-labelledby={sec.id}>
-    <h2 id={sec.id}>{sec.title}</h2>
+    <h2 id={sec.id} class="section-head">{sec.title} <a class="section-head__all" href={sectionHref(sec.id)} aria-label={`All ${sec.title} stories`}>All stories →</a></h2>
     {sec.items.filter((ref: any) => get(ref.id)).map((ref: any) => <div id={`item-${ref.id}`}><ItemCard item={get(ref.id)} also={alsoFor(ref)} /></div>)}
     {sec.more?.length > 0 && (
       <details class="more">

@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { SECTIONS, sectionHref } from "../lib/data.js";
 
 interface Props {
   title?: string;
@@ -12,6 +13,7 @@ const {
   description = "A weekly, source-grounded digest of AI assurance and governance developments — Australia first.",
 } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
+const here = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -40,12 +42,19 @@ const pageTitle = title ? `${title} · ${SITE_NAME}` : SITE_NAME;
         <nav aria-label="Main">
           <a href="/">Latest</a>
           <a href="/editions/">Archive</a>
-          <a href="/financial-services/">Financial Services</a>
           <a href="/consultations/">Consultations</a>
           <a href="/key-dates/">Key dates</a>
           <a href="/search/">Search</a>
         </nav>
       </div>
+      <nav class="sections" aria-label="Sections">
+        <div class="wrap">
+          {SECTIONS.map((s) => {
+            const href = sectionHref(s.id);
+            return <a href={href} aria-current={here === href ? "page" : undefined}>{s.title}</a>;
+          })}
+        </div>
+      </nav>
     </header>
     <main>
       <div class="wrap">

@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import ItemCard from "../../components/ItemCard.astro";
+import { loadAll, sectionStories, SECTIONS, SECTION_DESCRIPTION } from "../../lib/data.js";
+export function getStaticPaths() {
+  // Financial Services keeps its own tracker page at /financial-services/.
+  return SECTIONS.filter((s) => s.id !== "financial-services").map((section) => ({ params: { id: section.id }, props: { section } }));
+}
+const { section } = Astro.props;
+const stories = sectionStories(section.id, loadAll());
+const description = SECTION_DESCRIPTION[section.id];
+---
+<Base title={section.title} description={description}>
+  <p class="kicker">Section</p>
+  <h1>{section.title}</h1>
+  <p class="lede">{description}</p>
+  <p class="muted">{stories.length} {stories.length === 1 ? "story" : "stories"}, newest first, across all editions and this week's collection so far. Coverage of the same story is grouped under the highest-authority grounded source.</p>
+  {stories.length === 0 ? <p class="muted">No items in this section yet.</p> : stories.map((s: any) => <ItemCard item={s.lead} also={s.also} />)}
+</Base>
