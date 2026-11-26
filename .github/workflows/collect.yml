@@ -58,7 +58,14 @@ jobs:
       run:
         working-directory: pipeline
     steps:
+      # Check out the latest main, not github.sha (main when the run was
+      # triggered). Non-PR runs queue on `collect-main`, so a run that waits
+      # behind another must see the items that run committed, or it re-analyses
+      # them (spending Gemini quota) and clashes on the same files when it
+      # commits. PR dry runs keep the default merge ref ('' = default).
       - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event_name != 'pull_request' && 'main' || '' }}
 
       - uses: actions/setup-node@v5
         with:
