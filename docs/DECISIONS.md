@@ -2,6 +2,9 @@
 
 Newest first. Each entry: context → decision → consequences.
 
+## 2026-11-26: Collect checks out the latest `main`
+Non-PR collect runs share `concurrency: collect-main` and queue rather than overlap, but the `collect` job checked out `github.sha`, i.e. `main` when the run was triggered, not when it started. On 2026-11-26 a scheduled run fired about 7 hours late (run `45742548404`) and queued behind a manual dispatch (run `45742056803`). It would have checked out the commit before the manual run's items, so `build-collect-event.mjs` would treat those items as new, re-analyse them (up to 120 Gemini free-tier calls) and clash with them in "Commit items". **Decision:** the `collect` job's checkout uses `ref: main` for non-PR events, as `publish.yml` already does; `pull_request` dry runs keep the default merge ref (an empty `ref` means the default). The `deploy` job still deploys the exact commit collect produced (`needs.collect.outputs.sha`). **Consequences:** a queued run starts from whatever the previous run committed, so it only analyses genuinely new items and its rebase-and-push no longer conflicts over the same item files. A non-PR run dispatched from another branch also collects against `main`, which is where its commit goes anyway.
+
 ## 2026-11-26: Activate `oia`
 The sitemap-probing source-check from #38 (Sydney run `45721568375`) found `oia`'s configured sitemap reachable, with 1,550 URLs matching its `include` (7 with a lastmod in the last 30 days). **Decision:** switch `oia` from `pending` to active. **Consequences:** no `status: pending` sources remain; PM&C Regulatory Impact Analyses enter at `authority: official`.
 
