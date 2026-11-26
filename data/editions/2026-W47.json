@@ -7,7 +7,10 @@
   "topSignals": [
     {
       "id": "09e9659a9776b0b0",
-      "score": 5.947
+      "score": 5.947,
+      "also": [
+        "cf75f32f4505fa1d"
+      ]
     },
     {
       "id": "0d020a4322edd640",
@@ -169,10 +172,6 @@
       "id": "financial-services",
       "title": "Financial Services",
       "items": [
-        {
-          "id": "cf75f32f4505fa1d",
-          "score": 4.46
-        },
         {
           "id": "a7d7135c6e8f0eee",
           "score": 3.298
@@ -347,7 +346,7 @@
   ],
   "counts": {
     "candidates": 78,
-    "stories": 69,
+    "stories": 68,
     "summarised": 71,
     "headlineOnly": 7
   },
