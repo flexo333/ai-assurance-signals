@@ -13,6 +13,10 @@
       ]
     },
     {
+      "id": "1641b7e2c0ab60fe",
+      "score": 5.387
+    },
+    {
       "id": "0d020a4322edd640",
       "score": 4.657
     },
@@ -64,8 +68,10 @@
           "also": [
             "b05012a4ce828f7b",
             "4a4d3f5cda72f9a7",
+            "eafd37290d7caaa9",
             "1fdded62130a4c73",
             "ef056106bb80de6a",
+            "270a9e646a87b388",
             "a19a6ed24601a023"
           ]
         },
@@ -148,9 +154,13 @@
         {
           "id": "a35f746f9333e719",
           "score": 0.806
+        },
+        {
+          "id": "33b95c2112c46efd",
+          "score": 0.683
         }
       ],
-      "overflow": 14
+      "overflow": 15
     },
     {
       "id": "international",
@@ -197,6 +207,10 @@
         {
           "id": "21e886491b30cfff",
           "score": 0.98
+        },
+        {
+          "id": "7d4d71d056da0286",
+          "score": 0.86
         },
         {
           "id": "88493000c790fc01",
@@ -285,6 +299,10 @@
           "score": 1.313
         },
         {
+          "id": "a753658e6e913625",
+          "score": 1.241
+        },
+        {
           "id": "17595d469f002cf0",
           "score": 1.165
         },
@@ -297,8 +315,16 @@
           "score": 1.162
         },
         {
+          "id": "198c3e59c2d2171b",
+          "score": 1.122
+        },
+        {
           "id": "6d0384da4fcfb549",
           "score": 1.051
+        },
+        {
+          "id": "55151dbc7e503029",
+          "score": 0.902
         },
         {
           "id": "7d5c9936a43f42f7",
@@ -341,13 +367,13 @@
           "score": 0.474
         }
       ],
-      "overflow": 24
+      "overflow": 27
     }
   ],
   "counts": {
-    "candidates": 78,
-    "stories": 68,
-    "summarised": 71,
+    "candidates": 86,
+    "stories": 74,
+    "summarised": 79,
     "headlineOnly": 7
   },
   "publishedAt": "2026-11-20T04:17:00.000Z",

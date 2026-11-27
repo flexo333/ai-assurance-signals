@@ -6,8 +6,20 @@
   },
   "topSignals": [
     {
-      "id": "5a25565ab71a8d06",
-      "score": 2.877
+      "id": "163303348ed14c45",
+      "score": 4.457,
+      "also": [
+        "4c24cadf949630ab",
+        "78b2c02956ae3f1f"
+      ]
+    },
+    {
+      "id": "4622f166eb47cd21",
+      "score": 3.659
+    },
+    {
+      "id": "251a30fffad22960",
+      "score": 3.023
     }
   ],
   "sections": [
@@ -16,8 +28,16 @@
       "title": "Frontier Labs",
       "items": [
         {
+          "id": "5a25565ab71a8d06",
+          "score": 2.877
+        },
+        {
           "id": "3e32bae570ff21ee",
           "score": 1.844
+        },
+        {
+          "id": "e960e8891f7d7ad8",
+          "score": 1.752
         }
       ],
       "more": [],
@@ -25,9 +45,9 @@
     }
   ],
   "counts": {
-    "candidates": 2,
-    "stories": 2,
-    "summarised": 1,
+    "candidates": 8,
+    "stories": 6,
+    "summarised": 7,
     "headlineOnly": 1
   },
   "publishedAt": "2026-10-30T04:17:00.000Z",

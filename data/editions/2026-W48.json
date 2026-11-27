@@ -2,16 +2,16 @@
   "id": "2026-W48",
   "window": {
     "from": "2026-11-20T04:17:00.000Z",
-    "to": "2026-11-26T03:35:59.785Z"
+    "to": "2026-11-27T13:57:24.232Z"
   },
   "topSignals": [
     {
       "id": "eea17d1397dbb4e5",
-      "score": 3.966
+      "score": 3.695
     },
     {
       "id": "6e1f21ad7bac31cf",
-      "score": 3.808,
+      "score": 3.548,
       "also": [
         "7396ed9251e0fddc",
         "522c82dd03f8f18f",
@@ -20,11 +20,11 @@
     },
     {
       "id": "cc15fb5ac47a095d",
-      "score": 3.525
+      "score": 3.284
     },
     {
       "id": "f3cf671205f88aff",
-      "score": 3.29
+      "score": 3.065
     }
   ],
   "sections": [
@@ -34,11 +34,11 @@
       "items": [
         {
           "id": "4091a870daa91f99",
-          "score": 3.078
+          "score": 2.867
         },
         {
           "id": "76c05e559df853e1",
-          "score": 2.285
+          "score": 2.129
         }
       ],
       "more": [],
@@ -50,7 +50,7 @@
       "items": [
         {
           "id": "9bf57e68590d4f78",
-          "score": 3.086
+          "score": 2.875
         }
       ],
       "more": [],
@@ -62,27 +62,27 @@
       "items": [
         {
           "id": "de4847a7cbcabb96",
-          "score": 2.81
+          "score": 2.618
         },
         {
           "id": "b0689cf87ab570a4",
-          "score": 2.66
+          "score": 2.478
         },
         {
           "id": "7862748937ffc599",
-          "score": 2.545
+          "score": 2.371
         },
         {
           "id": "1a10f1676d46fc01",
-          "score": 2.422
+          "score": 2.257
         },
         {
           "id": "7ad44f990f0c53ef",
-          "score": 2.24
+          "score": 2.087
         },
         {
           "id": "616293296550946f",
-          "score": 1.978,
+          "score": 1.843,
           "also": [
             "718b13178753e59d"
           ]
@@ -97,7 +97,31 @@
       "items": [
         {
           "id": "f68a02ee7d3a20e4",
-          "score": 2.622
+          "score": 2.442
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "financial-services",
+      "title": "Financial Services",
+      "items": [
+        {
+          "id": "66868ed23f86d3d4",
+          "score": 1.497
+        },
+        {
+          "id": "27d9945e1a70b39f",
+          "score": 1.113
+        },
+        {
+          "id": "c1eb06a877580a7a",
+          "score": 0.993
+        },
+        {
+          "id": "8f19c6da69ffe8d1",
+          "score": 0.651
         }
       ],
       "more": [],
@@ -109,202 +133,230 @@
       "items": [
         {
           "id": "1efd04b1ac913541",
-          "score": 2.667,
+          "score": 2.484,
           "also": [
             "94290fb1cba9f51c"
           ]
         },
         {
           "id": "065d6dfe401dbfb5",
-          "score": 2.561
+          "score": 2.385
         },
         {
           "id": "dc1a2b3130912e3f",
-          "score": 2.54
+          "score": 2.366
         },
         {
           "id": "a14371888f8bd830",
-          "score": 2.534
+          "score": 2.361
         },
         {
           "id": "954e500a82b92d82",
-          "score": 2.528
+          "score": 2.355
         },
         {
           "id": "7566387532cd7624",
-          "score": 2.525
+          "score": 2.352
         },
         {
           "id": "62590bec623fa775",
-          "score": 2.275
+          "score": 2.12
         },
         {
           "id": "ee679b0405238e1b",
-          "score": 2.149
+          "score": 2.002
         }
       ],
       "more": [
         {
           "id": "009d3a1dfa554697",
-          "score": 2.066
+          "score": 1.925
         },
         {
           "id": "014d4c16e79ef7c8",
-          "score": 1.967
+          "score": 1.832
         },
         {
           "id": "a25a8f57f0e4b296",
-          "score": 1.946
+          "score": 1.812
         },
         {
           "id": "19b39888ea02e709",
-          "score": 1.907
+          "score": 1.777
         },
         {
           "id": "1cbc6e20db8b79bc",
-          "score": 1.863
+          "score": 1.736
         },
         {
           "id": "04184b2c36e667ef",
-          "score": 1.792
+          "score": 1.67
         },
         {
           "id": "6d9893896e782387",
-          "score": 1.791
+          "score": 1.669
         },
         {
           "id": "8175791d1254437e",
-          "score": 1.785
+          "score": 1.663
         },
         {
           "id": "70f34f255668a1f4",
-          "score": 1.776
+          "score": 1.655
         },
         {
           "id": "35ec4a2074928fef",
-          "score": 1.636
+          "score": 1.524
         },
         {
           "id": "4526cba5e8b31b82",
-          "score": 1.608
+          "score": 1.498
+        },
+        {
+          "id": "001836c341144c1d",
+          "score": 1.472
         },
         {
           "id": "beb262d896ad1e34",
-          "score": 1.564
+          "score": 1.457
         },
         {
           "id": "8ced38c0e7b3c183",
-          "score": 1.55
+          "score": 1.444
+        },
+        {
+          "id": "4550fd13a7e65bf5",
+          "score": 1.433
+        },
+        {
+          "id": "4ed583468d00f27b",
+          "score": 1.421
         },
         {
           "id": "c5d9d1f4597ce049",
-          "score": 1.5
+          "score": 1.398
         },
         {
           "id": "bd97c0e50e7e5eae",
-          "score": 1.49
+          "score": 1.388
         },
         {
           "id": "fdd8ddbee8c10048",
-          "score": 1.443
+          "score": 1.345
+        },
+        {
+          "id": "551605fc8fff8f4d",
+          "score": 1.309
+        },
+        {
+          "id": "e1004013d7ce5464",
+          "score": 1.308
         },
         {
           "id": "400cca1ab3090531",
-          "score": 1.352
-        },
-        {
-          "id": "104d3527c3379123",
-          "score": 1.32
+          "score": 1.259
         },
         {
           "id": "b2a8541be4f1bf43",
-          "score": 1.32
+          "score": 1.23
+        },
+        {
+          "id": "104d3527c3379123",
+          "score": 1.229
         },
         {
           "id": "c0e01762a8a1c092",
-          "score": 1.301
+          "score": 1.212
         },
         {
           "id": "38b6a9c33bc385b8",
-          "score": 1.299
+          "score": 1.21
         },
         {
           "id": "9e5f151617e49107",
-          "score": 1.225
+          "score": 1.141
         },
         {
           "id": "5b3afa06c1672984",
-          "score": 1.171
+          "score": 1.091
         },
         {
           "id": "c49a43e54696c3c8",
-          "score": 1.163
+          "score": 1.083
+        },
+        {
+          "id": "f21afbaf35d8d976",
+          "score": 0.985
         },
         {
           "id": "73fb8d31e1f9196b",
-          "score": 1.023
+          "score": 0.953
         },
         {
           "id": "9294811a4f3de0cc",
-          "score": 0.984
+          "score": 0.916
         },
         {
           "id": "98ce715a3c2f59e5",
-          "score": 0.905
+          "score": 0.843
         },
         {
           "id": "51f2c635047813f0",
-          "score": 0.799
+          "score": 0.744
         },
         {
           "id": "32c9360b844ecfed",
-          "score": 0.793
+          "score": 0.739
         },
         {
           "id": "d26db08e14d282dc",
-          "score": 0.783
+          "score": 0.729
         },
         {
           "id": "7435da6cae5a4f1f",
-          "score": 0.755
+          "score": 0.703
         },
         {
           "id": "855790015bd4dd38",
-          "score": 0.75
+          "score": 0.699
+        },
+        {
+          "id": "4ebb370692e1ba43",
+          "score": 0.678
         }
       ],
-      "overflow": 32
+      "overflow": 39
     }
   ],
   "counts": {
-    "candidates": 59,
-    "stories": 54,
-    "summarised": 56,
+    "candidates": 70,
+    "stories": 65,
+    "summarised": 67,
     "headlineOnly": 3
   },
-  "publishedAt": "2026-11-26T03:35:59.785Z",
+  "publishedAt": "2026-11-27T13:57:24.232Z",
   "intro": {
     "sentences": [
       {
-        "text": "Australian organisations and public agencies deploying autonomous AI agents must build governance and technical controls into systems from the start rather than relying on broad principles or after-the-fact reviews.",
+        "text": "Australian organisations deploying autonomous AI agents must build governance and technical controls into systems from the start.",
         "cites": [
           "eea17d1397dbb4e5"
         ]
       },
       {
-        "text": "Frontier artificial intelligence firms operating in Australia face a wave of regulatory scrutiny and mandatory sharing of new models with safety and security agencies under a new joint committee report.",
+        "text": "Frontier AI firms face potential mandatory model sharing with safety and security agencies under a new bipartisan report.",
         "cites": [
           "6e1f21ad7bac31cf"
         ]
       },
       {
-        "text": "At the same time, organisations deploying agentic AI must adapt existing frameworks like ISO/IEC 42001 and NIST RMF by implementing layered safeguards and dynamic oversight to manage the unique risks of autonomous multi-step actions.",
+        "text": "Meanwhile, organisations deploying agentic AI must adapt frameworks to manage the risks of autonomous multi-step actions.",
         "cites": [
           "cc15fb5ac47a095d"
         ]
       },
       {
-        "text": "Furthermore, organisations operating AI and social media platforms in Australia face potential civil liability under new online safety laws following federal agreement to toughen the Digital Duty of Care legislation.",
+        "text": "Additionally, upcoming Digital Duty of Care legislation will require AI giants to prevent user harms and provide a right to sue.",
         "cites": [
           "f3cf671205f88aff"
         ]

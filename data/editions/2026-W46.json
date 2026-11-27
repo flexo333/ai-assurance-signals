@@ -7,15 +7,22 @@
   "topSignals": [
     {
       "id": "aa1e34113f080f11",
-      "score": 5.424
+      "score": 5.695,
+      "also": [
+        "aa941e9da33f4ff6"
+      ]
+    },
+    {
+      "id": "c99c47ebc60e24c2",
+      "score": 5.66
+    },
+    {
+      "id": "91592a3f8d77d789",
+      "score": 4.245
     },
     {
       "id": "0e9fb0eb84f13acf",
       "score": 3.474
-    },
-    {
-      "id": "7e0299146958391a",
-      "score": 3.39
     },
     {
       "id": "c0744c0257c7293c",
@@ -27,6 +34,18 @@
       "id": "policy-legislation",
       "title": "Australian Policy & Legislation",
       "items": [
+        {
+          "id": "7e0299146958391a",
+          "score": 3.39
+        },
+        {
+          "id": "fdbf46421d727769",
+          "score": 2.77
+        },
+        {
+          "id": "ea667207df0fb78c",
+          "score": 2.125
+        },
         {
           "id": "f79225b4bdb7d563",
           "score": 1.942
@@ -62,6 +81,42 @@
         {
           "id": "6b6709b612e5913e",
           "score": 2.52
+        },
+        {
+          "id": "d7c1da8cb7dc41da",
+          "score": 1.871
+        },
+        {
+          "id": "55ff14dc4213127d",
+          "score": 1.526
+        },
+        {
+          "id": "43af641572cb998c",
+          "score": 1.474
+        },
+        {
+          "id": "b9840fd67063a36a",
+          "score": 0.822
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    },
+    {
+      "id": "financial-services",
+      "title": "Financial Services",
+      "items": [
+        {
+          "id": "65b96c238445cded",
+          "score": 3.608
+        },
+        {
+          "id": "ba4e87c1d8ec3b1b",
+          "score": 1.889
+        },
+        {
+          "id": "275b523e8a8aa432",
+          "score": 0.796
         }
       ],
       "more": [],
@@ -72,19 +127,72 @@
       "title": "News & Commentary",
       "items": [
         {
+          "id": "f391ddbd91cf7ed3",
+          "score": 2.682
+        },
+        {
+          "id": "508a540c21e44dcf",
+          "score": 2.269
+        },
+        {
           "id": "d336b8094a4e6a45",
           "score": 2.066
+        },
+        {
+          "id": "b683f5a80f025ddb",
+          "score": 1.953
+        },
+        {
+          "id": "2468a699668bbfe9",
+          "score": 1.952
+        },
+        {
+          "id": "1a94810c7d36654d",
+          "score": 1.364
+        },
+        {
+          "id": "33dc3be4b95034f8",
+          "score": 1.241
+        },
+        {
+          "id": "147bb24011e6a423",
+          "score": 1.212
         }
       ],
-      "more": [],
-      "overflow": 0
+      "more": [
+        {
+          "id": "b044b38a5098318b",
+          "score": 1.054
+        },
+        {
+          "id": "f9ec69b12e86c3bc",
+          "score": 1.009
+        },
+        {
+          "id": "f511750574538024",
+          "score": 1.001
+        },
+        {
+          "id": "e1b06c6b65329822",
+          "score": 0.917
+        },
+        {
+          "id": "5fc2d61902481468",
+          "score": 0.757
+        },
+        {
+          "id": "70b7e8ec8f440669",
+          "score": 0.676
+        }
+      ],
+      "overflow": 6
     }
   ],
   "counts": {
-    "candidates": 10,
-    "stories": 10,
-    "summarised": 10,
-    "headlineOnly": 0
+    "candidates": 35,
+    "stories": 34,
+    "summarised": 33,
+    "headlineOnly": 2
   },
   "publishedAt": "2026-11-13T04:17:00.000Z",
   "backfilled": true

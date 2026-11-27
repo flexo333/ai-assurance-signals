@@ -1,0 +1,55 @@
+{
+  "id": "2026-W43",
+  "window": {
+    "from": "2026-10-16T04:17:00.000Z",
+    "to": "2026-10-23T04:17:00.000Z"
+  },
+  "topSignals": [
+    {
+      "id": "0dba035a5e3bd267",
+      "score": 5.66
+    },
+    {
+      "id": "a813ae8efe4c8bcc",
+      "score": 4.493
+    },
+    {
+      "id": "10021f5c7f3c5a30",
+      "score": 4.245
+    }
+  ],
+  "sections": [
+    {
+      "id": "frontier-labs",
+      "title": "Frontier Labs",
+      "items": [
+        {
+          "id": "6172089eff8b6e8a",
+          "score": 2.806
+        },
+        {
+          "id": "856c26ca4c2d04bc",
+          "score": 1.825
+        },
+        {
+          "id": "1d7075b06143eaf3",
+          "score": 1.781
+        },
+        {
+          "id": "8f93170faf71fda6",
+          "score": 1.446
+        }
+      ],
+      "more": [],
+      "overflow": 0
+    }
+  ],
+  "counts": {
+    "candidates": 7,
+    "stories": 7,
+    "summarised": 6,
+    "headlineOnly": 1
+  },
+  "publishedAt": "2026-10-23T04:17:00.000Z",
+  "backfilled": true
+}
