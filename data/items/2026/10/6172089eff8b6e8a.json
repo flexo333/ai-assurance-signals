@@ -1,0 +1,52 @@
+{
+  "id": "6172089eff8b6e8a",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/research/formal-verification",
+  "title": "LLMs are making formal software verification feasible at a much larger scale",
+  "publishedAt": "2026-10-22T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:44.369Z",
+  "status": "summarised",
+  "headline": "Anthropic demonstrates large-scale AI-assisted formal software verification",
+  "summary": "Anthropic, in collaboration with Theorem, used LLMs to autonomously generate formal proofs for over 100 open-source software libraries at the assembly code level. The process involved converting existing fuzz tests into formal specifications and using Claude to prove that the code satisfies these security properties. During this process, the model identified and patched numerous bugs that had previously eluded detection.",
+  "why_it_matters": "This development suggests that AI can significantly lower the barrier to formal verification, potentially enabling organisations to achieve higher levels of software assurance and security for critical systems.",
+  "quotes": [
+    {
+      "text": "To our knowledge, this represents the first large-scale effort to use AI to apply formal verification to production software at the assembly code level.",
+      "supports": "summary"
+    },
+    {
+      "text": "As model capabilities continue to improve, we expect formal verification to become an essential part of secure software development.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Demonstrates a scalable method for improving software security and assurance, which is a critical component of AI risk management and secure systems engineering.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "4b055d3598cd1bd480dc03b6bb270e27efb71303d24404ad25817645681cfca5",
+    "textChars": 20000,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:37:13.471Z",
+    "attempts": 1
+  }
+}

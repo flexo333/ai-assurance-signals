@@ -1,0 +1,63 @@
+{
+  "id": "b044b38a5098318b",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/data-governance-for-ai-in-thailand-and-vietnam-navigating-converging-privacy-and-ai-governance-regimes",
+  "title": "Data governance for AI in Thailand and Vietnam: Navigating converging privacy and AI governance regimes",
+  "publishedAt": "2026-11-10T17:24:20.630Z",
+  "fetchedAt": "2026-11-27T02:27:42.132Z",
+  "status": "summarised",
+  "headline": "Data governance for AI in Thailand and Vietnam",
+  "summary": "Thailand and Vietnam are shaping responsible AI governance by intersecting personal data protection laws with emerging AI-specific regulatory regimes. In Thailand, governance relies on the Personal Data Protection Act alongside new digital platform rules and a draft AI act. In Vietnam, the legal framework is developing through a new Law on Artificial Intelligence and accompanying decrees.",
+  "why_it_matters": "The overlap between data privacy rules and emerging AI obligations presents material compliance considerations for stakeholders across all stages of AI development and use.",
+  "quotes": [
+    {
+      "text": "In both jurisdictions, personal data protection laws currently exert substantial influence across the AI life cycle — from data collection and model training to deployment and continuing operation — by regulating the collection, processing and use of personal data within AI systems.",
+      "supports": "summary"
+    },
+    {
+      "text": "The resulting overlap between data privacy rules and emerging AI obligations presents material compliance considerations for stakeholders across all stages of AI development and use.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-07-02",
+      "what": "Draft Principles of AI Act released for public consultation by the Electronic Transactions Development Agency",
+      "quote": "Draft Principles of AI Act , released by the Electronic Transactions Development Agency for public consultation 2 July 2026"
+    },
+    {
+      "date": "2026-04-30",
+      "what": "Decree No. 142/2026/ND-CP supporting the Law on Artificial Intelligence in Vietnam",
+      "quote": "Decree No. 142/2026/ND-CP dated 30 April 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides regional analysis of converging privacy and AI regulations in Thailand and Vietnam for international practitioners.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3b383c3ea413fb68c251ba6b9c72b7c9e4a9dcd576bb86738dd47cec20ab757a",
+    "textChars": 1704,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:04.181Z",
+    "attempts": 1
+  }
+}

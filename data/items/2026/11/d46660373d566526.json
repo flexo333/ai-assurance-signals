@@ -1,0 +1,24 @@
+{
+  "id": "d46660373d566526",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/banks-warn-of-dodgy-websites-and-shonky-sellers-as-black-friday-sales-kick-off",
+  "title": "Banks warn of dodgy websites and shonky sellers as Black Friday sales kick off",
+  "publishedAt": "2026-11-09T22:58:44.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0842196e067222e38889cfbd74dfba78579cd4046e5a19937fdccc89118022af",
+    "textChars": 1690,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:17.036Z",
+    "attempts": 1
+  }
+}

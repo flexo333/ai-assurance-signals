@@ -1,0 +1,54 @@
+{
+  "id": "5f32b4f33b09d9e1",
+  "sourceId": "cba",
+  "sourceName": "Commonwealth Bank (Newsroom, Technology & AI)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://commbank.com.au/articles/newsroom/2026/11/commbank-agentic-shield-ai-cyber-defence.html",
+  "title": "CommBank deploys five-agent AI shield as cyber threats accelerate",
+  "publishedAt": "2026-11-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Commonwealth Bank deploys multi-agent AI system for cyber defence",
+  "summary": "Commonwealth Bank has deployed a five-agent AI shield in its Security Operations Centre to assist human experts in identifying and responding to cyber threats. The system has reduced the time required to turn threat intelligence into action from four hours to five minutes while processing over 265 billion weekly signals. Human experts remain responsible for assessing evidence and deciding on actions.",
+  "why_it_matters": "Financial institutions deploying autonomous or multi-agent AI systems must ensure that human oversight and accountability remain embedded in operational risk management.",
+  "quotes": [
+    {
+      "text": "CommBank is responding by using five specialised AI defender agents in its Security Operations Centre as part of a system called Agentic Shield, working alongside human cyber experts to identify and respond to threats.",
+      "supports": "summary"
+    },
+    {
+      "text": "Just because you have an AI tool that's assisting you by no means removes accountability",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Detailed production deployment of multi-agent AI in a major Australian bank's security operations, highlighting operational risk controls and human accountability.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "df23552120e070c5943bd732d736127f31856560d39365cc2664cd380041b69d",
+    "textChars": 5003,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:15.417Z",
+    "attempts": 2
+  }
+}

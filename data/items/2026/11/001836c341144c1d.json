@@ -1,0 +1,52 @@
+{
+  "id": "001836c341144c1d",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/ai-could-be-used-to-write-your-childs-report-is-this-a-problem-297517",
+  "title": "AI could be used to write your child’s report. Is this a problem?",
+  "publishedAt": "2026-11-26T19:15:26.000Z",
+  "fetchedAt": "2026-11-27T02:27:35.283Z",
+  "status": "summarised",
+  "headline": "AI use in school reports raises consistency and privacy risks in Australia",
+  "summary": "Australian schools face fragmented state policies regarding teachers using AI to assist with school reports, while national requirements mandate accurate and understandable reporting. While pre-written comment banks have long been used, generative AI introduces new risks related to student data privacy if unapproved tools are used. Ultimately, policies dictate that teachers remain responsible for pedagogical judgements regardless of AI assistance.",
+  "why_it_matters": "Organisations and public agencies deploying AI in educational settings must navigate divergent state-level guidelines and strict student privacy obligations when staff input sensitive learning records into AI tools.",
+  "quotes": [
+    {
+      "text": "Currently, there is no consistent national guidance for AI use in school reports.",
+      "supports": "summary"
+    },
+    {
+      "text": "And if a teacher enters names, learning records or sensitive details into an unapproved tool to achieve personalisation, they may put student privacy at risk.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Discusses policy and governance challenges of AI deployment in Australian schools, highlighting state-level fragmentation and privacy risks.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "375f14d4d89b052047555c9e523ff40e9b8bd323e8a5bfc621af51990a82ab56",
+    "textChars": 4841,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:28:42.772Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "678bd701145f2aae",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/our-productivity-challenge-will-take-more-than-treasury",
+  "title": "Government and business can help fight inflation by lifting productivity",
+  "publishedAt": "2026-11-05T21:42:21.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "ABA calls for seizing AI potential to boost productivity and growth",
+  "summary": "The Australian Banking Association published an op-ed arguing that Australia must seize opportunities from artificial intelligence to boost productivity and economic growth. The text notes that AI has enormous potential for productivity, and warns that the nation must actively participate in shaping AI innovation rather than letting it happen passively, while managing potential downsides. It also highlights broader economic reform areas including regulatory cost reduction, foreign investment approvals, and financial sector measures.",
+  "why_it_matters": "Organisations must navigate both the productivity opportunities and potential downsides of artificial intelligence as part of national economic and regulatory strategies.",
+  "quotes": [
+    {
+      "text": "Australia must also seize all we can from artificial intelligence and its enormous potential to boost productivity. AI can either happen to us, or we can seek to be a part of how it happens.",
+      "supports": "summary"
+    },
+    {
+      "text": "While there are potential downsides to manage, we will be far worse off if we don’t grasp the opportunity to house as much infrastructure, innovation and adaption as possible in Australia.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "High-level industry commentary on productivity and AI adoption in Australia, but lacks specific regulatory or technical governance frameworks.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d4aecc15b26c404f0b8f0b98fbd0f4a1018c46e6d44c14831696b586cce7a0e8",
+    "textChars": 5945,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:06.071Z",
+    "attempts": 1
+  }
+}

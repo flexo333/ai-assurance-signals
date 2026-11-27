@@ -1,0 +1,54 @@
+{
+  "id": "163303348ed14c45",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/opening-statement-senate-economics-legislation-committee-october-2026",
+  "title": "Opening Statement to Senate Economics Legislation Committee – October 2026",
+  "publishedAt": "2026-10-29T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "APRA highlights AI as growing operational resilience risk in Senate statement",
+  "summary": "The Australian Prudential Regulation Authority identified artificial intelligence as one of the fastest-growing operational resilience risks for regulated entities. APRA noted that while AI offers efficiency benefits, its rapid development increases cyber threats and tests entity governance and security practices. The regulator highlighted collaborative roundtables with ASIC and the Australian Signals Directorate to help financial institutions strengthen their resilience.",
+  "why_it_matters": "Financial institutions must ensure their governance, risk management, and security practices keep pace as APRA ramps up supervisory scrutiny on AI-enabled operational and cyber risks.",
+  "quotes": [
+    {
+      "text": "AI is emerging as one of the fastest growing operational resilience risks for APRA-regulated entities. While AI offers major efficiency and innovation benefits, its rapid development is increasing cyber threats and testing whether entities’ governance, risk management and security practices can keep pace.",
+      "supports": "summary"
+    },
+    {
+      "text": "Combatting these threats requires a “Team Australia” approach of information-sharing between business, government, regulators and national security agencies. APRA recently initiated a series of industry roundtables alongside ASIC and the Australian Signals Directorate involving more than 600 attendees from across the financial system.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "APRA's formal identification of AI as a primary operational resilience risk signals heightened regulatory expectations and scrutiny for banks, insurers, and superannuation trustees.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "bbe4f498b8485a0ae32c8c9663586f03265a9ad7a815151fb724189891f9da20",
+    "textChars": 7379,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:38.562Z",
+    "attempts": 1
+  }
+}

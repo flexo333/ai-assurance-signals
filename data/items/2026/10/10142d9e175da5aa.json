@@ -1,0 +1,23 @@
+{
+  "id": "10142d9e175da5aa",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/ai-governance-starts-with-your-data-building-the-evidence-the-eu-ai-act-and-new-us-rules-expect",
+  "title": "AI governance starts with your data: Building the evidence the EU AI Act and new US rules expect",
+  "publishedAt": "2026-10-28T14:55:35.021Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a53dab00a4bf28c0bad37cf30314e46e1a6b6c83a29143a46be2573ed621a45f",
+    "textChars": 1217,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:43.590Z",
+    "attempts": 1
+  }
+}

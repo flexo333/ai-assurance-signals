@@ -1,0 +1,54 @@
+{
+  "id": "1134c11889daac69",
+  "sourceId": "cba",
+  "sourceName": "Commonwealth Bank (Newsroom, Technology & AI)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://commbank.com.au/articles/newsroom/2026/11/accelerate-ai-australia-productivity-business-redesign.html",
+  "title": "Why AI adoption alone won’t solve Australia’s productivity problem",
+  "publishedAt": "2026-11-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "CommBank Accelerate AI event highlights Australia's AI productivity challenge",
+  "summary": "Business and economic leaders gathered at Commonwealth Bank's Accelerate AI event in Sydney to discuss why widespread AI adoption has not yet translated into macroeconomic productivity gains. Speakers from the Productivity Commission, e61 Institute, CommBank, Telstra, Wesfarmers and Origin Energy emphasised that realising productivity growth requires organisations to fundamentally redesign work processes and business models rather than merely using AI for existing tasks. Discussions also addressed workforce trust, skills development, infrastructure demands, and the economic risks of lagging behind international competitors.",
+  "why_it_matters": "Organisations must move beyond basic AI tool adoption and actively redesign their operational workflows and business models to capture economic and productivity benefits, while building workforce trust and managing infrastructure constraints.",
+  "quotes": [
+    {
+      "text": "The questions of why widespread AI adoption had yet to show up in Australia’s productivity figures, and what businesses needed to change for that to happen ran through multiple discussions at the event.",
+      "supports": "summary"
+    },
+    {
+      "text": "The next thing we’re just stepping into now, which I think is fascinating, is a lot of talk about redesigning work",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Brings together major Australian financial and corporate leaders to address strategic and operational productivity challenges of AI integration.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "1bb01db20dcd3ce08e2914cc3233a15e736a6d641d5738c2afacbeb03db5b1ff",
+    "textChars": 8463,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:06.066Z",
+    "attempts": 1
+  }
+}

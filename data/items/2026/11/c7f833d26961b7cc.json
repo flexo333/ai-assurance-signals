@@ -1,0 +1,51 @@
+{
+  "id": "c7f833d26961b7cc",
+  "sourceId": "cba",
+  "sourceName": "Commonwealth Bank (Newsroom, Technology & AI)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://commbank.com.au/articles/newsroom/2026/11/accelerate-ai-10-takeaways-turning-ambition-into-impact.html",
+  "title": "10 takeaways on turning AI ambition into impact",
+  "publishedAt": "2026-11-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Provides substantive operational insights from Australia's largest bank and major corporate leaders on scaling AI, governance controls, and agentic workflows.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a0239f64035be6bed4abd658b609452be1252e2aeb043a4593a77d5fc7168e3d",
+    "textChars": 12373,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:57.466Z",
+    "attempts": 2
+  }
+}

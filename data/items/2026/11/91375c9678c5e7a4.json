@@ -1,0 +1,23 @@
+{
+  "id": "91375c9678c5e7a4",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-industry-news/deals/dicker-data-selects-interactive-to-host-cisco-ai-rally-kit-to-help-australian-organisations-test-ai-use-cases",
+  "title": "Dicker Data selects Interactive to host Cisco AI Rally Kit to help Australian organisations test AI use cases",
+  "publishedAt": "2026-11-15T23:02:57.889Z",
+  "fetchedAt": "2026-11-27T02:27:37.503Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "19f885b6d50b7391e65374efc96444b9c2aa5108f7a1a260e971bd168fe6406b",
+    "textChars": 4160,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:44.101Z",
+    "attempts": 1
+  }
+}

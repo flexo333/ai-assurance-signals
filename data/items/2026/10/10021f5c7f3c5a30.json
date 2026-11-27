@@ -1,0 +1,54 @@
+{
+  "id": "10021f5c7f3c5a30",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apra-publishes-deputy-chair-david-bradburys-speech-fsc-retirement-summit",
+  "title": "APRA publishes Deputy Chair David Bradbury’s speech to FSC Retirement Summit",
+  "publishedAt": "2026-10-22T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:44.369Z",
+  "status": "summarised",
+  "headline": "APRA Deputy Chair highlights AI-enabled cyber risks to retirement savings",
+  "summary": "In a speech to the 2026 FSC Retirement Summit, APRA Deputy Chair David Bradbury identified AI-enabled cyber attacks as a significant risk to financial stability. He warned that the convergence of cyber vulnerabilities and sophisticated AI threats could allow malicious actors to access retirement savings. This highlights the regulator's focus on operational resilience within the superannuation sector.",
+  "why_it_matters": "Financial institutions must account for the heightened risk profile of AI-enabled cyber threats when designing their operational resilience and security frameworks to protect member assets.",
+  "quotes": [
+    {
+      "text": "Consider a scenario where a series of threats converge. For example, a cyber vulnerability, combined with increasingly sophisticated AI-enabled attack, could create a pathway for criminals or a malicious foreign actor to reach directly into the retirement savings of ordinary Australians.",
+      "supports": "summary"
+    },
+    {
+      "text": "The risks that keep me awake at night are those that have the potential to threaten financial stability or lead to catastrophic losses for members.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Direct warning from the prudential regulator regarding AI-enabled cyber threats to the superannuation sector.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ed476ba98744c6de1bd6bf9435ef0484bfcf41fae6fe9826722e013155849a33",
+    "textChars": 2962,
+    "textSource": "article",
+    "extractMethod": "main-text",
+    "analysedAt": "2026-11-27T02:37:02.960Z",
+    "attempts": 1
+  }
+}

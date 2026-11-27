@@ -1,0 +1,54 @@
+{
+  "id": "19e54e678e8762e2",
+  "sourceId": "westpac",
+  "sourceName": "Westpac (Wire & Media Releases)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://westpac.com.au/about-westpac/media/media-releases/2026/2-november",
+  "title": "Westpac announces FY26 Result",
+  "publishedAt": "2026-11-02T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Westpac reports high internal AI adoption and trust investments in FY26 results",
+  "summary": "Westpac's FY26 financial results note that 95 percent of its staff are using AI to work more effectively and spend more time with customers. The bank states that it is investing in trust, literacy, education, and foundational controls to scale AI responsibly. These AI developments are progressing alongside the implementation phase of its UNITE technology transformation program.",
+  "why_it_matters": "For Australian financial institutions, high internal AI adoption must be matched with deliberate investments in trust, literacy, and responsible scaling foundations to manage operational and conduct risks.",
+  "quotes": [
+    {
+      "text": "95% are using AI, helping them to work more effectively and spend more time with customers. We know trust and literacy are critical. We're investing in the foundations required to scale AI responsibly, while continuing to focus on education and training for our people.",
+      "supports": "summary"
+    },
+    {
+      "text": "We know trust and literacy are critical. We're investing in the foundations required to scale AI responsibly, while continuing to focus on education and training for our people.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "business",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 1,
+    "significance_reason": "General corporate earnings report noting high internal AI adoption and broad statements about responsible scaling foundations, but lacking granular operational deployment details.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f6f3a0e0dfecd5b0ed04c87a889ff092609effc732249fb4d8efb6c79994212b",
+    "textChars": 3417,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:54.399Z",
+    "attempts": 1
+  }
+}

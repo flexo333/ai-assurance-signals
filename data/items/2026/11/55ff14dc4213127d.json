@@ -1,0 +1,53 @@
+{
+  "id": "55ff14dc4213127d",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/jiostar-vijay-seshadri",
+  "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+  "publishedAt": "2026-11-11T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:44.369Z",
+  "status": "summarised",
+  "headline": "JioStar chief architect on scaling production AI and evaluation",
+  "summary": "JioStar built a conversational video and cricket-stat discovery assistant using the OpenAI API to serve more than 500 million consumers in about eight weeks. Chief Architect Vijay Seshadri discussed engineering tradeoffs, evaluation frameworks, validation layers, and production monitoring. The deployment required strict guardrails, domain expert input, and human judgment to manage accuracy, latency, and cost at scale.",
+  "why_it_matters": "Organisations taking AI from demo to production must establish robust evaluation frameworks, validation layers, and monitoring for model efficacy rather than relying solely on traditional infrastructure metrics.",
+  "quotes": [
+    {
+      "text": "Using the OpenAI API, JioStar built a conversational video and cricket-stat discovery assistant into JioHotstar.",
+      "supports": "summary"
+    },
+    {
+      "text": "Traditional infrastructure measures such as P99 latency remain important, but they are not enough. You also need to monitor model efficacy in production.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "Provides practical insights on production AI deployment, evaluation frameworks, and guardrails at massive scale, but is a vendor interview rather than a binding regulatory development.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5cc76b4336311b31e5871e3496ed18f74b57fabfc8a576b34c44474239cc9c44",
+    "textChars": 5921,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:45.475Z",
+    "attempts": 1
+  }
+}

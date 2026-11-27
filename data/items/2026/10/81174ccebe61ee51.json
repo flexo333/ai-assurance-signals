@@ -1,0 +1,24 @@
+{
+  "id": "81174ccebe61ee51",
+  "sourceId": "westpac",
+  "sourceName": "Westpac (Wire & Media Releases)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://westpac.com.au/news/money-matters/2026/10/everything-is-maths-according-to-eddie-woo",
+  "title": "Everything is maths, according to Eddie Woo",
+  "publishedAt": "2026-10-21T10:38:36.000Z",
+  "fetchedAt": "2026-11-27T02:27:44.788Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ab4fbf9bfdbf985da5db43a237a082a208690d884b3a5ba44a0ed2778d938326",
+    "textChars": 4059,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:37:21.433Z",
+    "attempts": 1
+  }
+}

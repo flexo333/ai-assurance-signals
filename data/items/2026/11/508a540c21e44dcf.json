@@ -1,0 +1,53 @@
+{
+  "id": "508a540c21e44dcf",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/security/cyber-attacks-remain-a-third-higher-than-last-year-as-ai-powered-extortion-group-breaks-into-the-top-three",
+  "title": "Cyber Attacks Remain a Third Higher Than Last Year as AI-Powered Extortion Group Breaks into the Top Three",
+  "publishedAt": "2026-11-12T01:01:15.478Z",
+  "fetchedAt": "2026-11-27T02:27:41.308Z",
+  "status": "summarised",
+  "headline": "Check Point Research: GenAI Data Leaks and AI-Powered Extortion Groups Rise",
+  "summary": "Check Point Research published its October 2026 global threat intelligence findings, showing that risky enterprise GenAI prompts continue to climb, with roughly one in 35 prompts carrying a high risk of leaking sensitive data. Australian organisations faced an average of 2,117 cyber attacks every week in October, representing a 39% increase compared to October 2025. Additionally, a new ransomware group named n0n climbed into the top three most active extortion groups by extensively using AI tooling to accelerate its operations.",
+  "why_it_matters": "Rising rates of sensitive data exposure in enterprise GenAI prompts highlight that organisations need tailored AI governance and clear visibility into what staff share with AI tools to mitigate severe data leakage risks.",
+  "quotes": [
+    {
+      "text": "Roughly 1 in 35 enterprise GenAI prompts in October (2.9%) carried a high risk of leaking sensitive data, and this affected 90% of the organisations that use GenAI tools regularly.",
+      "supports": "summary"
+    },
+    {
+      "text": "As the risk of data leakage via prompts in AI tools become more common, companies need a clear view of what staff share with these tools, where the data goes and which safeguards apply.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides empirical data on enterprise GenAI prompt risks and malicious actors leveraging AI tooling, signalling urgent governance needs for data leakage prevention.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "4373ec272151acc680c85c0a5377a15c75e0972722e760574aaa11af97f51918",
+    "textChars": 9057,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:41.425Z",
+    "attempts": 1
+  }
+}

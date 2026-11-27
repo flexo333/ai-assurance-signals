@@ -1,0 +1,54 @@
+{
+  "id": "ba4e87c1d8ec3b1b",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/nab-updates/ceo-opening-statement-house-economics-committee-november-2026",
+  "title": "CEO Opening Statement",
+  "publishedAt": "2026-11-12T22:16:16.000Z",
+  "fetchedAt": "2026-11-27T02:27:38.767Z",
+  "status": "summarised",
+  "headline": "NAB CEO addresses AI workforce impacts and responsible use",
+  "summary": "In an opening statement to the House Economics Committee, National Australia Bank CEO discussed the bank's operational adjustments and the future impact of artificial intelligence on the banking workforce. The bank noted that while recent workforce changes were not driven by AI, artificial intelligence will ultimately have significant implications for the future workforce in banking and other industries. The bank emphasised the importance of using AI responsibly to improve customer and colleague experiences, increase productivity, and prepare people for technological transitions.",
+  "why_it_matters": "Australian financial institutions must prepare for the significant long-term workforce implications of artificial intelligence while ensuring the technology is deployed responsibly to maintain productivity and support customers.",
+  "quotes": [
+    {
+      "text": "When used responsibly, AI improves customer and colleague experiences, increases productivity and helps colleagues spend more time serving customers.",
+      "supports": "summary"
+    },
+    {
+      "text": "Our responsibility as business and political leaders is to prepare people for that transition, invest in new skills and ensure the benefits of technological progress are broadly shared.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides executive commentary on AI workforce impacts and responsible deployment from a major Australian bank, though it lacks specific technical implementation details or binding policy announcements.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d75c13e0972a3369a01cc07a2b2cb4e84fc6e329e31b78f172bd7d0c7a42b713",
+    "textChars": 5186,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:04.343Z",
+    "attempts": 1
+  }
+}

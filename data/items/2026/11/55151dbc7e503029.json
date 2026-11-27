@@ -1,0 +1,53 @@
+{
+  "id": "55151dbc7e503029",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/world-models-for-lawyers",
+  "title": "World models for lawyers",
+  "publishedAt": "2026-11-14T13:45:28.355Z",
+  "fetchedAt": "2026-11-27T02:27:37.988Z",
+  "status": "summarised",
+  "headline": "Legal and governance challenges of AI world models",
+  "summary": "The article examines the legal and governance challenges posed by AI world models, which learn physical dynamics from sensor and video data to simulate future states. It explores the difficulties in auditing generative and latent world models, which lack standardized benchmarks or certification methods. It also highlights legal questions around supply-chain liability allocation and regulatory fragmentation.",
+  "why_it_matters": "Organisations deploying physical AI systems face significant assurance and liability hurdles because existing legal frameworks and audit methodologies lack established standards for certifying whether a world model's understanding of physics is safe and reliable.",
+  "quotes": [
+    {
+      "text": "Both generative and latent world models raise the same fundamental legal question: How can organizations demonstrate that AI systems acting on their understanding of the physical world are safe and reliable?",
+      "supports": "summary"
+    },
+    {
+      "text": "Both generative and latent world models are learned approximations of physics. Existing high-risk industries such as finance , aviation and nuclear , have agreed statistical evidence standards and reference datasets for compliance, while world models lack equivalent benchmarks.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides legal and risk analysis of emerging physical AI world models, but serves as commentary rather than binding regulatory guidance or legislation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e9ca2bf70d8877261cbec411fb9f8d1cf20f90a63039c9bcbbf99e915bd7c169",
+    "textChars": 8565,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:10.809Z",
+    "attempts": 1
+  }
+}

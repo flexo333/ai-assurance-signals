@@ -1,0 +1,23 @@
+{
+  "id": "91c195e0833f3c56",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/ai-charm-offensive-musks-18b-spacex-share-pledge-to-us-kids",
+  "title": "AI charm offensive: Musk’s $18b SpaceX share pledge to US kids",
+  "publishedAt": "2026-11-26T20:27:37.000Z",
+  "fetchedAt": "2026-11-27T02:27:37.269Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "71c0461e096c2f5b2cde66d1d2388362d31f6bd11b1b53ff8b7b52c174f05e4b",
+    "textChars": 622,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:28:33.958Z",
+    "attempts": 1
+  }
+}

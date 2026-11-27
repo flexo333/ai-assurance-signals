@@ -1,0 +1,24 @@
+{
+  "id": "4ee4702f1672160f",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/economy-markets/rba-rate-rises-may-be-over-but-global-risks-remain",
+  "title": "RBA rate rises may be over but global risks remain",
+  "publishedAt": "2026-11-09T05:16:56.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "04fa7e9f1bd6936702242e3192782d2050669f8df2be315b3dd7dc6b1f8813b1",
+    "textChars": 5048,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:46.064Z",
+    "attempts": 1
+  }
+}

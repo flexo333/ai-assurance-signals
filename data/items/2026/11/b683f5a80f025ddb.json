@@ -1,0 +1,59 @@
+{
+  "id": "b683f5a80f025ddb",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/european-commission-releases-draft-proposal-for-digital-fairness-act",
+  "title": "European Commission releases draft proposal for Digital Fairness Act",
+  "publishedAt": "2026-11-11T17:03:57.354Z",
+  "fetchedAt": "2026-11-27T02:27:41.705Z",
+  "status": "summarised",
+  "headline": "European Commission releases draft proposal for Digital Fairness Act",
+  "summary": "The European Commission unveiled its draft proposal for the Digital Fairness Act, aiming to update consumer protection rules regarding dark patterns, addictive digital features, and attention-maximizing recommender systems. The proposal revises the Consumer Protection Cooperation Regulation to grant the Commission greater enforcement powers and financial penalties of up to 6% of global profits for large-scale violations. It forms part of the EU's broader digital regulatory framework alongside the Digital Services Act and AI Act.",
+  "why_it_matters": "Organisations operating digital platforms and deploying consumer-facing AI systems or recommender engines within the EU will need to adapt their user journeys to comply with strict 'fairness by design' requirements and new bans on manipulative design features.",
+  "quotes": [
+    {
+      "text": "The European Commission formally unveiled its anticipated proposal for the Digital Fairness Act 11 Nov., which further tightens the EU's digital rulebook around dark patterns and prohibitions on directing targeted advertising toward children.",
+      "supports": "summary"
+    },
+    {
+      "text": "Compliance is moving from the small print to the user journey: how choices are presented, how easy it is to cancel, how engagement features work and what an AI agent can agree to on a consumer's behal",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-19",
+      "what": "IAPP Europe Congress 2026 in Brussels, Belgium",
+      "quote": "upcoming IAPP Europe Congress 2026 in Brussels, Belgium 19 Nov."
+    }
+  ],
+  "classification": {
+    "item_kind": "regulation",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The Digital Fairness Act introduces significant EU-level requirements targeting digital interfaces, recommender systems, and dark patterns with heavy enforcement penalties.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "32d2ed00f6f769b54c0bcae664da23bea30b53296117c80c42fd0f23e04c9022",
+    "textChars": 7821,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:13.783Z",
+    "attempts": 2
+  }
+}

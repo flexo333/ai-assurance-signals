@@ -1,0 +1,59 @@
+{
+  "id": "4c24cadf949630ab",
+  "sourceId": "treasury",
+  "sourceName": "The Treasury",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://treasury.gov.au/media-release/uk-australia-joint-financial-regulatory-forum-2026-joint-statement",
+  "title": "UK–Australia Joint Financial Regulatory Forum 2026: Joint Statement",
+  "publishedAt": "2026-10-29T12:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "UK-Australia Forum Agrees to Cooperate on Financial Sector AI Risks",
+  "summary": "The UK-Australia Joint Financial Regulatory Forum brought together officials from both nations, including representatives from ASIC, APRA, RBA, and HM Treasury, to discuss regulatory priorities. The participants agreed to continue bilateral and international cooperation on the operational resilience implications of Artificial Intelligence. They also committed to exploring further cooperation regarding the role of AI in delivering financial advice while balancing consumer protection.",
+  "why_it_matters": "Australian financial institutions and regulators are actively aligning with international counterparts on AI governance, third-party operational resilience, and the deployment of AI in financial advice.",
+  "quotes": [
+    {
+      "text": "The UK and Australia agreed to continue cooperation bilaterally and through the G20 and Financial Stability Board on the operational resilience implications of AI.",
+      "supports": "summary"
+    },
+    {
+      "text": "Both sides also agreed to explore avenues for further cooperation on the role of AI in the provision of financial advice, including on approaches to balancing access and consumer protection.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-10-27",
+      "what": "The second UK-Australia Joint Financial Regulatory Forum took place",
+      "quote": "The second UK–Australia Joint Financial Regulatory Forum took place on 27 October 2026."
+    }
+  ],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "High-level bilateral agreement between Australian and UK financial regulators to coordinate on AI operational resilience and financial advice governance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a12d178c1075e9195447827b0c9292536a16fd903cbd30177cc14af56f7432e1",
+    "textChars": 5453,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:33.975Z",
+    "attempts": 1
+  }
+}

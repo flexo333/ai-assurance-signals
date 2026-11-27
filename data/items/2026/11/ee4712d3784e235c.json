@@ -1,0 +1,54 @@
+{
+  "id": "ee4712d3784e235c",
+  "sourceId": "westpac",
+  "sourceName": "Westpac (Wire & Media Releases)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://westpac.com.au/news/making-news/2026/11/customers-navigate-higher-rates-as-westpac-backs-housing-and-growth",
+  "title": "Customers navigate higher rates as Westpac backs housing and growth",
+  "publishedAt": "2026-11-02T07:37:33.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Westpac reports 95 percent AI tool adoption amid bank transformation",
+  "summary": "Westpac announced its full year result for FY26, reporting that 95 per cent of its employees are using artificial intelligence tools. CEO Anthony Miller stated that trust and literacy are critical, noting the bank is investing in the foundations required to scale AI responsibly while focusing on employee education. The update was provided alongside broader technology transformation milestones under the UNITE program.",
+  "why_it_matters": "High internal deployment of AI across a major Australian bank highlights the urgent need for robust risk management foundations, AI literacy, and trust frameworks to govern widespread adoption safely.",
+  "quotes": [
+    {
+      "text": "Artificial intelligence is also becoming a bigger part of how the bank operates, with 95 per cent of employees using AI tools.",
+      "supports": "summary"
+    },
+    {
+      "text": "“We know trust and literacy are critical. We’re investing in the foundations required to scale AI responsibly, while continuing focus on education for our people.”",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Reports high enterprise-wide AI adoption and general commitments to responsible scaling and literacy in a major Australian bank, but lacks detailed operational risk controls or governance architectures.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ffa00cea35d69384a281c6e337cb86d54d06ab1f6fe87c1108e93a64c4271baf",
+    "textChars": 3992,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:47.004Z",
+    "attempts": 1
+  }
+}

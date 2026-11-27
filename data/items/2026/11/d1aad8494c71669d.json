@@ -1,0 +1,54 @@
+{
+  "id": "d1aad8494c71669d",
+  "sourceId": "westpac",
+  "sourceName": "Westpac (Wire & Media Releases)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://westpac.com.au/news/making-news/2026/11/rba-lifts-rates-to-18-year-high-as-businesses-flag-further-price-rises",
+  "title": "RBA lifts rates to 18-year high as businesses flag further price rises",
+  "publishedAt": "2026-11-04T16:11:39.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "RBA notes AI investment drives demand and inflation pressure without productivity gains",
+  "summary": "The Reserve Bank of Australia has raised the cash rate by 25 basis points to 4.85 per cent amid persistent inflation pressures. In its assessment, the RBA notes that heavy investment in artificial intelligence and data centres is currently contributing to global demand and inflation rather than expanding productive capacity, as expected productivity dividends have not yet materialized in forecasts.",
+  "why_it_matters": "For Australian financial institutions and corporate boards, the RBA's view that AI infrastructure spending is acting as a near-term inflationary demand driver underscores the broader economic and risk factors that must be accounted for in strategic AI investments.",
+  "quotes": [
+    {
+      "text": "Investment has been stronger than the RBA expected, helped by spending on data centres, while the AI boom is driving demand for technology-related goods globally.",
+      "supports": "summary"
+    },
+    {
+      "text": "That leaves AI appearing in the RBA's current calculations mainly as another source of demand and inflation pressure, rather than as a technology that expands the economy's productive capacity.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides macroeconomic context on how central banks view AI-driven infrastructure investment and inflation, but does not impose direct AI regulatory or governance obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c5cbeebba44daf8308da8e466a33b8a92148299c812ac198dd5a4995956682d3",
+    "textChars": 5369,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:42.995Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "e1004013d7ce5464",
+  "sourceId": "itnews",
+  "sourceName": "iTnews",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itnews.com.au/video/ais-skills-gaps-need-it-hr-and-ld-working-to-one-plan-630638",
+  "title": "AI’s skills gaps need IT, HR and L&D working to one plan",
+  "publishedAt": "2026-11-26T19:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:35.969Z",
+  "status": "summarised",
+  "headline": "AI skills gaps demand coordinated IT, HR and L&D planning",
+  "summary": "Organisations face major skills shortfalls in governance, cloud, and data that threaten to stall AI deployments. Industry experts warn that AI adoption is outrunning governance and that training cannot be left to learning and development teams alone. Successful deployment requires IT, HR, and L&D to share responsibility for defining tools, roles, and learning paths.",
+  "why_it_matters": "Organisations deploying AI need to align technical risk management with workforce planning to ensure staff can adequately oversee automated outputs like generated code.",
+  "quotes": [
+    {
+      "text": "Governance is being outrun by adoption. Informatica’s CDO Insights 2026 study with Deloitte found that 76% of data leaders say their AI governance has not fully kept up with the way employees are using the technology, and 75% say their workforce needs upskilling in data literacy.",
+      "supports": "summary"
+    },
+    {
+      "text": "When AI is writing code for you, for your organisation, the question to ask is, who in your organisation is skilled enough to know when it’s wrong?",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Highlights widespread operational risks and governance shortfalls regarding AI skills gaps, offering a tripartite workforce planning model for organisations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e4d211b1bb9373885939f4c06f387d9511901b8f2c33964cfad052b894a2fc55",
+    "textChars": 3273,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:28:56.354Z",
+    "attempts": 1
+  }
+}

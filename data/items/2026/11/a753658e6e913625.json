@@ -1,0 +1,57 @@
+{
+  "id": "a753658e6e913625",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-research/65-of-australian-frontline-workers-are-using-ai-but-almost-half-have-had-no-employer-guidance",
+  "title": "65% of Australian Frontline Workers Are Using AI, but Almost Half Have Had No Employer Guidance",
+  "publishedAt": "2026-11-15T22:36:45.216Z",
+  "fetchedAt": "2026-11-27T02:27:38.064Z",
+  "status": "summarised",
+  "headline": "Humanforce Research: Australian Frontline AI Use Outpaces Employer Guidance",
+  "summary": "A survey of Australian frontline workers by Humanforce reveals that 65% have used AI or AI-enabled tools at work in the past year, but almost half have received no employer training, briefing, or written rules. In high-stakes sectors like healthcare, over a third of workers using tools like ChatGPT or Copilot do so without knowing if it is permitted. Workers report high administrative burdens and demand human oversight, clear boundaries, and appeals for AI-assisted decisions.",
+  "why_it_matters": "Organisations deploying AI in frontline operations must establish clear governance, training, and permission boundaries to manage compliance risks, particularly when tools handle sensitive data or mission-critical pay and rosters.",
+  "quotes": [
+    {
+      "text": "Almost half (46%) of frontline workers surveyed by Humanforce have received no employer training, briefing or written rules on AI, even though 65% have used AI or an AI-enabled tool at work in the past year.",
+      "supports": "summary"
+    },
+    {
+      "text": "Organisations that provide this clarity early will reduce risk and get far more from AI, including less paperwork, easier shift management and more time with customers and patients.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "The most popular safeguard was having a person review important AI decisions (49%), and 39% wanted the ability to question or appeal an AI-assisted decision.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Highlights a major governance gap in Australian frontline workplaces regarding unregistered AI use, but reports on survey commentary rather than new regulation or mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a303c97c94f916a84fe915dd890fe986e1e1dbe7038a48b0401a6c5cd85e966e",
+    "textChars": 5892,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:53.454Z",
+    "attempts": 1
+  }
+}

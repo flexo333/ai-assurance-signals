@@ -1,0 +1,63 @@
+{
+  "id": "4622f166eb47cd21",
+  "sourceId": "tga-consult",
+  "sourceName": "TGA consultations",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://consultations.tga.gov.au/tga/consultation-dmht-exclusion",
+  "title": "Consultation: Reviewing the exclusion for certain digital mental health tools",
+  "publishedAt": "2026-10-26T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:43.746Z",
+  "status": "summarised",
+  "headline": "TGA consults on future regulation of digital mental health tools including AI",
+  "summary": "The Therapeutic Goods Administration is reviewing the current regulatory exclusion for digital mental health tools (DMHTs), which include apps and chatbots. The review is prompted by the increasing complexity of these tools, which now frequently incorporate artificial intelligence and personalised recommendations. The TGA is seeking feedback on whether to maintain, remove, or modify the existing exclusion criteria.",
+  "why_it_matters": "Organisations developing or deploying AI-driven mental health tools in Australia must monitor this consultation, as changes to the exclusion framework could significantly alter their medical device regulatory obligations.",
+  "quotes": [
+    {
+      "text": "They now include a broad range of mental health conditions such as depression, anxiety and attention deficit hyperactivity disorder. Some also offer more advanced functionality, including personalised recommendations and artificial intelligence (AI).",
+      "supports": "summary"
+    },
+    {
+      "text": "However, they may also increase the potential risks associated with inaccurate outputs, recommendations or advice.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-12-07",
+      "what": "Consultation closing date",
+      "quote": "Closes 7 Dec 2026"
+    },
+    {
+      "date": "2026-10-26",
+      "what": "Consultation opening date",
+      "quote": "Opened 26 Oct 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "consultation",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Direct regulatory review of AI-enabled health software by a federal authority, impacting compliance requirements for health-tech developers.",
+    "is_consultation": true,
+    "closing_date": "2026-12-07",
+    "closing_date_quote": "Closes 7 Dec 2026"
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "38157b37df72f933435e80428a4ace4a0effca685838470be3847fb78af11e6b",
+    "textChars": 1560,
+    "textSource": "article",
+    "extractMethod": "citizen-space-v2.4",
+    "analysedAt": "2026-11-27T02:36:10.997Z",
+    "attempts": 1
+  }
+}

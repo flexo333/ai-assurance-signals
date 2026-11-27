@@ -1,0 +1,54 @@
+{
+  "id": "0dba035a5e3bd267",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apra-deputy-chair-david-bradburys-speech-2026-fsc-retirement-summit-building",
+  "title": "APRA Deputy Chair David Bradbury’s speech to the 2026 FSC Retirement Summit, \"Building trust and confidence to deliver on the promise of super\"",
+  "publishedAt": "2026-10-22T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:44.369Z",
+  "status": "summarised",
+  "headline": "APRA highlights AI and cyber threats as critical risks to superannuation system resilience",
+  "summary": "APRA Deputy Chair David Bradbury identified artificial intelligence and cyber-attacks as key non-financial risks requiring urgent industry attention. The regulator emphasised that these threats are increasingly interconnected and could lead to catastrophic losses for superannuation members. APRA intends to continue using its convening power to facilitate cross-industry collaboration on frontier AI and cyber defence.",
+  "why_it_matters": "Financial institutions must move beyond mere awareness of AI risks to ensuring that prevention, detection, and response controls are robust enough to manage crises across shared dependencies.",
+  "quotes": [
+    {
+      "text": "Many of these risks are non-financial risks, some of which have the capacity to quickly become significant financial risks: operational resilience, geopolitics, cyber and AI.",
+      "supports": "summary"
+    },
+    {
+      "text": "Institutions need to know that their prevention, detection and response controls will work, and that they can manage a crisis and recover when threats move quickly through shared dependencies.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "The regulator is explicitly categorising AI as a high-impact non-financial risk for the superannuation sector, signalling that trustees must demonstrate effective operational controls.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "bbb7c69e410f2b2d2cf5680247ca6c53d30516b14fb3a593029e49511fd4a6ac",
+    "textChars": 15725,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:36:58.867Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "b878ec8d02f434f9",
+  "sourceId": "aicd",
+  "sourceName": "Australian Institute of Company Directors",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://aicd.com.au/news-media/research-and-reports/director-sentiment-index.html",
+  "title": "Director Sentiment Index",
+  "publishedAt": "2026-11-11T03:05:05.296Z",
+  "fetchedAt": "2026-11-27T02:27:42.104Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c92644e71c45c2ff38aa9a269c64c559074d3034f9e70aaba1e82f4788c02609",
+    "textChars": 890,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:40.090Z",
+    "attempts": 1
+  }
+}

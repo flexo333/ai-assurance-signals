@@ -1,0 +1,52 @@
+{
+  "id": "4ed583468d00f27b",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/using-ai-to-hunt-for-black-friday-bargains-that-great-deal-might-not-exist-297299",
+  "title": "Using AI to hunt for Black Friday bargains? That ‘great deal’ might not exist",
+  "publishedAt": "2026-11-26T02:08:59.000Z",
+  "fetchedAt": "2026-11-27T02:27:36.109Z",
+  "status": "summarised",
+  "headline": "AI shopping tools and agents raise consumer risks and regulatory scrutiny",
+  "summary": "Consumers increasingly rely on generative AI tools and emerging AI shopping agents for Black Friday research and purchases. However, these tools carry risks such as hallucinations, fake stores, integrated advertising, personalised pricing, and commercial bias. The federal government has indicated that new laws may be required to address these risks and protect against consumer manipulation.",
+  "why_it_matters": "The rise of consumer-facing AI agents highlights emerging regulatory and compliance challenges around commercial bias and algorithmic pricing that may require new federal legislative responses.",
+  "quotes": [
+    {
+      "text": "The federal government has flagged new laws may be needed to respond to the rise of AI shopping agents, including to guard against manipulation or exploitative personalised pricing.",
+      "supports": "summary"
+    },
+    {
+      "text": "The federal government has flagged new laws may be needed to respond to the rise of AI shopping agents, including to guard against manipulation or exploitative personalised pricing.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Discusses consumer-side AI risks, retail surveillance pricing, and signals potential Australian federal legislative responses to AI shopping agents.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5a987f91a2748e22a7d2fa3148e8c805b9390b1c2caf80db2dc90e787d3fd416",
+    "textChars": 5476,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:24.022Z",
+    "attempts": 1
+  }
+}

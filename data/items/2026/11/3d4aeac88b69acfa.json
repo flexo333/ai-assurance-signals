@@ -1,0 +1,23 @@
+{
+  "id": "3d4aeac88b69acfa",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/holiday-extras-dots",
+  "title": "At Holiday Extras, dots get to work before anyone asks",
+  "publishedAt": "2026-11-16T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:38.666Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8c8ee80936f4fae5a436a920e17a3bb2537758bac384af517ecb441a17bf8f0b",
+    "textChars": 4433,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:38.016Z",
+    "attempts": 1
+  }
+}

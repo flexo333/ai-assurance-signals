@@ -1,0 +1,54 @@
+{
+  "id": "972a95e16b438a8b",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apra-deputy-chair-david-bradburys-remarks-2026-actu-superannuation-forum",
+  "title": "APRA Deputy Chair David Bradbury's remarks to the 2026 ACTU Superannuation Forum, \"Safeguarding super in a time of challenge\"",
+  "publishedAt": "2026-11-06T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "APRA highlights AI and cyber risks as key threats to superannuation",
+  "summary": "In remarks at the 2026 ACTU Superannuation Forum, APRA Deputy Chair David Bradbury warned that non-financial risks such as AI and cyber threats are among the most concerning challenges facing the superannuation sector. He noted that AI is accelerating the scale and sophistication of cyber threats while highlighting variable board readiness across trustees. APRA also noted its ongoing collaborative work with ASIC and the Australian Signals Directorate to address financial services AI risks.",
+  "why_it_matters": "Australian superannuation trustees and financial institutions must upgrade board capabilities and risk management frameworks to address rapidly evolving AI and cyber threats, as regulated by APRA.",
+  "quotes": [
+    {
+      "text": "More Australians are moving into retirement. At the same time, trustees are confronting an increasingly threatening external environment, including escalating cyber and AI risks, heightened geopolitical tensions, and economic and market volatility.",
+      "supports": "summary"
+    },
+    {
+      "text": "That is why building capability and strengthening governance across all APRA-regulated entities, banks, insurers and superannuation trustees, is such an important priority for us.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "APRA Deputy Chair speech detailing supervisory expectations on AI and cyber risks for superannuation trustees.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "04ce04870629cba7e26c9f27a0698c62bd68c7caf9109c68e3271686d6a93568",
+    "textChars": 12202,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:59.229Z",
+    "attempts": 2
+  }
+}

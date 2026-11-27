@@ -1,0 +1,53 @@
+{
+  "id": "275b523e8a8aa432",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/outsystems-introduces-agentic-claims-solution-to-modernize-policyholder-experiences",
+  "title": "OutSystems Introduces Agentic Claims Solution to Modernize Policyholder Experiences",
+  "publishedAt": "2026-11-12T02:14:53.135Z",
+  "fetchedAt": "2026-11-27T02:27:40.663Z",
+  "status": "summarised",
+  "headline": "OutSystems Launches Governed Agentic Claims Solution for Insurers",
+  "summary": "OutSystems has introduced an agentic First Notice of Loss solution aimed at modernizing insurance claims reporting through AI agents while keeping key decisions with human adjusters. The platform connects customer applications, roadside assistance providers, and core claims systems using governed workflows. It addresses industry barriers such as legacy system integration and lengthy deployment times.",
+  "why_it_matters": "The solution demonstrates how regulated financial entities can deploy production-grade agentic workflows over legacy systems while maintaining human oversight for critical coverage and liability decisions.",
+  "quotes": [
+    {
+      "text": "The pre-built solution enables auto insurers to modernize claims reporting and intake while safely deploying agentic workflows.",
+      "supports": "summary"
+    },
+    {
+      "text": "Adjusters retain responsibility for all coverage, fault, and payment decisions, ensuring AI supports rather than replaces human judgment.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "This is a commercial product launch offering pre-built agentic insurance workflows, representing practical vendor tooling rather than a binding regulatory or standard shift.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "117256f02b2421a992d586a71880bfcbaea7755f9a0df64b7f89aa0851714776",
+    "textChars": 5862,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:31.928Z",
+    "attempts": 1
+  }
+}

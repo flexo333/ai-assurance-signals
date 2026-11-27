@@ -9,15 +9,46 @@
   "title": "State Revenue Office Vic expands AI use in its contact centre",
   "publishedAt": "2026-11-23T20:37:00.000Z",
   "fetchedAt": "2026-11-25T03:11:02.926Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "State Revenue Office Victoria expands contact centre AI deployments",
+  "summary": "State Revenue Office Victoria has advanced to its fourth AI use case tied to a Genesys contact centre system. The agency initially deployed Genesys Copilot to assist agents and generate after-call summaries, and has since introduced voice-activated call routing to triage customer requests across its 28 revenue lines.",
+  "why_it_matters": "Public sector agencies deploying generative and voice AI tools in citizen-facing operations must manage operational risks while seeking efficiency gains, as demonstrated by SRO Victoria reducing its triage team call load from 500 calls down to between 250 and 300.",
+  "quotes": [
+    {
+      "text": "State Revenue Office Victoria is on its fourth AI use case tied to a Genesys system that is used in its contact centre operations.",
+      "supports": "summary"
+    },
+    {
+      "text": "That has reduced the call load on the triage team from 500 calls a day to between 250 and 300.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides a practical public sector case study on deploying contact centre AI and voice routing, though it lacks deep operational risk or assurance detail.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "7c67b057db1a1c994abc3bf972e6973a0d6f07237563212bf5f856d9a7b7ad8d",
     "textChars": 1800,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:16:33.314Z",
-    "attempts": 1
+    "analysedAt": "2026-11-27T02:28:00.738Z",
+    "attempts": 2,
+    "via": "recheck"
   }
 }

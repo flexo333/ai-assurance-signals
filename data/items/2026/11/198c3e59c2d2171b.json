@@ -1,0 +1,59 @@
+{
+  "id": "198c3e59c2d2171b",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/gemini-decides-sms-delivers-closing-the-last-mile-of-workflow-automation-in-2026",
+  "title": "Gemini decides, SMS delivers: closing the last mile of workflow automation in 2026",
+  "publishedAt": "2026-11-13T22:05:13.834Z",
+  "fetchedAt": "2026-11-27T02:27:38.406Z",
+  "status": "summarised",
+  "headline": "Governing customer-facing AI agents and SMS workflows",
+  "summary": "This opinion piece examines the integration of AI decision-making tools like Gemini with transactional messaging to automate customer-facing workflows. It highlights operational governance risks when AI agents trigger external communications without adequate oversight or registered sender IDs. The article sets out a practical governance checklist for IT leaders deploying autonomous communication agents.",
+  "why_it_matters": "Organisations connecting AI agents to customer-facing messaging must implement strict consent records, registered sender IDs, and human-in-the-loop controls to prevent trust failures and security incidents.",
+  "quotes": [
+    {
+      "text": "Agents that can text customers need tighter rules than agents that summarise meetings.",
+      "supports": "summary"
+    },
+    {
+      "text": "An automated system needs more than permission to send a message; it needs clear limits, monitoring and a reliable way to stop when something goes wrong.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-07-01",
+      "what": "ACMA SMS Sender ID Register requirement took effect",
+      "quote": "Since 1 July 2026, only sender IDs registered on the ACMA SMS Sender ID Register display as the brand name on Australian handsets."
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides practical governance and compliance recommendations for Australian IT teams connecting AI agents to messaging, referencing ACMA and Spam Act requirements.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8ce588de738edc274291bad7a06ee7a209f9793e09677df251cab337cc21b8be",
+    "textChars": 8091,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:16.581Z",
+    "attempts": 1
+  }
+}

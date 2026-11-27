@@ -1,0 +1,23 @@
+{
+  "id": "c311ea042a0597b5",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/get-your-storefront-ready-for-ai-shopping-agents",
+  "title": "Get your storefront ready for AI shopping agents",
+  "publishedAt": "2026-11-26T22:16:06.517Z",
+  "fetchedAt": "2026-11-27T02:27:35.584Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "06326ed3b18e4338383ae62920f54ef2776c38d90cc7b82386add1a2338d5359",
+    "textChars": 5422,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:28:29.544Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "9a2728140f4451a6",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/The-future-of-privacy-What-changes-whats-hype-and-what-matters-now",
+  "title": "The future of privacy: What changes, what’s hype, and what matters now!",
+  "publishedAt": "2026-11-09T21:38:42.732Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "51120b3a9cc521c75ae17fa625bbf8e96c6c8ccf77ac3e250aa353c5fa1ac9dc",
+    "textChars": 3509,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:21.753Z",
+    "attempts": 1
+  }
+}

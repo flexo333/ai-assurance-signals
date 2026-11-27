@@ -1,0 +1,24 @@
+{
+  "id": "26f7d9b5983f2482",
+  "sourceId": "westpac",
+  "sourceName": "Westpac (Wire & Media Releases)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://westpac.com.au/news/money-matters/2026/11/which-aussie-businesses-are-leading-the-ai-race",
+  "title": "Which Aussie businesses are leading the AI race?",
+  "publishedAt": "2026-11-13T12:09:33.000Z",
+  "fetchedAt": "2026-11-27T02:27:38.271Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "58128fe833c517b1dbacc5d8f80040bc27e2157a1a6fe8503178d210329872db",
+    "textChars": 4351,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:33.473Z",
+    "attempts": 1
+  }
+}

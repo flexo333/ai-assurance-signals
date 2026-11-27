@@ -1,0 +1,53 @@
+{
+  "id": "2468a699668bbfe9",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/edpb-puts-admt-based-recruitment-in-focus-under-coordinated-enforcement-framework",
+  "title": "EDPB puts ADMT-based recruitment in focus under Coordinated Enforcement Framework",
+  "publishedAt": "2026-11-11T16:51:08.052Z",
+  "fetchedAt": "2026-11-27T02:27:41.705Z",
+  "status": "summarised",
+  "headline": "EDPB targets automated recruitment tools in 2027 enforcement action",
+  "summary": "The European Data Protection Board announced that its 2027 coordinated enforcement action will examine automated decision-making technology used in candidate screening. Participating authorities will voluntarily review compliance with GDPR Article 22 provisions regarding solely automated decisions and related access rights. This initiative marks the EDPB's first major focus on automated decision-making technology since 2018.",
+  "why_it_matters": "Organisations deploying automated decision-making or AI in recruitment must ensure strict compliance with GDPR Article 22 rights and access obligations as European regulators ramp up coordinated scrutiny.",
+  "quotes": [
+    {
+      "text": "The European Data Protection Board announced its 2027 coordinated enforcement action will focus on data protection implications of automated decision-making technology in the employment context.",
+      "supports": "summary"
+    },
+    {
+      "text": "The 2027 action is specifically examining compliance with Article 22 of the GDPR, which provides data subjects the right to refuse automated decisions, including those that support profiling practices",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Signals intensified regulatory focus on automated decision-making and recruitment algorithms under data protection laws.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "449940ac55a0240d311b78f240424683e0275466ec7533fb42a00c282a5aa40e",
+    "textChars": 2439,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:22.523Z",
+    "attempts": 1
+  }
+}

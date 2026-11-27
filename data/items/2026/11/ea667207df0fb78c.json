@@ -1,0 +1,53 @@
+{
+  "id": "ea667207df0fb78c",
+  "sourceId": "treasury",
+  "sourceName": "The Treasury",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://treasury.gov.au/speech/address-united-states-studies-centre-0",
+  "title": "Address to the United States Studies Centre",
+  "publishedAt": "2026-11-09T12:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Treasury Address on Economic Security and AI Access Risks",
+  "summary": "The Australian Treasury has highlighted accelerating artificial intelligence development alongside growing uncertainty regarding access to frontier AI models as part of a more volatile international environment. In an address on economic security, Treasury noted that technological change and the weaponisation of economic dependencies are increasing resilience risks. The department also outlined its expanded economic security functions and coordination with intelligence agencies to manage strategic vulnerabilities.",
+  "why_it_matters": "Australian organisations must account for potential supply chain chokepoints and access constraints regarding frontier artificial intelligence models when planning their digital infrastructure and technology deployments.",
+  "quotes": [
+    {
+      "text": "AI development is accelerating, yet our access to the frontier has become less certain.",
+      "supports": "summary"
+    },
+    {
+      "text": "And more concentrated global production for certain inputs has raised awareness about vulnerabilities in a globally connected world to economic chokepoints. This year’s blockage of crude oil shipments through the Strait of Hormuz, last year’s curbs on exports of rare earth elements, and constraints on access to frontier AI models have brought these issues into sharp relief.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides official Australian government perspective on strategic risks surrounding AI access and economic security, though it does not introduce new regulatory obligations for AI.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5fea79de9e04792dc05c37486706bfa161784c6fdaeafda3b9696513f5d7ecbc",
+    "textChars": 16809,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:41.058Z",
+    "attempts": 1
+  }
+}

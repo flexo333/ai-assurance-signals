@@ -1,0 +1,53 @@
+{
+  "id": "33dc3be4b95034f8",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/inside-greece-s-new-ai-act-framework",
+  "title": "Inside Greece's new AI Act framework",
+  "publishedAt": "2026-11-10T17:52:17.183Z",
+  "fetchedAt": "2026-11-27T02:27:42.132Z",
+  "status": "summarised",
+  "headline": "Greece establishes EU AI Act framework under Law 5321/2026",
+  "summary": "Greece established its national governance, innovation and enforcement framework for the EU AI Act through Law 5321/2026. Rather than creating a standalone AI authority, the law distributes oversight among existing sectoral regulators and designates the Hellenic Data Protection Authority as the market surveillance authority.",
+  "why_it_matters": "Organisations operating across jurisdictions must understand how European member states leverage existing data protection regulators to enforce AI obligations rather than establishing new standalone bodies.",
+  "quotes": [
+    {
+      "text": "Greece established its national governance, innovation and enforcement framework for the EU AI Act through Law 5321/2026 , which distributes oversight among existing sectoral regulators rather than creating a standalone AI authority.",
+      "supports": "summary"
+    },
+    {
+      "text": "Greece has designated the Hellenic Data Protection Authority as its market surveillance authority for prohibited AI practices, Annex III high-risk systems and Article 50 transparency obligations.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "legislation",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides an international precedent for EU AI Act national implementation, though with indirect relevance to Australian practice.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c6ec0c83b67e303c1ef0da33a99fb40025c553be320c14adab4c121946a6e7a4",
+    "textChars": 1762,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:55.088Z",
+    "attempts": 2
+  }
+}

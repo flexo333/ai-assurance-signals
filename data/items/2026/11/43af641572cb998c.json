@@ -1,0 +1,49 @@
+{
+  "id": "43af641572cb998c",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/research/building-strong-safety-evaluations",
+  "title": "Building strong safety evaluations",
+  "publishedAt": "2026-11-13T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:38.767Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides substantive technical guidance on safety evaluations and testing frameworks from a leading frontier lab, directly relevant for AI assurance practitioners.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "41a03a2fdc3b3b1b3ee047fa458ab65e42feacaca9aae56499cb3f24aa80ad8e",
+    "textChars": 19995,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:55.044Z",
+    "attempts": 2
+  }
+}

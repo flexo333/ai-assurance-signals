@@ -1,0 +1,53 @@
+{
+  "id": "147bb24011e6a423",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/notes-from-the-asia-pacific-region-what-nz-s-mmh-breach-reveals-about-accountability",
+  "title": "Notes from the Asia-Pacific region: What NZ's MMH breach reveals about accountability",
+  "publishedAt": "2026-11-10T20:19:30.115Z",
+  "fetchedAt": "2026-11-27T02:27:42.132Z",
+  "status": "summarised",
+  "headline": "New Zealand Privacy Commissioner findings highlight technology provider accountability",
+  "summary": "New Zealand's Office of the Privacy Commissioner published a phase 2 inquiry report on the Manage My Health data breach, revealing when technology providers can become independently accountable under privacy laws. The report highlights how technical decisions made independently by a provider can bypass standard controller-processor protections. This dynamic is increasingly relevant as complex cloud platforms, SaaS, and AI services complicate traditional accountability models.",
+  "why_it_matters": "Organisations must look beyond contractual arrangements to examine how processing relationships work in practice, ensuring vendor due diligence and privacy impact assessments account for situations where providers make autonomous technical decisions.",
+  "quotes": [
+    {
+      "text": "The OPC's recently published phase 2 inquiry report provides further insights into what went wrong, and some important lessons for organizations well beyond the health sector.",
+      "supports": "summary"
+    },
+    {
+      "text": "Privacy professionals should be looking beyond contractual arrangements and examining how processing relationships work in practice.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Provides valuable compliance and governance insights on controller-processor accountability and AI vendor risk management, though it is commentary on an existing regulatory report rather than a direct new mandate.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f34e7cf5721def2ef30091397b8a4f9d00ad6f4bf3f42a514a582b6935c0a5e7",
+    "textChars": 4223,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:50.028Z",
+    "attempts": 1
+  }
+}

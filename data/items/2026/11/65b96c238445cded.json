@@ -1,0 +1,57 @@
+{
+  "id": "65b96c238445cded",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+  "title": "Gilbert + Tobin rethinks the business of law with AI",
+  "publishedAt": "2026-11-12T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:44.087Z",
+  "status": "summarised",
+  "headline": "Gilbert + Tobin adopts enterprise AI for legal workflows and governance",
+  "summary": "Australian law firm Gilbert + Tobin has progressed from initial experimentation to deploying ChatGPT Enterprise and ChatGPT Work. The firm instituted controls including Australian data residency, contractual protections, role-based access, and administrative controls to manage confidential client information. Leadership emphasised that staff retain responsibility for defining tasks, checking outputs, and applying professional judgement.",
+  "why_it_matters": "The deployment demonstrates how professional services firms in Australia can implement enterprise-grade AI controls—such as data residency and role-based access—to govern sensitive client information while scaling agentic workflows.",
+  "quotes": [
+    {
+      "text": "Australian data residency, contractual protections, role-based access and administrative controls gave us the confidence to scale while meeting our requirements and those of our clients.",
+      "supports": "summary"
+    },
+    {
+      "text": "When ChatGPT first became available, we encouraged people to experiment with it and think about where it might create value. We were clear that no client data or confidential information should be entered.",
+      "supports": "summary"
+    },
+    {
+      "text": "Give teams examples tailored to their roles, create safe ways to test ideas and keep people responsible for the result.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Provides a concrete operational case study of enterprise AI deployment and governance within an Australian legal institution.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "040c4d92cbcd3005370cadf4caf28dc8d8e9e8427bc6c33ab0e3d0458620d946",
+    "textChars": 5596,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:08.816Z",
+    "attempts": 1
+  }
+}

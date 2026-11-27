@@ -1,0 +1,53 @@
+{
+  "id": "4550fd13a7e65bf5",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/looming-ai-legislation-has-a-trust-and-transparency-problem",
+  "title": "Looming AI legislation has a trust and transparency problem",
+  "publishedAt": "2026-11-26T06:15:40.000Z",
+  "fetchedAt": "2026-11-27T02:27:36.965Z",
+  "status": "summarised",
+  "headline": "Australian AI legislation faces a trust and transparency challenge",
+  "summary": "Australia faces a widespread social licence issue regarding global AI companies and data centres. Government efforts to address community concerns through the Joint Select committee have struggled alongside a broader lack of clear communication.",
+  "why_it_matters": "Organisations operating in Australia must navigate a landscape where public distrust and legislative uncertainty surrounding AI infrastructure require stronger transparency and trust-building mechanisms.",
+  "quotes": [
+    {
+      "text": "There seems almost universal agreement in Australia that the global AI companies and the data centres that support them have a social licence problem.",
+      "supports": "summary"
+    },
+    {
+      "text": "This has not been helped by government, which has struggled to lead the conversation, or to articulate how Australians will benefit from the mass disruption AI is starting to wreak.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Highlights domestic political and public sentiment challenges regarding AI social licence and transparency without introducing new binding regulatory obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e8db90c24d6e33c09bee43f5ad30cb68a404da088baec1bc5d8a92234df426c6",
+    "textChars": 653,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:00.661Z",
+    "attempts": 1
+  }
+}

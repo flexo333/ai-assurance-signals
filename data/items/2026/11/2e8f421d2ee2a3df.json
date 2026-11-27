@@ -1,0 +1,23 @@
+{
+  "id": "2e8f421d2ee2a3df",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/step-toward-defining-the-standard-model",
+  "title": "A step toward defining the Standard Model on a lattice",
+  "publishedAt": "2026-11-15T22:00:01.000Z",
+  "fetchedAt": "2026-11-27T02:27:40.331Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2328e34221b21ea654833c9ec9cc3fd307d61e2a050918449e1dbf2e00b343f2",
+    "textChars": 16236,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:58.535Z",
+    "attempts": 1
+  }
+}

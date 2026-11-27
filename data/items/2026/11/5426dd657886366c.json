@@ -1,0 +1,58 @@
+{
+  "id": "5426dd657886366c",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/after-the-midterms-part-2-are-the-state-floodgates-opening",
+  "title": "After the midterms part 2: Are the state floodgates opening?",
+  "publishedAt": "2026-11-05T20:14:44.166Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "IAPP discussion on US state-level AI governance and privacy post-midterms",
+  "summary": "The IAPP hosted a LinkedIn Live conversation discussing how the 2026 U.S. midterm elections and shifting state legislature dynamics will impact AI governance, privacy, and youth safety in 2027. Experts examined what organisations can expect from upcoming state legislative terms and how to prepare for emerging regulatory landscapes. The session provides continuing professional education credits for participants.",
+  "why_it_matters": "Organisations operating across multiple jurisdictions must monitor shifting U.S. state-level AI and privacy legislative pipelines as new party dynamics drive regulatory changes.",
+  "quotes": [
+    {
+      "text": "The 2026 U.S. elections brought significant changes to the state landscape, and with new party dynamics across many state legislatures, 2027 is set to be a watershed year for privacy, AI governance and youth safety.",
+      "supports": "summary"
+    },
+    {
+      "text": "In this LinkedIn Live, the IAPP's Cobun Zweifel-Keegan was joined by David Stauss and Andrew Kingman for part two of the post-midterm conversation to discuss what we can expect from the states next term and how companies can best prepare.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-10",
+      "what": "Publication date of the LinkedIn Live summary",
+      "quote": "Published 10 Nov. 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 1,
+    "significance_reason": "This is a high-level commentary and discussion overview rather than a concrete regulatory change, policy text, or legal standard.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "4074c40598e00970cf9212f73431db47e8f8be1b65abfc002c8a91ce2e2c682d",
+    "textChars": 1327,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:10.802Z",
+    "attempts": 1
+  }
+}

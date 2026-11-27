@@ -1,0 +1,52 @@
+{
+  "id": "33b95c2112c46efd",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/our-new-blog-for-science",
+  "title": "Our new blog for science",
+  "publishedAt": "2026-11-15T22:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:39.151Z",
+  "status": "summarised",
+  "headline": "OpenAI launches science blog detailing AI methodologies and research",
+  "summary": "OpenAI has launched a new blog dedicated to sharing how scientists and academic researchers use AI for scientific discovery, methodology guidance, and community perspectives. The post highlights recent developments across mathematics, physics, and biology, including automated proof generation and multi-agent biological data analysis. It also discusses the broader implications of these tools for scientific practice, verification, and training.",
+  "why_it_matters": "Understanding how AI models are applied to complex scientific research and verification helps organisations anticipate the operational and methodological shifts occurring in academic and applied research environments.",
+  "quotes": [
+    {
+      "text": "We’re starting the OpenAI science blog to give scientists and academic researchers a place to share what they’re discovering with AI and how they’re doing the work.",
+      "supports": "summary"
+    },
+    {
+      "text": "Across disciplines, researchers are considering what these tools mean for training, attribution, and the skills their work requires.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "The announcement describes a new communications channel and summarises existing research milestones rather than establishing new governance obligations or regulatory frameworks.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "bb8278080205ce4f3186abedd8faf06e44481ab7457ad02998e9f059a368ea8b",
+    "textChars": 3606,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:04.522Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "a45eec3146153032",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/banking-productivity-measures-to-help-boost-competition-and-benefit-customers",
+  "title": "Banking productivity measures to help boost competition and benefit customers",
+  "publishedAt": "2026-10-22T23:45:07.000Z",
+  "fetchedAt": "2026-11-27T02:27:43.746Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0842196e067222e38889cfbd74dfba78579cd4046e5a19937fdccc89118022af",
+    "textChars": 1690,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:36:25.940Z",
+    "attempts": 1
+  }
+}

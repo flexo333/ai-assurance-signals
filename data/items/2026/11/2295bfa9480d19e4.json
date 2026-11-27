@@ -1,0 +1,54 @@
+{
+  "id": "2295bfa9480d19e4",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apra-member-suzanne-smiths-remarks-2026-ica-conference-insurer-future",
+  "title": "APRA Member Suzanne Smith’s remarks to the 2026 ICA conference, \"Insurer of the future\"",
+  "publishedAt": "2026-11-06T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "APRA addresses AI risks, governance and accountability for insurers",
+  "summary": "APRA Member Suzanne Smith outlined the prudential expectations for insurers deploying artificial intelligence at the Insurance Council of Australia conference. While acknowledging AI benefits in risk assessment, pricing, and claims processing, APRA highlighted risks such as speed-and-scale error propagation, model opacity, and third-party dependencies. The regulator emphasized that institutional strength, strong governance, and clear human accountability must match technological investments.",
+  "why_it_matters": "Australian insurers must ensure their governance and operational resilience keep pace with AI adoption, maintaining clear human accountability and the capability to detect and respond to model failures.",
+  "quotes": [
+    {
+      "text": "The answer is not to hold back innovation. It is to ensure governance keeps pace. Boards do not need to understand every technical detail, but they do need a clear view of where AI is used, its material risks and outcomes and who is accountable.",
+      "supports": "summary"
+    },
+    {
+      "text": "Do you know where AI is changing decisions? Can you detect when it is wrong? Is the accountability clear? And does your organisation have the skills, controls and agility to respond if something fails or the risks change?",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "Direct speech from an APRA member outlining supervisory expectations and governance requirements for AI use across the Australian insurance sector.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "32f05777e24fdd341ed292ee5c45868aacd67f9a89deb17e82369ab5d5fe8ae8",
+    "textChars": 6449,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:52.492Z",
+    "attempts": 1
+  }
+}

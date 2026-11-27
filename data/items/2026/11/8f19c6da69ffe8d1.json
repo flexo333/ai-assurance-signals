@@ -1,0 +1,59 @@
+{
+  "id": "8f19c6da69ffe8d1",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-people-news/enterprise-staff/avalara-predicts-2027-will-be-the-year-ai-is-put-to-the-trust-test",
+  "title": "Avalara Predicts 2027 Will Be the Year AI Is Put to the Trust Test",
+  "publishedAt": "2026-11-26T02:26:32.416Z",
+  "fetchedAt": "2026-11-27T02:27:36.472Z",
+  "status": "summarised",
+  "headline": "Avalara Predicts 2027 Will Be the Year AI Is Put to the Trust Test",
+  "summary": "Executives at Avalara predict that enterprise AI adoption in 2027 will focus heavily on trust, accountability, and rigorous governance as agentic AI manages more complex business processes. A global survey of finance leaders in summer 2026 revealed that 30% had not updated internal controls for agentic AI, and 44% were only somewhat confident in explaining agent actions to auditors. Leaders emphasize that integrating strong financial controls, orchestrating multi-agent systems, and maintaining human oversight are essential for sustainable AI deployment.",
+  "why_it_matters": "Organisations deploying agentic AI must embed robust risk management, auditing, and human-in-the-loop controls directly into financial and compliance frameworks rather than treating governance as an afterthought.",
+  "quotes": [
+    {
+      "text": "In a global survey of finance leaders conducted in summer 2026, 30% of respondents had not updated internal controls in the past year to reflect agentic AI usage, while 44% were only somewhat confident they could explain an agent's actions to an auditor.",
+      "supports": "summary"
+    },
+    {
+      "text": "Risk-minded CFOs will recognise that AI governance isn't something to address after implementation. It's what makes adoption sustainable.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2027-01-01",
+      "what": "California Senate Bill 122 extends sales and use tax to certain prewritten software transactions, including software-as-a-service.",
+      "quote": "Beginning January 1, 2027, the state will extend sales and use tax to certain prewritten software transactions, including software-as-a-service."
+    }
+  ],
+  "classification": {
+    "item_kind": "prediction",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides industry forecasts and survey data on financial controls for agentic AI, though it is primarily a vendor commentary piece rather than a binding standard.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a65883db7467984b9f48b40149ca8712d2fdfdb03a22630af90dafd1e27f67ea",
+    "textChars": 12259,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:19.540Z",
+    "attempts": 1
+  }
+}

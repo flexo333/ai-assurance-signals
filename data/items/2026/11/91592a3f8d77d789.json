@@ -1,0 +1,54 @@
+{
+  "id": "91592a3f8d77d789",
+  "sourceId": "apra",
+  "sourceName": "Australian Prudential Regulation Authority",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://apra.gov.au/news-and-publications/apras-latest-system-risk-outlook-warns-rising-threats-financial-stability",
+  "title": "APRA’s latest System Risk Outlook warns of rising threats to financial stability",
+  "publishedAt": "2026-11-12T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:41.264Z",
+  "status": "summarised",
+  "headline": "APRA System Risk Outlook warns of rising AI and cyber threats",
+  "summary": "The Australian Prudential Regulation Authority published its System Risk Outlook report, warning that rapid advances in artificial intelligence are accelerating cyber and operational threats. The report highlights that heavy reliance on a small number of material service providers creates channels for widespread disruption across the financial system. APRA Chair John Lonsdale stated that financial institutions must maintain strong operational readiness and crisis preparedness to handle these emerging risks.",
+  "why_it_matters": "Australian banks, insurers and superannuation trustees must prepare for operational disruptions driven by AI adoption and third-party vendor concentration under APRA's regulatory oversight.",
+  "quotes": [
+    {
+      "text": "AI is creating new risks within institutions, accelerating cyber and operational threats that could have broader effects across the economy and financial system.",
+      "supports": "summary"
+    },
+    {
+      "text": "APRA Chair John Lonsdale said maintaining resilience will require banks, insurers and superannuation trustees to have financial strength, operational readiness and crisis preparedness.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "APRA's System Risk Outlook elevates AI-driven cyber and operational risks and third-party reliance as formal regulatory concerns for Australian financial institutions.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a763def3276f31373ddc8f5e26507be6a190f05b82e8a71b8315b94a8743f072",
+    "textChars": 3735,
+    "textSource": "article",
+    "extractMethod": "main-text",
+    "analysedAt": "2026-11-27T02:31:54.931Z",
+    "attempts": 1
+  }
+}

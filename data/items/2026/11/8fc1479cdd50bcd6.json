@@ -1,0 +1,53 @@
+{
+  "id": "8fc1479cdd50bcd6",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/what-ai-governance-demands-of-the-teams-putting-it-into-practice",
+  "title": "What AI governance demands of the teams putting it into practice",
+  "publishedAt": "2026-11-04T16:45:47.777Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Moving from AI governance principles to implementation",
+  "summary": "Discussions at the IAPP Privacy. Security. Risk. + AI Governance conference in Seattle highlighted a shift toward practical implementation, focusing on risk assessment, accountability, auditability, and human oversight. Organizations must connect each AI use case to a responsible owner, define permissions for agentic systems, and maintain clear evidence supporting approval and auditability.",
+  "why_it_matters": "Data leakage, model security and agents with excessive permissions make AI security a board-level issue that requires visibility into material exposures and evidence that management can detect and contain failures.",
+  "quotes": [
+    {
+      "text": "Along with optimism about AI’s productivity benefits, discussions focused on risk assessment, accountability, auditability and human oversight.",
+      "supports": "summary"
+    },
+    {
+      "text": "Data leakage, model security and agents with excessive permissions can affect customer trust and business continuity.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides practical practitioner commentary on implementing AI governance, accountability, and vendor risk management, but introduces no new laws or binding standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e220ac15a963573c32a4b0a579ee9a11605d48576b8ed747748f68010d75c1d6",
+    "textChars": 5420,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:33.560Z",
+    "attempts": 2
+  }
+}

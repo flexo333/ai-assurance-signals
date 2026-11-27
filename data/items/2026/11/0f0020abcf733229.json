@@ -1,0 +1,23 @@
+{
+  "id": "0f0020abcf733229",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+  "title": "Helping caregivers use AI in everyday life",
+  "publishedAt": "2026-11-10T12:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:43.745Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3f0b5a42de306eea09b8dc324fb63beed76cf4f4499fd83940674dd8de9546e1",
+    "textChars": 2856,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:12.422Z",
+    "attempts": 1
+  }
+}

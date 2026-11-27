@@ -1,0 +1,54 @@
+{
+  "id": "0f2dab0bdf2dd49d",
+  "sourceId": "cba",
+  "sourceName": "Commonwealth Bank (Newsroom, Technology & AI)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://commbank.com.au/articles/newsroom/2026/11/satya-nadella-matt-comyn-acclerate-ai.html",
+  "title": "A conversation between CBA's Matt Comyn and Microsoft's Satya Nadella",
+  "publishedAt": "2026-11-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "CBA and Microsoft discuss IP control, agent workflows and AI governance",
+  "summary": "Commonwealth Bank CEO Matt Comyn and Microsoft CEO Satya Nadella spoke at the Accelerate AI conference in Sydney on enterprise AI adoption. Their discussion highlighted three leadership priorities: retaining control of intellectual property, redesigning work around people and AI agents, and strengthening governance and cyber defences.",
+  "why_it_matters": "Australian financial institutions deploying advanced AI must build the architectural controls and workforce practices required to retain ownership of organisational knowledge and authority over AI agent actions.",
+  "quotes": [
+    {
+      "text": "Their discussion highlighted three priorities for leaders: retaining control of the organisation’s intellectual property, redesigning work around people and AI agents, and strengthening governance and cyber defences as AI capabilities increase.",
+      "supports": "summary"
+    },
+    {
+      "text": "For business leaders, the central challenge is therefore not simply adopting increasingly capable AI. It is building the architecture, workforce practices and controls that allow the organisation to learn faster while retaining ownership of its knowledge and authority over how AI acts.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 1,
+    "significance_reason": "Executive commentary and event coverage from an Australian major bank highlighting general AI governance priorities without introducing new regulatory requirements or concrete operational deployment disclosures.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b9aaf07aebaf043a079e7af2d88dce05582722f38e7cbc686e6ec3d5bb181c2d",
+    "textChars": 1238,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:26.064Z",
+    "attempts": 1
+  }
+}

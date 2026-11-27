@@ -1,0 +1,58 @@
+{
+  "id": "fdbf46421d727769",
+  "sourceId": "aicd",
+  "sourceName": "Australian Institute of Company Directors",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://aicd.com.au/news-media/media-releases/2026/director-confidence-falls-economic-pressures-deepen.html",
+  "title": "Director confidence falls as economic pressures deepen",
+  "publishedAt": "2026-11-11T04:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.104Z",
+  "status": "summarised",
+  "headline": "AICD index shows rising director concerns over AI and regulation",
+  "summary": "The Australian Institute of Director Sentiment Index shows that director concerns regarding artificial intelligence have jumped significantly over six months. Nearly forty percent of directors now view AI as a major issue, while calls for government action on AI regulation have more than doubled. Additionally, forty-four percent of surveyed directors report workforce changes connected to AI adoption.",
+  "why_it_matters": "Rising board-level anxiety about artificial intelligence and its governance highlights the growing pressure on Australian directors to manage emerging technology risks alongside regulatory compliance.",
+  "quotes": [
+    {
+      "text": "Artificial intelligence has rapidly become one of the leading issues that’s keeping directors awake at night. Concerns about the impact of AI has jumped from 26 percent to 39 percent in the past six months, almost level with concerns about Australia's domestic economic conditions (40%).",
+      "supports": "summary"
+    },
+    {
+      "text": "AI regulation has more than doubled as a priority that directors believe Government needs to address in the short term, rising from 13 percent to 29 percent.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-09-29",
+      "what": "AICD survey conducted by Roy Morgan concluded",
+      "quote": "The AICD survey of 1371 company directors was conducted by Roy Morgan from 22 to 29 September 2026."
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Reflects a notable shift in board-level sentiment and rising demand from Australian directors for government intervention and clear AI regulation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8d8f340d75b65355c2bd9f043b32f6e7f759faf65ba484be3ffda0d05a45c2b1",
+    "textChars": 4209,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:31.948Z",
+    "attempts": 2
+  }
+}

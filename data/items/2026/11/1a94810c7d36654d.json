@@ -1,0 +1,53 @@
+{
+  "id": "1a94810c7d36654d",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/a-view-from-brussels-hot-off-the-press-an-initial-reaction-to-the-dfa",
+  "title": "A view from Brussels: Hot off the press — An initial reaction to the DFA",
+  "publishedAt": "2026-11-12T15:33:53.825Z",
+  "fetchedAt": "2026-11-27T02:27:38.905Z",
+  "status": "summarised",
+  "headline": "European Commission releases Digital Fairness Act proposal",
+  "summary": "The European Commission has released its proposal for the Digital Fairness Act as part of a consumer protection package updating rules for the online environment. The regulation aims to address issues like addictive design, dark patterns, and personalized advertising across member states. The proposal is currently an early-stage text that will undergo negotiations with the European Parliament and member states.",
+  "why_it_matters": "Organisations operating in scope should review the proposed Digital Fairness Act provisions now to assess potential compliance and governance challenges for product design and business models.",
+  "quotes": [
+    {
+      "text": "After months of speculation and anticipation, the European Commission finally released its proposal for the Digital Fairness Act.",
+      "supports": "summary"
+    },
+    {
+      "text": "Negotiations will inevitably alter the proposal, but companies should review its provisions now and determine whether their products and commercial practices fall within its scope, as well as where new obligations could create compliance and governance challenges.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "The Digital Fairness Act is an early-stage EU proposal that introduces broader consumer protection and dark pattern rules intersecting with digital platforms, but it is not yet finalized law.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a41e48731574d654e944780c1daed805782ee1401789d6326ff8f053b68808cd",
+    "textChars": 3079,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:13.475Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "b9840fd67063a36a",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/gondola",
+  "title": "Gondola doubles revenue as its team builds more with Codex",
+  "publishedAt": "2026-11-12T12:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:39.925Z",
+  "status": "summarised",
+  "headline": "Gondola case study on AI-assisted software development and operations",
+  "summary": "Creative platform Gondola reports that adopting OpenAI's Codex and ChatGPT increased its monthly engineering output and doubled year-over-year revenue without increasing headcount. Business team members used Codex to build functional prototypes and code contributions, while engineers retained responsibility for architecture, security, data handling, and production readiness. The team also integrated ChatGPT across workplace tools to automate daily reporting, maintaining human review before consequential external communication or business decisions.",
+  "why_it_matters": "Demonstrates how small teams can leverage AI coding assistants to accelerate software delivery while relying on human engineers to maintain oversight of core governance responsibilities like security and data handling.",
+  "quotes": [
+    {
+      "text": "Monthly engineering output is up 25% across the team and up 50% for its lead engineer. Company revenue has more than doubled year over year.",
+      "supports": "summary"
+    },
+    {
+      "text": "Engineers remain responsible for architecture, security, data handling, and production readiness.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "practitioners",
+      "risk-compliance",
+      "boards"
+    ],
+    "au_relevance": 0,
+    "significance": 1,
+    "significance_reason": "A vendor customer case study detailing internal productivity gains from AI coding tools, with standard operational controls rather than a regulatory or governance framework update.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3b9098b5e72db6eeacef8bd8f7eb92292245bf192eeea8bc8960f2591674db1d",
+    "textChars": 6156,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:18.516Z",
+    "attempts": 1
+  }
+}

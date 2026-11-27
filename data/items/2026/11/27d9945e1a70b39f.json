@@ -1,0 +1,53 @@
+{
+  "id": "27d9945e1a70b39f",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/banking-in-2027-ai-rewrites-the-terms-banks-still-carry-the-risk",
+  "title": "Banking in 2027: AI rewrites the terms. Banks still carry the risk",
+  "publishedAt": "2026-11-26T05:40:29.095Z",
+  "fetchedAt": "2026-11-27T02:27:37.404Z",
+  "status": "summarised",
+  "headline": "SAS 2027 Banking Predictions: AI Risk, Governance and Control",
+  "summary": "Industry experts from SAS have outlined predictions for banking in 2027, focusing on the systemic risks and governance challenges posed by agentic and autonomous AI. Key concerns include the potential for autonomous AI decisions to rapidly multiply consumer harm, the lack of defined kill switches among banking leaders, and the emergence of synthetic runs caused by interacting AI agents. The commentary highlights that banks ultimately bear legal and operational responsibility for automated decisions.",
+  "why_it_matters": "Financial institutions deploying autonomous or agentic AI must establish robust internal governance, kill switches and real-time monitoring to prevent uncoordinated machine decisions from causing systemic contagion and regulatory breaches.",
+  "quotes": [
+    {
+      "text": "A mortgage denied in error. An account frozen by a false alert. With every faulty AI decision, a person lives with the consequences – and autonomous AI systems can quickly multiply such harms before anyone even recognises there’s a problem.",
+      "supports": "summary"
+    },
+    {
+      "text": "In 2027, we’ll see a catastrophic AI event in financial services that causes significant consumer harm. This ‘synthetic run’ will come from thousands of autonomous agents interacting with each other – not in a nefarious way, but at incredible speed while making rational decisions.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Expert commentary highlighting major upcoming operational and governance risks in banking AI, though it is a vendor outlook piece rather than binding regulation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f178c38c0bc93b8f0b5ea615c7088e77424068786aa8928039873345fb967cb9",
+    "textChars": 14505,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:10.808Z",
+    "attempts": 1
+  }
+}

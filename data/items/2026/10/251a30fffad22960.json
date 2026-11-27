@@ -1,0 +1,54 @@
+{
+  "id": "251a30fffad22960",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/submission/treasury-laws-amendment-bill-2026-tax-information-reporting-treasury",
+  "title": "Treasury Laws Amendment Bill 2026: Tax information reporting Treasury",
+  "publishedAt": "2026-10-27T22:56:37.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "ABA submission to Joint Select Committee on Artificial Intelligence",
+  "summary": "The Australian Banking Association (ABA) has provided a submission to the Joint Select Committee on Artificial Intelligence. The ABA advocates for a regulatory framework that balances risk management with the opportunity for businesses to innovate and deploy AI at scale. The submission emphasises the need to preserve Australia's capacity to use AI for national interest.",
+  "why_it_matters": "The ABA's position signals the banking industry's preference for a balanced regulatory approach that facilitates large-scale AI deployment while maintaining necessary risk oversight.",
+  "quotes": [
+    {
+      "text": "The Committee should recommend a policy and regulatory framework that manages risk and maximises opportunity, giving businesses the confidence to invest, innovate and deploy AI at scale",
+      "supports": "summary"
+    },
+    {
+      "text": "giving businesses the confidence to invest, innovate and deploy AI at scale for the benefit of customers, while preserving Australia’s capacity to use AI to protect and advance the national interest.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "consultation",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Represents the peak industry body's formal policy stance on the development of Australia's national AI regulatory framework.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c04b1df953b6c7aace19f3ec2beb66736d7d575487b7a0c61d8e70754d7b6437",
+    "textChars": 1288,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:53.407Z",
+    "attempts": 1
+  }
+}

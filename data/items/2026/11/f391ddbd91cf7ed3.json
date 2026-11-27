@@ -1,0 +1,53 @@
+{
+  "id": "f391ddbd91cf7ed3",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/microsofts-friday-the-13th-outage-shows-the-cost-of-running-the-whole-office-on-one-cloud",
+  "title": "Microsoft's Friday the 13th outage shows the cost of running the whole office on one cloud",
+  "publishedAt": "2026-11-13T01:04:14.666Z",
+  "fetchedAt": "2026-11-27T02:27:38.904Z",
+  "status": "summarised",
+  "headline": "Microsoft 365 and Copilot outage impacts Australian workers",
+  "summary": "A major global and Australian outage affecting Microsoft 365 services—including Exchange Online, Teams, SharePoint, and Microsoft 365 Copilot—caused widespread operational disruption for organisations. Microsoft reported that servers failed automated health checks and experienced core process overloads, prompting intervention from the Department of Home Affairs National Cyber Security Coordinator. The incident highlighted systemic risks associated with single-vendor cloud reliance and the vulnerability of integrated productivity and AI tools.",
+  "why_it_matters": "Organisations relying heavily on single-cloud ecosystems like Microsoft 365 need robust multi-vendor continuity plans and outage resilience strategies to maintain operations when core productivity and AI tools fail.",
+  "quotes": [
+    {
+      "text": "Outlook, Teams, SharePoint, Copilot and a growing list of Microsoft 365 services fell over for Australian workers this morning. Microsoft says there's no sign of a cyber attack and that recovery will be gradual.",
+      "supports": "summary"
+    },
+    {
+      "text": "Outage resilience costs money, and most organisations treat it as somebody else's problem until a Friday like this one.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "incident",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Demonstrates operational vulnerability and continuity risks for Australian businesses heavily reliant on single-vendor cloud and AI ecosystems like Microsoft 365.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "947c44e1930ac3a1e2ed9ae403faf5ba9bb78a158d62acd4fad203311faf32dc",
+    "textChars": 14572,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:50.582Z",
+    "attempts": 1
+  }
+}

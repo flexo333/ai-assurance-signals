@@ -9,15 +9,45 @@
   "title": "Nvidia’s CEO is back – but the turmoil has exposed the AI boom’s risks for NZ investors",
   "publishedAt": "2026-11-23T22:01:55.000Z",
   "fetchedAt": "2026-11-25T03:11:00.402Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "Nvidia leadership turmoil highlights investment exposure to AI boom",
+  "summary": "Recent leadership turmoil at Nvidia and export rules from the US Commerce Department have highlighted financial risks for New Zealand investors and KiwiSaver funds heavily exposed to big tech. The volatility wiped nearly NZ$1.3 billion from the New Zealand Superannuation Fund's Nvidia holdings as shares dropped about 30%. The episode demonstrates how retirement savings can be significantly impacted by executive stability, concentrated customer dependencies, and shifting government policies in the AI sector.",
+  "why_it_matters": "The episode illustrates how uncertainty surrounding major AI hardware and infrastructure providers directly impacts indirect investors, including retirement savings funds exposed to big tech concentration.",
+  "quotes": [
+    {
+      "text": "The turmoil sent Nvidia’s shares on a rollercoaster ride. Between their October peak and mid-November, nearly NZ$1.3 billion was wiped from the value of the New Zealand Superannuation Fund’s Nvidia holdings, as the chipmaker’s share price fell about 30%.",
+      "supports": "summary"
+    },
+    {
+      "text": "The AI boom may continue. But Nvidia’s turmoil shows how, when so much of New Zealanders’ savings is concentrated in a few companies, their troubles can quickly become ours.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Discusses financial market risks and fund exposure relating to big tech AI investments, with a focus on New Zealand superannuation and KiwiSaver funds.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-flash-lite-latest",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "9bcea3bc7d3136a9fd1a1c5bbccbee87399ec84bc27346fe0b588588d5e6ed63",
     "textChars": 5827,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T03:16:17.610Z",
-    "attempts": 1
+    "analysedAt": "2026-11-27T02:27:55.892Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

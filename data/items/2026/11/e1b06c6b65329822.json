@@ -1,0 +1,53 @@
+{
+  "id": "e1b06c6b65329822",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/cryspiq-new-release-brings-trusted-governed-answers-from-enterprise-data-into-microsoft-teams-and-copilot",
+  "title": "CryspIQ® new release brings trusted, governed answers from enterprise data into Microsoft Teams and Copilot",
+  "publishedAt": "2026-11-12T05:54:45.199Z",
+  "fetchedAt": "2026-11-27T02:27:40.605Z",
+  "status": "summarised",
+  "headline": "CryspIQ v3.3.0 launches data governance tools for Microsoft Teams and Copilot",
+  "summary": "CryspIQ has released version 3.3.0 of its platform, enabling executives to query enterprise data directly within Microsoft Teams and Microsoft 365 Copilot. The release incorporates automated data mapping, early data quality checks, and role-based access controls linked to Microsoft Entra ID. Every generated answer runs under the user's personal permissions and displays underlying source evidence.",
+  "why_it_matters": "Organisations deploying generative AI tools like Microsoft Copilot can use integrated data governance layers to enforce user permissions and trace evidence, reducing the risk of unauthorized data exposure.",
+  "quotes": [
+    {
+      "text": "With v3.3.0, executives can ask CryspIQ® questions directly in Microsoft Teams and Microsoft 365 Copilot, and get answers from governed enterprise data without raising a request or waiting for a report.",
+      "supports": "summary"
+    },
+    {
+      "text": "Cyber and IT teams: One place to manage and protect data, through Microsoft Entra ID security groups. Stronger separation between organisations, and no separate Copilot data source to maintain.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Vendor product release introducing data governance and access control features for enterprise AI tools.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9156b956f245199c1e5305b2e552fb85da2c4858d9b52d05ef95facb4c0fe7a1",
+    "textChars": 6078,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:27.314Z",
+    "attempts": 1
+  }
+}

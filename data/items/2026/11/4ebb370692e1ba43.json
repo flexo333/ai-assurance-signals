@@ -1,0 +1,53 @@
+{
+  "id": "4ebb370692e1ba43",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-research/sailpoint-unveils-2027-identity-security-predictions-the-era-of-ungoverned-agentic-ai-ends-as-legal-baselines-executive-accountability-and-intent-redefine-the-enterprise",
+  "title": "SailPoint Unveils 2027 Identity Security Predictions: The Era of \"Ungoverned Agentic AI\" Ends as Legal Baselines, Executive Accountability, and Intent Redefine the Enterprise",
+  "publishedAt": "2026-11-26T22:20:05.712Z",
+  "fetchedAt": "2026-11-27T02:27:35.683Z",
+  "status": "summarised",
+  "headline": "SailPoint 2027 Identity Security Predictions for Autonomous AI Agents",
+  "summary": "SailPoint has released identity security predictions for 2027, warning that enterprises face a 40:1 agent security gap where autonomous agents operate in production without adequate governance. The research highlights risks from unmanaged machine secrets, agentic supply-chain vulnerabilities, and regulatory pressures. It predicts a shift toward continuous intent assurance, out-of-band identity control planes, and strict accountability for AI deployments.",
+  "why_it_matters": "Organisations deploying autonomous AI agents must establish rigorous identity governance and zero standing privilege controls to meet upcoming regulatory, board, and insurer expectations.",
+  "quotes": [
+    {
+      "text": "79% of enterprises are already running AI agents in production, yet only 2% have deployed identity security purpose-built to secure them.",
+      "supports": "summary"
+    },
+    {
+      "text": "In 2027, while it will be possible to delegate a complex workflow to an autonomous agent, it will never be acceptable to delegate accountability, because agent accountability is enterprise responsibility.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "prediction",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Vendor predictions highlighting future identity governance trends for AI agents, without concrete new regulatory mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "dcc48d4117cb13bb1e68375e00268def919e9c4d7a3698aa2a19103640fff89e",
+    "textChars": 8193,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:28:24.338Z",
+    "attempts": 1
+  }
+}

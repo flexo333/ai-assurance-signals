@@ -1,0 +1,53 @@
+{
+  "id": "270a9e646a87b388",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/building-trust-john-deere-ai-governance-cybersecurity-digital-risk",
+  "title": "Building digital trust: How John Deere governs AI, cybersecurity and digital risk",
+  "publishedAt": "2026-11-13T15:16:21.409Z",
+  "fetchedAt": "2026-11-27T02:27:38.064Z",
+  "status": "summarised",
+  "headline": "John Deere's unified approach to AI and digital risk governance",
+  "summary": "John Deere implements a unified enterprise framework that brings together cybersecurity, privacy, data governance, third-party risk, product security, and AI oversight. Company executives Jason Stanley and Brett Leighton discuss lessons learned from building this digital risk program over nearly a decade. They highlight strategies for managing AI governance, shadow AI, regulatory uncertainty, and intellectual property risk.",
+  "why_it_matters": "Organisations can look to unified enterprise frameworks as a model for integrating AI oversight with existing cybersecurity, privacy, and third-party risk functions rather than managing AI in isolation.",
+  "quotes": [
+    {
+      "text": "Long before digital risk governance became a mainstream topic, John Deere was building a program designed to bring together cybersecurity, privacy, data governance, third-party risk, product security, and AI oversight under a unified framework.",
+      "supports": "summary"
+    },
+    {
+      "text": "In this in-depth conversation, Stanley and Leighton discuss how one of the world's most recognizable and technologically advanced manufacturers approaches digital trust; the lessons they've learned from nearly a decade of building an enterprise digital risk program; and how they're navigating everything from AI governance and shadow AI to regulatory uncertainty and intellectual property risk.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "An interview discussing enterprise risk management approaches in the manufacturing sector, offering general insights rather than specific regulatory or legal changes.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "619f95247e460997f3c6781f19b53ffc5b16c6b3e6ef56d1cb224334cc1bd3f2",
+    "textChars": 1123,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:22.761Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "a99dfdd20d85acbb",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/shield",
+  "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+  "publishedAt": "2026-11-13T08:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:41.264Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7ba2d5966910e960529fd699f7b0f690f423e462ff1017c8e09032caee176013",
+    "textChars": 3551,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:35.685Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "70b7e8ec8f440669",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/copilot-readiness-for-smes-fix-the-foundations-before-you-buy",
+  "title": "Copilot Readiness for SMEs: Fix the Foundations Before You Buy",
+  "publishedAt": "2026-11-13T01:39:40.762Z",
+  "fetchedAt": "2026-11-27T02:27:38.767Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Provides practical guidance on foundational data hygiene, permissions and governance for SMEs adopting enterprise AI assistants.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "66523824efc50a1b39b0b31c64b5b2db601073b8266bbab526114cc6a008fa17",
+    "textChars": 5781,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:41.761Z",
+    "attempts": 2
+  }
+}

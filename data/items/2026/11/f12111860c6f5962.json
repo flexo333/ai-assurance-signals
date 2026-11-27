@@ -1,0 +1,54 @@
+{
+  "id": "f12111860c6f5962",
+  "sourceId": "cba",
+  "sourceName": "Commonwealth Bank (Newsroom, Technology & AI)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://commbank.com.au/articles/newsroom/2026/11/accelerate-ai-codecheck-announcement.html",
+  "title": "CommBank launches CodeCheck to help Australian businesses find software vulnerabilities",
+  "publishedAt": "2026-11-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "CommBank launches CodeCheck AI tool to help Australian businesses secure code",
+  "summary": "Commonwealth Bank has launched CodeCheck, a free open-source AI harness and cyber security tool designed to help Australian businesses identify vulnerabilities in software written using AI coding agents. Developed from the bank's internal software development processes, the tool guides AI agents such as OpenAI's Codex and Anthropic's Claude Code through code analysis while keeping engineers responsible for reviewing findings. The launch aligns with warnings from the Australian Signals Directorate about AI-driven threats compressing vulnerability exploitation windows.",
+  "why_it_matters": "Financial institutions and Australian organisations deploying AI coding agents can utilise this tool to establish operational guardrails and defensive verification controls during software development.",
+  "quotes": [
+    {
+      "text": "CommBank today launched CodeCheck by CommBank, a cyber security tool and AI harness that businesses can download free of charge, designed to help Australian businesses identify potential vulnerabilities in software earlier in development.",
+      "supports": "summary"
+    },
+    {
+      "text": "Businesses can decide what information to share and engineers remain responsible for reviewing the findings and determining what action is required.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides a practical, bank-developed security harness for AI-generated code, directly relevant to Australian operational risk and secure software development practices.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3eeb6430f7c93e3e93eac6edf29fdfc7626aa51d2ea9cfaa10a5d5bb8fca6ba6",
+    "textChars": 4522,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:12.610Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "f511750574538024",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/compliant-and-still-blind-what-article-72-monitoring-doesn-t-see",
+  "title": "Compliant and still blind: What Article 72 monitoring doesn't see",
+  "publishedAt": "2026-11-09T16:40:40.014Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Why EU AI Act Article 72 monitoring misses behavioral drift",
+  "summary": "Many organisations are preparing Article 72 post-market monitoring plans for the EU AI Act, treating them as administrative compliance paperwork rather than active governance disciplines. This compliance-driven focus often targets performance metrics like accuracy and error rates, which fail to detect quiet behavioral drift in production models. As a result, systems can satisfy technical performance targets while gradually shifting how they operate and make decisions.",
+  "why_it_matters": "Organisations designing post-market monitoring must look beyond standard performance thresholds and compliance files to track behavioral drift, ensuring their AI systems do not quietly evolve away from what leadership expects.",
+  "quotes": [
+    {
+      "text": "The trouble is that many organizations risk designing Article 72 monitoring primarily around performance failure: accuracy dropping, error rates rising, complaints piling up. These plans are not designed to catch behavioral drift.",
+      "supports": "summary"
+    },
+    {
+      "text": "A system that behaves differently from the one leadership thinks it has is a governance problem, but it is also a business problem.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides valuable practitioner commentary on the limits of standard compliance monitoring under the EU AI Act, applicable to international AI governance practices.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "444708a0748bf48fbd4f3dcf40c88b65d3925fe581ccd8f64dfc8fe8d6637d32",
+    "textChars": 5454,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:32.246Z",
+    "attempts": 2
+  }
+}

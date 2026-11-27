@@ -1,0 +1,53 @@
+{
+  "id": "1d7075b06143eaf3",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust",
+  "title": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
+  "publishedAt": "2026-10-21T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:44.788Z",
+  "status": "summarised",
+  "headline": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
+  "summary": "Anthropic has appointed physicist Christopher Stubbs to its Long-Term Benefit Trust, a body responsible for overseeing the company's public benefit mission and advising on AI risks. The Trust holds the authority to appoint a majority of Anthropic's board members. Stubbs brings expertise in scientific research, national security, and the reproducibility of AI-assisted research to the role.",
+  "why_it_matters": "The appointment highlights the role of independent oversight bodies in governing the long-term safety and societal impacts of frontier AI development.",
+  "quotes": [
+    {
+      "text": "The Trust exists to help us hold that balance over the long term. It has the authority to appoint a majority of Anthropic’s board, and Trustees advise the board and our leadership on critical decisions, particularly those involving risks and societal impacts of AI.",
+      "supports": "summary"
+    },
+    {
+      "text": "Trustees advise the board and our leadership on critical decisions, particularly those involving risks and societal impacts of AI.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Governance appointments at frontier AI labs influence the safety and risk management frameworks that shape global AI development standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8c1903c7aaa059c54bae164da08724bfea4082da4ec572c235356a72f56b41be",
+    "textChars": 3771,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:37:24.383Z",
+    "attempts": 1
+  }
+}

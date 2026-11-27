@@ -1,0 +1,23 @@
+{
+  "id": "4922ca6fb0dd9299",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+  "title": "Holiday Extras is rethinking what it can build with Codex",
+  "publishedAt": "2026-11-12T09:30:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:41.705Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f910cdbfc3b9f5034351258ce267d43289b2e2b241def00c18b4438fbcfb2427",
+    "textChars": 5561,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:22.043Z",
+    "attempts": 1
+  }
+}

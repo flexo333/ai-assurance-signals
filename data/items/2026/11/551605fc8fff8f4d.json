@@ -1,0 +1,52 @@
+{
+  "id": "551605fc8fff8f4d",
+  "sourceId": "conversation-au",
+  "sourceName": "The Conversation (AU, AI)",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://theconversation.com/we-built-an-ai-you-can-dance-with-it-taught-us-about-developing-the-technology-responsibly-295348",
+  "title": "We built an AI you can dance with. It taught us about developing the technology responsibly",
+  "publishedAt": "2026-11-26T19:15:14.000Z",
+  "fetchedAt": "2026-11-27T02:27:35.392Z",
+  "status": "summarised",
+  "headline": "Auckland dance study highlights alternative models for responsible AI development",
+  "summary": "Researchers in an Auckland dance studio developed an experimental AI dance partner over ten months to explore alternative methods of AI creation. The project involved local data ownership, direct participation by dancers in training and testing, and a focus on context-specific training rather than massive scraped datasets. The authors argue that keeping domain experts involved makes development more accountable and prevents the homogenization of outputs.",
+  "why_it_matters": "The study demonstrates that embedding human creators directly in the development and testing loop fosters accountability and prevents AI systems from ignoring minority or nuanced human inputs.",
+  "quotes": [
+    {
+      "text": "Over ten months, our team built an AI dance partner in “extended reality” (which blends the physical world with digital elements) as part of our laboratory’s research into the relationships between people and digital-physical environments",
+      "supports": "summary"
+    },
+    {
+      "text": "When the people who know the work stay close to a system, they become what feminist philosopher and science studies scholar Donna Haraway calls “ response-able ”: responsive to the system and one another, and accountable for what happens.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Provides an academic and practical commentary on responsible AI development methods and data sovereignty, offering insights relevant to governance discussions in Australia and New Zealand.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c9451d5b9c905fc2a17978a4e2824fa0ba9883c7b9d062542222a69d67293f13",
+    "textChars": 6194,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:28:47.919Z",
+    "attempts": 2
+  }
+}

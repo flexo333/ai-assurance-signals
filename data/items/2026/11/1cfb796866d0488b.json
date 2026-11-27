@@ -1,0 +1,50 @@
+{
+  "id": "1cfb796866d0488b",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/a-view-from-brussels-what-the-commission-s-work-programme-says-about-2027-initiatives",
+  "title": "A view from Brussels: What the Commission's Work Programme says about 2027 initiatives",
+  "publishedAt": "2026-11-05T15:45:47.044Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Outlines future European Commission policy directions and digital rulebook updates relevant to international AI deployment and compliance.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b4f47d82947d7c8e6cf2c91b8e22a594f2ca3c03f7fb71eabe0a67f0a7eecdff",
+    "textChars": 3747,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:15.034Z",
+    "attempts": 2
+  }
+}

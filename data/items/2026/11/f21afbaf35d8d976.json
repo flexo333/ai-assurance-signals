@@ -9,15 +9,56 @@
   "title": "Nvidia’s Jensen Huang is getting his CEO job back, but history shows companies perform better when corporate boards take executive misbehavior seriously",
   "publishedAt": "2026-11-23T18:31:53.000Z",
   "fetchedAt": "2026-11-25T08:18:08.699Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "Nvidia board scrutiny follows CEO ouster and rapid reinstatement",
+  "summary": "Nvidia CEO Jensen Huang was ousted following sexual misconduct allegations before being reinstated 11 days later. The rapid reversal has drawn intense scrutiny regarding corporate board oversight, governance risks, and the precedent it sets for handling executive misconduct. Management research indicates that failing to act decisively on CEO misconduct creates moral hazard and signals deeper cultural and organizational vulnerabilities.",
+  "why_it_matters": "The case highlights how governance failures and weak board oversight regarding executive conduct can undermine organizational trust and spotlight broader risks, including compliance and culture.",
+  "quotes": [
+    {
+      "text": "The story may sound familiar: The CEO of one of the largest and most powerful tech companies resigns over sexual misconduct allegations. The move causes the company’s stock to drop by more than 10%, wiping out billions in value.",
+      "supports": "summary"
+    },
+    {
+      "text": "CEO personal misconduct isn’t simply a private matter or an isolated leadership failure. I believe it creates reputational and governance risks for directors and can embolden further misconduct when left unaddressed.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-12",
+      "what": "Ouster of Nvidia CEO Jensen Huang",
+      "quote": "This could easily describe the turmoil facing Nvidia after the Nov. 12, 2026, ouster of its CEO , Jensen Huang"
+    },
+    {
+      "date": "2026-11-23",
+      "what": "Article update reflecting Jensen Huang's reinstatement as CEO",
+      "quote": "This article was updated on Nov. 23, 2026, to reflect Jensen Huang’s reinstatement as CEO."
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides academic commentary and governance perspectives on corporate board oversight and executive misconduct involving a major AI chip manufacturer, though not specific to AI technical governance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
     "model": "models/gemini-3.5-flash-lite",
-    "promptVersion": 1,
+    "promptVersion": 3,
     "sourceSha256": "add751885489e5a36d1f1c9ee402c7e6b23f0fc88e9ce961fe08dfc669887a5f",
     "textChars": 8062,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T08:21:04.163Z",
-    "attempts": 1
+    "analysedAt": "2026-11-27T02:28:10.103Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

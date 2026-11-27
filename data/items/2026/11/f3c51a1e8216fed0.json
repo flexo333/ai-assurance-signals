@@ -1,0 +1,23 @@
+{
+  "id": "f3c51a1e8216fed0",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/from-saas-to-sewers-vcs-are-betting-on-robotics-start-ups-like-puralink-20261126-p61gu5",
+  "title": "From SaaS to sewers: VCs are betting on robotics start-ups like Puralink",
+  "publishedAt": "2026-11-26T05:35:38.000Z",
+  "fetchedAt": "2026-11-27T02:27:35.683Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e4779e97e9e2f755f355aa85808b9ed56fdf07c6e1f7f7381803e54ef2ec4dd6",
+    "textChars": 127,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-27T02:29:13.952Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "5fc2d61902481468",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-research/google-cloud-predicts-ai-agents-will-reshape-cyber-attack-and-defence-in-2027",
+  "title": "Google Cloud predicts AI agents will reshape cyber attack and defence in 2027",
+  "publishedAt": "2026-11-12T01:21:35.435Z",
+  "fetchedAt": "2026-11-27T02:27:41.386Z",
+  "status": "summarised",
+  "headline": "Google Cloud 2027 forecast warns of agent sprawl and decision manipulation",
+  "summary": "Google Cloud's security forecast for 2027 predicts that autonomous AI agents will transform cyber attacks and defences, shifting risks toward decision manipulation and ungoverned agent sprawl. The report advises organisations to treat AI agents as first-class identities with strict least-privilege access, full observability over decisions, and mandatory adversarial red-teaming.",
+  "why_it_matters": "Organisations deploying autonomous AI agents must establish full traceability and governance over agent decisions and permissions to prevent ungoverned shadow IT and decision manipulation risks.",
+  "quotes": [
+    {
+      "text": "Google Cloud has released its security forecast for 2027, predicting that autonomous AI agents will transform how organisations are attacked and defended, and that security teams must fundamentally change how they build, trust and govern these systems.",
+      "supports": "summary"
+    },
+    {
+      "text": "This will require enterprises to establish full observability over agent decisions, reconstructing inputs, reasoning, tool calls and policy compliance, because without total traceability these autonomous systems cannot be validated, debugged or trusted.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "prediction",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Industry forecast and vendor security guidance regarding autonomous agent risks, though predictive rather than a direct regulatory mandate.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "433c00216843dedcbf4074b9ad24fce4470c3d20f0431182db8901d24e055b56",
+    "textChars": 4115,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:36.669Z",
+    "attempts": 1
+  }
+}

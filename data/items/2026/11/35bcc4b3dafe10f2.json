@@ -1,0 +1,23 @@
+{
+  "id": "35bcc4b3dafe10f2",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/ads/blog/chatgpt-ads-increases-its-market-presence",
+  "title": "ChatGPT Ads increases its market presence in 44 countries",
+  "publishedAt": "2026-11-12T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:43.106Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "36c8f2849dbf8ed6ebb85b086d2989c6b813eaaac0b35884bef57772f5ce5fa0",
+    "textChars": 2746,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:03.420Z",
+    "attempts": 1
+  }
+}

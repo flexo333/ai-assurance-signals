@@ -1,0 +1,53 @@
+{
+  "id": "d7c1da8cb7dc41da",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/children-first-declaration",
+  "title": "Supporting research on AI and children’s safety",
+  "publishedAt": "2026-11-12T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "OpenAI signs children's AI safety charter and commits $2 million",
+  "summary": "OpenAI has signed the Charter of Engagement for Safer AI for Children at the Paris Peace Forum and committed $2 million to support independent research through the Coalition for Children’s Rights and Protection in the Age of AI. The funding aims to develop shared measurement tools to help researchers evaluate AI risks and opportunities for youth. The initiative supports evidence-based policy development, including engagement with European policymakers on the EU Kids Act.",
+  "why_it_matters": "Organisations developing or deploying youth-facing AI systems must track emerging evidence-based frameworks, default age-appropriate safeguards, and mandated risk assessments as global child safety standards evolve.",
+  "quotes": [
+    {
+      "text": "Earlier this week at the Paris Peace Forum, OpenAI signed the Charter of Engagement for Safer AI for Children ⁠ (opens in a new window) and committed $2 million to support the scientific research network under the Coalition for Children’s Rights and Protection in the Age of AI.",
+      "supports": "summary"
+    },
+    {
+      "text": "Such frameworks should include age-appropriate safeguards by default, tools for parents, regular risk assessments and mitigation, and meaningful accountability.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "A major lab commitment to child safety standards and research funding, though primarily focused on international frameworks and European policy.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "4b3b6b515f0cccc727b3fa248397e7d90cb13220155629dd37fa903856c3bc71",
+    "textChars": 1659,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:59.601Z",
+    "attempts": 1
+  }
+}

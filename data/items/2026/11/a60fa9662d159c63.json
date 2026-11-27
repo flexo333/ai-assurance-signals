@@ -12,12 +12,13 @@
   "status": "irrelevant",
   "provenance": {
     "model": "models/gemini-3.5-flash-lite",
-    "promptVersion": 1,
+    "promptVersion": 3,
     "sourceSha256": "03c499ebb022ee99b79be83a459cf36df78dc0d0aad842f5dc7563060df022a2",
     "textChars": 148,
     "textSource": "standfirst",
     "extractMethod": "standfirst",
-    "analysedAt": "2026-11-25T08:21:08.046Z",
-    "attempts": 1
+    "analysedAt": "2026-11-27T02:28:13.362Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

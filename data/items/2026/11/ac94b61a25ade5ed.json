@@ -1,0 +1,23 @@
+{
+  "id": "ac94b61a25ade5ed",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/chatgpt-plus-for-veterans",
+  "title": "ChatGPT Plus for veterans and servicemembers",
+  "publishedAt": "2026-11-11T08:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:43.428Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "dc00f3e97fd6d99df360f4febd0685fdcd705e99880fd82256d77a1dfc586656",
+    "textChars": 3111,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:32:26.374Z",
+    "attempts": 1
+  }
+}

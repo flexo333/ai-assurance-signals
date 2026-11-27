@@ -1,0 +1,53 @@
+{
+  "id": "eafd37290d7caaa9",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/closing-the-ai-connector-blind-spot-a-certification-model-for-privacy-teams",
+  "title": "Closing the AI connector blind spot: A certification model for privacy teams",
+  "publishedAt": "2026-11-13T21:50:06.005Z",
+  "fetchedAt": "2026-11-27T02:27:38.064Z",
+  "status": "summarised",
+  "headline": "Managing AI connector risks and privacy certifications",
+  "summary": "Enterprise AI connectors and agents allow systems to retrieve information and execute actions across business applications, creating dynamic data flows that bypass conventional inventories. Existing privacy and security controls often focus on static applications rather than flexible AI integrations operating with user permissions. While technical security guidance and platform capabilities are advancing, privacy programs require a vendor-neutral approval workflow to govern configurations effectively.",
+  "why_it_matters": "Organisations must adapt their privacy assessment and third-party risk processes to evaluate dynamic AI connector configurations rather than relying solely on traditional application-level controls.",
+  "quotes": [
+    {
+      "text": "AI connectors are quickly becoming part of enterprise infrastructure. They allow assistants and agents to retrieve information from email, document repositories, customer relationship management systems, ticketing platforms and other business applications.",
+      "supports": "summary"
+    },
+    {
+      "text": "What privacy programs still need is a vendor-neutral approval workflow that answers four practical questions. What exactly is being approved? Who has the authority to approve it? What conditions apply? What changes require the decision to be reopened?",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides professional commentary and governance approaches for emerging enterprise AI integration risks, but introduces no binding regulatory or legal changes.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e98c2806890bdb5328c3fc35e05bc6a25bc6aa352bf05b0eb61eb5f101bc8d73",
+    "textChars": 2017,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:20.361Z",
+    "attempts": 1
+  }
+}

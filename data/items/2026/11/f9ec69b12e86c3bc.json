@@ -1,0 +1,53 @@
+{
+  "id": "f9ec69b12e86c3bc",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/centralized-or-decentralized-ai-governance",
+  "title": "Centralized or decentralized AI governance?",
+  "publishedAt": "2026-11-09T20:11:39.418Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Centralized vs. decentralized AI governance in organisations",
+  "summary": "Organisations structuring their AI compliance programs face a choice between centralized and decentralized governance models. Decentralized models keep AI risk within existing risk domains like legal and security, leveraging established processes and building broad fluency. Conversely, centralized models concentrate AI risks and strategic decisions into a single function, simplifying reporting, audits, and dedicated AI expertise. Most organisations are likely to benefit from a hybrid model featuring central accountability and distributed execution.",
+  "why_it_matters": "Choosing the right AI governance structure helps risk and compliance professionals balance operational efficiency, domain expertise, and enterprise-wide risk oversight.",
+  "quotes": [
+    {
+      "text": "Most organizations will not land purely on one side. The practical question is not centralized or decentralized, but rather, which responsibilities must be centralized, and which are better distributed across existing teams?",
+      "supports": "summary"
+    },
+    {
+      "text": "Regardless of whatever structure an organization chooses, the choice should be deliberate.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides structural guidance for AI compliance and risk programs without establishing new legal mandates or standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0cd6b0af7a1dce45eb2de084f2c62ab5da2bff06408d09fd84b3da9a90231820",
+    "textChars": 7500,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:33:27.424Z",
+    "attempts": 1
+  }
+}

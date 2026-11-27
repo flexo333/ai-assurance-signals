@@ -1,0 +1,54 @@
+{
+  "id": "fd7c0d5357abdac4",
+  "sourceId": "auspaynet",
+  "sourceName": "Australian Payments Network",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://auspaynet.com.au/insights/Payments-Monitor/November-2026",
+  "title": "Payments Monitor - November 2026",
+  "publishedAt": "2026-11-01T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "AusPayNet Reports on AI and Machine Speed Risks at Sibos 2026",
+  "summary": "The Australian Payments Network (AusPayNet) highlighted artificial intelligence developments from the Sibos 2026 conference, noting that AI is shifting the cyber and economic crime threat landscape. The report emphasises that frontier AI allows attack and defence to operate at machine speed, turning AI from an innovation topic into a trust and governance challenge for payments infrastructure.",
+  "why_it_matters": "Australian financial institutions and payment providers must ensure their governance, standards, and collective defences evolve at machine speed to counter AI-driven threats while preserving ecosystem trust.",
+  "quotes": [
+    {
+      "text": "Frontier AI is changing the cyber and economic crime threat landscapes. Capabilities that once required time, specialist expertise and significant resources can increasingly be automated and scaled.",
+      "supports": "summary"
+    },
+    {
+      "text": "It means recognising that our governance, standards and collective defences must move at the same speed as the technology.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Provides authoritative industry commentary from AusPayNet on how AI is transforming cyber risk and defense requirements across Australian payment systems.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c1586e9847bc28b8d9f812a9efd4bc0a5ae58e86a62e3e2d4070f92c8abbb76c",
+    "textChars": 17113,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:28.960Z",
+    "attempts": 1
+  }
+}

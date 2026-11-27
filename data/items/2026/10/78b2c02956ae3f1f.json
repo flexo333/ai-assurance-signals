@@ -1,0 +1,53 @@
+{
+  "id": "78b2c02956ae3f1f",
+  "sourceId": "treasury",
+  "sourceName": "The Treasury",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://treasury.gov.au/speech/opening-statement-economics-legislation-committee-oct-26",
+  "title": "Opening statement to the Economics Legislation Committee",
+  "publishedAt": "2026-10-28T12:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Treasury identifies AI investment as a key driver of economic growth and inflation",
+  "summary": "The Treasury's opening statement to the Economics Legislation Committee highlights the rapid expansion of AI investment as a significant force in the global economy. While acknowledging AI's potential for long-term productivity benefits, the Treasury notes that current high levels of capital expenditure are increasing competition for resources and contributing to inflationary pressures. The government expects AI to contribute to productivity growth, contingent on broad business adoption and complementary organisational changes.",
+  "why_it_matters": "For Australian organisations, the Treasury's focus on AI-driven productivity and resource competition underscores the need for strategic alignment between AI adoption, workforce skills, and long-term organisational change to realise economic benefits.",
+  "quotes": [
+    {
+      "text": "AI is expected to make an important contribution, but its impact will depend on adoption and diffusion across the broader business sector, supported by complementary skills, organisational change, investment and policy reforms.",
+      "supports": "summary"
+    },
+    {
+      "text": "In the near term, however, the scale of investment is increasing competition for capital and key inputs, including computer chips, construction capacity and skilled labour.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides official government perspective on the macroeconomic impacts of AI investment and the requirements for realising productivity gains in the Australian economy.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.1-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7d4bdce185f84278483aae846600a443ae9a9ddaad1a0ee1f6b34333944ba489",
+    "textChars": 9700,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:35:48.028Z",
+    "attempts": 1
+  }
+}

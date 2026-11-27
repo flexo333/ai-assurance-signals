@@ -1,0 +1,53 @@
+{
+  "id": "3c5beb802988cda1",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/italys-latest-approach-to-ai-privacy-and-cybersecurity",
+  "title": "Italy's latest approach to AI, privacy and cybersecurity",
+  "publishedAt": "2026-11-05T14:30:36.506Z",
+  "fetchedAt": "2026-11-27T02:27:42.650Z",
+  "status": "summarised",
+  "headline": "Italy transposes EU AI Act and enforces AI privacy rules",
+  "summary": "Italy has completed its transposition of the EU AI Act through two legislative decrees introducing criminal liability and clarifying supervisory roles. Meanwhile, the Italian data protection authority, the Garante, continues active enforcement against AI providers regarding employee sentiment analysis and minors' protection.",
+  "why_it_matters": "Organisations deploying AI in Europe must navigate strict national transpositions that include criminal liability provisions and active regulatory scrutiny from data protection authorities.",
+  "quotes": [
+    {
+      "text": "Legislative Decree No. 160, adopted 9 Sept., introduced corporate and individual criminal liability provisions. Legislative Decree No. 179 , adopted 8 Oct. and entered into force 23 Oct., clarifies the roles and responsibilities of Italy's national AI supervisory authorities.",
+      "supports": "summary"
+    },
+    {
+      "text": "Italy continues to distinguish itself as one of Europe's most interventionist jurisdictions at the intersection of privacy, artificial intelligence and cybersecurity.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulation",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Highlights concrete legislative transposition of the EU AI Act and aggressive national enforcement, serving as a precedent for European AI compliance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2085358dcb6991c8f45153feb8608bd64e163375d8fc89553a71a5c7638f7591",
+    "textChars": 1786,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:34:24.433Z",
+    "attempts": 2
+  }
+}

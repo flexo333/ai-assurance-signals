@@ -1,0 +1,23 @@
+{
+  "id": "60f3c7381bc61eae",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/the-kings-trust-and-openai",
+  "title": "The King’s Trust and OpenAI launch £1m partnership",
+  "publishedAt": "2026-11-16T00:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:38.271Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "540c0524c1191bcac3581b7e3d297a103135485b3e0cdadebf0b6b988a615ffc",
+    "textChars": 2886,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:29:32.963Z",
+    "attempts": 1
+  }
+}

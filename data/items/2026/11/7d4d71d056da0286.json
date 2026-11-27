@@ -1,0 +1,53 @@
+{
+  "id": "7d4d71d056da0286",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-chatgpt-wallet",
+  "title": "Introducing ChatGPT Wallet",
+  "publishedAt": "2026-11-13T15:00:00.000Z",
+  "fetchedAt": "2026-11-27T02:27:40.926Z",
+  "status": "summarised",
+  "headline": "OpenAI Introduces ChatGPT Wallet for Agentic Payments",
+  "summary": "OpenAI has announced ChatGPT Wallet, a new payment mechanism that allows AI agents to make purchases on behalf of users without exposing actual card details. Built in partnership with major payment networks and card issuers, the system requires biometric security checks for every purchase and utilizes tokenised payment methods. OpenAI is also releasing a Commerce Partner Playbook to help businesses adapt their websites, CDNs, and risk systems for agentic commerce.",
+  "why_it_matters": "The introduction of agentic payment capabilities increases operational and risk management considerations for businesses and financial institutions whose fraud detection systems must correctly distinguish legitimate agent transactions from unauthorised access.",
+  "quotes": [
+    {
+      "text": "We’re introducing ChatGPT Wallet, setting a new bar for secure payments by agents. It’s the first wallet that lets agents pay without access to users’ actual card details and that requires a security check for every purchase",
+      "supports": "summary"
+    },
+    {
+      "text": "Wallet’s payment tokens work with existing checkout flows, but risk systems may still flag legitimate purchases made by agents, leading to declines or cancellations.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "risk-compliance",
+      "practitioners",
+      "boards"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "It introduces a new product for agentic commerce and payment tokenisation with financial institutions, but it does not represent a direct regulatory or legal change for Australian compliance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e977e5dd2249351a0143cdfb1cb202a14e6b2dd8e5c1564f6275c4cc23413f17",
+    "textChars": 5246,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:30:27.504Z",
+    "attempts": 1
+  }
+}

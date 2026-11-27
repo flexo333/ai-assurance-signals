@@ -1,0 +1,23 @@
+{
+  "id": "8c51054772433666",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/dovetail-fights-for-its-future-as-ai-threat-resets-valuation-20261126-p61h5y",
+  "title": "Dovetail fights for its future as AI threat resets valuation",
+  "publishedAt": "2026-11-26T05:58:13.000Z",
+  "fetchedAt": "2026-11-27T02:27:35.584Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8eb1ef351e551b4beb5599d5a72f0105f30e94d85c465a0d58fdcbfe7f993ef5",
+    "textChars": 163,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-27T02:29:04.738Z",
+    "attempts": 1
+  }
+}

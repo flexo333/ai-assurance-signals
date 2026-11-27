@@ -1,0 +1,23 @@
+{
+  "id": "eaac96c750e639e0",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/intersystems-joins-google-cloud-as-launch-partner-for-gemini-for-healthcare",
+  "title": "InterSystems Joins Google Cloud as Launch Partner for Gemini for Healthcare",
+  "publishedAt": "2026-11-12T00:58:14.225Z",
+  "fetchedAt": "2026-11-27T02:27:42.132Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "644e134e97d4a6666fbbbc58e704f7462a27eb287d630c9c478edf9302a0ffc2",
+    "textChars": 2631,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-27T02:31:44.921Z",
+    "attempts": 1
+  }
+}
