@@ -1,0 +1,53 @@
+{
+  "id": "1888274c5a3b0418",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/interactive-turns-ai-inward-as-customer-zero-in-company-wide-transformation",
+  "title": "Interactive turns AI inward as ‘Customer Zero’ in company-wide transformation",
+  "publishedAt": "2026-11-11T23:18:36.946Z",
+  "fetchedAt": "2026-11-28T02:13:21.341Z",
+  "status": "summarised",
+  "headline": "Interactive launches internal AI adoption and 'Customer Zero' program",
+  "summary": "Australian technology company Interactive has launched a company-wide AI adoption program, operating as 'Customer Zero' to test and refine AI tools internally before taking them to market. The initiative spans AI skills development, data uplift, and workflow redesign, with applications including procurement and Security Operations Centre threat response. Interactive has set a target for 80 per cent of its employees to complete its internal AI certification program by the end of FY26.",
+  "why_it_matters": "Organisations can use internal 'Customer Zero' testing and structured workforce upskilling to safely evaluate and embed AI tools before deploying them in production for clients.",
+  "quotes": [
+    {
+      "text": "Interactive Australia has launched a company‑wide artificial intelligence adoption program, positioning itself as 'Customer Zero’ as it embeds AI into its own operations ahead of taking new capabilities to market.",
+      "supports": "summary"
+    },
+    {
+      "text": "By testing and refining these solutions ourselves, we gain practical insight that enables us to provide informed, experience‑led guidance to customers.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides a detailed enterprise case study of internal AI deployment, safety controls, and workforce upskilling in Australia, but represents commercial deployment rather than a regulatory or legal change.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2e366911585c90093443ae3d9a5fe6a34ad143086237db73d1557b562b45fe42",
+    "textChars": 5572,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:33.537Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "21cefd7fe96f411d",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/beyond-the-frontier-pragmatic-ai-risk-management-for-the-rest-of-us",
+  "title": "Beyond the frontier: Pragmatic AI risk management for the rest of us",
+  "publishedAt": "2026-10-28T12:56:05.184Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "Pragmatic AI risk management for businesses adopting off-the-shelf tools",
+  "summary": "This article discusses practical AI risk management for the majority of businesses that license off-the-shelf AI products rather than building models. It highlights the challenges organisations face due to a lack of in-house AI expertise, an inability to vet black box systems, and a lack of negotiating leverage with vendors. The author addresses the guidance gap in major governance frameworks, which typically target developers and organisations with substantial control over model behaviour.",
+  "why_it_matters": "Organisations adopting third-party AI tools must navigate vendor-imposed commercial terms and limited bargaining power when implementing risk management frameworks.",
+  "quotes": [
+    {
+      "text": "The reality is that 99% of businesses are not building their own AI models. They are mostly licensing off-the-shelf LLMs and other AI products at the mercy of commercial terms set by AI vendors.",
+      "supports": "summary"
+    },
+    {
+      "text": "What realistic and pragmatic steps can an average business take to manage its AI risks?",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "Provides general commentary on AI risk management challenges for non-developer businesses without introducing new legal or regulatory obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e243b511c4a699da30b0c558e41f113c6509f519f14431fcb841a5ec9bb15155",
+    "textChars": 1882,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:23.411Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "cf8782763f6ad60e",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/a-view-from-dc-how-to-read-policy-tea-leaves",
+  "title": "A view from DC: How to read policy tea leaves",
+  "publishedAt": "2026-11-06T14:04:49.353Z",
+  "fetchedAt": "2026-11-28T02:13:25.640Z",
+  "status": "summarised",
+  "headline": "Analyzing U.S. congressional AI and tech policy signals",
+  "summary": "Following U.S. midterm elections, policy professionals are analysing a letter from Rep. Frank Pallone outlining his priorities for the House Energy and Commerce Committee. The letter signals an intention to pursue AI legislation establishing guardrails centred on safety, fairness, and accountability. It also highlights ongoing priorities regarding privacy, data security, and consumer pricing.",
+  "why_it_matters": "Understanding how lawmakers signal legislative priorities helps AI governance and compliance professionals anticipate upcoming regulatory requirements for artificial intelligence and data protection.",
+  "quotes": [
+    {
+      "text": "The first of these bullet points promises to pass legislation that will \"rein in Big Tech’s rapidly evolving artificial intelligence by establishing strong, commonsense guardrails centered on safety, fairness, and accountability.\"",
+      "supports": "summary"
+    },
+    {
+      "text": "\"Safety\" tells us that there will be a focus on catastrophic risk — not a surprise given the recent headlines about cybersecurity incidents and the bills that have already been passed on this subject in three states.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "It offers expert commentary on U.S. legislative signals and terminology shifts regarding AI policy, rather than establishing direct new rules or obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7eafb79d0e15169592ea105e18059d19203cba0560ad5b565cbb05cc0499a536",
+    "textChars": 10207,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:51.464Z",
+    "attempts": 1
+  }
+}

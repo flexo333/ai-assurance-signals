@@ -1,0 +1,23 @@
+{
+  "id": "61a75fe8ad7e3f4f",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-opinion/ai-overviews-are-changing-seo-which-australian-businesses-still-get-the-click",
+  "title": "AI Overviews are changing SEO: which Australian businesses still get the click",
+  "publishedAt": "2026-11-27T20:34:00.202Z",
+  "fetchedAt": "2026-11-28T02:13:19.826Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9c1ca8f24cb856811d8fe84f57cf17a61137bdedb7a7e055fc6d0c507a8f8e7e",
+    "textChars": 5542,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:14:28.161Z",
+    "attempts": 1
+  }
+}

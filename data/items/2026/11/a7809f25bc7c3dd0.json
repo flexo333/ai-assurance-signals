@@ -1,0 +1,23 @@
+{
+  "id": "a7809f25bc7c3dd0",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/article/shell-opposes-anthropics-32b-queensland-data-centre-69a8698c-4ccc-48a9-b50d-ce6ceb1561bb",
+  "title": "Shell opposes Anthropic’s $32b Queensland data centre",
+  "publishedAt": "2026-11-27T03:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:21.049Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "cc32fb411672897166be9205be65b3971fc3ce4d0d8c7fd8b217bd61b3628caf",
+    "textChars": 160,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-28T02:14:55.749Z",
+    "attempts": 1
+  }
+}

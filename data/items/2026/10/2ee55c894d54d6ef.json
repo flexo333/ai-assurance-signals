@@ -1,0 +1,58 @@
+{
+  "id": "2ee55c894d54d6ef",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model",
+  "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+  "publishedAt": "2026-10-06T19:57:04.000Z",
+  "fetchedAt": "2026-11-28T02:13:38.923Z",
+  "status": "summarised",
+  "headline": "Google DeepMind releases EmbeddingGemma 2 open multimodal embedder",
+  "summary": "Google DeepMind has launched EmbeddingGemma 2, an open, lightweight 740-million-parameter multimodal embedding model designed for on-device inference. Released under an Apache 2.0 license, the model natively maps text, code, images, audio, and video into a unified embedding space while supporting privacy-first local operations. It features optimizations such as Matryoshka Representation Learning for storage reduction and an 8K token context window.",
+  "why_it_matters": "The availability of efficient, privacy-preserving on-device multimodal models gives developers tools to deploy retrieval-augmented generation and search pipelines locally without transmitting sensitive data to external servers.",
+  "quotes": [
+    {
+      "text": "Today, we’re launching EmbeddingGemma 2 , expanding beyond text to unify code, images, video, and audio in a shared embedding space.",
+      "supports": "summary"
+    },
+    {
+      "text": "Generating embeddings locally helps ensure data privacy, reduces pipeline latency, and empowers developers to build cross-modal search and retrieval that works entirely offline.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-10-06",
+      "what": "Publication of the EmbeddingGemma 2 launch article",
+      "quote": "Oct 06, 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "The release provides technical tooling for local privacy-first AI deployments, but represents a product launch rather than a binding governance or regulatory mandate.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "38c7b700d426083c433573cac940f8d59bc1bc2f1bcd8fa8e9f685f91479bd17",
+    "textChars": 5046,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:22:50.593Z",
+    "attempts": 1
+  }
+}

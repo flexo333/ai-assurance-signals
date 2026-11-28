@@ -1,0 +1,53 @@
+{
+  "id": "37e4452e64c861cf",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/cogent-security",
+  "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+  "publishedAt": "2026-11-10T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:25.640Z",
+  "status": "summarised",
+  "headline": "Cogent and OpenAI deploy autonomous cyber defense agents for enterprises",
+  "summary": "Cogent Security has deployed AI-driven Cyber Defense Factories using OpenAI models to automate enterprise vulnerability investigation and remediation. The system integrates enterprise context graphs, agent policies, deterministic policy enforcement, and isolated sandboxes to safely execute fixes. Clients such as MarketAxess and Fortune 500 enterprises are utilizing the platform to scale vulnerability triage and reduce remediation times.",
+  "why_it_matters": "Autonomous security agents capable of executing remediation workflows require strict policy enforcement mechanisms, such as deterministic checks and isolated sandboxes, to manage operational risk.",
+  "quotes": [
+    {
+      "text": "Cogent builds Cyber Defense Factories for enterprises to autonomously find and eliminate those risks.",
+      "supports": "summary"
+    },
+    {
+      "text": "Cogent’s Agent Policies define each enterprise’s permitted changes and approval requirements, and its policy-enforcement engine, TRACE, checks tool calls against the policies before execution.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Demonstrates advanced enterprise adoption of autonomous AI agents for critical cybersecurity tasks, highlighting operational controls like deterministic policy enforcement and sandboxing.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "dc5c0f2deac33432b8cfb94c171981e0582578d4eba1d9d95abf7e65b78a0608",
+    "textChars": 6740,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:09.913Z",
+    "attempts": 1
+  }
+}

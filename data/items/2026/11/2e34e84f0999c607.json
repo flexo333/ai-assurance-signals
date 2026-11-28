@@ -1,0 +1,23 @@
+{
+  "id": "2e34e84f0999c607",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/kuken",
+  "title": "Kuken Industries searches 70 years of drawings in minutes",
+  "publishedAt": "2026-11-09T08:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:27.182Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7d01862908bec9bb87134c71c5d5d11719c654e20c1f7d91b2402c3ef6d48929",
+    "textChars": 4621,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:41.560Z",
+    "attempts": 1
+  }
+}

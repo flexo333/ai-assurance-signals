@@ -1,0 +1,52 @@
+{
+  "id": "48e7c9ead6fa5a86",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/research/knowing-when-to-stop-bayesian-optimal-stopping-for-llm-evaluations",
+  "title": "Knowing When to Stop: Bayesian Optimal Stopping for LLM Evaluations",
+  "publishedAt": "2026-10-07T11:36:36.142Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "summarised",
+  "headline": "UK AISI introduces Bayesian adaptive stopping framework for LLM evaluations",
+  "summary": "The UK AI Security Institute has released optstop, a precision-based adaptive stopping framework designed to optimize LLM evaluation compute. The framework uses hierarchical Bayesian inference to dynamically stop testing when estimates are sufficiently precise, while incorporating safeguards for rare successes. According to the institute, the approach removes between 57% and 97% of planned trials across validation settings while maintaining equivalent overall conclusions.",
+  "why_it_matters": "Organisations conducting rigorous model evaluations can leverage precision-based adaptive frameworks to significantly reduce compute costs without compromising the reliability of their AI assurance processes.",
+  "quotes": [
+    {
+      "text": "We introduce optstop, a precision-based adaptive stopping framework that treats evaluation as a sequential measurement problem: keep sampling where uncertainty remains high, and stop where estimates are precise or stable enough.",
+      "supports": "summary"
+    },
+    {
+      "text": "These results show that LLM evaluation compute can be allocated by uncertainty rather than by fixed repetition counts, with the magnitude of savings depending on evaluation design.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides a useful methodological tool for efficient LLM evaluation and assurance, though it is a technical research release rather than a mandatory standard.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "cfeb9be7b26d58a29cf8969984cb8e86bd112fed1e5e93c17cbf5955f94abed9",
+    "textChars": 1076,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:22:32.378Z",
+    "attempts": 1
+  }
+}

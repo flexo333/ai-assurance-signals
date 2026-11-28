@@ -1,0 +1,59 @@
+{
+  "id": "d1ebfbbdc7d04484",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/legal-responsibility-for-ai-agents-who-answers-when-an-agent-acts-alone-",
+  "title": "Legal responsibility for AI agents: Who answers when an agent acts alone?",
+  "publishedAt": "2026-10-13T19:32:30.518Z",
+  "fetchedAt": "2026-11-28T02:13:32.520Z",
+  "status": "summarised",
+  "headline": "Legal responsibility and governance for autonomous AI agents",
+  "summary": "An upcoming broadcast discusses Singapore IMDA's discussion paper on legal responsibility for autonomous AI agents acting with limited human involvement. The paper examines how contract, tort, and agency laws apply when agents act unintentionally, and explores fault-based versus strict liability. Experts will also cover key takeaways on deployer liability, chain of responsibility, and record-keeping.",
+  "why_it_matters": "Organisations deploying autonomous AI agents must understand how legal liability applies to unintended actions and what evidentiary records may be required to demonstrate reasonable deployment.",
+  "quotes": [
+    {
+      "text": "In May 2026, Singapore's Infocomm Media Development Authority published a discussion paper on legal responsibility for AI agents.",
+      "supports": "summary"
+    },
+    {
+      "text": "What reasonable deployment might require and whether governance frameworks could come to set the standard of care.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-12-01",
+      "what": "Broadcast date for discussion on legal responsibility for AI agents",
+      "quote": "Broadcast date: 1 Dec. 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Discusses emerging legal frameworks and liability for autonomous AI agents, offering valuable insights for risk and compliance professionals.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "75b7cce8b493e8f4abbe69324c19f33df9c64e224a55c635a9c5feed5fdf2e59",
+    "textChars": 2095,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:27.994Z",
+    "attempts": 1
+  }
+}

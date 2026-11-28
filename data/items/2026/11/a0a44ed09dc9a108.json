@@ -1,0 +1,52 @@
+{
+  "id": "a0a44ed09dc9a108",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/partnering-with-hacktron",
+  "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+  "publishedAt": "2026-11-06T08:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "OpenAI partners with Hacktron to test frontier system vulnerabilities",
+  "summary": "OpenAI has announced a partnership with security firm Hacktron to test vulnerabilities in OpenAI's systems, with a focus on third-party service interactions. Hacktron will gain expanded access to frontier models through Daybreak Red. The collaboration builds on findings from OpenAI's Security Bug Bounty program and aims to address security challenges as AI agents connect services in new ways.",
+  "why_it_matters": "Frontier AI developers expanding third-party red teaming partnerships highlights the growing operational security focus on how interconnected AI agents interact with external infrastructure.",
+  "quotes": [
+    {
+      "text": "Today we’re announcing a partnership with Hacktron to find vulnerabilities in OpenAI’s systems.",
+      "supports": "summary"
+    },
+    {
+      "text": "As AI agents connect services in new ways, that combination of skills becomes even more valuable.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "An operational security and red-teaming partnership for a major frontier lab, highlighting testing methodologies for agentic system integrations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "6a6528e42ed1a56dd238a5360519d99c776cdca3504caeef320725f2ee84eefe",
+    "textChars": 1830,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:00.584Z",
+    "attempts": 1
+  }
+}

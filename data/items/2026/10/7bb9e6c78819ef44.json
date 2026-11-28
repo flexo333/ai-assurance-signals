@@ -1,0 +1,53 @@
+{
+  "id": "7bb9e6c78819ef44",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/ftc-expands-personalized-pricing-scrutiny-as-states-congress-regulators-turn-up-pressure",
+  "title": "FTC expands personalized pricing scrutiny as states, Congress, regulators turn up pressure",
+  "publishedAt": "2026-10-29T16:30:30.548Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "FTC and US lawmakers expand scrutiny on AI personalized pricing",
+  "summary": "The U.S. Federal Trade Commission ordered nine companies to provide information on how personal data and artificial intelligence are used to set consumer prices and worker compensation. The action follows increased scrutiny from congressional committees, state attorneys general, and new state and municipal regulations regarding algorithmic and surveillance pricing. Industry experts note that AI acts as a force multiplier by processing vast amounts of personal data to determine individual rather than uniform market prices.",
+  "why_it_matters": "Organisations deploying AI-driven pricing or worker compensation tools face escalating regulatory, enforcement, and litigation risks regarding transparency and data use.",
+  "quotes": [
+    {
+      "text": "The spotlight on so-called personalized or surveillance pricing grew more intense this week after the U.S. Federal Trade Commission ordered nine companies to provide detailed information on how personal data and AI are used to set consumer prices and worker compensation.",
+      "supports": "summary"
+    },
+    {
+      "text": "Even when companies are acting in good faith, technical violations of disclosure requirements can result in lawsuits.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "enforcement",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Major regulatory and legislative escalation in the US regarding AI-driven pricing practices, signalling compliance risks for algorithmic systems globally.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ed1e510369e3090a7c3b8f4a09fc702879e0d78b13ae43fafa0f780184ca9006",
+    "textChars": 8890,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:09.914Z",
+    "attempts": 1
+  }
+}

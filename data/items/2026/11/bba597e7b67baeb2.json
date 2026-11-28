@@ -1,0 +1,52 @@
+{
+  "id": "bba597e7b67baeb2",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/hitachi-vantara-expands-vsp-one-for-enterprise-ai-with-new-object-storage-and-data-lakehouse-capabilities",
+  "title": "Hitachi Vantara Expands VSP One for Enterprise AI with New Object Storage and Data Lakehouse Capabilities",
+  "publishedAt": "2026-11-12T00:54:02.101Z",
+  "fetchedAt": "2026-11-28T02:13:21.023Z",
+  "status": "summarised",
+  "headline": "Hitachi Vantara Expands Data Platform with Governed AI and Storage Capabilities",
+  "summary": "Hitachi Vantara has announced updates to its VSP One data platform and Hitachi iQ portfolio, introducing object storage enhancements, data lakehouse analytics capabilities, and expanded governed access for retrieval-augmented generation. The new capabilities include Model Gateway for governed model access and role-based access control, designed to help organisations move AI projects from experimentation to production with greater control.",
+  "why_it_matters": "Expanding governed access to structured and unstructured enterprise data for AI applications helps organisations maintain compliance and security when deploying retrieval-augmented generation and agentic workflows.",
+  "quotes": [
+    {
+      "text": "Together, the updates connect scalable data infrastructure, in-place analytics and governed AI software to help organisations move from trusted enterprise data to production AI with greater control.",
+      "supports": "summary"
+    },
+    {
+      "text": "Adds Model Gateway for governed access to local and external models, governed Model Context Protocol (MCP) connectivity and ServiceNow support, along with role-based access, observability and lifecycle management for enterprise AI applications and agents.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "Vendor product update introducing infrastructure and governance features for enterprise AI deployments, representing standard industry tooling rather than a regulatory or legal change.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a93cc79b6a8a8ba37528bea0dcece932999115208b5df0c6a6b558e554b44e43",
+    "textChars": 6926,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:19.672Z",
+    "attempts": 1
+  }
+}

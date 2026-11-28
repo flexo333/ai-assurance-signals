@@ -1,0 +1,52 @@
+{
+  "id": "cabef7edb22aaedd",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/illumio-puts-breach-containment-at-the-centre-of-ai-resilience-with-wwt-s-armor",
+  "title": "Illumio Puts Breach Containment at the Centre of AI Resilience with WWT’s ARMOR",
+  "publishedAt": "2026-11-11T22:39:42.078Z",
+  "fetchedAt": "2026-11-28T02:13:22.163Z",
+  "status": "summarised",
+  "headline": "Illumio featured in WWT's ARMOR framework for AI resilience and risk management",
+  "summary": "Illumio Inc. has announced it will be included in World Wide Technology's AI Readiness Model for Operational Resilience (ARMOR), a vendor-agnostic framework for assessing and managing AI risk. The integration aims to help organisations prevent single compromises in AI environments from becoming business-wide disruptions by applying breach containment, visibility, and least privilege segmentation.",
+  "why_it_matters": "The inclusion of breach containment platforms in vendor-agnostic AI risk frameworks highlights how organisations are expanding their technical controls to manage lateral movement risks in highly connected AI infrastructure.",
+  "quotes": [
+    {
+      "text": "Illumio Inc. , the breach containment company, today announced it will be featured in World Wide Technology’s ( WWT ) AI Readiness Model for Operational Resilience (ARMOR), a vendor-agnostic framework for assessing and managing AI risk.",
+      "supports": "summary"
+    },
+    {
+      "text": "With its differentiated ability to see and contain lateral movement across complex environments, Illumio contributes to ARMOR’s broader approach to helping organisations build secure, resilient AI environments.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "This is a vendor product and partnership announcement regarding a risk management framework, representing standard commercial security tooling rather than a regulatory mandate.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a4d295e69e77df2b02fa388edc793890acf49e99b43ad5b417121074c02a07c1",
+    "textChars": 4134,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:56.261Z",
+    "attempts": 1
+  }
+}

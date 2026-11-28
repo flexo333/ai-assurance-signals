@@ -1,0 +1,60 @@
+{
+  "id": "d9f9f0b785d7c4a4",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/technology-ai/how-australian-small-businesses-are-using-ai-to-save-time",
+  "title": "How Australian small businesses are using AI to save time and improve productivity",
+  "publishedAt": "2026-10-18T23:31:43.000Z",
+  "fetchedAt": "2026-11-28T02:13:28.107Z",
+  "status": "summarised",
+  "headline": "NAB and National AI Centre partner on practical SME AI training",
+  "summary": "National Australia Bank and the National AI Centre are collaborating on a practical AI training program to help Australian small and medium enterprises adopt artificial intelligence safely and confidently. The announcement highlights real-world adoption examples across accounting, healthcare, and physiotherapy, where businesses are using custom agents and workflow automation. NAB research indicates that 40% of SMEs are already using AI while seeking guidance on secure and responsible usage.",
+  "why_it_matters": "Australian organisations supporting small business digital adoption must provide practical, security-focused guidance and training to help SMEs navigate AI risks safely.",
+  "quotes": [
+    {
+      "text": "NAB is partnering with the National AI Centre to develop training that helps businesses adopt AI safely and confidently.",
+      "supports": "summary"
+    },
+    {
+      "text": "The practical education program is designed to help businesses identify opportunities for AI, build capability and apply technology in ways that improve productivity and support growth.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-08-21",
+      "what": "Publication of NAB research finding 40% SME AI adoption",
+      "quote": "21 August 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "other",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "An industry initiative by a major Australian bank and the National AI Centre to support safe SME AI adoption, but lacking binding regulatory or compliance obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "30ad5b20789065eee61592365cf2b27e1ad6d17d69c27e3d6738cc296aaebf3f",
+    "textChars": 7829,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:51.036Z",
+    "attempts": 1
+  }
+}

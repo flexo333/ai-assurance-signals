@@ -1,0 +1,23 @@
+{
+  "id": "f3fc54cd1d78c100",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/ai-effect-on-freelance-work",
+  "title": "Work at the Frontier: AI’s effect on freelance work",
+  "publishedAt": "2026-11-10T07:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:26.487Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "1be0c494407a6e207893f40071c1f88df9fd9d987588f7a57e277ed4b04b6c62",
+    "textChars": 5246,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:04.653Z",
+    "attempts": 1
+  }
+}

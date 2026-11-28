@@ -1,0 +1,52 @@
+{
+  "id": "370d8453b070a7bf",
+  "sourceId": "mistral",
+  "sourceName": "Mistral AI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://mistral.ai/news/timestral",
+  "title": "Introducing Timestral",
+  "publishedAt": "2026-10-15T12:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:30.605Z",
+  "status": "summarised",
+  "headline": "Mistral AI releases Timestral time-series foundation model",
+  "summary": "Mistral AI has released Timestral, a family of four time-series foundation models ranging from 5M to 209M parameters. The models deliver probabilistic, multivariate forecasts and support past and future covariates while operating efficiently on standard CPUs without requiring a GPU. Mistral provides deployment options including on-prem, VPC, and air-gapped environments alongside fine-tuning capabilities via Mistral Forge.",
+  "why_it_matters": "Organisations can deploy these lightweight models locally or in air-gapped environments, enabling secure forecasting for sensitive operational and financial data without relying on cloud-based APIs.",
+  "quotes": [
+    {
+      "text": "Today, we’re releasing Timestral, our first family of time-series foundation models.",
+      "supports": "summary"
+    },
+    {
+      "text": "The full pipeline can be deployed on our clients’ hardware, including air-gapped environments.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Release of a new time-series foundation model architecture with local/air-gapped deployment capability, relevant to technical assurance and operational risk practitioners.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a1384a892316dccb2df0b1904d2ada9e84fb39d2f16117bc711b585678e7cd65",
+    "textChars": 10899,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:20:27.976Z",
+    "attempts": 1
+  }
+}

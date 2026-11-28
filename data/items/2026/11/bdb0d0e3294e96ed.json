@@ -1,0 +1,23 @@
+{
+  "id": "bdb0d0e3294e96ed",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-research/nice-and-metrigy-research-finds-growing-openness-to-ai-as-trust-shapes-customer-experience",
+  "title": "NiCE and Metrigy Research Finds Growing Openness to AI as Trust Shapes Customer Experience",
+  "publishedAt": "2026-11-11T22:24:18.779Z",
+  "fetchedAt": "2026-11-28T02:13:22.804Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "164881068d7e32bffbbe84505e9a38d371bd796cdeb084029dcc80c31dde2c00",
+    "textChars": 5765,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:09.378Z",
+    "attempts": 1
+  }
+}

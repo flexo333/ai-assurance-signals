@@ -1,0 +1,53 @@
+{
+  "id": "9092d5eb66f29547",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/singapore-airlines-travel-work",
+  "title": "Singapore Airlines elevates travel & work with OpenAI technology",
+  "publishedAt": "2026-11-10T08:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:26.006Z",
+  "status": "summarised",
+  "headline": "Singapore Airlines deploys governed AI across customer and internal workflows",
+  "summary": "Singapore Airlines uses OpenAI models for customer-facing applications like its Kris chatbot and Flight Recommender, and inside Jarvis, a governed internal platform for employees. The airline pairs these models with orchestration, internal data controls, validation, and human review to ensure responsible deployment. Across these implementations, the airline has reported operational improvements including increased customer satisfaction and software development productivity gains.",
+  "why_it_matters": "Organisations deploying generative AI can look to this case study as an example of combining API-driven models with orchestration, guardrails, and human review to maintain internal standards and operational control.",
+  "quotes": [
+    {
+      "text": "Across these deployments, Singapore Airlines pairs OpenAI models with orchestration, internal data controls, validation, and human review, giving teams a consistent way to bring AI into production workflows responsibly.",
+      "supports": "summary"
+    },
+    {
+      "text": "Beyond customer-facing experiences, Singapore Airlines is also using OpenAI models in parts of the software development lifecycle to help teams plan, refine, test, and review work more efficiently.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides a practical enterprise deployment and governance case study with operational details, though it does not create new regulatory obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "92e98b8c85978f2840ac9b74815e3d8c412259e442c354c94fd51f9a03183f8c",
+    "textChars": 7859,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:00.756Z",
+    "attempts": 1
+  }
+}

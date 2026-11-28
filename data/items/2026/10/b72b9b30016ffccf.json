@@ -1,0 +1,53 @@
+{
+  "id": "b72b9b30016ffccf",
+  "sourceId": "treasury",
+  "sourceName": "The Treasury",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://treasury.gov.au/media-release/meeting-communique-building-ministers-october-2026",
+  "title": "Meeting communiqué: Joint Ministerial Meeting on Housing Supply and Affordability, October 2026",
+  "publishedAt": "2026-10-16T12:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:28.107Z",
+  "status": "summarised",
+  "headline": "National Construction Code modernisation to incorporate AI-ready digital tools",
+  "summary": "Commonwealth, State and Territory housing ministers agreed to modernise the National Construction Code to improve consistency and usability across Australia. As part of these reforms, the Australian Building Codes Board will commence preliminary work to deliver NCC 25 digitally, make it AI-ready, and explore pilot digital tools including AI. Jurisdictions also committed to improving code readability and supporting modern methods of construction.",
+  "why_it_matters": "Australian construction and property compliance professionals will need to adapt as national building codes and compliance pathways transition to AI-ready digital formats and pilot AI tools.",
+  "quotes": [
+    {
+      "text": "the ABCB will commence preliminary work, in consultation with jurisdictions and industry, to: deliver NCC 25 digitally and make it AI‑ready explore pilot digital tools, including AI, for NCC 2025",
+      "supports": "summary"
+    },
+    {
+      "text": "Jurisdictions agree to work together to design and implement risk‑based proportionate ways of demonstrating compliance with the National Construction Code, tailored to building type and complexity.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Directly impacts national building standards, digital compliance workflows, and the integration of AI tools into regulatory frameworks across all Australian jurisdictions.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d7d1345d1d54d1cd3803e485f2f0c795eda1afb9f6479b50cd860a3c8896c6c5",
+    "textChars": 6190,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:20:14.056Z",
+    "attempts": 2
+  }
+}

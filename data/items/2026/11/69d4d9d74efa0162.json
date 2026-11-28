@@ -1,0 +1,53 @@
+{
+  "id": "69d4d9d74efa0162",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+  "title": "Closing the AI guidance gap in education",
+  "publishedAt": "2026-11-10T09:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:25.283Z",
+  "status": "summarised",
+  "headline": "Closing the AI guidance gap in education",
+  "summary": "OpenAI highlights lessons from education partnerships across EMEA regarding AI adoption, focusing on educator support, AI literacy, and evaluation. Research cited from ThinkYoung reveals a significant guidance gap where 79 percent of surveyed students use AI for homework while only 47 percent receive guidance. The report emphasises public leadership, teacher training, and evidence-based integration.",
+  "why_it_matters": "Governments and educational institutions must establish clearer expectations and support structures for educators to address the growing guidance gap between student AI usage and formal instruction.",
+  "quotes": [
+    {
+      "text": "New research from ThinkYoung, ⁠ (opens in a new window) which examines the ways teachers and students are already engaging with AI highlights a clear guidance gap: 79% of surveyed students reported using AI for homework or assignments, but only 47% reported being shown how.",
+      "supports": "summary"
+    },
+    {
+      "text": "Governments need to support educators and give students clearer expectations. Below we set out how educators can be better supported to set the terms and conditions of use.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides insights into educational AI adoption and the guidance gap, but lacks binding regulatory impact or direct Australian operational directives.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3c5b03165c8cc47e8b3e531ef4d078750d7d9fa9d769de6213c066867db8f2fc",
+    "textChars": 4578,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:51.877Z",
+    "attempts": 2
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "d82785593cf73221",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/appians-jake-rank-on-serious-ai-put-agents-inside-the-process-measure-the-outcome-and-use-a-business-rule-when-its-cheaper",
+  "title": "Appian's Jake Rank on serious AI: put agents inside the process, measure the outcome, and use a business rule when it's cheaper",
+  "publishedAt": "2026-11-11T18:21:42.945Z",
+  "fetchedAt": "2026-11-28T02:13:23.087Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Discusses vendor platform strategies, governance approaches, and Australian customer deployments, but functions primarily as industry commentary and roadshow coverage.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a36aa5734dece02950232cc20acc42f9a00723d712f007b442290584243a39b8",
+    "textChars": 12343,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:24.225Z",
+    "attempts": 2
+  }
+}

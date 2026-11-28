@@ -1,0 +1,23 @@
+{
+  "id": "81209450b91a7acb",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/ads/customers/vistaprint",
+  "title": "How VistaPrint helps small businesses get the word out",
+  "publishedAt": "2026-11-09T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:28.107Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3ec275e50b4fa38f71b90ec5b4567c8c47ab504c19760841a282d5223fb52bf3",
+    "textChars": 5241,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:46.089Z",
+    "attempts": 1
+  }
+}

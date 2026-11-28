@@ -1,0 +1,54 @@
+{
+  "id": "9ddff5e7197c9887",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/technology-ai/ai-changing-how-australian-smes-get-work-done",
+  "title": "AI changing how Australian SMEs get work done",
+  "publishedAt": "2026-10-18T23:56:20.000Z",
+  "fetchedAt": "2026-11-28T02:13:28.107Z",
+  "status": "summarised",
+  "headline": "NAB research reveals AI adoption trends and workforce readiness among Australian SMEs",
+  "summary": "New research from NAB shows that 40 percent of Australian small and medium-sized businesses are actively using AI, with 22 percent reporting transformational improvements. The study highlights that productivity and operational workflows are the primary benefits, while workforce readiness remains a significant barrier at an average rating of 3.8 out of 10. Practical examples include small businesses deploying AI voice agents and automation tools for customer service and quote turnaround.",
+  "why_it_matters": "The persistent capability and workforce readiness gap highlighted in NAB's research indicates that Australian organisations deploying AI must focus heavily on lifting internal competency and operational risk management alongside technology adoption.",
+  "quotes": [
+    {
+      "text": "The latest NAB research (PDF, 636KB) shows 40% of SMEs are actively using AI, with a further 13% planning to adopt. Among those using AI, 22% report significant transformational improvements.",
+      "supports": "summary"
+    },
+    {
+      "text": "While the upside is becoming clearer, the latest SME research also points to a capability gap. SMEs rate workforce readiness for AI at just 3.8 out of 10, with only 17% saying their workforce is highly prepared.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides empirical data on Australian SME AI adoption rates and capability gaps, relevant to commercial banking and advisory risk perspectives but not introducing new regulatory mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5cb7788abac5e42e08fac3773fed024f7a7b07def97355771368e9b09cb76630",
+    "textChars": 4381,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:46.742Z",
+    "attempts": 1
+  }
+}

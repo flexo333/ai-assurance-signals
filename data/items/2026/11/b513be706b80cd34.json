@@ -1,0 +1,23 @@
+{
+  "id": "b513be706b80cd34",
+  "sourceId": "csiro-data61",
+  "sourceName": "CSIRO Data61 (Responsible AI)",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://csiro.au/en/news/All/Articles/2026/November/Blackhole-Conversation",
+  "title": "Is this iconic black hole image accurate? New study delivers an independent result",
+  "publishedAt": "2026-11-12T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:21.023Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "4c0f1efda3317cec01bb4fb60d00aa78bf9505dd08e7060387c5d673a528e9f5",
+    "textChars": 5606,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:23.388Z",
+    "attempts": 1
+  }
+}

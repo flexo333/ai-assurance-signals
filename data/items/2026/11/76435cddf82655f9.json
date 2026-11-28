@@ -1,0 +1,53 @@
+{
+  "id": "76435cddf82655f9",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/thought-for-the-week-companies-face-cyber-pain-as-hackers-press-ai-advantage",
+  "title": "Thought for the week: Companies face cyber pain as hackers press AI advantage",
+  "publishedAt": "2026-11-09T13:47:02.420Z",
+  "fetchedAt": "2026-11-28T02:13:23.739Z",
+  "status": "summarised",
+  "headline": "Companies face cyber risks as threat actors leverage AI capabilities",
+  "summary": "Recent commentary discusses how threat actors are using advanced artificial intelligence models to accelerate cyberattacks at a speed human security teams cannot match. Legal and compliance professionals are advised to brief senior leadership on AI-fueled cyber risks, reevaluate vendor retainers, review contractual notification terms, and scrutinize public reporting obligations.",
+  "why_it_matters": "Organisations must invest in AI-enhanced security monitoring and controls while adapting their incident response, vendor contracts, and reporting protocols to counter automated, high-speed threats.",
+  "quotes": [
+    {
+      "text": "Advanced AI models let hackers find and attack those open wounds at a speed no human security team can match.",
+      "supports": "summary"
+    },
+    {
+      "text": "Senior leadership needs to understand that AI-fueled cyber risks are increasing.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides practical governance and compliance advice for managing AI-accelerated cyber threats, though it is general commentary rather than binding regulation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "6690f0215215cfca24cf87fa7af0a82496de4cad78872eae7fd7aa5cb2f21b7f",
+    "textChars": 6121,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:23.796Z",
+    "attempts": 1
+  }
+}

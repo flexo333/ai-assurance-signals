@@ -1,0 +1,52 @@
+{
+  "id": "7098941f209878e5",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/notes-from-the-iapp-canada-khaled-el-emam-bridges-privacy-protection-and-data-innovation",
+  "title": "Notes from the IAPP Canada: Researcher bridges privacy protection and data innovation",
+  "publishedAt": "2026-10-30T11:50:13.844Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "Bridging privacy and AI data governance through technical methods",
+  "summary": "The work of researcher Khaled El Emam highlights methods for balancing data innovation with privacy protection, including de-identification and synthetic data. His lab at the CHEO Research Institute recently received the 2026 Privacy and Human Rights Award from the Global Privacy Assembly and Access Now. The article explores how technical methods, governance and judgment must intersect to evaluate identifiability and manage disclosure risks in AI training data and downstream uses.",
+  "why_it_matters": "Organisations must move beyond high-level policy promises and adopt rigorous technical methods, such as synthetic data evaluation and re-identification risk assessment, to govern AI training data and model outputs effectively.",
+  "quotes": [
+    {
+      "text": "The same discipline is becoming essential in AI governance, where training data, model outputs and downstream uses can create different forms of disclosure risk.",
+      "supports": "summary"
+    },
+    {
+      "text": "Organizations increasingly need to show their work. They need methods for evaluating identifiability, documenting assumptions, testing data releases and matching safeguards to realistic threat scenarios.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Offers valuable commentary and methodology for privacy and AI data governance, though it discusses an award and existing research rather than new binding standards or regulations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "fbedb690dce6904d30d3a5919948fc667400edb43391088a6f1962c273939433",
+    "textChars": 11370,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:55.822Z",
+    "attempts": 1
+  }
+}

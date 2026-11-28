@@ -1,0 +1,52 @@
+{
+  "id": "44931fce3cc2685b",
+  "sourceId": "imda-sg",
+  "sourceName": "Singapore IMDA / AI Verify Foundation",
+  "authority": "official",
+  "jurisdiction": "SG",
+  "paywalled": false,
+  "url": "https://aiverifyfoundation.sg/news/press-release-launch-of-the-ai-tester-accreditation-programme",
+  "title": "Press Release – Launch of the AI Tester Accreditation Programme",
+  "publishedAt": "2026-10-14T01:58:48.000Z",
+  "fetchedAt": "2026-11-28T02:13:36.764Z",
+  "status": "summarised",
+  "headline": "Launch of the AI Tester Accreditation Programme by IMDA and AIVF",
+  "summary": "The AI Verify Foundation and IMDA have launched a Global AI Assurance pilot and the AI Tester Accreditation Programme to codify emerging norms and best practices for technical testing of Generative AI applications. Announced at the AI Action Summit in Paris, the initiative establishes an accreditation scheme to define standards for effective AI testing. Additionally, the organisations introduced a Global AI Assurance Sandbox to connect companies deploying AI systems.",
+  "why_it_matters": "Organisations deploying generative AI can look to emerging international accreditation standards and testing norms to benchmark their technical assurance practices.",
+  "quotes": [
+    {
+      "text": "AIVF has officially launched the AI Tester Accreditation Programme (AI TAP) and announced the first batch of accredited AI testing",
+      "supports": "summary"
+    },
+    {
+      "text": "The AI Verify Foundation and IMDA have launched a Global AI Assurance pilot. It is a global initiative to codify emerging norms and best practices around technical testing of Generative AI applications.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "standard",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Establishes a notable international accreditation standard and testing sandbox for generative AI assurance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "db41958f66260496df4f7b1dd97bcfc8a9d5fb9dae3475fe12962130145a8487",
+    "textChars": 1010,
+    "textSource": "article",
+    "extractMethod": "main-text",
+    "analysedAt": "2026-11-28T02:21:04.660Z",
+    "attempts": 1
+  }
+}

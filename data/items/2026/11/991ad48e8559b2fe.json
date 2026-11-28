@@ -1,0 +1,23 @@
+{
+  "id": "991ad48e8559b2fe",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-businesses-chatgpt",
+  "title": "Introducing Businesses in ChatGPT",
+  "publishedAt": "2026-11-10T10:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:23.689Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e7bf9359703bb5bd4797bfd8389cdb796753a601c85dcadf507a215c84c2449f",
+    "textChars": 4956,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:46.292Z",
+    "attempts": 1
+  }
+}

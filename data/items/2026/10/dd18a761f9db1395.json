@@ -1,0 +1,58 @@
+{
+  "id": "dd18a761f9db1395",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/research/transect-retaining-observability-for-long-horizon-llm-agent-evaluations",
+  "title": "Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations",
+  "publishedAt": "2026-10-07T13:56:26.604Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "summarised",
+  "headline": "Transect open-source tool for long-horizon LLM agent evaluation",
+  "summary": "The UK AI Safety Institute has released Transect, an open-source package designed to maintain observability during open-ended, long-horizon frontier AI evaluations. Built on Inspect Scout, the tool helps evaluators classify agent behaviour, align events on a common timeline, and verify interpretations against underlying transcripts. The approach addresses the narrowing observability envelope caused by complex multi-agent networks and lengthy evaluation transcripts.",
+  "why_it_matters": "Organisations conducting advanced AI evaluations can adopt this tool to enhance the reproducibility, transparency and auditability of complex multi-agent safety assessments.",
+  "quotes": [
+    {
+      "text": "Transect is an open source package built on Inspect Scout to help evaluators understand how a long agent run unfolded, identify behaviour worth investigating, and check interpretations against the transcript.",
+      "supports": "summary"
+    },
+    {
+      "text": "Transect's flexible, customisable transcript-analysis pipeline will enable evaluators to keep pace with longer, more complex, more frequent AI evaluations while supporting scientific rigour, transparency, and reproducibility.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-10-07",
+      "what": "Publication of the research blog post and paper regarding Transect.",
+      "quote": "Oct 7, 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides a practical open-source assurance and evaluation methodology for complex multi-agent AI systems, though it is primarily a technical research release.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "db562cfa0568dc6d41b38e8790da93c4cd57dae89108529d806fb3ab50972213",
+    "textChars": 2115,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:22:04.641Z",
+    "attempts": 1
+  }
+}

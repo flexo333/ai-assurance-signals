@@ -1,0 +1,53 @@
+{
+  "id": "8ca61e286a1f1fc4",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/boj-calls-for-safeguards-against-digital-money-and-ai-risks",
+  "title": "BOJ calls for safeguards against digital money and AI risks",
+  "publishedAt": "2026-11-27T03:58:40.000Z",
+  "fetchedAt": "2026-11-28T02:13:22.548Z",
+  "status": "summarised",
+  "headline": "Bank of Japan urges safeguards for digital money and AI financial risks",
+  "summary": "Bank of Japan executive director Kazushige Kamiyama stated that global policymakers must strengthen defences against financial stability and cybersecurity risks from digital money and artificial intelligence. The remarks highlight emerging challenges as new digital assets and financial infrastructure interact.",
+  "why_it_matters": "Financial institutions and risk professionals must prepare for heightened regulatory expectations regarding AI and digital asset stability risks.",
+  "quotes": [
+    {
+      "text": "Global policymakers must strengthen defences against financial stability and cybersecurity risks posed by the emergence of new forms of digital money and financial infrastructure, Bank of Japan executive director Kazushige Kamiyama said on Friday.",
+      "supports": "summary"
+    },
+    {
+      "text": "Global policymakers must strengthen defences against financial stability and cybersecurity risks posed by the emergence of new forms of digital money and financial infrastructure, Bank of Japan executive director Kazushige Kamiyama said on Friday.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Signals international central bank focus on AI and digital money financial stability risks, though high-level rather than operational.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "07e017b68b087f8fb04a7ccc691dc953059c9a0848fe1a1b3499f17d92faa65e",
+    "textChars": 713,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:14:47.128Z",
+    "attempts": 1
+  }
+}

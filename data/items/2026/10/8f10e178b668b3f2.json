@@ -1,0 +1,49 @@
+{
+  "id": "8f10e178b668b3f2",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities",
+  "title": "Building a more secure environment for evaluating dangerous capabilities",
+  "publishedAt": "2026-10-07T11:36:36.142Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Details concrete operational security hardening for frontier AI safety evaluations following real-world agent containment incidents.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "26ec3ed75e5b3d54412deb9ba101255a9a8b0040459115f71d1121799e508dce",
+    "textChars": 11063,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:22:09.559Z",
+    "attempts": 2
+  }
+}

@@ -9,15 +9,46 @@
   "title": "AI makes the humanities more important, Cisco innovation chief argues",
   "publishedAt": "2026-11-23T03:50:25.501Z",
   "fetchedAt": "2026-11-25T08:18:11.321Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "Cisco innovation chief highlights ethics and governance for AI",
+  "summary": "Cisco global innovation officer Dr Guy Diedrich argued at Cisco Live in Melbourne that the rapid advancement of AI makes ethical judgement, philosophy, and the humanities increasingly essential for technical professionals. He stated that setting clear organisational boundaries and guardrails actually gives teams the confidence to innovate faster rather than slowing them down. Diedrich also pointed to Cisco's responsible AI framework, which covers transparency, fairness, accountability, privacy, security, and reliability alongside executive oversight.",
+  "why_it_matters": "Establishing early organisational guardrails and integrating ethical oversight into technical development provides teams with the clarity needed to deploy AI systems securely and rapidly.",
+  "quotes": [
+    {
+      "text": "In his account, setting boundaries before Cisco pursued AI gave teams confidence to move faster because they understood the limits within which they could work.",
+      "supports": "summary"
+    },
+    {
+      "text": "He rejected the idea some give that establishing guardrails necessarily slowed innovation.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Offers industry perspective on internal AI governance frameworks and ethical engineering practices presented at a major event in Melbourne, but introduces no new regulatory or legal obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-3.1-flash-lite",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "2caf14b9c453e26c0ddebb4afe562fda05f74bdd50ac0ceb58679154e3227e62",
     "textChars": 6425,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T08:22:57.149Z",
-    "attempts": 1
+    "analysedAt": "2026-11-28T02:14:06.127Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

@@ -1,0 +1,53 @@
+{
+  "id": "616c68177b707eae",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/australian-universities-ai-native-graduates",
+  "title": "Australian universities are creating AI-native graduates",
+  "publishedAt": "2026-11-05T17:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:29.467Z",
+  "status": "summarised",
+  "headline": "Australian universities collaborate with OpenAI on AI education frameworks",
+  "summary": "Australian universities including UNSW, University of Sydney, La Trobe, and Adelaide University are partnering with OpenAI to provide students and staff access to tools like ChatGPT Edu. Alongside tool deployments, the institutions are establishing assessment frameworks, responsible AI policies, and specialised degree programs to prepare students for the workforce. Survey research indicates high student demand for AI skills alongside a recognized need for safe and structured academic integration.",
+  "why_it_matters": "Higher education frameworks and responsible AI assessment models developed for university rollouts offer practical governance lessons for organizations designing internal training and setting expectations for AI usage in professional workflows.",
+  "quotes": [
+    {
+      "text": "Alongside this work, universities are developing frameworks for where and how AI can be used in learning and assessment, helping students build practical skills while knowing when to rely on their own judgment.",
+      "supports": "summary"
+    },
+    {
+      "text": "For teachers, employers and industry practitioners, these examples offer practical lessons in designing AI-supported learning, setting clear expectations for AI use and preparing Australians for an AI-enabled workplace.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Highlights institutional AI adoption and governance frameworks across multiple Australian universities, though primarily focused on education rather than binding regulation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "198693872249bd4dfd62e0e0ea88ded0b697763fba37dd75bf410648973edd0e",
+    "textChars": 10160,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:14.991Z",
+    "attempts": 1
+  }
+}

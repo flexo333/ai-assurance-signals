@@ -1,0 +1,53 @@
+{
+  "id": "250efbf87904f833",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/cisco-s-anz-chief-says-ai-customers-are-demanding-proof-of-returns",
+  "title": "Cisco’s ANZ chief says AI customers are demanding proof of returns",
+  "publishedAt": "2026-11-11T03:53:56.782Z",
+  "fetchedAt": "2026-11-28T02:13:23.265Z",
+  "status": "summarised",
+  "headline": "Cisco ANZ chief highlights AI governance, trust, and ROI demands",
+  "summary": "Cisco's ANZ leader Stefan Leitl reports that regional organisations are increasingly demanding proof of financial returns from AI deployments while scaling practical task automation. Leitl highlights that building trust and governance around agentic AI is essential, drawing parallels to onboarding a human employee with staged access and boundaries. He also notes regional concerns regarding data sovereignty and operational resilience, alongside an upcoming Sydney cloud control deployment.",
+  "why_it_matters": "Organisations deploying AI agents must implement structured governance, controls, and access boundaries akin to onboarding staff to build the trust required for broader adoption.",
+  "quotes": [
+    {
+      "text": "Australian and New Zealand customers are increasingly demanding evidence of the financial return from AI, according to Cisco regional chief Stefan Leitl (pictured), who says use cases are emerging while the picture of their true return on investment is still developing.",
+      "supports": "summary"
+    },
+    {
+      "text": "Leitl argues that organisations need to onboard an AI agent with attention similar to that given to a person joining the business. Governance, controls, and access boundaries need to accompany the new capability.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Provides local executive commentary on AI deployment trends, governance practices, and operational trust in Australia and New Zealand, but does not introduce new regulations or binding standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d5c0ac9ad05ab57fe02a0ea7bb6dcd575822e057f08dc3497953ba98c70896af",
+    "textChars": 6246,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:42.687Z",
+    "attempts": 1
+  }
+}

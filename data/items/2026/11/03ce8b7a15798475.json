@@ -1,0 +1,53 @@
+{
+  "id": "03ce8b7a15798475",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/security/an-ai-agent-s-memory-can-become-an-attack-surface-cisco-researcher-warns",
+  "title": "An AI agent’s memory can become an attack surface, Cisco researcher warns",
+  "publishedAt": "2026-11-11T04:16:04.899Z",
+  "fetchedAt": "2026-11-28T02:13:23.144Z",
+  "status": "summarised",
+  "headline": "AI agent memory and dependencies present new security attack surfaces",
+  "summary": "Cisco researcher Amy Chang warns that businesses deploying AI agents must scrutinize their instructions, dependencies, and permissions because persistent memory and connected tools can create attack surfaces. Research into Claude Code showed how untrusted repository installations could alter memory and hooks to recommend committing API keys directly into source code. Cisco has released open-source tools such as Skill Scanner, DefenseClaw, and Project Quarry to help organisations detect suspicious instructions and govern agent runtimes.",
+  "why_it_matters": "Organisations deploying AI agents must evaluate the full sequence of agent actions and dependencies rather than relying on single-message guardrails or model publisher nationality shortcuts.",
+  "quotes": [
+    {
+      "text": "A coding assistant can be steered towards insecure advice through the files and dependencies it trusts, according to Cisco’s head of AI threat intelligence and security research, Amy Chang (pictured).",
+      "supports": "summary"
+    },
+    {
+      "text": "Chang said models can remain susceptible to manipulation across repeated exchanges, even when they refuse a direct harmful request. She argued that organisations should test the specific business application and its dependencies, then add protections appropriate to the weaknesses they find.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Provides concrete operational insights and open-source tooling for securing AI agent supply chains and memory vulnerabilities.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "ec66ed079a1e3aeb041cd7d614674ae79198ad0d6fb7b603ba412d40f55205cb",
+    "textChars": 7258,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:33.274Z",
+    "attempts": 2
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "a2fe2e5e86d47033",
+  "sourceId": "legislation",
+  "sourceName": "Federal Register of Legislation",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://legislation.gov.au/F2026L01507",
+  "title": "Financial Framework (Supplementary Powers) Amendment (Health, Disability and Ageing Measures No. 5) Regulations 2026",
+  "publishedAt": "2026-11-16T00:45:14.672Z",
+  "fetchedAt": "2026-11-28T02:13:20.347Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0350e1c690074dd4fb081de32a44d09e0152a535cc2a0e5fe4ea7cd3373c4c07",
+    "textChars": 19995,
+    "textSource": "article",
+    "extractMethod": "legislation-epub",
+    "analysedAt": "2026-11-28T02:15:14.192Z",
+    "attempts": 1
+  }
+}

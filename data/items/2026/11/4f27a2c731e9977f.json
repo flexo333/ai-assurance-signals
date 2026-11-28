@@ -1,0 +1,54 @@
+{
+  "id": "4f27a2c731e9977f",
+  "sourceId": "asic",
+  "sourceName": "Australian Securities and Investments Commission",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://asic.gov.au/about-asic/news-centre/speeches/asic-annual-forum-2026-opening-remarks",
+  "title": "ASIC Annual Forum 2026: Opening remarks",
+  "publishedAt": "2026-11-17T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:20.347Z",
+  "status": "summarised",
+  "headline": "ASIC Chair highlights AI regulatory challenges at 2026 Annual Forum",
+  "summary": "At the 2026 ASIC Annual Forum, the ASIC Chair noted that artificial intelligence dominated recent international regulatory discussions regarding productivity, consumer protections, and market integrity. The Chair emphasised that the rapid adoption of AI does not diminish firms' accountabilities or obligations, and that automated systems can increase tech-enabled harms and scams. The remarks stressed that financial institutions must protect customers and remain fully accountable for outcomes driven by automated systems.",
+  "why_it_matters": "Australian financial institutions deploying AI must ensure that regulatory accountabilities and customer protections keep pace with technological change, as ASIC maintains that neither innovation nor complexity diminishes legal obligations.",
+  "quotes": [
+    {
+      "text": "Artificial intelligence dominated many of those discussions. The opportunity is considerable especially where AI can improve productivity and service delivery. The regulatory question is how those benefits can be realised without weakening cyber resilience, market integrity or consumer protections.",
+      "supports": "summary"
+    },
+    {
+      "text": "Neither complexity, innovation nor the pace of change diminishes those important obligations.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Outlines ASIC's regulatory stance and focus on AI accountability and consumer harm for Australian financial institutions.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b811897c197eb9c444ae681be5756ca3999f085f96d8b0dd8e94a94b4faa09b1",
+    "textChars": 9292,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:10.492Z",
+    "attempts": 1
+  }
+}

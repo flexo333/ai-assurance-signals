@@ -1,0 +1,59 @@
+{
+  "id": "90d47c8e77a75621",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/aged-care-algorithms-need-redesign-human-override-inquiry-finds",
+  "title": "Aged care algorithms need redesign, human override, inquiry finds",
+  "publishedAt": "2026-11-27T03:16:23.000Z",
+  "fetchedAt": "2026-11-28T02:13:20.347Z",
+  "status": "summarised",
+  "headline": "Aged care algorithms need redesign and human override, Senate finds",
+  "summary": "A year-long Senate inquiry has concluded that automated decision-making algorithms used in aged care must be fundamentally redesigned. The inquiry calls for new human overrides at the point of assessment to address inaccurate and inappropriate care level decisions.",
+  "why_it_matters": "Organisations deploying automated decision systems in regulated care sectors face heightened pressure to implement robust human-in-the-loop safeguards and system redesigns.",
+  "quotes": [
+    {
+      "text": "Aged care algorithms making inaccurate and inappropriate automated decisions on care levels must be “fundamentally” redesigned and safeguarded by new human overrides at the point of assessment, a year-long Senate inquiry has found.",
+      "supports": "summary"
+    },
+    {
+      "text": "The findings add pressure on the Albanese government to overhaul the so-called Integrated Assessment Tool, which is already under review and has been widely criticised by the Ombudsman, state governments and aged care experts.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-27",
+      "what": "Publication date of the Senate inquiry findings report",
+      "quote": "27 November 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "A parliamentary inquiry finding significant flaws in a national government automated assessment tool highlights critical public sector AI governance and oversight requirements.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "40c2985e90ba1af2c963afbd4a52ef142d1850b9e44f4ca0137e655728f26119",
+    "textChars": 694,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:14:51.890Z",
+    "attempts": 1
+  }
+}

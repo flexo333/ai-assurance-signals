@@ -1,0 +1,23 @@
+{
+  "id": "861c29a8bdbbe75d",
+  "sourceId": "legislation",
+  "sourceName": "Federal Register of Legislation",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://legislation.gov.au/F2026L01613",
+  "title": "Migration (Subclass 417 (Working Holiday) Visa Pre-Application Process) Determination 2026",
+  "publishedAt": "2026-11-27T07:25:21.099Z",
+  "fetchedAt": "2026-11-28T02:13:19.620Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2ac24a3fc7053d11ee8f111e53b409b5d4fc7532d187d0b5ce10299c5f2abb6c",
+    "textChars": 19996,
+    "textSource": "article",
+    "extractMethod": "legislation-epub",
+    "analysedAt": "2026-11-28T02:14:32.987Z",
+    "attempts": 1
+  }
+}

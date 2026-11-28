@@ -1,0 +1,53 @@
+{
+  "id": "0a03fec6cb309e0f",
+  "sourceId": "imda-sg",
+  "sourceName": "Singapore IMDA / AI Verify Foundation",
+  "authority": "official",
+  "jurisdiction": "SG",
+  "paywalled": false,
+  "url": "https://aiverifyfoundation.sg/resources/starter-kit-for-testing-agentic-systems-for-safety-and-reliability",
+  "title": "Starter Kit for Testing Agentic Systems for Safety and Reliability",
+  "publishedAt": "2026-10-14T02:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:35.841Z",
+  "status": "summarised",
+  "headline": "Starter Kit for Testing Agentic Systems for Safety and Reliability",
+  "summary": "The AI Verify Foundation published a framework providing guidance to organisations on deploying AI agents responsibly while maintaining human accountability. The framework includes a structured overview of agentic AI risks and emerging management practices, updated with real-world case studies in May 2026.",
+  "why_it_matters": "Organisations deploying agentic AI systems must establish robust testing and safety controls while ensuring humans remain ultimately accountable for the system's actions.",
+  "quotes": [
+    {
+      "text": "This framework provides guidance to organisations on how to deploy AI agents responsibly, while emphasising that humans are ultimately accountable.",
+      "supports": "summary"
+    },
+    {
+      "text": "It gives organisations a structured overview of the risks of agentic AI and emerging best practices in managing these risks.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides practical guidance and case studies for testing agentic AI systems, though it is voluntary guidance from an international foundation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c82a8750b895ea635198d895a9adfb7f33c8955ef77597b14d9c7532e9afa1d4",
+    "textChars": 555,
+    "textSource": "feed",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:00.016Z",
+    "attempts": 1
+  }
+}

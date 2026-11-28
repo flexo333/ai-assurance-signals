@@ -1,0 +1,53 @@
+{
+  "id": "9a5dcf9254c678be",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/notes-from-the-iapp-europe-digital-omnibus-progress-health-data-and-online-scams-and-fraud",
+  "title": "Notes from the IAPP Europe: Digital Omnibus progress, health data and online scams and fraud",
+  "publishedAt": "2026-10-29T17:32:40.586Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "EU Council reaches negotiating position on Digital Omnibus package",
+  "summary": "The Council of the EU has reached an agreement on its negotiating position for the Digital Omnibus package, which proposes amendments to EU data protection, privacy, and cybersecurity frameworks. The position includes updates to GDPR provisions, such as clarifying pseudonymization, simplifying data subject access requests, and introducing safeguards for processing special categories of personal data in AI development and operation. Additionally, the Council addressed member-state level incident reporting, trade secret protections, and e-Privacy Directive cookie rules.",
+  "why_it_matters": "Organisations handling personal data for AI development and operation under EU frameworks must monitor upcoming legislative negotiations and safeguards, which will impact compliance obligations for biometric verification and data processing.",
+  "quotes": [
+    {
+      "text": "The derogation allowing for the processing of special categories of personal data in the context of biometric verification and AI development and operation is supplemented by additional data minimization, end-to-end-encryption and other safeguards.",
+      "supports": "summary"
+    },
+    {
+      "text": "The derogation allowing for the processing of special categories of personal data in the context of biometric verification and AI development and operation is supplemented by additional data minimization, end-to-end-encryption and other safeguards.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Advances EU data protection and AI governance frameworks through the Council's agreed negotiating position on the Digital Omnibus.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d75ba00cef2e726c0eabe12d6d9ac2951c9fb978cc62e497b03c4735b16a754f",
+    "textChars": 4437,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:00.371Z",
+    "attempts": 2
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "73590ce27cd60659",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/article/soul-patts-ai-avoidance-is-working-just-fine-b7edfec7-792c-4ef9-a556-768c21db3f9b",
+  "title": "Soul Patts’ AI avoidance is working just fine",
+  "publishedAt": "2026-11-27T05:58:22.000Z",
+  "fetchedAt": "2026-11-28T02:13:21.109Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "1205001322db26b6e500dd07b565bc616d3d9d06a00b82d0da32c1f1e9038382",
+    "textChars": 164,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-28T02:14:41.975Z",
+    "attempts": 1
+  }
+}

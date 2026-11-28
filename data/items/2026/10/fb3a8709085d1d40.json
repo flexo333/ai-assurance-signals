@@ -1,0 +1,53 @@
+{
+  "id": "fb3a8709085d1d40",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/blog/towards-technical-best-practice-for-frontier-ai-development",
+  "title": "Towards technical best practice for frontier AI development",
+  "publishedAt": "2026-10-16T21:48:21.875Z",
+  "fetchedAt": "2026-11-28T02:13:28.107Z",
+  "status": "summarised",
+  "headline": "UK AISI sets out technical priorities for frontier AI development best practice",
+  "summary": "The UK AI Security Institute (AISI) has published an overview of emerging challenges and priority technical practices needed for frontier AI development. It highlights that risks are now arising earlier in the development process and that traditional evaluation practices are struggling to keep pace with rapid capability gains. AISI outlines eight key priority areas for best practice, ranging from risk assessment and lifecycle oversight to measuring alignment and enabling independent auditors.",
+  "why_it_matters": "Organisations developing or evaluating frontier AI systems must prepare to adopt more rigorous technical controls and independent auditing as safety risks emerge earlier during training and internal deployment.",
+  "quotes": [
+    {
+      "text": "The AI Security Institute (AISI) will play a key role in delivering that commitment, with partners across industry, governments and beyond.",
+      "supports": "summary"
+    },
+    {
+      "text": "It’s these challenges that call for new technical best practice, to enable frontier AI development activities to continue safely as capabilities progress.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides an influential national AI safety institute's blueprint for technical best practice and frontier risk controls, informing emerging international standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "03e38b0bf982442e6c38ea88124eeab6a8d0921a014564b2e29756a509422eaa",
+    "textChars": 9211,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:20:04.972Z",
+    "attempts": 2
+  }
+}

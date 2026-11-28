@@ -1,0 +1,23 @@
+{
+  "id": "769071eed6ef848f",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/commvault-redefines-recovery-in-the-ai-era-from-restoring-data-to-restoring-the-business",
+  "title": "Commvault Redefines Recovery in the AI Era: From Restoring Data to Restoring the Business",
+  "publishedAt": "2026-11-11T21:32:21.127Z",
+  "fetchedAt": "2026-11-28T02:13:22.920Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "676dc253484a5eb5dc0db915ef1c87dff86e72aa7186dfe9716e0099966d24e0",
+    "textChars": 4337,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:18.683Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "d96a2391b623b2cb",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics",
+  "title": "Gemini 4 Argon for Robotics",
+  "publishedAt": "2026-10-13T16:01:58.000Z",
+  "fetchedAt": "2026-11-28T02:13:36.067Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "cd5df63ceb8409ec63f58ce7073b3a64bb5c6a7c5b89c797a01c3368e89cf9ba",
+    "textChars": 19999,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:31.578Z",
+    "attempts": 1
+  }
+}

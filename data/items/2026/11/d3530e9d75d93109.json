@@ -1,0 +1,23 @@
+{
+  "id": "d3530e9d75d93109",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/honeywell-technologies-unveils-new-ebi-fire-and-life-safety-and-security-innovations-that-bring-more-intelligent-autonomous-operations-to-buildings",
+  "title": "Honeywell Technologies unveils new EBI, fire and life safety and security innovations that bring more intelligent, autonomous operations to buildings",
+  "publishedAt": "2026-11-11T22:22:07.513Z",
+  "fetchedAt": "2026-11-28T02:13:22.741Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5a55e699b2bcb1fa16551332cf5a2be1970a84ead4c87a740e3af61f7da31a69",
+    "textChars": 6395,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:14.102Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "7c5312cf1d5e44c8",
+  "sourceId": "nab",
+  "sourceName": "NAB (News)",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://nab.com.au/news/technology-ai/q-and-a-ai-for-small-business",
+  "title": "Q&A: AI for small business",
+  "publishedAt": "2026-10-19T23:25:07.000Z",
+  "fetchedAt": "2026-11-28T02:13:28.107Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "6ff439de1c9ce2012529f0bbb26c025b7211b775df006fd56e6146c8d0b6478d",
+    "textChars": 3701,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:41.164Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "b8e73d0dbe174efe",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/when-does-not-using-ai-become-negligence",
+  "title": "When does not using AI become negligence?",
+  "publishedAt": "2026-11-03T20:02:43.510Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "Evaluating AI non-adoption risks and legal standards of care",
+  "summary": "As artificial intelligence becomes deeply embedded in professional workflows, legal conversations are shifting from the risks of using AI to the potential liabilities of choosing not to evaluate or adopt it. Courts evaluate professional conduct against evolving standards of reasonable care, comparing AI adoption to past technological shifts like electronic discovery or digital medical imaging. Organizations are advised to establish robust governance frameworks to thoughtfully evaluate AI tools, document their decisions regarding tool usage, and demonstrate sound professional judgment.",
+  "why_it_matters": "Organisations must establish structured governance frameworks to document their AI adoption or non-adoption decisions, as failing to evaluate available tools could eventually expose them to negligence claims if industry standards of reasonable care evolve.",
+  "quotes": [
+    {
+      "text": "What happens when professionals choose not to evaluate AI?",
+      "supports": "summary"
+    },
+    {
+      "text": "Organizations do not need to precisely predict where the law will end up, but they should begin building governance processes that allow them to thoughtfully evaluate AI, document their decisions and demonstrate that those decisions were grounded in reasonable professional judgment.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 3,
+    "significance_reason": "Highlights a critical evolving legal risk for directors and risk professionals concerning the standard of care and negligence associated with failing to evaluate or adopt AI.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "fa4a62cf6e782b886241f247dd224a9461efd782341c7a443b85053a363e31ee",
+    "textChars": 5544,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:42.128Z",
+    "attempts": 1
+  }
+}

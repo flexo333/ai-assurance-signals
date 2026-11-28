@@ -1,0 +1,52 @@
+{
+  "id": "fc632625f8c37fb1",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/proactive-ai-privacy-leveraging-pets-throughout-the-ai-life-cycle",
+  "title": "Proactive AI privacy – Leveraging PETs throughout the AI life cycle",
+  "publishedAt": "2026-10-13T20:22:56.434Z",
+  "fetchedAt": "2026-11-28T02:13:30.605Z",
+  "status": "summarised",
+  "headline": "Leveraging privacy-enhancing technologies throughout the AI life cycle",
+  "summary": "Experts from the IAPP, OpenMined, CHEO Research Institute and Google discuss implementing privacy-enhancing technologies like differential privacy, federated learning and synthetic data generation across the artificial intelligence life cycle. The session explores strategies for addressing data minimization, model memorization, membership inference attacks, and the complexities of agentic AI. It also covers cutting-edge research and standardization efforts aimed at lowering barriers to use.",
+  "why_it_matters": "Organisations can use privacy-enhancing technologies to proactively manage privacy risks and meet data processing goals across every stage of the AI life cycle.",
+  "quotes": [
+    {
+      "text": "Privacy challenges exist at each stage in the artificial intelligence life cycle.",
+      "supports": "summary"
+    },
+    {
+      "text": "Learn how privacy-enhancing technologies like differential privacy, federated learning and synthetic data generation are implemented at each stage in the AI life cycle to proactively address privacy risks and meet data processing goals.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "Educational resource and practitioner discussion on PETs integration without direct regulatory or legal binding effects.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b4efe6b42032eeb667c163fc65f165b670cf63fc919aa0a994d194a968014d59",
+    "textChars": 1812,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:13.883Z",
+    "attempts": 1
+  }
+}

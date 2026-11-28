@@ -1,0 +1,53 @@
+{
+  "id": "db217c9b871dd336",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/notes-from-the-iapp-canada-kerrs-privacy-questions-echo-in-bill-c-22",
+  "title": "Notes from the IAPP Canada: Kerr's privacy questions echo in Bill C-22",
+  "publishedAt": "2026-11-06T12:58:08.041Z",
+  "fetchedAt": "2026-11-28T02:13:25.640Z",
+  "status": "summarised",
+  "headline": "Privacy concerns raised over Bill C-22 subscriber data orders",
+  "summary": "The Privacy Commissioner of Canada has raised concerns before the Senate regarding Bill C-22, the Lawful Access Act, 2026. The commissioner noted that production orders requiring only reasonable suspicion rather than reasonable grounds could capture extensive personal data across sectors. Critics warn this exemplifies information reductionism, where seemingly innocuous data scraps are assembled into detailed profiles through advanced analytics and AI.",
+  "why_it_matters": "Lowering legal thresholds to accommodate new technologies such as sensor networks and AI risks eroding privacy safeguards by treating aggregated personal data points as individually insignificant.",
+  "quotes": [
+    {
+      "text": "The bill passed the House of Commons 18 June and, following a second reading in the Senate, was referred to the Standing Senate Committee on National Security, Defence and Veterans Affairs 22 Oct.",
+      "supports": "summary"
+    },
+    {
+      "text": "A lower standard, attached to information we have first persuaded ourselves is too basic to matter, is exactly the combination Kerr taught so many of us to notice.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Highlights legislative debates on lawful access standards and data protection thresholds relevant to AI surveillance and privacy governance.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "16576b00778fc78d7cf50d1c5bf7b7d7d95f9bc57ccfb10156313bf167acd797",
+    "textChars": 12417,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:56.464Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "13092e908c00b5ee",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/guest-research/watchguard-global-survey-reveals-employee-trust-rises-in-the-deepfake-era-but-verification-still-lags",
+  "title": "WatchGuard Global Survey Reveals Employee Trust Rises in the Deepfake Era, But Verification Still Lags",
+  "publishedAt": "2026-11-11T23:13:13.938Z",
+  "fetchedAt": "2026-11-28T02:13:21.801Z",
+  "status": "summarised",
+  "headline": "Survey highlights AI deepfake risks and employee verification gaps",
+  "summary": "A global survey by WatchGuard Technologies reveals that employee trust in digital communications is rising while verification habits lag behind, exposing organisations to AI-driven impersonation and fraud. The report notes that 55 percent of respondents do not always independently verify senders before acting on sensitive requests, despite the proliferation of convincing deepfakes. Australia recorded the highest verification rate among surveyed countries at 69 percent.",
+  "why_it_matters": "Organisations must establish robust human-in-the-loop verification procedures and training to counter AI-enabled impersonation risks where employees rely blindly on familiar digital signals.",
+  "quotes": [
+    {
+      "text": "Employee trust in digital communications is growing significantly during an era of indistinguishable deepfakes while verification remains inconsistent for sensitive requests involving money, credentials, and confidential information",
+      "supports": "summary"
+    },
+    {
+      "text": "The findings highlight a growing need for organisations to strengthen verification and reduce reliance on trust signals that can be manipulated by AI.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 2,
+    "significance": 2,
+    "significance_reason": "Provides survey data on employee trust and verification behaviors regarding AI deepfakes, highlighting practical organisational risks but introducing no new regulatory mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "df002cb4ce46a5b924fee80ad27aeecb7afc3e414c6707db70a89dd983f7875d",
+    "textChars": 5412,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:37.899Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "a08111fa8e1f83d0",
+  "sourceId": "capital-brief",
+  "sourceName": "Capital Brief",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://capitalbrief.com/briefing/wisetech-global-shares-gain-as-cargowise-revenue-grows-11-to-october-f518d519-4620-4b8e-a014-5acc941bc8c0",
+  "title": "WiseTech’s Richard White touts potential $11.8b in AI job cut savings for customers",
+  "publishedAt": "2026-11-27T00:39:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:21.186Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9f530d507ab37ac7f29bf987b75d74b9891d89af33cd540d52731a60a493feaf",
+    "textChars": 191,
+    "textSource": "standfirst",
+    "extractMethod": "standfirst",
+    "analysedAt": "2026-11-28T02:15:00.449Z",
+    "attempts": 1
+  }
+}

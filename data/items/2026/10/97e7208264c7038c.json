@@ -1,0 +1,64 @@
+{
+  "id": "97e7208264c7038c",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/notes-from-the-asia-pacific-region-singapore-charts-course-for-ai-risk-management-in-financial-services",
+  "title": "Notes from the Asia-Pacific region: Singapore charts course for AI risk management in financial services",
+  "publishedAt": "2026-10-30T17:00:42.856Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "Singapore MAS issues AI risk management guidelines for financial institutions",
+  "summary": "The Monetary Authority of Singapore has issued its Guidelines on Artificial Intelligence Risk Management for Financial Institutions, setting out detailed supervisory expectations for governing, developing, deploying, and monitoring AI. The guidelines apply a proportionate, risk-based approach across AI use cases, establishing accountability at the senior management level and outlining specific lifecycle and third-party risk management requirements. Governance and oversight requirements take effect on 7 Oct. 2027, followed by operational lifecycle requirements on 7 Oct. 2028.",
+  "why_it_matters": "Financial institutions and organisations deploying AI in regulated sectors must prepare for rigorous lifecycle, data management, and third-party risk requirements that mirror international supervisory expectations.",
+  "quotes": [
+    {
+      "text": "On 7 Oct., the MAS issued its Guidelines on Artificial Intelligence Risk Management for Financial Institutions , setting out detailed supervisory expectations for how financial institutions should govern, develop, deploy and monitor AI.",
+      "supports": "summary"
+    },
+    {
+      "text": "The guidelines provide a useful mariner's chart to digital governance professionals across sectors, and serve as a map of the rocks, reefs and currents that any organization deploying AI at scale will eventually need to navigate.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2027-10-07",
+      "what": "Governance and oversight requirements take effect",
+      "quote": "Governance and oversight requirements take effect from 7 Oct. 2027"
+    },
+    {
+      "date": "2028-10-07",
+      "what": "Operational life cycle and capability requirements take effect",
+      "quote": "with the more operational life cycle and capability requirements following beginning 7 Oct. 2028."
+    }
+  ],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 4,
+    "significance_reason": "Major regulatory guidance from a key regional financial regulator establishing detailed AI risk management obligations and timelines.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "c6a34a8373ce45eb9cb526237a800cd5abaa123e9bebaf6489b75a44c0e87ad8",
+    "textChars": 4609,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:51.382Z",
+    "attempts": 1
+  }
+}

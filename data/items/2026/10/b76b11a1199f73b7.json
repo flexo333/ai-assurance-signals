@@ -1,0 +1,59 @@
+{
+  "id": "b76b11a1199f73b7",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
+  "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+  "publishedAt": "2026-10-14T02:00:14.000Z",
+  "fetchedAt": "2026-11-28T02:13:33.868Z",
+  "status": "summarised",
+  "headline": "Google DeepMind and Singapore Gov build on-device scam detection AI",
+  "summary": "Google DeepMind and the Government Technology Agency of Singapore have fine-tuned a lightweight Gemma model to detect complex social engineering scams on-device. The system uses a two-stage pipeline to analyse conversation patterns locally without accessing user data or compromising encryption. Development followed strict governance controls, including a sovereign sandbox and training exclusively on anonymised datasets.",
+  "why_it_matters": "The project demonstrates a privacy-preserving governance model for deploying AI on-device to handle sensitive threat detection without cloud data exposure.",
+  "quotes": [
+    {
+      "text": "Together, we've fine-tuned a privacy-preserving, on-device scam detection model.",
+      "supports": "summary"
+    },
+    {
+      "text": "Strict governance was maintained throughout development: Sovereign Sandbox: Fine-tuning took place within GovTech Singapore's managed and maintained GCP environment, keeping training data isolated.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-10-14",
+      "what": "Publication of Google DeepMind blog post regarding the collaboration.",
+      "quote": "October 14, 2026 Responsibility & Safety"
+    }
+  ],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Demonstrates a concrete operational deployment of fine-tuned frontier models for fraud and scam detection using strict on-device privacy and sovereign governance controls.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "58fa6fd4bfe041866a1855cb4f9e185a0397dec27f147fa7ec484fe003f66e2a",
+    "textChars": 4787,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:20:55.555Z",
+    "attempts": 1
+  }
+}

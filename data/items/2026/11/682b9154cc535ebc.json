@@ -9,15 +9,42 @@
   "title": "‘The sacred object in mathematics’: the Riemann hypothesis, AI and a proof no human can read",
   "publishedAt": "2026-11-23T04:32:09.000Z",
   "fetchedAt": "2026-11-25T08:18:10.556Z",
-  "status": "irrelevant",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "While a notable scientific development involving a frontier lab employee, it pertains to mathematical research rather than direct corporate AI governance or compliance obligations.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
   "provenance": {
-    "model": "models/gemini-3.1-flash-lite",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "d5b43d290f4064aab679c747c7d1a48d86e25f2d117dce8fa8d320ef350358a6",
     "textChars": 5852,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T08:22:18.791Z",
-    "attempts": 1
+    "analysedAt": "2026-11-28T02:13:56.728Z",
+    "attempts": 2,
+    "via": "recheck"
   }
 }

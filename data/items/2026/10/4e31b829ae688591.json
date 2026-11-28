@@ -1,0 +1,59 @@
+{
+  "id": "4e31b829ae688591",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/introducing-gemini-4-argon",
+  "title": "Gemini 4 Argon: Built to solve your hardest problems",
+  "publishedAt": "2026-10-13T16:01:52.000Z",
+  "fetchedAt": "2026-11-28T02:13:35.666Z",
+  "status": "summarised",
+  "headline": "Google DeepMind Releases Gemini 4 Argon with Safety Stack",
+  "summary": "Google DeepMind has released its frontier model, Gemini 4 Argon, providing developers and enterprises access via API, Google Antigravity, and the Gemini app. The model features extensive capabilities across coding, science, cyber defense, and complex workflows. Google deployed a comprehensive safety and security stack, including misuse and jailbreak defenses under its Frontier Safety Framework, agent alignment monitoring, and indirect prompt injection mitigations.",
+  "why_it_matters": "Organisations deploying advanced agentic models must implement rigorous multi-layer defense stacks, including automated runtime misalignment monitors and frontier safety evaluations, to mitigate risks such as unauthorized shortcuts and prompt injection.",
+  "quotes": [
+    {
+      "text": "Gemini 4 Argon is now globally available today for developers and enterprises via the API in AI Studio and Gemini platform , for Google AI Ultra subscribers in Google Antigravity , and Google AI Ultra and Pro subscribers in the Gemini app and AI Mode in Search .",
+      "supports": "summary"
+    },
+    {
+      "text": "Under our Frontier Safety Framework, we evaluated Argon’s enhanced capabilities across several domains, and deployed a multi-layer defense stack combining jailbreak resistance, monitoring, and enforcement.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-10-13",
+      "what": "Gemini 4 Argon launch date",
+      "quote": "Oct 13, 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Introduction of a major frontier model release detailing advanced safety, agent alignment, and red-teaming methodologies under a Frontier Safety Framework.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "05dd81392280877739215c0927c8db48759dc26f43e48d015cd1b25eaed25d6a",
+    "textChars": 15959,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:37.044Z",
+    "attempts": 1
+  }
+}

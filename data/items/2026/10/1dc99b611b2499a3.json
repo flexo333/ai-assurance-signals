@@ -1,0 +1,50 @@
+{
+  "id": "1dc99b611b2499a3",
+  "sourceId": "deepmind",
+  "sourceName": "Google DeepMind",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely",
+  "title": "Developing Gemini 4 Argon responsibly and safely",
+  "publishedAt": "2026-10-13T19:43:07.000Z",
+  "fetchedAt": "2026-11-28T02:13:35.209Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides detailed operational insights into frontier safety frameworks, multi-layered runtime monitoring, and agent control mechanisms for advanced reasoning models.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "b1dc26b25f51d799654f1c82748d8c89b8b04b56cef4f671543b64c3136a865c",
+    "textChars": 7861,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:19.003Z",
+    "attempts": 2
+  }
+}

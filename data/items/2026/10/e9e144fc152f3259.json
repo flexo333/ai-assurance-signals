@@ -1,0 +1,53 @@
+{
+  "id": "e9e144fc152f3259",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/news/singapore-office-opening",
+  "title": "Singapore office and government MOU",
+  "publishedAt": "2026-10-14T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:30.605Z",
+  "status": "summarised",
+  "headline": "Anthropic opens Singapore office and signs AI safety MOU with government",
+  "summary": "Anthropic has opened a new office in Singapore and signed a Memorandum of Understanding with the Ministry of Digital Development and Information. The partnership covers AI safety, security, model evaluation, research on AI adoption, and responsible deployment across public and private sectors. The agreement builds on previous collaborations with Singapore agencies on evaluation sandboxes, red-teaming, and technical exchanges.",
+  "why_it_matters": "The MOU provides a formal framework for technical exchanges on AI safety, model evaluation, and testing standards, impacting how organisations deploy frontier AI models in regulated sectors.",
+  "quotes": [
+    {
+      "text": "It sets out areas of cooperation in AI safety, security, and model evaluation; research on AI adoption and its impact; and responsible adoption across the public and private sectors.",
+      "supports": "summary"
+    },
+    {
+      "text": "Under the MOU, we plan to hold technical exchanges with Singapore’s AI safety, security, and assurance institutions on model evaluation, testing standards, and incident response.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": true,
+    "theme": "international",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Establishes formal bilateral commitments between a frontier lab and a key regional government regarding safety standards and model evaluation.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f6b12d4e4d8b704fec1cd7d60f95c7381908c7e3a43ded9a1857071fa128868c",
+    "textChars": 5698,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:09.460Z",
+    "attempts": 1
+  }
+}

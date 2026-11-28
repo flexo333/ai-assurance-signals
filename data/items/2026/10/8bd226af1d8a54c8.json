@@ -1,0 +1,53 @@
+{
+  "id": "8bd226af1d8a54c8",
+  "sourceId": "standards-au",
+  "sourceName": "Standards Australia",
+  "authority": "standards",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://standards.org.au/news/standards-australia-welcomes-au-4-million-dfat-investment-in-standards-cooperation-under-the-vuvale-union-treaty",
+  "title": "Standards Australia welcomes AU$4 million DFAT investment in standards cooperation under the Vuvale Union Treaty",
+  "publishedAt": "2026-10-08T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "summarised",
+  "headline": "Standards Australia welcomes AU$4m DFAT investment in regional standards",
+  "summary": "Standards Australia has welcomed an AU$4 million investment from the Department of Foreign Affairs and Trade under the Australia-Fiji Vuvale Union Treaty. The funding will support regional standards cooperation, with artificial intelligence identified as a potential priority focus alongside climate-resilient construction and digital transformation.",
+  "why_it_matters": "Collaborative standardisation initiatives shape regional technical capability and international standards for emerging technologies such as artificial intelligence.",
+  "quotes": [
+    {
+      "text": "At the 2026 Fiji-Australia & Australia-Fiji Business Councils Joint Forum in Suva, Australian High Commissioner to Fiji Peter Roberts OAM announced AU$4 million in funding from the Department of Foreign Affairs and Trade (DFAT) under the Australia-Fiji Vuvale Union Treaty.",
+      "supports": "summary"
+    },
+    {
+      "text": "Rather than imposing rules created by either nation, this collaborative approach ensures our shared Pacific perspective shapes international standards, we define the competitive conditions for all international market contributors by consensus, and Fiji and Australia support the region’s active involvement in the global standards that govern our shared economic future.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Direct Australian government funding for regional standards cooperation including AI, though practical AI standards output is still at a scoping stage.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "6978515286fc5e7511d5d2d6a235229f70b658b46d680c55f6f79f573d667db6",
+    "textChars": 2960,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:50.857Z",
+    "attempts": 2
+  }
+}

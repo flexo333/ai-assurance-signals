@@ -1,0 +1,24 @@
+{
+  "id": "8042c5d7cf83568e",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/aba-ceo-interview-with-fiveaa-adelaides-will-goodings-and-stacey-lee-on-regional-banking",
+  "title": "ABA CEO interview with FiveAA Adelaide’s Will Goodings and Stacey Lee on regional banking",
+  "publishedAt": "2026-10-07T22:13:58.000Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "6ce1f96043824f14943bc3b9d5002517a401194ae61622e1e0cdb79be8db94d3",
+    "textChars": 1756,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:59.079Z",
+    "attempts": 1
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "2904f505383834e3",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/inside-the-eu-kids-act-proposal",
+  "title": "Inside the EU KIDS Act proposal",
+  "publishedAt": "2026-10-26T17:06:10.535Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "Inside the EU KIDS Act proposal and its intersection with the AI Act",
+  "summary": "Experts discussed the proposed EU KIDS Act in a LinkedIn Live session, examining its potential implications for digital services. The panel explored how the new proposal intersects with established legal frameworks including the General Data Protection Regulation, the Digital Services Act and the AI Act.",
+  "why_it_matters": "Organisations operating across European jurisdictions must navigate how child protection mandates under the proposed EU KIDS Act intersect with existing obligations in the EU AI Act and GDPR.",
+  "quotes": [
+    {
+      "text": "In this LinkedIn Live, IAPP Managing Director, Europe, Isabelle Roccia, CIPP/E, was joined by Mazagan Brussel's Office Director Mathilde Renou and Loyens & Loeff Associate Kirill Ryabtsev to discuss what the proposed EU KIDS Act could mean for digital services, and how might it intersect with existing frameworks like the General Data Protection Regulation, the Digital Services Act and the AI Act.",
+      "supports": "summary"
+    },
+    {
+      "text": "discuss what the proposed EU KIDS Act could mean for digital services, and how might it intersect with existing frameworks like the General Data Protection Regulation, the Digital Services Act and the AI Act.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-11-09",
+      "what": "Published date of the video",
+      "quote": "Published 9 Nov. 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides early commentary on regulatory overlap involving the EU AI Act, though it is an informational video discussion rather than a binding policy text.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f2f77c4fb4ce57ac359e96bf684b169dd0befbd8dac20bb30ad550084cc6aa3d",
+    "textChars": 962,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:28.267Z",
+    "attempts": 1
+  }
+}

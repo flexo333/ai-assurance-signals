@@ -1,0 +1,53 @@
+{
+  "id": "026e77283c816a47",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/calprivacy-board-advances-rulemaking-to-update-opt-out-preference-signals-requirements",
+  "title": "CalPrivacy Board advances rulemaking to update opt-out preference signals requirements",
+  "publishedAt": "2026-11-09T14:32:27.084Z",
+  "fetchedAt": "2026-11-28T02:13:23.739Z",
+  "status": "summarised",
+  "headline": "CalPrivacy Board discusses AI training data and privacy updates",
+  "summary": "The California Privacy Protection Agency Board voted to commence formal rulemaking on opt-out preference signal regulations and reviewed potential 2027 priorities including AI training practices and biometric information. Board members and expert presenters discussed the challenges of consumer data collection for AI training, highlighting difficulties in removing personal information from models once ingested. The agency also outlined legislative efforts and enforcement actions related to consumer privacy.",
+  "why_it_matters": "Organisations utilizing consumer personal data for AI training face growing regulatory scrutiny regarding consent mechanisms and the technical challenges of removing such data after ingestion.",
+  "quotes": [
+    {
+      "text": "The California Privacy Protection Agency Board voted unanimously to commence a formal rulemaking on proposed amendments to California Consumer Privacy Act regulations on opt-out preference signals.",
+      "supports": "summary"
+    },
+    {
+      "text": "Especially once personal information is used to train these systems, it can be difficult to untrain them or, you know, remove that information",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulation",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Highlights emerging regulatory focus and discussions on AI training data and consent practices in California, which may influence broader compliance standards.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d53b4b21d46f1e74450f0f8a4bf619a62e1e9d57aed9d12f3e41c1fb2a32916c",
+    "textChars": 6151,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:19.341Z",
+    "attempts": 1
+  }
+}

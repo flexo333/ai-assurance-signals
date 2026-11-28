@@ -1,0 +1,52 @@
+{
+  "id": "5f721228af3682c2",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+  "title": "Measuring how AI agents handle everyday wet-lab science",
+  "publishedAt": "2026-11-06T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:28.748Z",
+  "status": "summarised",
+  "headline": "OpenAI introduces BioBasicsBench to measure wet-lab AI agent analysis",
+  "summary": "OpenAI has introduced BioBasicsBench, a new benchmark developed with Ligo to measure how well AI agents handle routine wet-lab analysis, including raw experimental data and troubleshooting. The benchmark tests 100 tasks across five areas of wet-lab work, such as protein methods and molecular cloning. Evaluations at the high reasoning-effort setting showed GPT-6 Astra earning an average of 66.7% of available credit compared to 43.8% for GPT-5.6 Sol. The release aims to track capabilities that have implications for biosafety and biosecurity.",
+  "why_it_matters": "Tracking these capabilities helps organisations and developers understand the implications of advanced AI reasoning for biosafety and biosecurity as models take on complex scientific tasks.",
+  "quotes": [
+    {
+      "text": "That’s why we’re introducing BioBasicsBench, a new benchmark developed with Ligo, a biotech company focused on enzyme design, to measure how well agents handle routine wet-lab analysis.",
+      "supports": "summary"
+    },
+    {
+      "text": "Tracking these capabilities will also help us understand their implications for biosafety and biosecurity.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 0,
+    "significance": 3,
+    "significance_reason": "The release of a specialised benchmark for wet-lab biology provides valuable evaluation methods for assessing frontier model capabilities and biosecurity risks.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3223169e5d41d98a6e57f5de39efed48abace82696f196838fdd850a8f515870",
+    "textChars": 11695,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:05.422Z",
+    "attempts": 1
+  }
+}

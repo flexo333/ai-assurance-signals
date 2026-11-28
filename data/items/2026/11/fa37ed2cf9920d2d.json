@@ -9,15 +9,46 @@
   "title": "What Grand Theft Auto VI can teach us about virtual romance",
   "publishedAt": "2026-11-23T12:18:36.000Z",
   "fetchedAt": "2026-11-25T08:18:10.036Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "Regulating AI Companionship: Lessons from Virtual Romance Design",
+  "summary": "An opinion piece discusses the portrayal of virtual romance and relationship mechanics in the upcoming video game Grand Theft Auto VI, comparing them to concerns surrounding AI companions and artificial intimacy. While noting that the game features scripted interactions rather than open-ended AI, the author examines how engagement optimization and transactional affection mechanics parallel commercial AI companion apps. The article argues that regulation should target specific harmful design features—such as emotional pressure tactics and engagement-driven monetization—rather than implementing blanket bans on the technology.",
+  "why_it_matters": "Policymakers and compliance professionals debating the regulation of AI companions should focus on deceptive design features and engagement-maximising mechanics rather than enforcing blanket bans.",
+  "quotes": [
+    {
+      "text": "As we debate whether and how to regulate AI companionship, the lesson here is not to target an entire class of technology.",
+      "supports": "summary"
+    },
+    {
+      "text": "Rather, we should focus on specific design features that can cause harm, particularly to young people.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "General commentary on virtual relationships and AI companion regulation offering qualitative perspectives rather than binding policy or direct regulatory updates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-3.1-flash-lite",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "2c93394544437a97ed03ce747352d65a1a3cd2c261ec30cd8ac4b9afbc99affd",
     "textChars": 5832,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T08:21:51.799Z",
-    "attempts": 1
+    "analysedAt": "2026-11-28T02:13:52.103Z",
+    "attempts": 1,
+    "via": "recheck"
   }
 }

@@ -1,0 +1,54 @@
+{
+  "id": "09f6bf4634ec15c8",
+  "sourceId": "asic",
+  "sourceName": "Australian Securities and Investments Commission",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://asic.gov.au/about-asic/news-centre/speeches/asic-annual-forum-2026-enforcement-priorities",
+  "title": "ASIC Annual Forum 2026: Enforcement priorities",
+  "publishedAt": "2026-11-18T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:20.347Z",
+  "status": "summarised",
+  "headline": "ASIC 2027 enforcement priority targets poorly implemented AI systems",
+  "summary": "The Australian Securities and Investments Commission announced its 2027 enforcement priorities, establishing consumer harm from poorly implemented technologies, including AI and automated systems, as a key regulatory focus. ASIC emphasised that while artificial intelligence, automated decision-making and chatbots may improve financial service delivery, they do not alter a firm's legal obligations. The regulator will target poorly designed or inadequately supervised systems that produce misleading information, make inappropriate decisions or block customer support access.",
+  "why_it_matters": "Australian financial institutions deploying AI and automated systems must ensure rigorous oversight and governance, as inadequate supervision leading to misleading outcomes or poor customer support will directly attract ASIC enforcement scrutiny.",
+  "quotes": [
+    {
+      "text": "Our fourth priority concerns consumer harm arising from poorly implemented technologies, including AI and automated systems.",
+      "supports": "summary"
+    },
+    {
+      "text": "Artificial intelligence, automated decision-making, and chatbots may improve the delivery of financial services, but do not alter a firm’s legal obligations.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "regulator-guidance",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 4,
+    "significance_reason": "ASIC formally establishing consumer harm from poorly implemented AI and automated systems as a core 2027 enforcement priority signals direct regulatory scrutiny for financial services deploying these technologies.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f63b7ec034eee6d184a9278428c6da986af3fb0e218514e033e2fbc64ee1e900",
+    "textChars": 19654,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:06.150Z",
+    "attempts": 1
+  }
+}

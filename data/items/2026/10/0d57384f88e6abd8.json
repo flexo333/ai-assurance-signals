@@ -1,0 +1,64 @@
+{
+  "id": "0d57384f88e6abd8",
+  "sourceId": "agd-consult",
+  "sourceName": "Attorney-General's Department consultations",
+  "authority": "official",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://consultations.ag.gov.au/integrity/ogp-fnap",
+  "title": "Open Government Partnership: Inform the development of Australia’s Fourth National Action Plan",
+  "publishedAt": "2026-10-15T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:29.104Z",
+  "status": "summarised",
+  "headline": "Australia's Fourth National Action Plan consultation includes AI transparency",
+  "summary": "The Attorney-General's Department opened a consultation on potential commitments for Australia's Fourth National Action Plan under the Open Government Partnership. The proposed commitments include enhancing transparency of AI and digital accessibility alongside other measures like corporate ownership transparency and fraud control. Feedback from the consultation will inform the priority and composition of the final commitments included in the action plan.",
+  "why_it_matters": "Organisations operating in Australia should note that government action plans are aligning with AI transparency requirements, which may impact public sector deployments and governance expectations.",
+  "quotes": [
+    {
+      "text": "Enhancing transparency of AI and digital accessibility",
+      "supports": "summary"
+    },
+    {
+      "text": "Feedback received through this consultation process will be used to inform the priority of commitments and the composition of final commitments included in NAP4.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2025-12-31",
+      "what": "Third National Action Plan ended",
+      "quote": "Our Third National Action Plan (NAP3) ended on 31 December 2025."
+    },
+    {
+      "date": "2026-11-06",
+      "what": "Consultation closed",
+      "quote": "Closed 6 Nov 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "consultation",
+    "is_financial_services": false,
+    "theme": "public-sector",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Signals potential Australian federal government focus areas on AI transparency and public sector governance, though it is currently at the consultation stage.",
+    "is_consultation": true,
+    "closing_date": "2026-11-06",
+    "closing_date_quote": "Closed 6 Nov 2026"
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "a69de2e799781a3654c852973e92cc0dd78eadab16fc70b74b3f09a9ff8325db",
+    "textChars": 4450,
+    "textSource": "article",
+    "extractMethod": "citizen-space-v2.4",
+    "analysedAt": "2026-11-28T02:20:32.862Z",
+    "attempts": 2
+  }
+}

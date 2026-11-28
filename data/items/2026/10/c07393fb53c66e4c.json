@@ -1,0 +1,52 @@
+{
+  "id": "c07393fb53c66e4c",
+  "sourceId": "oecd-ai",
+  "sourceName": "OECD.AI",
+  "authority": "official",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://oecd.ai/en/wonk/how-quantum-technologies-could-open-new-frontiers-for-ai",
+  "title": "How quantum technologies could open new frontiers for AI",
+  "publishedAt": "2026-10-07T09:31:02.000Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "summarised",
+  "headline": "OECD explores intersection of quantum technologies and artificial intelligence",
+  "summary": "An OECD blog series explores the growing complementarity between artificial intelligence and quantum technologies, spanning computing, sensing, and communication. While fault-tolerant quantum computers and quantum machine learning remain long-term prospects facing significant bottlenecks, quantum-inspired techniques such as tensor-network compression are already being used to improve AI efficiency on classical hardware. Near-term hybrid quantum-classical systems and emerging quantum sensing and communication technologies also offer potential pathways for future AI applications.",
+  "why_it_matters": "Organisations deploying large neural networks should monitor quantum-inspired tensor-network compression techniques as a near-term method to reduce the memory and energy footprints of advanced AI models on classical infrastructure.",
+  "quotes": [
+    {
+      "text": "In this third and final instalment, we turn to the reverse relationship: how quantum technologies – including computing, sensing and communication – could support the future evolution of AI systems.",
+      "supports": "summary"
+    },
+    {
+      "text": "As neural networks such as LLMs become larger and more complex, deployment is constrained not only by fixed hardware limits such as memory and processing capacity but also by the computational and energy costs of training and running these systems.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "international",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 1,
+    "significance_reason": "This is an exploratory international policy and technology commentary from the OECD examining future technical overlaps rather than immediate regulatory or governance mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "f06ddc07b7ee509bfba0a42ac686df58a106b8786d907980de5f84f05080bfaa",
+    "textChars": 11841,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:22:46.279Z",
+    "attempts": 1
+  }
+}

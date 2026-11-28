@@ -1,0 +1,23 @@
+{
+  "id": "aca0a8f65ff24ab2",
+  "sourceId": "csiro-data61",
+  "sourceName": "CSIRO Data61 (Responsible AI)",
+  "authority": "research",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://csiro.au/en/news/All/News/2026/November/confirm-black-hole",
+  "title": "New CSIRO technique confirms iconic black hole image",
+  "publishedAt": "2026-11-12T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:21.023Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "4c4895936fa3830f85e2137d5c52fe72a716fd2adf8025cd587228054cc09d4a",
+    "textChars": 5280,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:28.088Z",
+    "attempts": 1
+  }
+}

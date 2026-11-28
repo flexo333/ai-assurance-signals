@@ -1,0 +1,52 @@
+{
+  "id": "4c6292fc5ecba5f2",
+  "sourceId": "mistral",
+  "sourceName": "Mistral AI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://mistral.ai/news/voxtral-3",
+  "title": "Voxtral 3",
+  "publishedAt": "2026-10-20T12:00:22.000Z",
+  "fetchedAt": "2026-11-28T02:13:32.520Z",
+  "status": "summarised",
+  "headline": "Mistral AI Releases Voxtral 3 Models and Sovereign Voice SDK",
+  "summary": "Mistral AI has launched Voxtral 3, a suite of speech-to-text models, text-to-speech models, and a real-time voice agent SDK. The models support multiple languages with features such as diarization, context biasing, and end-of-turn detection. Organizations can access the models via Mistral's EU-hosted API or deploy them on-premises to ensure data sovereignty.",
+  "why_it_matters": "The availability of sovereign deployment options enables organisations to maintain control over audio data processing and retention when implementing real-time voice AI systems.",
+  "quotes": [
+    {
+      "text": "Voxtral 3 introduces a cutting-edge voice agent SDK and state-of-the-art speech models designed for real-time, multi-step conversations across 50+ languages.",
+      "supports": "summary"
+    },
+    {
+      "text": "Available today through Mistral's EU-hosted API or for self-deployment on your own infrastructure, it gives organizations control over where audio is processed, how data is handled, and whether conversations are retained.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "A frontier lab product release offering sovereign deployment options for voice agents, but lacking specific regulatory or assurance mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "aeb6da65a742d70f13b9a8c090637d619304c9f047147f6f615e71c1ec1d2e39",
+    "textChars": 15484,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:37.371Z",
+    "attempts": 1
+  }
+}

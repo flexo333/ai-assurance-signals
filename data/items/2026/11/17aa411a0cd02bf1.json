@@ -1,0 +1,23 @@
+{
+  "id": "17aa411a0cd02bf1",
+  "sourceId": "afr",
+  "sourceName": "Australian Financial Review",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": true,
+  "url": "https://afr.com/technology/wisetech-cashes-in-on-ai-job-losses-20261127-p61hr0",
+  "title": "WiseTech cashes in on AI job losses",
+  "publishedAt": "2026-11-27T06:08:01.000Z",
+  "fetchedAt": "2026-11-28T02:13:19.620Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d0d6e9ca56f0a7d7f403d94b0bd770d9d1c009003be222e18d16dd90f98c742e",
+    "textChars": 168,
+    "textSource": "feed",
+    "extractMethod": null,
+    "analysedAt": "2026-11-28T02:14:37.514Z",
+    "attempts": 1
+  }
+}

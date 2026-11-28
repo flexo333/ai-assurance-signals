@@ -1,0 +1,52 @@
+{
+  "id": "7105e652a18d9d11",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/after-the-midterms-part-1-congress-and-other-federal-trends",
+  "title": "After the midterms part 1: Congress and other federal trends",
+  "publishedAt": "2026-11-05T14:46:51.315Z",
+  "fetchedAt": "2026-11-28T02:13:27.182Z",
+  "status": "summarised",
+  "headline": "U.S. midterms and federal AI governance trends discussed by experts",
+  "summary": "An IAPP LinkedIn Live panel discussed the results of the U.S. midterm elections and the outlook for federal AI governance, privacy, and digital responsibility. Experts examined potential changes in party control across congressional chambers and whether a growing techlash among voters will drive stronger federal accountability.",
+  "why_it_matters": "Organisations tracking cross-border regulatory shifts must monitor how U.S. federal legislative priorities and accountability measures evolve following shifts in congressional control.",
+  "quotes": [
+    {
+      "text": "The discussion examined how the next term of the U.S. Congress could differ following projected changes in party control in both chambers and whether voter sentiment, described by some as a \"techlash,\" could lead to greater accountability and stronger governance at the federal level.",
+      "supports": "summary"
+    },
+    {
+      "text": "The panel also explored which privacy, AI governance and digital responsibility priorities are likely to take precedence in the coming term.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "risk-compliance",
+      "boards"
+    ],
+    "au_relevance": 0,
+    "significance": 1,
+    "significance_reason": "General discussion on U.S. political trends and priorities without immediate regulatory or legal updates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "32fd895a272b356e811e0e7964757ba893b1987cd6c1be05354a473bacf2b2ea",
+    "textChars": 1912,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:18.834Z",
+    "attempts": 2
+  }
+}

@@ -9,15 +9,52 @@
   "title": "AI has solved a host of big maths problems – here’s why this threatens the whole field of mathematics",
   "publishedAt": "2026-11-23T12:27:56.000Z",
   "fetchedAt": "2026-11-25T08:18:09.316Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "AI solves major mathematical problems, raising disciplinary concerns",
+  "summary": "Frontier AI models and multi-agent systems developed by companies like OpenAI and Anthropic have autonomously solved hundreds of long-standing mathematical problems, including the Navier-Stokes problem and the Riemann Hypothesis. Mathematicians and Fields medallists have warned that this rapid, automated mass production of mathematical proofs risks undermining traditional research methods and training ecosystems. The developments highlight tensions between commercial AI capabilities and academic mathematical practices.",
+  "why_it_matters": "The shift toward automated, black-box problem solving in rigorous fields highlights the broader societal and economic risks of relying on autonomous AI agents without human-centred oversight and training ecosystems.",
+  "quotes": [
+    {
+      "text": "Frontier (cutting edge) AI models made by OpenAI and Anthropic made stunning progress on hundreds of open problems that have baffled mathematicians for decades – and centuries in some cases.",
+      "supports": "summary"
+    },
+    {
+      "text": "This ecosystem – essential for a flourishing society and economy – may be at risk if a new “top-down”, black-box, reverse engineered approach to mathematics becomes a new norm.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-09-11",
+      "what": "Terence Tao and other Fields medallists produced a declaration regarding AI goals misalignment",
+      "quote": "On September 11, 2026, Tao and 25 other Fields medallists produced a declaration stating that “the goals of the AI companies and the goals of the mathematical community are severely misaligned”."
+    }
+  ],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Highlights the disruptive capability and systemic governance challenges posed by autonomous multi-agent AI systems solving complex domain problems.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-3.1-flash-lite",
-    "promptVersion": 1,
-    "sourceSha256": "c891a68aebac33d17e2538d4bcd67493f958fcc79004e092797de16e1a4919c5",
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7cbd2908b4e07b7efa328b6efe56dcd03bab34b08439782cf4673ed2ab1f9f47",
     "textChars": 7339,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T08:21:50.908Z",
-    "attempts": 1
+    "analysedAt": "2026-11-28T02:13:43.256Z",
+    "attempts": 2,
+    "via": "recheck"
   }
 }

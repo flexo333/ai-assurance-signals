@@ -1,0 +1,23 @@
+{
+  "id": "bbd492caba72ca54",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/cultfit-builds-with-codex",
+  "title": "Cult.fit builds operational muscle with Codex",
+  "publishedAt": "2026-11-05T20:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:29.104Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7383b6d11607985f812e1f533692dc597c6979ab7a05e652adc6742898966542",
+    "textChars": 7083,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:09.158Z",
+    "attempts": 1
+  }
+}

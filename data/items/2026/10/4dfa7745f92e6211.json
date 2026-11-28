@@ -1,0 +1,53 @@
+{
+  "id": "4dfa7745f92e6211",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/resources/article/digital-risk-report-2026",
+  "title": "Digital Risk Report 2026",
+  "publishedAt": "2026-10-28T18:02:03.415Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "summarised",
+  "headline": "IAPP Digital Risk Report 2026 highlights AI governance challenges",
+  "summary": "The IAPP published its Digital Risk Report 2026, examining how generative and agentic artificial intelligence, fragmented regulations, and geopolitical tensions impact organizational risk. Based on surveys of digital governance professionals, executive interviews, and corporate reports, the findings identify key technological, organizational, and geopolitical risks. The report emphasizes that digital risk must evolve beyond a standalone compliance function into broader executive and board-level planning.",
+  "why_it_matters": "Organisations must move beyond defensive postures and integrate robust governance structures to manage complex digital risks while enabling sustainable innovation.",
+  "quotes": [
+    {
+      "text": "The current digital governance and risk landscape is undergoing profound and challenging transformation, driven by the rapid proliferation of generative and agentic artificial intelligence, an increasingly fragmented global regulatory environment and escalating geopolitical tensions.",
+      "supports": "summary"
+    },
+    {
+      "text": "Organizations who recognize this can transform digital risk functions into enablers of sustainable and competitive innovation.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": false,
+    "theme": "news-commentary",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Provides broader international survey data and risk taxonomies on digital and AI governance trends, though without specific Australian regulatory mandates.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "02e1ee88912b3b33a5ae5c77ebd239e5461ead0771b34cc46ace2eb65c514989",
+    "textChars": 5969,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:14.356Z",
+    "attempts": 2
+  }
+}

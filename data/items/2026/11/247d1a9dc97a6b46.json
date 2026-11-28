@@ -1,0 +1,23 @@
+{
+  "id": "247d1a9dc97a6b46",
+  "sourceId": "iapp",
+  "sourceName": "IAPP (International Association of Privacy Professionals)",
+  "authority": "news",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://iapp.org/news/a/neural-data-as-the-newest-frontier-in-data-privacy",
+  "title": "Neural data as the newest frontier in data privacy",
+  "publishedAt": "2026-11-03T16:05:13.859Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "bc5084ec15b421d6c5775e3b37e4e3188466efe3f3a3f9183e8137a7788df3c5",
+    "textChars": 471,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:45.962Z",
+    "attempts": 1
+  }
+}

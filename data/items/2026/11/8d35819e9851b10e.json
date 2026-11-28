@@ -1,0 +1,50 @@
+{
+  "id": "8d35819e9851b10e",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/it-industry-news/deals/qualys-expands-global-mroc-alliance-with-new-technology-alliances-across-every-major-attack-surface-and-partner-certification-tracks",
+  "title": "Qualys Expands Global mROC Alliance with New Technology Alliances Across Every Major Attack Surface and Partner Certification Tracks",
+  "publishedAt": "2026-11-11T22:34:05.169Z",
+  "fetchedAt": "2026-11-28T02:13:22.644Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "A vendor product and partner ecosystem expansion addressing AI-driven cyber threats, but without direct regulatory or legal obligation changes.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "07d5c9dabc8551e92b2965fc42bfe1fcaf6c3d19da40631cfe962b9cc9f0b7fb",
+    "textChars": 4846,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:16:00.948Z",
+    "attempts": 2
+  }
+}

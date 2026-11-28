@@ -1,0 +1,57 @@
+{
+  "id": "b79f3ae1e52917df",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/news/an-update-on-independent-evaluators",
+  "title": "Anthropic update on independent evaluators",
+  "publishedAt": "2026-10-15T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:29.104Z",
+  "status": "summarised",
+  "headline": "Anthropic grants independent evaluators employee-like access for risk assessments",
+  "summary": "Anthropic has begun providing a team from the nonprofit evaluation organization METR with employee-like access to internal tools, systems, and hardware to assess frontier AI models. The initiative forms part of a three-tiered evaluation framework that also involves partners such as SecureBio, Accenture, and Faculty. METR will publish its risk assessments independently, with Anthropic retaining the right to enforce redactions for confidential intellectual property.",
+  "why_it_matters": "Embedding independent third-party evaluators inside frontier AI labs provides a structural model for external safety accountability and risk assurance that mirrors bank supervision.",
+  "quotes": [
+    {
+      "text": "Today, we’re announcing that we’ve started to give employee-like access to a team from METR , a nonprofit that evaluates frontier AI models.",
+      "supports": "summary"
+    },
+    {
+      "text": "For the AI industry, this is a step toward robust safety oversight . We’re moving quickly with multiple evaluators and learning actively about what kinds of partnership work.",
+      "supports": "why_it_matters"
+    },
+    {
+      "text": "METR will publish its analysis of our risk levels, incidents, or practices. Anthropic can’t veto publication, but we can require them to redact information if it falls into predefined categories such as reproducing confidential IP.",
+      "supports": "summary"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Establishes a practical precedent for third-party model evaluation and independent safety oversight in frontier AI development.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "025317884e0ca9d6c83b621ba01dd16c5b2563b2c70ceeea0716c7d4ef3dccce",
+    "textChars": 5974,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:20:41.752Z",
+    "attempts": 1
+  }
+}

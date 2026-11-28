@@ -1,0 +1,53 @@
+{
+  "id": "1b9f276f38ff1286",
+  "sourceId": "innovationaus",
+  "sourceName": "InnovationAus",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://innovationaus.com/newswrap-albanese-prepares-for-a-long-hot-summer-of-ai",
+  "title": "NewsWrap: Albanese prepares for a long, hot summer of AI",
+  "publishedAt": "2026-11-27T21:58:15.000Z",
+  "fetchedAt": "2026-11-28T02:13:21.708Z",
+  "status": "summarised",
+  "headline": "Albanese walks back federal AI legislation timeline, signals further consultation",
+  "summary": "Prime Minister Anthony Albanese has walked back plans to release draft federal AI legislation by the end of the year, pointing instead to further stakeholder consultations. The government has not yet decided whether to introduce a single piece of AI legislation or multiple separate bills across various portfolios, alongside necessary amendments to existing laws such as national security legislation.",
+  "why_it_matters": "Organisations awaiting Australian federal AI laws face an extended timeline and ongoing uncertainty regarding the legislative structure and compliance obligations.",
+  "quotes": [
+    {
+      "text": "In fact, Anthony Albanese has walked back government plans to release draft legislation by the end of the year. He earmarked plans for a further round of consultations.",
+      "supports": "summary"
+    },
+    {
+      "text": "It is a surprise, though, that we seem no closer to understanding the final shape and timing of the Prime Minister’s promised AI regulation.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "government-policy",
+    "is_financial_services": false,
+    "theme": "policy-legislation",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Directly impacts the timeline and shape of anticipated federal AI regulation and compliance obligations in Australia.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9f95f9bb52af1f0ec4e13c80398195d07b63777cff3aa75334a225f81a7b31cd",
+    "textChars": 3683,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:14:19.839Z",
+    "attempts": 2
+  }
+}

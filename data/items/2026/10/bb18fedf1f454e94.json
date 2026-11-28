@@ -1,0 +1,58 @@
+{
+  "id": "bb18fedf1f454e94",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/research/when-do-llm-preferences-predict-downstream-behavior",
+  "title": "When Do LLM Preferences Predict Downstream Behavior?",
+  "publishedAt": "2026-10-07T11:36:36.142Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "summarised",
+  "headline": "UK AISI Research on LLM Preferences and Downstream Behavior",
+  "summary": "The UK AI Security Institute evaluated five frontier large language models to test whether consistent model preferences predict downstream behavior. The researchers found that while models exhibit consistent preferences that reliably predict advice-giving and refusal patterns, these preferences do not consistently translate into downstream task performance or agentic tasks.",
+  "why_it_matters": "Organisations deploying frontier models must account for the finding that unprompted model preferences can unconsciously skew advice and refusal behaviors, even if complex task performance remains unaffected.",
+  "quotes": [
+    {
+      "text": "Here, we examine one precondition for misalignment: whether LLM preferences predict downstream behavior.",
+      "supports": "summary"
+    },
+    {
+      "text": "Thus, while LLMs have consistent preferences that reliably predict advice-giving behavior, these preferences do not consistently translate into downstream task performance.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [
+    {
+      "date": "2026-08-26",
+      "what": "Publication date indicated on blog post",
+      "quote": "Aug 26, 2026"
+    }
+  ],
+  "classification": {
+    "item_kind": "evaluation-research",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Provides empirical evaluation data from a national AI safety institute regarding model alignment risks and preference-driven behaviors.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e9e6f3c1b40327607c1356552ff92877639105137d7e74dba64b7d55316fbe96",
+    "textChars": 2033,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:22:41.376Z",
+    "attempts": 1
+  }
+}

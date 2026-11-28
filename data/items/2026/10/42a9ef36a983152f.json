@@ -1,0 +1,54 @@
+{
+  "id": "42a9ef36a983152f",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/aba-opening-statement-to-the-joint-select-committee-on-artificial-intelligence",
+  "title": "ABA opening statement to the Joint Select Committee on Artificial Intelligence",
+  "publishedAt": "2026-10-09T05:30:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "summarised",
+  "headline": "ABA Joint Select Committee opening statement on AI in banking",
+  "summary": "The Australian Banking Association presented its opening statement to the Joint Select Committee on Artificial Intelligence, outlining banks' current use of AI for fraud detection, customer service, and real-time payment monitoring. The ABA noted that existing technology-neutral regulation overseen by APRA and ASIC currently governs banking AI without requiring new AI-specific rules. However, the submission warned that offshore criminals are deploying AI for large-scale fraud, requiring banks to utilise AI defensively while advocating for exemptions from transparency obligations that could compromise security.",
+  "why_it_matters": "Banks and regulated financial entities must balance AI transparency mandates with the operational necessity of protecting fraud and scam-detection models from reverse-engineering by bad actors.",
+  "quotes": [
+    {
+      "text": "Australia’s banks are not approaching artificial intelligence as a distant prospect. It is already at work in our industry, every hour of every day.",
+      "supports": "summary"
+    },
+    {
+      "text": "Transparency obligations should not require us to reveal how those systems work, because that simply hands criminals a blueprint.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "commentary",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 3,
+    "significance_reason": "Outlines the Australian banking sector's official stance on AI regulation, APRA/ASIC oversight, and the tension between AI transparency and scam detection.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "8e3ed73ab592a8f9975452bb6a68bb3f67063779ba95059714111d068c906207",
+    "textChars": 4805,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:41.685Z",
+    "attempts": 1
+  }
+}

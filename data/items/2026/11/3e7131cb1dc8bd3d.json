@@ -1,0 +1,23 @@
+{
+  "id": "3e7131cb1dc8bd3d",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/business-it-news/data/new-relic-launches-new-relic-autopilot-kubernetes-agent-to-close-the-expertise-gap-and-protect-business-uptime",
+  "title": "New Relic Launches New Relic Autopilot Kubernetes Agent to Close the Expertise Gap and Protect Business Uptime",
+  "publishedAt": "2026-11-11T22:44:11.174Z",
+  "fetchedAt": "2026-11-28T02:13:21.846Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "5ce9937e23eb873b37f6baa6a89a1b6a1aad35121de6046d65a14ebe0ee432a4",
+    "textChars": 4088,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:51.140Z",
+    "attempts": 1
+  }
+}

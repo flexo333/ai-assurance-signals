@@ -1,0 +1,23 @@
+{
+  "id": "caa9073cefb43725",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+  "title": "ChatGPT Enterprise now available in AWS Marketplace",
+  "publishedAt": "2026-11-09T19:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:25.045Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "76059912147036375dbf4c4536e1e4dc90b1db005e297d662b0a776cc9d28213",
+    "textChars": 1252,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:13.967Z",
+    "attempts": 1
+  }
+}

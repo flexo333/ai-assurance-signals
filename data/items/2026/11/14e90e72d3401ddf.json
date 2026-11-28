@@ -1,0 +1,50 @@
+{
+  "id": "14e90e72d3401ddf",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/introducing-gpt-6-cyber",
+  "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+  "publishedAt": "2026-11-05T09:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:29.988Z",
+  "status": "headline-only",
+  "reason": "grounding-failed",
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "The release of a Critical-rated cyber model by a frontier lab sets new benchmarks for autonomous offensive capabilities and highlights the governance required around dual-use AI safety frameworks.",
+    "is_consultation": false,
+    "closing_date": null
+  },
+  "grounding": [
+    {
+      "found": true,
+      "supports": "summary"
+    },
+    {
+      "found": false,
+      "reason": "not-in-source",
+      "supports": "why_it_matters"
+    }
+  ],
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "9f2860a6639526adcd3996be8412e86ed9ceebafbcf87b83fe72aea50a6465c0",
+    "textChars": 13507,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:18:28.332Z",
+    "attempts": 2
+  }
+}

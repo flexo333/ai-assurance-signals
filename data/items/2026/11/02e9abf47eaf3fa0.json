@@ -1,0 +1,52 @@
+{
+  "id": "02e9abf47eaf3fa0",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/coderabbit-codex-daybreak",
+  "title": "CodeRabbit scales agentic software development and ships 20x more",
+  "publishedAt": "2026-11-09T08:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:26.860Z",
+  "status": "summarised",
+  "headline": "CodeRabbit scales agentic software development and code review controls",
+  "summary": "AI code review platform CodeRabbit describes its use of OpenAI reasoning models and Codex to scale agentic software development, automate code reviews, and manage operational tasks. The company utilizes automated guardrails and agentic workflows to validate AI-generated code, triage incidents, and secure applications through its CodeRabbit Secure offering. The case study highlights practical operational workflows for maintaining human oversight as teams scale agentic output.",
+  "why_it_matters": "Organisations adopting coding agents must implement automated validation and control platforms to manage the bottleneck of reviewing and securing high volumes of AI-generated code.",
+  "quotes": [
+    {
+      "text": "CodeRabbit built an AI-powered governance and control platform designed to validate and trust AI-generated code.",
+      "supports": "summary"
+    },
+    {
+      "text": "The opportunity is to help developers stay in control as agents do more of the building, with validation, explanations, and maintenance that keep pace with the code being produced.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "practitioners",
+      "risk-compliance"
+    ],
+    "au_relevance": 0,
+    "significance": 2,
+    "significance_reason": "Provides a vendor-centric case study on scaling agentic coding workflows and automated code review controls, primarily informative rather than establishing new regulatory or assurance obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "2d2f82f333d7ff3ea3d643a57c515365378fa81974bb4dc9b7fece8672f94497",
+    "textChars": 6296,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:37.544Z",
+    "attempts": 1
+  }
+}

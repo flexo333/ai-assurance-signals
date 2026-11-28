@@ -1,0 +1,24 @@
+{
+  "id": "7d75e9d333480cbc",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/aba-ceo-doorstop-with-9-news-on-credit-card-surcharging-ban",
+  "title": "ABA CEO doorstop with 9 News on credit card surcharging ban",
+  "publishedAt": "2026-10-09T03:22:39.000Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "0842196e067222e38889cfbd74dfba78579cd4046e5a19937fdccc89118022af",
+    "textChars": 1690,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:21:45.399Z",
+    "attempts": 1
+  }
+}

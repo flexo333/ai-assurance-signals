@@ -1,0 +1,24 @@
+{
+  "id": "e3337d20dc19d5e9",
+  "sourceId": "aba",
+  "sourceName": "Australian Banking Association",
+  "authority": "industry",
+  "jurisdiction": "AU-federal",
+  "sector": "financial-services",
+  "paywalled": false,
+  "url": "https://ausbanking.org.au/banks-welcome-calls-for-regulation-that-backs-growth",
+  "title": "Banks welcome calls for regulation that backs growth",
+  "publishedAt": "2026-10-20T22:05:48.000Z",
+  "fetchedAt": "2026-11-28T02:13:27.704Z",
+  "status": "irrelevant",
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "94a029c767e3ed42350b5865f331954454f423277307b9fa4a5e9bfdfe100925",
+    "textChars": 1583,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:31.928Z",
+    "attempts": 1
+  }
+}

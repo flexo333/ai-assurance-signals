@@ -9,15 +9,45 @@
   "title": "Nine Entertainment Co., Sigma Healthcare, and HAMBS show AI-powered observability delivering real-world results across Asia-Pacific",
   "publishedAt": "2026-11-23T02:58:13.115Z",
   "fetchedAt": "2026-11-25T08:18:11.902Z",
-  "status": "irrelevant",
+  "status": "summarised",
+  "headline": "LogicMonitor announces 2026 APAC Elevate Award winners for AI observability",
+  "summary": "LogicMonitor announced its 2026 Elevate Award winners for the Asia-Pacific region at a conference in Sydney, recognising organisations using AI and automation to improve IT observability and resilience. Winners such as Nine Entertainment, HAMBS, and Sigma Healthcare leveraged AI tools like Edwin AI to significantly reduce alert volumes and incident resolution times. These deployments demonstrate measurable operational outcomes across broadcast, healthcare, and retail sectors in the region.",
+  "why_it_matters": "Organisations deploying operational AI tools must measure and validate incident reduction and alert noise management to ensure reliability in critical enterprise environments.",
+  "quotes": [
+    {
+      "text": "Nine Entertainment reduced alert notifications by 80 per cent during live international sporting events and ServiceNow incidents by 30 per cent with LogicMonitor Edwin AI, improving operational visibility and resilience across its broadcast environment.",
+      "supports": "summary"
+    },
+    {
+      "text": "Across APAC, organisations are demonstrating that Autonomous IT isn't just a future ambition. It's already delivering measurable results",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "deployment",
+    "is_financial_services": true,
+    "theme": "financial-services",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 3,
+    "significance": 2,
+    "significance_reason": "Highlights concrete operational outcomes and metrics from AI-powered IT observability in Australian enterprises and critical infrastructure.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
   "provenance": {
-    "model": "models/gemini-3.1-flash-lite",
-    "promptVersion": 1,
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
     "sourceSha256": "0a6a1d300220f01bb5a4eeee88c0269c6805d631119f2ff91df34cfe3d9ce098",
     "textChars": 5128,
     "textSource": "article",
     "extractMethod": "readability",
-    "analysedAt": "2026-11-25T08:23:23.311Z",
-    "attempts": 1
+    "analysedAt": "2026-11-28T02:14:10.681Z",
+    "attempts": 2,
+    "via": "recheck"
   }
 }

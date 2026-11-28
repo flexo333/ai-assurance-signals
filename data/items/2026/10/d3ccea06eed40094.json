@@ -1,0 +1,52 @@
+{
+  "id": "d3ccea06eed40094",
+  "sourceId": "anthropic",
+  "sourceName": "Anthropic",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://anthropic.com/news/public-benefit-fund",
+  "title": "Investing in the public benefit",
+  "publishedAt": "2026-10-18T00:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:28.107Z",
+  "status": "summarised",
+  "headline": "Anthropic establishes Public Benefit Fund tied to company valuation milestones",
+  "summary": "Anthropic is committing an initial five percent of its shares to the Anthropic Public Benefit Fund, with additional shares added as the company's valuation increases. The fund is structured as an LLC to provide flexibility for initiatives such as addressing labor market impacts, making large donations, or direct distributions. This initiative sits alongside existing employee and founder equity-pledge programs, bringing the total estimated share dedicated to the public good to roughly twenty percent.",
+  "why_it_matters": "Organisations tracking frontier AI lab governance can observe how corporate structuring and equity allocations are leveraged to fund safety and societal impact initiatives.",
+  "quotes": [
+    {
+      "text": "Subject to stockholder approval, 5% of Anthropic’s shares will be committed today, with an additional 2% added at the board’s discretion for every 50% increase in the company’s value above a set baseline.",
+      "supports": "summary"
+    },
+    {
+      "text": "In the coming months, we will share more about the Anthropic Public Benefit Fund’s structure and governance, including the valuation milestones that may add to its stake.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Represents a notable corporate governance and funding structure by a frontier AI lab, though its direct impact on external AI assurance obligations is limited.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "7b4586999e1f24434fbcd2b29288779433e38476600eb3fcfe12d88e38510eb7",
+    "textChars": 2792,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:19:55.847Z",
+    "attempts": 2
+  }
+}

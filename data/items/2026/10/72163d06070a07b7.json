@@ -1,0 +1,52 @@
+{
+  "id": "72163d06070a07b7",
+  "sourceId": "uk-aisi",
+  "sourceName": "UK AI Security Institute",
+  "authority": "official",
+  "jurisdiction": "UK",
+  "paywalled": false,
+  "url": "https://aisi.gov.uk/blog/optimal-stopping-spending-evaluation-compute-where-it-counts",
+  "title": "Optimal stopping: spending evaluation compute where it counts",
+  "publishedAt": "2026-10-07T11:36:36.142Z",
+  "fetchedAt": "2026-11-28T02:13:34.887Z",
+  "status": "summarised",
+  "headline": "UK AISI releases optstop open-source tool to reduce AI evaluation compute costs",
+  "summary": "The UK AI Security Institute (AISI) has released 'optstop', an open-source Python package designed to integrate with its Inspect evaluation framework and reduce unnecessary compute usage during AI model evaluations. The tool uses sequential measurement, stopping evaluation runs when estimates of a model's performance meet specified levels of precision or stabilisation without requiring a pre-calibrated task bank. In initial testing across benchmarks including MATH, GPQA Diamond, and WritingBench, optstop saved between 57% and 97% of planned evaluation trials without impacting score estimates.",
+  "why_it_matters": "Organisations and evaluators conducting expensive frontier AI model evaluations can adopt tools like optstop to significantly reduce compute costs and throughput bottlenecks while maintaining statistical rigour and confidence in safety and capability conclusions.",
+  "quotes": [
+    {
+      "text": "One such solution we have developed to help tackle the challenge of evaluation efficiency is optstop, an open source Python package that integrates with our Inspect evaluation framework.",
+      "supports": "summary"
+    },
+    {
+      "text": "As pressure mounts on evaluators to keep pace with the rate of model releases and ensure that frontier performance is meaningfully captured by evaluations, we position optstop as a tool to not only boost the efficiency of evaluation throughput, but tie it directly and rigorously to confidence in our conclusions.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "Releases a practical open-source tool for efficient AI model evaluation and compute reduction, which is useful for technical evaluators but does not establish new regulatory or legal obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "e664891022cca79d0175fd9a558498f0c4f15d39ba0a0e39e7dbe786a8f07ebf",
+    "textChars": 8227,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:22:23.161Z",
+    "attempts": 1
+  }
+}

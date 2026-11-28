@@ -1,0 +1,52 @@
+{
+  "id": "720395cd55a866db",
+  "sourceId": "itwire",
+  "sourceName": "iTWire",
+  "authority": "news",
+  "jurisdiction": "AU-federal",
+  "paywalled": false,
+  "url": "https://itwire.com/guest-articles/company-news/rubrik-extends-protection-to-google-bigquery-and-google-cloud-storage",
+  "title": "Rubrik Extends Protection to Google BigQuery and Google Cloud Storage",
+  "publishedAt": "2026-11-11T22:58:36.317Z",
+  "fetchedAt": "2026-11-28T02:13:21.922Z",
+  "status": "summarised",
+  "headline": "Rubrik extends data protection and backup to Google BigQuery and Cloud Storage",
+  "summary": "Rubrik has announced extended data protection for Google Cloud Storage and the general availability of agentless, immutable backup for Google BigQuery. The offering addresses the vulnerability of enterprise data warehouses that AI agents reason over and act on in production. It provides independent long-term protection, compliance reporting, and recovery capabilities to help organisations secure their AI data layers.",
+  "why_it_matters": "As AI agents increasingly rely on enterprise data warehouses like BigQuery for reasoning and operational actions, assuring the recoverability and integrity of that data layer becomes critical to risk management and governance.",
+  "quotes": [
+    {
+      "text": "Rubrik (NYSE: RBRK), the Security and AI Operations Company, today announced extended Google Cloud data protection to include Google Cloud Storage, and the general availability of agentless, immutable backup for Google BigQuery.",
+      "supports": "summary"
+    },
+    {
+      "text": "As agents move from pilots to production, BigQuery is no longer just a warehouse. It’s the layer agents reason over and act on, making it critical for organisations to secure.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "product",
+    "is_financial_services": false,
+    "theme": "standards-frameworks",
+    "audiences": [
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 2,
+    "significance_reason": "This is a vendor product announcement providing backup and recovery tooling for AI data layers, which assists with operational risk management but does not introduce new legal or regulatory obligations.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "d9692cfe380b695858de17475fb96016382657bea337c592055a5c949fe26ea3",
+    "textChars": 2704,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:15:47.115Z",
+    "attempts": 1
+  }
+}

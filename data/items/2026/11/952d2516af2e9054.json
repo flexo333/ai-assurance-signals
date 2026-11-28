@@ -1,0 +1,53 @@
+{
+  "id": "952d2516af2e9054",
+  "sourceId": "openai",
+  "sourceName": "OpenAI",
+  "authority": "lab",
+  "jurisdiction": "INTL",
+  "paywalled": false,
+  "url": "https://openai.com/index/control-room",
+  "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+  "publishedAt": "2026-11-09T13:00:00.000Z",
+  "fetchedAt": "2026-11-28T02:13:24.685Z",
+  "status": "summarised",
+  "headline": "OpenAI introduces Control Room to track and halt research workloads",
+  "summary": "OpenAI has deployed Control Room, a central system designed to track research infrastructure workloads and stop model output within 35 seconds of an intervention. The system integrates workloads and inference engines to enforce safety cases, working alongside misalignment monitoring systems. It is engineered to fail closed, denying all inference requests if the Control Room service experiences an outage or tampering.",
+  "why_it_matters": "Frontier AI labs are implementing automated infrastructure controls and fail-closed mechanisms to ensure safety and security decisions can override autonomous research workloads.",
+  "quotes": [
+    {
+      "text": "Control Room is a central system to track model workloads across our research infrastructure and stop them quickly when safety or security concerns arise.",
+      "supports": "summary"
+    },
+    {
+      "text": "Finally, our system “fails closed”, meaning that the Control Room integration in the engines is configured in such a way that if the Control Room service goes down, either due to a system error or because it is disabled for any other reason, including tampering by a bad actor, then all inference requests will be denied until Control Room resumes normal operation.",
+      "supports": "why_it_matters"
+    }
+  ],
+  "dates_mentioned": [],
+  "classification": {
+    "item_kind": "safety-framework",
+    "is_financial_services": false,
+    "theme": "frontier-labs",
+    "audiences": [
+      "boards",
+      "risk-compliance",
+      "practitioners"
+    ],
+    "au_relevance": 1,
+    "significance": 3,
+    "significance_reason": "Demonstrates advanced operational infrastructure controls and fail-closed safety architectures for frontier AI research, setting a technical benchmark for risk mitigation in autonomous agentic training.",
+    "is_consultation": false,
+    "closing_date": null,
+    "closing_date_quote": null
+  },
+  "provenance": {
+    "model": "models/gemini-3.5-flash-lite",
+    "promptVersion": 3,
+    "sourceSha256": "3245c910aae070857ec4661352a4a56b7aab2ab0f03cf0fba641900d732b7335",
+    "textChars": 6156,
+    "textSource": "article",
+    "extractMethod": "readability",
+    "analysedAt": "2026-11-28T02:17:28.347Z",
+    "attempts": 2
+  }
+}
